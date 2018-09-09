@@ -1,0 +1,125 @@
+<include file="Template/admin/header.html" />
+
+<style>
+    .layui-form-label {font-size: 14px; color: #505050; width: 100px}
+    .layui-input {size: 50;width: 215px}
+    .save {margin: 20px 0 20px 44%; width:110px;}
+    .main {float:left;border:1px;   width:1000px; margin-left: 15px;}
+    .leftEdit {float:left;border:1px;  width:350px; margin-right: 167px;margin-top: 10px;}
+    .rightEdit {float:left;border:1px; width:350px;}
+    .layui-textarea {height: 300px;width: 450px; margin-top: 20px; margin-left: 16px;}
+</style>
+
+<body>
+	<br />
+	<div class = "main">
+        <div>
+            <select class="layui-select" name="problemType" style="width: 50%;margin-left: 30px;">
+                <option value="">请选择问题类型</option>
+                <option value="1">发送与接收</option>
+                <option value="2">购买与出售</option>
+                <option value="3">成为特约商家</option>
+                <option value="4">关于</option>
+                <option value="5">账户安全与实名审核</option>
+                <option value="6">反诈骗及处理流程</option>
+            </select>
+        </div>
+
+        <div class = "leftEdit">
+            <label class="layui-form-label">繁体常见问题：</label>
+            <input type="text" class="layui-input" name="leftTitle" placeholder="请输入问题标题" />
+            <textarea name="leftContent" required lay-verify="required" placeholder="请输入繁体问题内容" class="layui-textarea"></textarea>
+        </div>
+    
+        <div class = "rightEdit">
+            <label class="layui-form-label">英文常见问题：</label>
+            <input type="text" class="layui-input" name="rightTitle" placeholder="请输入问题标题" />
+            <textarea name="rightContent" required lay-verify="required" placeholder="请输入英文问题内容" class="layui-textarea"></textarea>
+        </div>
+
+        
+        <button id="save" class="layui-btn layui-btn-normal save" lay-filter="form-author">保存</button>
+
+
+    </div>
+    
+</body>
+
+
+
+<script>
+
+    // 验证数据是否是否为空
+    function verifyData() {
+        if ($("[name=problemType]").val() == "") {
+            layer.msg("问题类型不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=leftTitle]").val() == "") {
+            layer.msg("繁体常见问题标题不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=rightTitle]").val() == "") {
+            layer.msg("英文常见问题标题不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=leftContent]").val() == "") {
+            layer.msg("繁体问题内容不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=rightContent]").val() == "") {
+            layer.msg("英文问题内容不能为空", {icon: 2});
+            return false;
+        }
+
+        return true;
+    }
+    
+    $("#save").click(function() {
+
+        if (!verifyData()) {
+            return false;
+        }
+
+        //var sign = hex_md5(VERIFY_STR + user_id + nonceStr);
+        var url = "<{:U(addProblem)}>";
+        var data = {
+            left_content: $("[name=leftContent]").val(),
+            problem_type: $("[name=problemType]").val(),
+            right_content: $("[name=rightContent]").val(),
+            left_title: $("[name=leftTitle]").val(),
+            right_title: $("[name=rightTitle]").val()
+            //nonce_str: nonceStr,
+            //sign: sign
+        };
+
+        layer.load(2);
+            $.ajax({
+                url: url,
+                data: data,
+                type: 'post',
+                success: function(res) {
+                    layer.closeAll();
+
+                    if (res.code == 0) {
+                        // 表示表示成功
+                        layer.msg("添加成功", {icon: 1}, function() {
+                            // 刷新
+                            window.parent.location.reload();
+                        });
+
+                    } else {
+                        layer.msg("添加失败", {icon: 6});
+                    }
+                }
+            });
+        });
+</script>
+<script>
+
+
+</script>

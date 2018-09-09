@@ -1,0 +1,148 @@
+{include file="head" /}
+
+{include file="menu" /}
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+          
+
+          <div  class="row editadd" style="display:none">
+            <div class="col-lg-8">
+                <section class="panel">
+                  
+                  <div class="panel-body bio-graph-info">
+                      <h1 class="f_title"></h1>
+                      <form class="form-horizontal" role="form" method="post" id="formid">
+                          
+                          <div class="form-group">
+                              <label  class="col-lg-2 control-label">银行卡名称</label>
+                              <div class="col-lg-6">
+                                  <input type="text" class="form-control" id="f-name" name="bank_nm" placeholder=" " value="">
+                                  <input type="hidden" value="" name="id" id="f-id">
+                              </div>
+                          </div>
+                         
+                          <div class="form-group">
+                              <div class="col-lg-offset-2 col-lg-10">
+                                  <input type="submit" onclick="return formeidt(this.form)" class="btn btn-success" value="保存">
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </section> 
+            </div>
+          </div>  
+            
+          <div class="row">
+                  <div class="col-sm-8">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              <h4 class="left">银行卡管理（尽量不要删除银行卡，以免统计出错）</h4> 
+                              <a href="javascript:;" onclick="addclass()"><span class="btn right btn-primary">添加银行卡+</span></a>
+                              <br><br>
+                          </header>
+                          <table class="table">
+                              <thead>
+                              <tr>
+                                  <th>编号</th>
+                                  <th>银行卡</th>
+                                  <th>操作</th>
+                                  
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <!-- {volist id="vo" name="banks"} -->
+                              <tr>
+                                  <td>{$vo.id}</td>
+                                  <td>{$vo.bank_nm}</td>
+                                  <td> 
+                                      <button class="btn btn-primary btn-xs" onclick="editclass('{$vo.id}','{$vo.bank_nm}')"><i class="icon-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs" onclick="deleteclass('{$vo.id}')"><i class="icon-trash "></i></button>
+                                  </td>
+                                  
+                              </tr>
+                              <!-- {/volist} -->
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+          </div>       
+          
+          
+             
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+{include file="foot" /}
+<script>
+
+	//eidt class
+	function editclass(id,data){
+		$('.editadd').show();
+		$('.f_title').html('编辑银行卡');
+		$('#f-name').val(data);
+		$('#f-id').val(id);
+	}
+
+	//add class
+	function addclass(){
+		$('.editadd').show();
+		$('.f_title').html('添加银行卡');
+		$('#f-name').val('');
+		$('#f-id').val('');
+	}
+
+	//delete class
+	function deleteclass(id){
+		layer.open({
+		  content: '确定删除吗',
+		  yes: function(index){
+		    //do something
+		    var url = "{:url('deletebanks')}"+"?id="+id;
+		    
+		    $.get(url,function(data){
+		    	if (data.type == 1) {
+		          layer.msg(data.data, {icon: 1,time: 1000},function(){
+		            window.location.href="{:Url('banks')}";
+		          }); 
+
+		        }else if(data.type == -1){
+		          layer.msg(data.data, {icon: 2}); 
+		        }
+		    });
+		  }
+		});
+	}
+
+  //eidt or add one class
+  function formeidt(form){
+    $bank_nm = form.bank_nm.value;
+    if(!$bank_nm){
+      layer.msg('请输写银行卡名称'); 
+        return false;
+    }
+
+    var formurl = "{:Url('editbanks')}"
+    var data = $('#formid').serialize();
+    $.post(formurl,data,function(data){
+      if (data.type == 1) {
+
+        layer.msg(data.data, {icon: 1,time: 1000},function(){
+          window.location.href="{:Url('banks')}";
+        }); 
+
+      }else if(data.type == -1){
+        layer.msg(data.data, {icon: 2}); 
+      }
+
+    });
+
+    return false;
+
+  }
+
+
+	
+</script>

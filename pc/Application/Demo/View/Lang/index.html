@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <js href="__JS__/jquery-3.2.1.min.js" />
+</head>
+<body>
+    <select id="type">
+        <volist name="type" id="vo">
+            <option value="<{$vo.type}>"><{$vo.type_name}></option>
+        </volist>
+    </select>
+    <br />
+    标题繁体：<input id="tw-title" />
+    <br />
+    标题英文：<input id="en-title" />
+    <br />
+    内容繁体：<br />
+    <textarea rows="10" cols="50" id="tw"></textarea>
+    <br />
+    内容英文：<br />
+    <textarea rows="10" cols="50" id="en"></textarea>
+    <br />
+
+    <button onclick="save()">保存</button>
+
+    <script>
+        var save = function() {
+            if ($('#tw').val() == "" || $('#en').val() == "") {
+                alert("不能为空");
+                return ;
+            }
+
+            var url = "<{:U(index)}>";
+            var data = {
+                'type': $("#type").val(),
+                'TW_content': $("#tw").val(),
+                'EN_content': $("#en").val(),
+                'TW_title': $("#tw-title").val(),
+                'EN_title': $("#en-title").val()
+            };
+
+            console.log(data);
+
+            $.ajax({
+                url: url,
+                type: 'get',
+                data: data,
+                success: function(res) {
+                    console.log(res);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

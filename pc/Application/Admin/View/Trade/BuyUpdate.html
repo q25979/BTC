@@ -1,0 +1,79 @@
+<include file="Template/admin/header.html" />
+
+<css href="__CSS__/bootstrap.min.css" />
+
+<style>
+    .layui-elem-quote {font-size: 15px;color: #666;margin: 30px;}
+    .layui-form-item {width: 80%; margin-top: 15px;}
+</style>
+<div class="layui-elem-quote ">
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="width:22%;">购买浮动设置：</label>
+    <div class="layui-input-inline">
+        <input type="text" name="buy" required  lay-verify="required" placeholder="请输入浮动值" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <button class="layui-btn" id="sure">立即提交</button>
+    </div>
+</div>
+ 
+</script>
+
+<script>
+    //显示信息
+    $.ajax({
+        url : '<{:U(Trade)}>',
+        type: 'get',
+        success: function (res) {
+            console.log(res);
+            if ( res.data.length == 0 ) {
+                layer.msg('无显示信息！', {icon: 5});
+                return false;
+            }
+            $("[name=buy]").val(res.data[0]['buy_float']);
+            layer.closeAll();
+        }
+    });
+
+    // 32位随机数
+    var nonce_str = nonceStr(32);
+
+    layui.use('layer',function(){
+        var $ = layui.jquery, layer = layui.layer;
+        //提交
+        $('#sure').on('click', function (){
+            var data = {
+                buy_float: $('[name=buy]').val(),
+                nonce_str : nonce_str,
+                sign: hex_md5("__VERIFY_STR__" + $('[name=buy]').val() + nonce_str )
+
+            };
+
+            layer.load(2);
+            // 数据请求
+            $.ajax({
+                url : '<{:U(tradeUpdate)}>',
+                data : data,
+                type : 'post',
+                success : function(res){
+                    console.log("res:", res);
+                    layer.closeAll();
+
+                    if(parseInt(res.code) == 0) {
+                        layer.msg('修改成功！', {icon: 1}, function(){
+                            // 刷新
+                            window.parent.location.reload();
+                        })
+                    }else{
+                        layer.msg('修改失败', {icon : 2});
+                    }
+                },   
+            });
+        });
+    });
+
+</script>

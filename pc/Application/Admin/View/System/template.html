@@ -1,0 +1,68 @@
+
+<include file="Template/admin/header.html" />
+
+<div class="layui-form"> 
+
+  <div class="layui-form-item">
+  	<br />
+    <label class="layui-form-label">模板ID：</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入要修改的模板ID" autocomplete="off" class="layui-input" style="width:50%">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" id="sure">立即提交</button>
+      <!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+    </div>
+  </div>
+</div>
+
+ 
+<script>
+    function verification() {
+        // 判断是否为空
+        if ($('[name=title]').val() == '' )
+        {
+            layer.msg('输入的信息不能为空！', {icon: 2});
+            return false;
+        }
+        return true;
+    }
+
+    // 32位随机数
+    var nonce_str = nonceStr(32);
+
+    $('#sure').on('click', function (){
+
+        if ( !verification() ) {
+                return ;
+            }
+
+        var url = '__HOST_PATH__/Admin/System/updateTemplate';
+        var data = {
+            	template_id: $('[name=title]').val()
+            };
+
+        layer.load(2);
+
+        $.ajax({
+            url : url,
+            data : data,
+            type : 'post',
+            success : function(res){
+                console.log(res);
+                layer.closeAll();
+                if(res == "成功") {
+                    layer.msg('修改成功！', {icon: 1}, function(){
+                        // 刷新
+                        window.parent.location.reload();
+                    });
+                }else{
+                    layer.msg('修改失败', {icon : 2});
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,274 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!--接收-->
+    <!-- 内容容器 -->
+    <div class="content-receive col-lg-8 col-md-8 col-sm-8 col-xs-12" id="wallet_address">
+        <!--选项卡容器-->
+        <div class="buy-tab">
+            <!--选项卡1-->
+            <div class="tab1">
+                <a href="javascript:;" class="buy-BTC" id="rec-BTC"><{$Think.lang._ACCOUNT_RECEIVE_BTC_}></a>
+            </div>
+            <!--选项卡2-->
+            <div class="tab2">
+                <a href="javascript:;" class="buy-ETC" id="rec-ETC"><{$Think.lang._ACCOUNT_RECEIVE_ETH_}></a>
+            </div>
+        </div>
+        
+        <!--选项卡内容1-->
+        <div class="receive-tab-pane">
+        	<div class="receive-notes-list">
+        		<p class="tips1"><{$Think.lang._ACCOUNT_SEND_BTC_CONTENT_}></p>
+        		<p style="margin-top: 10px;font-size: 20px;color:blue;"><{$Think.lang._HINT_RECEIVE_TIPS_}></p>
+        		<h3><{$Think.lang._ACCOUNT_RECEIVE_RECEIVE_BTC}></h3>
+        		<input id="deposit_address" name="address" onclick="this.select();" readonly="readonly" type="text" v-bind:value="topAddress">
+        		<img v-bind:src="imgSrc"/>
+        		
+        		<div class="hide_mobile">
+					<table class="receive-table table address_list" lay-filter="ContactList">
+						<thead>
+							<tr>
+								<th class="column_address"><{$Think.lang._ACCOUNT_RECEIVE_ADD_}></th>
+								<th class="column_label"><{$Think.lang._ACCOUNT_RECEIVE_LABEL_}></th>
+								<th class="column_date"><{$Think.lang._ACCOUNT_RECEIVE_DATE_CREATED_}></th>
+								<th class="column_details"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for = "(item, index) in addressList">
+								<td>{{item.address}}</td>
+								<td>{{item.label}}</td>
+								<td>{{item.create_time}}</td>
+
+								<td><a href="javascript:;" @click="addressDetail(index)"><{$Think.lang._ACCOUNT_RECEIVE_DETAILS_}></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="area_msg"><{$Think.lang._ACCOUNT_RECEIVE_NEW_ADD_TIPS_}></p>
+				<input type="button" @click="addAddress()" name="commit" value="<{$Think.lang._ACCOUNT_RECEIVE_GET_NEW_ADD_}>" class="btn small_btn" id="receive_submit">
+				<div class="dash"></div>
+				<!-- <div class="faq">
+				    <span class="title"><{$Think.lang._ACCOUNT_RECEIVE_QUESTIONS_}></span>
+				    <ul class="qst">
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_ONE_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_TWO_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_THREE_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_FOUR_}></a></li>
+				    </ul>
+				</div> -->
+				
+        	</div> 	  	
+        </div>
+        
+        <!--选项卡内容2-->
+        <div class="receive-tab-pane2">
+        	<div class="receive-notes-list2">
+        		<p class="tips2"><{$Think.lang._ACCOUNT_SEND_BTC_CONTENT_}></p>
+        		<p style="margin-top: 10px;font-size: 20px;color:blue;"><{$Think.lang._HINT_RECEIVE_TIPS_}></p>
+        		<h3><{$Think.lang._ACCOUNT_RECEIVE_RECEIVE_ETH_}></h3>
+        		<input id="deposit_address2" name="" onclick="this.select();" readonly="readonly" type="text" v-bind:value="eth_addres">
+        		<img v-bind:src="eth_img"/>
+        		
+        		
+				
+				<div class="dash"></div>
+				<!-- <div class="faq">
+				    <span class="title"><{$Think.lang._ACCOUNT_RECEIVE_QUESTIONS_}></span>
+				    <ul class="qst">
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_ONE_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_TWO_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_THREE_}></a></li>
+				        <li><a href="javascript:;"><{$Think.lang._ACCOUNT_RECEIVE_QUESTION_FOUR_}></a></li>
+				    </ul>
+				</div> -->
+				
+        	</div> 	  	
+        </div>
+        
+    </div>
+
+    <script>
+        $(function(){
+        	//点击接收比特币
+            $(".buy-BTC").click(function(){
+            	//修改两个按钮的样式
+                $(this).css({
+                    textDecoration:"none",
+                    color:"#000"
+                });
+
+                $(".tab1").css({
+                    backgroundColor:"#fff",
+                    borderBottom:"1px solid #fff"
+                });
+
+                $(".tab2").css({
+                    backgroundColor:"#F0EFEE",
+                    borderBottom:"1px solid #ddd"
+                });
+
+                $(this).mouseover(function(){
+                    $(this).css("color","#000");
+                });
+                
+                //显示隐藏对应的选项卡
+                $(".receive-tab-pane2").css("display","none");
+                $(".receive-tab-pane").css("display","block");
+                
+            });
+			
+			//点击接收以太币
+            $(".buy-ETC").click(function(){
+            	//修改两个按钮的样式
+                $(this).css({
+                    textDecoration:"none",
+                    color:"#000"
+                });
+
+                $(".tab2").css({
+                    backgroundColor:"#fff",
+                    borderBottom:"1px solid #fff"
+                });
+
+                $(".tab1").css({
+                    backgroundColor:"#F0EFEE",
+                    borderBottom:"1px solid #ddd"
+                });
+
+                $(this).mouseover(function(){
+                    $(this).css("color","#000");
+                });
+                
+                //显示隐藏对应的选项卡
+                $(".receive-tab-pane").css("display","none");
+                $(".receive-tab-pane2").css("display","block");
+                
+            });
+            if (addressVm.GetRequest().type == 2) {
+                //修改两个按钮的样式
+                $(".buy-ETC").css({
+                    textDecoration:"none",
+                    color:"#000"
+                });
+
+                $(".tab2").css({
+                    backgroundColor:"#fff",
+                    borderBottom:"1px solid #fff"
+                });
+
+                $(".tab1").css({
+                    backgroundColor:"#F0EFEE",
+                    borderBottom:"1px solid #ddd"
+                });
+
+                $(".buy-ETC").mouseover(function(){
+                    $(".buy-ETC").css("color","#000");
+                });
+                
+                //显示隐藏对应的选项卡
+                $(".receive-tab-pane").css("display","none");
+                $(".receive-tab-pane2").css("display","block");
+                    
+            }
+        });
+
+        
+        //控制一级菜单的点击事件
+		$(".nav-a").css("color","#3388BB");
+		$(".nav-span").css("color","#3388BB");
+		$(".nav-a").css("border-bottom","2px solid #fff");
+		
+		$(".nav-a").eq(2).css("color","#000");
+		$(".nav-span").eq(1).css("color","#000");
+		$(".nav-span").eq(2).next().css("color","#000");
+		$(".nav-a").eq(2).css("border-bottom","2px solid #3388BB");
+        
+        $(".sidebar-content-a").css("color","#3397D3");
+        $(".sidebar-content-a").eq(1).css("color","#000");
+        $(".sidebar-content-a img").eq(0).attr("src","__PUBLIC__/images/home-active.png");
+        $(".sidebar-content-a img").eq(1).attr("src","__PUBLIC__/images/wallet-click.png");
+        
+		$(".text-content").html("<{$Think.lang._ACCOUNT_RECEIVE_}>&nbsp;");
+
+        layui.use('layer', function(){
+          
+        });  
+
+
+        var addressVm = new Vue({
+            el: '#wallet_address',
+            data: {
+                addressList: [],
+                imgSrc : "",
+                topAddress : "",
+                user_wallet_address_id : "",
+                eth_addres : "",
+                eth_img: "",
+            },
+            created: function() {
+
+                this.getBtcAddress();
+                
+            },
+            methods: {
+                getBtcAddress : function(){
+                    var vm = this;
+                    var url = "__HOST_PATH__/Home/WalletAddr/get";
+                    $.get(url,function(res){
+                        if (res.btc != [] && res.btc != null && res.btc.length != 0) {
+                            vm.addressList = [];
+                            for (var i in res.btc) {
+                                if (i < 3) {
+                                   vm.addressList.push(res.btc[i]); 
+                               }else{
+                                break;
+                               }  
+                            }
+                            vm.imgSrc = res.btc[0].address_url;
+                            vm.user_wallet_address_id = res.btc[0].user_wallet_address_id;
+                            vm.topAddress = res.btc[0].address;
+                        }
+                        vm.eth_addres = res.eth[0].address;
+                        vm.eth_img = res.eth[0].address_url;
+                    });
+
+                },
+                addAddress : function(){
+                    var vm = this;
+                    var url = "__HOST_PATH__/Home/WalletAddr/addNew";
+           
+                    $.get(url,function(res){
+                       vm.getBtcAddress();
+                    });
+                    
+                    
+                },
+                addressDetail : function(index){
+                    var vm = this;
+                window.location.href="__HOST_PATH__/Home/WalletAddr/receiveDetail.html?user_wallet_address_id="+vm.addressList[index].user_wallet_address_id;
+                },
+                GetRequest : function() {//获取get请求后面的参数
+                    var url = location.search; //获取url中"?"符后的字串
+                    var theRequest = new Object();
+                    if (url.indexOf("?") != -1) {
+                        var str = url.substr(1);
+                        strs = str.split("&");
+                        for(var i = 0; i < strs.length; i ++) {
+                            theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                        }
+                    }
+                    return theRequest;
+                }
+
+
+            }
+        });
+        
+    </script>
+
+</block>

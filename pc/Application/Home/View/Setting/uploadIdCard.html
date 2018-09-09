@@ -1,0 +1,252 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+<block name="content">
+	<!-- 上傳身分證照片 -->
+	<div class="uploadIdcard col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<div style="margin-top: 20px;">
+			<a href="__HOST_PATH__/Home/Setting/index">
+				< <{$Think.lang._ACCOUNT_SETTINGS_BACK_}>
+			</a>
+		</div>
+		<br>
+		<h3><{$Think.lang._HINT_UPLOAD_ID_}></h3>
+		<div class="form-idcard" id="photo-id-form" accept-charset="UTF-8" method="post">
+			<div class="fields-idcard width-id">
+				<label><{$Think.lang._HINT_UPLOAD_ID_CARD_TIPS_}></label>
+
+			</div>
+			<div class="layui-upload" style="margin: 10px 0 10px 0;">
+				<span><{$Think.lang._HINT_CHOOSE_FILE_}></span>
+				<button type="button" class="layui-btn" id="upload-btn"><{$Think.lang._HINT_UPLOAD_FRONT_ID_}></button>
+				<div id="systemIdCard" class="layui-upload-list" style='margin-top: 10px;'>
+					<img class="layui-upload-img" id="upload-img1">
+					<p id="upload-err"></p>
+				</div>
+			</div>
+			<div class="layui-upload" style="margin: 10px 0 10px 0;">
+				<span><{$Think.lang._HINT_CHOOSE_FILE_}></span>
+				<button type="button" class="layui-btn" id="upload-btn2"><{$Think.lang._HINT_UPLOAD_REVERSE_ID_}></button>
+				<div id="backId" class="layui-upload-list" style='margin-top: 10px;'>
+					<img class="layui-upload-img" id="upload-img2">
+					<p id="upload-err2"></p>
+				</div>
+			</div>
+			<div class="layui-upload" style="margin: 10px 0 10px 0;">
+				<span><{$Think.lang._HINT_CHOOSE_FILE_}></span>
+				<button type="button" class="layui-btn" id="upload-btn3">上传手持身份证</button>
+				<div id="backId" class="layui-upload-list" style='margin-top: 10px;'>
+					<img class="layui-upload-img" id="upload-img3">
+					<p id="upload-err3"></p>
+				</div>
+			</div>
+			
+			
+			<div class="btns-id">
+				<input name="commit" value="<{$Think.lang._CONTACT_SUBMIT_}>" data-disable-with="<{$Think.lang._HINT_TRANSMITTING_}>" class="btn-1" id="submit-photo-id" type="button">
+			</div>
+		</div>
+
+	</div>
+
+	<js href="__PLUG-IN__/layui/layui.js" />
+	<script>
+		var front_Idcard;
+		var back_Idcard;
+		var hand_Idcard;
+
+		layui.use('upload', function() {
+			var $ = layui.jquery,
+				upload = layui.upload,
+				qnurl = '__HOST_PATH__/Home/Setting/getUpload';
+
+			//上传正面
+			var uploadInst = upload.render({
+				elem: '#upload-btn',
+				url: qnurl,
+				field: 'imgaddr',
+				data: {
+					type: "1"
+				},
+				before: function(obj) {
+					//预读本地文件示例，不支持ie8
+					layer.load(2);
+					obj.preview(function(index, file, result) {
+						$('#upload-img1').attr('src', result); //图片链接（base64）
+					});
+				},
+				choose: function() {
+					layer.load(2);
+				},
+				done: function(res) {
+					layer.closeAll();
+					//如果上传失败
+					if(res.code != 0) {
+						return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>');
+					}
+					//上传成功
+					layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {anim: '0',fixed: 'false',icon: 1,offset: 't',
+					});
+					$('#upload-img1').css({
+						'display': 'block',
+
+					});
+					front_Idcard = res.data.file_address; // 临时保存正面图片路径
+
+				},
+				error: function() {
+					//演示失败状态，并实现重传
+					var demoText = $('#upload-err');
+					demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;">上传失败，请重试！</span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload">重试</a>');
+
+					demoText.find('.demo-reload').on('click', function() {
+						uploadInst.upload();
+					});
+				}
+			});
+
+			//上传背面
+			var uploadInst = upload.render({
+				elem: '#upload-btn2',
+				url: qnurl,
+				field: 'imgaddr',
+				data: {
+					type: "1"
+				},
+				before: function(obj) {
+					//预读本地文件示例，不支持ie8
+					layer.load(2);
+					obj.preview(function(index, file, result) {
+						$('#upload-img2').attr('src', result); //图片链接（base64）
+					});
+				},
+				choose: function() {
+					layer.load(2);
+				},
+				done: function(res) {
+					layer.closeAll();
+					//如果上传失败
+					if(res.code != 0) {
+						return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>');
+					}
+					//上传成功
+					layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {anim: '0',fixed: 'false',icon: 1, offset: 't'
+					});
+					$('#upload-img2').css({
+						'display': 'block',
+					});
+
+					back_Idcard = res.data.file_address; // 临时保存背面图片路径
+
+
+				},
+				error: function() {
+					//演示失败状态，并实现重传
+					var demoText = $('#upload-err2');
+					demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;">上传失败，请重试！</span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload">重试</a>');
+
+					demoText.find('.demo-reload').on('click',
+						function() {
+							uploadInst.upload();
+						});
+				}
+			});
+			
+			//上传手持身份证
+			var uploadInst = upload.render({
+				elem: '#upload-btn3',
+				url: qnurl,
+				field: 'imgaddr',
+				data: {
+					type: "1"
+				},
+				before: function(obj) {
+					//预读本地文件示例，不支持ie8
+					layer.load(2);
+					obj.preview(function(index, file, result) {
+						$('#upload-img3').attr('src', result); //图片链接（base64）
+					});
+				},
+				choose: function() {
+					layer.load(2);
+				},
+				done: function(res) {
+					layer.closeAll();
+					//如果上传失败
+					if(res.code != 0) {
+						return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>');
+					}
+					//上传成功
+					layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {anim: '0',fixed: 'false',icon: 1, offset: 't'
+					});
+					$('#upload-img3').css({
+						'display': 'block',
+					});
+
+					hand_Idcard = res.data.file_address; // 临时保存背面图片路径
+
+
+				},
+				error: function() {
+					//演示失败状态，并实现重传
+					var demoText = $('#upload-err2');
+					demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;">上传失败，请重试！</span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload">重试</a>');
+
+					demoText.find('.demo-reload').on('click',
+						function() {
+							uploadInst.upload();
+						});
+				}
+			});
+
+		});
+
+		$('#submit-photo-id').click(function() {
+			
+			layer.open({
+				title: "<{$Think.lang._HINT_MSG_TIPS_}>",
+				content: "<{$Think.lang._HINT_COMMIT_CONFIRM_}>",
+				btn: 'yes',
+				fixed: 'false',
+				offset: 't',
+				yes: function(res) {
+					layer.closeAll();
+					layer.load(2);
+
+					var card_url = '__HOST_PATH__/Home/Setting/getIdCard'; // 请求接口
+					var card_data = {
+						file_f: front_Idcard, // 身份证正面url
+						file_r: back_Idcard,   // 身份证背面url
+						file_hand: hand_Idcard   // 身份证背面url
+					};
+					
+					$.ajax({
+						url: card_url,
+						data: card_data,
+						type: 'post',
+						success: function(res) {
+							layer.closeAll();
+							if(res.code == 0) {
+								layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {
+									icon: 1, offset: 't'}, function() {
+									// 跳转
+									window.location.replace("__HOST_PATH__/Home/Setting/index");
+								});
+							} else {
+								layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>', {
+									icon: 2, offset: 't'});
+							}
+						},
+						error: function(res) {
+							layer.closeAll();
+							layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>', {
+									icon: 2});
+						}
+					});
+				}
+			});
+
+		});
+	</script>
+</block>

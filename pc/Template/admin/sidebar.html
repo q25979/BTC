@@ -1,0 +1,303 @@
+<!-- 侧边栏 -->
+<div class="left-nav">
+  <div id="side-nav">
+    <ul id="nav">
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe620;</i>
+                <cite>系统设置</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('System/LogoList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>基本信息</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('System/EmailList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>邮箱接口</cite>
+                    </a>
+                </li>
+                <li id="MSM-result" style="display: none">
+                    <a _href="<{:U('System/MessageVerify')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>短信验证</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('System/CoinList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>浮动设置</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('System/Exchange')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>汇率设置</cite>
+                    </a>
+                </li>
+                
+                <li>
+                    <a _href="<{:U('System/Company')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>公司管理</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('System/NoticeList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>公告管理</cite>
+                    </a>
+                </li>
+
+                <li>
+                    <a _href="<{:U('System/BiscProblem')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>常见问题</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('System/UserProblem')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>用户问题</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe624;</i>
+                <cite>银行管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Bank/BankList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>银行列表</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('Bank/BankAdd')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>银行添加</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe624;</i>
+                <cite>提现管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Withdraw/index')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>提现列表</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe600;</i>
+                <cite>用户账户</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Account/AccountList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>账户列表</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont">&#xe6af;</i>
+                <cite>用户管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('User/UserList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>用户列表</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('User/SendList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>用户私信</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont">&#xe6b8;</i>
+                <cite>用户认证</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Attest/AttestList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>认证列表</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('Attest/Examine')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>认证审核</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe698;</i>
+                <cite>交易管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Order/OrderListAll')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>订单列表</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('Order/OrderList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>订单审核</cite>
+                    </a>
+                </li>
+                <!--<li>-->
+                    <!--<a _href="<{:U('Order/OrderAudit')}>">-->
+                        <!--<i class="iconfont">&#xe6a7;</i>-->
+                        <!--<cite>订单确认</cite>-->
+                    <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe65e;</i>
+                <cite>出售购买</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Trade/TradeList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>浮动设置</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe609;</i>
+                <cite>发送管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Send/SendListAll')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>发送列表</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('Send/SendList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>发送审核</cite>
+                    </a>
+                </li>
+                <li>
+                    <a _href="<{:U('Send/SendAudit')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>发送确认</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li id="walletSite" style="display: none">
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe624;</i>
+                <cite>钱包地址</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Walletaddress/WalletaddressList')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>地址列表</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe606;</i>
+                <cite>客服管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<{:U('Service/Service')}>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>客服设置</cite>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+	switchSite();
+	//获取权限，identity为1是显示钱包地址，其他隐藏
+	function switchSite(){
+		var url_switchSite = "__HOST_PATH__/Admin/Index/identity";
+		
+		$.ajax({
+			type:"post",
+			url:url_switchSite,
+            data: {
+                empty: 'yes'
+            },
+			success:function(res){
+				var status = res.data.identity;
+
+				if(parseInt(status) == 1){
+					$("#walletSite").css("display","block");
+                    $("#MSM-result").css("display","block");
+				}else{
+					$("#walletSite").css("display","none");
+                    $("#MSM-result").css("display","none");
+				}
+			}
+		});
+	}
+</script>

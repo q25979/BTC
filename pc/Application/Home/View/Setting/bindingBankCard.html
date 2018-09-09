@@ -1,0 +1,305 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!-- 綁定銀行帳戶 -->
+    <div class="bankCard col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div style="margin-top: 20px;"><a href="__HOST_PATH__/Home/Setting/index"> < <{$Think.lang._ACCOUNT_SETTINGS_BACK_}></a></div>
+        <br>
+        <h3><{$Think.lang._ACCOUNT_SETTINGS_BANK_SELL}></h3>
+
+        <div class="bank-setting">
+            <p class="highlight"><{$Think.lang._ACCOUNT_SETTINGS_CLAUSE_}></p>
+            <ul>
+                <li><{$Think.lang._ACCOUNT_SETTINGS_CLAUSE_ONE_}></li>
+                <!--<li><{$Think.lang._ACCOUNT_SETTINGS_CLAUSE_TWO_}></li>-->
+            </ul>
+            <p class="highlight"><{$Think.lang._ACCOUNT_SETTINGS_POSTAL_COMPANY_}></p>
+            <ul>
+                <li><{$Think.lang._ACCOUNT_SETTINGS_POSTAL_CLAUSE_}></li>
+            </ul>
+        </div>
+
+        <div id="bank_info" autocomplete="off" class="edit-user"data-remote="true">
+            <div class="area area-settings">
+                <label>
+                    <{$Think.lang._ACCOUNT_SETTINGS_BANK_NAME_}>
+                </label>
+                <div>
+					<select id ="bank_select"
+							class="form-control"
+							name="bank_select"
+							lay-verify=""
+							style="width: 100%;"
+					>
+						<option value=''><{$Think.lang._ACCOUNT_SETTINGS_BANK_CHOOSE_}></option>
+					</select>   
+                </div>
+                 <span id="bank-span" class="bank-below-msg"  >
+					   <{$Think.lang._HINT_FILL_}>
+			     </span>
+			     <br />
+                <label>
+                    <{$Think.lang._ACCOUNT_SETTINGS_BANK_BRANCH_}>:
+                </label>
+                <!-- v-bind:value = "j.bank_id" -->
+                <div>
+                	<!-- 分行 -->
+	                <!-- <select id = "bank_son_select"
+							class="form-control"
+							name="bank_son_select"
+							lay-verify=""
+							style="width: 320px;"
+					>
+	                	<option value=''><{$Think.lang._ACCOUNT_SETTINGS_BRANCH_CHOOSE_}></option>
+					</select> -->
+					<input 
+						type = "text" 
+						placeholder="例：0040118 臺銀高雄"
+						id   = "branch" 
+					/>
+				</div>
+                <span id="bank-son-span" class="bank-below-msg"  >
+					   <{$Think.lang._HINT_FILL_}>
+			     </span>
+			     <br />
+                <label>
+                    <{$Think.lang._ACCOUNT_SETTINGS_BANK_ACCOUNT_}>
+                </label>
+                <div><input maxlength="150" class="form-control" size="150" id="bank-account-number" name="user[bank-account-number]" type="text"></div>
+                <span id="bank-account-number-prompt" class="tip-below-msg" style="display: none;"><{$Think.lang._ACCOUNT_SETTINGS_ACCOUNT_TIPS_}></span>
+                <label>
+                    <{$Think.lang._ACCOUNT_SETTINGS_BANK_USERNAME_}>
+                </label>
+                <div><input maxlength="150" class="form-control" size="150" id="bank-account-name" name="user[bank-account-name]" type="text"></div>
+                <span id="bank-account-name-prompt" class="tip-below-msg" style="display: none;"><{$Think.lang._ACCOUNT_SETTINGS_USERNAME_TIPS_}></span>
+                
+                <!--短信验证-->
+                <div id="SMS-verification-box">
+              		<input value="獲取數位管家驗證碼" class="btn btn-1" id="SMS-verification-btn" type="button">
+                	
+                	<input maxlength="150" class="form-control" size="150" id="SMS-verification-input" placeholder="请输入短信验证码" type="text">
+
+                </div>
+                
+                
+                <input name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_SAVE_SETTING_}>" data-disable-with="<{$Think.lang._HINT_TRANSMITTING_}>" class="btn btn-1" id="submit-bank-form" type="submit">
+				
+				
+            </div>
+
+        </div>
+
+
+    </div>
+    
+    <js href="__PLUG-IN__/layui/layui.js" />
+    <js href="__PLUG-IN__/layer_mobile/layer.js" />
+    
+    <script>
+    //获取是否开启短信验证
+    var SMScode = 0;
+    var SMSstatus = 0;
+
+    // 判断是否开启验证码
+    $.get('__HOST_PATH__/Home/Setting/msgStatus', function(res) {
+    	SMSstatus = parseInt(res.status);
+
+    	// 关闭
+    	if (parseInt(res.status) != 0) {
+    		$('#SMS-verification-box').css('display', 'none');
+    	}
+    });	
+    
+    function invokeSettime(obj){
+	    var countdown=60;
+	    settime(obj);
+	    function settime(obj) {
+	        if (countdown == 0) {
+	            $(obj).attr("disabled",false);
+	            $(obj).val("获取验证码");
+	            countdown = 60;
+	            return;
+	        } else {
+	            $(obj).attr("disabled",true);
+	            $(obj).val("" + countdown + " s 重新发送");
+	            countdown--;
+	        }
+	        setTimeout(function() {
+	            settime(obj) 
+	        },1000);
+	    }
+	}
+	
+	//获取短信验证码
+	$("#SMS-verification-btn").click(function(){
+		//判断输入银行账户信息不为空，就获取短信验证码
+		if($("#bank_select").val() != "" && $("#branch").val() != "" && $("#bank-account-number").val() != "" && $("#bank-account-name").val() != ""){
+			invokeSettime("#SMS-verification-btn");
+
+			var u = '__HOST_PATH__/Home/Setting/sendCode';
+	
+			// 验证码
+			$.get(u, function(res) {
+				// 重置全局
+				SMScode = res.code;
+	
+				console.log(res);
+				if (res.msg != '发送成功') {
+					layer.msg('獲取驗證碼失敗！', {icon: 5});
+				}
+			});
+		}else{
+			layer.msg('銀行賬戶信息不能為空！', {icon: 2});
+		}
+		
+	});
+    	
+    	
+    getdata(1,0);
+    function getdata(type,id){
+		var vm = this;
+		var url = "__HOST_PATH__/Home/Setting/getBankInfo";
+		var data = {
+				type : type,
+				bank_parent : id
+		}
+		
+		$.get(url,data,function(res){
+
+			if (res.code == 0) {
+				if (type == 1) {
+					var data = res.data;
+					$("#bank_select").empty();
+					$("#bank_select").append("<option value=''><{$Think.lang._ACCOUNT_SETTINGS_BANK_CHOOSE_}></option>");
+					//如果是主银行名称
+					for (i in data) {
+						$("#bank_select").append("<option value = "+data[i].bank_id+">"+data[i].bank_name+"</option>");
+					}
+					
+				}else if(type == 2){
+					//如果是子类银行名称
+					var data = res.data;
+					$("#bank_son_select").empty();//清空后再赋值
+					$("#bank_son_select").append("<option value=''><{$Think.lang._ACCOUNT_SETTINGS_BRANCH_CHOOSE_}></option>");
+					for (i in data) {
+						$("#bank_son_select").append("<option value = "+data[i].bank_id+">"+data[i].bank_name+"</option>");
+					}
+				}
+
+			}else{
+				layer.msg('network anomaly', {icon : 2});
+			}
+		});
+
+	};
+
+	$("#bank_select").change('change',function(){
+		if ($("#bank_select").val() != null && $("#bank_select").val() != '') {
+			getdata(2,$("#bank_select").val());//获取二级下拉的值
+		}	
+	});
+    	
+	layui.use(['layer'], function(){
+		var layer = layui.layer;
+
+		$(document).ready(function() {
+		     
+		    //交互
+		    var nonce_str 	= nonceStr(32);
+		    $('#submit-bank-form').on('click', function () {
+		
+				var bankName = $("#bank_select").val();
+				var bankSon  = $('#branch').val();
+				var accountNumber = $('#bank-account-number').val();
+				var accountName = $('#bank-account-name').val();
+
+				//表单正则
+//				var userbankReg = /^\d{10,18}$/;
+				var accountnameReg = /^\D*$/;
+
+				//表单验证：
+				//銀行名稱
+				if(bankName == '') {
+					$('#bank-span').css({'display':'block'});
+					return ;
+				} else {
+					$('#bank-span').hide();
+				}
+
+				//银行分行
+				// if(bankSon == '') {
+				// 	$('#bank-son-span').css({'display':'block'});
+				// 	return ;
+				// } else {
+				// 	$('#bank-son-span').hide()
+				// }
+
+				//銀行帳戶號碼
+				if(accountNumber == '') {
+					$('#bank-account-number-prompt').css({'display':'block'});
+					return ;
+				} else {
+					$('#bank-account-number-prompt').hide();
+				}
+
+				//銀行帳戶名
+				if(accountName == '') {
+					$('#bank-account-name-prompt').css({'display':'block'});
+					return ;
+				} else {
+					$('#bank-account-name-prompt').hide();
+				}
+
+				if (SMSstatus == 0) {
+					if ($('#SMS-verification-input').val().length < 3 
+						|| $('#SMS-verification-input').val() != SMScode) {
+
+						layer.msg('驗證碼錯誤！', {icon: 5});
+						return false;
+					}
+				}
+
+				var u = '__HOST_PATH__/Home/Setting/Bankcard';
+				var	d = {
+					bank_name : bankName,
+					bank_branch : bankSon,
+					
+					bank_num : accountNumber, 			  
+					bank_account : accountName,
+
+					nonce_str: nonce_str,
+					sign: hex_md5('__VERIFY_STR__' + accountNumber + nonce_str),
+				};
+
+				var old = $('[name=commit]').val()
+				sg.loading($('[name=commit]'));
+				$.ajax({
+					url: u,
+					data: d,
+					type: 'post',
+					success: function (res) {
+						console.log(res);
+						sg.hideLoading($('[name=commit]'), old);
+						if(parseInt(res.code) == 0) {
+		                	
+		                	layer.msg('<{$Think.lang._HINT_AMEND_SUCCESS_}>', {icon: 1}, function(){
+		                    // 刷新
+		                     window.location.replace("__HOST_PATH__/Home/Setting/index?code=" + res.code);
+                            
+		                })
+		            	}else{
+		                	layer.msg('<{$Think.lang._HINT_AMEND_DEFEAT_}>', {icon : 2});
+		            	}
+					}
+				});
+			});     
+		});
+	});
+    	
+    </script>
+</block>

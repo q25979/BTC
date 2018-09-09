@@ -1,0 +1,393 @@
+<!-- 认证注册 -->
+<extend name="Template/home/no-slidebar.html" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<block name="content">
+    <js href="__JS__/data.areaCode.js" />
+
+    <div class="container">
+        <div class="rg-box img-responsive">
+                <div class="rg-small-box">
+                    <div class="rg-registPro">
+                        <div class="rg-step-1">
+                            <div class="rg-step-circle"><span>1</span></div>
+                            <div class="rg-step-title rg-active-title"><{$Think.lang._HINT_PWD_CONFIRM_}></div>
+                            <div class="rg-step-left"></div>
+                            <div class="rg-step-right"></div>
+                        </div>
+                        <div class="rg-step-2">
+                            <div class="rg-step-circle"><span>2</span></div>
+                            <div class="rg-step-title rg-active-title"><{$Think.lang._HINT_SAFE_VER_}></div>
+                            <div class="rg-step-left"></div>
+                            <div class="rg-step-right"></div>
+                        </div>
+                        <div class="rg-step-4">
+                            <div class="rg-step-circle"><span>3</span></div>
+                            <div class="rg-step-title rg-active-title"><{$Think.lang._HINT_REGISTER_COMPLETE_}></div>
+                            <div class="rg-step-left"></div>
+                            <div class="rg-step-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--第一状态-->
+                <div class="state-1 rg-block">
+                    <form action="">
+                        <div class="rg-welcome"><{$Think.lang._ACCOUNT_WELCOME_}> <{$email}>!</div>
+
+                        <div class="rg-area">
+                            <div class="rg-label-pass"><{$Think.lang._HINT_NEW_PWD_}></div>
+                            <span class="rg-field">
+                                <input id="rg-password" type="password">
+                            </span>
+                            <div class="rg-password-strength">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="rg-password-warn">
+                                <span class="rg-password-warn-font"><{$Think.lang._HINT_PWD_CHECK_}></span>
+                            </div>
+                        </div>
+                        <div class="rg-area" style="margin-top: 30px;">
+                            <div class="rg-label-pass"><{$Think.lang._HINT_NEW_PWD_CONFIRM_}></div>
+                            <span class="rg-field">
+                                <input id="rg-makesure-password" type="password">
+                            </span>
+                            <div class="rg-password-confirm">
+                                <span class="rg-password-confirm-font"><{$Think.lang._HINT_PWD_CONFIRM_}></span>
+                                <span class="rg-password-confirm-font rg-warn"><{$Think.lang._HINT_PWD_TWICE_DIFFERENT_}></span>
+                            </div>
+                        </div>
+
+                        <!--虚线-->
+                        <div class="rg-dash"></div>
+
+                        <div class="rg-register-bottom">
+                            <{$Think.lang._HINT_AGREE_RECEIVE_}>
+                            <a 
+                                href="__HOST_PATH__/Home/PDF/index/type/termsOfUse" 
+                                target="_blank"
+                            >
+                                “<{$Think.lang._LOGIN_TERMS_FOR_USAGE_}>”
+                            </a>
+                            －
+                            <a 
+                                href="__HOST_PATH__/Home/PDF/index/type/privacy" 
+                                target="_blank"
+                            >
+                                “<{$Think.lang._LOGIN_PRIVACY_POLICY_}>”
+                            </a>
+                        </div>
+                        <input 
+                            type  = "button" 
+                            name  = "commit" 
+                            value = "<{$Think.lang._HINT_FREE_REGISTER_}>"
+                            class = "btn btn-primary" 
+                            id    = "rg-register-button"
+                        >
+                    </form>
+                </div>
+
+            <!--第二状态-->
+            <div class="state-2 rg-none">
+                <div class="rg-area">
+                    <span class="rg-label-2"><{$Think.lang._HINT_PHONE_ADDRESS_}></span>
+                    <span class="rg-field">
+                        <select class="country" name="user[country]" id="user_country">
+                        </select>
+                    </span>
+                </div>
+                <div class="rg-area" style="margin-top: 20px;">
+                    <span class="rg-label-phone"><{$Think.lang._HINT_PHONE_NUMBER_}></span>
+
+                    <div class="rg-field rg-center">
+                        <span class="state" id="areaCode"></span>
+                        <input class="ipt-phone" id="phone" type="text" name="user[phone]">
+                    </div>
+                </div>
+
+                <div class="rg-password-confirm">
+                    <span class="rg-password-confirm-font"><{$Think.lang._HINT_INPUT_PHONE_}></span>
+                    <span class="rg-password-confirm-font rg-warn"><{$Think.lang._ACCOUNT_SETTINGS_NEW_TIPS_}></span>
+                </div>
+
+                <input
+                    type  = "button"
+                    name  = "commit" 
+                    value = "<{$Think.lang._ACCOUNT_SETTINGS_CHANGE_SUBMIT_}>"
+                    class = "btn btn-primary" 
+                    id    = "rg-submit-second"
+                />
+
+
+                <div class="overlap"><a href="#"><{$Think.lang._HINT_SKIP_}></a></div>
+            </div>
+
+            <!--第三状态-->
+            <div class="state-3 rg-none">
+                <div class="rg-area">
+                    <span class="rg-label-2"><{$Think.lang._HINT_VEHICLE_TYPE_}></span>
+                    <span class="rg-field">
+                        <select class="country" name="user[country]" id="invc-selector">
+                            <option value="3J0002"><{$Think.lang._HINT_PHONE_BAR_CODE_}></option>
+                            <option value="NPOBAN" selected=""><{$Think.lang._HINT_DONATE_}></option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="rg-area" style="margin: 30px 0 0 -23px;">
+                    <div class="loveCode">
+                        <div class="rg-label-love"><{$Think.lang._HINT_LOVE_CODE_}></div>
+                        <span class="rg-field">
+                            <input id="rg-number" type="text">
+                        </span>
+                        <span class="notice"><{$Think.lang._HINT_DONATE_TO_HOSPITAL_}></span>
+                    </div>
+
+                    <div class="phoneBarcode" style="display: none;">
+                        <div class="rg-label-love" style="width: 150px;"><{$Think.lang._HINT_PHONE_BAR_CODE_}><a href="#"><{$Think.lang._HINT_APPLY_CODE_}></a></div>
+                        <span class="rg-field">
+                            <input id="rg-phonenumber" type="text" placeholder="<{$Think.lang._HINT_CODE_EG_}>">
+                        </span>
+                    </div>
+                    <input type="button" name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_CHANGE_SUBMIT_}>" class="btn btn-primary" id="rg-submit-third">
+                </div>
+
+            </div>
+
+            <!--第四状态-->
+            <div class="state-4 rg-none">
+                <div class="rg-area">
+                    <a class="intro_btn" href="__HOST_PATH__/Home/Buy/index">
+                        <{$Think.lang._ACCOUNT_SETTINGS_BUY_BTC_}>
+                        <i class="icon_right_arrow"></i>
+                    </a>
+                    <a class="intro_btn" href="__HOST_PATH__/Home/Index">
+                        <{$Think.lang._HINT_BTC_VALUE_}>
+                        <i class="icon_right_arrow"></i>
+                    </a>
+                    <a class="intro_btn" href="__HOST_PATH__/Home/Index">
+                        <{$Think.lang._HINT_ASK_FOR_BTC_}>
+                        <i class="icon_right_arrow"></i>
+                    </a>
+                    <a class="jump" href="__HOST_PATH__/Home/Index"><{$Think.lang._HINT_DIRECT_ENTER_WEB_}></a>
+                </div>
+            </div>
+
+            <img src="__PUBLIC__/images/register-background.png" class="rg-background">
+
+        </div>
+    </div>
+
+    <!--JS-->
+    <script>
+        // 区号下标
+        var areaIndex = 0;
+
+        /**
+         * init
+         */
+        var xyinit = function() {
+            // 生成区号选择器
+            var h = '';
+            for (var i=0; i<allCountries.length; i++) {
+                h += '<option value="'+ allCountries[i].iso2 +'">';
+                h += allCountries[i].name +'</option>';
+            }
+
+            $("#user_country").html(h);
+            $("#areaCode").text('+'+allCountries[areaIndex].dialCode);
+        }
+        xyinit();
+
+        /**
+         * 区号选择改变事件
+         */
+        $("#user_country").on('change', function() {
+            for (var i=0; i<allCountries.length; i++) {
+                if ($(this).val() == allCountries[i].iso2) {
+                    $("#areaCode").text('+'+allCountries[i].dialCode);
+                    areaIndex = i;
+                    return ;
+                }
+            }
+        });
+
+        //获取input焦点后显示提示
+        $('#rg-makesure-password').focus(function(){
+           $('.rg-password-confirm span:first-child').css({'display':'block'});
+           $('.rg-password-confirm span:nth-child(2)').css({'display':'none'});
+        });
+
+        $('#phone').focus(function(){
+            $('.rg-password-confirm span:first-child').css({'display':'block'});
+            $('.rg-password-confirm span:nth-child(2)').css({'display':'none'});
+        });
+
+
+        //第一状态
+        $('#rg-register-button').click (function() {
+            //设置新密码正则（必须包含至少一个大写字母、一个小写字母、一个数字）
+            var passReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
+            var setPassword = $('#rg-password').val();
+            var passConfirm = $('#rg-makesure-password').val();
+
+            if (setPassword == '' || !passReg.test(setPassword)) {
+                $('.rg-password-warn').css({'display':'block'});
+                return ;
+            }else {
+                $('.rg-password-warn').css({'display':'none'});
+            }
+
+            if (setPassword != passConfirm) {
+                $('.rg-password-confirm span:first-child').css({'display':'none'});
+                $('.rg-password-confirm span:nth-child(2)').css({'display':'block'});
+            }
+
+            if (setPassword == passConfirm) {
+                setPassword = hex_md5(config.verify_str + setPassword);
+
+                var nstr = nonceStr();
+                var sign = nstr + setPassword;
+
+                var u = config.host_path + '/Home/Email/step_1';
+                var d = {
+                    password : setPassword,
+                    email    : '<{$email}>',
+                    nonce_str: nstr,
+                    sign: hex_md5(sign)
+                };
+
+                $("#rg-register-button").attr('disabled', 'true');
+                $("#rg-register-button").val('<{$Think.lang._HINT_TRANSMITTING_}>');
+                $.post(u, d, function(res) {
+                    // 验证成功，进入第二个状态
+                    $("#rg-register-button").removeAttr('disabled');
+                    $("#rg-register-button").val('<{$Think.lang._HINT_FREE_REGISTER_}>');
+                    if (res.code == 0) {
+                        $('.state-1').css({'display':'none'});
+                        $('.state-2').css({'display':'block'});
+                        $('.rg-password-confirm span:first-child').css({'display':'none'});
+                        $('.rg-step-1 .rg-step-circle').css({'background':'#E54'});
+                        $('.rg-step-2 .rg-step-circle').css({'background':'#E54'});
+
+                    } else {
+                        alert("<{$Think.lang._HINT_REGISTER_FAILURE_}>");
+                    }
+                });
+            }
+
+        });
+
+        //第一状态设置密码变化颜色
+        $('#rg-password').keyup(function(){
+            var passLength = $('#rg-password').val().length;
+            if (passLength == 1) {
+                $('.rg-password-strength span').css({'background': '#ddd'});
+                $('.rg-password-strength span:first-child').css({'background': '#E54'});
+            }else if (passLength == 6) {
+                $('.rg-password-strength span').css({'background': '#ddd'});
+                $('.rg-password-strength span:first-child').css({'background': '#FFC'});
+                $('.rg-password-strength span:nth-child(2)').css({'background': '#FFC'});
+            }else if (passLength == 8) {
+                $('.rg-password-strength span').css({'background': '#ddd'});
+                $('.rg-password-strength span:first-child').css({'background': '#5AC'});
+                $('.rg-password-strength span:nth-child(2)').css({'background': '#5AC'});
+                $('.rg-password-strength span:nth-child(3)').css({'background': '#5AC'});
+            }else if (passLength == 12) {
+                $('.rg-password-strength span').css({'background': '#268'});
+                $('.rg-password-strength span:nth-child(5)').css({'background': '#ddd'});
+
+            }else if (passLength == 14) {
+                $('.rg-password-strength span').css({'background': '#090'});
+            }else if (passLength == 0) {
+                $('.rg-password-strength span').css({'background': '#ddd'});
+            }
+        });
+
+        //第二状态
+        $('#rg-submit-second').click(function(){
+            //手机号码正则
+            var phoneNumber = /^\d{6,20}$/;
+            var phoneNum = $("#phone").val();
+
+            if (phoneNum == '' || !phoneNumber.test(phoneNum)) {
+                $('.rg-password-confirm span:first-child').css({'display':'none'});
+                $('.rg-password-confirm span:nth-child(2)').css({'display':'block'});
+
+
+
+            }else {              
+                // 注册,验证手机号
+                var nstr = nonceStr();
+                var sign = nstr + phoneNum;
+
+                var u = config.host_path + '/Home/Email/step_2';
+                var d = {
+                    tel  : phoneNum,
+                    email: '<{$email}>',
+                    nonce_str: nstr,
+                    sign: hex_md5(sign)
+                };
+
+                // 电话号码加区号
+                d.tel = '+' + allCountries[areaIndex].dialCode + '-' + d.tel;
+
+                $("#rg-submit-second").attr('disabled', 'true');
+                $("#rg-submit-second").val('<{$Think.lang._HINT_TRANSMITTING_}>');
+                $.post(u, d, function(res) {
+                    $("#rg-submit-second").removeAttr('disabled');
+                    $("#rg-submit-second").val('<{$Think.lang._ACCOUNT_SETTINGS_CHANGE_SUBMIT_}>');
+
+                    if (res.code == 0) {
+                        stepLast();
+
+                    } else {
+                        alert('<{$Think.lang._HINT_BIND_FAILURE_}>');
+                    }
+                });
+            }
+        });
+
+        //跳过按钮
+        $('.overlap').click(function(){
+            stepLast();
+        });
+
+
+        //第三状态(暂时跳过)
+        $('#rg-submit-third').click(function(){
+            stepLast();
+        });
+
+        $('#invc-selector').change(function(){
+            var thisContent = $(this).val();
+            if (thisContent == '3J0002') {
+                $('.phoneBarcode').css({'display':'block'});
+                $('.loveCode').css({'display':'none'});
+            }else if (thisContent == 'NPOBAN') {
+                $('.phoneBarcode').css({'display':'none'});
+                $('.loveCode').css({'display':'block'});
+            }
+        });
+
+        // 最后一个状态
+        var stepLast = function() {
+            $('.state-1').css({'display':'none'});
+            $('.state-2').css({'display':'none'});
+            $('.state-3').css({'display':'none'});
+            $('.state-4').css({'display':'block'});
+            $('.rg-step-1 .rg-step-circle').css({'background':'#E54'});
+            $('.rg-step-2 .rg-step-circle').css({'background':'#E54'});
+            $('.rg-step-3 .rg-step-circle').css({'background':'#E54'});
+            $('.rg-step-4 .rg-step-circle').css({'background':'#E54'});
+        }
+    </script>
+
+</block>
+
+
+

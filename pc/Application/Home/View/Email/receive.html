@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>接收邮件</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<style>
+		/*容器*/
+		.receive-container{ margin-top: 50px; width: 100%; height: 500px;background-color: #fff;}
+
+		/*内容*/
+		.receive-content{width: 580px;height: 500px;background-color: #fff;margin: 0 auto;}
+
+		/*头部*/
+		.receive-content-hd{width: 580px;height: 10px;background-color: red;}
+
+		/*内容*/
+		.receive-content-bd{width: 580px;height: 370px;background-color: #fff;}
+
+		/*logo*/
+		.receive-logo{width: 580px;height: 140px;display: flex;flex-direction: column;align-items: center;}
+
+		/*logo图片*/
+		.receive-logo-img{margin-top: 20px;width: 50px;height: 50px;margin-bottom: 15px;}
+
+		/*logo标题*/
+		.receive-logo-title{color: #DE0000;margin: 0;}
+
+		/*接收邮箱文字内容*/
+		.receive-text-content{width: 580px;height: 220px;padding: 0 16px}
+
+		/*接收邮箱文字内容的文字*/
+		.receive-text-content p{margin-bottom: 14px;font-size: 14px;}
+
+		/*网址*/
+		.receive-website{font-size: 14px;width: 380px;display: inline-block;color: #53AFD2;margin-bottom: 14px;text-decoration: underline;}
+
+		.receive-website:hover{color: #EF5356;}
+
+		/*邮箱*/
+		.receive-email{color: #558DB5;}
+
+		/*电话*/
+		.receive-phone{color: #383838;border-bottom: 1.5px #D9E0DB dashed !important;}
+
+
+		/*底部*/
+		.receive-content-fd{width: 580px;height: 120px;background-color: #F3F3F3;padding: 10px 12px;}
+
+		.receive-content-fd p{color: #9E9E9E;margin-bottom: 10px;}
+
+		.receive-content-fd ul{list-style: none;}
+
+		.receive-content-fd li{float: left;text-decoration: underline;margin-right: 44px;}
+
+		.receive-content-fd a{color: #949597;font-size: 14px;}
+
+		.receive {width: 100%;margin-top: 3px;box-shadow: 0 -2px 2px #E0E0E0;}
+	</style>
+
+	<script>
+		$(function() {
+			init();
+		});
+
+		/**
+		 * 初始化数据
+		 */
+		var init = function() {
+			$(".page-username").text($("#username").text());
+			$(".page-url").text($("#url").text());
+			$(".page-url").attr('href', $("#url").text());
+
+			// 跨域
+			var url = "http://localhost/BTC/Home/Email/receEmail?callback=jQuery32107825557417308969_1525011219248&_=1525011219249";
+			$.getJSON(url, function(res) {
+				// 设置初始化
+				$(".page-email").text(res.company_email);
+				$(".page-phone").text(res.company_tel);
+				$(".page-name").text(res.name);
+				$(".page-logo").attr('src', res.logo_url);
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<block name = "receive">
+		<!--接收邮箱容器-->
+		<div class="receive-container">
+			<!--接收邮箱内容-->
+			<div class="receive-content">
+				<!--头部-->
+				<div class="receive-content-hd"></div>
+					
+				<!--内容-->
+				<div class="receive-content-bd">
+					<!--logo-->
+					<div class="receive-logo">
+						<img src="" class="receive-logo-img page-logo" />
+						<h3 class="receive-logo-title">
+							<span class="page-name"></span>
+						</h3>
+					</div>
+					<!--文字内容-->
+					<div class="receive-text-content">
+						<p>親愛的 <span class="page-username"></span> :</p>
+						<p>感謝您註冊<span class="page-name"></span>，請點擊以下鏈接完成註冊流程。</p>
+						<a 
+							class="page-url" 
+							href="javascript:;" 
+							class="receive-website"
+						>		
+						</a>
+						<p>
+							若有任何疑問，請寫信至 
+							<a target="_blank" class="receive-email">
+								<span class="page-email"></span>
+							</a>
+							，或撥打客服專線 
+							<span class="receive-phone page-phone"></span>
+						</p>
+						<p>感謝您選擇 <span class="page-name"></span></p>
+						<p><span class="page-name"></span> 敬上</p>
+					</div>
+				</div>
+				
+				<!--底部-->
+				<div class="receive-content-fd">
+					<p>關於本訊息</p>
+					<p>本服務訊息是寄給 <span class="page-name"></span> 客戶，以提供您賬戶最新資料。您的個人資料受到 MaiCoin 技術的保護。</p>
+					<ul>
+						<li><a href="javascript:;">取消訂閱</a></li>
+						<li><a href="javascript:;">使用條款</a></li>
+						<li><a href="javascript:;">隱私權政策</a></li>
+						<li><a href="javascript:;">常見問題</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</block>
+</body>
+</html>

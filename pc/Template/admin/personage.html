@@ -1,0 +1,319 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../Public/plug-in/layui/css/layui.css" />
+    <script type="text/javascript" src="../../../Public/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../Public/plug-in/layui/layui.js"></script>
+    <script src="../../../Public/js/config.js"></script>
+    <script src="../../../Public/js/md5.js"></script>
+
+    <style>
+        .container {width: 100%; position: relative; margin-top: 50px;}
+        .logo-div {width: 120px; height: 120px; float: left; text-align: center; border: 1px solid #ccc;}
+        .logo-img {width: 100px; height: 100px; cursor: pointer; position: relative; top: 50%; transform: translateY(-50%);}
+        .uptown {margin: 0 auto; width: 80%; position:relative; top:5%;}
+        .uptown>span {font-size: 13px; color: #505050; float: left; height: 80px;
+            display: inline-block; transform: translateY(50%); position: relative; left: 10px;
+            line-height: 135px;}
+        .layui-icon {margin-right: 5px;}
+        .edit, .editpass{font-size: 15px; color: blue; cursor: pointer; margin-left: 10px;}
+        .downtown {margin: 0 auto; width: 80%; margin-top: 30px;}
+        .margin>span{margin:15px 0 15px 20%;}
+        .layui-input {display: inline; width: 35%; position: relative; left: 10%; font-size: 13px;}
+        .layui-btn-normal{position:relative; left:68%; padding:0 30px 0 30px; margin: 30px 0 10px 0;}
+        .clear:before, .clear:after {clear: both; content: ""; display: block;}
+        .changepass {margin: 4% 0 0 10%;}
+        .savepass {margin: 3% 0 0 7%;}
+        .oldpass,.newpass,.surepass{margin-left:15%;}
+    </style>
+</head>
+<body>
+    <div class="container clear">
+        <div class="uptown clear">
+            <div class="logo-div">
+                <img class="logo-img" id="logo" src=""/>
+            </div>
+
+            <span>
+                <i class="layui-icon" style="font-size: 15px; color: #505050;">&#xe612;</i>
+                <span style="margin-right:20px;">用户名:
+                    <span class="user"></span>
+                </span>
+
+                <i class="layui-icon" style="font-size: 15px; color: #505050;">&#xe63b;</i>
+                <span>已绑定手机号:
+                    <span class="user_tel"></span>
+                </span>
+
+                <span class="edit">编辑信息</span>
+                <span class="editpass">修改密码</span>
+            </span>
+        </div>
+
+        <div class="downtown">
+            <div style="font-size: 20px; margin-left:5%;">认证信息</div>
+            <hr class="hr15"; />
+
+            <div class="margin">
+                <span>认证状态：</span>
+                <input id="status" type="text"  class="layui-input" disabled="disabled"/>
+                <hr class="hr15"; />
+
+                <!--<span>真实姓名：</span>-->
+                <!--<input id="name" type="text" class="layui-input" disabled="disabled"/>-->
+                <!--<hr class="hr15"; />-->
+
+                <span>系统名称：</span>
+                <input id="sys_name" type="text" class="layui-input" disabled="disabled"/>
+                <hr class="hr15"; />
+
+                <input class="layui-btn layui-btn-normal save" type="button" value="保存">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var html = '<div class="changepass">';
+        html += '<div class="oldpass">';
+        html += '原密码：　'
+        html += '<input type="password" class="layui-input" id="oldpass" placeholder="请输入原密码">';
+        html += '</div>';
+        html += '<hr class="hr15">';
+        html += '<div class="newpass">';
+        html += '新的密码：';
+        html += '<input type="password" class="layui-input" id="newpass" placeholder="请输入新密码">';
+        html += '</div>';
+        html += '<hr class="hr15" />';
+        html += '<div class="surepass">';
+        html += '确认密码：';
+        html += '<input type="password" class="layui-input" id="surepass" placeholder="请确认密码">';
+        html += '</div>';
+        html += '</div>';
+        html += '<button class="layui-btn layui-btn-normal savepass">保存</button>';
+
+    var qnToken;
+
+
+    // 编辑信息 修改系统名
+    $('.edit').click(function(){
+        // 打开输入框可输入
+        $('#name,#sys_name').removeAttr('disabled','disabled');
+
+        // 当点击编辑信息时，才可以修改
+        var index = 1;
+        if (index) {
+            saveSysName();
+        }
+    });
+
+    //保存
+    function saveSysName() {
+        $('.save').click(function(){
+
+            var url = HOST_PATH + '/Home/AgencyIndex/perInformation';
+            var data = {
+                sys_name: $('#sys_name').val()
+            };
+
+            layer.load(2);
+            $.ajax({
+                url: url,
+                data: data,
+                type: 'post',
+                success: function (res) {
+                    layer.closeAll();
+
+                    if (parseInt(res.code) == 0) {
+                        // 修改成功后，输入框禁用
+                        $('#name,#sys_name').attr('disabled','disabled');
+                        layer.msg("修改成功！", {icon: 1}, function (){
+                            // 刷新
+                            location.reload() || window.location.reload();
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    // 修改密码
+    layui.use('layer',function() {
+
+        var $ = layui.jquery, layer = layui.layer;
+        // 修改密码按钮
+        $('.editpass').click(function () {
+            layer.open({
+                type: '1',
+                title: [
+                    '修改密码',
+                    'background-color: #87ceeb; color:#fff;'
+                ]
+                ,area: ['500px','300px']
+                ,content: html
+            });
+            // 修改成功保存按钮
+            $('.savepass').on('click', function (){
+                changepass();
+            })
+        });
+
+    });
+
+    // 获取 tokey
+    var token_url = HOST_PATH + '/Home/AgencyIndex/qnToken';
+    $.ajax({
+        url: token_url,
+        type: 'get',
+        async: false,   // 同步
+        success: function (res_token) {
+            qnToken = res_token;
+        }
+    });
+
+    getInformation();
+    //个人信息
+    function getInformation(){
+        var url = HOST_PATH + "/Home/AgencyIndex/findPerson";
+
+        $.ajax({
+            url : url,
+            success: function (res) {
+
+                var re = res.data[0];
+
+                $('#logo').attr('src', re.logo);
+
+                $('.user').html(re.user);
+                $('.user_tel').html(re.user_tel);
+                $('#sys_name').val(re.sys_name);
+
+                if ( parseInt(re.status) == 0) {
+                    $('#status').val('正常使用');
+                    $('#status').css({'color': 'green'});
+                }  else if (parseInt(re.status) == 1) {
+                    $('#status').val('还未授权');
+                    $('#status').css({'color': 'red'});
+                } else {
+                    $('#status').val('封号');
+                    $('#status').css({'color': 'red'});
+                }
+            }
+        });
+    }
+
+    // 修改logo
+    layui.use('upload', function(){
+        var $ = layui.jquery,
+            upload = layui.upload,
+            qnurl = "https://up.qbox.me";	// 华东https，http://up.qiniu.com（http）
+            // qnurl = "http://up.qiniu.com";
+
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#logo',
+            url: qnurl,
+            data: {
+                token: qnToken
+            },
+            choose: function() {
+                layer.load(2);
+            },
+            done: function(res){
+                layer.closeAll();
+                console.log("success:", res);
+                //如果上传失败
+                if(res.code > 0){
+                    return layer.msg('上传失败，请重试！');
+                }
+                //上传成功
+                layer.msg("图片上传成功!");
+
+                updateLogo(res.key);
+
+            },
+        });
+    });
+
+    // 上传成功后修改logo
+    function updateLogo(key) {
+        var url = HOST_PATH + '/Home/AgencyIndex/modifiLogo';
+        var data = {
+            logo: key
+        };
+
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                console.log(res)
+                layer.closeAll();
+                if ( parseInt(res.code) == 0) {
+                    layer.msg(res.msg, {icon: 1}, function (){
+                        // 刷新
+                        location.reload() || window.location.reload();
+                    });
+                } else {
+                    layer.msg(res.msg, {icon: 2}, function (){
+                        // 刷新
+                        location.reload() || window.location.reload();
+                    });
+                }
+            }
+        });
+    }
+
+
+    //确认旧密码,修改新密码
+    function changepass(index) {
+        var oldpass = $('#oldpass').val();
+        var newpass = $('#newpass').val();
+        var surepass = $('#surepass').val();
+        var pass=/^[a-zA-Z0-9_-]{6,20}$/;
+
+        if(oldpass == '' || newpass =='' || surepass == '') {
+            layer.msg('输入的密码不能为空！', {icon: 2});
+            return ;
+        }
+
+        if( !pass.test(newpass) ) {
+            layer.msg("密码不合法!", { icon :2});
+            return ;
+        }
+        if (newpass != surepass) {
+            layer.msg("输入的两次密码不一致!", {icon: 2});
+            return ;
+        }
+        if (oldpass == newpass || oldpass == surepass) {
+            layer.msg("新密码和旧密码不能相同！", {icon: 2});
+            return ;
+        }
+
+        var url = HOST_PATH + '/Home/AgencyIndex/changepass';
+        var data = {
+            pass : hex_md5(VERIFY_STR + $('#oldpass').val()),
+            newpass : hex_md5(VERIFY_STR + $('#newpass').val())
+        }
+
+        $.ajax({
+            url : url,
+            data : data,
+            type : 'post',
+            success : function(res){
+                console.log(res);
+
+                if(parseInt(res.code) == 0) {
+                    layer.msg('修改成功！请重新登录', {icon: 1}, function (){
+                        parent.location.reload();
+                    });
+                 } else {
+                    layer.msg('原密码错误！修改失败', {icon: 2});
+                }
+            }
+        })
+    }
+
+
+
+</script>

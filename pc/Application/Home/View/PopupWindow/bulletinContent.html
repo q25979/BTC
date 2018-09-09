@@ -1,0 +1,47 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!-- 内容容器 -->
+    <div class="content-messagetip col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <br>
+        <h3 id="title"></h3>
+        <!--<div id="content_time"></div>-->
+        <div id="content"></div>
+
+    </div>
+
+    <script>
+        function GetRequest() {
+            var url = location.search;      //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+//        获取公告ID
+        var bulletin_id = GetRequest().bulletin_id;
+
+        var url = '__HOST_PATH__/Home/PopupWindow/getBulletinContent';
+        var data = {
+            bulletin_id: bulletin_id
+        };
+
+        $.get(url, data, function(res){
+            if (res != undefined && res.length != 0) {
+                console.log(res);
+                $('#title').html(res.data[0].title);
+                $('#content').html(sg.htmlShow(res.data[0].content));
+            }      
+        });
+
+    </script>
+</block>
+

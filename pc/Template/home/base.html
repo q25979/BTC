@@ -1,0 +1,139 @@
+<include file="Template/home/header.html" />
+<CSS href="__PUBLIC__/home/css/index.css" />
+<CSS href="__PUBLIC__/home/css/security/security.css" />
+<CSS href="__PUBLIC__/home/css/security/update.css" />
+<CSS href="__PUBLIC__/home/css/security/enable.css" />
+
+<CSS href="__PUBLIC__/home/css/sell.css" />
+
+<CSS href="__PUBLIC__/home/css/send/send.css" />
+<CSS href="__PUBLIC__/home/css/send/receive.css" />
+
+<CSS href="__PUBLIC__/home/css/dealDetails.css" />
+
+<CSS href="__PUBLIC__/home/css/buy.css" />
+
+<CSS href="__PUBLIC__/home/css/MessageTip.css" />
+
+<CSS href="__PUBLIC__/home/css/setting.css" />
+
+<CSS href="__PUBLIC__/home/css/WithdrawalDetail.css" />
+
+<style>
+	/*公告*/
+    #announcement {width: 128px;  background: #F5F5F5; position: fixed; top: 25%; box-shadow: 1px 3px 10px #ccc; z-index: 2; border-bottom-right-radius: 7px;}
+    #announcement-hd{width: 100%;height: 36px;background-image: url(__PUBLIC__/images/Popupblock.png);display: flex;justify-content: center;align-items: center; border-top-right-radius: 7px;}
+    .bull-title {font-size: 14px; color: #E6E6E6; padding: 0 6px 0 6px;}
+    .bull-close-left {position: absolute; right: 10px; top: 7px; font-weight: bold;font-size: 18px;}
+    .bull-close-left:hover {color: #fff; cursor: pointer;}
+    #announcement-bd {  overflow: hidden; }
+    .announcement-bd { width: 90%; padding: 5px 5px 5px 15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size: 12px;}
+    #announcement-info-box{width: 100%; margin-top: 0;}
+    #announcement-info-box ul{list-style: none;}
+    #announcement-info-box li{margin-bottom: 5px;}
+    @media all and (max-width: 770px) {
+        #announcement, .call-callCenter  {display: none !important;}
+    }
+    
+	/*客服*/
+    .call-callCenter {width: 180px; background: #F5F5F5; position: fixed; top:60%; right: 0; z-index: 1; border-bottom-left-radius: 7px; box-shadow: -1px 3px 10px #ccc;}
+    .call-fix {position: relative; display: flex;justify-content: center;align-items: center;}
+    .call-callCenter img{ position: absolute; top: 0; left: 0;}
+    .call-title {position: absolute; font-size: 14px; color: #E6E6E6; top: 3px; left: 70px;}
+    .call-close-right {position: absolute; left: 10px; top: 7px; outline:none; cursor: pointer; }
+    .call-close-right:hover {color: #fff; }
+    .call-qq-info { display: block; }
+    .call-qq-info span { font-size: 14px;}
+    #call_content { font-weight: bold; display: block; margin-top: 5px;  width: 160px;}
+
+</style>
+
+<body>
+<!-- 公告 -->
+	<div id="announcement" @mouseover="rollStop()" @mouseout="rollOpen()">
+	    <div id="announcement-hd">
+            <span class="bull-title"><{$Think.lang._HINT_BULLETIN_BOARD_}></span>
+            <div type="button" class="bull-close-left" @click="close()">&times;</div>
+        </div>
+       
+        <div id="announcement-bd">
+            <div id="announcement-info-box">
+                <ul>
+                    <li v-for="item in bulletinLit">
+                        <div class="announcement-bd"><a href="javascript:void(0)" @click = "getBulletinContent(item.bulletin_id)">{{ item.title }}</a></div>
+                        <div style="border-top: 1px dashed #ccc; width: 90%; margin-top: 5px;" ></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    	
+    	<js href="__PUBLIC__/home/js/bulletin.js" />
+        <script type="text/javascript">
+            //如果开启浮动就显示（公告）
+            var url = '__HOST_PATH__/home/PopupWindow/isBuClose';
+            $.get(url, function (res) {
+                if (res) {
+                    $('#announcement').css("display","block");
+                }
+            });
+        </script>
+	</div>
+    <!-- 客服 -->
+	<div class="call-callCenter" style="display: none">
+        <div class="call-fix" id="call-callCenter">
+            <div>
+                <img src="__PUBLIC__/images/Popupblock.png" style="border-top-left-radius: 7px; width: 180px;">
+                <span class="call-title"><{$Think.lang._CALL_CENTER_}></span>
+                <div type="button" class="call-close-right" id="call-close-right" onclick="callClose()">&times;</div>
+            </div>
+            <ul>
+                <div style="height: 38px;"></div>
+                <li class="call-qq-info" v-for="item in callCenterList">
+                    <span id="call_content" v-bind:title="item" > {{ item }} </span>
+                    <div style="border-top: 1px solid #ccc; width: 140px; margin-top: 10px;" ></div>
+                </li>
+            </ul>
+        </div>
+        <js href="__PUBLIC__/home/js/callCenter.js" />
+        <script type="text/javascript">
+            //如果开启浮动就显示（客服）
+            function callClose(){
+                $('.call-callCenter').animate({'right':'-200px'});
+            }
+
+            var url = '__HOST_PATH__/home/PopupWindow/isSvClose';
+            $.get(url, function (res) {
+                if (res) {
+                    $('.call-callCenter').css("display","block");
+                }
+            });
+
+        </script>
+    </div>
+
+
+    <div id="topFloat">
+    	<!-- 顶部 -->
+	    <include file="Template/home/top.html" />
+	
+	    <!-- 选项卡 -->
+	    <include file="Template/home/nav.html" />
+
+
+		<!--左右侧浮动窗-->
+			<div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+		    <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 26px;position: relative;overflow: -hidden;" >
+	
+				
+			    <!-- 侧边栏 -->
+				<include file="Template/home/sidebar.html" />
+		        <block name="content">content</block>
+		    </section>
+		</div>
+	    
+	    <footer>
+	        <include file="Template/home/footer.html" />
+	    </footer>
+    </div>
+</body>
+

@@ -1,0 +1,414 @@
+.container {
+    margin: auto;
+}
+
+/*隐藏*/
+.rg-none {
+    display: none;
+}
+
+/*显示*/
+.rg-block {
+    display: block;
+}
+
+.rg-box {
+    width: 600px;
+    height: auto;
+    margin: 40px auto 50px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 2px 2px 0 0;
+    border: 1px solid #eee;
+}
+
+/*第一状态*/
+.rg-small-box {
+    width: 600px;
+}
+
+.rg-registPro {
+    width: 100%;
+    margin-left: 22%;
+}
+
+.rg-step-1,
+.rg-step-2,
+.rg-step-3,
+.rg-step-4 {
+    display: table-cell;
+    position: relative;
+    padding: 24px;
+}
+
+.rg-step-circle {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background-color: #9E9E9E;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 12px;
+    color: white;
+}
+
+.rg-step-title {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(0,0,0,0.26);
+    text-align: center;
+}
+
+.rg-active-title {
+    font-weight: 500;
+    color: #000;
+}
+
+.rg-step-left {
+    right: 50%;
+    margin-right: 20px;
+    position: absolute;
+    left: 0;
+    top: 36px;
+    height: 1px;
+    border-top: 1px solid #BDBDBD;
+}
+
+.rg-step-right {
+    right: 0;
+    left: 50%;
+    margin-left: 20px;
+    position: absolute;
+    top: 36px;
+    height: 1px;
+    border-top: 1px solid #BDBDBD;
+}
+
+.rg-welcome {
+    font-size: 16px;
+    font-weight: normal;
+    color: #999;
+    text-align: center;
+}
+
+.rg-area {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.rg-label-pass,
+.rg-label-love {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 10px;
+    text-align: right;
+    line-height: 100%;
+    width: 120px;
+}
+
+#rg-password,
+#rg-makesure-password,
+#rg-number {
+    width: 320px;
+}
+
+input {
+    height: 40px;
+    line-height: 25px;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.rg-password-strength {
+    position: relative;
+    left: 205px;
+    top: -10px;
+    width: 54%;
+    height: 6px;
+}
+
+.rg-password-strength span {
+    display: inline-block;
+    height: 6px;
+    width: 54px;
+    margin-right: 2px;
+    background-color: #DDD;
+    text-align: left;
+    line-height: 23px;
+}
+
+.rg-password-strength .strength-0 {
+    background: #E54;
+}
+
+.rg-password-warn {
+    position: relative;
+    left: 205px;
+    margin-top: 10px;
+    display: none;
+}
+
+.rg-password-confirm {
+    position: relative;
+    left: 205px;
+    margin-top: 10px;
+}
+
+.rg-password-warn-font,
+.rg-password-confirm-font {
+    background: #F9E8E8;
+    color: #C30;
+    width: 300px;
+    padding: 8px 12px;
+    position: relative;
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    zoom: 1;
+}
+
+.rg-password-confirm-font {
+    background: #eee;
+    color: #666;
+    display: none;
+}
+
+.rg-warn {
+    background: #F9E8E8;
+    color: #C30;
+}
+
+.rg-dash {
+    width: 100%;
+    margin: 30px auto;
+    border-bottom: 1px dashed #ccc;
+}
+
+.rg-register-bottom {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.rg-register-bottom a:link {
+    text-decoration: none;
+}
+
+/*三大按钮*/
+#rg-register-button,
+#rg-submit-second,
+#rg-submit-third {
+    height: 42px;
+    line-height: 42px;
+    padding: 0 26px;
+    margin: 10px auto 20px auto;
+    display: block;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 0;
+    white-space: nowrap;
+    background: #286090;
+}
+
+.rg-background {
+    display: block;
+    width: 527px;
+    height: 49px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/*第二状态*/
+select {
+    width: 320px;
+    height: 40px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+    padding: 3px;
+    display: inline-block;
+}
+
+.rg-label-2,
+.rg-label-phone {
+    width: 100px;
+    margin-right: 10px;
+    line-height: 100%;
+    display: inline-block;
+}
+
+.state {
+    background: #EEE;
+    color: #666;
+    height: 31px;
+    line-height: 18px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.ipt-phone {
+    width: 265px;
+    line-height: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    background: #fff;
+    font-size: 18px;
+    color: #000;
+    margin-left: -5px;
+    margin-bottom: 14px;
+}
+
+.rg-center {
+    display:inline-block;
+}
+
+
+.lower-notice {
+    text-align: center;
+    width: 430px;
+    color: #999;
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+.overlap {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/*第三状态*/
+.notice {
+    display: inline-block;
+    position: relative;
+    width: 320px;
+    font-size: 12px;
+    color: #999;
+    margin: 0 0 0 135px;
+    text-align: left;
+}
+
+/*第四状态*/
+.intro_btn {
+    width: 79%;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+    padding: 14px 0;
+    background: #5ac;
+    color: #fff;
+    display: inline-block;
+}
+
+.intro_btn:hover {
+    background: rgb(68,153,187);
+    color: #fff;
+}
+
+.jump {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+    outline: none;
+}
+
+
+@media screen and ( max-width: 770px ) {
+
+    .rg-registPro {
+        display: none;
+    }
+
+    #rg-register-button,
+    #rg-submit-second,
+    #rg-submit-third {
+        width: 90%;
+    }
+
+    #rg-submit-third {
+        position: relative;
+        left: 3%;
+    }
+
+    .rg-label-pass,
+    .rg-label-love {
+        text-align: left;
+        display: block;
+        bottom: 0;
+        margin: 10px 0 10px 20px;
+    }
+
+    .rg-label-love,
+    .notice {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #rg-number,
+    #rg-phonenumber {
+        width: 77%;
+        margin-left: 4%;
+    }
+
+    #rg-password,
+    #rg-makesure-password,
+    .rg-background,
+    .rg-center {
+        width: 100%;
+    }
+
+    .rg-password-strength span {
+        width: 18%;
+        text-align: center;
+    }
+
+    .rg-password-strength {
+        position: inherit;
+        width: 100%;
+    }
+
+
+    .rg-password-warn,
+    .rg-password-confirm {
+        position: initial;
+    }
+
+    .rg-password-warn-font,
+    .rg-password-confirm-font {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /*第二状态*/
+
+    select{
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .rg-label-2 {
+        margin-bottom: 10px;
+    }
+
+    .ipt-phone {
+        display: inline-block;
+        width: 60%;
+    }
+
+}

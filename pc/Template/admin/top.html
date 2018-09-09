@@ -1,0 +1,220 @@
+<!--logo 样式-->
+<css href="__PUBLIC__/css/topLogo.css" />
+
+<js href="__JS__/md5.js" />
+
+<style>
+	.oldpass,.newpass,.surepass{font-size:16px; margin-left:15%; display:inline-block;}
+	.layui-input {display: inline; width: 65%; position: relative; left: 20%; border:1px solid #ddd; font-size:13px; }
+	.layui-btn-normal{position: relative; left: 60%; margin: 20px 0 0 0; width: 100px;}
+	.changepass {padding: 20px; }
+	.sg-btn { margin-right: 10px; }
+</style>
+
+<!-- 顶部开始 -->
+<div class="container">
+	<div class="logo">
+		<a href="#">后台管理系统</a>
+	</div>
+	<div class="left_open">
+		<i title="展开左侧栏" class="iconfont">&#xe699;</i>
+	</div>
+    
+	<ul class="layui-nav right" lay-filter="">
+		<button class="layui-btn" onclick="refresh()">
+			刷新
+		</button>
+		
+		<button class="layui-btn" onclick="informationHint()">
+			动态
+			<span id="hint" class="layui-badge-dot layui-bg-orange"></span>
+		</button>
+		<li class="layui-nav-item">
+			<a href="javascript:;">管理员</a>
+			<dl class="layui-nav-child" style="cursor:pointer;">
+				<!-- 二级菜单 -->
+				<dd><a onclick="modifyThePassword()">修改密码</a></dd>
+				<dd><a onclick="switchAdminAccount(1)">切换帐号</a></dd>
+				<dd><a onclick="switchAdminAccount(0)">退出</a></dd>
+			</dl>
+		</li>
+		<li class="layui-nav-item to-index"><a href=""></a></li>
+	</ul>
+</div>
+<!-- 顶部结束 -->
+
+<script>
+	$(function() {
+		init();
+	});
+
+	var init = function() {
+		var u = '__HOST_PATH__/Admin/Index/init';
+
+		$.get(u, function(res) {
+			if (parseInt(res.count) == 0) return ;
+			if (parseInt(res.count) > 0) {
+				$('.withdraw').addClass('layui-badge');
+				$('.withdraw').text(res.count);
+			}
+			
+			if (parseInt(res.count) > 99) {
+				$('.withdraw').text('99+');
+			}
+		});
+	}
+
+	/**
+	 * 提现消息提示
+	 */
+	var withdrawMessgae = function() {
+		layer.alert("请您到提现管理下的提现列表进行处理", {
+	       btn: [ '我知道了']
+	    });
+	    $('#hint').hide();
+	}
+
+	/**
+	 * 刷新
+	 */
+	var refresh = function() {
+		window.parent.location.reload();
+	}
+
+	var html = '<div class="changepass">';
+		html += '<div class="oldpass">';
+		html += '原密码：　'
+		html += '<input type="password" class="layui-input" id="oldpass" placeholder="请输入原密码">';
+		html += '</div>';
+		html += '<hr class="hr15">';
+		html += '<div class="newpass">';
+		html += '新的密码：';
+		html += '<input type="password" class="layui-input" id="newpass" placeholder="请输入新的密码">';
+		html += '</div>';
+		html += '<hr class="hr15" />';
+		html += '<div class="surepass">';
+		html += '确认密码：';
+		html += '<input type="password" class="layui-input" id="surepass" placeholder="请确认密码">';
+		html += '</div>';
+		html += '<div><button class="layui-btn layui-btn-normal savepass">保存</button></div>';
+		html += '</div>';
+
+	// 修改密码
+	function modifyThePassword(){
+		layer.open({
+			type: 1,
+			title: "修改密码",
+			area: ['30%', '40%'], //宽高
+			resize: false,
+			content: html
+		});
+		// 修改密码保存按钮
+		$('.savepass').on('click', function (){
+			changepass();
+		})
+	}
+
+	// 消息提示
+	function informationHint(){
+		var url = "__HOST_PATH__/Admin/Index/informationHint";
+	 	$.get(url,function(res){
+	 	//配置一个透明的询问框
+		    layer.msg("您还有"+res.countOrder+"个待提交订单和"+res.countSend+"个待提交发送单未处理！", {
+			       time: 20000, //20s后自动关闭
+			       btn: [ '知道了']
+		    });
+		    $('#hint').hide();
+	 	});
+	}
+
+	// 切换账号 退出
+	function switchAdminAccount(id) {
+
+		if (id) {
+			var msg = '切换';
+		} else {
+			msg = '退出';
+		}
+		layer.open({
+			title: "提示",
+			content: "确定要"+ msg +"当前账号吗？",
+			btn: ["确定", "取消"],
+			yes: function (res) {
+				var url = "__HOST_PATH__" + "/Admin/Index/logout";
+
+				layer.load(2);
+				$.ajax({
+					url: url,
+					type: 'get',
+					success: function (res) {
+						layer.closeAll();
+						if(parseInt(res.code) == 0) {
+							layer.msg( msg + "成功!", {icon: 6}, function (){
+								location.reload() || window.location.reload();
+							});
+						}
+					}
+				});
+			}
+		})
+	}
+
+	//修改新密码
+	function changepass () {
+
+		// 获取原密码，新密码，确认密码
+		var oldpass = $('#oldpass').val();
+		var newpass = $('#newpass').val();
+		var surepass = $('#surepass').val();
+
+		// 正则判断密码是否合法
+		var pass=/^[a-zA-Z0-9_-]{6,20}$/;
+
+		if(oldpass == '' || newpass =='' || surepass == '') {
+			layer.msg('输入的密码不能为空！', {icon: 2});
+			return ;
+		}
+
+		if( !pass.test(newpass) ) {
+			layer.msg("密码不合法!", { icon :2});
+			return ;
+		}
+		if (newpass != surepass) {
+			layer.msg("输入的两次密码不一致!", {icon: 2});
+			return ;
+		}
+		if (oldpass == newpass || oldpass == surepass) {
+			layer.msg("新密码和旧密码不能相同！", {icon: 2});
+			return ;
+		}
+
+		// 请求链接 请求数据
+		var url = "__HOST_PATH__" + "/Admin/Index/changepass";
+		var data = {
+			pass_word : hex_md5("__VERIFY_STR__" + $('#oldpass').val()),
+			newpass : hex_md5("__VERIFY_STR__" + $('#newpass').val())
+		}
+		console.log(data);
+
+		layer.load(2);
+		// 数据请求
+		$.ajax({
+			url : url,
+			data : data,
+			type : 'post',
+			success : function(res){
+				console.log(res);
+				layer.closeAll();
+
+				if(parseInt(res.code) == 0) {
+					layer.msg('修改成功！请重新登录！', {icon: 1}, function(){
+						// 刷新
+						location.reload();
+					})
+				}else{
+					layer.msg('原密码错误！修改失败', {icon : 2});
+				}
+			}
+		})
+	}
+</script>

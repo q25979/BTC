@@ -1,0 +1,52 @@
+{include file="head" /}
+
+<script>
+var pay_type = '';
+var wxpay_info = '';
+var returnrul = "{:url('user/index')}";
+</script>
+
+<style>
+.scroll-content{
+    overflow: scroll
+}
+</style>
+
+<body ng-app="starter" ng-controller="AppCtrl" class="navbar grade-a platform-browser platform-ios platform-ios9 platform-ios9_1 platform-ready">
+
+<ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-tabs class="tabs-icon-top navbar pane tabs-bottom tabs-standard" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);"><div class="tab-nav tabs">
+
+
+<a href="/"  class="iconfont icon--6 tabnone tab-item " style=""><span class="tab-title ng-binding" >商品行情</span></a>
+<a href="{:url('order/hold')}" class="iconfont icon--7 tabnone tab-item" style=""><span class="tab-title ng-binding" >交易记录</span></a>
+<a href="{:url('user/index')}"  class="iconfont icon--8 tabnone tab-item tab-item-active" style=""><span class="tab-title ng-binding" >个人账户</span></a>
+
+</div>
+
+    <ion-nav-bar class="bar-stable headerbar nav-bar-container" nav-bar-transition="ios" nav-bar-direction="swap" nav-swipe="">
+
+    	<div class="nav-bar-block" nav-bar="active">
+    		<ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center">
+    			<div class="title title-center header-item" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">推广二维码</div>
+    		</ion-header-bar>
+    	</div>
+    </ion-nav-bar>
+
+    <ion-content class="personalbg scroll-content ionic-scroll scroll-content-false  has-header has-tabs" scroll="false">
+        <div class="ercodes">
+        <img src="http://pan.baidu.com/share/qrcode?w=240&h=240&url={$oid_url}" alt="" >
+        </div>
+    </ion-content>
+
+    </ion-tabs>
+</ion-nav-view>
+
+</body>
+</html>
+<div id="zypay_post"></div>
+<script src="__HOME__/js/lk/user.js"></script>
+<script src="__HOME__/js/lk/jquery.qrcode.js"></script>
+<script src="__HOME__/js/lk/utf.js"></script>
+<script>
+
+</script>

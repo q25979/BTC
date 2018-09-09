@@ -1,0 +1,133 @@
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+/*容器*/
+.receive-container{
+	margin-top: 50px;
+	width: 100%;
+	height: 500px;
+	background-color: #fff;
+}
+
+/*内容*/
+.receive-content{
+	width: 580px;
+	height: 500px;
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+/*头部*/
+.receive-content-hd{
+	width: 580px;
+	height: 10px;
+	background-color: red;
+}
+
+/*内容*/
+.receive-content-bd{
+	width: 580px;
+	height: 370px;
+	background-color: #fff;
+}
+
+/*logo*/
+.receive-logo{
+	width: 580px;
+	height: 140px;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	align-items: center;
+}
+
+/*logo图片*/
+.receive-logo-img{
+	margin-top: 20px;
+	width: 50px;
+	height: 50px;
+	margin-bottom: 15px;
+}
+
+/*logo标题*/
+.receive-logo-title{
+	color: #DE0000;
+	margin: 0;
+}
+
+/*接收邮箱文字内容*/
+.receive-text-content{
+	width: 580px;
+	height: 220px;
+	padding: 0 16px;
+}
+
+/*接收邮箱文字内容的文字*/
+.receive-text-content p{
+	margin-bottom: 14px;
+	font-size: 14px;
+	/*font-weight: bold;*/
+}
+
+/*网址*/
+.receive-website{
+	font-size: 14px;
+	width: 380px;
+	display: inline-block;
+	color: #53AFD2;
+	margin-bottom: 14px;
+	text-decoration: underline;
+}
+
+.receive-website:hover{
+	color: #EF5356;
+}
+
+/*邮箱*/
+.receive-email{
+	color: #558DB5;
+}
+
+/*电话*/
+.receive-phone{
+	color: #383838;
+	border-bottom: 1.5px #D9E0DB dashed !important;
+}
+
+
+/*底部*/
+.receive-content-fd{
+	width: 580px;
+	height: 120px;
+	background-color: #F3F3F3;
+	padding: 10px 12px;
+}
+
+.receive-content-fd p{
+	color: #9E9E9E;
+	margin-bottom: 10px;
+}
+
+.receive-content-fd ul{
+	list-style: none;
+}
+
+.receive-content-fd li{
+	float: left;
+	text-decoration: underline;
+	margin-right: 44px;
+}
+
+.receive-content-fd a{
+	color: #949597;
+}
+
+.receive {
+	width: 100%;
+	margin-top: 3px;
+	box-shadow: 0 -2px 2px #E0E0E0;
+}
+

@@ -1,0 +1,197 @@
+<include file="Template/home/header.html" />
+<css href="__PUBLIC__/home/css/contactUs.css" />
+
+<body>
+	<!-- 顶部 -->
+	<include file="Template/home/top.html" />
+
+	<!-- 选项卡 -->
+	<include file="Template/home/nav.html" />
+	<section>
+	    <block name="content">
+	    	<nav style="background: url(__PUBLIC__/images/one.png) no-repeat; width: 100%; background-size: 100% 100%;">
+				<div class="contact-us">
+					<p><{$Think.lang._CONTACT_US_}></p>
+				</div>
+			</nav>
+			<div id="page">
+				<form method="POST" enctype="multipart/form-data" action="__HOST_PATH__/Demo/ContactUs/getInfo" accept-charset="utf-8">
+
+					<!--交易 ID-->
+					<label for=""><{$Think.lang._CONTACT_ORDER_ID_}></label><br />
+					<input type="text" class="input-contactus" id="transactionId" /><br />
+
+					<!--Email-->
+					<div class="field-block">
+					<label for=""><{$Think.lang._CONTACT_EMAIL_}></label><br />
+					<input type="text" class="input-contactus" id="Email" /><br />
+					  <span class="tip-below-wrapper ticket-email-msg tip-error " style="display: none;">
+                    	<span id="ticket-email-prompt" class="tip-below-msg" >
+                    	您輸入的 Email 地址無效
+					    </span>
+					  </span>
+					</div>
+
+					<!--姓名-->
+                    <div class="field-block">
+                    <label for=""><{$Think.lang._CONTACT_FULL_NAME_}></label><br />
+					<input type="text" class="input-contactus" id="name" /><br />
+					   <span class="tip-below-wrapper ticket-name-msg tip-error " style="display: none;">
+                    	<span id="ticket-name-prompt" class="tip-below-msg" >
+                    	請填寫此欄位
+					    </span>
+					  </span>
+                    </div>
+					
+					<!--主题-->
+                    <div class="field-block">
+                       <label for=""><{$Think.lang._CONTACT_SUBJECT_}></label><br />
+					   <input type="text" class="input-contactus" id="theme" /><br />
+					   <span class="tip-below-wrapper ticket-theme-msg tip-error " style="display: none;">
+                    	<span id="ticket-theme-prompt" class="tip-below-msg" >
+                    	請填寫此欄位
+					    </span>
+					  </span>
+                    </div>
+
+					<!--内容-->
+                    <div class="field-block">
+                        <label for=""><{$Think.lang._CONTACT_MESSAGE_}></label><br />
+					    <textarea name="" rows="" cols="" class="content" id="content"></textarea>
+					    <span class="tip-below-wrapper ticket-content-msg tip-error " style="display: none;">
+                    	<span id="ticket-content-prompt" class="tip-below-msg" >
+                    	請填寫此欄位
+					    </span>
+					  </span>
+                    </div>
+
+					<!--附件-->
+					<label for="" id="chance"><{$Think.lang._CONTACT_ATTACHMENT_}></label><br />
+					<input type="file" class="input-contactus" id="additional" name="photo" />
+                    <div id="filename" style="display: none;"></div>
+
+                    <!--按钮-->
+					<div><{$Think.lang._CONTACT_VER_}></div>
+					<input type="submit" id="last" value="<{$Think.lang._CONTACT_SUBMIT_}>" />
+				</form>
+
+				<div class="conduction">
+					<span style="color: #999;">FAQ</span>
+					<p><{$Think.lang._CONTACT_FAQ_TIPS_TOP_}><a href="#" style="color: #4997C8;"><{$Think.lang._CONTACT_QUESTIONS_}></a><{$Think.lang._CONTACT_FAQ_TIPS_DOWN_}></p>
+					<p>营业时间: <span id="service_time"></span></p>
+                    <p>电话: <span id="company_tel"></span></p>
+                    <p>信箱: <span id="company_email" style="color: #4997C8;"></span></p>
+					<p style="color: #F38676;"><{$Think.lang._CONTACT_TIPS_}></p>
+				</div>
+				<div class="fd"></div>
+			</div>
+			<div></div>
+		</block>
+	</section>
+
+	<footer>
+		<include file="Template/home/footer.html" />
+	</footer>
+
+	<script>
+
+		$('#last').click(function(){
+
+            var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+
+            if(Email == '' || !emailReg.test(Email)) {
+                $('.ticket-email-msg').css({'display':'block'});
+            }else{
+            	$('.ticket-email-msg').css({'display':'none'});
+            }
+
+            if(name == '') {
+                $('.ticket-name-msg').css({'display':'block'});
+            }else{
+            	$('.ticket-name-msg').css({'display':'none'});
+            }
+
+            if(theme == '') {
+                $('.ticket-theme-msg').css({'display':'block'});
+            }else{
+            	$('.ticket-theme-msg').css({'display':'none'});
+            }
+
+            if(content == '') {
+                $('.ticket-content-msg').css({'display':'block'});
+            }else{
+            	$('.ticket-content-msg').css({'display':'none'});
+            }
+
+            var topic = $('#theme').val();
+            var transactionId = $('#transactionId').val();
+            var Email = $('#Email').val();
+            var name = $('#name').val();
+            var content = $('#content').val();
+            var filestatus = 0;
+
+            //获取上传的文件的名字、类型、大小
+            var fp = $("#additional");
+            var lg = fp[0].files.length; // get length
+            var items = fp[0].files;
+
+            if (lg > 0) {
+                for (var i = 0; i < lg; i++) {
+                    var fileName = items[i].name; // get file name
+                    var fileSize = items[i].size; // get file size
+                    var fileType = items[i].type; // get file type
+                    $("#filename").append(fileName);
+                }
+            }
+
+            if(transactionId == '') {
+                transactionId = 0;
+            }
+
+            if( $('#filename').text() == '' ) {
+                filestatus = 0;
+            }else {
+                filestatus = 1;
+            }
+
+            console.log('file', items);
+            //获取用户发送的问题和内容
+            var url_getinfo = '__HOST_PATH__/Home/ContactUs/getInfo';
+            var data_getinfo = {
+                user_id: '10000000000000000000000000000001',
+                system_order: transactionId,
+                email: Email,
+                name: name,
+                topic: topic,
+                content: content,
+                file_status: filestatus
+            };
+
+            $.ajax({
+                url: url_getinfo,
+                data: data_getinfo,
+                type: 'post',
+                success: function(res){
+                    console.log(res);
+                }
+            });
+
+        });
+
+		//获取联系我们信息
+		var url_getcontactus = '__HOST_PATH__/Home/Login/getContactUs';
+		$.ajax({
+			url: url_getcontactus,
+			type: 'post',
+			success:function (res) {
+				$('#service_time').text(res.service_time);
+				$('#company_tel').text(res.company_tel);
+				$('#company_email').text(res.company_email);
+			}
+		});
+
+
+
+	</script>
+
+</body>

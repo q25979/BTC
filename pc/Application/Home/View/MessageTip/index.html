@@ -1,0 +1,38 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!-- 内容容器 -->
+    <div class="content-messagetip col-lg-8 col-md-8 col-sm-8 col-xs-12" id="notifications">
+        <h3><{$Think.lang._HINT_MSG_TIPS_}></h3>
+        <ol class="notifications">
+            <div class="item-messagetip">
+                <li v-for="(item, index) in notificationsLit">
+                    <span class="time">[{{ item.create_time }}]</span>
+                    <span><a id="tw_lang" class="messageTitle" @click="messageTip(index)" href="#">{{ item.title }}</a></span>
+                </li>
+            </div>
+        </ol>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination messagePagenum">
+                <li>
+                    <a aria-label="Previous" >
+                        <span id="messageprev"><{$Think.lang._HINT_PAGE_UP_}></span>
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="Next">
+                        <span id="messageNext"><{$Think.lang._HINT_PAGE_DOWN_}></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <js href="__PUBLIC__/home/js/MessageTip.js" />
+</block>
+

@@ -1,0 +1,361 @@
+/*内容容器*/
+.content-send{
+	width: 72%;
+	background-color: #fff;
+	float: right;
+	padding: 10px 40px 30px 40px;
+    border-left: 1px solid #ECF0F2;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+input {
+	vertical-align: middle;
+	outline: none;
+	height: 40px;
+	line-height: 25px;
+	font-size: 14px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+
+/*头部标签页*/
+.buy-tab{
+    padding-left: 34px;
+    border-bottom: 1px solid #ddd;
+    height: 46px;
+}
+
+/*选项卡1*/
+.tab1{
+    width: 25%;
+    height: 46px;
+    float: left;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+    margin-right: 10px;
+}
+
+/*选项卡2*/
+.tab2{
+    width: 25%;
+    height: 46px;
+    float: left;
+    border: 1px solid #ddd;
+    background-color: #F0EFEE;
+}
+
+/*控制选项卡1和选项卡2内容居中*/
+.buy-tab div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*购买比特币*/
+.buy-BTC {
+    font-size: 18px;
+    color: #000 ;
+}
+
+/*修改默认hover事件*/
+.buy-BTC:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*购买以太币*/
+.buy-ETC{
+    font-size: 18px;
+    color: #666;
+
+}
+/*修改默认hover事件*/
+.buy-ETC:hover{
+    text-decoration: none;
+    color: #666;
+}
+
+/*第一状态*/
+/*余额*/
+
+.send-dep {
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.point {
+	color: #ddd;
+	font-size:25px;
+	margin-top: -30px;
+	position: relative;
+	top: 4px;
+}
+
+.available-coin,
+.send-all,
+.buy-more {
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+#email-field,
+#id-field,
+#email-field-other,
+#id-field-other {
+	margin-top: 20px;
+	width: 70%;
+    margin-right: 10%;
+}
+
+/*警告框*/
+.tip-below {
+	padding: 8px 12px;
+	display: block;
+	font-size: 12px;
+	border-radius: 2px;
+	background: #F9E8E8;
+	color: #C30;
+	width: 70%;
+	margin-top: 10px;
+}
+
+/*添加图片*/
+
+
+.form-group-send {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+	position: relative;
+	margin-top: 20px;
+}
+
+.currency-pill-icon{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+
+/*金钱转换*/
+.widget-coin-field,
+.widget-coin-twd {
+	height: 45px;
+	font-size: 18px;
+	display: block;
+	margin-left: 0;
+	padding-left: 10px;
+	width: 260px;
+	transition: background-color 1s ease-in-out;
+}
+
+.currency-pill-inner {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	padding: 1px 2px;
+	right: 10px;
+	bottom: 14px;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 3px;
+	color: white;
+	background-color: #CCC;
+}
+
+.icon-left-right-arrows {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+	bottom: 12px;
+	margin-right: 0;
+	background-position: -98px -93px;
+}
+
+.notes {
+	height: 60px;
+	width: 550px;
+
+}
+textarea {
+	resize: none;
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	overflow: auto;
+	vertical-align: top;
+}
+
+#submit-send-form,#submit-send-other{
+    width: 140px;
+    font-size: 18px;
+    background: #DDD;
+    color: #FFF;
+    box-shadow: inset 0 -3px 0 #AAA;
+    border: none;
+    margin-top: 20px;
+	outline:none;
+    opacity: 1;
+}
+
+.notes-list {
+	display: block;
+	padding-left: 15px;
+    font-size: 12px;
+    line-height: 135%;
+    list-style: disc;
+    color: #666;
+}
+
+.dash {
+	margin: 30px 0;
+	border-top: 1px dashed #ccc;
+	width: 90%;
+}
+
+.title {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.ques li {
+	color: #999;
+	margin-bottom: 3px;
+	margin-left: 15px;
+	list-style-type: disc;
+	list-style-position: inside;
+	text-indent: -1em;
+}
+
+.ques a {
+	color: #999;
+
+}
+
+/*公共样式*/
+.send-area-dep {
+	margin: 20px 0 0 0;
+	width: 550px;
+}
+
+.send-area-dep>p {
+	margin: 0;
+	clear: left;
+}
+
+.highlight {
+	color: #E54 !important;
+}
+
+@media (min-width: 771px) and (max-width: 891px) {
+	/*输入框缩小变满*/
+	.form-field,
+	#submit-send-form,
+	#submit-send-other,
+	#email-field,
+	#email-field-other,
+	#id-field,
+	#id-field-other,
+	#notes-field,
+	#notes-field-other,
+	.form-group-send,
+	.send-area-dep {
+		width: 100% !important;
+	}
+
+
+	input,
+	textarea,
+	.send-area-dep,
+	.form-group {
+		width: 100%;
+	}
+
+	.icon-left-right-arrows {
+		display: none;
+	}
+}
+
+/*小屏幕自适应*/
+@media (max-width: 770px) {
+	/*内容容器*/
+	.content-send {
+		width: 100%;
+        padding: 0 16px 30px;
+        margin-top: 46px;
+		border-left: none;
+	}
+
+	/*警告框*/
+	.tip-below {
+		width: 100%;
+	}
+
+    /*修改总容器的左内边距*/
+    .buy-tab{
+        padding-left:4% !important;
+    }
+
+    /*选项卡1*/
+    .tab1{
+        width: 46% !important;
+    }
+
+    /*选项卡2*/
+    .tab2{
+        width: 46% !important;
+    }
+
+    /*输入框缩小变满*/
+    .form-field,
+    #submit-send-form,
+    #submit-send-other,
+    #email-field,
+    #email-field-other,
+    #id-field,
+    #id-field-other,
+    #notes-field,
+    #notes-field-other,
+    .form-group-send,
+    .send-area-dep {
+		width: 100% !important;
+	}
+
+
+    input,
+    textarea,
+    .send-area-dep,
+    .form-group {
+        width: 100%;
+    }
+
+    .icon-left-right-arrows {
+        display: none;
+    }
+    #email-field,#id-field{
+    	margin-right: 0px;
+    }
+
+
+}
+
+
+/*平板自适应*/
+@media (max-width: 992px) {
+    /*选项卡1*/
+    .tab1{
+        width: 30%;
+    }
+
+    /*选项卡2*/
+    .tab2{
+        width: 30%;
+    }
+}
+

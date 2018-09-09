@@ -1,0 +1,541 @@
+.max-width {
+    max-width: 1200px !important;
+}
+.btc-txc64 {
+    color: #646464;
+}
+.btc-txc96 {
+    color: #969696;
+}
+
+.container-login {
+    width: 100%;
+    /*background: #013878;*/
+    background-repeat: no-repeat, repeat-x;
+    background-size: cover;
+    background-position: center
+}
+.banner {
+    min-height: 420px;
+    position: relative;
+    margin: 0 auto;
+}
+.col-md-12, .col-xs-12, .col-sm-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.login {
+    position: absolute;
+    top: 50px;
+    right: 90px;
+}
+ul, li {
+    list-style:none
+}
+#sh_tab {
+    width:320px;
+    position:relative;
+}
+#sh_tab .tab_menu {
+    width:100%;
+    float:left;
+    position:absolute;
+    z-index:1;
+    padding: 0;
+}
+#sh_tab .tab_menu>li {
+    float:left;
+    width:50%;
+    height:50px;
+    line-height:50px;
+    border: 1px solid #6B6E72;
+    cursor:pointer;
+    text-align:center;
+    background:#051C34;
+    color:#FFFFFF;
+    font-size:16px;
+}
+#sh_tab .tab_menu>li:nth-child(1) {
+    border-right: 0 !important;
+}
+#sh_tab .tab_box {
+    width:320px;
+    clear:both;
+    top:50px;
+    position:relative;
+    background:#012248;
+    color:#fff;
+    font-size:16px;
+    border-top: 0 !important;
+    border: 1px solid #6B6E72;
+}
+#sh_tab .tab_box input{font-size:14px;}
+#sh_tab .tab_menu .selected {
+    cursor:pointer;
+    background: #012248;
+    color:#fff;
+    font-size:16px;
+    border-bottom: 0 !important;
+}
+.sh_hide {
+    display:none;
+}
+.tab_box div {
+    padding: 10px 10px;
+}
+#sh_tab input[type=text], #sh_tab input[type=password] {
+    width:258px;
+    height:40px;
+    padding:0px 15px;
+    border:1px solid rgba(0, 0, 0, .15);
+    color:#000000;
+    font-size:16px;
+    background: #fff;
+}
+#sh_tab a {
+    font-size: 15px;
+    align: left;
+    color: #fff;
+}
+#sh_tab .lock {
+    float: right;
+}
+button{
+    cursor:pointer;
+    width:100%;
+    height:40px;
+    padding:0;
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0, 0, 0, .1);
+    background: #55AACC;
+}
+input:focus {
+    outline:none;
+    box-shadow:0 2px 3px 0 rgba(0, 0, 0, .1) inset, 0 2px 7px 0 rgba(0, 0, 0, .2)
+}
+.btn {
+    font-size:17px !important;
+}
+.sh-hint {
+    position: absolute;
+    width: 256px;
+    height: 40px;
+    background: #F9E8E8;
+    right: 275px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000;
+    font-size: 13px;
+    margin-top: 2px;
+    display: none;
+}
+
+
+/*注册按钮手型*/
+#login-re {
+    cursor: pointer;
+}
+
+/*手机端登录页面二维码*/
+#QRCode-login-phone{
+	display: none;
+}
+
+/*电脑端登录二维码*/
+#QR-code-PC{
+	position: absolute;
+	left: 23px;
+	top: 150px;
+	width: 620px;
+	/*background-color: white;*/
+	/*border: 5px solid #fff;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+}
+
+#QR-code-PCBOX{
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+
+/**/
+@media screen and (max-width: 770px) {
+    .banner {
+        width: 100%;
+        min-height: 630px;
+        background-image: url(../../images/bannerPhone.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center
+    }
+    .login {
+        display: none;
+    }
+
+    .login-small {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        top: 300px;
+    }
+    .login-small-input {
+        /*display: none;*/
+    }
+    .login-small .input {
+        width: 100%;
+        height:35px;
+        padding: 0 15px;
+        margin: 15px 0;
+        border:1px solid rgba(0, 0, 0, .15);
+        color:#000000;
+        font-size:14px;
+        background: #fff;
+    }
+    .login-btn button {
+        margin-top: 10px;
+        height: 35px;
+    }
+
+    .login-small a {
+        font-size: 15px;
+        color: #000;
+        position: relative;
+        top: 10px;
+    }
+    .login-small .lock {
+        float: right;
+    }
+    .login-btn-re {
+        width: 30%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 15px;
+        margin: 0 auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+
+    .re-small {
+        position: relative;
+        top: 30px;
+        display: none;
+    }
+    .re-small span {
+        color: #000;
+    }
+    .re-small-btn button {
+        margin: 5px 0;
+    }
+
+    .forget-pwd-small {
+        position: relative;
+        top: 50px;
+        display: none;
+    }
+
+    .sh-small-hint {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 5px;
+        background: #F9E8E8;
+        color: #CC3300;
+        margin-bottom: 5px;
+        padding-left: 5px;
+        display: none;
+    }
+    
+    /*电脑端登录页面二维码*/
+    #QR-code-PC{
+    	display: none;
+    }
+    
+    /*手机端登录页面二维码*/
+    #QRCode-login-phone{
+		width: 100%;
+    	/*margin: 10px auto;*/
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+    	border-top: 1px solid #3388bb;
+    	border-bottom: 1px solid #3388bb;
+    }
+    
+    #QRCode-login-phone-BOX{
+    	margin-top: 10px;
+    	display: flex;
+    	flex-direction: row;
+    	justify-content: center;
+    	align-items: center;
+    }
+    
+    .QRCode-login-phone-img{
+    	width: 150px;
+    	height: 150px;
+		border: 5px solid #3388BB;
+    }
+
+}
+@media screen and (min-width: 320px) {
+    .re-small {
+        top: 30px;
+    }
+}
+@media screen and (min-width: 770px) {
+    .login-small {
+        display: none;
+    }
+}
+
+
+/* 忘记密码 */
+.forget-pwd {
+    display: none;
+}
+.forget-pwd .stu_login_error {
+    padding: 0;
+}
+
+/* 服务 */
+.container-service {
+    min-height: 300px;
+}
+.container-service .container-service-group {
+    margin: 0 auto;
+    text-align: center;
+}
+.container-service .service {
+    padding: 50px 0;
+}
+.container-service .service .integration {
+    margin: 0 auto;
+}
+.container-service .service .caption {
+    margin: 0 auto;
+    width: 100% !important;
+    position: relative;
+    top: 20px;
+}
+
+@media screen and (max-width: 770px) {
+    .container-service {
+        min-height: 360px;
+    }
+    .container-service {
+        margin-top: 10px;
+    }
+    .container-service .service {
+        width: 100% !important;
+        height: 120px;
+        display: flex !important;
+        flex-direction: row !important;
+        padding: 10px 10px 10px 15px;
+    }
+    .container-service img {
+        width: 90px;
+        height: 90px;
+        margin-right: 10px;
+    }
+    .container-service .service .caption h4 {
+        margin-bottom: 1px !important;
+    }
+    .container-service .service .caption {
+        width: 300px !important;
+        height: 75px;
+        text-align: left;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        /*left: 15px;*/
+    }
+
+}
+@media screen and (min-width: 375px) {
+    .container-service .service .caption {
+        width: 250px !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    .container-service .service .caption {
+        width: 195px !important;
+    }
+}
+
+/* 客服服务 */
+.customer-service {
+    width: 100%;
+    min-height: 300px;
+    background: #CCCCCC;
+    text-align: center;
+}
+.customer-service .customer-service-group {
+    margin: 0 auto;
+}
+.customer-service .service {
+    padding: 50px 0;
+}
+.customer-service .service .caption {
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+@media screen and (max-width: 1200px) {
+    .customer-service .service {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 770px) {
+	#QR-code-phone{
+		display: none;
+	}
+	
+    .customer-service {
+        min-height: 260px;
+    }
+    .customer-service {
+        padding-top: 15px;
+        box-sizing: border-box;
+    }
+    .customer-service .service {
+        width: 100%;
+        height: 120px;
+        display: flex !important;
+        flex-direction: row !important;
+        padding: 10px 10px 10px 15px;
+    }
+    .customer-service img {
+        width: 90px;
+        height: 90px;
+        margin-right: 10px;
+    }
+    .customer-service .service .caption h4 {
+        margin-bottom: 1px !important;
+    }
+    .customer-service .service .caption {
+        width: 300px !important;
+        height: auto;
+        text-align: left;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        /*left: 15px;*/
+    }
+}
+@media screen and (min-width: 375px) {
+    .customer-service .service .caption {
+        width: 250px !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    .customer-service .service .caption {
+        width: 195px !important;
+    }
+}
+
+/* 优点特性 */
+.advantage {
+    background: #999999;
+    min-height: 180px;
+}
+.advantage .advantage-group {
+    max-width: 1000px !important;
+    margin: 0 auto;
+}
+.advantage .advantage-group .character {
+    margin-top: 40px;
+    height: auto;
+}
+.advantage .advantage-group .caption {
+    color: #fff;
+}
+@media screen and (max-width: 770px) {
+    .advantage {
+        background: #999999;
+        min-height: 350px;
+    }
+    .advantage .advantage-group .character {
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .advantage {
+        background: #999999;
+        min-height: 400px;
+    }
+    .advantage .advantage-group .character {
+        margin-top: 25px;
+        height: auto;
+    }
+}
+
+/**/
+.problem {
+    min-height: 340px;
+    background: #555555;
+    padding-top: 50px;
+}
+.problem .problem-group {
+    max-width: 1000px !important;
+    margin: 0 auto;
+    color: #fff;
+}
+.problem .problem-group p a {
+    color: rgb(245,245,245) !important;
+}
+.problem .problem-group .issue {
+    padding-left: 130px !important;
+}
+.problem .problem-group .relation {
+    padding-left: 130px !important;
+}
+.problem .problem-group h4 {
+    font-size: 20px !important;
+}
+.problem .problem-group .relation {
+    padding-left: 180px !important;
+}
+.problem .issue {
+}
+@media screen and (max-width: 770px) {
+    .problem {
+        min-height: 500px;
+        background: #555555;
+        padding-top: 20px;
+    }
+    .problem .problem-group div {
+        width: 100%;
+    }
+    .problem .problem-group .issue {
+        padding-left: 20px !important;
+    }
+    .problem .problem-group .relation {
+        padding-left: 20px !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    .problem {
+        min-height: 500px;
+        background: #555555;
+        padding-top: 20px;
+    }
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: #fff !important;
+}

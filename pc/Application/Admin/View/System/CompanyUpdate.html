@@ -1,0 +1,107 @@
+
+<include file="Template/admin/header.html" />
+<style>
+    .left{
+        margin-top: 15px;
+    }
+</style>
+
+<div class="left">
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司电话：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="cn_tel" required  lay-verify="required" placeholder="请输入公司电话" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司邮箱：</label>
+        <div class="layui-input-inline">
+            <input type="email" name="cn_email" required lay-verify="required" placeholder="请输入公司邮箱" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">营业时间：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="cn_hours" required lay-verify="required" placeholder="请输入公司营业时间" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Business Hours：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="en_hours" required lay-verify="required" placeholder="Please enter the business hours" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <button class="layui-btn" id="sure">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+</div>
+
+ 
+<script>
+    function verification() {
+        // 判断是否为空
+        if (
+            $('[name=cn_tel]').val() == '' ||
+            $('[name=cn_email]').val() == '' ||
+            $('[name=cn_hours]').val() == '' ||
+            $('[name=en_hours]').val() == ''
+            )
+        {
+            layer.msg('输入的信息不能为空！', {icon: 2});
+            return false;
+        }
+        return true;
+    }
+
+    // 32位随机数
+    var nonce_str = nonceStr(32);
+
+    $('#sure').on('click', function (){
+
+        if ( !verification() ) {
+                return ;
+            }
+
+        var data = {
+
+            company_tel: $('[name=cn_tel]').val(),
+            company_email: $('[name=cn_email]').val(),
+            en_content: $('[name=en_hours]').val(),
+            tw_content: $('[name=cn_hours]').val(),
+            nonce_str : nonce_str,
+            sign: hex_md5("__VERIFY_STR__" + $('[name=cn_email]').val() + $('[name=cn_tel]').val() + nonce_str)
+        };
+
+
+        layer.load(2);
+        $.ajax({
+            url: "<{:U(updatecompany)}>",
+            data: data,
+            type: 'post',
+            yes: function () {
+                    layer.closeAll();
+                },
+
+            success: function (res) {
+                console.log(res);
+                layer.closeAll();
+                if(parseInt(res.code) == 0) {
+                    layer.msg('修改成功！', {icon: 1}, function(){
+                        // 刷新
+                        layer.close(layer.index);  
+                        window.parent.location.reload();
+                    })
+                }else{
+                    layer.msg('修改失败', {icon : 2});
+                }
+            }
+        });
+    });
+</script>

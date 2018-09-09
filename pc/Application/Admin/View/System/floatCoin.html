@@ -1,0 +1,125 @@
+<include file="Template/admin/header.html" />
+<style type="text/css">
+.layui-form-label{width: 20%;}
+.layui-form-label{margin-right: 10px ;}
+.layui-form-item{margin:20px;}
+</style>
+
+
+  
+<div class="layui-form-item" style="">
+    <label class="layui-form-label">BTC浮动最小值</label>
+    <div class="layui-input-block">
+        <input type="text" name="btc_float_min" required  lay-verify="required" autocomplete="off" class="layui-input" style="width:50%" id='btc_float_min' onkeyup="value=value">
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <label class="layui-form-label">BTC浮动最大值</label>
+    <div class="layui-input-block">
+        <input type="text" name="btc_float_max" required  lay-verify="required" autocomplete="off" class="layui-input" style="width:50%" id='btc_float_max' onkeyup="value=value">
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <label class="layui-form-label">ETH浮动最小值</label>
+    <div class="layui-input-block">
+        <input type="text" name="etc_float_min" required  lay-verify="required" autocomplete="off" class="layui-input" style="width:50%" id='etc_float_min' onkeyup="value=value">
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <label class="layui-form-label">ETH浮动最大值</label>
+    <div class="layui-input-block">
+        <input type="text" name="etc_float_max" required  lay-verify="required" placeholder="请输入USD价格" autocomplete="off" class="layui-input" style="width:50%" id='etc_float_max' onkeyup="value=value">
+    </div>
+</div>
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <button class="layui-btn" id="sure">立即提交</button>
+    </div>
+</div>
+
+
+ 
+<script>
+
+    $.ajax({
+        url : '<{:U(Coin)}>',
+        type: 'get',
+        success: function (res) {
+
+            $("#btc_float_min").val(res.data[0]['btc_float_min']);
+            $('#etc_float_min').val(res.data[0]['etc_float_min']);
+            $('#btc_float_max').val(res.data[0]['btc_float_max']);
+            $('#etc_float_max').val(res.data[0]['etc_float_max']);
+
+            layer.closeAll();
+        }
+    });
+
+    // 32位随机数
+    var nonce_str = nonceStr(32);
+
+    layui.use('layer',function(){
+
+        var $ = layui.jquery, layer = layui.layer;
+        //提交
+        function verification() {
+            // 判断是否为空
+            if (
+                $('[name=btc_float_min]').val() == '' || 
+                $('[name=etc_float_min]').val() == '' || 
+                $('[name=btc_float_max]').val() == '' || 
+                $('[name=etc_float_max]').val() == '' 
+                ) {
+                layer.msg('输入的信息不能为空！', {icon: 2});
+                return false;
+            }
+            if (($('[name=btc_float_min]').val() > $('[name=btc_float_max]').val()) || 
+                ($('[name=etc_float_min]').val() > $('[name=etc_float_max]').val()) 
+                ) {
+                layer.msg('输入的最小值不能大于最大值！', {icon: 2});
+                return false;
+            }
+            return true;
+        }
+
+        $('#sure').on('click', function (){
+            if ( !verification() ) {
+                return ;
+            }
+
+            var data = {
+                btc_float_min: $('[name=btc_float_min]').val(),
+                etc_float_min: $('[name=etc_float_min]').val(),
+                btc_float_max: $('[name=btc_float_max]').val(),
+                etc_float_max: $('[name=etc_float_max]').val(),
+                nonce_str : nonce_str,
+                sign: hex_md5("__VERIFY_STR__" + $('[name=btc_float_max]').val() + $('[name=btc_float_min]').val() + $('[name=etc_float_max]').val() + $('[name=btc_float_min]').val() + nonce_str)
+            };
+
+            layer.load(2);
+            // 数据请求
+            $.ajax({
+                url : '<{:U(setFloat)}>',
+                data : data,
+                type : 'post',
+                success : function(res){
+                    console.log("res:", res);
+                    layer.closeAll();
+
+                    if(parseInt(res.code) == 0) {
+                        layer.msg('修改成功！', {icon: 1}, function(){
+                            // 刷新
+                            window.parent.location.reload();
+                        })
+                    }else{
+                        layer.msg('修改失败', {icon : 2});
+                    }
+                },   
+            });
+        });
+    });
+</script>

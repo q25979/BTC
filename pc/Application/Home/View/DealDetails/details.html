@@ -1,0 +1,115 @@
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+	<div id="details" class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<a href="<{:U(index)}>"><<< <{$Think.lang._HINT_PREVIOUS_PAGE_}></a>
+		<div class="details-container">
+			<h2><{$Think.lang._ORDER_DETAILS_}></h2>
+			<div v-for="v in list">
+				<span>{{ v.name }}：</span>
+				<span>{{ v.value }}</span>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '#details',
+			data: { 
+				list: [],	// 订单详情
+			},
+			created: function() {
+				this.init();
+			},
+			methods: {
+				/**
+				 * 初始化页面
+				 */
+				init: function() {
+					// nav选项卡样式更改
+					$('.nav-a').each(function() {
+						$(this).removeClass('nav-a-first');
+					});
+					$($('.nav-a')[3]).addClass('nav-a-first');
+
+					this.get();
+				},
+
+				/**
+				 * 获取数据
+				 */
+				get: function() {
+					var _this = this;
+					var p = (window.location.href).split('?order_id=')[1];
+						u = '__HOST_PATH__/Home/DealDetails/dealDetails',
+						d = { order_id: p };
+
+					$.get(u, d, function(res) {
+						
+						_this.set(res.data[0]);
+					});
+				},
+
+				/**
+				 * 设置数据
+				 *
+				 * @param object obj 获取的数据
+				 */
+				set: function(obj) {
+					obj = this.change(obj);
+
+					this.list = [{
+						name : '<{$Think.lang._ORDER_NUM_}>',
+						value: obj.system_order
+					}, {
+						name : '<{$Think.lang._ORDER_TYPE_}>',
+						value: obj.order_type
+					}, {
+						name : '<{$Think.lang._ORDER_CURRENCY_TYPE_}>',
+						value: obj.currency_type
+					}, {
+						name : '<{$Think.lang._ORDER_DEAL_TIME_}>',
+						value: obj.create_time
+					}, {
+						name : '<{$Think.lang._ORDER_UNIT_PRICE_}>',
+						value: obj.unit_price
+					}, {
+						name : '<{$Think.lang._ORDER_NUMBER_}>',
+						value: obj.number
+					}, {
+						name : '<{$Think.lang._ORDER_TOTAL_PRICE_}>',
+						value: obj.price
+					}, {
+						name : '<{$Think.lang._ORDER_STATUS_}>',
+						value: obj.status
+					}];
+				},
+
+				/**
+				 * 数据转换
+				 *
+				 * @param  object obj 数据
+				 * @return object obj 新的数据
+				 */
+				change: function(obj) {
+					if (obj.currency_type == 1) obj.currency_type = 'BTC';
+					if (obj.currency_type == 2) obj.currency_type = 'ETH';
+
+					if (obj.order_type == 0) 
+						obj.order_type = '<{$Think.lang._ACCOUNT_BUY_}>';
+					if (obj.order_type == 1) 
+						obj.order_type = '<{$Think.lang._ACCOUNT_SELL_}>';
+
+					if (obj.status == 0) obj.status == '<{$Think.lang._ORDER_STATUS_SUBMIT_}>';
+					if (obj.status == 1) obj.status == '<{$Think.lang._ORDER_STATUS_ING_}>';
+					if (obj.status == 2) obj.status == '<{$Think.lang._ORDER_STATUS_SUCCESS_}>';
+					if (obj.status == 3) obj.status == '<{$Think.lang._ORDER_STATUS_CANCEL_}>';
+
+					return obj;
+				}
+			}
+		});
+	</script>
+</block>

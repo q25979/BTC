@@ -1,0 +1,388 @@
+.content-receive{
+	width: 72%;
+	background-color: #fff;
+	float: right;
+	padding: 10px 40px 30px 40px;
+	border-left: 1px solid #ECF0F2;
+}
+
+/*头部标签页*/
+.buy-tab{
+	padding-left: 34px;
+	border-bottom: 1px solid #ddd;
+	height: 46px;
+}
+
+/*选项卡1*/
+.tab1{
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #fff;
+	margin-right: 10px;
+}
+
+/*选项卡2*/
+.tab2{
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	background-color: #F0EFEE;
+}
+
+/*控制选项卡1和选项卡2内容居中*/
+.buy-tab div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*购买比特币*/
+.buy-BTC {
+	font-size: 18px;
+	color: #000 ;
+}
+/*修改默认hover事件*/
+.buy-BTC:hover{
+	text-decoration: none;
+	color: #000;
+}
+
+
+/*购买以太币*/
+.buy-ETC{
+	font-size: 18px;
+	color: #666;
+
+}
+/*修改默认hover事件*/
+.buy-ETC:hover{
+	text-decoration: none;
+	color: #666;
+}
+
+/*选项卡1内容*/
+.receive-tab-pane,.receive-tab-pane2{
+	width: 100%;
+	padding: 0 36px;
+}
+
+.receive-tab-pane2{
+	/*控制显示隐藏选项卡2*/
+	display: none;
+}
+
+.tips1,.tips2{
+	color: #E54;
+	margin: 20px 0 0 0;
+	font-size: 12px;
+}
+
+
+.receive-notes-list h3,.receive-notes-list2 h3{
+    color: #333;
+    margin: 30px 0 10px 0;
+    font-size: 18px;
+}
+
+#deposit_address,#deposit_address2{
+	width: 60%;
+	display: block;
+	
+}
+
+.receive-notes-list img,.receive-notes-list2 img{
+    width: 200px;
+    height: 200px;
+	display: block;
+ 	background-color: #F0EFEE;
+ 	margin: 15px 0 20px 0;
+}
+
+
+/*表格*/
+.address_list {
+    width: 100%;
+}
+
+.receive-table td{
+    vertical-align: middle;
+    outline: none;
+    font-weight: normal;
+    border: none;
+    padding-top: 14px !important;
+}
+
+.address_list .column_address {
+    width: 40%;
+}
+
+.receive-table tr td, .receive-table tr th{
+    height: 49px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ecf0f2;
+    text-align: left;
+}
+
+.address_list th, .address_list td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    text-align: left;
+}
+
+.address_list .column_label {
+    width: 15%;
+}
+
+.address_list .column_date {
+    width: 20%;
+}
+
+.address_list .column_details {
+    width: 25%;
+}
+
+.address_list td {
+    font-size: 13px;
+}
+
+.receive-table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
+.address_list a {
+    text-decoration: none;
+    outline: none;
+    color: #38B;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.receive-table tr:hover td {
+    background: #f5f5f5;
+}
+
+.area_msg{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.small_btn {
+    height: 32px;
+    line-height: 14px;
+    font-size: 14px;
+    background: #eef5f7;
+    color: #38B;
+    box-shadow: inset 0 -3px 0 #CDD;
+}
+
+.small_btn:hover {
+	background: #E2EBF0;
+    color: #38B;
+}
+
+.faq .title {
+    margin-bottom: 10px;
+}
+
+.qst li {
+    color: #999;
+    margin-bottom: 3px;
+    margin-left: 15px;
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+}
+
+.qst a {
+    color: #999;
+}
+
+.qst a:hover {
+	text-decoration: underline;
+}
+
+/*详细资料*/
+.content-receive-detail a{
+    text-decoration: none;
+    outline: none;
+    color: #38B;
+    font-size: 14px;
+}
+
+.content-receive-detail h3 {
+    color: #999;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+#btc-address {
+    margin: 20px 0;
+}
+
+.area-msg p{
+    margin: 20px 0 20px 0;
+    font-size: 14px;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.qr-img {
+    width: 200px;
+    height: 200px;
+}
+
+#label-form {
+    margin: 10px 0;
+}
+
+#label-form input {
+    height: 40px;
+    line-height: 25px;
+    font-size: 14px;
+    vertical-align: middle;
+    outline: none;
+}
+
+#label-form label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+#label-form .label-field {
+    width: 155px;
+    height: 30px;
+}
+
+#label-form input.save {
+    margin: 10px 0;
+}
+
+#label-form input.save:hover {
+    background: #4499BB;
+}
+
+.btn-1 {
+    background: #5AC;
+    color: #FFF;
+    box-shadow: inset 0 -3px 0 #18A;
+}
+.btn-1 {
+    height: 42px;
+    width: auto;
+    line-height: 42px;
+    padding: 0 26px;
+    margin: 10px auto 0 auto;
+    display: block;
+    background: #5AC;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 0;
+    -webkit-appearance: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*小屏幕自适应*/
+@media (max-width: 770px) {
+	/*内容容器*/
+	.content-receive {
+		width: 100%;
+		padding: 0 16px 20px;
+		margin-top: 46px;
+		border-left: none;
+	}
+
+	/*修改总容器的左内边距*/
+	.buy-tab{
+		padding-left:4% !important;
+	}
+
+	/*选项卡1*/
+	.tab1{
+		width: 46% !important;
+	}
+
+	/*选项卡2*/
+	.tab2{
+		width: 46% !important;
+	}
+	
+	/*选项卡1内容*/
+	.receive-tab-pane{
+		padding: 0;
+	}
+	
+	/*选项卡1内容*/
+	.receive-tab-pane2{
+		padding: 0;
+	}
+	
+	#deposit_address,#deposit_address2{
+		width: 100%;
+		font-size: 13px;
+	}
+	
+	.address_list .column_address {
+	    width: 100%;
+	}
+	
+	.address_list .column_label {
+	    display: none;
+	}
+	
+	.address_list .column_date {
+	    display: none;
+	}
+	
+	.address_list .column_details {
+	    display: none;
+	}
+	
+	.receive-table>tbody>tr>td:nth-child(2),
+	.receive-table>tbody>tr>td:nth-child(3),
+	.receive-table>tbody>tr>td:nth-child(4)
+	 {
+		display: none;
+	}
+	
+	.small_btn{
+		width: 100%;
+	}
+	
+	.dash {
+		width: 100%;
+	    margin: 30px 0;
+	    border-top: 1px dashed #ccc;
+	}
+	
+	.faq {
+	    padding-left: 0px;
+	}
+	
+}
+
+/*平板自适应*/
+@media (max-width: 992px) {
+	/*选项卡1*/
+	.tab1{
+		width: 30%;
+	}
+
+	/*选项卡2*/
+	.tab2{
+		width: 30%;
+	}
+
+}

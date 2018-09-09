@@ -1,0 +1,88 @@
+<include file="Template/home/header.html" />
+
+<CSS href="__PUBLIC__/home/css/RealtimeMarket.css" />
+<body>
+<!-- 顶部 -->
+<include file="Template/home/top.html" />
+
+<!-- 选项卡 -->
+<include file="Template/home/nav.html" />
+
+<div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+    <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 realtime-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 26px;position: relative;overflow: hidden;" >
+
+        <block name="content">
+            <!-- 實時行情 -->
+            <h3 class="realtime-h3"><{$Think.lang._LOGIN_CHART_}></h3>
+            <table border="1" class="realtime-table">
+                <tr>
+                    <th><{$Think.lang._ACCOUNT_SETTINGS_CURRENCY_}></th>
+                    <th><{$Think.lang._HINT_VALUE_}></th>
+                </tr>
+                <tr>
+                    <td><{$Think.lang._HINT_BTC_}></td>
+                    <td><span id="BTC_money"></span> </td>
+                </tr>
+                <tr>
+                    <td><{$Think.lang._HINT_ETH_}></td>
+                    <td><span id="ETH_money"></span> </td>
+                </tr>
+            </table>
+
+        </block>
+
+        <script>
+            var url = '__HOST_PATH__/Home/RealtimeMarket/Price';
+            var realtimeIndex = $.cookie('btc_float_value');
+
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+                    if (realtimeIndex == 1) {
+                        $('#BTC_money').text( "NT$ " + res.data[0].btc_value_twd);
+                        $('#ETH_money').text( "NT$ " + res.data[0].eth_value_twd);
+                    } else if (realtimeIndex == 2) {
+                        $('#BTC_money').text( "HKD$ " + res.data[0].btc_value_hkd);
+                        $('#ETH_money').text( "HKD$ " + res.data[0].eth_value_hkd);
+                    } else if (realtimeIndex == 3) {
+                        $('#BTC_money').text( "USD$ " + res.data[0].btc_value_usd);
+                        $('#ETH_money').text( "USD$ " + res.data[0].eth_value_usd);
+                    }else {
+                        $('#BTC_money').text( "NT$ " + res.data[0].btc_value_twd);
+                        $('#ETH_money').text( "NT$ " + res.data[0].eth_value_twd);
+                    }
+
+                }
+            });
+
+            //点击刷新页面
+            $('.clickTWD').click(function(){
+                window.location.reload();
+            });
+
+            $('.clickHKD').click(function(){
+               window.location.reload();
+            });
+
+            $('.clickUSD').click(function(){
+                window.location.reload();
+            });
+
+            //top栏选定状态
+            $('#realtimeAct').css({'background': '#226697'});
+
+            //响应式侧边栏颜色
+            $('#minwidth1-act').css({'background':'#697785'});
+            $('#minwidth2-act').css({'background':'#3388BB'});
+            $('#minwidth3-act').css({'background':'#697785'});
+            $('#minwidth4-act').css({'background':'#697785'});
+
+        </script>
+    </section>
+</div>
+
+<footer>
+    <include file="Template/home/footer.html" />
+</footer>
+</body>

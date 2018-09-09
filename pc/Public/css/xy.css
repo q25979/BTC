@@ -1,0 +1,39 @@
+/**
+ * @671
+ * 2017年12月1日20:02:07
+ */
+.xy-font {
+    font-size: 20px;
+    margin-left: -2px;
+    margin-right: -4px;
+}
+.xy-ml--30 {
+    margin-left: 30px;
+}
+.xy-mt--10 {
+    margin-top: 10px;
+}
+
+/* 轮播 */
+#slideshow {
+    margin-left: 30px;
+    cursor: pointer;
+}
+.xy-icon-add {
+    text-align: center;
+}
+.xy-icon-add>.layui-icon {
+    color: #c2c2c2;
+    line-height: 280px;
+    font-size: 150px;
+}
+
+/* 关于我们 */
+.xy-textarea {
+    width: 40%;
+}
+
+/* 顶部导航线 */
+.xy-bordertop {
+    box-shadow: 1px 2px 2px #E0E0E0
+}

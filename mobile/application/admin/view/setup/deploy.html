@@ -1,0 +1,108 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+<section id="main-content">
+    <section class="wrapper">
+
+		
+		<div class="row">
+
+                  <div class="col-lg-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              配置列表
+                          </header>
+                          <table class="table table-striped table-advance table-hover">
+                              
+                              <tbody>
+                              <thead>
+                              	<tr>
+                              		<th>标题</th>
+                									<th>类型</th>
+                									<th>创建时间</th>
+                									<th>标示</th>
+                									<th>操作</th>
+                              	</tr>
+
+                              </thead>
+                              {volist name="data" id="vo"}
+                              {if $vo['group'] == 1}
+                              <tr>
+                                  <td>{$vo.title}</td>
+                                  <td class="hidden-phone">{if $vo['type'] == 1}字符{else /}文本{/if}</td>
+                                  <td>{$vo.create_time|date="Y-m-d H:i:s",###} </td>
+                                  <td>{$vo.name}</td>
+                                  <td>
+                                      <a href="{:url('addsetup',array('id'=>$vo['id']))}"><button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button></a>
+                                      <button class="btn btn-danger btn-xs" onclick="deleteconf('{$vo.id}')"><i class="icon-trash "></i></button>
+                                  </td>
+                              </tr>
+                              {/if}
+                              {/volist}
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+
+                  <div class="col-lg-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              参数列表
+                          </header>
+                          <table class="table table-striped table-advance table-hover">
+                              
+                              <tbody>
+                              <thead>
+                              	<tr>
+                              		<th>标题</th>
+                									<th>类型</th>
+                									<th>创建时间</th>
+                									<th>标示</th>
+                									<th>操作</th>
+                              	</tr>
+
+                              </thead>
+
+                              {volist name="data" id="vo"}
+                              {if $vo['group'] == 2}
+                              <tr>
+                                  <td>{$vo.title}</td>
+                                  <td class="hidden-phone">{if $vo['type'] == 1}字符{else /}文本{/if}</td>
+                                  <td>{$vo.create_time|date="Y-m-d H:i:s",###} </td>
+                                  <td>{$vo.name}</td>
+                                  <td>
+                                      <a href="{:url('addsetup',array('id'=>$vo['id']))}"><button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button></a>
+                                      <button class="btn btn-danger btn-xs" onclick="deleteconf('{$vo.id}')"><i class="icon-trash "></i></button>
+                                  </td>
+                              </tr>
+                              {/if}
+                              {/volist}
+                              
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+              </div>
+
+  	</section>
+</section>
+{include file="foot" /}
+<script>
+
+function deleteconf(id) {
+	
+	layer.open({
+	  content: '确定删除吗',
+	  yes: function(index, layero){
+	    var data = "id="+id;
+		var url = "{:url('deleteconf')}";
+		var gourl = "{:url('deploy')}";
+		WPpost(url,data,gourl)
+	  }
+	}); 
+	
+
+}
+</script>

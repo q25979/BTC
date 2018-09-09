@@ -1,0 +1,97 @@
+<!--右侧基本信息样式-->
+<style>
+
+    .call-callCenter {
+        width: 200px;
+        height: 210px;
+        background: #F5F5F5;
+        position: fixed;
+        top: 639px;
+        right: 0;
+    }
+
+    .call-fix {
+        position: relative;
+    }
+
+    .call-bulletin img{
+        display: inline-block;
+    }
+
+    .call-title {
+        position: absolute;
+        left: 79px;
+        top: 8px;
+        font-size: 14px;
+        color: #E6E6E6;
+    }
+
+    .call-close-right {
+        position: absolute;
+        left: 10px;
+        top: 7px;
+        outline:none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .call-close-right:hover {
+        color: #fff;
+    }
+
+    .call-qq-info {
+        position: absolute;
+        top: 51px;
+        left: 22px;
+    }
+    
+    .call-wechat-info {
+        position: absolute;
+        top: 109px;
+        left: 20px;
+    }
+
+    .call-tel-info {
+        position: absolute;
+        top: 170px;
+        left: 20px;
+    }
+
+    .call-qq-info span,
+    .call-wechat-info span,
+    .call-tel-info span {
+        margin-left: 14px;
+        font-size: 18px;
+    }
+
+</style>
+
+<!--右侧基本信息-->
+<block name="content">
+    <div call-class="callCenter">
+        <div call-class="fix">
+            <img src="__PUBLIC__/images/Popupblock.png">
+            <span call-class="title"><{$Think.lang._ACCOUNT_SETTINGS_BASIC_INFO_}></span>
+            <div type="button" call-class="close-right">&times;</div>
+
+            <div call-class="qq-info">
+                <img src="__PUBLIC__/images/qq.png">
+                <span id="qq"></span>
+            </div>
+
+            <div call-class="wechat-info">
+                <img src="__PUBLIC__/images/wetchat.png">
+                <span id="wechat"></span>
+            </div>
+
+            <div call-class="tel-info">
+                <img src="__PUBLIC__/images/tel.png">
+                <span id="tel"></span>
+            </div>
+
+        </div>
+    </div>
+
+</block>
+
+<js href="__PUBLIC__/home/js/callCenter.js" />

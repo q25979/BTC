@@ -1,0 +1,80 @@
+{include file="head" /}
+
+{include file="menu" /}
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+            
+          <div class="row">
+                  <div class="col-sm-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              <h4 class="left">充值配置管理（非技术人员建议不要修改）</h4> 
+                              <a href="{:url('addrech')}"><span class="btn right btn-primary">添加充值配置+</span></a>
+                              <br><br>
+                          </header>
+                          <table class="table">
+                              <thead>
+                              <tr>
+                                  <th>编号</th>
+                                  <th>名称</th>
+                                  <th>是否使用</th>
+                                  <th>手续费</th>
+                                  <th>操作时间</th>
+                                  <th>操作</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              {volist name="payment" id="vo"}
+                              <tr>
+                                  <td>{$vo.id}</td>
+                                  <td>{$vo.pay_name}</td>
+                                  <td>{$vo.is_use}</td>
+                                  <td>{$vo.pay_point}%</td>
+                                  <td>{$vo.dotime}</td>
+                                  <td> 
+                                      <a href="{:url('addrech',array('id'=>$vo['id']))}"><button class="btn btn-primary btn-xs" ><i class="icon-pencil"></i></button></a>
+                                      <button class="btn btn-danger btn-xs" onclick="deletepay({$vo.id})"><i class="icon-trash "></i></button>
+                                  </td>
+                                  
+                              </tr>
+                              {/volist}
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+          </div>       
+          
+          
+             
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+{include file="foot" /}
+<script>
+
+
+   function deletepay(id){
+    layer.open({
+      content: '确定删除吗',
+      yes: function(index){
+        //do something
+        var url = "{:url('deletepay')}"+"?id="+id;
+        
+        $.get(url,function(data){
+          if (data.type == 1) {
+              layer.msg(data.data, {icon: 1,time: 1000},function(){
+                window.location.href="{:Url('recharge')}";
+              }); 
+
+            }else if(data.type == -1){
+              layer.msg(data.data, {icon: 2}); 
+            }
+        });
+      }
+    });
+  }
+</script>

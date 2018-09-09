@@ -1,0 +1,337 @@
+/*头部标签页*/
+
+.content-sell{
+	width: 72%;
+	background-color: #fff;
+	float: right;
+	padding: 10px 40px 150px 40px;
+	border-left: 1px solid #ECF0F2;
+}
+
+
+
+/*选项卡容器*/
+.buy-tab{
+	padding-left: 34px;
+	border-bottom: 1px solid #ddd;
+	height: 46px;
+}
+
+/*选项卡1*/
+.tab1{
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #fff;
+	margin-right: 10px;
+}
+
+/*选项卡2*/
+.tab2{
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	background-color: #F0EFEE;
+}
+
+/*控制选项卡1和选项卡2内容居中*/
+.buy-tab div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*购买比特币*/
+.buy-BTC
+{    
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	color: #000 ;
+}
+/*修改默认hover事件*/
+.buy-BTC:hover{
+	text-decoration: none;
+	color: #000;
+}
+
+
+/*购买以太币*/
+.buy-ETC{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	color: #666;
+	
+}
+/*修改默认hover事件*/
+.buy-ETC:hover{
+	text-decoration: none;
+	color: #666;
+}
+
+
+
+
+/*头部结束*/
+.sell-info-btc{
+	display: block;
+}
+.sell-info-eth{
+	display: none;
+}
+/*价格信息开始*/
+.sell-cost-box{
+	padding: 34px 0 30px 35px;
+	height: 85px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.ico-point{
+	color: #ddd;
+	font-size: 25px;
+	/*margin-top: -30px;*/
+	position: relative;
+	top: 4px;
+}
+
+.sell-cost-box>p{
+	font-size: 14px;
+	font-weight: normal;
+	display: block;
+	margin-top:-15px ;
+}
+.sell-cost>br{
+	display: none;
+}
+
+/*价格信息结束*/
+/*比特币出售开始*/
+.sell-area{
+	margin: 30px 0 0 34px;
+}
+.sell-area>.price-widget>.form-group{
+	/*控制两个表单是否并排*/
+	/*display: inline-block;*/
+	
+	margin-bottom: 0;
+	vertical-align: middle;
+	position: relative;
+}
+.sell-label{
+	margin-top: 25px;
+}
+.form-group .sell-label{
+	display: block;
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: normal;
+}
+#sell-one-btc,#sell-one-twd,#sell-two-btc,#sell-two-twd{
+	width: 100%;	
+	height: 45px;
+	font-size: 18px;
+	border-radius: 0;
+	margin-top: 20px;
+}
+.ico-sanjiao{
+	color: #ccc;
+	display: inline-block;
+	vertical-align: bottom;
+	position:relative;
+	bottom:15px;
+	
+}
+.currency-inner{
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	padding: 1px 2px;
+	right: 10px;
+	bottom: 12px;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 3px;
+	color: white;
+	background-color: #CCC;
+}
+.form-info{
+	position: relative;
+}
+#sell-submit1,#sell-submit2{
+	width: 140px;
+	font-size: 18px;
+	display: block;
+	background: #ddd;
+	color: #FFF;
+	box-shadow: inset 0 -3px 0 #AAA;
+	margin-top:20px;
+	margin-bottom: 10px;
+	outline:none;
+    opacity: 1;
+}
+.btn-sell:hover{
+	background: #ddd;
+	color: #FFF;
+	
+}
+.sell-button-info{
+	clear: both;
+	color: #E54;
+}
+
+.sell-bank{
+    padding-top:10px;
+    font-size: 12px;
+    color: #666;
+}
+.sell-bank .bank-notice{
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+}
+
+.sell-balance{
+	margin-left: 10px;
+}
+
+/*比特币出售结束*/
+
+
+/*媒体查询*/
+/*小屏幕自适应*/
+@media (max-width: 770px) {
+	/*内容容器*/
+	.content-sell{
+		width: 100%;
+		padding: 0 16px;
+		margin-top: 46px;
+		padding-bottom: 30px;
+		border-left: none;
+	}
+
+	/*修改总容器的左内边距*/
+	.buy-tab{
+		padding-left:4% !important;
+	}
+	
+	/*选项卡1*/
+	.tab1{
+		width: 46% ;
+	}
+	
+	/*选项卡2*/
+	.tab2{
+		width: 46% ;
+	}
+	
+	/*控制字体大小*/
+	.buy-tab a{
+		font-size: 16px;
+	}
+	
+	.sell-area>.price-widget>.form-group{
+		display: block;
+	}
+	/*隐藏两个三角形*/
+	.ico-sanjiao{
+		display: none;
+	}
+	.btn-sell{
+		width: 100%;
+	}
+	
+	/*清除左边距*/
+	.sell-area{
+	margin: 30px 0 0 0;
+    }
+    /*控制换行*/
+   .sell-cost>br{
+	display: block;
+    }
+    .sell-balance{
+    	display: block;
+    	text-indent: 1em;
+		margin-left: 0px;
+    }
+    
+    #sell-submit1,#sell-submit2{
+    	width: 100%;
+    }
+    
+    .sell-cost-box{
+    	height: 100px;
+    }
+	
+}
+
+/*平板自适应*/
+@media (max-width: 992px) {
+	/*选项卡1*/
+	.tab1{
+		width: 30%;
+	}
+	
+	/*选项卡2*/
+	.tab2{
+		width: 30%;
+	}
+	
+}
+
+/*770到1920时让两个form表单并排*/
+ @media screen and (min-width:771px) and (max-width:1920px){
+ 	.sell-area>.price-widget>.form-group{
+ 		display: inline-block;
+ 	}
+ 	#sell-one-btc,#sell-one-twd,#sell-two-btc,#sell-two-twd{
+ 		width: 260px;
+ 	}
+ }
+
+@media (max-width: 950px) {
+	#sell-one-btc,#sell-one-twd,#sell-two-btc,#sell-two-twd{
+		width: 100%;
+	}
+
+	.ico-sanjiao{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

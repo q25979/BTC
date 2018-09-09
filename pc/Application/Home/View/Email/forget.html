@@ -1,0 +1,223 @@
+<!-- 忘记密码 -->
+<include file="Template/home/header.html" />
+
+<style>
+
+    /* 外边样式 */
+    .forget { background: #FCFDFF; height: 550px; padding-top: 50px; box-sizing: border-box; position: relative; box-shadow: 0 -1px 1px #D6DADD; }
+    /* 内部样式 */
+    .forget .forget-content { width: 350px; height: 400px; margin: 0 auto; }
+    .forget .forget-content .form-group { width: 95%; margin: 0 auto; }
+    .forget .forget-content .password { margin-top: 20px; }
+    .forget .forget-content .forget-hint { display: block; margin: 15px auto; width: 95%; padding: 8px 12px; border-radius: 2px;font-size: 12px; }
+    .forget .forget-content .forget-hint {  /*display: none;*/ }
+    /* 提示背景色 */
+    .forget .forget-content .bgRed { background: #F9E8E8; color: #C30; }
+    .forget .forget-content .bgAsh { background: #EEEEEE; color: #666666; }
+    /* 输入框标题 */
+    .forget .form-group span { display: inline-block; margin-bottom: 15px; }
+    /* 输入框高度 */
+    .forget .form-group input { height: 45px; }
+    /* 按钮 */
+    .forget .resetPass { display: block; background: #5AC; color: #FFF; box-shadow: inset 0 -3px 0 #18A; margin: 0 auto; margin-top: 30px; }
+    /* 底部图片 */
+    .forget .forget-img { height: 49px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+    /* 当屏幕最大宽度小于 770 底部图片宽度缩短 */
+    @media all and (max-width: 770px) {
+        .forget .forget-img img { width: 350px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+    }
+
+</style>
+
+<div class="">
+    <!-- top start -->
+    <include file="Template/home/top.html" />
+    <!-- top end-->
+    <!-- nav start-->
+    <include file="Template/home/nav.html" />
+
+    <div class="forget" id="sh_forget">
+        <div class="forget-content">
+            <h4><{$Think.lang._ACCOUNT_SECURITY_CHANGE_PWD_}></h4>
+            <div class="form-group">
+                <span><{$Think.lang._HINT_NEW_PWD_}>:</span>
+                <input type="password" class="form-control" id="sh_forgetNew" oninput="functionPass(0)" placeholder="<{$Think.lang._LOGIN_PASSWORD_}>">
+                <!--<img src="{{ newImg }}" alt="" v-if="imgStatus == 1" />-->
+            </div>
+
+            <span class="forget-hint" :class=" classStatus ? 'bgAsh' : 'bgRed' " v-if="disStatus == 1">
+                <{$Think.lang._HINT_PWD_CHECK_}>
+            </span>
+
+            <div class="form-group password">
+                <span><{$Think.lang._HINT_NEW_PWD_CONFIRM_}>:</span>
+                <input type="password" class="form-control" id="sh_confirmPass" oninput="functionPass(1)" placeholder="<{$Think.lang._HINT_PWD_CONFIRM_}>" >
+                <!--<img src="{{ confirmImg }}" alt="" v-if="imgStatus == 2">-->
+            </div>
+
+            <span class="forget-hint bgAsh" v-if="passStatus == 1"><{$Think.lang._HINT_PWD_DIFFERENT_}></span>
+            <span class="forget-hint bgRed" v-if="passStatus == 2"><{$Think.lang._HINT_PWD_TWICE_DIFFERENT_}></span>
+
+            <button class="btn btn-lg resetPass" @click="resetPass" ><{$Think.lang._HINT_PWD_RESET_}></button>
+        </div>
+        <div class="forget-img">
+            <img src="__PUBLIC__/images/register-background.png" alt="">
+        </div>
+    </div>
+
+    <!-- footer start-->
+    <include file="Template/home/footer.html" />
+    <!-- footer end-->
+</div>
+
+<script>
+
+    var forgetvm = new Vue({
+        el: '#sh_forget',
+        data: {
+            passworldVer: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/,        // 正则判断
+
+            classStatus: true,      // 新密码样式状态 true->提示样式  false->警告样式
+            disStatus: 0,           // 新密码提示是否显示  1->提示
+            passStatus: 0,          // 确认密码提示  1->输入时提示 2->不相等提示
+
+            newImg: '',             // 新密码图片
+            confirmImg: '',         // 确认密码图片
+            imgStatus: 1,           // 图片显示状态
+            imgStatus: 2,
+        },
+        methods: {
+            resetPass: function () {
+                var newPass = $('#sh_forgetNew').val();
+                var confirmPass = $("#sh_confirmPass").val();
+
+                /* 判断是否为空 */
+                if( newPass == '' || confirmPass == '' ) {
+                    forgetvm.disStatus = 1;
+                    forgetvm.classStatus = false;
+                    return false;
+                }
+                /* 正则判断 */
+                if (!this.passworldVer.test(newPass)) {
+                    this.disStatus = 1;
+                    this.classStatus = false;
+                    return false;
+                } else {
+                    this.disStatus = 0;
+                }
+
+                if ( $('#sh_forgetNew').val() != $('#sh_confirmPass').val() ) {
+                    forgetvm.passStatus = 1;
+                    return false;
+
+                } 
+                forgetvm.passStatus = 0;
+                var password = hex_md5(config.verify_str + $('#sh_forgetNew').val());
+                this.changePass(password);
+            },
+
+            /**
+             * 更改密码
+             * 
+             * @param  string password 
+             */
+            changePass: function(password) {
+                var nstr = nonceStr();
+                var sign = config.verify_str + '<{$email}>' + password + nstr;
+
+                var u = '__HOST_PATH__/Home/Email/changePassword';
+                var d = {
+                    email: '<{$email}>',
+                    password : password,
+                    nonce_str: nstr,
+                    sign : hex_md5(sign)
+                };
+
+                $('.resetPass').attr('disabled', 'true');
+                $('.resetPass').text('<{$Think.lang._HINT_ALTER_}>');
+                $.post(u, d, function(res) {
+                    $('.resetPass').removeAttr('disabled');
+                    $('.resetPass').text('<{$Think.lang._LOGIN_RESET_PSW_}>');
+
+                    if (res.code == 0) {
+                        alert('<{$Think.lang._HINT_AMEND_SUCCESS_}>');
+                        sg.jump('__HOST_PATH__');
+
+                    } else {
+                        alert('<{$Think.lang._HINT_AMEND_DEFEAT_}>');
+                    }
+                });
+            }
+        }
+    });
+
+
+</script>
+
+<script>
+        /* 新密码焦点事件 */
+        $('#sh_forgetNew').blur(function () {
+            
+            if ( !forgetvm.passworldVer.test($(this).val()) ){
+                forgetvm.disStatus = 1;
+                forgetvm.classStatus = false;
+
+                return;
+            } else {
+                forgetvm.disStatus = 0;
+            }
+        });
+
+        /* 确认密码 */
+        $('#sh_confirmPass').blur(function (){
+
+            forgetvm.passStatus = 2;
+
+            if($('#sh_forgetNew').val() == $('#sh_confirmPass').val() ) {
+                forgetvm.passStatus = 0;
+            }
+        });
+
+        /* 监听input的值变化 */
+        function functionPass(id) {
+
+            id ? confirmPass() : newPass();
+
+            /* 输入新密码 */
+            function newPass() {
+                if ( !forgetvm.passworldVer.test($('#sh_forgetNew').val()) ) {
+                    forgetvm.disStatus = 1;
+                    forgetvm.classStatus = true;
+
+                    return;
+                } else {
+                    forgetvm.disStatus = 0;
+                }
+            };
+
+            /* 确认密码 */
+            function confirmPass () {
+                if ( $('#sh_forgetNew').val() != $('#sh_confirmPass').val() ) {
+                    forgetvm.passStatus = 1;
+                } else {
+                    forgetvm.passStatus = 0;
+                }
+            };
+        }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

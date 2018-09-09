@@ -1,0 +1,560 @@
+<extend name="Template/home/base.html" />
+
+<!-- 内容 -->
+<block name="content">
+
+	<div class="content-sell col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<!--头部标签开始-->
+		<!--选项卡容器-->
+		<div class="buy-tab">
+			<!--选项卡1-->
+			<div class="tab1" onclick="getSell(1)">
+				<a href="javascript:;" class="buy-BTC"><{$Think.lang._ACCOUNT_SELL_BTC_}></a>
+			</div>
+			<!--选项卡2-->
+			<div class="tab2" onclick="getSell(2)">
+				<a href="javascript:;" class="buy-ETC"><{$Think.lang._ACCOUNT_SELL_ETH_}></a>
+			</div>
+		</div>
+		<!--头部标签结束-->
+		<!--比特币区域开始-->
+		<div class="sell-info-btc">
+			<!--价格信息开始-->
+			<div class="sell-cost-box">
+				<p>
+					<span class="ico-point">•</span> <{$Think.lang._ACCOUNT_SELL_BTC_PRICE_}>
+					<span class="sell-cost"><span id="sell-btc-price"></span> <br></span>
+					<span class="sell-balance"> <{$Think.lang._ACCOUNT_SEND_BALANCE_}><b> <span id="sell-btc-balance"></span> BTC</b></span>
+					<span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b>NT$ <span class="cashBalance1"></span></b></span>
+				</p>
+			</div>
+			<!--价格信息结束-->
+			<!--比特币出售开始-->
+			<div class="sell-area">
+				<div class="price-widget">
+					<div class="form-group">
+						<label class="sell-label" for="InputSell"><{$Think.lang._ACCOUNT_SELL_BTC_}></label>
+						<input id="sell-one-btc"  class="form-control" name="coin" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+						<span class="currency-inner">BTC</span>
+					</div>
+					<div class="ico-sanjiao">
+						<span class="glyphicon glyphicon-triangle-left"></span><span class="glyphicon glyphicon-triangle-right"></span>
+					</div>
+					<div class="form-group">
+						<label class="sell-label" for="InputSell"><{$Think.lang._ACCOUNT_SELL_RECEIVE_TWD_}></label>
+						<input id="sell-one-twd" class="form-control" name="coin" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+						<span class="currency-inner changeCoin">TWD</span>
+					</div>
+				</div>
+				<!--按钮区-->
+                <div class="sell-button-p">
+                	<button  id="sell-submit1" class="btn btn-sell disabled" name="commit" type="button" disabled="disabled"/><{$Think.lang._ACCOUNT_SELL_BTC_}></button>
+				    <!--<div class="sell-button-info"><{$Think.lang._ACCOUNT_SELL_BALANCE_}></div>-->
+                </div>
+				
+
+				<div class="sell-bank">
+					<div class="bank-notice clearfix">
+						<{$Think.lang._ACCOUNT_SELL_ADD_BANK_TIPS_}>
+						<a href="__HOST_PATH__/Home/Setting/bindingBankCard"><{$Think.lang._ACCOUNT_SELL_ADD_BANK_}></a>
+						<a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_ID_VER_}></a>
+					</div>
+					<small class="bank-notice clearfix"><{$Think.lang._ACCOUNT_SELL_LIMIT_}>NT$5,000,000</small>
+					<small class="bank-notice clearfix"><{$Think.lang._ACCOUNT_SELL_TIPS_}></small>
+				</div>
+			</div>
+			<!--比特币出售结束-->
+		</div>
+		<!--比特币区块结束-->
+
+		<!--以太币区块开始-->
+		<div class="sell-info-eth">
+			<!--价格信息开始-->
+			<div class="sell-cost-box">
+				<p>
+					<span class="ico-point">•</span> <{$Think.lang._ACCOUNT_SELL_BTC_PRICE_}>
+					<span class="sell-cost"><span id="sell-eth-price"></span></span>
+					<span class="sell-balance"><{$Think.lang._ACCOUNT_SEND_BALANCE_}><b><span id="sell-eth-balance"></span> ETH</b></span>
+					<span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b>NT$ <span class="cashBalance1"></span></b></span>
+				</p>
+			</div>
+			<!--价格信息结束-->
+			<!--以太币出售开始-->
+			<div class="sell-area">
+				<div class="price-widget">
+					<div class="form-group">
+						<label class="sell-label" for="InputSell"><{$Think.lang._ACCOUNT_SELL_ETH_}></label>
+						<input id="sell-two-btc" class="form-control" name="coin" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+						<span class="currency-inner">ETH</span>
+					</div>
+					<div class="ico-sanjiao">
+						<span class="glyphicon glyphicon-triangle-left"></span><span class="glyphicon glyphicon-triangle-right"></span>
+					</div>
+					<div class="form-group">
+						<label class="sell-label" for="InputSell"><{$Think.lang._ACCOUNT_SELL_RECEIVE_TWD_}></label>
+						<input id="sell-two-twd" class="form-control" name="coin" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+						<span class="currency-inner changeCoin">TWD</span>
+					</div>
+				</div>
+                <!--按钮区-->
+				<div class="sell-button-p">
+                	<button  id="sell-submit2" class="btn btn-sell disabled" name="commit" type="button" disabled="disabled"/><{$Think.lang._ACCOUNT_SELL_ETH_}></button>
+				    <!--<div class="sell-button-info"><{$Think.lang._ACCOUNT_SELL_BALANCE_}></div>-->
+                </div>
+
+				<div class="sell-bank">
+					<div class="bank-notice clearfix">
+						<{$Think.lang._ACCOUNT_SELL_ADD_BANK_TIPS_}>
+						<a href="__HOST_PATH__/Home/Setting/bindingBankCard"><{$Think.lang._ACCOUNT_SELL_ADD_BANK_}></a>
+						<a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_ID_VER_}></a>
+					</div>
+					<small class="bank-notice clearfix"><{$Think.lang._ACCOUNT_SELL_LIMIT_}>NT$5,000,000</small>
+					<small class="bank-notice clearfix"><{$Think.lang._ACCOUNT_SELL_TIPS_}></small>
+				</div>
+			</div>
+			<!--以太币出售结束-->
+		</div>
+		<!--以太币区块结束-->
+
+	</div>
+	<!--头部标签切换js-->
+	<script type="text/javascript">
+		
+		$(function(){
+    		if(GetRequest().type == 2){
+
+	            $(".buy-ETC").css({
+	                textDecoration:"none",
+	                color:"#000"
+	            });
+	
+	            $(".tab2").css({
+	                backgroundColor:"#fff",
+	                borderBottom:"1px solid #fff"
+	            });
+	
+	            $(".tab1").css({
+	                backgroundColor:"#F0EFEE",
+	                borderBottom:"1px solid #ddd"
+	            });
+	
+	            $(".buy-ETC").mouseover(function(){
+	                $(".buy-ETC").css("color","#000");
+	            });
+	            
+				$(".sell-info-btc").css({
+					"display": "none"
+				})
+				$(".sell-info-eth").css({
+					"display": "block"
+				})
+				
+				getSell(2);
+
+        	}
+    	});
+
+    	function GetRequest() {//获取get请求后面的参数
+	        var url = location.search; //获取url中"?"符后的字串
+	        var theRequest = new Object();
+	        if (url.indexOf("?") != -1) {
+	            var str = url.substr(1);
+	            strs = str.split("&");
+	            for(var i = 0; i < strs.length; i ++) {
+	                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	            }
+	        }
+	        return theRequest;
+		}
+		
+		$(function() {
+			$(".buy-BTC").click(function() {
+				$(this).css({
+					textDecoration: "none",
+					color: "#000"
+
+				});
+
+				$(".tab1").css({
+					backgroundColor: "#fff",
+					borderBottom: "1px solid #fff"
+				});
+
+				$(".tab2").css({
+					backgroundColor: "#F0EFEE",
+					borderBottom: "1px solid #ddd"
+				});
+
+				$(this).mouseover(function() {
+					$(this).css("color", "#000")
+				});
+				$(".sell-info-btc").css({
+					"display": "block"
+				});
+				$(".sell-info-eth").css({
+					"display": "none"
+				})
+			});
+
+			$(".buy-ETC").click(function() {
+				$(this).css({
+					textDecoration: "none",
+					color: "#000"
+				});
+
+				$(".tab2").css({
+					backgroundColor: "#fff",
+					borderBottom: "1px solid #fff"
+				});
+
+				$(".tab1").css({
+					backgroundColor: "#F0EFEE",
+					borderBottom: "1px solid #ddd"
+				});
+
+				$(this).mouseover(function() {
+					$(this).css("color", "#000")
+				});
+				$(".sell-info-btc").css({
+					"display": "none"
+				});
+				$(".sell-info-eth").css({
+					"display": "block"
+				})
+			})
+		});
+		
+        //控制一级菜单的点击事件
+		$(".nav-a").css("color","#3388BB");
+		$(".nav-span").css("color","#3388BB");
+		$(".nav-a").css("border-bottom","2px solid #fff");
+		
+		$(".nav-a").eq(5).css("color","#000");
+		$(".nav-span").eq(4).css("color","#000");
+		$(".nav-span").eq(5).next().css("color","#000");
+		$(".nav-a").eq(5).css("border-bottom","2px solid #3388BB");
+		
+		
+    	var BtcSellPrice; //比特币单价
+    	var EthSellPrice; //以太币单价
+    	
+    	var BtcSellBalance; //比特币余额
+    	var EthSellBalance; //以太币余额
+        
+        var btc_sell_number; //btc数量
+        var btc_sell_price; //btc总价格
+       
+        var eth_sell_number; //eth数量
+        var eth_sell_price; //eth总价格
+		
+		//交互
+		
+		//获取单价和余额
+        getSell(1);
+		function getSell(id) {
+    		
+            var url_sell = '__HOST_PATH__/Home/Sell/getSellBalance';
+            var data_sell = {
+            	currency_type: id
+			};	
+			
+			$.ajax({
+	            url: url_sell,
+	            data: data_sell,
+	            type: 'post',
+	            success: function(res){
+	                if(parseInt(res.code) == 0) {
+	                	if (id == 1){
+	                    	$('#sell-btc-balance').html(res.data[0].btc_balance);//BTC余额
+	                    	BtcSellBalance = res.data[0].btc_balance; //比特币余额
+	                    	$(".cashBalance1").html(res.data[1].extract_balance);
+	                	} else if (id == 2) {
+		                    $('#sell-eth-balance').html(res.data[0].eth_balance);//ETH余额
+		                    EthSellBalance = res.data[0].eth_balance; //比特币余额
+		                    $(".cashBalance1").html(res.data[1].extract_balance);
+	                	}
+	                	
+	                }
+	            }
+	        });
+    	}
+		
+		var sellStatus = false; //是否拥有出售全新状态
+		
+		//检查身份是否验证
+		authentication();
+		function authentication() {
+            var url_authentication = '__HOST_PATH__/Home/Sell/check';
+			
+			$.ajax({
+	            url: url_authentication,
+				type: 'get',
+	            success: function(res){
+	                if(res.code == "拥有出售权限！") {
+	                	sellStatus = true;
+	                }
+	            }
+	        });
+    	}
+		
+		//出售比特币左输入框 数量
+        $("#sell-one-btc").keyup (function(){
+		    btc_sell_number = $("#sell-one-btc").val();
+		    btc_sell_price = btc_sell_number*BtcSellPrice;
+		    $("#sell-one-twd").val(btc_sell_price.toFixed(0));
+		    BtcSellNotNull("#sell-one-btc","#sell-one-twd","#sell-submit1",sellStatus);
+		    BtcSellNull("#sell-one-btc","#sell-one-twd","#sell-submit1",sellStatus);
+		});
+		
+		//出售比特币右输入框 价格
+        $("#sell-one-twd").keyup (function(){
+		    btc_sell_price = $("#sell-one-twd").val();
+		    btc_sell_number = btc_sell_price/BtcSellPrice;
+		    $("#sell-one-btc").val(btc_sell_number.toFixed(4));
+		    BtcSellNotNull("#sell-one-btc","#sell-one-twd","#sell-submit1",sellStatus);
+		    BtcSellNull("#sell-one-btc","#sell-one-twd","#sell-submit1",sellStatus);
+		});
+		
+		//判断文本框不为空
+		function BtcSellNotNull(leftID,rightID,btn,status){
+			var SelltextLeft = $(leftID).val();
+			var SelltextRight = $(rightID).val();
+			
+			if(SelltextLeft != "" && SelltextRight != "" && status){
+				$(btn)
+				.removeAttr('disabled')
+				.removeClass('disabled')
+				.css({
+				    background: "#5AC",
+				    boxShadow: "inset 0 -3px 0 #18A",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$(btn).css("background","#4499BB");
+				},function(){
+					$(btn).css("background","#5AC");
+				});
+			}
+		}
+		
+		//判断文本框为空
+		function BtcSellNull(leftID,rightID,btn,status){
+			var SelltextLeft = $(leftID).val();
+			var SelltextRight = $(rightID).val();
+				
+			if(SelltextLeft == "" || SelltextRight == "" && status){
+				$(leftID).val("");
+				$(rightID).val("");
+				
+				$(btn).attr('disabled',true);
+				$(btn).addClass('disabled');
+				$(btn).css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$(btn).css("background","#ddd");
+				},function(){
+					$(btn).css("background","#ddd");
+				});
+			}
+		}
+		
+		//出售以太币左输入框 数量
+        $("#sell-two-btc").keyup (function(){
+		    eth_sell_number = $("#sell-two-btc").val();
+		    eth_sell_price = eth_sell_number*EthSellPrice;
+		    $("#sell-two-twd").val(eth_sell_price.toFixed(0));
+		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
+		    BtcSellNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
+		});
+		
+		//出售以太币右输入框 价格
+        $("#sell-two-twd").keyup (function(){
+		    eth_sell_price = $("#sell-two-twd").val();
+		    eth_sell_number = eth_sell_price/EthSellPrice;
+		    $("#sell-two-btc").val(eth_sell_number.toFixed(4));
+		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
+		    BtcSellNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
+		});
+		
+		$(".text-content").html("<{$Think.lang._ACCOUNT_SELL_}>&nbsp;");
+		
+		
+		var number;  //数量
+		var price;  //总价
+		var money_currency_type; //新台币
+		var unit_price; //单价
+		var currency_type; //币种
+		var nonce_str; //随机32个随机数
+		
+		//出售比特币按钮
+		$("#sell-submit1").click(function(){
+			number = $("#sell-one-btc").val();  //数量
+			price = number*BTCPrice;  //总价
+			money_currency_type = 1; //新台币
+			unit_price = BtcSellPrice; //单价
+			currency_type = 1; //币种
+			nonce_str = nonceStr(32); //随机32个随机数
+			
+			var btnName = $(this).html();
+			
+			if(parseFloat(number)  <= parseFloat(BtcSellBalance)  && number != 0 && price != 0  && number > 0 && price > 0){
+				
+				sg.loading($('#sell-submit1'));
+				
+				SellVirtualCurrency(number,price,money_currency_type,unit_price,currency_type,nonce_str,function(res){
+					sg.hideLoading($('#sell-submit1'), btnName);
+					
+					if (res.code == 0) {
+                        alert("<{$Think.lang._HINT_BTC_SELL_OK_}>");
+						window.location.href = "__HOST_PATH__/Home/DealDetails/index";
+                    } else {
+                        // 会失败
+                        alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+                    }
+				});
+			}else{
+				alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+				$("#sell-one-btc").val("");
+				BtcSellNull("#sell-one-btc","#sell-one-twd","#sell-submit1",sellStatus);
+			}
+		})
+		
+		//出售以太币按钮
+		$("#sell-submit2").click(function(){
+			number = $("#sell-two-btc").val();  //数量
+			price =  number*ETHPrice;  //总价
+			money_currency_type = 1; //新台币
+			unit_price = EthSellPrice; //单价
+			currency_type = 2; //币种
+			nonce_str = nonceStr(32); //随机32个随机数
+			
+			var btnName = $(this).html();
+			
+			if(parseFloat(number)  <= parseFloat(EthSellBalance) && number != 0 && price != 0  && number > 0 && price > 0){
+				
+				sg.loading($('#sell-submit2'));
+				
+				SellVirtualCurrency(number,price,money_currency_type,unit_price,currency_type,nonce_str,function(res){
+					sg.hideLoading($('#sell-submit2'), btnName);
+					
+					if (res.code == 0) {
+                        alert("<{$Think.lang._HINT_ETH_SELL_OK_}>");
+						window.location.href = "__HOST_PATH__/Home/DealDetails/index?type=2";
+                    } else {
+                        // 会失败
+                        alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+                    }
+				});
+				
+			}else{
+				alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+				$("#sell-two-btc").val("");
+				BtcSellNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
+			}
+			
+		})
+		
+		//定义方法发送数据
+		function SellVirtualCurrency(number,price,money_currency_type,unit_price,currency_type,nonce_str,callback) {
+            var url_sellVirtualCurrency = '__HOST_PATH__/Home/Sell/sellCoin';
+            var data_sellVirtualCurrency = {
+            	number: number,
+            	price: price,
+            	money_currency_type: money_currency_type,
+            	unit_price: unit_price,
+            	currency_type: currency_type,
+            	nonce_str: nonce_str,
+				sign: hex_md5("__VERIFY_STR__" + currency_type + money_currency_type + nonce_str + number + price + unit_price)
+            }
+			
+			$.ajax({
+	            url: url_sellVirtualCurrency,
+	            data: data_sellVirtualCurrency,
+				type: 'post',
+	            success: function(res){
+	            	callback(res);
+	            }
+	        });
+    	}
+		
+		var BTCPrice;
+		var ETHPrice;
+		
+		var url = '__HOST_PATH__/Home/Sell/getPrice';
+        var SellIndex = $.cookie('btc_float_value');
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+                    if (SellIndex == 1) {
+                    	$('.changeCoin').text('TWD');
+                        BtcSellPrice = parseInt(res.data.btc_twd);
+                        EthSellPrice = parseInt(res.data.eth_twd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+            			$('#sell-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
+						$('#sell-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
+                    } else if (SellIndex == 2) {
+                    	$('.changeCoin').text('HKD');
+                        BtcSellPrice = parseInt(res.data.btc_hkd);
+                        EthSellPrice = parseInt(res.data.eth_hkd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#sell-btc-price').html("HKD$ " + parseInt(res.data.btc_hkd));
+						$('#sell-eth-price').html("HKD$ " + parseInt(res.data.eth_hkd));
+                        
+                    } else if (SellIndex == 3) {
+                    	$('.changeCoin').text('USD');
+                        BtcSellPrice = parseInt(res.data.btc_usd);
+                        EthSellPrice = parseInt(res.data.eth_usd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#sell-btc-price').html("USD$ " + parseInt(res.data.btc_usd));
+						$('#sell-eth-price').html("USD$ " + parseInt(res.data.eth_usd));
+                    }else{
+                    	$('.changeCoin').text('TWD');
+                    	BtcSellPrice = parseInt(res.data.btc_twd);
+                        EthSellPrice = parseInt(res.data.eth_twd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#sell-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
+						$('#sell-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
+                    }
+                }
+            });
+		
+		//点击刷新页面
+		$('.clickTWD').click(function(){
+			window.location.reload();
+		});
+
+		$('.clickHKD').click(function(){
+			window.location.reload();
+		});
+
+		$('.clickUSD').click(function(){
+			window.location.reload();
+		});
+		
+		function clearNoNum(obj){
+        	obj.value = obj.value.replace(/^\./g,"");  //不能以点开头
+		    obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符  
+		    obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的  
+		    obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$","."); 
+		    obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/,'$1$2.$3');//只能输入4个小数  
+		    if(obj.value.indexOf(".")< 0 && obj.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额 
+		        obj.value= parseFloat(obj.value); 
+		    } 
+		}
+
+	</script>
+</block>

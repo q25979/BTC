@@ -1,0 +1,143 @@
+{include file="head" /}
+
+<body ng-app="starter" ng-controller="AppCtrl" class="grade-a platform-browser platform-win32 platform-ready">
+
+
+<ion-nav-bar class="bar-stable headerbar nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+<div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="title title-center hangqing header-item" style="transition-duration: 0ms; transform: translate3d(-176.414px, 0px, 0px); opacity: 0;"></div><div class="buttons buttons-right" style="transition-duration: 0ms; opacity: 0;"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="buttons buttons-left" style="transition-duration: 0ms;"></div><div class="title hangqing title-center header-item" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"></div></ion-header-bar></div></ion-nav-bar>
+<ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="enter" nav-swipe=""><ion-tabs class="tabs-icon-top navbar pane tabs-bottom tabs-standard" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);"><div class="tab-nav tabs">
+
+  <ion-tab href="#/tab/qoute" class="iconfont icon--6 tabnone"></ion-tab>
+
+  <ion-tab href="#/tab/history/0" class="iconfont icon--7 tabnone"></ion-tab>
+
+  <ion-tab href="#/tab/profile" class="iconfont icon--8 tabnone"></ion-tab>
+
+<a href="{:Url('/index/index/index/token/'.$token)}"  class="iconfont icon--6 tabnone tab-item tab-item-active" style=""><span class="tab-title ng-binding hangqing" ></span></a>
+<a href="{:url('/index/order/hold/token/'.$token)}" class="iconfont icon--7 tabnone tab-item" style=""><span class="tab-title ng-binding jiaoyijilu" ></span></a>
+<a href="{:url('/index/user/index/token/'.$token)}"  class="iconfont icon--8 tabnone tab-item" style=""><span class="tab-title ng-binding" >个人账户</span></a>
+
+</div>
+<ion-nav-view name="tab-qoute" class="view-container tab-content" nav-view="active" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+    <ion-view view-title="" hide-nav-bar="false" class="pane" state="tab.qoute" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+    <ion-content style="top: 0px;" class="content-background scroll-content ionic-scroll scroll-content-false  has-header has-tabs" scroll="false">
+
+        <div class="slide-qoute slider" delegate-handle="slide-qoute" on-slide-changed="slide_change($index)" show-pager="false" style="visibility: visible;"><div class="slider-slides" ng-transclude="" style="width: 100%;">
+            <!-- ngRepeat: c in category_list --><ion-slide ng-repeat="c in category_list" class="slider-slide" data-index="0" style="width: 100%; left: 0px; transition-duration: 300ms; transform: translate(0px, 0px) translateZ(0px);">
+                <div class="qoute-view">
+                    <div class="qoute-view-header">
+                        <ul>
+                            <li class="shangpinmingcheng"></li>
+                            <li class="xianjia"></li>
+                            <li class="zuidi"></li>
+                            <li class="zuigao"></li>
+                        </ul>
+                    </div>
+                    <div class="qoute-view-content">
+                        <ion-scroll class="scroll-view ionic-scroll scroll-y"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+                            
+						<!-- {volist name="pro" id="vo"} -->
+                            <ul onclick="parent.location='{:url('goods/goods',array('pid'=>$vo['pid'],'token'=>$token))}';"  id="pid{$vo.pid}">
+                                <li>
+                                    <a href="javascript:;" class="ng-binding prtitle"></a>
+                                </li>
+                                <li>
+                                    <a  href="javascript:;" class="ng-binding rise-value now-value">
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ng-binding rise rise-low">
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ng-binding rise rise-high">
+                                        
+                                    </a>
+                                </li>
+                            </ul>
+						<!-- {/volist} -->
+
+                        </div>
+                        
+						<div class="order-p" id="J_order" style="display:none;">
+							<div class="order-item">
+								<i class="iconfont icon--5 rujin" style="color:#ecb540"></i> <span class="order-phone" style="color:#999"></span> &nbsp;<span class="order-rs" style="color:red"></span>
+							</div>
+						</div>
+						
+						<script>
+						var order_list;
+						var order_index = 0;
+						var max_rand = 50;
+						function order_show(){
+							if(order_list != null && $("#J_order").is(":hidden")){
+								if(order_index>=max_rand){
+									order_index = 0;
+								}
+								$("#J_order").find(".order-phone").html(order_list[order_index]['phone']);
+								$("#J_order").find(".order-rs").html('赢利+'+order_list[order_index]['price']+'元');
+								$("#J_order").show();
+								window.setTimeout(function(){
+									$("#J_order").hide();
+								},1500);
+								order_index++;
+							}
+						}
+						function order_start(){
+							var rand = Math.ceil(Math.random()*100);
+							if(rand>=80){
+								if(order_list!=null){
+									order_show();
+								}
+							}
+						}
+						$(document).ready(function(){
+							$.ajax({
+								type: "GET",
+								contentType: "application/json;charset=utf-8",
+								url: "/index/index/ajax_order",
+								data: null,
+								dataType: "json",
+								complete: function () { },
+								success: function (result) {
+									order_list = result;
+								},
+								error: function (result, status) { }
+							});
+							/*
+							$.get("/index/index/ajax_order",null,function(data){
+								order_list = data;
+							});
+							*/
+							window.setInterval(order_start,1000);
+						});
+						</script>
+
+                        </ion-scroll>
+                    </div>
+                </div>
+            </ion-slide>
+
+        </div>
+        </div>
+    </ion-content>
+</ion-view></ion-nav-view></ion-tabs></ion-nav-view>
+
+<script>
+
+var charturl = '{:url("getchart")}';
+$.get(charturl,function(_res){
+
+
+    var res = jQuery.parseJSON(Base64.decode(_res)); 
+
+    $.each(res,function(k,v){
+        $('.'+k).html(v);
+    })
+})
+</script>
+</body></html>
+
+<script src="__HOME__/js/lk/index.js">ajaxpro()</script>

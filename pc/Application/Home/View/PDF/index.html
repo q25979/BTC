@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><{$Think.lang._LOGIN_TERMS_FOR_USAGE_}></title>
+    <js href="__PLUG-IN__/pdf/js/pdfobject.js" />
+
+    <script>
+    	window.onload = function() {
+    		var myPDF = new PDFObject({
+    			url: "<{$url}>" 
+    		}).embed();
+    	}
+    </script>
+</head>
+<body>
+	<p>没有Adobe Reader或PDF支持web浏览器。 
+		<a href="<{$url}>">点击这里下载PDF</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{include file="head" /}
+
+
+<body ng-app="starter" ng-controller="AppCtrl" class="grade-a platform-browser platform-ios platform-ios9 platform-ios9_1 platform-ready">
+<ion-nav-bar class="bar-stable headerbar nav-bar-container" nav-bar-transition="ios" nav-bar-direction="swap" nav-swipe="">
+
+	<div class="nav-bar-block" nav-bar="active">
+		<ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="title title-center header-item jiaoyilishi" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); left: 15px; right: 15px;"></div>
+		</ion-header-bar>
+	</div>
+</ion-nav-bar>
+
+<ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-tabs class="tabs-icon-top navbar pane tabs-bottom tabs-standard" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+
+<div class="tab-nav tabs">
+
+<a href="{:Url('/index/index/index/token/'.$token)}"  class="iconfont icon--6 tabnone tab-item " style=""><span class="tab-title ng-binding hangqing" ></span></a>
+<a href="{:url('/index/order/hold/token/'.$token)}" class="iconfont icon--7 tabnone tab-item tab-item-active" style=""><span class="tab-title ng-binding jiaoyijilu" ></span></a>
+<a href="{:url('/index/user/index/token/'.$token)}"  class="iconfont icon--8 tabnone tab-item" style=""><span class="tab-title ng-binding" >个人账户</span></a>
+
+
+</div>
+<ion-nav-view name="tab-qoute" class="view-container tab-content" nav-view="cached" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+    </ion-nav-view><ion-nav-view name="tab-history" class="view-container tab-content" nav-view="active" nav-view-transition="ios" nav-view-direction="swap" nav-swipe=""><ion-view view-title="" hide-nav-bar="false" class="pane" state="tab.history" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+    <ion-nav-buttons side="right" class="hide"></ion-nav-buttons>
+    <ion-content class="trade_history scroll-content ionic-scroll scroll-content-false  has-header has-tabs" scroll="false">
+        <header>
+            <article class="left-table" onclick="change_category(0)"  class="active" style="">
+            	<p class="chicangmingxi">
+            		
+            	</p>
+            </article>
+            <article class="right-table"  onclick="change_category(1)"  >
+            	<p class="lishimingxi">
+            		
+            	</p>
+            </article>
+        </header>
+
+        <div class="trade_history_list slider" style="visibility: visible;overflow:scroll"><div class="slider-slides" ng-transclude="" >
+            <ion-slide class="slider-slide slider-left" data-index="0" style="width: 100%px; left: 0px; transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+            	<ul>
+            		
+                        
+
+
+                        
+
+            	</ul>
+            </ion-slide>
+            <ion-slide class="slider-slide slider-right" data-index="1" style=" left: 0px; top: -100%;transition-duration: 0ms; transform: translate(414px, 0px) translateZ(0px);">
+                <ul class="uls">
+
+
+
+                </ul>
+                
+            </ion-slide>
+        </div>
+                
+                <div class="modal-backdrop ng-hide"><div class="modal-backdrop-bg"></div><div class="modal-wrapper" ng-transclude=""><ion-modal-view class="order-modal modal slide-in-up ng-enter active ng-enter-active">
+    <ion-header-bar class="order-modal-header bar bar-header">
+        <h1 class="title lishimingxi" style="left: 54px; right: 54px;"></h1>
+        <div class="close" ng-click="close_order_modal.hide()">
+            <i class="icon ion-ios-close-empty"></i>
+        </div>
+    </ion-header-bar>
+    <ion-content class="order-modal-content scroll-content ionic-scroll  has-header"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+        <ul class="list">
+            <li class="item item-input">
+                <span class="input-label" aria-label="商品" id="_label-0">商品</span>
+                <span class="input-content ng-binding ptitle"></span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="成交价" id="_label-2">成交价</span>
+                <span class="input-content ng-binding buyprice"></span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="结算价" id="_label-3">结算价</span>
+                <span class="input-content ng-binding sellprice"></span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="手续费" id="_label-4">手续费</span>
+                <span class="input-content ng-binding">{$conf['web_poundage']}</span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="盈亏" id="_label-5">盈亏</span>
+                <span class="input-content ng-binding rise ploss" style="">
+                    0.00
+                </span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="成交时间" id="_label-6">成交时间</span>
+                <span class="input-content ng-binding buytime"></span>
+            </li>
+            <li class="item item-input">
+                <span class="input-label" aria-label="结算时间" id="_label-7">结算时间</span>
+                <span class="input-content ng-binding selltime"></span>
+            </li>
+        </ul>
+    </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px; transform-origin: center bottom 0px;"></div></div></ion-content>
+    <div class="button-bar">
+        <a class="button button-dark" onclick="close_order_modal()">关闭</a>
+    </div>
+
+    <script>
+
+var charturl = '{:url("getchart")}';
+$.get(charturl,function(_res){
+    var res = jQuery.parseJSON(Base64.decode(_res)); 
+    $.each(res,function(k,v){
+        $('.'+k).html(v);
+    })
+})
+</script>
+</ion-modal-view></div></div>
+
+        </div>
+    </ion-content>
+</ion-view></ion-nav-view></ion-tabs></ion-nav-view>
+<script src="__HOME__/js/lk/hold.js"></script>
+<script type="text/javascript">
+  change_category(0)
+</script>
+
+
+
+<div class="backdrop"></div><div class="ionic_toast"><div class="toast_section" ng-class="ionicToast.toastClass" ng-style="ionicToast.toastStyle" ng-click="hideToast()" style="display: none; opacity: 0;"><span class="ionic_toast_close"><i class="ion-android-close toast_close_icon"></i></span><span ng-bind-html="ionicToast.toastMessage" class="ng-binding"></span></div></div></body></html>
+

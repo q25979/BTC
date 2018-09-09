@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.col-sm-6 {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.ques-header {
+    height: 103px;
+    position: relative;
+}
+
+.ques-header-img {
+    width: 100%;
+    height: 103px;
+    margin: 0 auto;
+    background-size: 100% 100% !important;
+}
+
+.ques-header-font {
+    color: #fff;
+    font-size: 18px;
+    padding-top: 24px;
+    padding-left: 7px;
+    width: 1005px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.ques-body-left {
+    width: 1005px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.ques-body-left .ques-body-item>a{
+    font-size: 24px;
+    color: #666;
+}
+.ques-body-left div:nth-child(2) {
+    margin-left: 80px;
+}
+    .ques-body-item {
+        margin-bottom: 50px;
+    }
+    .ques-body-item div:nth-child(1) a {
+        font-size: 25px !important;
+        color: #505050 !important;
+    }
+
+.ques-body-left ul li,
+.ques-body-right ul li {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.ques-body ul a{
+	color: #828282;
+}
+
+.ques-more {
+    display: block;
+    color: #EE5544 !important;
+    font-size:14px;
+    margin-top: 30px;
+}
+
+/*小屏幕时查看*/
+/*@media ( min-width: 1201px ) and ( max-width: 1500px ) {*/
+    /*.ques-header-font {*/
+        /*position: absolute;*/
+        /*left: 5%;*/
+    /*}*/
+/*}*/
+
+@media screen and ( max-width: 769px ) {
+    .ques-body-left {
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: inline;
+    }
+    .ques-body-item {
+        margin-left: 10px;
+    }
+    .ques-body-left div:nth-child(2) {
+        margin-left: 10px !important;
+    }
+
+    .big-top {
+        margin-top: 40px !important;
+    }
+
+    .ques-header-font {
+        width: 96%;
+        padding-left: 15px;
+    }
+}

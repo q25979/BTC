@@ -1,0 +1,70 @@
+
+.lockout {
+	width: 100%;
+	height: 700px;
+	margin-top: 3px;
+	/*box-shadow: 0 -2px 2px #E0E0E0;*/
+	background: #F6F6F6;
+}
+.lockout .lockout-group {
+	width: 500px;
+	height: 200px;
+	border: 1px solid #CCCCCC;
+	background: #fff;
+	margin: 0 auto;
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+.lockout .input-group {
+	width: 100% !important;
+}
+.lockout .lockout-group p {
+	line-height: 70px;
+}
+
+.lockout input[type=email] {
+	width: 350px !important;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: -10px;
+}
+
+.lockout .lock-btn {
+	margin-top: 20px;
+	font-size: 17px !important;
+	border-radius: 10px !important;
+	background: #5AC;
+	color: #FFF;
+	box-shadow: inset 0 -3px 0 #18A;
+}
+
+@media (max-width: 770px) {
+	.lockout {
+		width: 100%;
+		height: 490px;
+		background: #F6F6F6;
+	}
+	.lockout .lockout-group {
+		width: 360px;
+	}
+	.lockout input[type=email] {
+		width: 320px !important;
+	}
+	.lockout button {
+		font-size: 16px !important;
+	}
+}
+@media (max-width: 320px) {
+	.lockout .lockout {
+		width: 100%;
+		height: 400px;
+		background: #F6F6F6;
+	}
+	.lockout .lockout-group {
+		width: 280px;
+	}
+	.lockout input[type=email] {
+		width: 240px !important;
+	}
+}

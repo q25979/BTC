@@ -1,0 +1,115 @@
+<include file="Template/home/header.html" />
+
+<CSS href="__PUBLIC__/home/css/ViewMore.css" />
+<body>
+<!-- 顶部 -->
+<include file="Template/home/top.html" />
+
+<!-- 选项卡 -->
+<include file="Template/home/nav.html" />
+
+
+
+<!--查看更多-->
+<div id="probelmMore">
+    <div class="ViewMore-head" style="background-image: url(__PUBLIC__/images/one.png);">
+    	<!--文字-->
+    	<div class="ViewMore-head-p">
+    		<p>{{typeTitle}}</p>
+    	</div>
+    </div>
+    <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 0px;position: relative;overflow: hidden;" >
+            <block name="content">
+            	<!--公告容器-->
+                <div class="ViewMore-container">
+                    <div class="back">
+                        <a href="__HOST_PATH__/Home/Question">&lt;&lt;&lt; <{$Think.lang._LOGIN_FAQ_}></a>
+                    </div>
+                	<ul class="articles" v-for = "item in CommonProblemList">
+    			        <li class="articles__item">
+    			            <a
+                                class="articles__link" 
+                                href="javascript:" 
+                                @click="getcontent(item.common_problem_id)"
+                            >
+                                {{item.title}}
+                            </a>
+    			        </li>
+    			    </ul>
+                </div>
+            </block>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#probelmMore',
+        data:{
+            typeTitle : "",
+            CommonProblemList : [],
+            type:"" 
+        },
+        created:function(){
+            this.getData();
+        },
+        methods: {
+            getData: function () {   
+                var vm = this;
+                if (vm.GetRequest().type != null && vm.GetRequest().type != "") {
+                    vm.type = vm.GetRequest().type.split('?')[0];
+                    var url = '__HOST_PATH__/Home/Question/getFAQ';
+                    if (vm.type == 1) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_SEND_RECEIVE_}>";
+                    }else if (vm.type == 2) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_BUY_SELL_}>";
+                    }else if (vm.type == 3) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_ACCEPT_PAYMENTS_}>";
+                    }else if (vm.type == 4) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_ABOUT_}>";
+                    }else if (vm.type == 5) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_SECUROTY_ID_VER_}>";
+                    }else if (vm.type == 6) {
+                        vm.typeTitle = "<{$Think.lang._FAQ_ANTI_FRAUD_TREAT_}>";
+                    }
+                }
+                
+                $.get(url, { 'type': vm.type }, function (res) {
+
+                    if (res.code == 0) {
+                        for (var i in res.data) {
+                            vm.CommonProblemList.push(res.data[i]);
+                        }
+                    }
+                });
+            },
+
+            GetRequest : function() {//获取get请求后面的参数
+                var url = location.search; //获取url中"?"符后的字串
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for(var i = 0; i < strs.length; i ++) {
+                        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            },
+
+            getcontent : function(id){
+                var u = '__HOST_PATH__/Home/Question/FAQ.html?common_problem_id=' + id;;
+                sg.jump(u);
+            }
+        }
+
+    });
+</script>
+
+<footer>
+    <include file="Template/home/footer.html" />
+</footer>
+</body>
+
+

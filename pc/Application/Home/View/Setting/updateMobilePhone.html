@@ -1,0 +1,139 @@
+<include file="Template/home/header.html" />
+
+<js href="__JS__/data.areaCode.js" />
+<CSS href="__PUBLIC__/home/css/setting.css" />
+<body>
+<!-- 顶部 -->
+<include file="Template/home/top.html" />
+
+<!-- 选项卡 -->
+<include file="Template/home/nav.html" />
+
+<div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+    <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 26px;position: relative;overflow: hidden;" >
+
+        <block name="content">
+            <!-- 更新手機號碼 -->
+            <div class="updatePhone col-xs-12">
+                <div class="box">
+                    <div class="center">
+                        <!--状态一：驗證舊號碼-->
+                        <div class="update-state-1">
+                            <h3><{$Think.lang._ACCOUNT_SETTINGS_OLD_NUMBER_TIPS_}></h3>
+                            <form id="verify-phone-form" accept-charset="UTF-8" method="post">
+                                <div class="area-setting-update">
+                                    <div class="fields-update">
+                                    <span class="label-update">
+                                    <{$Think.lang._ACCOUNT_SETTINGS_COUNTRY_}>
+                                    </span>
+                                        <select 
+                                            class="country" 
+                                            id   ="user_country"
+                                        >
+                                        </select>
+                                    </div>
+                                    <div class="fields-update">
+                                    <span class="phone-label-update">
+                                    <{$Think.lang._ACCOUNT_SETTINGS_CHANGE_PHONE_}>
+                                    </span>
+                                    <span class="field-update-2">
+                                        <span id="areaCode" class="state"></span>
+                                        <input name="phone" id="phone" class="ipt-phone left" type="text">
+                                    </span>
+                                    </div>
+                                    <div class="fields-update">
+                                        <input name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_CHANGE_SUBMIT_}>" class="btn btn-1" id="next-step" type="button">
+                                    </div>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+                <img src="__PUBLIC__/images/register-background.png" class="bottom-image">
+            </div>
+        </block>
+    </section>
+</div>
+
+<script>
+    // 区号下标
+    var areaIndex = 0;
+
+    $(function(){
+        init();
+    });
+
+    /**
+     * init
+     */
+    var init = function () {
+        // 生成区号选择器
+        var h = '';
+        for (var i=0; i<allCountries.length; i++) {
+            h += '<option value="'+ allCountries[i].iso2 +'">';
+            h += allCountries[i].name +'</option>';
+        }
+
+        $("#user_country").html(h);
+        $("#areaCode").text('+'+allCountries[areaIndex].dialCode);
+    }
+
+    /**
+     * 区号选择改变事件
+     */
+    $("#user_country").on('change', function() {
+        for (var i=0; i<allCountries.length; i++) {
+            if ($(this).val() == allCountries[i].iso2) {
+                $("#areaCode").text('+'+allCountries[i].dialCode);
+                areaIndex = i;
+                return ;
+            }
+        }
+    });
+
+    /**
+     * 提交绑定事件
+     */
+    $("[name=commit]").click(function() {
+        var reg   = /\d{6,20}/;
+        if (!reg.test($('[name=phone]').val())) {
+            alert('手機號碼格式錯誤了');
+            return ;
+        }
+
+        var u = '__HOST_PATH__/Home/Setting/bindPhone',
+            n = nonceStr(),
+            t = '+' + allCountries[areaIndex].dialCode + '-' + $('[name=phone]').val();
+            s = config.verify_str + n + t,
+            d = {
+                tel : t,
+                type: 2,
+                nonce_str: n,
+                sign: hex_md5(s) 
+            };
+
+        var url  = window.location.href;
+        var aUrl = url.split('/type/');
+        d.type   = aUrl[1] == 'bind' ? 1 : 2;
+
+        $("[name=commit]").val('<{$Think.lang._HINT_TRANSMITTING_}>');
+        $.post(u, d, function(res) {
+            $("[name=commit]").val('<{$Think.lang._ACCOUNT_SETTINGS_CHANGE_SUBMIT_}>');
+            
+            if (res.code != 0) {
+                alert('<{$Think.lang._HINT_SUBMIT_FAILED_}>');
+                return false;
+            } 
+
+            alert('<{$Think.lang._HINT_SUBMIT_SUCCESS_}>');
+            sg.jump('__HOST_PATH__');
+        });
+    });
+
+
+</script>
+
+    <include file="Template/home/footer.html" />
+</body>
+
+

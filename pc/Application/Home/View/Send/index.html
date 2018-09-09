@@ -1,0 +1,809 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+<!-- 内容 -->
+<block name="content">
+    <!--发送-->
+    <!-- 内容容器 -->
+    <div class="content-send col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+        <!--顶部标签页-->
+        <!--选项卡容器-->
+        <div class="buy-tab">
+            <!--选项卡1-->
+            <div class="tab1" onclick="getSendBalance(1)">
+                <a href="#" class="buy-BTC" id="send-BTC"><{$Think.lang._ACCOUNT_SEND_BTC_}></a>
+            </div>
+            <!--选项卡2-->
+            <div class="tab2" onclick="getSendBalance(2)">
+                <a href="#" class="buy-ETC" id="send-ETC"><{$Think.lang._ACCOUNT_SEND_ETH_}></a>
+            </div>
+        </div>
+
+        <!--第一状态-->
+        <form action="">
+            <div class="sendstate-1">
+                <div class="send-dep">
+                    <span class="send-pointer"><span class="point">•</span><{$Think.lang._ACCOUNT_SEND_BALANCE_}></span>
+                    <span class="available-coin"><b><span id="BTC-Send-balance"></span> BTC</b></span>
+                    <span class="send-all">(<{$Think.lang._ACCOUNT_SEND_ALL_}>)</span>
+                    <span class="buy-more"><a href="__HOST_PATH__/Home/Buy/index">(<{$Think.lang._ACCOUNT_SEND_MORE_}>)</a></span>
+                </div>
+
+                <!--输入地址-->
+                <div class="form-group-send">
+                <input type="text" id="email-field" style="width: 550px;" placeholder="<{$Think.lang._ACCOUNT_SEND_BTC_ADD_}>" autocomplete="off">
+                <div class="currency-pill-icon"><img id="icon-qrcode-btc" src="__PUBLIC__/images/icon_qrcode.png" alt="" /></div> 
+                </div>
+                 <span id="address-prompt" class="tip-below" style="display: none;"><{$Think.lang._ACCOUNT_SEND_ADD_HINT_}></span>
+          
+                <!--输入对方id-->
+                <input type="text" id="id-field" placeholder="<{$Think.lang._ACCOUNT_SEND_USER_ID_}>" autocomplete="off">
+                <span id="id-prompt" class="tip-below" style="display: none;"><{$Think.lang._ACCOUNT_SEND_ID_TIPS_}></span>
+
+
+                <!--转换按钮-->
+                <div class="form-group-send">
+                    <input id="widget-coin-field" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+                    <span class="currency-pill-inner">BTC</span>
+                </div>
+
+                <img class="icon-left-right-arrows" src="__PUBLIC__/images/left-right.png"/>
+                <div class="form-group-send">
+                    <input id="widget-coin-twd" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                    <span class="currency-pill-inner change-send">TWD</span>
+                </div>
+
+				<div class="send-area-dep tip-below" id="nullData">
+					<span class=""><{$Think.lang._ACCOUNT_SEND_LIMIT_}></span>&nbsp;
+					<span class=""><{$Think.lang._ACCOUNT_SEND_BTC_CHARGE_}></span>
+				</div>
+
+				<div class="send-area-dep tip-below" id="maxData">
+					<span class=""><{$Think.lang._ACCOUNT_SEND_MAX_}></span>&nbsp;
+					<span class=""><{$Think.lang._ACCOUNT_SEND_BTC_CHARGE_}></span>
+				</div>
+
+
+                <div class="send-textarea">
+                    <textarea name="command" id="notes-field" class="notes" placeholder="<{$Think.lang._ACCOUNT_SEND_NOTES_}>" maxlength="250" ></textarea>
+                </div>
+
+                <div class="send-area-dep">
+                    <p class="highlight"><{$Think.lang._ACCOUNT_SEND_BTC_CONTENT_}></p>
+                </div>
+
+                <!--发送比特币按钮-->
+                <button type="button" name="commit" id="submit-send-form" class="btn btn-primary disabled" disabled="disabled"><{$Think.lang._ACCOUNT_SEND_BTC_}></button>
+
+                <div class="send-area-dep">
+                    <p class="highlight"><{$Think.lang._ACCOUNT_SEND_CONFIRM_}></p>
+                </div>
+
+                <!--<div class="dash"></div>
+
+                <div class="faq">
+                    <span class="title"><{$Think.lang._ACCOUNT_SEND_QUESTIONS_}></span>
+                    <ul class="ques">
+                        <li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_ONE_}></a></li>
+                        <li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_TWO_}></a></li>
+                        <li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_THREE_}></a></li>
+                        <li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_FOUR_}></a></li>
+                    </ul>
+                </div>-->
+            </div>
+        </form>
+
+
+        <!--第二状态-->
+        <form action="">
+            <div class="sendstate-2" style="display: none;">
+                <div class="send-dep">
+                    <span class="send-pointer"><span class="point">•</span><{$Think.lang._ACCOUNT_SEND_BALANCE_}></span>
+                    <span class="available-coin"><b><span id="ETH-Send-balance"></span> ETH</b></span>
+                    <span class="send-all">(<{$Think.lang._ACCOUNT_SEND_ALL_}>)</span>
+                    <span class="buy-more"><a href="__HOST_PATH__/Home/Buy/index">(<{$Think.lang._ACCOUNT_SEND_MORE_}>)</a></span>
+                </div>
+
+                <!--输入地址-->
+                <div class="form-group-send">
+                	<input type="text"
+						   id="email-field-other"
+						   style="width: 550px;"
+						   placeholder="<{$Think.lang._ACCOUNT_SEND_ETH_ADD_}>"
+						   autocomplete="off"
+					>
+					<img class="currency-pill-icon" id="icon-qrcode-eth" src="__PUBLIC__/images/icon_qrcode.png" alt="" />
+                </div>
+               
+                <span id="address-prompt-other" class="tip-below" style="display: none;"><{$Think.lang._ACCOUNT_SEND_ADD_HINT_}></span>
+
+                <!--输入对方id-->
+                <input type="text" id="id-field-other" placeholder="<{$Think.lang._ACCOUNT_SEND_USER_ID_}>" autocomplete="off">
+                <span id="id-prompt-other" class="tip-below" style="display: none;"><{$Think.lang._ACCOUNT_SEND_ID_TIPS_}></span>
+
+
+                <!--转换按钮-->
+                <div class="form-group-send">
+                    <input id="widget-coin-field-other" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+                    <span class="currency-pill-inner">ETH</span>
+                </div>
+
+                <img class="icon-left-right-arrows" src="__PUBLIC__/images/left-right.png"/>
+                <div class="form-group-send">
+                    <input id="widget-coin-twd-other" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                    <span class="currency-pill-inner change-send">TWD</span>
+                </div>
+
+                <div class="send-area-dep tip-below" id="ethNullData">
+                    <span class=""><{$Think.lang._ACCOUNT_SEND_LIMIT_}></span>&nbsp;
+                    <span class=""><{$Think.lang._ACCOUNT_SEND_BTC_CHARGE_}></span>
+                </div>
+
+                <div class="send-area-dep tip-below" id="ethMaxData">
+                    <span class=""><{$Think.lang._ACCOUNT_SEND_MAX_}></span>&nbsp;
+                    <span class=""><{$Think.lang._ACCOUNT_SEND_BTC_CHARGE_}></span>
+                </div>
+                <div class="send-textarea">
+                    <textarea name="command" id="notes-field-other" class="notes" placeholder="<{$Think.lang._ACCOUNT_SEND_NOTES_}>" maxlength="250" ></textarea>
+                </div>
+
+                <div class="send-area-dep">
+                    <p class="highlight"><{$Think.lang._ACCOUNT_SEND_ETH_CONTENT_}></p>
+                </div>
+
+                <!--发送以太币按钮-->
+                <button type="button" name="commit" id="submit-send-other" class="btn btn-primary disabled" disabled="disabled"><{$Think.lang._ACCOUNT_SEND_ETH_}></button>
+
+                <div class="send-area-dep">
+                    <p class="highlight"><{$Think.lang._ACCOUNT_SEND_CONFIRM_}></p>
+                </div>
+
+                <div class="send-area-dep notes-list">
+                    <ul>
+                        <li>
+                            <{$Think.lang._ACCOUNT_SEND_ADD_FORMAT_}>
+                        </li>
+                        <li class="highlight">
+                            <{$Think.lang._ACCOUNT_SEND_ETH_CONTENT_}>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--<div class="dash"></div>-->
+                <!---->
+                <!--<div class="faq">-->
+                    <!--<span class="title"><{$Think.lang._ACCOUNT_SEND_QUESTIONS_}></span>-->
+                    <!--<ul class="ques">-->
+                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_ONE_}></a></li>-->
+                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_TWO_}></a></li>-->
+                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_THREE_}></a></li>-->
+                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_FOUR_}></a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </div>
+        </form>
+    </div>
+    
+    <!--<js href="__PUBLIC__/home/js/function.js" />-->
+    <js href="__PLUG-IN__/layui/layui.js" />
+    
+    <script>
+    	 
+    	 
+    	
+    	
+    	$(function(){
+    		if(GetRequest().type == 2){
+
+	            $(".buy-ETC").css({
+	                textDecoration:"none",
+	                color:"#000"
+	            });
+	
+	            $(".tab2").css({
+	                backgroundColor:"#fff",
+	                borderBottom:"1px solid #fff"
+	            });
+	
+	            $(".tab1").css({
+	                backgroundColor:"#F0EFEE",
+	                borderBottom:"1px solid #ddd"
+	            });
+	
+	            $(this).mouseover(function(){
+	                $(this).css("color","#000");
+	            });
+	            
+	            $('.sendstate-1').css({'display':'none'});
+            	$('.sendstate-2').css({'display':'block'});
+            	
+            	getSendBalance(2); 
+
+        	}
+    	});
+
+    	function GetRequest() {//获取get请求后面的参数
+	        var url = location.search; //获取url中"?"符后的字串
+	        var theRequest = new Object();
+	        if (url.indexOf("?") != -1) {
+	            var str = url.substr(1);
+	            strs = str.split("&");
+	            for(var i = 0; i < strs.length; i ++) {
+	                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	            }
+	        }
+	        return theRequest;
+		}
+
+        $(".buy-BTC").click(function(){
+            $(this).css({
+                textDecoration:"none",
+                color:"#000"
+            });
+
+            $(".tab1").css({
+                backgroundColor:"#fff",
+                borderBottom:"1px solid #fff"
+            });
+
+            $(".tab2").css({
+                backgroundColor:"#F0EFEE",
+                borderBottom:"1px solid #ddd"
+            });
+
+            $(this).mouseover(function(){
+                $(this).css("color","#000");
+            });
+        });
+
+        $(".buy-ETC").click(function(){
+            $(this).css({
+                textDecoration:"none",
+                color:"#000"
+            });
+
+            $(".tab2").css({
+                backgroundColor:"#fff",
+                borderBottom:"1px solid #fff"
+            });
+
+            $(".tab1").css({
+                backgroundColor:"#F0EFEE",
+                borderBottom:"1px solid #ddd"
+            });
+
+            $(this).mouseover(function(){
+                $(this).css("color","#000");
+            });
+        });
+		
+        //点击切换比特币以太币
+        $('#send-BTC').click(function(){
+            $('.sendstate-1').css({'display':'block'});
+            $('.sendstate-2').css({'display':'none'});
+        });
+
+        $('#send-ETC').click(function(){
+            $('.sendstate-1').css({'display':'none'});
+            $('.sendstate-2').css({'display':'block'});
+        });
+        
+        //控制一级菜单的点击事件
+		$(".nav-a").css("color","#3388BB");
+		$(".nav-span").css("color","#3388BB");
+		$(".nav-a").css("border-bottom","2px solid #fff");
+		
+		$(".nav-a").eq(1).css("color","#000");
+		$(".nav-span").eq(0).css("color","#000");
+		$(".nav-span").eq(1).next().css("color","#000");
+		$(".nav-a").eq(1).css("border-bottom","2px solid #3388BB");
+		
+		$(".text-content").html("<{$Think.lang._ACCOUNT_SEND_}>&nbsp;");
+
+
+
+		//比特币地址
+        $('#email-field').blur(function(){
+            var emailContent = $(this).val();
+            if (emailContent == '') {
+                $('#address-prompt').css({'display':'block'});
+            }else{
+            	$('#address-prompt').css({'display':'none'});
+            }
+            BtcSendNotNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+			BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+        });
+		
+		//比特币id
+		var IdStatus = false;
+        $('#id-field').blur(function(){
+            var idReg = /^[a-zA-Z]{8}$/;
+            var idContent = $("#id-field").val();
+            if (idContent == '' || !idReg.test(idContent)) {
+                $('#id-prompt').css({'display':'block'});
+                IdStatus = false;
+            }else{
+				IdStatus = true;
+				$('#id-prompt').css({'display':'none'});
+            }
+            BtcSendNotNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+			BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+        });
+        
+		//发送比特币左输入框 数量
+        $("#widget-coin-field").keyup(function(){
+		    btc_Send_number = $("#widget-coin-field").val();
+		    btc_Send_price = btc_Send_number*BTC_unit_price;
+		    $("#widget-coin-twd").val(btc_Send_price.toFixed(0));
+    		if($("#widget-coin-field").val() == ""){
+	    		$("#widget-coin-twd").val("")
+	    	}else{
+	    	}
+    		BtcSendNotNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+    		BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+		});
+		
+		//发送比特币右输入框 价格
+        $("#widget-coin-twd").keyup(function(){
+		    btc_Send_price = $("#widget-coin-twd").val();
+		    btc_Send_number = btc_Send_price/BTC_unit_price;
+		    $("#widget-coin-field").val(btc_Send_number.toFixed(4));
+    		if($("#widget-coin-twd").val() == ""){
+	    		$("#widget-coin-field").val("")
+	    	}
+	    	BtcSendNotNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+    		BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+		});
+        
+        
+        
+        //以太币地址
+        $('#email-field-other').blur(function(){
+            var emailContent = $(this).val();
+            if (emailContent == '') {
+                $('#address-prompt-other').css({'display':'block'});
+            }else{
+            	$('#address-prompt-other').css({'display':'none'});
+            }
+			BtcSendNotNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+			BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+        });
+		
+		//以太币id
+		var ETHIdStatus = false;
+        $('#id-field-other').blur(function(){
+            var idReg = /^[a-zA-Z]{8}$/;
+            var idContent = $("#id-field-other").val();
+            if (idContent == '' || !idReg.test(idContent)) {
+                $('#id-prompt-other').css({'display':'block'});
+                ETHIdStatus = false;
+            }else{
+				ETHIdStatus = true;
+				$('#id-prompt-other').css({'display':'none'});
+            }
+            BtcSendNotNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+			BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+        });
+        
+        
+        //发送以太币左输入框 数量
+        $("#widget-coin-field-other").keyup(function(){
+		    eth_Send_number = $("#widget-coin-field-other").val();
+		    eth_Send_price = eth_Send_number*ETH_unit_price;
+		    $("#widget-coin-twd-other").val(eth_Send_price.toFixed(0));
+    		if($("#widget-coin-field-other").val() == ""){
+    			$('#eth_limit').show();
+	    		$("#widget-coin-twd-other").val("")
+	    	}else{
+	    		$('#eth_limit').hide();
+	    	}
+    		BtcSendNotNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+    		BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+		});
+		
+		//发送以太币右输入框 价格
+        $("#widget-coin-twd-other").keyup(function(){
+		    eth_Send_price = $("#widget-coin-twd-other").val();
+		    eth_Send_number = eth_Send_price/ETH_unit_price;
+		    $("#widget-coin-field-other").val(eth_Send_number.toFixed(4));
+    		if($("#widget-coin-twd-other").val() == ""){
+	    		$("#widget-coin-field-other").val("")
+	    	}
+    		BtcSendNotNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+    		BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+		});
+
+		
+		//交互
+		
+		var send_address;		//发送地址
+		var maincoin_id; 		//发送id
+		var number;  			//数量
+		var leave_words; 		//留言
+		var nonce_str = nonceStr(32); 	//随机32个随机数
+		
+		
+		var BTC_unit_price;		//比特币单价
+		var ETH_unit_price;		//以太币单价
+		
+		var BTC_unit_balance;	//比特币余额
+		var ETH_unit_balance;	//以太币余额
+		
+        var btc_Send_number; 	//btc数量
+        var btc_Send_price; 	//btc总价格
+       
+        var eth_Send_number; 	//eth数量
+        var eth_Send_price; 	//eth总价格
+		
+		getSendBalance(1); //获取比特币以太币余额
+		function getSendBalance(id){
+			var SendBalance_url = "__HOST_PATH__/Home/Send/getBalance";
+			var SendBalance_data = {
+				currency_type: id,
+				nonce_str: nonce_str,
+				sign: hex_md5("__VERIFY_STR__" + id + nonce_str)
+			};
+			
+			$.ajax({
+				url: SendBalance_url,
+				data: SendBalance_data,
+				type: "post",
+				success:function(res){
+					if(res.code == 0){
+						if(id==1){
+							$("#BTC-Send-balance").html(res.btc_balance);
+							BTC_unit_balance = res.btc_balance;
+						}
+						if(id==2){
+							$("#ETH-Send-balance").html(res.eth_balance);
+							ETH_unit_balance = res.eth_balance;
+						}
+						
+					}
+				}
+			});
+		};
+
+		dataInit();
+		/**
+		 * 初始化
+		 */
+		function dataInit() {
+			$('#nullData').css({'display': 'none'});
+			$('#maxData').css({'display': 'none'});
+			$('#ethNullData').css({'display': 'none'});
+			$('#ethMaxData').css({'display': 'none'});
+		}
+		/**
+		 * 比特币
+		 */
+		$('#widget-coin-field').blur(function () {
+			if($('#widget-coin-field').val() == 0 ) {
+				$('#nullData').css({'display': 'block'});
+				$('#maxData').css({'display': 'none'});
+			}
+
+			if($('#widget-coin-field').val() > parseFloat(BTC_unit_balance)) {
+				$('#nullData').css({'display': 'none'});
+				$('#maxData').css({'display': 'block'});
+			} else {
+				$('#maxData').css({'display': 'none'});
+			}
+		});
+		$('#widget-coin-field').focus(function () {
+			$('#nullData').css({'display': 'none'});
+		});
+
+		/**
+		 * 以太币
+		 */
+		$('#widget-coin-field-other').blur(function () {
+			if($('#widget-coin-field-other').val() == 0 ) {
+				$('#ethNullData').css({'display': 'block'});
+				$('#ethMaxData').css({'display': 'none'});
+			}
+
+			if($('#widget-coin-field-other').val() > parseFloat(ETH_unit_balance)) {
+				$('#ethNullData').css({'display': 'none'});
+				$('#ethMaxData').css({'display': 'block'});
+			} else {
+				$('#ethMaxData').css({'display': 'none'});
+			}
+		});
+		$('#widget-coin-field-other').focus(function () {
+			$('#ethNullData').css({'display': 'none'});
+		});
+		
+		//判断文本框不为空
+		function BtcSendNotNull(site,id,leftID,rightID,btn,IdStatus){
+			var SendSite = $(site).val();
+			var SendId = $(id).val();
+			var SendtextLeft = $(leftID).val();
+			var SendtextRight = $(rightID).val();
+			
+			if(SendSite != "" && SendId != "" && SendtextLeft != "" && SendtextRight != "" && IdStatus){
+				$(btn)
+				.removeAttr('disabled')
+				.removeClass('disabled')
+				.css({
+				    background: "#5AC",
+				    boxShadow: "inset 0 -3px 0 #18A",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$(btn).css("background","#4499BB");
+				},function(){
+					$(btn).css("background","#5AC");
+				});
+			}
+		}
+		
+		//判断文本框为空
+		function BtcSendNull(site,id,leftID,rightID,btn,IdStatus){
+			var SendSite = $(site).val();
+			var SendId = $(id).val();
+			var SendtextLeft = $(leftID).val();
+			var SendtextRight = $(rightID).val();
+			
+			if((SendSite == "" || SendId == "" || SendtextLeft == "" || SendtextRight == "") && IdStatus){
+				$(btn).attr('disabled','disabled');
+				$(btn).addClass('disabled');
+				$(btn).css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$(btn).css("background","#ddd");
+				},function(){
+					$(btn).css("background","#ddd");
+				});
+			}else if((SendSite != "" && SendId != "" && SendtextLeft != "" && SendtextRight != "") && !IdStatus){
+				$(btn).attr('disabled','disabled');
+				$(btn).addClass('disabled');
+				$(btn).css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$(btn).css("background","#ddd");
+				},function(){
+					$(btn).css("background","#ddd");
+				});
+			}
+		}
+		
+		//點擊發送比特幣按鈕
+		$("#submit-send-form").click(function(){
+			send_address = $("#email-field").val(); //发送地址
+			maincoin_id = $("#id-field").val(); //发送id
+			number = $("#widget-coin-field").val(); //数量
+			var price = $("#widget-coin-twd").val();//总价
+			leave_words = $("#notes-field").val(); //留言
+			nonce_str = nonceStr(32);//随机32个随机数
+			
+			var btnName = $(this).html();
+			
+			
+			console.log(parseFloat(number));
+			console.log(parseFloat(BTC_unit_balance));
+			
+			if(parseFloat(BTC_unit_balance) >= parseFloat(number) && number != 0 && price != 0  && number > 0 && price > 0){
+				sg.loading($('#submit-send-form'));
+				getSend(1,send_address,maincoin_id,number,leave_words,nonce_str, function(res) {
+					sg.hideLoading($('#submit-send-form'), btnName);
+                    if (res.code == 0) {
+                        alert("<{$Think.lang._HINT_BTC_SEND_OK_}>");
+                        window.location.href = "__HOST_PATH__/Home/Index/index";
+
+                    } else {
+                        // 会失败
+                        alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+                    }
+                });
+
+			} else {
+				alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+				$("#widget-coin-field").val("");
+				$("#widget-coin-twd").val("");
+    			BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
+			}
+		})
+		
+		//點擊發送以太幣按鈕
+		$("#submit-send-other").click(function(){
+			send_address = $("#email-field-other").val(); //发送地址
+			maincoin_id = $("#id-field-other").val(); //发送id
+			number = $("#widget-coin-field-other").val(); //数量
+			var price = $("#widget-coin-twd-other").val();
+			leave_words = $("#notes-field-other").val(); //留言
+			nonce_str = nonceStr(32);//随机32个随机数
+			
+			var btnName = $(this).html();
+			
+			if(parseFloat(ETH_unit_balance) >= parseFloat(number) && number != 0 && price != 0  && number > 0 && price > 0){
+				sg.loading($("#submit-send-other"));
+				
+				getSend(2,send_address,maincoin_id,number,leave_words,nonce_str,function(res){
+					sg.hideLoading($('#submit-send-other'), btnName);
+					if(res.code == 0){
+						alert("<{$Think.lang._HINT_ETH_SEND_OK_}>");
+						window.location.href = "__HOST_PATH__/Home/Index/index?type=2";
+					}else{
+						// 会失败
+                        alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+					}
+				});
+				
+			}else{
+				alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+				$("#widget-coin-field-other").val("");
+				$("#widget-coin-twd-other").val("");
+				BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
+			}
+		})
+
+		//上传二维码照片
+		var qrcode_url;
+
+    	layui.use(['layer', 'upload'], function(){
+	        var $ = layui.jquery, layer = layui.layer;
+			var upload = layui.upload;
+
+			var h = '';
+			var w = '';
+
+			/**
+			 * 获取可是窗口的宽度
+			 */
+			if (document.documentElement.clientWidth < 500 ) {
+				w = '90%';
+				h = '35%';
+			} else {
+				w = '30%';
+				h = '35%';
+			}
+			$('#icon-qrcode-btc,#icon-qrcode-eth').click(function(){
+				layer.open({
+					type: 1,
+					title: '<{$Think.lang._HINT_UPLOAD_PIC_}>',
+					area: [w, h],
+					offset:'20%',
+					anim: '1',
+					fixed: 'false',
+					shadeClose: true, //点击遮罩关闭
+					content: '<div><br><div style="font-size:20px;text-align: center;"><{$Think.lang._HINT_UPLOAD_PIC_}></div><br><button type="button" id="uploadeq-btn" class="layui-btn" style="width: 80%;height: 30%;color: #ccc;background: #FFFFFF;border: 2px dashed #ccc; font-size: 25px;margin-left: 10%;"><{$Think.lang._HINT_UPLOAD_IMAGE_}></button></div>'
+				});
+				    
+
+				var uploadInst = upload.render({
+					elem: '#uploadeq-btn' //绑定元素
+//					    ,auto: false //选择文件后不自动上传
+//						,bindAction: '#submit-send-form' //指向一个按钮触发上传
+					,url: '__HOST_PATH__/home/Send/getUpload' //上传接口
+					,done: function(res){
+						 layer.closeAll();
+						//如果上传失败
+						if(res.code > 0) {
+							return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>');
+						}
+						//上传成功
+						layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {
+							offset:'350px',anim: '0',fixed: 'false',icon: 1
+						});
+						qrcode_url = res.data.file_url; // 临时保存背面图片路径
+					}
+					,error: function(){
+										//演示失败状态，并实现重传
+						var demoText = $('#upload-err');
+						demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;"><{$Think.lang._HINT_UPLOAD_IMAGE_}></span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload"><{$Think.lang._HINT_RETRY_}></a>');
+
+						demoText.find('.demo-reload').on('click', function() {
+							uploadInst.upload();
+						});
+					}
+
+				});
+
+
+				//隐藏
+				$('.layui-upload-file').hide();
+
+			})
+    	});
+
+
+		//返回 发送的数据
+		function getSend(id,send_address,maincoin_id,number,leave_words,nonce_str, callback){
+
+			
+			var Send_url = "__HOST_PATH__/Home/Send/getSendInfo";
+			var Send_data = {
+				currency_type: id,
+				send_address: send_address,
+				maincoin_id: maincoin_id,
+				number: number,
+				leave_words: leave_words,
+				nonce_str: nonce_str,
+				file_url: qrcode_url,
+				sign: hex_md5("__VERIFY_STR__" + id + maincoin_id + number + nonce_str + send_address)
+			};
+			
+			$.ajax({
+				url: Send_url,
+				data: Send_data,
+				type: "post",
+				success:function(res){
+                    callback(res);
+				}
+			});
+		}
+		
+		var url = '__HOST_PATH__/Home/RealtimeMarket/Price';
+        var SendIndex = $.cookie('btc_float_value');
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+					if (SendIndex == 1) {
+                    	$('.change-send').text('TWD');
+                        BTC_unit_price = res.data[0].btc_value_twd;
+                        ETH_unit_price = res.data[0].eth_value_twd;
+                    } else if (SendIndex == 2) {
+						$('.change-send').text('HKD');
+                        BTC_unit_price = res.data[0].btc_value_hkd;
+                        ETH_unit_price = res.data[0].eth_value_hkd;
+                        
+                    } else if (SendIndex == 3) {
+                    	$('.change-send').text('USD');
+                        BTC_unit_price = res.data[0].btc_value_usd;
+                        ETH_unit_price = res.data[0].eth_value_usd;
+                    }else{
+                    	$('.change-send').text('TWD');
+                    	BTC_unit_price = res.data[0].btc_value_twd;
+                        ETH_unit_price = res.data[0].eth_value_twd;
+                    }
+                }
+            });	
+		
+
+        //点击刷新页面
+        $('.clickTWD').click(function(){
+            window.location.reload();
+        });
+
+        $('.clickHKD').click(function(){
+            window.location.reload();
+        });
+
+        $('.clickUSD').click(function(){
+            window.location.reload();
+        });
+        
+        
+        function clearNoNum(obj){
+        	obj.value = obj.value.replace(/^\./g,"");  //不能以点开头
+		    obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符  
+		    obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的  
+		    obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$","."); 
+		    obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/,'$1$2.$3');//只能输入4个小数  
+		    if(obj.value.indexOf(".")< 0 && obj.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额 
+		        obj.value= parseFloat(obj.value); 
+		    } 
+		}
+
+    </script>
+
+</block>

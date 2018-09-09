@@ -1,0 +1,284 @@
+<include file="Template/home/header.html" />
+<css href="__PUBLIC__/home/css/contactUs.css" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+<js href="__PLUG-IN__/layui/layui.js" />
+
+<body>
+	<!-- 顶部 -->
+	<include file="Template/home/top.html" />
+
+	<!-- 选项卡 -->
+	<include file="Template/home/nav.html" />
+	<section>
+	    <block name="content">
+	    	<nav style="background: url(__PUBLIC__/images/one.png) no-repeat; width: 100%; background-size: 100% 100%;">
+				<div class="contact-us">
+					<p><{$Think.lang._CONTACT_US_}></p>
+				</div>
+			</nav>
+			<div id="page">
+				<div>
+                    <br>
+					<!--交易 ID-->
+					<div class="field-block">
+					<label for=""><{$Think.lang._CONTACT_ORDER_ID_}></label><br />
+					<input type="text" class="input-contactus" id="transactionId" /><br />
+					<span class="tip-below-wrapper ticket-email-msg tip-error " style="display: none;">
+                    	<span id="ticket-email-prompt" class="tip-below-msg" >
+                    	<{$Think.lang._ACCOUNT_SEND_ID_TIPS_}>
+					    </span>
+					  </span>
+					</div>
+
+					<!--Email-->
+					<div class="field-block">
+					<label for=""><{$Think.lang._CONTACT_EMAIL_}></label><br />
+					<input type="text" class="input-contactus" id="Email" /><br />
+					  <span class="tip-below-wrapper ticket-email-msg tip-error " style="display: none;">
+                    	<span id="ticket-email-prompt" class="tip-below-msg" >
+                    	<{$Think.lang._HINT_RES_EMAIL_EMPTY_}>
+					    </span>
+					  </span>
+					</div>
+
+					<!--姓名-->
+                    <div class="field-block">
+                    <label for=""><{$Think.lang._CONTACT_FULL_NAME_}></label><br />
+					<input type="text" class="input-contactus" id="name" /><br />
+					   <span class="tip-below-wrapper ticket-name-msg tip-error " style="display: none;">
+                    	<span id="ticket-name-prompt" class="tip-below-msg" >
+                    	<{$Think.lang._ACCOUNT_SETTINGS_NAME_NOTICE_}>
+					    </span>
+					  </span>
+                    </div>
+					
+					<!--主题-->
+                    <div class="field-block">
+                       <label for=""><{$Think.lang._CONTACT_SUBJECT_}></label><br />
+					   <input type="text" class="input-contactus" id="theme" /><br />
+					   <span class="tip-below-wrapper ticket-theme-msg tip-error " style="display: none;">
+                    	<span id="ticket-theme-prompt" class="tip-below-msg" >
+                    	<{$Think.lang._HINT_FILL_}>
+					    </span>
+					  </span>
+                    </div>
+
+					<!--内容-->
+                    <div class="field-block">
+                        <label for=""><{$Think.lang._CONTACT_MESSAGE_}></label><br />
+					    <textarea name="" rows="" cols="" class="content" id="content"></textarea>
+					    <span class="tip-below-wrapper ticket-content-msg tip-error " style="display: none;">
+                    	<span id="ticket-content-prompt" class="tip-below-msg" >
+                    	<{$Think.lang._HINT_FILL_}>
+					    </span>
+					  </span>
+                    </div>
+
+                    <br>
+
+                    <div class="layui-upload" style="margin: 10px 0 10px 0;">
+                        <span><{$Think.lang._HINT_UPLOAD_PIC_}></span>
+                        <button type="button" class="layui-btn" id="contact-upload-btn"><{$Think.lang._HINT_UPLOAD_}></button>
+                        <div id="systemLogo" class="layui-upload-list">
+                            <img class="layui-upload-img" id="contact-upload-img" style="display:none">
+                            <p id="upload-err"></p>
+                        </div>
+                    </div>
+
+                    <!--按钮-->
+                    <input type="button" id="last" value="<{$Think.lang._CONTACT_SUBMIT_}>" data-disable-with="<{$Think.lang._HINT_TRANSMITTING_}>" />
+
+                </div>
+
+                    <!--联系信息-->
+                    <div class="conduction">
+                        <span style="color: #999;">FAQ</span>
+                        <p><{$Think.lang._CONTACT_FAQ_TIPS_TOP_}>
+                            <a href="__HOST_PATH__/Home/Question" style="color: #4997C8;">
+                                <{$Think.lang._CONTACT_QUESTIONS_}>
+                            </a>
+                            <{$Think.lang._CONTACT_FAQ_TIPS_DOWN_}>
+                        </p>
+                        <p><{$Think.lang._HINT_BUSINESS_TIME_}>：<span id="service_time"></span></p>
+                        <p><{$Think.lang._LOGIN_PHONE_}> <span id="company_tel"></span></p>
+                        <p><{$Think.lang._LOGIN_EMAIL_}> <span id="company_email" style="color: #4997C8;"></span></p>
+                        <p style="color: #F38676;"><{$Think.lang._CONTACT_TIPS_}></p>
+                    </div>
+				<div class="fd"></div>
+			</div>
+		</block>
+
+        <script>
+
+            var img_address;
+            var img_name;
+
+            layui.use('upload', function(){
+                var $ = layui.jquery,
+                        upload = layui.upload,
+                        qnurl = "__HOST_PATH__/Home/ContactUs/getUpload";
+
+                //普通图片上传
+                var uploadInst = upload.render({
+                    elem: '#contact-upload-btn',
+                    url: qnurl,
+                    data: {
+                        type: "1"
+                    },
+                    before: function(obj){
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function(index, file, result) {
+                            $('#contact-upload-img').attr('src', result); //图片链接（base64）
+                        });
+                    },
+                    choose: function() {
+                        layer.load(2);
+                    },
+                    done: function(res){
+                        layer.closeAll();
+                        //如果上传失败
+                        if(res.code > 0){
+                            return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>');
+                        }
+                        //上传成功
+                        layer.msg("<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>");
+                        $('#contact-upload-img').css({'display':'block'});
+                        img_address = res.data.file_address;                        // 临时保存图片路径
+                        img_name = res.data.file_name;                              // 临时保存图片名字
+                    },
+                    error: function(){
+                        //演示失败状态，并实现重传
+                        var demoText = $('#upload-err');
+                        demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;"><{$Think.lang._HINT_UPLOAD_FAIL_}></span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload"><{$Think.lang._HINT_RETRY_}></a>');
+
+                        demoText.find('.demo-reload').on('click', function(){
+                            uploadInst.upload();
+                        });
+                    }
+                });
+            });
+
+
+            //点击上传问题内容
+            $('#last').click(function(){
+
+                var topic = $('#theme').val();
+                var transactionId = $('#transactionId').val();
+                var Email = $('#Email').val();
+                var name = $('#name').val();
+                var content = $('#content').val();
+                var filestatus = 0;
+
+                var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+                var nameReg= /^[0-9]*$/;
+                var idReg = /^[a-zA-Z]{8}$/;
+
+                if(Email == '') {
+                    $('.ticket-email-msg').css({'display':'block'});
+                    return ;
+                }else {
+                    $('.ticket-email-msg').css({'display':'none'});
+                }
+
+                if (!emailReg.test(Email)){
+                    $('.ticket-email-msg').css({'display':'block'});
+                    return ;
+                }else {
+                    $('.ticket-email-msg').css({'display':'none'});
+                }
+
+                if(name == '' || nameReg.test(name)) {
+                    $('.ticket-name-msg').css({'display':'block'});
+                    return ;
+                }else{
+                    $('.ticket-name-msg').css({'display':'none'});
+                }
+
+                if(topic == '') {
+                    $('.ticket-theme-msg').css({'display':'block'});
+                    return ;
+                }else{
+                    $('.ticket-theme-msg').css({'display':'none'});
+                }
+
+                if(content == '') {
+                    $('.ticket-content-msg').css({'display':'block'});
+                    return ;
+                }else{
+                    $('.ticket-content-msg').css({'display':'none'});
+                }
+                
+                if(!idReg.test(transactionId) && transactionId != '') {
+                	$('.tranid-name-msg').css({'display':'block'});
+                    return ;
+                }else {
+                	$('.tranid-name-msg').css({'display':'none'});
+                }
+                
+
+                if(transactionId == '') {
+                    transactionId = 0;
+                }
+
+                if( img_address === undefined ) {
+                    filestatus = 0;
+                }else {
+                    filestatus = 1;
+                }
+
+                //获取用户发送的问题和内容
+                var url_getinfo = '__HOST_PATH__/Home/ContactUs/getInfo';
+                var data_getinfo = {
+                    system_order: transactionId,
+                    email: Email,
+                    name: name,
+                    topic: topic,
+                    content: content,
+                    file_status: filestatus,
+                    file_name: img_name,
+                    file_address: img_address
+                };
+
+                $.ajax({
+                    url: url_getinfo,
+                    data: data_getinfo,
+                    type: 'post',
+                    success: function(res){
+                        console.log(res);
+                        $('#last').val('<{$Think.lang._HINT_TRANSMITTING_}>');
+                        setTimeout(function(){
+                            alert('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>');
+                            window.location.href='__HOST_PATH__/Home/index/index';
+                        },1000);
+
+                    }
+                });
+
+            });
+
+            //获取联系我们信息
+            var url_getcontactus = '__HOST_PATH__/Home/Login/getContactUs';
+            $.ajax({
+                url: url_getcontactus,
+                type: 'get',
+                success:function (res) {
+                    $('#service_time').text(res.service_time);
+                    $('#company_tel').text(res.company_tel);
+                    $('#company_email').text(res.company_email);
+                }
+            });
+
+            //响应式侧边栏颜色
+            $('#minwidth1-act').css({'background':'#697785'});
+            $('#minwidth2-act').css({'background':'#697785'});
+            $('#minwidth3-act').css({'background':'#3388BB'});
+            $('#minwidth4-act').css({'background':'#697785'});
+
+        </script>
+
+	</section>
+
+	<footer>
+		<include file="Template/home/footer.html" />
+	</footer>
+</body>

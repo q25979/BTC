@@ -1,0 +1,78 @@
+<include file="Template/home/header.html" />
+
+<CSS href="__PUBLIC__/home/css/ViewMore.css" />
+<body>
+<!-- 顶部 -->
+<include file="Template/home/top.html" />
+
+<!-- 选项卡 -->
+<include file="Template/home/nav.html" />
+
+
+
+<!--查看更多-->
+<div class="ViewMore-head" style="background-image: url(__PUBLIC__/images/one.png);">
+	<!--文字-->
+	<div class="ViewMore-head-p">
+		<p><{$Think.lang._FAQ_SEND_RECEIVE_}> </p>
+	</div>
+	
+</div>
+<div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+
+	
+    <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 0px;position: relative;overflow: hidden;" >
+        <block name="content">
+        	<!--公告容器-->
+            <div class="ViewMore-container">
+            	<ul class="articles">
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">如何發送數位資產？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">如何接收數位資產？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">為何無法發送數位資產？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">從外部錢包轉移數位資產至 MaiCoin 錢包時，需要多少時間？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">為何從外部傳送比特幣至 MaiCoin 錢包，但一直沒收到？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">可以獲取新的地址嗎？舊的地址還能用嗎？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">為何在區塊鏈 (俗稱透明帳本) 發送交易狀態不是我的地址?</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">請問錢包與地址的差別？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">MaiCoin電子錢包可以下載備份嗎？</a>
+			        </li>
+			        
+			        <li class="articles__item">
+			            <a class="articles__link" href="javascript:;">請問什麼是 "聯絡人"?</a>
+			        </li>
+			        
+			    </ul>
+            </div>
+        </block>
+    </section>
+</div>
+
+<footer>
+    <include file="Template/home/footer.html" />
+</footer>
+</body>

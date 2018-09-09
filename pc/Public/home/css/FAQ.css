@@ -1,0 +1,81 @@
+/*头部图片容器*/
+.FAQ-head{
+	position: relative;
+	width: 100%;
+	height: 110px;
+	background: no-repeat ;
+	background-size: 100% 100%;
+}
+
+/*头部文字容器*/
+.FAQ-head-p{
+	margin: 0 auto;
+	max-width: 1200px;
+	height: 110px;
+	position: relative;
+}
+
+/*头部文字*/
+.FAQ-head-p span{
+	font-size: 30px;
+	color: #fff;
+	margin-right: 10px;
+}
+
+/*头部文字*/
+.FAQ-head-p p{
+    color: #fff;
+    font-size: 18px;
+    padding-top: 24px;
+    padding-left: 16px;
+    margin: 0 auto;
+	float: left;
+    
+}
+
+/*常见问题容器*/
+.FQA-container{
+	padding: 40px 16px;
+}
+
+/*h1*/
+.FQA-container h1 {
+    font-size: 26px;
+    margin: 10px 0 40px 0;
+}
+
+/*第一个h3*/
+.FQA-container .selected{
+	    color: #3388bb;
+    font-weight: bold;
+}
+
+/*h3*/
+.FQA-container .question{
+	margin: 5px 0 10px 0;
+	font-size: 18px;
+}
+
+/*p*/
+.FQA-container p{
+	line-height: 20px;
+}
+
+/*去除a标签下划线*/
+.faq_category a {
+	text-decoration: none;
+}
+
+/*小屏幕自适应*/
+@media (max-width: 770px) {
+	/*内容容器*/
+	.FQA-container {
+		width: 100%;
+		padding: 0 16px 20px;
+		margin-top: 46px;
+	}
+	
+	.FAQ-head-p{
+	margin-top: 10px;
+}
+}

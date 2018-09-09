@@ -1,0 +1,127 @@
+{include file="head" /}
+
+
+
+<!-- 编辑器引入结束 -->
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+
+          <div class="row">
+                  <div class="col-sm-12">
+                      <aside class="profile-info col-lg-9">
+                      <section class="panel">
+
+                          <div class="panel-body bio-graph-info">
+                              <h1> 添加充值配置</h1>
+                              <form class="form-horizontal" role="form" method="post" id="formid">
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">名称</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="pay_name"  value="{$pay_name?$pay_name:''}"  >
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">配置信息</label>
+                                      <div class="col-lg-6">
+                                          <textarea name="pay_conf"  class="form-control" cols="30" rows="10">{$pay_conf?$pay_conf:''}</textarea>
+                                          <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                             <strong>格式：</strong> key1:value1|key2:value2|......
+                                          </div>
+                                      </div>
+                                      
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">是否使用</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="is_use"  value="{$is_use?$is_use:'0'}"  >
+                                          <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                             <strong>说明：</strong> 1显示；0不显示
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">每笔手续费</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="pay_point"  value="{$pay_point?$pay_point:'0'}"  >
+                                          <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                             <strong>说明：</strong> 输入百分比，如：2%则输入2
+                                          </div>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">排序</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="pay_order"  value="{$pay_order?$pay_order:'0'}"  >
+                                          <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                             <strong>说明：</strong> 数字越大越靠前
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  {if isset($id) && !empty($id)}
+                                    <input type="hidden" value="{$id}" name="id">
+                                  {/if}
+
+
+                                  <div class="form-group">
+                                      <div class="col-lg-offset-2 col-lg-10">
+                                          <input type="submit" value="提交"  onclick="return editcon(this.form)" class="btn btn-success">
+
+                                      </div>
+                                  </div>
+
+                              </form>
+                          </div>
+                      </section>
+
+                  </aside>
+                  </div>
+
+          </div>
+
+
+
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script type="text/javascript" src="/static/public/umeditor/umindex.js"></script>
+<script>
+  function editcon(form){
+
+    var pay_name = form.pay_name.value;
+    var pay_conf = form.pay_conf.value;
+    var is_use = form.is_use.value;
+    var pay_point = form.pay_point.value;
+
+    if(!pay_name){layer.msg('请输入名称'); return false;}
+    if(!pay_conf){layer.msg('请输入配置信息'); return false;}
+
+    var formurl = "{:Url('system/addrech')}";
+    var data = $('#formid').serialize();
+    var locurl = "{:Url('system/recharge')}";
+
+    WPpost(formurl,data,locurl);
+
+    return false;
+
+  }
+
+
+ 
+</script>

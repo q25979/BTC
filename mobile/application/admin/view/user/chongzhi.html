@@ -1,0 +1,66 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row state-overview">
+                <div class="container">
+                <form id="formid" action="{:url('user/userlist')}" method="post">
+                <div class="row">
+                     <div class="col-lg-3 mar-10">
+                      <div class="input-group">
+                              <span class="input-group-addon">手机号</span>
+                              <input type="text" value="" placeholder="请输入用户手机号" name="utel" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-lg-5 mar-10">
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">充值金额</span>
+                            <input type="text"  value=""  class="form-control" name="bpprice" placeholder="请输入充值金额"/>
+                        </div>
+                      </div>
+
+                      
+                  <div class="mar-10">
+                   <input type="submit" onclick="return editcon(this.form)" class="btn btn-success" value="提交">
+                  </div>
+                </div>
+                </form>
+              </div>
+              
+                 
+              
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script>
+  function editcon(form){
+    
+    var utel = form.utel.value;
+    var bpprice = form.bpprice.value;
+
+ 
+    if(!utel){layer.msg('请输入用户手机号'); return false;}
+    if(!bpprice){layer.msg('请输入充值金额'); return false;}
+    
+    var formurl = "{:Url('user/addprice')}";
+      var data = $('#formid').serialize();
+      var locurl = "{:Url('user/userprice')}";
+
+      WPpost(formurl,data,locurl);
+
+      return false;
+  }
+</script>
+

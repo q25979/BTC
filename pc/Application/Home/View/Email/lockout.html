@@ -1,0 +1,47 @@
+<!-- 账号锁定 -->
+<include file="Template/home/header.html" />
+<css href="__PUBLIC__/home/css/email/lockout.css" />
+
+<!-- 顶部导航 -->
+<include file="Template/home/top.html" />
+
+<!-- nav导航 -->
+<include file="Template/home/nav.html" />
+
+
+<block>
+	<div class="lockout xy-bordertop">
+		<div class="lockout-group">
+			<p><{$Think.lang._LOGIN_RELIEVE_}></p>
+			<div class="input-group">
+				<input type="email" class="form-control" id="lock-email" />
+			</div>
+			<div><button class="btn lock-btn" onclick="reset()"><{$Think.lang._LOGIN_RELIEVE_BUTTON_}></button></div>
+		</div>	
+	</div>
+
+	<script>
+		var reset = function() {
+
+			var emailVer = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;   // 邮箱验证
+
+			if ( $('#lock-email').val() == '' ) {
+				alert('<{$Think.lang._HINT_RES_EMAIL_EMPTY_}>');
+				return ;
+			}
+			if ( !emailVer.test($("#lock-email").val()) ) {
+				alert('<{$Think.lang._HINT_RES_EMAIL_EMPTY_}>');
+				return ;
+			}
+
+			var msg = '<{$Think.lang._LOGIN_RELIEVE_BACK_}>';
+			alert(msg);
+
+			sg.jump('__HOST_PATH__/Home/Login/index');
+		}
+	</script>
+</block>
+
+<!-- 底部 -->
+<include file="Template/home/footer.html" />
+

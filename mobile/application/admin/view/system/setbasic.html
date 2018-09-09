@@ -1,0 +1,98 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              
+            
+          <div class="row">
+                  <div class="col-lg-12">
+                              <!--widget start-->
+                              <section class="panel">
+                                  <header class="panel-heading tab-bg-dark-navy-blue">
+                                      <ul class="nav nav-tabs nav-justified ">
+                                          <li class="active">
+                                              <a href="#basic" data-toggle="tab">
+                                                  网站信息
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="#email" data-toggle="tab">
+                                                  邮箱配置
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="#sms" data-toggle="tab">
+                                                  短信配置
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="#admin" data-toggle="tab">
+                                                  角色管理
+                                              </a>
+                                          </li>
+                                          
+
+                                      </ul>
+                                  </header>
+                                  <div class="panel-body">
+                                      <div class="tab-content tasi-tab">
+                                          <div class="tab-pane active" id="basic">
+                                              
+												{include file="/system/setbasicinfo" /}
+
+                                          </div>
+                                          <div class="tab-pane" id="email">
+                                             email
+                                          </div>
+                                          <div class="tab-pane" id="sms">
+                                             sms
+                                          </div>
+                                          <div class="tab-pane" id="admin">
+                                             admin
+                                          </div>
+                                          
+
+                                      </div>
+                                  </div>
+                              </section>
+                              <!--widget end-->
+
+                              
+                          </div>
+
+          </div>       
+          
+          
+             
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+{include file="foot" /}
+<script>
+
+function formeidt(form){
+    $webname = form.webname.value;
+    if(!$webname){
+      layer.msg('请输入平台名称'); 
+        return false;
+    }
+
+
+    var formurl = "{:Url('system/setbasic')}"
+    var data = $('#formid').serialize();
+    var locurl = formurl;
+   	WPpost(formurl,data,locurl);
+
+    return false;
+
+  }
+
+
+
+</script>

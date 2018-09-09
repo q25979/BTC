@@ -1,0 +1,631 @@
+[ 2018-09-05T21:44:45+08:00 ] ::1 ::1 GET /
+[ log ] localhost:8080/ [运行时间：0.048002s][吞吐率：20.83req/s] [内存消耗：1,444.30kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:44:45+08:00 ] ::1 ::1 GET /index/login/login/token/5416f227acfe5000c5691110c4225648.html
+[ log ] localhost:8080/index/login/login/token/5416f227acfe5000c5691110c4225648.html [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：2,216.17kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/5416f227acfe5000c5691110c4225648_html' => '',
+  'token' => '5416f227acfe5000c5691110c4225648',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:44:45+08:00 ] ::1 ::1 GET /index/login/login/token/img/favicon.ico
+[ log ] localhost:8080/index/login/login/token/img/favicon.ico [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,091.48kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/index/login/login/token/5416f227acfe5000c5691110c4225648.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/img/favicon_ico' => '',
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:44:46+08:00 ] ::1 ::1 GET /index/login/login/token/img/logo.png
+[ log ] localhost:8080/index/login/login/token/img/logo.png [运行时间：0.036002s][吞吐率：27.78req/s] [内存消耗：2,091.48kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/index/login/login/token/5416f227acfe5000c5691110c4225648.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/img/logo_png' => '',
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:44:57+08:00 ] ::1 ::1 GET /admin
+[ log ] localhost:8080/admin [运行时间：0.035002s][吞吐率：28.57req/s] [内存消耗：1,607.61kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin' => '',
+)
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:44:58+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ log ] localhost:8080/admin/login/login.html [运行时间：0.037002s][吞吐率：27.03req/s] [内存消耗：1,593.72kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/login_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\login\login.html [ array (
+  0 => 'rememberme',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:05+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ log ] localhost:8080/admin/login/login.html [运行时间：0.039002s][吞吐率：25.64req/s] [内存消耗：2,041.20kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/login/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => '*/*',
+  'content-length' => '43',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/login_html' => '',
+  'username' => 'admin',
+  'password' => '123456',
+  'rememberme' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `uid`,`upwd`,`username`,`utel`,`utime`,`otype`,`ustatus` FROM `wp_userinfo` WHERE  `username` = 'admin' OR `utel` = 'admin' LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:07+08:00 ] ::1 ::1 GET /admin/index/index.html
+[ log ] localhost:8080/admin/index/index.html [运行时间：0.379022s][吞吐率：2.64req/s] [内存消耗：2,413.55kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\index\index.html [ array (
+  0 => 'contrname',
+  1 => 'actionname',
+  2 => 'otype',
+  3 => 'data',
+  4 => 'order',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_userinfo` WHERE  `otype` IN (0,101) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_userinfo` WHERE  `otype` IN (0,101)  AND `utime` BETWEEN 1536076800 AND 1536163200 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `buytime` BETWEEN 1536076800 AND 1536163200 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) as ploss FROM `wp_order` WHERE  `buytime` BETWEEN 1536076800 AND 1536163200 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT SUM(fee) as fee FROM `wp_order` WHERE  `buytime` BETWEEN 1536076800 AND 1536163200 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT SUM(sx_fee) AS tp_sum FROM `wp_order` WHERE  `buytime` BETWEEN 1536076800 AND 1536163200 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_balance` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT SUM(bpprice) as bpprice FROM `wp_balance` WHERE  `bptype` = '1'  AND `isverified` = 1  AND `bptime` BETWEEN 1536076800 AND 1536163200 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT SUM(bpprice) as bpprice FROM `wp_balance` WHERE  `bptype` = '0'  AND `isverified` = 1  AND `bptime` BETWEEN 1536076800 AND 1536163200 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(usermoney) AS tp_sum FROM `wp_userinfo` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `o`.*,u.username as username,u.nickname as nickname,`u`.`managername` FROM `wp_order` `o` INNER JOIN `wp_userinfo` `u` ON `o`.`uid`=`u`.`uid` ORDER BY oid desc LIMIT 0,10 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:16+08:00 ] ::1 ::1 GET /admin/goods/prolist.html
+[ log ] localhost:8080/admin/goods/prolist.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,319.64kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'prolist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/goods/prolist_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Goods->prolist[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Goods.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\goods\prolist.html [ array (
+  0 => 'contrname',
+  1 => 'actionname',
+  2 => 'otype',
+  3 => 'proinfo',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pi`.*,`pc`.`pcname` FROM `wp_productinfo` `pi` INNER JOIN `wp_productclass` `pc` ON `pc`.`pcid`=`pi`.`cid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.proorder asc [ RunTime:0.004001s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:36+08:00 ] ::1 ::1 GET /admin/user/userlist.html
+[ log ] localhost:8080/admin/user/userlist.html [运行时间：0.145008s][吞吐率：6.90req/s] [内存消耗：4,444.04kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'userlist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/goods/prolist.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/user/userlist_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\User->userlist[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\User.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\user\userlist.html [ array (
+  0 => 'contrname',
+  1 => 'actionname',
+  2 => 'otype',
+  3 => 'userinfo',
+  4 => 'getdata',
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_userinfo` WHERE  `otype` IN (0,101) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `otype` IN (0,101) ORDER BY uid desc LIMIT 0,15 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 101 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 100 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 99 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 98 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 97 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 96 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 95 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 94 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 93 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 92 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 91 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 90 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 88 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 39 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 87 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE  `uid` = 86 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `username` FROM `wp_userinfo` WHERE  `uid` = 40 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:40+08:00 ] ::1 ::1 GET /admin/price/allot.html
+[ log ] localhost:8080/admin/price/allot.html [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,469.94kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'price',
+    2 => 'allot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/user/userlist.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/price/allot_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Price->allot[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Price.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\price\allot.html [ array (
+  0 => 'contrname',
+  1 => 'actionname',
+  2 => 'otype',
+  3 => 'list',
+  4 => 'count',
+  5 => 'getdata',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_price_log` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_price_log` `pl` INNER JOIN `wp_userinfo` `u` ON `u`.`uid`=`pl`.`uid` WHERE  `title` = '对冲' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pl`.*,`u`.`username`,`u`.`utel` FROM `wp_price_log` `pl` INNER JOIN `wp_userinfo` `u` ON `u`.`uid`=`pl`.`uid` WHERE  `title` = '对冲' ORDER BY id desc LIMIT 0,15 [ RunTime:0.010001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wp_price_log` `pl` INNER JOIN `wp_userinfo` `u` ON `u`.`uid`=`pl`.`uid` WHERE  `title` = '对冲' LIMIT 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:43+08:00 ] ::1 ::1 GET /admin/setup/index.html
+[ log ] localhost:8080/admin/setup/index.html [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,260.36kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setup',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/price/allot.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/admin/setup/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Setup->index[ D:\phpStudy\WWW\btc\mobile\application\admin\controller\Setup.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/admin\view\setup\index.html [ array (
+  0 => 'contrname',
+  1 => 'actionname',
+  2 => 'otype',
+  3 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_config` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_config` WHERE  `group` = 1  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:43+08:00 ] ::1 ::1 GET /static/uploadify/jquery.uploadify.min.js
+[ log ] localhost:8080/static/uploadify/jquery.uploadify.min.js [运行时间：0.027002s][吞吐率：37.03req/s] [内存消耗：1,236.82kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'uploadify',
+    2 => 'jquery.uploadify.min.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/setup/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/static/uploadify/jquery_uploadify_min_js' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-05T21:45:43+08:00 ] ::1 ::1 GET /static/uploadify/jquery.uploadify.min.js
+[ log ] localhost:8080/static/uploadify/jquery.uploadify.min.js [运行时间：0.027002s][吞吐率：37.03req/s] [内存消耗：1,236.82kb] [文件加载：42]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'uploadify',
+    2 => 'jquery.uploadify.min.js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=tgnc9btig8g3mosj1fg1lgh126; think_var=zh-cn; rememberme=admin; denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8080/admin/setup/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6726.400 QQBrowser/10.2.2265.400',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/static/uploadify/jquery_uploadify_min_js' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

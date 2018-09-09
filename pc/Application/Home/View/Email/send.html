@@ -1,0 +1,23 @@
+<!-- 发送邮箱 -->
+<extend name="Template/home/no-slidebar.html" />
+
+<block name="content">
+    <div class="send-container">
+        <div class="send-group">
+            <h3><{$Think.lang._HINT_SEND_EMAIL_}></h3>
+            <img src="__PUBLIC__/images/send.png" />
+            <p><{$Think.lang._HINT_SEND_EMAIL_TO_}> <span id="email"></span><{$Think.lang._HINT_CLICK_EMAIL_}></p>
+        </div>
+    </div>
+
+    <script>
+		$(function() {
+			var url   = window.location.href;
+			var email = url.split('?')[1].split('email=')[1];
+			
+			$("#email").text(email);
+		});
+	</script>
+</block>
+
+

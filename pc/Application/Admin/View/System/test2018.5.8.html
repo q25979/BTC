@@ -1,0 +1,120 @@
+<include file="Template/admin/header.html" />
+
+<style>
+    .layui-form-label {font-size: 14px; color: #505050; width: 100px}
+    .layui-input {size: 50;width: 215px}
+    .save {margin: 20px 0 20px 44%; width:110px;}
+    .main {float:left;border:1px;   width:1000px;}
+    .leftEdit {float:left;border:1px;  width:350px; margin-right: 167px}
+    .rightEdit {float:left;border:1px; width:350px;}
+    .layui-textarea {height: 300px;width: 450px; margin-top: 20px; margin-left: 16px;}
+</style>
+
+<body>
+	<br />
+	<div class = "main">
+
+        <div class = "leftEdit">
+            <label class="layui-form-label">繁体公告标题：</label>
+            <input type="text" class="layui-input" name="leftTitle" placeholder="请输入标题" />
+            <textarea name="leftContent" required lay-verify="required" placeholder="请输入公告内容" class="layui-textarea"></textarea>
+        </div>
+    
+        <div class = "rightEdit">
+    		<label class="layui-form-label">英文公告标题：</label>
+    		<input type="text" class="layui-input" name="rightTitle" placeholder="请输入标题" />
+            <textarea name="rightContent" required lay-verify="required" placeholder="请输入公告内容" class="layui-textarea"></textarea>
+        </div>
+
+        
+        <button id="save" class="layui-btn layui-btn-normal save" lay-filter="form-author">保存</button>
+
+
+    </div>
+    
+</body>
+
+
+
+<script>
+
+    // 验证数据是否是否为空
+    function lverifyData() {
+        if ($("[name=leftTitle]").val() == "") {
+            layer.msg("公告标题不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=leftTitle]").val().length > 255) {
+            layer.msg("公告标题不能超过50个字", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=leftContent]").val().length < 10) {
+            layer.msg("公告内容不能少于10个字", {icon: 2});
+            return false;
+        }
+
+        return true;
+    }
+    // 验证数据是否是否为空
+    function rverifyData() {
+        if ($("[name=rightTitle]").val() == "") {
+            layer.msg("公告标题不能为空", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=rightTitle]").val().length > 255) {
+            layer.msg("公告标题不能超过50个字", {icon: 2});
+            return false;
+        }
+
+        if ($("[name=rightContent]").val().length < 10) {
+            layer.msg("公告内容不能少于10个字", {icon: 2});
+            return false;
+        }
+
+        return true;
+    }
+    $("#save").click(function() {
+
+        if (!lverifyData()) {
+            return false;
+        }
+        if (!rverifyData()) {
+            return false;
+        }
+
+        //var sign = hex_md5(VERIFY_STR + user_id + nonceStr);
+        var url = "<{:U(addNotice)}>";
+        var data = {
+            left_title: $("[name=leftTitle]").val(),
+            left_content: $("[name=leftContent]").val(),
+            right_title: $("[name=rightTitle]").val(),
+            right_content: $("[name=rightContent]").val()
+            //nonce_str: nonceStr,
+            //sign: sign
+        };
+
+        layer.load(2);
+            $.ajax({
+                url: url,
+                data: data,
+                type: 'post',
+                success: function(res) {
+                    layer.closeAll();
+
+                    if (res.code == 0) {
+                        // 表示表示成功
+                        layer.msg("添加成功", {icon: 1}, function() {
+                            // 刷新
+                            window.parent.location.reload();
+                        });
+
+                    } else {
+                        layer.msg("添加失败", {icon: 6});
+                    }
+                }
+            });
+        });
+</script>

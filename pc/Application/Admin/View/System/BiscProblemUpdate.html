@@ -1,0 +1,113 @@
+<include file="Template/admin/header.html" />
+
+<style>
+    .layui-form-label {font-size: 14px; color: #505050; width: 100px}
+    .layui-input {size: 50;width: 215px}
+    .save {margin: 20px 0 20px 44%; width:110px;}
+    .main {float:left;border:1px;   width:1000px;}
+    .leftEdit {float:left;border:1px;  width:350px; margin-right: 167px;margin-top: 10px;}
+    .rightEdit {float:left;border:1px; width:350px;}
+    .layui-textarea {height: 300px;width: 450px; margin-top: 20px; margin-left: 16px;}
+</style>
+
+<body>
+	<br />
+	<div class = "main">
+        <div>
+            <select class="layui-select" name="problemType" onkeyup="value=value">
+                <option value="">请选择问题类型</option>
+                <option value="1">发送与接收</option>
+                <option value="2">购买与出售</option>
+            </select>
+        </div>
+
+        <div class = "leftEdit">
+            <label class="layui-form-label">繁体常见问题：</label>
+            <input type="text" class="layui-input" name="leftTitle" placeholder="请输入问题标题" onkeyup="value=value" />
+            <textarea name="leftContent" required lay-verify="required" placeholder="请输入繁体问题内容" class="layui-textarea" onkeyup="value=value"></textarea>
+        </div>
+    
+        <div class = "rightEdit">
+            <label class="layui-form-label">英文常见问题：</label>
+            <input type="text" class="layui-input" name="rightTitle" placeholder="请输入问题标题" onkeyup="value=value" />
+            <textarea name="rightContent" required lay-verify="required" placeholder="请输入英文问题内容" class="layui-textarea" onkeyup="value=value" ></textarea>
+        </div>
+
+        
+        <button id="save" class="layui-btn layui-btn-normal save" lay-filter="form-author">保存</button>
+
+
+    </div>
+    
+</body>
+
+
+
+<script>
+
+    // 获取返回数据 id 并解析 id
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    var common_problem_id = GetRequest().id;
+
+    $("#save").click(function() {
+
+        var url = "<{:U(updataProblem)}>";
+        var data = {
+            common_problem_id: common_problem_id,
+            left_content: $("[name=leftContent]").val(),
+            problem_type: $("[name=problemType]").val(),
+            right_content: $("[name=rightContent]").val(),
+            left_title: $("[name=leftTitle]").val(),
+            right_title: $("[name=rightTitle]").val()
+        };
+
+        layer.load(2);
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function(res) {
+                layer.closeAll();
+                console.log(res);
+
+                if (res.code == 0) {
+                    // 表示表示成功
+                    layer.msg("修改成功", {icon: 1}, function() {
+                        // 刷新
+                        window.parent.location.reload();
+                    });
+
+                } else {
+                    layer.msg("修改失败", {icon: 6});
+                }
+            }
+        });
+        });
+
+    //显示数据
+    $.ajax({
+        url: '<{:U(showProblem)}>',
+        data:{common_problem_id: common_problem_id},
+        type: 'get',
+        success: function (res) {
+            $("[name=problemType]").val(res.data[0]['type']);
+            $('[name=leftTitle]').val(res.data[0]['tw_content']);
+            $('[name=leftContent]').val(res.data[0]['tw_content2']);
+            $('[name=rightTitle]').val(res.data[0]['en_content']);
+            $('[name=rightContent]').val(res.data[0]['en_content2']);
+            layer.closeAll();
+        }
+    });
+</script>

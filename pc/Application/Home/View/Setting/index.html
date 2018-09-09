@@ -1,0 +1,655 @@
+<extend name="Template/home/base.html" />
+
+<include file="Template/home/header.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+<!-- 内容 -->
+<block name="content">
+
+    <!-- 设定-->
+    <div class="content-setting">
+        <!--容器-->
+        <div class="setting-container">
+            <!--基本资讯-->
+            <div class="setting-info">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_BASIC_INFO_}>
+                    <span class="glyphicon glyphicon-question-sign setting-hint"></span>
+                </h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <ul class="setting-info-ul">
+                        <li><{$Think.lang._HINT_EMAIL_}><span id="info_email"</span></li>
+                        <li><{$Think.lang._HINT_NAME_}><span id="info_name"></span></li>
+                        <li><{$Think.lang._ACCOUNT_SETTINGS_ID_NUMBER_}>：<span id="info_idnumber"></span></li>
+                        <li><{$Think.lang._ACCOUNT_SETTINGS_HOME_ID_}>：<span id="info_id"></span></li>
+                    </ul>
+                    <button class="btn btn-lg btn-active setting-btn" ><{$Think.lang._ACCOUNT_SETTINGS_ADD_INFO_}></button>
+                    <div class="setting-hint-text">
+                        <{$Think.lang._ACCOUNT_SETTINGS_CHANGE_INFO_}>
+                    </div>
+                </div>
+            </div>
+            <div class="dash"></div>
+            <!--身份验证-->
+            <div class="setting-info setting-info-identity">
+                <h3><{$Think.lang._ACCOUNT_BUY_BTC_ID_VER_}></h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <p class="identity-p"><{$Think.lang._ACCOUNT_SETTINGS_VER_TIPS_}></p>
+                    <div class="identity-content">
+                        <p style="margin-bottom: 10px;"><{$Think.lang._HINT_UPLOAD_FILE_}></p>
+                        <p style="margin-bottom: 5px;"><{$Think.lang._HINT_UPLOAD_ID_TIPS_}></p>
+                        <p style="color: red;"><{$Think.lang._HINT_UPLOAD_NOTICE_}></p>
+                        <button class="btn btn-lg btn-active identity-btn"><{$Think.lang._HINT_UPLOAD_ID_}></button>
+                        <p class="identity-verify-text"><{$Think.lang._HINT_ID_CHECK_TIPS_}></p>
+                        <p><{$Think.lang._HINT_ID_WARNING_}></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dash"></div>
+  
+
+            <!--基本资讯-->
+            <div class="setting-info">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_PHONE_}>
+                    <a href="__HOST_PATH__/Home/Setting/updateMobilePhone" class="setting-hint-a"><{$Think.lang._HINT_PHONE_NUMBER_}></a>
+                </h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <p> <{$Think.lang._ACCOUNT_SETTINGS_PHONE_NUM_}> <b id="getPhone"></b></p>
+                </div>
+
+                <button class="btn btn-lg btn-active bind-phone">
+                    <span class="glyphicon glyphicon-plus" style="margin-right: 10px;font-size: 14px;"></span> <{$Think.lang._HINT_BINDING_PHONE_}>
+                </button>
+            </div>
+            <div class="dash"></div>
+
+            <!--卖单汇款银行账户-->
+            <div class="setting-info">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_BANK_SELL}></h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <p class="average-price"><span>?</span><{$Think.lang._ACCOUNT_SETTINGS_SELL_TIPS_}></p>
+                     <a href="__HOST_PATH__/Home/Setting/bindingBankCard" class="bank-hint-a">修改銀行賬號</a>
+                    <div id="bank-box">
+	                    <p class="bank-info"><span>您当前銀行账户名：</span><span id="bank_name"></span></p>
+	                    <p class="bank-info"><span>您当前銀行賬號是：</span><span id="bank_number"></span></p>
+                    </div>
+
+                    <button class="btn btn-lg btn-active sell-account-btn" id="setBank">
+                        <span class="glyphicon glyphicon-plus" style="margin-right: 10px;font-size: 14px;"></span> <{$Think.lang._ACCOUNT_SETTINGS_ADD_BANK_}>
+                    </button>
+                </div>
+            </div>
+            <div class="dash"></div>
+            <!--买单汇款银行账户-->
+            <div class="setting-info">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_BANK_BUY_}></h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <p><{$Think.lang._ACCOUNT_SETTINGS_BUY_TIPS_TOP_}>
+                        <a href="__HOST_PATH__/Home/Buy/index"><{$Think.lang._ACCOUNT_SETTINGS_BUY_BTC_}></a>
+                        <{$Think.lang._ACCOUNT_SETTINGS_BUY_TIPS_DOWN_}></p>
+                </div>
+            </div>
+            <div class="dash"></div>
+            <!--邮件通知设定-->
+            <div class="setting-info setting-info-email">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_NOTIFICATION_}></h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+
+                    <div class="email-toggle">
+                        <p><{$Think.lang._ACCOUNT_SETTINGS_LOGIN_}></p>
+                        <div class="switch-btn">
+                            <div class="switch-btn-left"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_ON_}></div>
+                            <div class="switch-btn-right"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_OFF_}></div>
+                            <div class="switch-btn-hide"></div>
+                        </div>
+                    </div>
+
+                    <div class="email-toggle">
+                        <p><{$Think.lang._ACCOUNT_SETTINGS_SRP_}></p>
+                        <div class="switch-btn">
+                            <div class="switch-btn-left"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_ON_}></div>
+                            <div class="switch-btn-right"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_OFF_}></div>
+                            <div class="switch-btn-hide"></div>
+                        </div>
+                    </div>
+
+                    <div class="email-toggle">
+                        <p><{$Think.lang._ACCOUNT_SETTINGS_BUY_SELL_}></p>
+                        <div class="switch-btn">
+                            <div class="switch-btn-left"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_ON_}></div>
+                            <div class="switch-btn-right"><{$Think.lang._ACCOUNT_SETTINGS_SWITCH_OFF_}></div>
+                            <div class="switch-btn-hide"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dash"></div>
+            <!--其他设置-->
+            <div class="setting-info">
+                <h3><{$Think.lang._ACCOUNT_SETTINGS_OTHER_}>
+                    <!--<a href="__HOST_PATH__/Home/Setting/otherSetting" class="right-a"><{$Think.lang._ACCOUNT_SETTINGS_CHANGE_OTHER_}></a>-->
+                </h3>
+                <!--标题里的内容-->
+                <div class="setting-info-content">
+                    <p><{$Think.lang._ACCOUNT_SETTINGS_TIME_ZONE_}><b>Taipei</b></p>
+                    <p><{$Think.lang._ACCOUNT_SETTINGS_CURRENCY_}><b>New Taiwan Dollar</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <js href="__PLUG-IN__/layui/layui.js" />
+
+    <script type="text/javascript">
+        //获取基本资讯状态和信息
+        var SetInfo_url = '__HOST_PATH__/Home/Setting/getInfo';
+        $.ajax({
+            url: SetInfo_url,
+            type: 'get',
+            success: function (res) {
+                if(parseInt(res.code) == 0){
+                    $('.setting-info-ul').css({"display":"block"});
+                    $('#info_email').text(res.data[0].email);
+                    $('#info_name').text(res.data[0].user_name);
+                    $('#info_idnumber').text(res.data[0].certificate_num);
+                    $('#info_id').text(res.data[0].maincoin_id);
+					$(".setting-btn").css("display","none");
+
+                    judgePhone(res.data[0].maincoin_id);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        phone_init();
+        /**
+         *  初始化
+         */
+         function phone_init() {
+             $('.bind-phone').css('display', 'none');        // 绑定手机号按钮
+             $('.setting-hint-a').css('display', 'none');    // 显示按钮
+             /*$('#handId-btn').attr('disabled', true);       // 上传图片
+             $('#upload-handId').attr('disabled', true);    // 浏览上传图片*/
+        };
+
+        /**
+         * 判断是否绑定手机号
+         * @param int maincoin_id 本站ID
+         */
+        function judgePhone(maincoin_id) {
+            if (maincoin_id == '' || maincoin_id == undefined ) {
+                $('.bind-phone').css('display', 'block');
+            } else {
+                $('.setting-hint-a').css('display', 'block');
+            }
+        };
+
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            //更改按钮样式
+            $(".btn-active").click(function(){
+                $(this).css("color","#fff");
+            })
+
+            //提示小问号hover事件
+            $(".setting-hint").hover(function(){
+                $(".setting-hint-text").css("display","block");
+            },function(){
+                $(".setting-hint-text").css("display","none");
+            });
+
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                $(document).ready(function() {
+
+                    var status1 = 0;
+                    var status2 = 0;
+                    var status3 = 0;
+
+                    var url = '__HOST_PATH__/Home/Setting/getEmailStatus';
+
+                    $.get(url,function(res){//根据设置调整按钮
+                        if(res.data.email_login == 1){
+                            $(".switch-btn").eq(0).children('div:eq(2)').css("left","41px");
+                        }else if(res.data.email_login == 0){
+                            $(".switch-btn").eq(0).children('div:eq(2)').css("left","0px");
+                        }
+
+                        if(res.data.email_get == 1){
+                            $(".switch-btn").eq(1).children('div:eq(2)').css("left","41px");
+                        }else if(res.data.email_get == 0){
+                            $(".switch-btn").eq(1).children('div:eq(2)').css("left","0px");
+                        }
+
+                        if(res.data.email_buy == 1){
+                            $(".switch-btn").eq(2).children('div:eq(2)').css("left","41px");
+                        }else if(res.data.email_buy == 0){
+                            $(".switch-btn").eq(2).children('div:eq(2)').css("left","0px");
+                        }
+
+                    });
+
+                    //成功登入接收通知开关
+                    $(".switch-btn").eq(0).click(function(){
+                        var hidePosition = $(this).children('div:eq(2)').css("left");   //获取滑块的位置
+
+                        if(hidePosition == "0px"){            //如果滑块的在左边就让它去右边 （开启）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"41px",
+                                borderRadius:"0 3px 3px 0"
+                            });
+                            var status1 = 1;
+                        }else{                            //否则滑块的在右边就让它去左边 （关闭）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"0px",
+                                borderRadius:"3px 0 0 3px"
+                            });
+                            var status1 = 0;
+                        }
+
+                        var u = '__HOST_PATH__/Home/Setting/emailSet';
+                        var	d = {
+                            email_login:status1,
+                        };
+                        $.ajax({
+                            url: u,
+                            data: d,
+                            type: 'post',
+                            success: function (res) {
+
+                                if(parseInt(res.code) == 0) {
+                                    layer.msg('SUCCESS', {offset:'350px',anim: '0',fixed: 'false',icon : 1});
+                                }else{
+                                    layer.msg('ERROR', {offset:'350px',anim: '0',fixed: 'false',icon : 2});
+                                }
+                            }
+                        });
+                    })
+
+                    //发送接送。接受或支付时接受
+                    $(".switch-btn").eq(1).click(function(){
+                        var hidePosition = $(this).children('div:eq(2)').css("left");   //获取滑块的位置
+
+                        if(hidePosition == "0px"){            //如果滑块的在左边就让它去右边 （开启）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"41px",
+                                borderRadius:"0 3px 3px 0"
+                            });
+                            status2 = 1;
+                        }else{                            //否则滑块的在右边就让它去左边 （关闭）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"0px",
+                                borderRadius:"3px 0 0 3px"
+                            });
+                            status2 = 0;
+                        }
+                        var u = '__HOST_PATH__/Home/Setting/emailSet';
+                        var	d = {
+                            email_get:status2
+                        };
+                        $.ajax({
+                            url: u,
+                            data: d,
+                            type: 'post',
+                            success: function (res) {
+
+                                if(parseInt(res.code) == 0) {
+                                    layer.msg('SUCCESS', {offset:'350px',anim: '0',fixed: 'false',icon : 1});
+                                }else{
+                                    layer.msg('ERROR', {offset:'350px',anim: '0',fixed: 'false',icon : 2});
+                                }
+                            }
+                        });
+                    });
+                    //购买比特币时通知
+                    $(".switch-btn").eq(2).click(function(){
+                        var hidePosition = $(this).children('div:eq(2)').css("left");   //获取滑块的位置
+
+                        if(hidePosition == "0px"){            //如果滑块的在左边就让它去右边 （开启）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"41px",
+                                borderRadius:"0 3px 3px 0"
+                            });
+                            status3 = 1;
+                        }else{                            //否则滑块的在右边就让它去左边 （关闭）
+                            $(this).children('div:eq(2)').css({
+                                transition:"left 0.3s",
+                                left:"0px",
+                                borderRadius:"3px 0 0 3px"
+                            });
+                            status3 = 0;
+                        }
+                        var u = '__HOST_PATH__/Home/Setting/emailSet';
+                        var	d = {
+                            email_buy:status3
+                        };
+                        $.ajax({
+                            url: u,
+                            data: d,
+                            type: 'post',
+                            success: function (res) {
+
+                                if(parseInt(res.code) == 0) {
+                                    layer.msg('SUCCESS', {offset:'350px',anim: '0',fixed: 'false',icon : 1});
+                                }else{
+                                    layer.msg('ERROR', {offset:'350px',anim: '0',fixed: 'false',icon : 2});
+                                }
+                            }
+                        });
+                    })
+                });
+            })
+
+            $(".switch-btn").hover(function(){
+                $(this).css("cursor","hand")
+            })
+
+            //点击跳转
+            $(".setting-btn").click(function(){
+                window.location.href="__HOST_PATH__/Home/Setting/addBasicInformation";
+            })
+
+            $(".identity-btn").click(function(){
+                window.location.href="__HOST_PATH__/Home/Setting/uploadIdCard";
+            })
+
+            $(".sell-account-btn").click(function(){
+                window.location.href="__HOST_PATH__/Home/Setting/bindingBankCard";
+            })
+
+            // 绑定手机跳转
+            $(".bind-phone").click(function(){
+                window.location.href="__HOST_PATH__/Home/Setting/updateMobilePhone/type/bind";
+            })
+
+            //侧边栏
+            $(".sidebar-content-a").css("color","#3397D3");
+            $(".sidebar-content-a").eq(3).css("color","#000");
+            $(".sidebar-content-a img").eq(0).attr("src","__PUBLIC__/images/home-active.png");
+            $(".sidebar-content-a img").eq(3).attr("src","__PUBLIC__/images/set-click.png");
+
+        });
+
+        //forbidUpload();
+        //禁止重复上传正反面身份证
+        function forbidUpload() {
+            var forbId_url = '__HOST_PATH__/Home/Setting/forbidUpload';
+            $.ajax({
+                url: forbId_url,
+                type: 'get',
+                success: function (res) {
+                    console.log('禁止重复上传正反面身份证', res);
+                    if(parseInt(res.code) == 0) {
+                        $('.identity-btn').html("<{$Think.lang._HINT_TO_AUDIT_}>")
+                        $('.identity-btn').attr("disabled",true);
+                    }
+                    if(parseInt(res.code) == 1){
+                        $('.identity-btn').html("<{$Think.lang._HINT_PASS_THE_AUDIT_}>")
+                        $('.identity-btn').attr("disabled",true);
+                    }
+                    if(parseInt(res.code) == -1){
+                        $('.identity-btn').html("<{$Think.lang._HINT_AUDIT_FAILED_}>")
+                        //$('.identity-btn').attr("disabled",false);
+
+                    }
+                }
+            })
+        }
+
+
+
+
+
+        // 上传手持身份证
+        var hand_Idcard;
+
+        layui.use(['upload', 'layer'], function(){
+            var layer = layui.layer;
+            var $ = layui.jquery,
+                    upload = layui.upload,
+                    qnurl = '__HOST_PATH__/Home/Setting/getUpload';
+
+            //上传
+            var uploadInst = upload.render({
+                elem: '#upload-handId',
+                url: qnurl,
+                data: {
+                    type: "1"
+                },
+                field: 'imgaddr',
+                before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    layer.load(2);
+                    obj.preview(function(index, file, result) {
+                        $('#upload-img').attr('src', result); //图片链接（base64）
+                    });
+                },
+                choose: function() {
+                    layer.load(2);
+                },
+                done: function(res){
+                    layer.closeAll();
+                    //如果上传失败
+                    if(res.code > 0){
+                        return layer.msg('<{$Think.lang._HINT_UPLOAD_FAIL_}>',{offset:'350px',anim: '0',fixed: 'false',icon : 2});
+                    }
+                    //上传成功
+                    layer.msg('<{$Think.lang._HINT_PIC_UPLOAD_SUCCESS_}>', {offset:'350px',anim: '0',fixed: 'false',icon : 1});
+                    $('#upload-img').css({'display':'block'});
+                    hand_Idcard =res.data.file_address;       // 临时保存正面图片路径
+
+                },
+                error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#upload-err');
+                    demoText.html('<span style="color: #FF5722; margin: 10px 0 0 0; font-weight: bold;"><{$Think.lang._HINT_UPLOAD_FAIL_}></span> <a class="layui-btn layui-btn-radius layui-btn-normal demo-reload"><{$Think.lang._HINT_RETRY_}></a>');
+
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+
+            judgeIDCard();
+            /**
+             * 判断正反面身份证有没有上传
+             */
+            function judgeIDCard() {
+                var u = "__HOST_PATH__/Home/Setting/checkOrder";
+                $.ajax({
+                    url: u,
+                    type: 'get',
+                    success:　function (res) {
+                        //console.log('judgeIDCard', res);
+
+                        if (parseInt(res.code) != 0) {
+                            $('#handId-btn').attr('disabled', true);     // 上传图片
+                            $('#upload-handId').attr('disabled', true);  // 浏览上传图片
+
+                            /*$('#handId-btn').attr('disabled', false);     // 上传图片
+                            $('#upload-handId').attr('disabled', false);  // 浏览上传图片*/
+                        }
+                    }
+                });
+            }
+
+
+            //点击上传手持身份证
+            $('#handId-btn').click(function(){
+                //提示是否确定提交
+                layer.open({
+                    title: "<{$Think.lang._HINT_MSG_TIPS_}>",
+                    offset: 'c',
+                    content: "<{$Think.lang._HINT_COMMIT_CONFIRM_}>",
+                    btn: 'yes',
+                    btnAlign: 'c',
+                    fixed: 'false',
+                    yes: function (res){
+                        layer.closeAll();
+                        var hand_url = '__HOST_PATH__/Home/Setting/getuploadIdCard'; // 请求上传手持身份证接口
+                        var hand_data = {
+                            file_hand: hand_Idcard,      // 手持身份证的url
+                        };
+
+                        // 上传手持身份证
+                        layer.load(2);
+                        $.ajax({
+                            url: hand_url,
+                            data: hand_data,
+                            type: 'post',
+                            success: function(res){
+                                layer.closeAll();
+                                if(parseInt(res.code) == 0) {
+                                    layer.msg('<{$Think.lang._HINT_SUBMIT_SUCCESS_}>',{offset:'350px',anim: '0',fixed: 'false',icon : 1});
+                                    $('#upload-img').css({'height':'0'});
+                                    $('#upload-handId').attr("disabled",true);
+                                    //$('#upload-btn').attr("disabled",true);
+                                    $('#handId-btn').text('<{$Think.lang._HINT_TO_AUDIT_}>');                                 
+									layer.closeAll();
+									window.location.reload();
+                        	            
+                                }else{
+                                    layer.msg('<{$Think.lang._HINT_SUBMIT_FAILED_}>！', {offset:'350px',anim: '0',fixed: 'false',icon : 2});
+                                }
+
+                            }
+                        });
+                    }
+                });
+
+            });
+
+            var url_getphone = '__HOST_PATH__/Home/Setting/updatePhone';
+            $.ajax({
+                url: url_getphone,
+                type:"get",
+                success: function (res) {
+                    $('#getPhone').text(res.data.tel);
+
+                    /**
+                     * @shen
+                     * 判断是否存在电话号码
+                     */
+                    if ( res.data.tel == ''         ||
+                         res.data.tel == null       ||
+                         res.data.tel == 'null'     ||
+                         res.data.tel == undefined  ||
+                         res.data.tel == 'undefined'
+                    ) {
+                        $('.bind-phone').css('display', 'block');
+                    } else {
+                        $('.setting-hint-a').css('display', 'block');
+                    }
+                }
+            });
+        });
+
+        uploadStatus();
+        /**
+         * @shen
+         * 判断上传身份证当前审核状态
+         */
+        function uploadStatus() {
+
+            var url = '__HOST_PATH__/Home/Setting/getStatus';
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+                    if(parseInt(res.status) == 0) {
+                        $('.identity-btn').html("<{$Think.lang._HINT_TO_AUDIT_}>")  // 待审核
+                        $('.identity-btn').attr("disabled",true);
+                    }
+                    if(parseInt(res.status) == 1){
+                        $('.identity-btn').html("<{$Think.lang._HINT_PASS_THE_AUDIT_}>");   // 审核通过
+                        $('.identity-btn').attr("disabled",true);
+
+                        $('#handId-btn').html("<{$Think.lang._HINT_PASS_THE_AUDIT_}>");     // 审核通过
+                        $('#handId-btn').attr("disabled",true);
+                        $('#upload-handId').attr("disabled",true);
+
+                        return ;
+                    }
+                    if(parseInt(res.status) == -1){
+                        $('.identity-btn').html("<{$Think.lang._HINT_AUDIT_FAILED_}>")      // 审核不通过
+                        $('.identity-btn').attr("disabled",false);
+                    }
+
+                    judgeHandIDCard();
+
+                }
+            });
+        }
+
+        // 禁止重複上傳手持身份證
+        function judgeHandIDCard() {
+            var forbIdHand_url = '__HOST_PATH__/Home/Setting/forbidUploadHand';
+            $.ajax({
+                url: forbIdHand_url,
+                type: 'get',
+                success: function (res) {
+                    if(parseInt(res.code) == 0) {
+                        $('#handId-btn').html("<{$Think.lang._HINT_TO_AUDIT_}>");    // 待审核
+                        $('#handId-btn').attr("disabled", true);
+                        $('#upload-handId').attr("disabled", true);
+
+                        return ;
+                    }
+                        if(res.code == false || res.code == 'false'){
+                        //$('#handId-btn').html("<{$Think.lang._HINT_AUDIT_FAILED_}>");   // 审核不通过
+                        $('#handId-btn').attr("disabled",false);
+                        $('#upload-handId').attr("disabled",false);
+                    }
+
+                    if(parseInt(res.code) == -1){
+                        $('#handId-btn').html("<{$Think.lang._HINT_AUDIT_FAILED_}>")      // 审核不通过
+                        $('#handId-btn').attr("disabled",true);
+                        $('#upload-handId').attr("disabled",true);
+                    }
+                }
+            })
+        }
+
+    </script>
+    
+    <script>
+    	
+    	//银行账号显示
+       var bank_url = '__HOST_PATH__/Home/Setting/userBank';
+       
+       $.ajax({
+       	url:bank_url,
+       	type:"get",
+       	success:function(res){
+            console.log(res)
+       		if(parseInt(res.code) == 0){
+	       	    $('#bank_name').text(res.data[0].bank_account);
+	       		$('#bank_number').text(res.data[0].bank_num);
+	       		$('#setBank').hide();
+	       		$('.bank-hint-a').show();
+	       		$('#bank-box').show();
+       		}else{
+       			$('#setBank').show();
+       			$('.bank-hint-a').hide();
+	       		$('#bank-box').hide();
+       		}
+       	}
+       })
+    </script>
+
+</block>

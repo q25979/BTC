@@ -1,0 +1,366 @@
+<include file="Template/home/header.html" />
+
+<css href="__PUBLIC__/home/css/login.css" />
+
+
+<body>
+    <!-- top start -->
+    <include file="Template/home/top.html" />
+    <!-- top end-->
+
+    <div id="index-box">
+        <!-- nav start-->
+        <include file="Template/home/nav.html" />
+        <!-- nav end-->
+        
+        <!-- login start -->
+        <div class="container-login" id="container-login">
+        	<div id="QR-code-PC">
+            		
+    				<img src="__PUBLIC__/images/b.jpg" width="300px" height="300px" style="border: 5px solid #3388BB;"/>
+            		
+            		<div id="QR-code-PCBOX">
+						<img src="__PUBLIC__/images/QR-code.png" width="150px" height="150px" style="border: 5px solid #3388BB;"/>
+						<p style="color: yellow;font-size: 26px;margin-top: 10px;"><{$Think.lang._MONEY_MICRO_PLATFORM_}></p>
+						<p style="color: yellow;font-size: 26px;margin-top: 10px;margin-bottom: 0;"><{$Think.lang._DOWNLOAD_CLIENT_SIDE_}></p>
+            		</div>
+
+				</div>
+            <div class="banner max-width">
+            	
+                <div class="login">
+                    <div id="sh_tab">
+                        <ul class="tab_menu">
+                            <li><{$Think.lang._LOGIN_SIGN_UP_}></li>
+                            <li class="selected"><{$Think.lang._LOGIN_LOGIN_}></li>
+                        </ul>
+                        <div class="tab_box">
+                            <!-- 注册 -->
+                            <div class="sh_hide">
+                                <div class="stu_login_error"  style="position: relative">
+
+                                    <div class="input-group">
+                                        <span>
+                                            <{$Think.lang._LOGIN_SIGN_UP_TIPS_TOP_}>
+                                            <span class="company-name">{{ companyName }}</span>
+                                            <{$Think.lang._LOGIN_SIGN_UP_TIPS_DOWN_}>
+                                        </span>
+                                    </div>
+
+                                    <div class="input-group" style="position: relative">
+                                        <div class="sh-hint"><{$Think.lang._HINT_RES_EMAIL_EMPTY_}></div>
+                                        <input type="text" id="rename" name="rename" placeholder="<{$Think.lang._LOGIN_SIGN_UP_EMAIL_}>" />
+
+                                    </div>
+
+                                    <div>
+                                        <button 
+                                            type="button" 
+                                            class="btn xy-login-register" 
+                                            @click="register()"
+                                        >
+                                            <{$Think.lang._LOGIN_SIGN_UP_}>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 登录 -->
+                            <div>
+                                <div class="tea_login_error">
+                                    <div class="input-group">
+                                        <input type="text" id="emailName" name="emailName" placeholder="<{$Think.lang._LOGIN_SIGN_UP_EMAIL_}>" />
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="password" id="password" name="password" placeholder="<{$Think.lang._LOGIN_PASSWORD_}>" />
+                                    </div>
+
+                                    <div>
+                                        <button type="button"
+                                                class="btn xy-login-login"
+                                                v-on:click="BTCLogin()"
+                                        ><{$Think.lang._LOGIN_LOGIN_}>
+                                        </button>
+                                    </div>
+                                    <div class="input-group" style="position: relative; width: 100%;">
+                                        <a href="javascript:;" class="forget"><{$Think.lang._LOGIN_FORGOT_PASSWORD_}></a>
+                                        <a href="__HOST_PATH__/Home/Email/lockout" class="lock"><{$Think.lang._LOGIN_ACCOUNT_LOCKED_}></a>
+                                    </div>
+                                </div>
+
+                                <!-- 忘记密码 -->
+                                <div class="forget-pwd">
+                                    <div class="stu_login_error">
+
+                                        <div class="input-group">
+                                            <span><{$Think.lang._LOGIN_FORGOT_PSW_TIPS_}></span>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <input 
+                                                type="text"  
+                                                name="pc-forget-email" 
+                                                value="" 
+                                                placeholder="<{$Think.lang._LOGIN_SIGN_UP_EMAIL_}>" 
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <button 
+                                                class="reset-btn btn forgetBtn" 
+                                                @click="resetPass('pc')"
+                                            >
+                                                <{$Think.lang._LOGIN_RESET_PSW_}>
+                                            </button>
+                                        </div>
+
+                                        <div>
+                                            <a class="gologin" href="JavaScript:;"><{$Think.lang._LOGIN_BACK_LOGIN_}></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手机端登录 -->
+                <div class="login-small">
+                    <div class="login-small-input">
+                        <div class="input-group" style="width: 100%;">
+                            <input type="text" class="input form-control" name="emailPhone" placeholder="<{$Think.lang._LOGIN_SIGN_UP_EMAIL_}>" />
+                        </div>
+                        <div class="input-group" style="width: 100%;">
+                            <input type="password" class="input" name="passPhome" placeholder="<{$Think.lang._LOGIN_PASSWORD_}>" />
+                        </div>
+
+                        <div class="login-btn">
+                            <button type="button" class="btn xy-login-login" @click="PhoneLogin()" ><{$Think.lang._LOGIN_LOGIN_}></button>
+                        </div>
+
+                        <div class="input-group" style="position: relative; width: 100%;">
+                            <a href="javascript:;" class="forget forget-small"><{$Think.lang._LOGIN_FORGOT_PASSWORD_}></a>
+                            <a href="__HOST_PATH__/Home/Email/lockout" class="lock"><{$Think.lang._LOGIN_ACCOUNT_LOCKED_}></a>
+                        </div>
+
+                        <div id="login-re" class="login-btn-re">
+                            <{$Think.lang._LOGIN_SIGN_UP_}>
+                        </div>
+                    </div>
+
+                    <!-- 手机端注册 -->
+                    <div class="re-small">
+                        <div class="input-group">
+                            <span>
+                                <{$Think.lang._LOGIN_SIGN_UP_TIPS_TOP_}>
+                                <span class="company-name">{{ companyName }}</span>
+                                <{$Think.lang._LOGIN_SIGN_UP_TIPS_DOWN_}>
+                            </span>
+                        </div>
+
+                        <div class="input-group" style="width: 100%; margin-top: 5px;">
+                            <input type="text" name="username" class="input"/>
+                        </div>
+                        
+                        <div class="sh-small-hint"><{$Think.lang._HINT_RES_EMAIL_EMPTY_}></div>
+
+                        <div class="re-small-btn">
+                            <button type="button" class="btn register xy-login-register" @click="PhoneRegister()"><{$Think.lang._LOGIN_SIGN_UP_}></button>
+                        </div>
+
+                        <div id="login-btn" class="login-btn-re">
+                            <{$Think.lang._LOGIN_LOGIN_}>
+                        </div>
+                    </div>
+
+                    <!-- 手机端忘记密码 -->
+                    <div class="forget-pwd-small">
+                        <div class="input-group">
+                            <span><{$Think.lang._LOGIN_FORGOT_PSW_TIPS_}></span>
+                        </div>
+
+                        <div class="input-group" style="width: 100%; margin-top: 5px;">
+                            <input
+                                type ="text" 
+                                name ="mobile-forget-email" 
+                                class="input" 
+                                placeholder="<{$Think.lang._LOGIN_SIGN_UP_EMAIL_}>"
+                            />
+                        </div>
+
+                        <div class="re-small-btn">
+                            <button 
+                                class ="btn forgetBtn" 
+                                @click="resetPass('mobile')"
+                            >
+                                <{$Think.lang._LOGIN_RESET_PSW_}>
+                            </button>
+                        </div>
+
+                        <div style="text-align: center">
+                            <a class="gologinsmall" href="JavaScript:;"><{$Think.lang._LOGIN_BACK_LOGIN_}></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    	<div id="QRCode-login-phone">
+    		<div id="QRCode-login-phone-BOX">
+    			<img src="__PUBLIC__/images/QR-code.png" class="QRCode-login-phone-img" style="margin-right: 5px;"/>
+				<img src="__PUBLIC__/images/b.jpg" class="QRCode-login-phone-img"/>
+    		</div>
+			<p style="font-size: 20px;color: #3388bb;"><{$Think.lang._PERSONAL_NOTICE_}></p>
+		</div>
+
+        <!-- login end -->
+
+        <!-- 服务开始 -->
+        <div class="container-service">
+            <div class="container-service-group max-width">
+                <!-- 超商代收 -->
+                <div class="service payment col-md-4 col-xs-4 ">
+                    <img src="__PUBLIC__/images/collection.png" alt="超商代收" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><{$Think.lang._LOGIN_CASH_PAYMENT_}></h4>
+                        <p class="btc-txc96"><{$Think.lang._LOGIN_CASH_CONTENT_}></p>
+                    </div>
+                </div>
+                <!-- 银行汇款 -->
+                <div class="service integration col-md-4 col-xs-4 ">
+                    <img src="__PUBLIC__/images/returnedMone.png" alt="银行汇款" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><{$Think.lang._LOGIN_BANK_INTEGRATION_}></h4>
+                        <p class="btc-txc96"><{$Think.lang._LOGIN_BANK_CONTENT_}></p>
+                    </div>
+
+                </div>
+                <!-- 全天候服务 -->
+                <div class="service aroundmd col-md-4 col-xs-4 ">
+                    <img src="__PUBLIC__/images/service.png" alt="全天候服务" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><{$Think.lang._LOGIN_AROUND_THE_CLOCK_}></h4>
+                        <p class="btc-txc96"><{$Think.lang._LOGIN_AROUND_CONTENT_}></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 服务结束 -->
+
+        <!-- 客服开始 -->
+        <div class="customer-service">
+            <div class="customer-service-group max-width row">
+                <!-- 安全保障 -->
+                <div class="service security col-md-6 col-xs-6">
+                    <img src="__PUBLIC__/images/protect.png" alt="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><{$Think.lang._LOGIN_SECURITY_}></h4>
+                        <p class="btc-txc96" style="width: 99%"><{$Think.lang._LOGIN_SECURITY_CONTENT_}></p>
+                    </div>
+                </div>
+                <!-- 客服服务 -->
+                <div class="service customer col-md-6 col-xs-6">
+                    <img src="__PUBLIC__/images/customerService.png" alt="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><{$Think.lang._LOGIN_CUSTOMER_SERVICE_}></h4>
+                        <p class="btc-txc96"><{$Think.lang._LOGIN_CUSTOMER_CONTENT_}></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 客服结束 -->
+
+        <!-- btc优点开始 -->
+        <div class="advantage">
+            <div class="advantage-group">
+                <!-- 简单上手 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><{$Think.lang._LOGIN_SIMPLICITY_}></h4>
+                        <p class=""><{$Think.lang._LOGIN_SIMPLICITY_CONTENT_}></p>
+                    </div>
+                </div>
+                <!-- 高效率 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><{$Think.lang._LOGIN_EFFICIENCY_}></h4>
+                        <p class=""><{$Think.lang._LOGIN_EFFICIENCY_CONTENT_}></p>
+                    </div>
+                </div>
+                <!-- 全天候 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><{$Think.lang._LOGIN_ANYTIME_}></h4>
+                        <p class=""><{$Think.lang._LOGIN_ANYTIME_CONTENT_}></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- btc优点结束 -->
+
+        <!-- 底部问题联系开始 -->
+        <div class="problem">
+            <div class="problem-group">
+                <!-- 热门新闻 -->
+                <!-- <div class="hot-news col-md-4 col-xs-4">
+                    <h4>
+                        <a 
+                            href  = "#"
+                            style = "color: #fff"
+                        >
+                            <{$Think.lang._LOGIN_NEWS_}>
+                        </a>
+                    </h4>
+                    <p><a href="https://www.ithome.com.tw/news/105580" target="_blank"><{$Think.lang._LOGIN_NEWS_ONE_}></a></p>
+                    <p><a href="https://www.ithome.com.tw/news/105377" target="_blank"><{$Think.lang._LOGIN_NEWS_TWO_}></a></p>
+                    <p><a href="https://www.ettoday.net/news/20121219/141974.htm" target="_blank"><{$Think.lang._LOGIN_NEWS_THREE_}></a></p>
+                    <p><a href="http://www.chinatimes.com/newspapers/20160408000037-260202" target="_blank"><{$Think.lang._LOGIN_NEWS_FOUR_}></a></p>
+                </div> -->
+                <!-- 常见问题 -->
+                <div class="issue col-md-6 col-xs-6" >
+                    <h4> 
+                        <a 
+                            href  = "__HOST_PATH__/Home/Question"
+                            style = "color: #fff"
+                        >
+                            <{$Think.lang._LOGIN_COMMON_QUESTIONS_}>
+                        </a>
+                    </h4>
+                    <div v-for="(item, index) in questionList">
+                        <p><a href="javascript:;" @click="goQuestionContent(item.type)">{{ item.title }}</a></p>
+                    </div>
+                    <p><a href="javascript:;" @click="goQuestionMore()"><{$Think.lang._LOGIN_MORE_}></a></p>
+                </div>
+                <!-- 联系我们 -->
+                <div class="relation col-md-6 col-xs-6">
+                    <h4><{$Think.lang._LOGIN_CONTACT_US_}></h4>
+                    <p>
+                        <{$Think.lang._LOGIN_BUSINESS_HOURS_}>
+                        <span>{{ serviceTime }}</span>
+                    </p>
+                    <p>
+                        <a href="javascript:;"><{$Think.lang._LOGIN_PHONE_}></a>
+                        <span>{{ companyPhone }}</span>
+                    </p>
+                    <p>
+                        <a href="javascript:;"><{$Think.lang._LOGIN_EMAIL_}></a>
+                        <span>{{ companyEmail }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 底部问题联系结束-->
+
+        <!-- footer start-->
+        <include file="Template/home/footer.html" />
+        <!-- footer end-->
+    </div>
+</body>
+
+<js href="__JS__/md5.js" />
+<js href="__PUBLIC__/home/js/login.js" />
+
+
+

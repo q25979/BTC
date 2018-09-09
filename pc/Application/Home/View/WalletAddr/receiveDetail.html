@@ -1,0 +1,94 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!-- 内容容器 -->
+    <div class="content-receive-detail col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <a href="__HOST_PATH__/Home/WalletAddr/receive">&lt; <{$Think.lang._HINT_BACK_ADDRESS_}></a>
+        <h3><{$Think.lang._ACCOUNT_CONTACTS_BTC_ADD_}></h3>
+
+        <div class="area-msg" id="address_detail">
+            <div id="btc-address">
+                {{address}}
+            </div>
+            <p><{$Think.lang._ACCOUNT_RECEIVE_DATE_CREATED_}>：{{create_time}}</p>
+            <div id="qrcode">
+                <img v-bind:src="imgSrc" class="qr-img"></div>
+
+            <div id="label-form">
+                    <label><{$Think.lang._ACCOUNT_RECEIVE_LABEL_}>：</label>
+                    <input class="label-field" type="text" name="btc-address[label]" id="btc-address-label" v-bind:value= "label">
+                    <input type="submit" @click="updataRessDetail()" name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_SAVE_SETTING_}>" class="btc btn-1 save">
+            </div>
+        </div>
+
+    </div>
+
+<script type="text/javascript">
+
+    layui.use('layer', function(){
+          
+    }); 
+
+    var addressDetailVm = new Vue({
+        el: '#address_detail',
+        data: {
+            address: "",
+            imgSrc : "",
+            label : "",
+            user_wallet_address_id : "",
+            create_time:"",
+        },
+        methods: {
+            getBtcAddress : function(){
+                var vm = this;
+                var url = "__HOST_PATH__/Home/WalletAddr/getById";
+                $.get(url,{user_wallet_address_id : vm.GetRequest().user_wallet_address_id},function(res){
+                    vm.address = res.data[0].address;
+                    vm.imgSrc = res.data[0].address_url;
+                    vm.user_wallet_address_id = res.data[0].user_wallet_address_id;
+                    vm.label = res.data[0].label;
+                    vm.create_time = res.data[0].create_time;
+                });
+
+            },
+
+            updataRessDetail : function(){
+                var vm = this;
+                var url = "__HOST_PATH__/Home/WalletAddr/updata";
+                var data = {label:$("#btc-address-label").val(),user_wallet_address_id : vm.user_wallet_address_id};
+                $.post(url,data,function(res){
+                    if (res.code == 0) {
+                        layer.msg("<{$Think.lang._HINT_SAVE_SUCCESS_}>");
+                        vm.getBtcAddress();
+                        window.location.href='__HOST_PATH__/Home/WalletAddr/receive';
+                    }
+                    
+                });
+            },
+
+            GetRequest : function() {//获取get请求后面的参数
+                var url = location.search; //获取url中"?"符后的字串
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for(var i = 0; i < strs.length; i ++) {
+                        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            },
+
+        }
+    });
+
+    addressDetailVm.getBtcAddress();
+
+
+</script>
+</block>
+
+

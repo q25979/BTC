@@ -1,0 +1,169 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+<block name="content">
+    <!-- 添加基本資訊 -->
+    <div class="addInfo col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div style="margin-top: 20px;"><a href="__HOST_PATH__/Home/Setting/index"> < <{$Think.lang._ACCOUNT_SETTINGS_BACK_}></a></div>
+        <br>
+        <h3><{$Think.lang._ACCOUNT_SETTINGS_ADD_INFO_}></h3>
+
+        <div class="clearfix center-info">
+            <div class="form-info" id="personal-information-form" accept-charset="UTF-8" method="post">
+
+                <div class="fields-info name-fields width-info">
+                    <label><{$Think.lang._ACCOUNT_SETTINGS_REAL_NAME_}></label>
+                    <input placeholder="<{$Think.lang._ACCOUNT_SETTINGS_FIRST_NAME_}>" class="ipt-name" id="last-name" type="text" name="user[last-name]">
+                    <input placeholder="<{$Think.lang._ACCOUNT_SETTINGS_LAST_NAME_}>" class="ipt-name" id="first-name" type="text" name="user[first-name]">
+                    <div class="notice"><{$Think.lang._ACCOUNT_SETTINGS_NAME_TIPS_}></div>
+                    <span id="realname-prompt" class="tip-bottom-msg" style="display: none;"><{$Think.lang._ACCOUNT_SETTINGS_NAME_NOTICE_}></span>
+                </div>
+
+                <div class="fields-info birthday-fields width-info">
+                    <label><{$Think.lang._ACCOUNT_SETTINGS_BIRTH_}></label>
+                    <div id="birthday">
+                        <fieldset class="birthday-picker">
+                            <!--日期选择器-->
+                        </fieldset>
+                    </div>
+                     <span id="birthday-prompt" class="tip-bottom-msg" style="display: none;" ><{$Think.lang._ACCOUNT_SETTINGS_ID_NOTICE_}></span>
+                </div>
+
+                <div class="fields-info identity-number-fields width-info">
+                    <label><{$Think.lang._ACCOUNT_SETTINGS_ID_TYPE_}></label>
+                    <select id="identity-type" class="identity-type" name="user[identity-type]">
+                        <option value="1"><{$Think.lang._ACCOUNT_SETTINGS_TW_ID_CARD_}></option>
+                        <option value="2"><{$Think.lang._ACCOUNT_SETTINGS_PASSPORT_}></option>
+                        <option value="3"><{$Think.lang._HINT_ELSE_CERTIFICATE_}></option>
+                    </select>
+                </div>
+
+                <div class="fields-info width-info">
+                    <label><{$Think.lang._ACCOUNT_SETTINGS_ID_NUMBER_}></label>
+                    <input id="identity-number" class="width-info" type="text" name="user[identity-number]">
+                    <!--<div class="notice"><{$Think.lang._ACCOUNT_SETTINGS_ID_TIPS_}></div>-->
+                    <span id="identity-prompt" class="tip-bottom-msg" style="display: none;" ><{$Think.lang._ACCOUNT_SETTINGS_ID_NOTICE_}></span>
+                </div>
+
+                <div class="btns-info">
+                    <input id="submit-personal-information" type="submit" name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_SUBMIT_}>" class="btn-1">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<js href="__PLUG-IN__/layui/layui.js" />
+<js href="__PLUG-IN__/layer_mobile/layer.js" />
+
+
+    <!--日期选择引入-->
+    <script type="text/javascript">
+        $(function(){
+            var options = {
+               "dateFormat" : "bigEndian",
+               "wraper" : "fieldset"
+            };
+            $('#birthday').birthdaypicker(options);
+        });
+    </script>
+
+    <script>
+    	
+    layui.use('layer', function(){
+        var layer = layui.layer;
+         //表单验证
+        $(function(){
+
+            //提交
+            var nonce_str 	= nonceStr(32);
+            $('[name=commit]').on('click', function () {
+				
+				var surname = $('#last-name').val();
+                var name = $('#first-name').val();
+
+                var year = $('.birth-year').val();
+                var month = $('.birth-month').val();
+                var day = $('.birth-day').val();
+                var birthdate = year + '-' + month + '-' + day;
+
+                var identity_type = $('#identity-type').val();
+                var identity = $('#identity-number').val();
+
+				//表单正则
+                var nameReg= /^[0-9]*$/;
+//              var identityReg = /^[A-Z][0-9]{9}$/;
+				
+				//表单验证
+                if(surname == '' || nameReg.test(surname) || name == '' || nameReg.test(name)) {
+                    $('#realname-prompt').css({'display':'block'});
+                    return ;
+                    
+                }else{
+                	$('#realname-prompt').css({'display':'none'});
+                }
+            	
+           		//年月日
+            	if(year==0 || month==0 || day==0){
+            		$('#birthday-prompt').css({'display':'block'});
+            		return ;
+            	}else{
+            		$('#birthday-prompt').css({'display':'none'});
+            	}
+            	
+            	//身份的验证
+            	if(identity ==''){
+            		$('#identity-prompt').css({'display':'block'});
+					return ;
+            	}else{
+            		$('#identity-prompt').css({'display':'none'});
+            	}
+                
+
+
+                var u = '__HOST_PATH__/Home/Setting/addBasic';
+                var	d = {
+
+                    user_name : surname + name,
+                    birthdate : birthdate,
+                    certificate_type : identity_type,
+                    certificate_num : identity,
+
+                    nonce_str: nonce_str,
+                    sign: hex_md5('__VERIFY_STR__' + birthdate + identity + identity_type + nonce_str)
+
+                };
+
+                $.ajax({
+                    url: u,
+                    data: d,
+                    type: 'post',
+                    success: function (res) {
+
+                        if(parseInt(res.code) == 0) {
+
+                            layer.msg('<{$Think.lang._HINT_ADD_SUCCESS_}>！', {icon: 1}, function(){
+						
+                            //成功跳转至页面
+                            window.location.replace("__HOST_PATH__/Home/Setting/index");
+                        })
+                        }else{
+                            layer.msg('<{$Think.lang._HINT_ADD_DEFEAT_}>！', {icon : 2});
+                        }
+                    }
+                });
+		    });
+            
+            
+        });
+   })    
+
+    </script>
+
+
+
+</block>
+

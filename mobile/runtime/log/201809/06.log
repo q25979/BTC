@@ -1,0 +1,178 @@
+[ 2018-09-06T11:09:42+08:00 ] ::1 ::1 GET /
+[ log ] localhost:8080/ [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：1,444.25kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'pgv_pvi=5188962304',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-06T11:09:42+08:00 ] ::1 ::1 GET /index/login/login/token/b4886e6750d5cd681237bc22131dcb91.html
+[ log ] localhost:8080/index/login/login/token/b4886e6750d5cd681237bc22131dcb91.html [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：2,091.68kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'pgv_pvi=5188962304; PHPSESSID=01v9h63e9uvt80dc7ljpnmhbd7; think_var=zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/b4886e6750d5cd681237bc22131dcb91_html' => '',
+  'token' => 'b4886e6750d5cd681237bc22131dcb91',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-06T11:09:42+08:00 ] ::1 ::1 GET /index/login/login/token/img/logo.png
+[ log ] localhost:8080/index/login/login/token/img/logo.png [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：2,091.21kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'pgv_pvi=5188962304; PHPSESSID=01v9h63e9uvt80dc7ljpnmhbd7; think_var=zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/img/logo_png' => '',
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-06T11:09:42+08:00 ] ::1 ::1 GET /index/login/login/token/img/favicon.ico
+[ log ] localhost:8080/index/login/login/token/img/favicon.ico [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：2,091.09kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'pgv_pvi=5188962304; PHPSESSID=01v9h63e9uvt80dc7ljpnmhbd7; think_var=zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/img/favicon_ico' => '',
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-09-06T11:09:43+08:00 ] ::1 ::1 GET /index/login/login/token/img/favicon.ico
+[ log ] localhost:8080/index/login/login/token/img/favicon.ico [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：2,091.21kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'pgv_pvi=5188962304; PHPSESSID=01v9h63e9uvt80dc7ljpnmhbd7; think_var=zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login/token/img/favicon_ico' => '',
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

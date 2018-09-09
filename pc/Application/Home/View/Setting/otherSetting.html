@@ -1,0 +1,31 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+<block name="content">
+    <!-- 其他設定 -->
+    <div class="otherSetting col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div style="margin-top: 20px;"><a href="__HOST_PATH__/Home/Setting/index"> < <{$Think.lang._ACCOUNT_SETTINGS_BACK_}></a></div>
+        <br>
+        <h3><{$Think.lang._ACCOUNT_SETTINGS_CHANGE_OTHER_}></h3>
+
+        <form class="edit-user" id="edit-user-2" accept-charset="UTF-8" method="post">
+            <div class="area area-settings">
+                <div class="clearfix">
+                    <p><{$Think.lang._ACCOUNT_SETTINGS_TIME_ZONE_}></p>
+                    <input type="text" placeholder="<{$Think.lang._HINT_INPUT_TIME_ZONE_}>">
+                </div>
+                <div class="clearfix">
+                    <p><{$Think.lang._ACCOUNT_SETTINGS_CURRENCY_}></p>
+                    <select name="user[currency]" id="user-currency">
+                        <option selected="selected" value="twd">TWD</option>
+                        <option value="cny">CNY</option>
+                        <option value="usd">USD</option></select>
+                </div>
+                <div class="clearfix">
+                    <input name="commit" value="<{$Think.lang._ACCOUNT_SETTINGS_SAVE_SETTING_}>" class="btn btn-1" id="other-save" type="submit">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</block>

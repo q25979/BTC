@@ -1,0 +1,143 @@
+<extend name="Template/home/base.html" />
+<include file="Template/home/header.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+
+<!-- 内容 -->
+<block name="content">
+	<div class="content-security col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<div class="security">
+			<div class="section progress-section">
+				<!--安全指数-->
+				<div class="progress-text"></div>
+				<div class="progress-wrap progress" data-progress-percent="6">
+					<div class="progress-bar progress" ></div>
+				</div>
+			</div>
+
+			<div class="section password-section">
+				<h3><{$Think.lang._ACCOUNT_SECURITY_ACCOUNT_PWS_}></h3>
+				<div class="fr"><i class="icon icon-success" style="background: url(__PUBLIC__/images/safe-ioc.png) no-repeat scroll 0px 9px transparent;"></i></div>
+				<div class="password-content">
+					<p><{$Think.lang._ACCOUNT_SECURITY_PWS_}> <b>●●●●●●●●●●●●●●●●</b></p>
+					<p class="password-strength" data-score="0">
+						<{$Think.lang._ACCOUNT_SECURITY_PWS_STRENGTH_}>
+						<!--安全强度-->	
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<b class="password-score"></b>
+					</p>
+					<p>
+
+						<a href="__HOST_PATH__/Home/Security/updatePassword"><{$Think.lang._ACCOUNT_SECURITY_CHANGE_PWD_}></a>
+					</p>
+				</div>
+			</div>
+			<div class="dash"></div>
+
+
+			<div class="section security-qa-section">
+				<h3><{$Think.lang._ACCOUNT_SECURITY_QUESTIONS_}></h3>
+				<div class="fr"><i class="icon icon-success" id="security-icon"></i></div>
+				<div class="content">
+					<!--<div class="fr"><i class="icon icon-alert"></i></div>-->
+					<p><{$Think.lang._ACCOUNT_SECURITY_QUESTIONS_TIPS_}></p>
+					<p>
+						<span class="link" style="display:none;">
+							<a id="security-a" href="__HOST_PATH__/Home/Security/enableSecurity"><{$Think.lang._ACCOUNT_SECURITY_OPEN_QUESTIONS_}></a>
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<js href="__PLUG-IN__/layui/layui.js" />
+	
+	<script>
+		
+		//显示数据
+		$.ajax({
+		url: '__HOST_PATH__/Home/Security/Passwordstrength',
+		success: function (res) {
+			$('.link').css({ 'display': 'block' });
+            //密保问题设定后 链接隐藏，并且换图标
+			if(parseInt(res.data.num) == 0){
+                $('#security-a').hide();
+				$('#security-icon').css({ "background": "url(__PUBLIC__/images/safe-ioc.png) no-repeat 0px 9px scroll transparent"})
+			}else{
+				$('#security-a').show();
+			};
+			//安全强度
+			if(res.data.strength==1){
+//				$('#strength-1').addClass("strength0");
+				$('.password-strength span:lt(1)').addClass("strength0");
+				$('.password-score').html('<{$Think.lang._HINT_PWD_STRENGTH_WEAK_}>');
+			}
+			if(res.data.strength==2){
+//				$('#strength-1').addClass("strength0");
+//				$('#strength-2').addClass("strength0");
+                $('.password-strength span:lt(2)').addClass("strength0");
+				$('.password-score').html('<{$Think.lang._HINT_PWD_STRENGTH_WEAKER_}>');
+			}
+			if(res.data.strength==3){
+
+                $('.password-strength span:lt(3)').addClass("strength0");
+				$('.password-score').html('<{$Think.lang._HINT_PWD_STRENGTH_MIDDLE_}>');
+			}
+			if(res.data.strength==4){
+
+                 $('.password-strength span:lt(4)').addClass("strength0");
+				$('.password-score').html('<{$Think.lang._ACCOUNT_SECURITY_STRENGTH_TIPS_}>');
+			}
+			if(res.data.strength==5){
+
+				$('.password-strength span:lt(5)').addClass("strength0");
+				$('.password-score').html('<{$Think.lang._HINT_PWD_STRENGTH_GOODER_}>');
+			}
+		    //安全指数百分比			
+			var percentage = res.data.percentage;
+			var verbal ='<{$Think.lang._ACCOUNT_SECURITY_RANK_}>'+percentage+'%';
+			var bar = percentage*3.5+'px';
+		
+			
+			$('.progress-text').html(verbal);
+			
+			
+			$('.progress-bar').css({"left":bar});
+			
+			
+			
+			
+			}
+		});
+		
+		
+		
+//		
+//  layui.use('layer', function(){
+//	  var layer = layui.layer;
+//	  $(document).ready(function() {
+//		
+//		var secu_percentage = res.data.percentage;
+//		var secu_ strength = res.data.strength;
+//		
+//		alert(secu_percentage);
+//		alert(secu_ strength);
+//		
+//	   });
+//	});
+
+</script>
+
+	<script type="text/javascript">
+		$(".sidebar-content-a").css("color","#3397D3");
+        $(".sidebar-content-a").eq(2).css("color","#000");
+        $(".sidebar-content-a img").eq(0).attr("src","__PUBLIC__/images/home-active.png");
+        $(".sidebar-content-a img").eq(2).attr("src","__PUBLIC__/images/safety-click.png");
+	</script>
+</block>

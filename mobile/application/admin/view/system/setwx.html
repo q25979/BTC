@@ -1,0 +1,134 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              
+            
+          <div class="row">
+                  <div class="col-sm-12">
+                      <aside class="profile-info col-lg-10">
+                      <section class="panel">
+                          
+                          <div class="panel-body bio-graph-info">
+                              <h1> 微信设置</h1>
+                             <hr>
+                              <form class="form-horizontal" role="form" action="" method="post" id="formid">
+                                  
+                                  
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">公众号名称</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="wxname" value="{$wxname?$wxname:''}">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">微信原始ID</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="wxlogin" value="{$wxlogin?$wxlogin:''}">
+                                      </div>
+                                  </div>
+                                  
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">URL(服务器地址)</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="wxurl"  value="{$wxurl?$wxurl:''}">
+                                          <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+			                                 以http://开头，以/结束。如：http://www.baidu.com/
+			                            </div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">Token</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="token"  value="{$token?$token:''}">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">EncodingAESKey</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="encodingaeskey"  value="{$encodingaeskey?$encodingaeskey:''}">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">AppID</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="appid"  value="{$appid?$appid:''}">
+                                      </div>
+                                  </div>
+
+                                  
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">AppSecret:</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="appsecret"  value="{$appsecret?$appsecret:''}">
+                                      </div>
+                                  </div>
+
+                                  
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">Partnerid:</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="parterid"  value="{$parterid?$parterid:''}">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">PartnerKey:</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control" name="parterkey"  value="{$parterkey?$parterkey:''}">
+                                      </div>
+                                  </div>
+
+                                  
+                                  <input type="hidden" name="wcid" value="{$wcid?$wcid:''}">
+                                  
+
+                                  <div class="form-group">
+                                      <div class="col-lg-offset-2 col-lg-10">
+                                          <input type="submit" class="btn btn-success" value="提交"  onclick="return formeidt(this.form)" >
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </section>
+                      
+                  </aside>
+                  </div>
+
+          </div>       
+          
+          
+             
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script>
+
+function formeidt(form){
+    
+
+    var formurl = "{:Url('system/setwx')}"
+    var data = $('#formid').serialize();
+    var locurl = formurl;
+    WPpost(formurl,data,locurl);
+
+    return false;
+
+  }
+
+
+</script>

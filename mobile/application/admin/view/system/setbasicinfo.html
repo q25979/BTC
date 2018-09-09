@@ -1,0 +1,75 @@
+<div class="col-sm-12">
+      <aside class="profile-info col-lg-12">
+      <section class="panel">
+          <hr>
+          <div class="panel-body bio-graph-info">
+              <form class="form-horizontal" role="form" action="" method="post" id="formid">
+                  
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">平台设置</label>
+                      <div class="col-lg-6">
+                          <div class="checkbox checkbox-slider--b checkbox-slider-md">
+                            <label>
+                              <input name="webisopen" type="checkbox" {if isset($webisopen) && $webisopen == 1} checked="checked" {/if} ><span>是否开启</span>
+                            </label>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">平台名称</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" name="webname" value="{$webname?$webname:''}">
+                      </div>
+                  </div>
+
+                  
+                  
+                  
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">分页数</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" name="pagenum" value="{$pagenum?$pagenum:'0'}">
+                      </div>
+                  </div>
+
+                  
+
+
+                  
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">每日签到赠送积分</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" name="daygiveint" value="{$daygiveint?$daygiveint:'0'}">
+                      </div>
+                  </div>
+
+                  
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">积分与现金比例</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" name="inttomoney" value="{$inttomoney?$inttomoney:'0'}">
+                      </div>
+                  </div>
+
+                  
+
+					<input type="hidden" class="form-control" name="id" value="{$id?$id:''}">
+                  
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label">网站关闭显示内容:</label>
+                      <div class="col-lg-6">
+                          <textarea name="closswebcon"  class="form-control" cols="30" rows="10">{$closswebcon?$closswebcon:''}</textarea>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-10">
+                          <input type="submit" class="btn btn-success"  onclick="return formeidt(this.form)"  value="提交">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </section>
+      
+  </aside>
+  </div>

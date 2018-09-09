@@ -1,0 +1,915 @@
+<extend name="Template/home/base.html" />
+<include file="Template/home/header.html" />
+
+<!-- 内容 -->
+<block name="content">
+    <!--购买-->
+    <!-- 購買容器 -->
+    <div class="content-buy col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    	<!--选项卡容器-->
+    	<div class="buy-tab">
+    		<!--选项卡1-->
+    		<div class="tab1" onclick="getBalance(1)">
+    			<a href="javascript:;" class="buy-BTC" id="buy-BTC"><{$Think.lang._ACCOUNT_BUY_BTC_}></a>
+    		</div>
+    		<!--选项卡2-->
+    		<div class="tab2" onclick='getBalance(2)'>
+    			<a href="javascript:;" class="buy-ETC" id="buy-ETC"><{$Think.lang._ACCOUNT_BUY_ETH_}></a>
+    		</div>
+    	</div>
+		
+		<!--选项卡1内容-->
+		<div class="buystate-1">
+            <div>
+                <div class="detail">
+                    <span class="point">•</span>
+                    <{$Think.lang._ACCOUNT_BUY_BTC_PRICE_}>
+                    <span class="buy-price"><span id="buy-btc-price"></span></span>
+                    <br />
+                    <span class="sell-available"><{$Think.lang._ACCOUNT_BUY_BTC_BALANCE_}><b><span id="buy-btc-balance"></span> BTC</b></span>
+                    <br />
+                    <span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b> NT$ <span class="cashBalance1"></span></b></span>
+                </div>
+
+                <!--转换按钮-->
+                <div class="buy-area">
+                    <div class="form-group-buy">
+                        <label class="form-label"><{$Think.lang._ACCOUNT_BUY_BTC_}></label>
+                        <input id="widget-coin-field" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+                        <span class="currency-pill-inner">BTC</span>
+                    </div>
+
+                    <img class="arrows-buy" src="__PUBLIC__/images/left-right.png"/>
+                    <div class="form-group-buy">
+                        <label class="form-label"><{$Think.lang._ACCOUNT_BUY_BTC_TWD_}></label>
+                        <input id="widget-coin-twd" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                        <span class="currency-pill-inner changeCoin">TWD</span>
+                    </div>
+
+                    <!--警告框-->
+                    <span class="tip-below" style="display:none"><{$Think.lang._ACCOUNT_SEND_LIMIT_}></span>
+                    <span class="tip-below" style="display:none;"><{$Think.lang._ACCOUNT_SEND_MAX_}></span>
+
+                    <div class="radio-form">
+                        <div>
+                            <span class="choose-method"><{$Think.lang._ACCOUNT_BUY_BTC_PAYMENT_}></span>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <div class="radio-row">
+                            <div class="radio">
+                                <input type="radio" name="payment-type" id="payment-type" value="<{$Think.lang._ACCOUNT_BUY_BTC_BANK_}>" disabled="disabled" onclick="BtcNotNull();"/>
+                            </div>
+                            <div class="radio-name radio-disabled">
+                                <label for="payment-type">
+                                    <b><{$Think.lang._ACCOUNT_BUY_BTC_BANK_}></b>
+                                </label>
+                            </div>
+                            <div class="radio-description radio-disabled">
+                                <label for="payment-type" style="font-weight: normal;">
+                                    <{$Think.lang._ACCOUNT_BUY_BTC_BANK_TIPS_}><a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_ID_VER_}></a>)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <div class="radio-row">
+                            <div class="radio">
+                                <input type="radio" name="payment-type" id="payment-type-pay" value="<{$Think.lang._ACCOUNT_BUY_BTC_STORE_}>" disabled="disabled" onclick="BtcNotNull();"/>
+                            </div>
+                            <div class="radio-name radio-disabled">
+                                <label for="payment-type-pay">
+                                    <b><{$Think.lang._ACCOUNT_BUY_BTC_STORE_}></b>
+                                </label>
+                            </div>
+                            <div class="radio-description radio-disabled">
+                                <label for="payment-type-pay" style="font-weight: normal;">
+                                    <{$Think.lang._ACCOUNT_BUY_BTC_STORE_TIPS_}>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <!--购买比特币按钮-->
+                        <button type="button" name="commit" id="submit-buy-form" class="btn btn-primary disabled" disabled="disabled"><{$Think.lang._ACCOUNT_BUY_BTC_}></button>
+
+                        <div class="buy-button-info">
+                            <{$Think.lang._ACCOUNT_BUY_BTC_BUY_INFO_TOP_}>
+                            <a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_BASIC_INFO_}></a>
+                            <{$Think.lang._ACCOUNT_BUY_BTC_BUY_INFO_DOWN_}>
+                        </div>
+                        <div class="order-notices">
+                            <small class="highlight"><{$Think.lang._ACCOUNT_BUY_BTC_ORDER_TIPS_}></small>
+                            <small><{$Think.lang._ACCOUNT_BUY_BTC_MAX_}>NT$5,000,000</small>
+                            <small><{$Think.lang._ACCOUNT_BUY_BTC_LAST_TIPS_}></small>
+                        </div>
+
+                        <!--<div class="dash"></div>
+
+                        <div class="faq-buy">
+                            <span class="title-buy"><{$Think.lang._ACCOUNT_BUY_COMMON_QUESTIONS_}></span>
+                            <ul class="ques-buy">
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_ONE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_TWO_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_THREE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_FOUR_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_FIVE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_SIX_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_SEVEN_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_EIGHT_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_NINE_}></a></li>
+                            </ul>
+                        </div>-->
+
+                    </div>
+                </div>
+
+
+            </div>
+		</div>
+		
+		<!--选项卡2内容-->
+        <div class="buystate-2" style="display: none;">
+            <div>
+                <div class="detail">
+                    <span class="point">•</span>
+                    <{$Think.lang._ACCOUNT_BUY_BTC_PRICE_}>
+                    <span class="buy-price"><span id="buy-eth-price"></span></span>
+                    <br />
+                    <span class="sell-available"><{$Think.lang._ACCOUNT_BUY_BTC_BALANCE_}><b><span id="buy-eth-balance"></span> ETH</b></span>
+                    <br />
+                    <span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b>NT$ <span class="cashBalance1"></span></b></span>
+                </div>
+
+                <!--转换按钮-->
+                <div class="buy-area ">
+                    <div class="form-group-buy">
+                        <label class="form-label"><{$Think.lang._ACCOUNT_BUY_ETH_}></label>
+                        <input id="widget-coin-field-ETH" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
+                        <span class="currency-pill-inner">ETH</span>
+                    </div>
+
+                    <img class="arrows-buy" src="__PUBLIC__/images/left-right.png"/>
+                    <div class="form-group-buy">
+                        <label class="form-label"><{$Think.lang._ACCOUNT_BUY_BTC_TWD_}></label>
+                        <input id="widget-coin-twd-ETH" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                        <span class="currency-pill-inner changeCoin">TWD</span>
+                    </div>
+
+                    <!--警告框-->
+                    <span class="tip-below" style="display:none"><{$Think.lang._ACCOUNT_SEND_LIMIT_}></span>
+                    <span class="tip-below" style="display:none;"><{$Think.lang._ACCOUNT_SEND_MAX_}></span>
+
+                    <div class="radio-form">
+                        <div>
+                            <span class="choose-method"><{$Think.lang._ACCOUNT_BUY_BTC_PAYMENT_}></span>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <div class="radio-row">
+                            <div class="radio">
+                                <input type="radio" name="payment-type-ETH" id="payment-type-ETH" value="<{$Think.lang._ACCOUNT_BUY_BTC_BANK_}>" disabled="disabled" onclick="EthNotNull();"/>
+                            </div>
+                            <div class="radio-name radio-disabled">
+                                <label for="payment-type">
+                                    <b><{$Think.lang._ACCOUNT_BUY_BTC_BANK_}></b>
+                                </label>
+                            </div>
+                            <div class="radio-description radio-disabled">
+                                <label for="payment-type" style="font-weight: normal;">
+                                    <{$Think.lang._ACCOUNT_BUY_BTC_BANK_TIPS_}><a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_ID_VER_}></a>)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <div class="radio-row">
+                            <div class="radio">
+                                <input type="radio" name="payment-type-ETH" id="payment-type-pay-ETH" value="<{$Think.lang._ACCOUNT_BUY_BTC_STORE_}>" disabled="disabled" onclick="EthNotNull();"/>
+                            </div>
+                            <div class="radio-name radio-disabled">
+                                <label for="payment-type-pay">
+                                    <b><{$Think.lang._ACCOUNT_BUY_BTC_STORE_}></b>
+                                </label>
+                            </div>
+                            <div class="radio-description radio-disabled">
+                                <label for="payment-type-pay" style="font-weight: normal;">
+                                    <{$Think.lang._ACCOUNT_BUY_BTC_STORE_TIPS_}>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dash-radio"></div>
+
+                        <!--购买以太币按钮-->
+                        <button type="button" name="commit" id="submit-buy-form-ETH" class="btn disabled" disabled="disabled"><{$Think.lang._ACCOUNT_BUY_ETH_}></button>
+
+                        <div class="buy-button-info">
+                            <{$Think.lang._ACCOUNT_BUY_BTC_BUY_INFO_TOP_}>
+                            <a href="__HOST_PATH__/Home/Setting/index"><{$Think.lang._ACCOUNT_BUY_BTC_BASIC_INFO_}></a>
+                            <{$Think.lang._ACCOUNT_BUY_BTC_BUY_INFO_DOWN_}>
+                        </div>
+                        <div class="order-notices">
+                            <small class="highlight"><{$Think.lang._ACCOUNT_BUY_BTC_ORDER_TIPS_}></small>
+                            <small><{$Think.lang._ACCOUNT_BUY_BTC_MAX_}>NT$5,000,000</small>
+                            <small><{$Think.lang._ACCOUNT_BUY_BTC_LAST_TIPS_}></small>
+                        </div>
+
+                        <!--<div class="dash"></div>
+
+                        <div class="faq-buy">
+                            <span class="title-buy"><{$Think.lang._ACCOUNT_BUY_COMMON_QUESTIONS_}></span>
+                            <ul class="ques-buy">
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_ONE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_TWO_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_THREE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_FOUR_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_FIVE_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_SIX_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_SEVEN_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_EIGHT_}></a></li>
+                                <li><a href="#"><{$Think.lang._ACCOUNT_BUY_QUESTIONS_NINE_}></a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <js href="__PUBLIC__/home/js/login.js" />
+    
+    <script type="text/javascript">
+    	$(function(){
+    		
+    		//点击比特币
+    		$(".buy-BTC").click(function(){
+    			$(this).css({
+    				textDecoration:"none",
+    				color:"#000"
+    			});
+
+    			$(".tab1").css({
+    				backgroundColor:"#fff",
+    				borderBottom:"1px solid #fff"
+				});
+    			
+    			$(".tab2").css({
+    				backgroundColor:"#F0EFEE",
+    				borderBottom:"1px solid #ddd"
+				});
+    			
+    			$(this).mouseover(function(){
+    				$(this).css("color","#000");
+    			});
+    			
+    			//点击切换比特币以太币
+    			$('.buystate-1').css({'display':'block'});
+                $('.buystate-2').css({'display':'none'});
+                          
+    		});
+    		
+    		
+    		//点击以太币
+    		$(".buy-ETC").click(function(){
+				$(this).css({
+    				textDecoration:"none",
+    				color:"#000"
+    			});
+				
+    			$(".tab2").css({
+    				backgroundColor:"#fff",
+    				borderBottom:"1px solid #fff"
+				});
+    			
+    			$(".tab1").css({
+    				backgroundColor:"#F0EFEE",
+    				borderBottom:"1px solid #ddd"
+				});
+    			
+    			$(this).mouseover(function(){
+    				$(this).css("color","#000");
+    			});
+    			
+    			//点击切换比特币以太币
+    			$('.buystate-1').css({'display':'none'});
+                $('.buystate-2').css({'display':'block'});
+                
+    		});
+            
+    	});
+    	
+    	$(function(){
+    		if(GetRequest().type == 2){
+
+	            $(".buy-ETC").css({
+	                textDecoration:"none",
+	                color:"#000"
+	            });
+	
+	            $(".tab2").css({
+	                backgroundColor:"#fff",
+	                borderBottom:"1px solid #fff"
+	            });
+	
+	            $(".tab1").css({
+	                backgroundColor:"#F0EFEE",
+	                borderBottom:"1px solid #ddd"
+	            });
+	
+	            $(".buy-ETC").mouseover(function(){
+	                $(".buy-ETC").css("color","#000");
+	            });
+	            
+				//点击切换比特币以太币
+    			$('.buystate-1').css({'display':'none'});
+                $('.buystate-2').css({'display':'block'});
+                
+                authentication();
+                getBalance(2);
+
+        	}
+    	});
+
+    	function GetRequest() {//获取get请求后面的参数
+	        var url = location.search; //获取url中"?"符后的字串
+	        var theRequest = new Object();
+	        if (url.indexOf("?") != -1) {
+	            var str = url.substr(1);
+	            strs = str.split("&");
+	            for(var i = 0; i < strs.length; i ++) {
+	                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	            }
+	        }
+	        return theRequest;
+		}
+    	
+    </script>
+    
+    <script>
+    	var BtcUnitPrice; //比特币单价
+    	var EthUnitPrice; //以太币单价
+    	
+    	var BtcUnitbalance; //比特币余额
+    	var EthUnitbalance; //以太币余额
+    	
+    	var cashBalance1; //现金余额
+    	
+    	//获取单价和余额
+    	getBalance(1);
+    	function getBalance(id) {
+    		
+            var url_Buy = '__HOST_PATH__/Home/Buy/getBalance';
+            var data_Buy = {
+            	currency_type: id
+			};	
+			
+			
+			$.ajax({
+	            url: url_Buy,
+	            data: data_Buy,
+	            type: 'post',
+	            success: function(res){
+	                if(parseInt(res.code) == 0) {
+	                	if (id == 1){
+	                    	$('#buy-btc-balance').html(res.data[0].btc_balance);//BTC余额
+	                    	BtcUnitbalance = res.data[0].btc_balance; //比特币余额
+	                    	$('.cashBalance1').html(res.data[1].extract_balance);//BTC余额
+	                    	cashBalance1 = res.data[1].extract_balance;
+	                	} else if (id == 2) {
+		                    $('#buy-eth-balance').html(res.data[0].eth_balance);//ETH余额
+		                    EthUnitbalance = res.data[0].eth_balance; //比特币余额
+		                    $('.cashBalance1').html(res.data[1].extract_balance);//BTC余额
+		                    cashBalance1 = res.data[1].extract_balance;
+	                	}
+	                	
+	                }
+	            }
+	        });
+    	}
+        
+        var btc_number; //数量
+        var btc_price; //总价格
+        
+        //比特币左输入框
+        $("#widget-coin-field").keyup (function(){
+		    btc_number = $("#widget-coin-field").val();
+		    btc_price = btc_number*BtcUnitPrice;
+		    $("#widget-coin-twd").val(btc_price.toFixed(0));
+		    BtcNotNull();
+		    if($("#widget-coin-field").val() == ""){
+		    	
+		    	$("#widget-coin-twd").val("")
+		    	
+				$("#submit-buy-form").attr('disabled',true);
+				
+				$("#submit-buy-form").css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form").css("background","#ddd");
+				},function(){
+					$("#submit-buy-form").css("background","#ddd");
+				});
+			}
+		});
+		
+		//比特币右输入框
+        $("#widget-coin-twd").keyup (function(){
+		    btc_price = $("#widget-coin-twd").val();
+		    btc_number = btc_price/BtcUnitPrice;
+		    $("#widget-coin-field").val(btc_number.toFixed(4));
+		    
+		    BtcNotNull();
+			if($("#widget-coin-twd").val() == ""){
+		    	
+		    	$("#widget-coin-field").val("")
+		    	
+				$("#submit-buy-form").attr('disabled',true);
+				
+				$("#submit-buy-form").css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form").css("background","#ddd");
+				},function(){
+					$("#submit-buy-form").css("background","#ddd");
+				});
+			}
+		});
+		
+
+		
+        var eth_number; //数量
+        var eth_price; //总价格
+        
+        //以太币左输入框
+        $("#widget-coin-field-ETH").keyup (function(){
+		    eth_number = $("#widget-coin-field-ETH").val();
+		    eth_price = eth_number*EthUnitPrice;
+		    $("#widget-coin-twd-ETH").val(eth_price.toFixed(0));
+
+			EthNotNull();
+			if($("#widget-coin-field-ETH").val() == ""){
+		    	
+		    	$("#widget-coin-twd-ETH").val("")
+		    	
+				$("#submit-buy-form-ETH").attr('disabled',true);
+				
+				$("#submit-buy-form-ETH").css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form-ETH").css("background","#ddd");
+				},function(){
+					$("#submit-buy-form-ETH").css("background","#ddd");
+				});
+			}
+		});
+		
+		//以太币右输入框
+        $("#widget-coin-twd-ETH").keyup (function(){
+		    eth_price = $("#widget-coin-twd-ETH").val();
+		    eth_number = eth_price/EthUnitPrice;
+		    $("#widget-coin-field-ETH").val(eth_number.toFixed(4));
+
+			EthNotNull();
+			if($("#widget-coin-twd-ETH").val() == ""){
+		    	
+		    	$("#widget-coin-field-ETH").val("")
+		    	
+				$("#submit-buy-form-ETH").attr('disabled',true);
+				
+				$("#submit-buy-form-ETH").css({
+				    background: "#ddd",
+				    boxShadow: "inset 0 -3px 0 #AAA",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form-ETH").css("background","#ddd");
+				},function(){
+					$("#submit-buy-form-ETH").css("background","#ddd");
+				});
+			}
+		});
+		
+		
+		//检查身份是否验证
+		authentication();
+		function authentication() {
+            var url_authentication = '__HOST_PATH__/Home/Buy/check';
+			
+			$.ajax({
+	            url: url_authentication,
+				type: 'get',
+	            success: function(res){
+	                if(res.code == "拥有购买权限！") {
+	                	//开启单选按钮
+	                	$("#payment-type").removeAttr('disabled');
+	                	$("#payment-type-pay").removeAttr('disabled');
+	                	$("#payment-type-ETH").removeAttr('disabled');
+	                	$("#payment-type-pay-ETH").removeAttr('disabled');
+	                	$(".radio-disabled").css("color","#000");
+	                }
+	            }
+	        });
+    	}
+		
+		
+		
+		var number;  //数量
+		var price;  //总价
+		var money_currency_type; //新台币
+		var payment_type; //支付方式
+		var unit_price; //单价
+		var currency_type; //币种
+		var nonce_str; //随机32个随机数
+		
+		//购买比特币按钮
+		$("#submit-buy-form").click(function(){
+			number = $("#widget-coin-field").val();  //数量
+			price = number*BTCPrice;  //总价
+			money_currency_type = 1; //新台币
+			//payment_type; //单选按钮
+			unit_price = BTCPrice; //单价
+			currency_type = 1; //币种
+			nonce_str = nonceStr(32); //随机32个随机数
+			var btnName = $(this).html();
+			
+			if($('input[name="payment-type"]:checked ').val() == "<{$Think.lang._ACCOUNT_BUY_BTC_BANK_}>"){
+				payment_type = 1;
+			}else if($('input[name="payment-type"]:checked ').val() == "<{$Think.lang._ACCOUNT_BUY_BTC_STORE_}>"){
+				payment_type = 2;
+			}
+			
+			if(payment_type == 1 && number != 0 && price != 0  && number > 0 && price > 0){
+				sg.loading($("#submit-buy-form"));
+				
+				buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
+					
+					sg.hideLoading($('#submit-buy-form'), btnName);
+					
+					if(res.code == 0){
+						alert("<{$Think.lang._HINT_BTC_BUY_OK_}>");
+						window.location.href = "__HOST_PATH__/Home/DealDetails/index";
+					}else{
+						// 会失败
+                        alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+					}
+				});
+			}else if(payment_type == 2 && number != 0 && price != 0  && number > 0 && price > 0){
+				if(price<cashBalance1){
+					sg.loading($("#submit-buy-form"));
+				
+					buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
+						
+						sg.hideLoading($('#submit-buy-form'), btnName);
+						
+						if(res.code == 0){
+							alert("<{$Think.lang._HINT_BTC_BUY_OK_}>");
+							window.location.href = "__HOST_PATH__/Home/DealDetails/index";
+						}else{
+							// 会失败
+	                        alert("<{$Think.lang._HINT_EXTRACT_NOT_ENOUGH_}>");
+						}
+					});
+				}else{
+					alert("<{$Think.lang._HINT_EXTRACT_NOT_ENOUGH_}>");
+					$("#widget-coin-field").val("");
+				
+					if($("#widget-coin-field").val() == ""){
+			    	
+				    	$("#widget-coin-twd").val("")
+				    	
+						$("#submit-buy-form").attr('disabled',true);
+						
+						$("#submit-buy-form").css({
+						    background: "#ddd",
+						    boxShadow: "inset 0 -3px 0 #AAA",
+						    color: "#fff",
+						    borderRadius: "5px",
+						    textAlign: "center",
+						    marginTop:"20px"
+						})
+						.hover(function(){
+							$("#submit-buy-form").css("background","#ddd");
+						},function(){
+							$("#submit-buy-form").css("background","#ddd");
+						});
+					}
+				}
+			}else{
+				alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
+				
+				$("#widget-coin-field").val("");
+				
+				if($("#widget-coin-field").val() == ""){
+		    	
+			    	$("#widget-coin-twd").val("")
+			    	
+					$("#submit-buy-form").attr('disabled',true);
+					
+					$("#submit-buy-form").css({
+					    background: "#ddd",
+					    boxShadow: "inset 0 -3px 0 #AAA",
+					    color: "#fff",
+					    borderRadius: "5px",
+					    textAlign: "center",
+					    marginTop:"20px"
+					})
+					.hover(function(){
+						$("#submit-buy-form").css("background","#ddd");
+					},function(){
+						$("#submit-buy-form").css("background","#ddd");
+					});
+				}
+				
+			}
+		})
+		
+		
+		//购买以太币按钮
+		$("#submit-buy-form-ETH").click(function(){
+			number = $("#widget-coin-field-ETH").val();  //数量
+			price = number*ETHPrice;  //总价
+			money_currency_type = 1; //新台币
+			//payment_type; //单选按钮
+			unit_price = ETHPrice; //单价
+			currency_type = 2; //币种
+			nonce_str = nonceStr(32); //随机32个随机数
+			
+			var btnName = $(this).html();
+			
+			if($('input[name="payment-type-ETH"]:checked ').val() == "<{$Think.lang._ACCOUNT_BUY_BTC_BANK_}>"){
+				payment_type = 1;
+			}else if($('input[name="payment-type-ETH"]:checked ').val() == "<{$Think.lang._ACCOUNT_BUY_BTC_STORE_}>"){
+				payment_type = 2;
+			}
+			
+			
+			if(payment_type == 1 && number != 0 && price != 0  && number > 0 && price > 0){
+				
+				sg.loading($("#submit-buy-form-ETH"));
+				
+				buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
+					sg.hideLoading($('#submit-buy-form-ETH'), btnName);
+					
+					if(res.code == 0){
+						alert("<{$Think.lang._HINT_ETH_BUY_OK_}>");
+						window.location.href = "__HOST_PATH__/Home/DealDetails/index?type=2";
+					}else{
+						// 会失败
+                        alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+					}
+				});
+			}else if(payment_type == 2 && number != 0 && price != 0  && number > 0 && price > 0){
+				if(price < cashBalance1){
+					sg.loading($("#submit-buy-form-ETH"));
+				
+					buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
+						sg.hideLoading($('#submit-buy-form-ETH'), btnName);
+						
+						if(res.code == 0){
+							alert("<{$Think.lang._HINT_ETH_BUY_OK_}>");
+							window.location.href = "__HOST_PATH__/Home/DealDetails/index?type=2";
+						}else{
+							// 会失败
+	                        alert("<{$Think.lang._HINT_EXTRACT_NOT_ENOUGH_}>");
+						}
+					});
+				}else{
+					alert("<{$Think.lang._HINT_EXTRACT_NOT_ENOUGH_}>");
+					
+					$("#widget-coin-field-ETH").val("");
+				
+					if($("#widget-coin-field-ETH").val() == ""){
+			    	
+				    	$("#widget-coin-twd-ETH").val("")
+				    	
+						$("#submit-buy-form-ETH").attr('disabled',true);
+						
+						$("#submit-buy-form-ETH").css({
+						    background: "#ddd",
+						    boxShadow: "inset 0 -3px 0 #AAA",
+						    color: "#fff",
+						    borderRadius: "5px",
+						    textAlign: "center",
+						    marginTop:"20px"
+						})
+						.hover(function(){
+							$("#submit-buy-form-ETH").css("background","#ddd");
+						},function(){
+							$("#submit-buy-form-ETH").css("background","#ddd");
+						});
+					}
+				}
+			}else{
+				alert("<{$Think.lang._HINT_ETH_BALANCE_NOT_}>");
+				
+				$("#widget-coin-field-ETH").val("");
+				
+				if($("#widget-coin-field-ETH").val() == ""){
+		    	
+			    	$("#widget-coin-twd-ETH").val("")
+			    	
+					$("#submit-buy-form-ETH").attr('disabled',true);
+					
+					$("#submit-buy-form-ETH").css({
+					    background: "#ddd",
+					    boxShadow: "inset 0 -3px 0 #AAA",
+					    color: "#fff",
+					    borderRadius: "5px",
+					    textAlign: "center",
+					    marginTop:"20px"
+					})
+					.hover(function(){
+						$("#submit-buy-form-ETH").css("background","#ddd");
+					},function(){
+						$("#submit-buy-form-ETH").css("background","#ddd");
+					});
+				}
+				
+			}
+			
+		})
+		
+		//定义方法发送数据
+		function buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,callback) {
+            var url_buyVirtualCurrency = '__HOST_PATH__/Home/Buy/buyCoin';
+            var data_buyVirtualCurrency = {
+            	number: number,
+            	price: price,
+            	money_currency_type: money_currency_type,
+            	payment_type: payment_type,
+            	unit_price: unit_price,
+            	currency_type: currency_type,
+            	nonce_str: nonce_str,
+				sign: hex_md5("__VERIFY_STR__" + currency_type + money_currency_type + nonce_str + number + payment_type + price + unit_price)
+            }
+			
+			$.ajax({
+	            url: url_buyVirtualCurrency,
+	            data: data_buyVirtualCurrency,
+				type: 'post',
+	            success: function(res){
+	                callback(res);
+	            }
+	        });
+    	}
+		
+		
+		//判断BTC文本框和单选按钮不为空
+		function BtcNotNull(){
+			var BTCtextLeft = $("#widget-coin-field").val();
+			var BTCtextRight = $("#widget-coin-twd").val();
+			var BTCradioStatus = $('input:radio[name="payment-type"]:checked').val();
+			
+			if(BTCtextLeft != "" && BTCtextRight != "" && BTCradioStatus != undefined){
+				$("#submit-buy-form")
+				.removeAttr('disabled')
+				.removeClass('disabled')
+				.css({
+				    background: "#5AC",
+				    boxShadow: "inset 0 -3px 0 #18A",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form").css("background","#4499BB");
+				},function(){
+					$("#submit-buy-form").css("background","#5AC");
+				});
+			}
+		}
+        
+		//判断ETH文本框和单选按钮不为空
+		function EthNotNull(){
+			var ETHtextLeft = $("#widget-coin-field-ETH").val();
+			var ETHtextRight = $("#widget-coin-twd-ETH").val();
+			var ETHradioStatus = $('input:radio[name="payment-type-ETH"]:checked').val();
+			
+			if(ETHtextLeft != "" && ETHtextRight != "" && ETHradioStatus != undefined){
+				$("#submit-buy-form-ETH")
+				.removeAttr('disabled')
+				.removeClass('disabled')
+				.css({
+				    background: "#5AC",
+				    boxShadow: "inset 0 -3px 0 #18A",
+				    color: "#fff",
+				    borderRadius: "5px",
+				    textAlign: "center",
+				    marginTop:"20px"
+				})
+				.hover(function(){
+					$("#submit-buy-form-ETH").css("background","#4499BB");
+				},function(){
+					$("#submit-buy-form-ETH").css("background","#5AC");
+				});
+			}
+		}
+		
+	    //控制一级菜单的点击事件
+		$(".nav-a").css("color","#3388BB");
+		$(".nav-span").css("color","#3388BB");
+		$(".nav-a").css("border-bottom","2px solid #fff");
+		
+		$(".nav-a").eq(4).css("color","#000");
+		$(".nav-span").eq(3).css("color","#000");
+		$(".nav-span").eq(4).next().css("color","#000");
+		$(".nav-a").eq(4).css("border-bottom","2px solid #3388BB");
+        
+        $(".text-content").html("<{$Think.lang._ACCOUNT_BUY_}>&nbsp");
+		
+		var BTCPrice;
+        var ETHPrice;
+		
+		var url = '__HOST_PATH__/Home/Buy/getPrice';
+        var BuyIndex = $.cookie('btc_float_value');
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+                	console.log(res);
+					if (BuyIndex == 1) {
+                    	$('.changeCoin').text('TWD');
+                        BtcUnitPrice = parseInt(res.data.btc_twd);
+                        EthUnitPrice = parseInt(res.data.eth_twd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+            			$('#buy-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
+						$('#buy-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
+                    } else if (BuyIndex == 2) {
+						$('.changeCoin').text('HKD');
+                        BtcUnitPrice = parseInt(res.data.btc_hkd);
+                        EthUnitPrice = parseInt(res.data.eth_hkd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#buy-btc-price').html("HKD$ " + parseInt(res.data.btc_hkd));
+						$('#buy-eth-price').html("HKD$ " + parseInt(res.data.eth_hkd));
+                        
+                    } else if (BuyIndex == 3) {
+                    	$('.changeCoin').text('USD');
+                        BtcUnitPrice = parseInt(res.data.btc_usd);
+                        EthUnitPrice = parseInt(res.data.eth_usd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#buy-btc-price').html("USD$ " + parseInt(res.data.btc_usd));
+						$('#buy-eth-price').html("USD$ " + parseInt(res.data.eth_usd));
+                    }else{
+                    	$('.changeCoin').text('TWD');
+                    	BtcUnitPrice = parseInt(res.data.btc_twd);
+                        EthUnitPrice = parseInt(res.data.eth_twd);
+                        BTCPrice = parseInt(res.data.btc_twd);
+                        ETHPrice = parseInt(res.data.eth_twd);
+                        $('#buy-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
+						$('#buy-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
+                    }
+                }
+            });
+            
+        //点击刷新页面
+        $('.clickTWD').click(function(){
+            window.location.reload();
+        });
+
+        $('.clickHKD').click(function(){
+            window.location.reload();
+        });
+
+        $('.clickUSD').click(function(){
+            window.location.reload();
+        });
+        
+        function clearNoNum(obj){
+        	obj.value = obj.value.replace(/^\./g,"");  //不能以点开头
+		    obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符  
+		    obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的  
+		    obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$","."); 
+		    obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/,'$1$2.$3');//只能输入4个小数  
+		    if(obj.value.indexOf(".")< 0 && obj.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额 
+		        obj.value= parseFloat(obj.value); 
+		    } 
+		}
+    	
+    </script>
+</block>

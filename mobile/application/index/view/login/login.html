@@ -1,0 +1,81 @@
+{include file="head" /}
+<body ng-app="starter" ng-controller="AppCtrl" class="grade-a platform-browser platform-win32 platform-ready">
+<ion-nav-bar class="bar-stable headerbar nav-bar-container hide" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+<div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="title title-center header-item"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="title title-center header-item"></div></ion-header-bar></div></ion-nav-bar>
+<ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-view hide-nav-bar="true" class="signin-view pane" state="signin" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+<div class="signin">
+    <div class="signin-header">
+        <div class="system-logo" ng-show="show_system_logo">
+            
+             <img  alt="" src="{$conf['web_logo']}"> 
+        </div>
+        <div class="system-name ng-binding ng-hide" ng-show="show_system_name" style="">
+            
+        </div>
+    </div>
+ <form method="post" id="formid">
+    <div class="signin-content">
+   
+        <div class="list">
+            <label class="item item-input">
+                <i class="input-icon ion-android-person"></i>
+                <input type="text" placeholder="用户名" name="username" required="" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+            </label>
+            <label class="item item-input">
+                <i class="input-icon ion-locked"></i>
+                <input type="password" placeholder="密码" name="upwd" required="" ng-keydown="go_signin()" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" style="">
+            </label>
+        </div>
+        <p>
+        	<span style="display: none;">忘记密码？</span>
+    		<span class="ion-android-warning ng-hide" ng-show="show_sign_in_mistake" style="">&nbsp;账号或者密码错误，请重新输入!</span>
+    	</p>
+        <div class="signin-action">
+            <button class="newbutton sign_button" onclick="return checkform(this.form);">
+                登&nbsp;&nbsp;录
+            </button>
+        </div>
+
+    </div>
+   </form>
+   <!-- 671 -->
+    <!-- <div class="signin-footer" ng-show="if_signup">
+        <a href="{:url('login/register')}">——&nbsp;&nbsp;立即开户&nbsp;&nbsp;——</a>
+    </div>
+    <div class="signin-footer" ng-show="if_signup">
+        <a href="{:url('login/respass')}">——&nbsp;&nbsp;忘记密码&nbsp;&nbsp;——</a>
+    </div> -->
+</div>
+<div class="spinner-view hide">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div class="message ng-binding" ng-class="{ 'fadein' : message }"></div>
+</div>
+</ion-view></ion-nav-view>
+
+
+<div class="backdrop"></div><div class="ionic_toast"><div class="toast_section" ng-class="ionicToast.toastClass" ng-style="ionicToast.toastStyle" ng-click="hideToast()" style="display: none; opacity: 0;"><span class="ionic_toast_close"><i class="ion-android-close toast_close_icon"></i></span><span ng-bind-html="ionicToast.toastMessage" class="ng-binding"></span></div></div></body></html>
+<script>
+function checkform(form){
+	var username = form.username.value;
+	var upwd = form.upwd.value;
+	if(!username){
+		layer.msg('请输入用户名');
+		return false; 
+	}
+
+	if (!upwd) {
+		layer.msg('请输入密码'); 
+		return false;
+	}
+
+	var data = $('#formid').serialize();
+    var formurl = "{:Url('login/login')}";
+    var locurl = "{:Url('/index/index/index/token/'.$token)}";
+
+    WPpost(formurl,data,locurl);
+    return false;
+}
+</script>

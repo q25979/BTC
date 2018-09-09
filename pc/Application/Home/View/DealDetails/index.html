@@ -1,0 +1,416 @@
+<extend name="Template/home/base.html" />
+
+<!-- 内容 -->
+<block name="content">
+	<div class="content-Deal col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<!--头部标签开始-->
+		<!--选项卡容器-->
+		<div class="buy-tab">
+			<!--选项卡1-->
+			<div class="tab1">
+				<a href="javascript:;" class="buy-BTC"><{$Think.lang._ACCOUNT_TRANSACTIONS_BTC_}></a>
+			</div>
+			<!--选项卡2-->
+			<div class="tab2">
+				<a href="javascript:;" class="buy-ETC"><{$Think.lang._ACCOUNT_TRANSACTIONS_ETH_}></a>
+			</div>
+		</div>
+		<!--头部标签结束-->
+		<!--交易明细内容开始-->
+		<!--比特币开始-->
+		<div class="deal-btc">
+			<div class="table-box">
+				<table class="table table-hover transactions-table" id="dealDetails-btc">
+					<thead>
+						<tr>
+							<th><{$Think.lang._ACCOUNT_TRANSACTIONS_TRANSACTION_}></th>
+							<th><{$Think.lang._ACCOUNT_TRANSACTIONS_TYPE_}></th>
+							<th><{$Think.lang._ACCOUNT_TRANSACTIONS_DATE_}></th>
+							<th><{$Think.lang._ACCOUNT_TRANSACTIONS_STATUS_}></th>
+							<th><{$Think.lang._ACCOUNT_TRANSACTIONS_AMOUNT_}></th>
+						</tr>
+					</thead>
+					<tbody class="deal-info" id="tbody-btc">
+						<tr>
+							<td style="width: 100%;" id="td-hint-btc"><{$Think.lang._ACCOUNT_TRANSACTIONS_CONTENT_}></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<!--分页-->
+				<div class="skip">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li>
+			                    <a aria-label="Previous" >
+			                        <span id="btc-dealPrev"><{$Think.lang._HINT_PAGE_UP_}></span>
+			                    </a>
+			                </li>
+			                <li>
+			                    <a aria-label="Next">
+			                        <span id="btc-dealNext"><{$Think.lang._HINT_PAGE_DOWN_}></span>
+			                    </a>
+			                </li>
+						</ul>
+					</nav>
+				</div>	
+				<!--分页结束-->
+			</div>
+			
+			<!--左下总完成数块开始-->
+			<div class="page-box">
+				<div class="page">
+					<div class=" deal-balance">
+						<{$Think.lang._ACCOUNT_TRANSACTIONS_TOTAL_}> 
+						<span class="btc-count"></span> BTC
+					</div>
+				</div>
+			</div>
+			<!--左下总完成数块结束-->
+		</div>
+		<!--比特币结束-->
+     <!--以太币 开始-->
+		<div class="deal-eth">
+			<div class="table-box">
+				<table class="table table-hover transactions-table " id="dealDetails-eth">
+				<thead>
+					<tr>
+						<th><{$Think.lang._ACCOUNT_TRANSACTIONS_TRANSACTION_}></th>
+						<th><{$Think.lang._ACCOUNT_TRANSACTIONS_TYPE_}></th>
+						<th><{$Think.lang._ACCOUNT_TRANSACTIONS_DATE_}></th>
+						<th><{$Think.lang._ACCOUNT_TRANSACTIONS_STATUS_}></th>
+						<th><{$Think.lang._ACCOUNT_TRANSACTIONS_AMOUNT_}></th>
+					</tr>
+				</thead>
+				<tbody class="deal-info" id="tbody-eth">
+					<tr>
+						<td style="width: 100%;" id="td-hint-eth"><{$Think.lang._ACCOUNT_TRANSACTIONS_CONTENT_}></td>
+					</tr>
+				</tbody>
+				
+				
+			</table>
+			
+				<!--分页-->
+				<div class="skip">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li>
+			                    <a aria-label="Previous" >
+			                        <span id="eth-dealPrev"><{$Think.lang._HINT_PAGE_UP_}></span>
+			                    </a>
+			                </li>
+			                <li>
+			                    <a aria-label="Next">
+			                        <span id="eth-dealNext"><{$Think.lang._HINT_PAGE_DOWN_}></span>
+			                    </a>
+			                </li>
+						</ul>
+					</nav>
+				</div>	
+				<!--分页结束-->
+			</div>
+			<!--左下总完成数块开始-->
+			<div class="page-box">
+				<div class="page">
+					<div class=" deal-balance"><{$Think.lang._ACCOUNT_TRANSACTIONS_TOTAL_}> 
+						<span class="eth-count"></span> ETH
+					</div>
+
+				</div>
+
+				<!--<div class="deal-download">-->
+					<!--<{$Think.lang._ACCOUNT_TRANSACTIONS_LOAD_}>-->
+					<!--<a href="#">CSV</a>-->
+				<!--</div>-->
+			</div>
+			<!--左下总完成数块结束-->
+		</div>
+		<!--以太币结束-->
+		
+		<!--交易明细内容结束-->
+
+		<!--常见问题开始-->
+		<!--<div class="deal-faq">
+			<span class="deal-title"><{$Think.lang._ACCOUNT_TRANSACTIONS_QUESTIONS_}></span>
+			<ul class="deal-qst">
+				<li>
+					<a href="#"><{$Think.lang._ACCOUNT_TRANSACTIONS_QUESTIONS_ONE_}></a>
+				</li>
+				<li>
+					<a href="#"><{$Think.lang._ACCOUNT_TRANSACTIONS_QUESTIONS_TWO_}></a>
+				</li>
+				<li>
+					<a href="#"><{$Think.lang._ACCOUNT_TRANSACTIONS_QUESTIONS_THREE_}></a>
+				</li>
+			</ul>
+		</div>-->
+		<!--常见问题结束-->
+
+	</div>
+
+	<!--头部标签切换js-->
+	<script type="text/javascript">
+		$(function(){
+    		if(GetRequest().type == 2){
+
+	            $(".buy-ETC").css({
+	                textDecoration:"none",
+	                color:"#000"
+	            });
+	
+	            $(".tab2").css({
+	                backgroundColor:"#fff",
+	                borderBottom:"1px solid #fff"
+	            });
+	
+	            $(".tab1").css({
+	                backgroundColor:"#F0EFEE",
+	                borderBottom:"1px solid #ddd"
+	            });
+	
+	            $(".buy-ETC").mouseover(function(){
+	                $(".buy-ETC").css("color","#000");
+	            });
+	            
+				$(".deal-btc").css({
+					"display": "none"
+				})
+				$(".deal-eth").css({
+					"display": "block"
+				})
+				getAmount (2);
+				init ();
+			} else {
+        		getAmount (1);
+				init ();
+			}
+    	});
+
+    	function GetRequest() {//获取get请求后面的参数
+	        var url = location.search; //获取url中"?"符后的字串
+	        var theRequest = new Object();
+	        if (url.indexOf("?") != -1) {
+	            var str = url.substr(1);
+	            strs = str.split("&");
+	            for(var i = 0; i < strs.length; i ++) {
+	                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	            }
+	        }
+	        return theRequest;
+		}
+		
+		
+		$(function() {
+			$(".buy-BTC").click(function() {
+				$(this).css({textDecoration: "none", color: "#000", });
+
+				$(".tab1").css({backgroundColor: "#fff", borderBottom: "1px solid #fff"});
+				$(".tab2").css({backgroundColor: "#F0EFEE", borderBottom: "1px solid #ddd"});
+
+				$(this).mouseover(function() {
+					$(this).css("color", "#000");
+				});
+
+				$(".deal-btc").css({"display": "block"});
+				$(".deal-eth").css({"display": "none"});
+
+				getDealDetails(1,"#td-hint-btc","#tbody-btc",page);
+				getAmount (1);
+				init ();
+			});
+
+			$(".buy-ETC").click(function() {
+				$(this).css({textDecoration: "none", color: "#000"});
+				$(".tab2").css({backgroundColor: "#fff", borderBottom: "1px solid #fff"});
+
+				$(".tab1").css({backgroundColor: "#F0EFEE", borderBottom: "1px solid #ddd"});
+
+				$(this).mouseover(function() {
+					$(this).css("color", "#000");
+				});
+				
+				$(".deal-btc").css({"display": "none"});
+				$(".deal-eth").css({"display": "block"});
+
+				getDealDetails(2,"#td-hint-eth","#tbody-eth",eth_page);
+				getAmount (2);
+				init ();
+			});
+		});
+		
+        //控制一级菜单的点击事件
+		$(".nav-a").css("color","#3388BB");
+		$(".nav-span").css("color","#3388BB");
+		$(".nav-a").css("border-bottom","2px solid #fff");
+		
+		$(".nav-a").eq(3).css("color","#000");
+		$(".nav-span").eq(2).css("color","#000");
+		$(".nav-span").eq(3).next().css("color","#000");
+		$(".nav-a").eq(3).css("border-bottom","2px solid #3388BB");		
+		
+		$(".text-content").html("<{$Think.lang._ACCOUNT_TRANSACTIONS_}>&nbsp;");
+		
+		//交互
+		/**
+		 * 初始化
+		 */
+		function init () {
+			$(".btc-count").text(0);
+			$(".eth-count").text(0);
+		}
+		
+		/**
+		 * 獲取總數
+		 *
+		 * @param   int  id    切換選項卡 Id
+		 */
+		function getAmount (id){
+			var url_Amount = "__HOST_PATH__/Home/DealDetails/total";
+			var data_Amount = {
+				currency_type: id
+			};
+			
+			$.ajax({
+				url : url_Amount,
+				data: data_Amount,
+				type: "post",
+				success: function(res){
+					if (res.data == null) { res.data = 0; }
+					$(".btc-count").text(res.data);
+					$(".eth-count").text(res.data);
+				}
+			});
+		}
+		
+		var page = 1;//当前页数
+		var pageCount; //总页数
+		
+		var eth_page = 1;//当前页数
+		var eth_pageCount; //总页数
+		
+		getDealDetails(1,"#td-hint-btc","#tbody-btc",page);
+		getDealDetails(2,"#td-hint-eth","#tbody-eth",eth_page);
+		function getDealDetails(id,tdHint,tbodySelector,page) {
+			var url_DealDetails = "__HOST_PATH__/Home/DealDetails/getDealInfo";
+			var data_DealDetails = {
+				currency_type: id,
+				page: page
+			}
+			$.ajax({
+				type: "post",
+				url: url_DealDetails,
+				data: data_DealDetails,
+				success:function(res){
+					if(id==1){
+						pageCount = Math.ceil(res.count / 10);
+					}else if(id == 2){
+						eth_pageCount = Math.ceil(res.count / 10);
+					}
+					
+					if(res.code == 0){
+						//如果有数据就隐藏，并插入到列表
+						if(res.data.length > 0){
+							$(tdHint).css("display","none");
+							$(tbodySelector).text('');
+							for( i = 0; i < res.data.length; i++){
+								var system_order = res.data[i].system_order; //单号
+								var order_type; //类型
+								
+								if(res.data[i].order_type == 0){
+									order_type = "<{$Think.lang._ACCOUNT_BUY_}>";
+								}else if(res.data[i].order_type == 1){
+									order_type = "<{$Think.lang._ACCOUNT_SELL_}>";
+								}
+								
+								var create_time = res.data[i].create_time; //日期
+								var status; //状态
+								
+								if(res.data[i].status == 0){
+									status = "<{$Think.lang._HINT_ORDER_STATUS_SUBMIY_}>";
+								}else if(res.data[i].status == 1){
+									status = "<{$Think.lang._HINT_ORDER_STATUS_UNDERWAY_}>";
+								}else if(res.data[i].status == 2){
+									status = "<{$Think.lang._HINT_ORDER_STATUS_COMPLETED_}>";
+								}else if(res.data[i].status == -1){
+									status = "<{$Think.lang._HINT_ORDER_STATUS_CANCEL_}>";
+								}
+								var number = res.data[i].number; //数量
+
+								$(tbodySelector).append(
+									'<tr class="deal-tr">'+
+										'<input value="'+ res.data[i].order_id +'" class="order_id" />'+
+										'<td>'+ system_order +'</td>'+
+										'<td>'+ order_type +'</td>'+
+										'<td>'+ create_time +'</td>'+
+										'<td>'+ status +'</td>'+
+										'<td>'+ number +'</td>'+	
+									'</tr>'
+								);
+							}
+						}
+
+						/**
+						 * 查看订单详情
+						 */
+						$('.deal-tr').click(function() {
+							var id = res.data[$(this).index()].order_id;
+							var u  = '__HOST_PATH__/Home/DealDetails/details?order_id=' + id;
+
+							sg.jump(u);
+						});
+							
+						$("#tbody-btc tr").hover(function(){
+							$(this).find('input').css("background","#F5F5F5");
+						},function(){
+							$(this).find('input').css("background","#fff");
+						})
+						
+						$("#tbody-eth tr").hover(function(){
+							$(this).find('input').css("background","#F5F5F5");
+						},function(){
+							$(this).find('input').css("background","#fff");
+						})
+					}
+				}
+			})
+		}
+
+		//下一页
+		$('#btc-dealNext').click(function(){
+		    if (page > 0 && page < pageCount) {
+		        page += 1;
+		        getDealDetails(1,"#td-hint-btc","#tbody-btc",page);
+		    }
+		});
+		
+		//上一页
+		$('#btc-dealPrev').click(function(){
+		    if (page > 1) {
+		        page -= 1;
+		        getDealDetails(1,"#td-hint-btc","#tbody-btc",page);
+		    }
+		});
+		
+		
+		//以太币
+		
+		//下一页
+		$('#eth-dealNext').click(function(){
+		    if (eth_page > 0 && eth_page < eth_pageCount) {
+		        eth_page += 1;
+		        getDealDetails(2,"#td-hint-eth","#tbody-eth",eth_page);
+		    }
+		});
+		
+		//上一页
+		$('#eth-dealPrev').click(function(){
+		    if (eth_page > 1) {
+		        eth_page -= 1;
+		        getDealDetails(2,"#td-hint-eth","#tbody-eth",eth_page);
+		    }
+		});
+		
+	</script>
+	<!--修改字体颜色-->
+</block>

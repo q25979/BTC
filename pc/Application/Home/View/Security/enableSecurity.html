@@ -1,0 +1,134 @@
+<extend name="Template/home/base.html" />
+
+<include file="Template/home/header.html" />
+<css href="__PLUG-IN__/layui/css/layui.css" />
+
+<!-- 内容 -->
+<block name="content">
+	<div class="content-enable col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<div class="enable">
+			<div class="get-back">
+				<a href="__HOST_PATH__/Home/Security/index"> &lt; <{$Think.lang._HINT_SECURITY_SETTING_}></a>
+			</div>
+			<h3><{$Think.lang._HINT_SECURITY_QUESTIONS_}></h3>
+
+			<div class="secure-question-notice">
+				<p class="highlight"><{$Think.lang._ACCOUNT_SETTINGS_CLAUSE_}></p>
+				<ul>
+					<li><{$Think.lang._HINT_SET_QUESTION_}></li>
+					<li><{$Think.lang._HINT_NOT_CHANGE_QUESTION_}></li>
+				</ul>
+			</div>
+			
+			<div class="secure-question-info">
+				<div class="form-horizontal">
+					<div class="form-group secure-question">
+						<label  class="col-sm-1 col-xs-1 col-lg-1 secure-label control-label">1.</label>
+						<div class="col-sm-10 col-xs-10 col-lg-10">
+							<input type="text" maxlength="30" class="form-control " id="secure-q1" placeholder="<{$Think.lang._HINT_CHOOSE_QUESTION_}>">
+							<input type="text" maxlength="30" id="answer-q1" class="answer-ques" placeholder="<{$Think.lang._HINT_SET_YOUR_ANSWER_}>" name="system[answers][0]">
+						</div>
+						
+					</div>
+					<div class="form-group secure-question">
+						<label  class="col-sm-1 col-xs-1 secure-label control-label">2.</label>
+						<div class="col-sm-10 col-xs-10">
+							<input type="text" maxlength="30" class="form-control " id="secure-q2" placeholder="<{$Think.lang._HINT_CHOOSE_QUESTION_}>">
+							<input type="text" maxlength="30" id="answer-q2" class="answer-ques" placeholder="<{$Think.lang._HINT_SET_YOUR_ANSWER_}>" name="system[answers][1]">
+						</div>
+						
+					</div>
+					<div class="form-group secure-question">
+						<label  class="col-sm-1 col-xs-1 secure-label control-label">3.</label>
+						<div class="col-sm-10 col-xs-10">
+							<input type="text" maxlength="30" class="form-control " id="secure-q3" placeholder="<{$Think.lang._HINT_CHOOSE_QUESTION_}>">
+							<input type="text" maxlength="30" id="answer-q3" class="answer-ques" placeholder="<{$Think.lang._HINT_SET_YOUR_ANSWER_}>" name="system[answers][2]">
+						</div>
+				
+					</div>
+					  <span id="waring-span" class="enable-below-msg"  >
+					      <{$Think.lang._HINT_SET_THREE_QUESTION_}>
+					  </span>
+					<div class="secure-btns form-group">
+						<label  class="col-sm-1 col-xs-1 control-label"></label>
+						<div class="col-sm-10 col-xs-10">
+							<input name="commit" disabled="disabled" value="<{$Think.lang._CONTACT_SUBMIT_}>" id="secure-answer" class="btn  btn-primary btn-enable" type="submit">
+						</div>
+					</div>
+			    </div>
+			</div>
+    	</div>
+    </div>
+    
+<js href="__PLUG-IN__/layui/layui.js" />
+<js href="__PLUG-IN__/layer_mobile/layer.js" />
+
+  <script>
+  	layui.use('layer', function(){
+	var layer = layui.layer;
+	  	//表单验证
+		$(document).ready(function(){
+			$('#answer-q3,#answer-q1,#answer-q2,#secure-q1,#secure-q2,#secure-q3').keyup(function() {
+		
+				var secure_q1 = $('#secure-q1').val();
+				var secure_q2 = $('#secure-q2').val();
+				var secure_q3 = $('#secure-q3').val();
+				var answer_q1 = $('#answer-q1').val();
+				var answer_q2 = $('#answer-q2').val();
+				var answer_q3 = $('#answer-q3').val();
+			
+				if(secure_q1==''||secure_q2==''|| secure_q3=='' ||answer_q1==''||answer_q2=='' || answer_q3=='') {
+					$('.enable-below-msg').show();
+					$('#secure-answer').attr("disabled","disabled");
+				} else {
+					$('.enable-below-msg').hide();
+					$('#secure-answer').attr("disabled",false);
+				}
+			});
+
+		//提交
+
+		$('#secure-answer').on('click', function () {
+			var secure_q1 = $('#secure-q1').val();
+			var secure_q2 = $('#secure-q2').val();
+			var secure_q3 = $('#secure-q3').val();
+			var answer_q1 = $('#answer-q1').val();
+			var answer_q2 = $('#answer-q2').val();
+			var answer_q3 = $('#answer-q3').val();
+
+			var u = '__HOST_PATH__/Home/Security/Securityenable';
+			var	d = {
+
+					password_hint_one : secure_q1,
+					password_hint_two : secure_q2,
+					password_hint_three : secure_q3,
+					answer_one : answer_q1,
+					answer_two : answer_q2,
+					answer_three : answer_q3,
+				};
+
+			$.ajax({
+				url: u,
+				data: d,
+				type: 'post',
+				success: function (res) {
+
+					if(parseInt(res.code) == 0) {
+                    	
+                    	layer.msg('Success!', {icon: 1}, function(){
+                        //跳转
+                        window.location.replace("__HOST_PATH__/Home/Security/index");
+                    })
+                }else{
+                    	layer.msg('Error!', {icon : 2});
+                	}
+				}
+			});
+		});
+	});
+})
+	
+</script>
+  
+
+</block>

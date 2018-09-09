@@ -1,0 +1,75 @@
+
+{include file="head" /}
+<style>
+.white-bg{
+  background: #000;
+  border-bottom:#000;
+}
+a.logo{
+  color:#fff
+}
+.admin_logo{
+      text-align: center;
+    padding-top: 120px;
+    margin-bottom: -90px;
+}
+.admin_logo img{
+  height: 150px
+}
+
+</style>
+<body class="login-body">
+
+    <div class="container" >
+  
+      <form class="form-signin" action="" method="post" id="formid">
+        <h2 class="form-signin-heading" >管理员登录</h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" name="username" placeholder="用户名" value="{$rememberme}">
+            <input type="password" class="form-control" name="password" placeholder="密码">
+            <label class="checkbox">
+                <input type="checkbox" value="1" name="rememberme"> 记住我
+            </label>
+            <input type="submit" onclick="return check_admin_login(this.form)" class="btn btn-lg btn-login btn-block" placeholder="登&nbsp;&nbsp;录" />
+        </div>
+      </form>
+    </div>
+
+{include file="foot" /}
+
+<script>
+/*
+登录验证
+ */
+function check_admin_login (form)
+   {
+      $username = form.username.value;
+      $password = form.password.value;
+      if (!$username) {
+        layer.msg('请输入用户名'); 
+        return false;
+      }
+
+      if(!$password){
+        layer.msg('请输入密码'); 
+        return false;
+      }
+
+      var formurl = "{:Url('admin/login/login')}"
+      var data = $('#formid').serialize();
+      $.post(formurl,data,function(data){
+        if (data.type == 1) {
+
+          layer.msg(data.data, {icon: 1,time: 1000},function(){
+            window.location.href="{:Url('admin/index/index')}";
+          }); 
+
+        }else if(data.type == -1){
+          layer.msg(data.data, {icon: 2}); 
+        }
+
+      });
+
+      return false;
+   }
+</script>

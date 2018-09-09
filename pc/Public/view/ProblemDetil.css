@@ -1,0 +1,12 @@
+.detail {width: 80%; margin: 0 auto; padding-top: 10px; position: relative;}
+.detail>h3 {font-size: 25px; text-align: center;}
+.detail .item { width: 100%; display: flex; position: relative; margin-top: 20px !important;}
+.detail .item .time {font-size: 14px; position: absolute; right: 2px; bottom: 0; color: #505050; height: 20px; line-height: 20px;}
+.detail .acticle-info .fontsize {font-size: 14px;}
+.detail .acticle-info {margin-left: 10px;}
+.detail .acticle-info tr {height: 20px; line-height: 20px;}
+.detail .acticle-info .acticleRight { text-align: right; margin-right: 2px;}
+.detail>.hr {height: 1px; background: #505050; width: 100%; position: relative; margin: 0px auto;}
+.detail>.content {font-size: 15px; line-height: 25px; position: relative; top: 10px; text-align: left; padding-bottom: 25px;}
+
+p {font-size: 18px;}

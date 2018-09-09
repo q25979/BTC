@@ -1,0 +1,138 @@
+<extend name="Template/home/base.html" />
+
+<!-- 内容 -->
+<block name="content">
+	<div class="content-Deal col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+		<!--头部标签开始-->
+		<!--选项卡容器-->
+		<div class="buy-tab">
+			<!--选项卡1-->
+			<div class="tab1">
+				<a href="__HOST_PATH__/Home/WithdrawalDetail/index" class="buy-BTC"><{$Think.lang._WITHDRAW_CASH_RECORD_}></a>
+			</div>
+			
+		</div>
+		<!--比特币开始-->
+		<div class="deal-btc">
+			<div class="table-box">
+				<table class="table table-hover transactions-table" id="WithdrawalDetail">
+					<thead>
+						<tr>
+							<th><{$Think.lang._WITHDRAW_CASH_ID_}></th>
+							<th><{$Think.lang._WITHDRAW_CASH_CASH_NUM_}></th>
+							<th><{$Think.lang._WITHDRAW_CASH_STATUS_}></th>
+							<th><{$Think.lang._WITHDRAW_CASH_DATE_}></th>
+						</tr>
+					</thead>
+					<tbody class="deal-info" id="tbody-WithdrawalDetail">
+						<tr>
+							<td style="width: 100%;" id="td-hint-btc"><{$Think.lang._ACCOUNT_TRANSACTIONS_CONTENT_}></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<!--分页-->
+				<div class="skip">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li>
+			                    <a aria-label="Previous" >
+			                        <span id="btc-dealPrev"><{$Think.lang._HINT_PAGE_UP_}></span>
+			                    </a>
+			                </li>
+			                <li>
+			                    <a aria-label="Next">
+			                        <span id="btc-dealNext"><{$Think.lang._HINT_PAGE_DOWN_}></span>
+			                    </a>
+			                </li>
+						</ul>
+					</nav>
+				</div>	
+				<!--分页结束-->
+			</div>
+			
+	</div>
+
+	<!--头部标签切换js-->
+	<script type="text/javascript">
+		
+		
+		//交互
+		
+		var page = 1;//当前页数
+		var pageCount; //总页数
+				
+		getWithdrawalDetail(page);
+		
+		//获取提现记录
+		function getWithdrawalDetail(page) {
+			var url_WithdrawalDetail = "__HOST_PATH__/Home/WithdrawalDetail/lookUpOrder";
+			var data_WithdrawalDetail = {
+				page: page
+			}
+			$.ajax({
+				type: "post",
+				url: url_WithdrawalDetail,
+				data: data_WithdrawalDetail,
+				success:function(res){
+					pageCount = Math.ceil(res.count / 10);
+
+					
+					if(res.code == 0){
+						//如果有数据就隐藏字段，并插入到列表
+						if(res.data.length > 0){
+							$("#td-hint-btc").css("display","none");
+							$("#tbody-WithdrawalDetail").text('');
+						}
+
+						for( i = 0; i < res.data.length; i++){
+							//判断状态
+							if(res.data[i].status == 0){
+								status = "<{$Think.lang._HINT_TO_AUDIT_}>";
+								}else if(res.data[i].status == 1){
+									status = "<{$Think.lang._HINT_PASS_THE_AUDIT_}>";
+								}else if(res.data[i].status == -1){
+									status = "<{$Think.lang._HINT_AUDIT_FAILED_}>";
+							}
+							
+							//赋值
+							var system_order = res.data[i].up_order_id; //单号							
+							var create_time = res.data[i].create_time; //日期
+							var status; //状态
+							var number = parseInt(res.data[i].up_price); //金额
+							
+							//把数据插入表中
+							$("#tbody-WithdrawalDetail").append(
+								'<tr class="deal-tr">'+
+//									'<input value="'+ res.data[i].order_id +'" class="order_id" />'+
+									'<td>'+ system_order +'</td>'+
+									'<td>'+ number +'</td>'+	
+									'<td>'+ status +'</td>'+
+									'<td>'+ create_time +'</td>'+
+								'</tr>'
+							);
+						}
+					}	
+				}
+			})
+		}
+
+		//下一页
+		$('#btc-dealNext').click(function(){
+		    if (page > 0 && page < pageCount) {
+		        page += 1;
+		        getWithdrawalDetail(page);
+		    }
+		});
+		
+		//上一页
+		$('#btc-dealPrev').click(function(){
+		    if (page > 1) {
+		        page -= 1;
+		        getWithdrawalDetail(page);
+		    }
+		});
+		
+	</script>
+</block>

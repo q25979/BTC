@@ -1,0 +1,33 @@
+.realtime-table {
+    width: 1000px;
+    margin: 0 auto;
+    color: #323232;
+    font-size: 18px;
+    border: solid #ccc;
+    border-width: 1px 0 0 1px;
+}
+
+.realtime-table tr {
+    height: 52px;
+}
+
+.realtime-table tr th,
+.realtime-table tr td {
+    text-align: center;
+    width: 500px;
+    border: solid #ccc;
+    border-width: 0 1px 1px 0;
+}
+
+.realtime-h3 {
+    margin-left: 10%;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    .realtime-table {
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}

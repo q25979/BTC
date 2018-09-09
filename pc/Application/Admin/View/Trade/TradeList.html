@@ -1,0 +1,84 @@
+<include file="Template/admin/header.html" />
+
+<css href="__CSS__/bootstrap.min.css" />
+
+<style>
+    .layui-elem-quote {font-size: 15px;color: #666;margin: 30px;}
+    .layui-form-item {width: 80%; margin-top: 15px;}
+</style>
+<div class="layui-elem-quote ">
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="width:22%;">出售浮动设置：</label>
+    <div class="layui-input-inline">
+        <span name="sell" class="layui-input"></span>
+    </div>
+    <button class="layui-btn" lay-submit id="sellformDemo">立即修改</button>  
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="width:22%;">购买浮动设置：</label>
+    <div class="layui-input-inline">
+      <span name="buy" class="layui-input"></span>
+    </div>
+    <button class="layui-btn" lay-submit id="buyformDemo">立即修改</button>  
+  </div>
+
+</div>
+ 
+</script>
+
+<script>
+    var code;
+    $.ajax({
+        url : '<{:U(Trade)}>',
+        type: 'get',
+        success: function (res) {
+
+            if ( res.data.length == 0 ) {
+                layer.msg('信息！', {icon: 5});
+                return false;
+            }
+
+            $("[name=sell]").html(res.data[0]['sell_float']);
+            $('[name=buy]').html(res.data[0]['buy_float']);
+
+            layer.closeAll();
+        }
+    });
+
+    layui.use('layer',function() {
+
+        var $ = layui.jquery, layer = layui.layer;
+
+        $('#sellformDemo').on('click', function () {
+
+            layer.open({
+                type: 2,
+                title: '出售浮动设置',
+                area: ['50%', '50%'],
+                content: '<{:U(SellUpdate)}>',
+                btnAlign: 'c',
+                yes: function () {
+                    layer.closeAll();
+                }
+            });
+            $('#code').attr('src', code);
+        });
+
+        $('#buyformDemo').on('click', function () {
+
+            layer.open({
+                type: 2,
+                title: '购买浮动设置',
+                area: ['50%', '50%'],
+                content: '<{:U(BuyUpdate)}>',
+                btnAlign: 'c',
+                yes: function () {
+                    layer.closeAll();
+                }
+            });
+            $('#code').attr('src', code);
+        });
+    });
+
+</script>

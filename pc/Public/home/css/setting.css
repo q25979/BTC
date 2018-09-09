@@ -1,0 +1,897 @@
+/*总容器*/
+.content-setting{
+	width: 72%;
+	background-color: #fff;
+	float: right;
+	padding: 10px 40px 30px 40px;
+	border-left: 1px solid #ECF0F2;
+}
+
+.setting-info{
+	position: relative;
+}
+
+/*标题文字*/
+.setting-info h3{
+	color: #999;
+	font-size: 18px;
+    margin: 5px 0;
+    display: block;
+}
+
+/*提示文字*/
+.setting-hint{
+	font-size: 14px;
+	color: #999;
+	float: right;
+}
+
+/*提示文字文本框*/
+.setting-hint-text{
+	border: 1px solid #DDDDDD;
+	background-color: #fff;
+	width: 250px;
+	padding: 10px;
+	position: absolute;
+	right: 6px;
+	top: 25px;
+	display: none;
+}
+
+/*标题里的内容*/
+.setting-info-content{
+	margin-top: 20px;
+}
+
+/*按钮样式*/
+.setting-btn{
+	width: 220px;
+    padding-left: 10px;
+    padding-right: 10px;
+	
+	/*控制按钮显示隐藏*/
+	/*display: none;*/
+}
+/*添加基本资讯*/
+/*去除ul默认样式*/
+.setting-info-ul{
+	list-style: none;
+	
+	/*控制信息显示隐藏*/
+	display: none;
+}
+
+/*li*/
+.setting-info-ul li{
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+/*span*/
+.setting-info-ul span{
+	font-weight: bold;
+	font-size: 14px;
+}
+
+
+/*身份验证*/
+.identity-p{
+	margin: 0;
+	/*显示隐藏 請先完成「基本資訊」。*/
+	display: none;
+}
+
+/*身份证按钮*/
+.identity-btn,
+#handId-btn {
+	width: 280px;
+	margin: 15px 0;
+	
+	/*控制按钮显示隐藏*/
+	/*display: none;*/
+}
+
+/*注意 红色文字提示*/
+.notice-red{
+	color: red;
+}
+
+/*上传手持身份证提示样式*/
+.hand-below-msg{
+	display: block;
+	font-size: 12px;
+	border-radius: 2px;
+	padding: 8px 12px;
+	/*background: #F9E8E8;*/
+	color: #C30;
+	margin-top:5px ;
+}
+
+#upload-img,
+#upload-img1,
+#upload-img2,
+#upload-img3{
+    width: 700px;
+    height: 300px;
+    display: none;
+}
+
+#upload-handId{
+	display: inline-block;
+	width: 90px;
+    height: 30px;
+    background: #55AACC;
+    font-size: 14px;
+    border: 0px !important;
+}
+
+
+/*去除p默认外边距*/
+.identity-content p{
+	margin: 0;
+}
+
+/*上传身份证明后的提示*/
+.identity-verify-text{
+	margin-bottom: 5px !important;
+	color: red;
+	
+	display: none;
+}
+.layui-upload .layui-upload-file{
+	display: none !important;
+}
+
+
+/*卖单按钮*/
+.sell-account-btn{
+	width: 218px;
+}
+
+/*邮件*/
+.email-toggle{
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.email-toggle p{
+	margin: 0;
+	display: inline-block;
+}
+
+
+.right-a{
+	font-size: 14px;
+	float: right;
+}
+
+
+/*横虚线*/
+.dash {
+	width: 100%;
+    margin: 30px 0;
+    border-top: 1px dashed #ccc;
+}
+
+/*开关按钮*/
+.switch-btn{
+	width: 82px;
+	height: 33px;
+	/*border: 1px solid #ccc;*/
+	position: relative;
+	border-radius: 4px;
+	margin-right: 10px;
+
+}
+
+/*启用 关闭*/
+.switch-btn-left,.switch-btn-right{
+	height: 100%;
+	width: 50%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/*启用*/
+.switch-btn-left{
+	background-color: #55AACC;
+	border-radius: 3px 0 0 3px;
+}
+
+/*关闭*/
+.switch-btn-right{
+	background-color: #999;
+	border-radius: 0 3px 3px 0;
+}
+
+/*遮盖隐藏*/
+.switch-btn-hide{
+	height: 100%;
+	width: 50%;
+	background-color: #EEF5F7;
+	position: absolute;
+	/*left: 41px;*/
+	/*border-radius: 0 3px 3px 0;*/
+}
+
+/*提示文字*/
+.setting-hint-a{
+	font-size: 14px;
+	float: right;
+}
+
+
+
+/*内部页面样式*/
+.bankCard a,
+.otherSetting a {
+    text-decoration: none;
+    outline: none;
+    color: #38B;
+}
+
+.bankCard p,
+.bankCard a,
+.otherSetting p,
+.otherSetting a{
+    font-size: 14px;
+}
+
+.otherSetting p {
+    margin-top: 20px;
+}
+
+.updatePhone h3 {
+    font-weight: 400;
+    color: #333;
+}
+
+.bankCard h3,
+.otherSetting h3,
+.updatePhone h3,
+.input-modal h3,
+.uploadIdcard h3,
+.addInfo h3 {
+    color: #999;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.input-modal h3 {
+    margin-bottom: 30px;
+}
+
+/*银行提示*/
+  .bank-below-msg{
+  	display: block;
+  	width: 53.5%;
+	font-size: 12px;
+	border-radius: 2px;
+	padding: 8px 12px;
+	background: #F9E8E8;
+	color: #C30;
+	margin-top:5px ;
+	/*text-indent: 1em;*/
+	display: none;
+  }
+
+
+/*银行提示*/
+
+
+.bank-setting {
+    margin-top: 20px;
+}
+
+.bankCard .highlight {
+    margin-bottom: 5px;
+    color: #E54 !important;
+}
+
+.bank-setting ul li {
+    margin: 0 0 15px 30px;
+    vertical-align: middle;
+    outline: none;
+}
+
+.area-settings {
+    width: 600px;
+    padding-bottom: 30px;
+    margin: 30px 0 0 34px;
+}
+
+.area-settings input {
+    width: 100%;
+}
+
+.area-settings label {
+    display: inline-block;
+    max-width: 100%;
+    margin: 15px 0 15px 0;
+}
+
+.tip-below-msg {
+    width: 320px;
+    background: #F9E8E8;
+    color: #C30;
+    padding: 8px 12px;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+#submit-bank-form,
+#other-save {
+    float: left;
+    width: auto;
+    background: #5AC;
+    color: #FFF;
+    font-size: 18px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 26px;
+    margin: 10px auto 15px auto;
+    display: block;
+    font-weight: normal;
+    border-radius: 5px;
+    border: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#submit-bank-form{
+	width: 180px;
+}
+
+#submit-bank-form:hover,
+#other-save:hover,
+#SMS-verification-btn:hover{
+    background: #49B;
+    color: #fff;
+}
+#SMS-verification-btn {
+    color: #fff;
+}
+
+/*修改其他設定*/
+.clear-fix {
+    clear: both;
+}
+
+#user-currency {
+    width: 320px;
+    height: 42px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+    line-height: 30px;
+}
+
+/* 更新手機號碼 */
+.updatePhone .box {
+    width: 600px;
+    height: auto !important;
+    margin: 20px auto 50px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 2px 2px 0 0;
+    border: 1px solid #eee;
+}
+
+.updatePhone .box .center {
+    width: 100%;
+    margin: 25px auto;
+    text-align: center;
+}
+
+
+.update-registPro {
+    width: 600px;
+    margin: 0;
+}
+
+.update-step-1,
+.update-step-2,
+.update-step-3 {
+    display: table-cell;
+    position: relative;
+    padding: 10px 100px 10px 100px;
+    left: -8%;
+}
+
+.update-step-circle {
+    width: 34px;
+    height: 34px;
+    margin: 0 auto;
+    background-color: #9E9E9E;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 18px;
+    color: white;
+}
+
+.update-step-left {
+    left: 0;
+    right: 50%;
+    margin-right: 20px;
+    position: absolute;
+    top: 26px;
+    height: 1px;
+    border-top: 1px solid #BDBDBD;
+}
+
+.update-step-right {
+    right: 0;
+    left: 50%;
+    margin-left: 20px;
+    position: absolute;
+    top: 26px;
+    height: 1px;
+    border-top: 1px solid #BDBDBD;
+}
+
+
+
+.updatePhone .steps {
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+}
+
+.updatePhone .current {
+    color: #E55;
+}
+
+.updatePhone .item {
+    width: 140px;
+    text-align: center;
+}
+
+.updatePhone .space {
+    width: 116px;
+    display: inline-block;
+}
+
+.updatePhone .box .top-image {
+    margin: 20px 0 25px 0;
+}
+
+/*银行账号开始*/
+.setting-info{
+	position: relative;
+}
+.bank-hint-a{
+	position: absolute;
+	right: 0;
+	top: 20px;
+	display: none;		
+}
+#bank-box{
+	display: none;
+}
+/*银行账号结束*/
+.bank-info{
+    margin: 20px 0;
+    text-indent: 1.5em;
+    font-weight: 700;	
+}
+
+.area-setting-update .fields-update {
+    margin: 25px 0 25px 0;
+}
+
+.area-setting-update .label-update {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.area-setting-update .field-update {
+    display: inline-block;
+    width: 314px;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+}
+
+.area-setting-update .phone-label-update {
+    width: 125px;
+    position: relative;
+    margin: 0 20px 0 -45px;
+}
+
+
+.area-setting-update .state {
+    background: #EEE;
+    color: #666;
+    height: 18px;
+    line-height: 18px;
+    padding: 9px;
+    border: 1px solid #ddd;
+    position: relative;
+    bottom: 1px;
+}
+
+.area-setting-update #phone,
+.area-setting-update #change-phone {
+    width: 260px;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 18px;
+    color: #000;
+    margin: 0 0 0 -4px;
+}
+
+#next-step,
+#next-to-step,
+#return-to-step {
+    cursor: pointer;
+    background: #5AC;
+    color: #FFF;
+    box-shadow: inset 0 -3px 0 #18A;
+    height: 42px;
+    width: auto;
+    line-height: 42px;
+    padding: 0 26px;
+    margin: 10px auto 0 auto;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 5px;
+    border: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#next-step:hover,
+#next-to-step:hover,
+#return-to-step:hover {
+    background: #49B;
+    color: #fff;
+    font-size: 18px;
+}
+
+.bottom-image {
+    display: block;
+    width: 527px;
+    height: 49px;
+    margin: 0 auto;
+}
+
+.update-red {
+    background: #E54;
+}
+
+.tip-error {
+    position: relative;
+    left: 156px;
+    margin-top: 10px;
+    width: 314px;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 12px;
+    border-radius: 2px;
+    background: #F9E8E8;
+    color: #C30;
+}
+
+.tip-input {
+    position: relative;
+    left: 156px;
+    margin-top: 10px;
+    width: 314px;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 12px;
+    border-radius: 2px;
+    background: #eee;
+    color: #666;
+}
+
+/*手机验证码弹出框*/
+.input-modal {
+    /*display: none;*/
+    width: 660px;
+    max-height: 500px;
+    padding: 30px;
+    background: #FFF;
+    border-radius: 0;
+    box-shadow: 0 1px 8px #d3dddd;
+    overflow: auto;
+    border: 1px solid #e7e7e7;
+    visibility: visible;
+    z-index: 500;
+    color: #333;
+}
+
+.input-modal .ipt-code {
+    height: 30px;
+    width: 78px;
+    vertical-align: middle;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.input-modal .btns {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.input-modal .btn-1,
+.input-modal .btn-2,
+.btns-id .btn-1,
+.btns-info .btn-1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    height: 42px;
+    width: auto;
+    line-height: 42px;
+    padding: 0 26px;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 5px;
+    border: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: inset 0 -3px 0 #eee;
+}
+
+.input-modal .btn-1 {
+    background: #5AC;
+    color: #FFF;
+    box-shadow: inset 0 -3px 0 #18A;
+    margin-left: 20px;
+}
+
+.btns-id .btn-1,
+.btns-info .btn-1 {
+    margin: 20px 0 20px 0;
+}
+
+.input-modal .btn-1:hover,
+.input-modal .btn-2:hover,
+.btns-id .btn-1:hover,
+.btns-info .btn-1:hover {
+    background: #49B;
+}
+
+/*上傳身分證照片*/
+.fields-idcard label {
+    display: block;
+    margin: 20px 0;
+    max-width: 100%;
+    font-weight: normal;
+}
+
+.width-id,
+.width-info {
+    width: 350px;
+}
+
+.field-info {
+    padding-top: 5px;
+}
+
+.form-info label {
+    display: block;
+    margin: 20px 0;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+
+.form-info .name-fields .ipt-name {
+    width: 158px;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+.form-info .notice{
+    font-size: 12px;
+    color: #999;
+    margin: 10px 0 5px 0;
+}
+
+.tip-bottom-msg {
+    box-sizing: border-box;
+    width: 100%;
+    background: #F9E8E8;
+    color: #C30;
+    margin-top: 0;
+    padding: 8px 12px;
+    position: relative;
+    text-align: left;
+}
+
+.form-info .birthday-fields select {
+    width: 30%;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+    margin-left: 10px;
+}
+
+
+.form-info .identity-number-fields select {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    background: #fff;
+    font-size: 14px;
+    color: #000;
+}
+
+.addInfo {
+    display: block;
+    padding: 10px 15px 30px 15px;
+}
+
+/* 671 2018年5月3日14:24:58 */
+#user_country {
+    width: 53%;
+    height: 40px;
+    border: 1px solid #DDD;
+}
+
+#SMS-verification-box{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+/*短信验证按钮*/
+#SMS-verification-btn{
+	width: 150px;
+	margin: 0;
+	font-size: 16px;
+	height: 36px;
+	line-height: 36px;
+	margin-right: 8px;
+	padding: 0 ;
+}
+
+/*短信验证文本框*/
+#SMS-verification-input{
+	width: 145px;
+}
+
+
+/*小屏幕自适应*/
+@media (max-width: 770px) {
+	/*短信验证按钮*/
+	#SMS-verification-btn{
+		width: 150px;
+	}
+	
+	/*短信验证文本框*/
+	#SMS-verification-input{
+		width: 140px;
+	}
+	
+	/*内容容器*/
+	.content-setting {
+		width: 100%;
+		padding: 0 16px 20px;
+		margin-top: 46px;
+		border-left: none;
+	}
+
+    /* 671 2018年5月3日14:24:58 */
+    #user_country {
+        width: 85%;
+    }
+
+    .updatePhone .center {
+        text-align: left;
+    }
+
+    #user-currency,
+    #submit-bank-form,
+    #other-save,
+    .area-settings,
+    .tip-below-msg,
+    .updatePhone .top-image img,
+    .bottom-image,
+    .area-setting-update .field-update-2,
+    .area-setting-update .field-update,
+    .form-info .birthday-fields select,
+    .width-id,
+    .width-info {
+        width: 100%;
+    }
+
+    .btns-id .btn-1,
+    .btns-info .btn-1 {
+        width: 100%;
+        display: block;
+    }
+
+    .form-info .name-fields .ipt-name {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+
+    .area-settings {
+        margin: 0;
+    }
+
+    .tip-below-msg {
+        box-sizing: border-box;
+        position: initial;
+        width: 100%;
+    }
+
+    .updatePhone .box {
+        width: 94%;
+    }
+
+    .updatePhone .steps,
+    .update-registPro {
+        display: none;
+    }
+
+    #verify-phone-form .label-update,
+    .area-setting-update .phone-label-update {
+        width: 100%;
+        margin: 0 0 10px 0;
+        display: block;
+    }
+
+    .area-setting-update #phone,
+    .area-setting-update #change-phone {
+        width: 78%;
+    }
+	
+	.email-toggle p{
+		width: 60%;
+	}
+
+    /*宽度过低时身份证正反面图片大小*/
+    #upload-img,
+    #upload-img1,
+    #upload-img2,
+    #upload-img3{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/*绑定手机号*/
+.setting-info .bind-phone {
+    margin-top: 25px;
+    width: 218px;
+}

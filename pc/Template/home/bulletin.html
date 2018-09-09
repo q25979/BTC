@@ -1,0 +1,149 @@
+<!-- 浮动可以使用frame -->
+
+<!--左侧公告栏样式-->
+<style>
+
+    .bull-bulletin {
+        width: 200px;
+        height: 400px;
+        background: #F5F5F5;
+        position: fixed;
+        top: 20%;
+        box-shadow: 1px 3px 10px #ccc;
+        overflow: hidden;
+        
+    }
+
+    .bull-fix {
+        position: relative;
+        z-index: 999;
+    }
+
+    .bull-bulletin img{
+        display: inline-block;
+        z-index: 999;
+    }
+
+    .bull-title {
+        position: absolute;
+        left: 79px;
+        top: 8px;
+        font-size: 14px;
+        color: #E6E6E6;
+    }
+
+    .bull-close-left {
+        position: absolute;
+        left: 178px;
+        top: 7px;
+        font-weight: bold;
+    }
+
+    .bull-close-left:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    .bull-bulletin-box ul{
+    	list-style: none;
+    }
+    
+    .bull-bulletin-box ul li{
+    	margin-bottom: 16px;
+    }
+    
+    .bull-bulletin-box{
+    	position: absolute;
+    	margin-top: 50px;
+    	padding: 10px 10px;
+    	top: 0;
+    }
+
+</style>
+
+<!--左侧公告栏-->
+<!-- <block name="content"> -->
+    <div class="bull-bulletin" id="bulletin">
+        
+        <div class="bull-fix">
+            <img src="__PUBLIC__/images/Popupblock.png">
+            <span class="bull-title"><{$Think.lang._HINT_BULLETIN_BOARD_}></span>
+            <div type="button" class="bull-close-left" @click="close()">&times;</div>
+            <div class="bull-bulletin-box">
+                <ul>
+                    <li v-for="item in bulletinLit">
+                        <div><a href="#">{{ item.tw_content }}</a></div>
+                        <div>{{ item.bulletin_issue_time }}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+//  	function circulation(){
+//      	//自动滚动
+//      	divHeight = $(".bulletin-box").css("height");//获取容器高度
+//	        var divTop = $(".bulletin-box").css("top");//top px
+//	        console.log("容器高度："+divHeight);
+//	        console.log("偏移高度："+divTop);
+//		}
+//      
+//      
+//      circulation();
+    </script>
+    
+    <script type="text/javascript">
+    	
+//      var divHeight = $(".bulletin-box").css("height");//获取容器高度
+//		console.log("容器高度："+divHeight);
+        
+
+        
+        
+        /*var divTop = $(".bulletin-box").css("top");//偏移量
+
+        var reg = new RegExp("px","g");
+        
+        var Top = divTop.replace(reg, "");
+        	
+    	Top = parseInt(Top);
+        
+        console.log("偏移高度："+Top);
+        
+        
+        var divHeight = $(".bulletin-box").css("height");//获取容器高度
+       
+        var height = divHeight.replace(reg, "");
+       
+      	height = parseInt(height)+140;
+        	
+        console.log("容器高度："+height)	;
+        	
+        var timer = setInterval(function(){
+        	Top-=1;
+        	if(Top <= -height){
+        		Top=352;
+        	}
+		   $(".bulletin-box").css("top",Top+"px")	
+		}, 50);
+		
+		$(".bulletin").mouseover(function(){
+			clearInterval(timer);
+		})
+		
+		
+		$(".bulletin").mouseleave(function(){
+			timer = setInterval(function(){
+	        	Top-=2;
+	        	if(Top <= -height){
+	        		Top=352;
+	        	}
+			   $(".bulletin-box").css("top",Top+"px")	
+			}, 100);
+		})*/
+		
+    </script>
+
+<!-- </block> -->
+
+<!-- <js href="__PUBLIC__/home/js/bulletin.js" /> -->

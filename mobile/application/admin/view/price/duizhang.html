@@ -1,0 +1,68 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <!--state overview start-->
+              
+              <div class="row state-overview">
+                <div class="container">
+                <div class="row">
+                      <form action="" method="get">
+                      <div class="col-lg-3 mar-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">用户id：</span>
+                            <input type="text" value="{:input('uid')}"  class="form-control" name="uid" />
+                        </div>
+                      </div>
+
+                      <div class="mar-10">
+                   <input type="submit" class="btn btn-success" value="搜索">
+                  </div>
+                      
+                  </div>
+                  
+
+                  </form>
+                </div>
+                
+              </div>
+              
+             
+            <br><br>
+             <div class="row">
+             <div class="col-lg-3 mar-10">
+             </div>
+             {if isset($uid)}
+              <div class="col-lg-9">
+                <p>身份：{if $user.otype == 0}客户{else}代理商{/if}</p>
+                <p>账户余额：{$user.usermoney}</p>
+                <p>入金：{$data.rujin}</p>
+                <p>已出金：{$data.chujin}</p>
+                <p>出金申请中：{$data.chujin_sq}</p>
+                <p>手续费：{$data.shouxu}</p>
+                <p>订单盈亏：{$data.yingkui}</p>
+                <p>结单红利：{$data.hongli}</p>
+                <p>结单手续费：{$data.shouxushouyi}</p>
+              </div>
+              {/if}
+             </div>
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+{include file="foot" /}
+
+<script>  
+
+
+//时间选择器
+$('#datetimepicker').datetimepicker();
+$('#datetimepicker_end').datetimepicker();
+
+
+</script>

@@ -1,0 +1,121 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/no-slidebar.html" />
+<extend name="Template/home/base.html" />
+
+<!-- 内容 -->
+<block name="content">
+    <!--常见问题-->
+    <!--头部图片-->
+    <div class="ques-header">
+        <div class="ques-header-img" style="background: url(__PUBLIC__/images/one.png) no-repeat;">
+            <div class="ques-header-font"><{$Think.lang._FAQ_}></div>
+        </div>
+
+    </div>
+    <div class="container" id="container">
+
+
+        <!--中间问题部分-->
+        <div class="ques-body">
+            <div class="ques-body-left">
+                <div class="ques-body-item">
+                    <div><a href="#"><{$Think.lang._FAQ_SEND_RECEIVE_}></a></div>
+                    <ul>
+                        <li v-for="item in CommonProblemList1">
+                            <a href="javascript:" @click="getContent(item.common_problem_id)">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:" class="ques-more" id="questionSend" v-on:click="getMore(1)">
+                                >> <{$Think.lang._LOGIN_MORE_}>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ques-body-item">
+                    <div><a href="#"><{$Think.lang._FAQ_BUY_SELL_}></a></div>
+                    <ul>
+                        <li v-for="item in CommonProblemList2">
+                            <a href="javascript:" @click="getContent(item.common_problem_id)">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:" class="ques-more" id="questionBuy" v-on:click="getMore(2)">
+                                >> <{$Think.lang._LOGIN_MORE_}>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script type="text/javascript">
+
+    	var FAQ = new Vue({
+            el: '#container',
+            data:{
+                CommonProblemList1:[],
+                CommonProblemList2:[],
+            },
+            created:function(){
+                this.getData();
+                this.questInit();
+            },
+            methods: {
+                getData: function () {
+                    var vm = this;
+                    var url = '__HOST_PATH__/Home/Question/getCommonProblemAll';
+
+                    $.get(url, function (res) {
+                        if (res.code == 0) {
+                            for(var i in res.data){
+        
+                                if (res.data[i].type == 1) {
+                                    if (vm.CommonProblemList1.length < 5) {
+                                        vm.CommonProblemList1.push(res.data[i]);
+                                    } else {
+                                        $('#questionSend').css({'display': 'block'});
+                                    }
+                                }
+                                else if (res.data[i].type == 2) {
+                                    if (vm.CommonProblemList2.length < 5) {
+                                        vm.CommonProblemList2.push(res.data[i]);
+                                    } else {
+                                        $('#questionBuy').css({'display': 'block'});
+                                    }
+                                }
+                            }
+                        }
+                        
+                    });
+                },
+                /**
+                 * 初始化
+                 */
+                questInit: function () {
+                    $('#questionSend').css({'display': 'none'});
+                    $('#questionBuy').css({'display': 'none'});
+                },
+                getContent : function(id){
+                    var u = '__HOST_PATH__/Home/Question/FAQ.html?common_problem_id=' + id;;
+                    sg.jump(u);
+                },
+                getMore : function(type){
+                    var u = '__HOST_PATH__/Home/Question/More.html?type=' + type;
+                    sg.jump(u); 
+                }
+            }
+        });
+
+        //响应式侧边栏颜色
+        $('#minwidth1-act').css({'background':'#697785'});
+        $('#minwidth2-act').css({'background':'#697785'});
+        $('#minwidth3-act').css({'background':'#697785'});
+        $('#minwidth4-act').css({'background':'#3388BB'});
+    </script>
+</block>

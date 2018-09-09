@@ -1,0 +1,119 @@
+{include file="head" /}
+
+<!-- 编辑器引入开始 -->
+<link href="/static/public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/static/public/umeditor/third-party/jquery.min.js"></script>
+<script type="text/javascript" src="/static/public/umeditor/third-party/template.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/public/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/public/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="/static/public/umeditor/lang/zh-cn/zh-cn.js"></script>
+
+<!-- 编辑器引入结束 -->
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              
+            
+          <div class="row">
+                  <div class="col-sm-12">
+                      <aside class="profile-info col-lg-9">
+                      <section class="panel">
+                          
+                          <div class="panel-body bio-graph-info">
+                              <h1> 添加文章</h1>
+                              <form class="form-horizontal" role="form" method="post" id="formid">
+                                  
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">标题</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control"  value="{$ntitle?$ntitle:''}" placeholder="请填写标题" name="ntitle">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">作者</label>
+                                      <div class="col-lg-6">
+                                          <input type="text" class="form-control"  value="{$nauthor?$nauthor:''}" placeholder="请填写作者" name="nauthor">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">栏目</label>
+                                      <div class="col-lg-6">
+                                          <select name="fid" id="" class="selectpicker show-tick form-control">
+                                          	  <option value="0">请选择栏目</option>
+                                          <!-- {volist name="newsclass" id="vo"} -->
+                                              <option {if isset($fid) && $fid == $vo['fid']} selected="selected" {/if} value="{$vo.fid}">{$vo.fclass}</option>
+                                          <!-- {/volist} -->
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <input type="hidden" name="nid" value="{$nid?$nid:''}">
+                                  <div class="form-group">
+                                      <label class="col-lg-2 control-label">内容</label>
+                                      <div class="col-lg-10">
+                                          <!-- <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea> -->
+                                          <script type="text/plain" id="myEditor" name="ncontent" style="width:1000px;height:240px;">{$ncontent?$ncontent:''}</script>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <div class="col-lg-offset-2 col-lg-10">
+                                          <input type="submit" value="提交"  onclick="return editcon(this.form)" class="btn btn-success">
+                                          
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </section>
+                      
+                  </aside>
+                  </div>
+
+          </div>       
+          
+          
+             
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script type="text/javascript" src="/static/public/umeditor/umindex.js"></script>
+<script>
+
+	function editcon(form){
+
+		var ntitle = form.ntitle.value;
+		var fid = form.fid.value;
+		
+		
+		if(!ntitle){
+	      layer.msg('请输入文章名称'); 
+	        return false;
+	    }
+
+	    if(fid == 0){
+	      layer.msg('请选择栏目'); 
+	        return false;
+	    }
+
+	    var formurl = "{:Url('index/contentadd')}"
+	    var data = $('#formid').serialize();
+	    var locurl = "{:Url('admin/index/contentlist')}";
+
+	    WPpost(formurl,data,locurl);
+
+	    
+	    return false;
+	}
+
+
+</script>

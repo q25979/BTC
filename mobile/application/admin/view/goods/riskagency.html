@@ -1,0 +1,80 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+<!--main content start-->
+      <section id="main-content">
+
+          
+      <section class="wrapper">
+      <div class="col-sm-8">
+          <aside class="profile-info col-lg-12">
+          <section class="panel">
+              <hr>
+              <div class="panel-body bio-graph-info">
+                  <form class="form-horizontal" role="form" action="" method="post" id="formid">
+            
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">指定客户亏损：</label>
+                          <div class="col-lg-8">
+                                
+                                <input type="text" class="form-control" name="to_loss" placeholder="请填写客户ID" value="{$to_loss?$to_loss:''}">
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 此处设置会员ID（如：8888），多个用户用|符号分开（如：8888|9999）设置之后该会员所有订单都会亏损，请谨慎操作。如停止该功能请在上面留空或者填0，并提交。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">指定客户赢利：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control"  placeholder="请填写客户ID" value="{$to_win?$to_win:''}" name="to_win">
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 此处设置会员ID（如：8888），多个用户用|符号分开（如：8888|9999）设置之后该会员所有订单都会赢利，请谨慎操作。如停止该功能请在上面留空或者填0，并提交。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <input type="hidden" name="id" value="{$id?$id:''}">
+
+                      <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                              <input type="submit" class="btn btn-success" onclick="return editrisk(this.form)" value="提交">
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </section>
+          
+      </aside>
+      </div>
+
+      </section>
+
+
+
+
+      
+
+
+
+      <!--main content end-->
+  </section>
+
+{include file="foot" /}
+<script>
+
+function editrisk(form) {
+  
+  var formurl = "{:Url('goods/addriskagency')}"
+  var data = $('#formid').serialize();
+  var locurl = "{:Url('goods/riskagency')}";
+
+  WPpost(formurl,data,locurl);
+  return false;
+}
+
+
+</script>

@@ -1,0 +1,53 @@
+<include file="Template/home/header.html" />
+<extend name="Template/home/base.html" />
+
+
+<!-- 内容 -->
+<block name="content">
+    <!-- 内容容器 -->
+    <div class="content-messagetip col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div style="margin-top: 20px;"><a href="__HOST_PATH__/Home/MessageTip/index"> < <{$Think.lang._HINT_BACK_TO_MSG_}></a></div>
+        <br>
+        <h3 id="message_title"></h3>
+        <div id="message_content_time"></div>
+        <div id="message_content"></div>
+
+    </div>
+
+    <js href="__PUBLIC__/home/js/MessageTip.js" />
+
+    <script>
+        function GetRequest() {
+            var url = location.search;      //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+//        获取information_id
+        var information_id = GetRequest().information_id;
+
+        var url_newsContent = '__HOST_PATH__/Home/MessageTip/newsContent';
+        var data_newsContent = {
+            information_id: information_id
+        };
+
+        $.ajax({
+            url: url_newsContent,
+            data: data_newsContent,
+            type: 'get',
+            success: function(res){
+                $('#message_title').text(res.data[0].title);
+                $('#message_content_time').text(res.data[0].create_time);
+                $('#message_content').text(res.data[0].content);
+            }
+        });
+
+    </script>
+</block>
+

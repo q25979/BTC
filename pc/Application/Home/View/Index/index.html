@@ -1,0 +1,252 @@
+<extend name="Template/home/base.html" />
+
+<!-- 内容 -->
+<block name="content">
+
+	<style>
+		.sh-money { text-align: center; }
+	</style>
+
+	<!-- 内容容器 -->
+    <div class="content-vessel col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    	<!-- 简讯验证 -->
+    	<div class="content-bd">
+    		<p class="content-bd-p1"><{$Think.lang._ACCOUNT_WELCOME_}> <span><{$email}></span>！</p>
+    		<p class="content-bd-p2"><{$Think.lang._ACCOUNT_BIND_TIPS}></p>
+    		<button class="btn btn-lg btn-active" onclick="javascrtpt:window.location.href='__HOST_PATH__/Home/Setting/updateMobilePhone/type/bind'"><span class="glyphicon glyphicon-plus" style="margin-right: 10px;"></span> <{$Think.lang._ACCOUNT_PHONE_VER_}></button>
+    	</div>
+    	<h3><{$Think.lang._ACCOUNT_SUMMARY_}></h3>
+    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    		<tbody cellspacing="0">
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><{$Think.lang._ACCOUNT_BTC_BALANCE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-balance"></span></td>
+    			</tr>
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><{$Think.lang._ACCOUNT_BTC_BALANCE_VALUE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-price"></span></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	
+    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    		<tbody cellspacing="0">
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><{$Think.lang._ACCOUNT_ETH_BALANCE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-balance"></span></td>
+    			</tr>
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><{$Think.lang._ACCOUNT_ETH_BALANCE_VALUE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-price"></span></td>
+    			</tr>
+    		</tbody>
+    	</table>
+		
+    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    		<tbody>
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><{$Think.lang._ACCOUNT_TOTAL_VALUE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-total-value"></span></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	
+    	<!--冻结金额-->
+    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    		<tbody>
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><{$Think.lang._HINT_FREEZE_MONEY_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit"><span id="account-freeze-money"></span></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	
+    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    		<tbody>
+    			<tr>
+    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><{$Think.lang._ACCOUNT_CASH_BALANCE_}></td>
+    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit">
+    					<span id="account-withdraw-deposit"></span>
+    					<button class="btn btn-active" id="withdraw-deposit-btn"><{$Think.lang._HINT_WITHDRAW_DEPOSIT_}></button>
+    					<button class="btn btn-active" id="withdrawal-detail-btn" onclick="javascrtpt:window.location.href='__HOST_PATH__/Home/WithdrawalDetail/index'"><{$Think.lang._WITHDRAW_CASH_RECORD_}></button>
+    				</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	
+    	<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 average-price"><span>•</span><{$Think.lang._ACCOUNT_SUMMARY_BOTTOM_}></p>
+    	
+    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-box">
+    		<button class="btn btn-lg btn-active buy-btn" onclick="javascrtpt:window.location.href='__HOST_PATH__/Home/Buy/index'"></span><{$Think.lang._ACCOUNT_BUY_}></button>
+    		<button class="btn btn-lg btn-active sell-btn" onclick="javascrtpt:window.location.href='__HOST_PATH__/Home/Sell/index'"></span><{$Think.lang._ACCOUNT_SELL_}></button>
+    	</div>
+    </div>
+    
+    
+    
+    <script type="text/javascript">
+        var extract_balance_all = '';
+        var nonce_str = nonceStr(32);//随机32个随机数
+    	//更改按钮样式
+		$(function(){
+			$(".content-btn").click(function(){
+				$(this).css("color","#fff");
+			});
+			
+			$(".btn-active").mouseout(function(){
+				$(this).css("color","#fff")
+			});
+			
+            init();
+		});
+
+        /**
+         * 页面初始化
+         */
+        var init = function() {
+            var maincoinId = '<{$maincoin_id}>';
+
+            if (!sg.isEmpty(maincoinId)) {
+                $('.content-bd').css({ 'display': 'none' });
+            }
+        };
+		
+		var btc_balance;
+		var eth_balance;
+		
+		getAccount();
+		function getAccount(){
+			var url_account = "__HOST_PATH__/Home/Index/getAccount";
+			$.ajax({
+				type:"get",
+				url: url_account,
+				success:function(res){
+					if(res.code == 0){
+						$("#account-btc-balance").html(res.btc_balance + " BTC");
+						btc_balance = res.btc_balance;
+						$("#account-eth-balance").html(res.eth_balance + " ETH");
+						eth_balance = res.eth_balance;
+						$("#account-freeze-money").html(" NT$ " + res.freeze_balance);
+						$("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
+
+						extract_balance_all = res.extract_balance;
+					}
+				}
+			});
+			
+			var url = '__HOST_PATH__/Home/RealtimeMarket/Price';
+            var realtimeIndex = $.cookie('btc_float_value');
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function (res) {
+                    if (realtimeIndex == 1) {
+                        $('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
+                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
+                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
+                    } else if (realtimeIndex == 2) {
+                        $('#account-btc-price').html( "HKD$ " + parseInt(res.data[0].btc_value_hkd*btc_balance));
+                        $('#account-eth-price').html( "HKD$ " + parseInt(res.data[0].eth_value_hkd*eth_balance));
+                        $("#account-total-value").html( "HKD$ " + (parseInt(res.data[0].btc_value_hkd*btc_balance) + parseInt(res.data[0].eth_value_hkd*eth_balance)));
+                        
+                    } else if (realtimeIndex == 3) {
+                        $('#account-btc-price').html( "USD$ " + parseInt(res.data[0].btc_value_usd*btc_balance));
+                        $('#account-eth-price').html( "USD$ " + parseInt(res.data[0].eth_value_usd*eth_balance));
+                        $("#account-total-value").html( "USD$ " + (parseInt(res.data[0].btc_value_usd*btc_balance) + parseInt(res.data[0].eth_value_usd*eth_balance)));
+                    }else{
+                    	$('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
+                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
+                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
+                    }
+                }
+            });
+		}
+		
+		//点击刷新页面
+        $('.clickTWD').click(function(){
+            window.location.reload();
+        });
+
+        $('.clickHKD').click(function(){
+           window.location.reload();
+        });
+
+        $('.clickUSD').click(function(){
+            window.location.reload();
+        });
+
+		//提现按钮弹出框
+		$('#withdraw-deposit-btn').click(function(){
+			layui.use('layer', function(){
+				var layer = layui.layer;
+				layer.open({
+					type: 1,
+					title: '<{$Think.lang._HINT_WITHDRAW_DEPOSIT_}>',
+					id: 'layerDemo',
+					area: '350px',
+					offset: '40%',
+					anim: '1',
+					content: '<div class="sh-money"><{$Think.lang._HINT_WITHDRAW_DEPOSIT_}>：<input type="text" id="get_cash_open" /></div>',
+					btn: 'yes',
+					btnAlign: 'c',
+					yes:function(){
+                        layer.closeAll();
+						var cashContent = $('#get_cash_open').val();
+						
+						layer.open({
+							type: 1,
+							title: '提示',
+							area : '250px',
+							offset: '40%',
+							content: '<div class="sh-money">本茨提點金額為NT$ '+cashContent+'是否领取？</div>',
+							btn: ['是', '否'],
+							yes: function() {
+								layer.closeAll();
+								
+								var url = "__HOST_PATH__/Home/Index/createUpOrder";
+								if (cashContent == ''
+									|| cashContent == null 
+									|| isNaN(Number(cashContent))
+									|| cashContent <= 0
+									|| cashContent == undefined
+									) {
+
+									layer.msg('<{$Think.lang._HINT_INPUT_AMOUNT_INVALID_}>');
+									return;
+								}
+								if (Number(cashContent) > Number(extract_balance_all)) {
+									layer.msg('<{$Think.lang._HINT_INPUT_AMOUNT_NOT_TIPS_}>');
+									return;
+								}
+
+								layer.load(2)
+								$.post(url,{
+									up_price : cashContent,
+								},function(res){
+									layer.closeAll();
+
+									if (res.code == 0) {
+										layer.msg('<{$Think.lang._HINT_WITHDRAW_CASH_SUCCESS_}>', function() {
+											parent.location.reload();
+										});
+									}else{
+										layer.msg('<{$Think.lang._HINT_WITHDRAW_CASH_FAILURE_}>', function() {
+											parent.location.reload();
+										});
+									}
+								});
+							}
+						});
+					}
+				});
+			});
+		});
+
+		
+		//响应式侧边栏颜色
+		$('#minwidth1-act').css({'background':'#3388BB'});
+		$('#minwidth2-act').css({'background':'#697785'});
+		$('#minwidth3-act').css({'background':'#697785'});
+		$('#minwidth4-act').css({'background':'#697785'});
+	</script>
+</block>

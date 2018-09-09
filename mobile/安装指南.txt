@@ -1,0 +1,12 @@
+环境：php7.0 + mysql5.6
+
+数据库文件：lenggang.sql
+
+更改配置：application/database.php 数据库配置把自己的账号密码更换掉
+
+注：程序只能放于根目录，最好用宝塔安装
+
+打开浮动：域名/coller.html
+
+打开后台：域名/admin	初始账号密码：admin 123456
+

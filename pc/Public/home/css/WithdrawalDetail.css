@@ -1,0 +1,394 @@
+/*头部标签页*/
+
+.content-Deal {
+	width: 72%;
+	background-color: #fff;
+	float: right;
+	padding: 10px 40px 0px 40px;
+	border-left: 1px solid #ECF0F2;
+}
+
+
+/*选项卡容器*/
+
+.buy-tab {
+	padding-left: 34px;
+	border-bottom: 1px solid #ddd;
+	height: 46px;
+}
+
+
+/*选项卡1*/
+
+.tab1 {
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #fff;
+	margin-right: 10px;
+}
+
+
+/*选项卡2*/
+
+.tab2 {
+	width: 25%;
+	height: 46px;
+	float: left;
+	border: 1px solid #ddd;
+	background-color: #F0EFEE;
+}
+
+
+/*控制选项卡1和选项卡2内容居中*/
+
+.buy-tab div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*购买比特币*/
+
+.buy-BTC {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	color: #000;
+}
+
+
+/*修改默认hover事件*/
+
+.buy-BTC:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+
+/*购买以太币*/
+
+.buy-ETC {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	color: #666;
+}
+
+
+/*修改默认hover事件*/
+
+.buy-ETC:hover {
+	text-decoration: none;
+	color: #666;
+}
+
+
+/*头部结束*/
+
+/*以太币初始状态隐藏*/
+.deal-eth{
+	display: none;
+}
+
+/*表格部分*/
+.table-box{
+	position: relative;
+	margin-bottom: 50px;
+}
+
+/*分页定位*/
+.skip nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*表头开始*/
+
+#WithdrawalDetail tr th,
+#WithdrawalDetail tr td{
+	height: auto;
+	/*float: left;*/
+	/*white-space: normal;*/
+	/*word-break: normal ;*/
+	word-break: break-all; 
+	/*overflow: hidden;*/
+	/*vertical-align: middle;*/
+    /*outline: none;*/
+    /*font-weight: normal;*/
+    /*border: none;*/
+
+}
+
+#WithdrawalDetail tr th:nth-child(1),
+#WithdrawalDetail tr td:nth-child(1){
+
+	width: 40%;		/*交易头部样式*/
+}
+
+#WithdrawalDetail tr th:nth-child(2),
+#WithdrawalDetail tr td:nth-child(2){
+
+	width: 15%;		/*交易头部样式*/
+}
+#WithdrawalDetail tr th:nth-child(3),
+#WithdrawalDetail tr td:nth-child(3){
+
+	width: 15%;		/*交易头部样式*/
+}
+#WithdrawalDetail tr th:nth-child(4),
+#WithdrawalDetail tr td:nth-child(4){
+
+	width: 30%;		/*交易头部样式*/
+}
+
+#WithdrawalDetail tr th{
+	border-bottom: 1.2px solid #ecf0f2;
+}
+
+
+.transactions-table th {
+	width: 20% ;
+	padding: 0 10px;
+	font-size: 14px;
+    font-weight: normal;
+    /*禁止换行*/
+    white-space: nowrap;
+    color: #3397D3;
+    
+}
+
+.transactions-table td {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+.deal-info td {
+	width: 20%;
+	
+	border: none;
+	font-size: 14px;
+	/*white-space: nowrap;*/
+	font-weight: normal;
+	
+}
+
+.deal-info tr {
+	border: none;
+}
+
+.deal-info input{
+	border: none;
+	padding: 0;
+	width: 100%;
+}
+
+
+/*表头结束*/
+
+
+/* 表数据 */
+.deal-info .deal-tr,
+.deal-info .deal-tr>td,
+.deal-info .deal-tr>td>input {
+	cursor: pointer;
+}
+
+.order_id {
+	/*display: none;*/
+}
+/* 表数据结束 */
+
+
+/*交易明细内容开始*/
+
+.page-box {
+	/*border-bottom: 1px dashed #CCCCCC;*/
+}
+
+.page {
+	margin-top: 20px;
+}
+
+.page .deal-balance {
+	text-align: right;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 5px;
+}
+
+.deal-download {
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.deal-download>a {
+	text-decoration: none;
+	outline: none;
+	color: #38B;
+	
+}
+
+
+/*交易明细内容结束*/
+
+
+/*常见问题开始*/
+
+.deal-faq {
+	padding-left: 30px;
+	margin-top: 30px;
+	margin-bottom: 200px;
+}
+
+
+.deal-title {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.deal-qst li {
+	color: #999;
+	margin-bottom: 3px;
+	margin-left: 15px;
+	list-style-type: disc;
+	list-style-position: inside;
+	text-indent: -1em;
+}
+.deal-qst a{
+	color: #999;
+	text-decoration: none;
+	outline: none;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.pagination{
+	cursor:pointer;
+}
+
+
+/*常见问题结束*/
+
+
+/*单选框按钮样式修改*/
+#payment-type,
+#payment-type-pay,
+#payment-type-ETH,
+#payment-type-pay-ETH {
+	margin-left: 0 !important;
+	margin-top: -10px !important;
+}
+
+.deal-balance{
+	margin-bottom: 20px;
+}
+
+
+/**
+ * 作者：671
+ * 时间：2018年5月7日20:11:31
+ * 功能：实现订单详情布局
+ */
+.details-container {
+}
+.details-container>h2 {
+	/*text-align: center;*/
+	font-size: 20px;
+	margin-left: 50px;
+}
+.details-container>div {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.details-container>div>span:nth-child(1) {
+	display: inline-block;
+	width: 130px;
+	text-align: right;
+}
+
+
+/*媒体查询*/
+
+
+/*小屏幕自适应*/
+
+@media (max-width: 768px) {
+	/*内容容器*/
+	.content-Deal{
+		width: 100%;
+		padding: 0 16px;
+		margin-top: 46px;
+		padding-bottom: 30px;
+		border-left: none;
+	}
+	/*修改总容器的左内边距*/
+	.buy-tab {
+		padding-left: 4% !important;
+	}
+	/*选项卡1*/
+	.tab1 {
+		width: 46% !important;
+	}
+	/*选项卡2*/
+	.tab2 {
+		width: 46% !important;
+	}
+	/*控制字体大小*/
+	.buy-tab a {
+		font-size: 16px;
+	}
+	
+	/* 订单详情 */
+	.details-container>h2 {
+		margin-left: 0; 
+		text-align: center;
+	}
+	.details-container>div>span:nth-child(1) {
+		width: 43%;
+	}
+
+	
+	#WithdrawalDetail thead tr{
+		width: 100% !important;
+	}
+	
+	#WithdrawalDetail tr th,
+	#WithdrawalDetail tr td{
+		width: 25% !important;
+		/*height: auto;
+		float: left;
+		white-space: normal;
+		word-break: normal ;
+		word-break:break-all; 
+		overflow: hidden;
+		vertical-align: middle;
+	    outline: none;
+	    font-weight: normal;
+	    border: none;*/
+	}
+
+}
+
+
+/*平板自适应*/
+
+@media (max-width: 992px) {
+	/*选项卡1*/
+	.tab1 {
+		width: 30%;
+	}
+	/*选项卡2*/
+	.tab2 {
+		width: 30%;
+	}
+}
