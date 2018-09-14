@@ -248,7 +248,7 @@
 			setInterval(function() {
 				_this.getFloat(_this.currencyType);
 
-			}, 1000); //1分钟刷新一次
+			}, 1000*3); //1分钟刷新一次
 
 			// 设置语言样式
 			var btcLang = $.cookie('btc_lang');
@@ -283,9 +283,12 @@
 				var u = 'http://localhost:8081/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
-				    console.log(res)
 					_this.BTC = c + res.btc
 					_this.ETH = c + res.ltc
+
+					// 设置cookie
+					$.cookie('btc_btc_value', res.btc);
+					$.cookie('btc_eth_value', res.ltc);
 				});
 			},
 
@@ -617,7 +620,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Send/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -628,7 +631,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -639,7 +642,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/DealDetails/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -650,7 +653,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Buy/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -661,7 +664,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Sell/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -705,7 +708,6 @@
 				});
 				clearTimeout(time);
 			})
-
 			function hint() {
 				if(true){
 					//显示提示
@@ -713,9 +715,6 @@
 						transition:"height 0.5s",
 						height:"40px"
 					});
-					//修改提示内容
-//					$(".hint").html("成功 登陆了").css("color","#fff");
-
 					//定时自动关闭提示
 					var time = setTimeout(function(){
 						$(".nav-hd").css({
@@ -730,8 +729,6 @@
 						height:"40px"
 					});
 					//修改提示内容
-//					$(".hint").html("Email 無效的電子信箱");
-
 					clearTimeout(time);
 					//定时自动关闭提示
 					time = setTimeout(function(){
@@ -742,34 +739,19 @@
 					}, 8000);
 				}
 			}
-
-			//控制一级菜单的点击事件
-//			$(".nav-a").click(function(){
-//				$(".nav-a").css("color","#3388BB");
-//				$(".nav-span").css("color","#3388BB");
-//				$(".nav-a").css("border-bottom","2px solid #fff");
-//				
-//				$(this).css("color","#000");
-//				$(this).next().css("color","#000");
-//				$(this).css("border-bottom","2px solid #EB5A4D");
-//			});
-			
 			//移入显示下拉菜单
 			$(".li-content").mouseover(function(){
 				$(".Spinner").css("display","none");
 				$(this).children().eq(2).css("display","block");
-				
 			});
 			//移出隐藏下拉菜单
 			$(".li-content").mouseout(function(){
 				$(".Spinner").css("display","none");
 			})
-
 			//删除a的下划线
 			$(".nav-a").click(function(){
 				$(".nav-a").css("text-decoration","none");
 			})
-			
 			//修改点击账户的默认样式
 			$(".dropdown-List-a").click(function(){
 				$(this).css({
@@ -777,12 +759,6 @@
 					color:"#1A1A1A"
 				});
 			})
-			
-//			$(".dropdown-a").click(function(){
-//				var textContent = $(this).html();
-//				$(".text-content").html(textContent);
-//			})
-			
 			setNav();
 		});
 
@@ -822,21 +798,16 @@
 		 * 获取logo
 		 */
 		function getLogo () {
-
 			var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
-
 			$.ajax({
 				url: logoUrl,
 				type: 'get',
 				success: function (res) {
-
-
 					$('.logo-img').attr('src', res.data[0].logo_url);
 					$('.logo-text').text(res.data[0].name);
 				}
 			});
 		}
-
 	</script>
 </block>
 

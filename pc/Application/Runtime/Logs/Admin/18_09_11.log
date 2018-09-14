@@ -1,0 +1,833 @@
+[ 2018-09-11T11:10:43+08:00 ] ::1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:10:44+08:00 ] ::1 /Admin/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\32ec6c906c117a7c2bf504769276d87a.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:11:11+08:00 ] ::1 /Admin/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.011000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\32ec6c906c117a7c2bf504769276d87a.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-11T11:11:12+08:00 ] ::1 /Admin/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\32ec6c906c117a7c2bf504769276d87a.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:11:31+08:00 ] ::1 /Admin/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\32ec6c906c117a7c2bf504769276d87a.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-11T11:11:48+08:00 ] ::1 /Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:11:58+08:00 ] ::1 /Admin/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:12:06+08:00 ] ::1 /Admin/Login/getAccount.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 49 行.
+
+[ 2018-09-11T11:12:06+08:00 ] ::1 /Admin/Login/verify?0.14706485563256866
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:12:11+08:00 ] ::1 /Admin/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:12:12+08:00 ] ::1 /Admin/Index/identity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `identity` FROM `btc_admin` WHERE `admin_id` = '10000000000000000000000000000000'  [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 111 行.
+
+[ 2018-09-11T11:12:13+08:00 ] ::1 /Admin/Index/init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_up_order` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_up_order` WHERE `is_deleted` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 95 行.
+
+[ 2018-09-11T11:13:04+08:00 ] ::1 /Admin/System/BiscProblem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant deleteProblem - assumed 'deleteProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 150 行.
+NOTIC: [8] Use of undefined constant biscProblemAdd - assumed 'biscProblemAdd' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 172 行.
+NOTIC: [8] Use of undefined constant searchProblem - assumed 'searchProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:13:07+08:00 ] ::1 /Admin/System/Problem.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_common_problem` [ RunTime:0.0030s ]
+SQL: SELECT a.*,bi.en_content,bi.tw_content,bi2.en_content as en_content2,bi2.tw_content as tw_content2 FROM btc_common_problem as a left join btc_i18n as bi on bi.i18n_id = a.title_i18n_id and bi.is_deleted = '0'
+		left join btc_i18n as bi2 on bi2.i18n_id = a.content_i18n_id and bi2.is_deleted = '0'  WHERE a.is_deleted = 0 ORDER BY a.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 517 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_common_problem as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-09-11T11:13:59+08:00 ] ::1 /Admin/System/LogoList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.023002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024002s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant Logo - assumed 'Logo' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 90 行.
+NOTIC: [8] Use of undefined constant LogoUpdate - assumed 'LogoUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 119 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-09-11T11:14:00+08:00 ] ::1 /Admin/System/Logo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: create_time D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1109 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1146 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1151 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1156 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1161 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1166 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1171 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 222 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-11T11:14:05+08:00 ] ::1 /Admin/Service/Service.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant serviceInfo - assumed 'serviceInfo' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\34483062b7ec6526c3cfe8d20e0eab97.php 第 100 行.
+NOTIC: [8] Use of undefined constant serviceSwicth - assumed 'serviceSwicth' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\34483062b7ec6526c3cfe8d20e0eab97.php 第 136 行.
+NOTIC: [8] Use of undefined constant serviceSwicth - assumed 'serviceSwicth' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\34483062b7ec6526c3cfe8d20e0eab97.php 第 153 行.
+NOTIC: [8] Use of undefined constant ServiceUp - assumed 'ServiceUp' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\34483062b7ec6526c3cfe8d20e0eab97.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:14:28+08:00 ] ::1 /Admin/Service/serviceInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_service` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `btc_service`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `btc_home_info`  [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\ServiceController.class.php 第 29 行.
+
+[ 2018-09-11T11:14:53+08:00 ] ::1 /Admin/System/UserProblem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ProblemDetil - assumed 'ProblemDetil' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b490fbbd8f9e13112e068847359c5764.php 第 89 行.
+NOTIC: [8] Use of undefined constant deleteUserProblem - assumed 'deleteUserProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b490fbbd8f9e13112e068847359c5764.php 第 131 行.
+NOTIC: [8] Use of undefined constant UserProblemSearch - assumed 'UserProblemSearch' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b490fbbd8f9e13112e068847359c5764.php 第 169 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:16:19+08:00 ] ::1 /Admin/System/LogoList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant Logo - assumed 'Logo' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 90 行.
+NOTIC: [8] Use of undefined constant LogoUpdate - assumed 'LogoUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 119 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:17:06+08:00 ] ::1 /Admin/System/Logo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: create_time D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1109 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1146 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1151 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1156 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1161 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1166 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1171 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 222 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-11T11:24:31+08:00 ] ::1 /Admin/Account/AccountList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\07439442505f04a6e8bd3102d06ef6de.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:24:53+08:00 ] ::1 /Admin/Account/getAccountList.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+SQL: SELECT a.*,b.user_name,bb1.bank_name as bank_name,bb2.bank_name as bank_branch FROM btc_user_account as a left join btc_user as b on b.user_id=a.user_id
+                 left join btc_bank as bb1 on bb1.bank_id = a.bank_name
+                 left join btc_bank as bb2 on bb2.bank_id = a.bank_branch  WHERE a.is_deleted = 0 ORDER BY create_time desc LIMIT 0,30   [ RunTime:0.0060s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\AccountController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_user_account as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-09-11T11:26:28+08:00 ] ::1 /Admin/Account/AccountList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\07439442505f04a6e8bd3102d06ef6de.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:26:29+08:00 ] ::1 /Admin/Account/getAccountList.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+SQL: SELECT a.*,b.user_name,bb1.bank_name as bank_name,bb2.bank_name as bank_branch FROM btc_user_account as a left join btc_user as b on b.user_id=a.user_id
+                 left join btc_bank as bb1 on bb1.bank_id = a.bank_name
+                 left join btc_bank as bb2 on bb2.bank_id = a.bank_branch  WHERE a.is_deleted = 0 ORDER BY create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\AccountController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_user_account as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-11T11:26:38+08:00 ] ::1 /Admin/Order/OrderListAll.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 67 行.
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-11T11:26:39+08:00 ] ::1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-11T11:27:36+08:00 ] ::1 /Admin/Order/OrderListAll.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 67 行.
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:27:37+08:00 ] ::1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-11T11:27:47+08:00 ] ::1 /Admin/Order/OrderList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant getOrderList - assumed 'getOrderList' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\4a8b8d4a46404b86ec4f8b13a7129a6c.php 第 79 行.
+NOTIC: [8] Use of undefined constant orderAuditInfo - assumed 'orderAuditInfo' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\4a8b8d4a46404b86ec4f8b13a7129a6c.php 第 141 行.
+NOTIC: [8] Use of undefined constant orderSuccess - assumed 'orderSuccess' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\4a8b8d4a46404b86ec4f8b13a7129a6c.php 第 149 行.
+NOTIC: [8] Use of undefined constant orderLose - assumed 'orderLose' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\4a8b8d4a46404b86ec4f8b13a7129a6c.php 第 209 行.
+NOTIC: [8] Use of undefined constant getOrderList - assumed 'getOrderList' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\4a8b8d4a46404b86ec4f8b13a7129a6c.php 第 251 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-11T11:27:48+08:00 ] ::1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-11T11:29:16+08:00 ] ::1 /Admin/System/LogoList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant Logo - assumed 'Logo' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 90 行.
+NOTIC: [8] Use of undefined constant LogoUpdate - assumed 'LogoUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\58cc5e25a9a9be373f0fe521f36a3757.php 第 119 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:29:17+08:00 ] ::1 /Admin/System/Logo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: create_time D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1109 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1146 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1151 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1156 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1161 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1166 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1171 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 222 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-09-11T11:30:08+08:00 ] ::1 /Admin/System/BiscProblem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant deleteProblem - assumed 'deleteProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 150 行.
+NOTIC: [8] Use of undefined constant biscProblemAdd - assumed 'biscProblemAdd' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 172 行.
+NOTIC: [8] Use of undefined constant searchProblem - assumed 'searchProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:30:56+08:00 ] ::1 /Admin/System/Problem.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_common_problem` [ RunTime:0.0030s ]
+SQL: SELECT a.*,bi.en_content,bi.tw_content,bi2.en_content as en_content2,bi2.tw_content as tw_content2 FROM btc_common_problem as a left join btc_i18n as bi on bi.i18n_id = a.title_i18n_id and bi.is_deleted = '0'
+		left join btc_i18n as bi2 on bi2.i18n_id = a.content_i18n_id and bi2.is_deleted = '0'  WHERE a.is_deleted = 0 ORDER BY a.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 517 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_common_problem as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-09-11T11:31:22+08:00 ] ::1 /Admin/System/BiscProblem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant deleteProblem - assumed 'deleteProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 151 行.
+NOTIC: [8] Use of undefined constant biscProblemAdd - assumed 'biscProblemAdd' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 173 行.
+NOTIC: [8] Use of undefined constant searchProblem - assumed 'searchProblem' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\b14c012cc1978fd6bf4adbdfe3135f75.php 第 199 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-11T11:31:23+08:00 ] ::1 /Admin/System/Problem.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_common_problem` [ RunTime:0.0030s ]
+SQL: SELECT a.*,bi.en_content,bi.tw_content,bi2.en_content as en_content2,bi2.tw_content as tw_content2 FROM btc_common_problem as a left join btc_i18n as bi on bi.i18n_id = a.title_i18n_id and bi.is_deleted = '0'
+		left join btc_i18n as bi2 on bi2.i18n_id = a.content_i18n_id and bi2.is_deleted = '0'  WHERE a.is_deleted = 0 ORDER BY a.create_time desc LIMIT 0,30   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1117 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1121 行.
+NOTIC: [8] Undefined index: email_type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1125 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 517 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_common_problem as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0000s ]
+

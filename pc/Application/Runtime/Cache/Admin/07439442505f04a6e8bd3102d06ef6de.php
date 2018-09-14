@@ -72,7 +72,7 @@
             cols: [[
                  {field: 'user_name', title: '用户名', align: 'center', width: 150,templet: '#showimg', fixed: 'left'}
                 ,{field: 'btc_balance', title: '比特币余额', align: 'center', width: 100, templet: '#showicon'}
-                ,{field: 'eth_balance', title: '以太币余额', align: 'center', width: 100,templet: '#showimg'}
+                ,{field: 'eth_balance', title: '萊特幣余额', align: 'center', width: 100,templet: '#showimg'}
                 ,{field: 'freeze_balance', title: '冻结金额', align: 'center', width: 100,templet: '#showimg'}
                 ,{field: 'extract_balance', title: '可提现余额', align: 'center', width: 100,templet: '#showimg'}
                 ,{field: 'bank_name', title: '银行名称', align: 'center', width: 100,templet: '#showimg'}

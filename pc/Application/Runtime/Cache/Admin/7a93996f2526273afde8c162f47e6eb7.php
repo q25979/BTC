@@ -7,19 +7,19 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/xy.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
 
-	<script type="text/javascript" src="http://blnance66.com/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/xadmin.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/function.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
     
 
 	<!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -167,7 +167,7 @@
             }
             if (layEvent == 'modification') {
 
-                var url ="http://blnance66.com/Admin/User/Userupdate.html?id=" + data.user_id;
+                var url ="http://localhost:8081/Admin/User/Userupdate.html?id=" + data.user_id;
                 console.log(url);
 
                 layer.open({

@@ -484,12 +484,6 @@
                         <cite>发送审核</cite>
                     </a>
                 </li>
-                <li>
-                    <a _href="<?php echo U('Send/SendAudit');?>">
-                        <i class="iconfont">&#xe6a7;</i>
-                        <cite>发送确认</cite>
-                    </a>
-                </li>
             </ul>
         </li>
 

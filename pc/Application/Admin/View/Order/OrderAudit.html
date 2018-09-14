@@ -39,18 +39,18 @@
             page: true,
             cols: [[
                  {field: 'system_order', title: '订单号', align: 'center', width:150, sort: true, fixed: 'left'}
-                ,{field: 'order_type_name', title: '订单类型', align: 'center', width: 120, sort: true}
+                ,{field: 'order_type_name', title: '订单类型', align: 'center', width: 100, sort: true}
                 ,{field: 'status_name', title: '订单状态', align: 'center', width: 120, sort: true,
                   templet: '#statusInfo'}
                 ,{field: 'user_name', title: '用户名', align: 'center', width: 100, sort: true}
                 ,{field: 'currency_type_name', title: '交易币种', align: 'center', width: 100, sort: true}
                 ,{field: 'number', title: '数量', align: 'center', width: 100, sort: true}
+                ,{field: 'price', title: '总价', align: 'center', width: 100}
                 ,{field: 'remark', title: '审核意见', align: 'center', width: 100, sort: true}
                 ,{field: 'create_time', title: '创建时间', align: 'center', width: 100, sort: true}
                 ,{title: '操作', width: 180, align: 'center', toolbar: '#operation'}
             ]],
             done: function(res) {
-                console.log(res);
                 data = res;
             }
         });

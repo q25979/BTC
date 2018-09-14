@@ -44,8 +44,8 @@
         </div>
 
         <hr class="hr15"/>
-        <span class="site-demo-button" id="layerDemo">
-            <button data-method="offset" data-type="auto" class="layui-btn" style="background-color: #009688 !important;">修改</button>
+        <span class="site-demo-button">
+            <button data-method="offset" id="layerDemo" data-type="auto" class="layui-btn" style="background-color: #009688 !important;">修改</button>
             <button onclick="refresh()" class="layui-btn">刷新缓存</button>
             <span class="right"></span>     <!--添加空格防止拥挤-->
         </span>
@@ -80,7 +80,6 @@
         var $ = layui.jquery, layer = layui.layer;
 
         $('#layerDemo').on('click', function () {
-
             layer.open({
                 type: 2,
                 title: '网站信息',

@@ -92,37 +92,30 @@
                         layer.closeAll();
                         var remark = $("textarea[name ='textContent']").val();
                         //Ajax获取
-                        $.post('<{:U('sendAuditInfo')}>', 
-                            {send_id : data.send_id,
-                            status : "1",
-                            remark:remark,
-                            nonce_str : nonce_str,
-                            sign: hex_md5("__VERIFY_STR__" + nonce_str + data.send_id + "1")},
-                            function(str){
-                            if (str.code == 0) {
-                                layer.open({
-                                title: "通过状态",
-                                content: "审核成功！",
-                                btn: ["关闭"],
-                                yes: function (res){
-                                    layer.closeAll();
-                                    location.reload();
-                                }
-                             });
-                            }else{
-                                layer.open({
-                                title: "通过状态",
-                                content: "审核失败！",
-                                btn: ["关闭"],
-                                yes: function (res){
-                                    layer.closeAll();
-                                    location.reload();
-                                }
-                             });
-                            }   
-                          
-
-                        });
+                        layer.load(2)
+                        $.post('<{:U('sendSuccess')}>', 
+                            {
+                                send_id : data.send_id,
+                                status : "2",
+                                remark:remark,
+                                nonce_str : nonce_str,
+                                sign: hex_md5("__VERIFY_STR__" + nonce_str + data.send_id + "2")
+                            },
+                            // 第一次
+                            function(str) {
+                                layer.closeAll()
+                                if (str.code == 0) {
+                                    // 成功
+                                    layer.msg('审核通过', { time: 1200, icon: 6 }, function() {
+                                        location.reload()
+                                    })
+                                     
+                                } else{
+                                    // 成功
+                                    layer.msg('审核失败', { time: 1500, icon: 5 })
+                                }   
+                            }
+                        );
                     }
                 });
             }

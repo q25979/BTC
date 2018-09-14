@@ -114,6 +114,7 @@
 		var btc_balance;
 		var eth_balance;
 		
+        // 获取账户信息
 		getAccount();
 		function getAccount(){
 			var url_account = "__HOST_PATH__/Home/Index/getAccount";
@@ -121,59 +122,41 @@
 				type:"get",
 				url: url_account,
 				success:function(res){
-					if(res.code == 0){
-						$("#account-btc-balance").html(res.btc_balance + " BTC");
-						btc_balance = res.btc_balance;
-						$("#account-eth-balance").html(res.eth_balance + " ETH");
-						eth_balance = res.eth_balance;
-						$("#account-freeze-money").html(" NT$ " + res.freeze_balance);
-						$("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
-
-						extract_balance_all = res.extract_balance;
-					}
+					$("#account-btc-balance").html(res.btc_balance + " BTC");
+                    btc_balance = res.btc_balance;
+                    $("#account-eth-balance").html(res.eth_balance + " LTC");
+                    eth_balance = res.eth_balance;
+                    $("#account-freeze-money").html(" NT$ " + res.freeze_balance);
+                    $("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
+                    extract_balance_all = res.extract_balance;
+                    
+                    // 2s读取一次
+                    getValue(res)
+                    var timer = setInterval(function() {
+                        getValue(res)
+                    }, 2000);
 				}
 			});
+
+            function getValue(data) {
+                // 2s
+                let btc_btc_value = $.cookie('btc_btc_value'),
+                    btc_eth_value = $.cookie('btc_eth_value'),
+                    realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
+                let type = 'NT$ '
+                if (realtimeIndex == 2) type = 'HKD$ '
+                if (realtimeIndex == 3) type = 'USD$ '
+
+                let btc_value = parseFloat(btc_btc_value * data.btc_balance).toFixed(4),
+                    eth_value = parseFloat(btc_eth_value * data.eth_balance).toFixed(4),
+                    total = parseFloat(parseFloat(btc_value) + parseFloat(eth_value)).toFixed(4)
+                $('#account-btc-price').html( type + btc_value);
+                $('#account-eth-price').html( type + eth_value);
+                $("#account-total-value").html( type + total);
+            }
 			
-			var url = '__HOST_PATH__/Home/RealtimeMarket/Price';
-            var realtimeIndex = $.cookie('btc_float_value');
-            $.ajax({
-                url: url,
-                type: 'get',
-                success: function (res) {
-                    if (realtimeIndex == 1) {
-                        $('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
-                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
-                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
-                    } else if (realtimeIndex == 2) {
-                        $('#account-btc-price').html( "HKD$ " + parseInt(res.data[0].btc_value_hkd*btc_balance));
-                        $('#account-eth-price').html( "HKD$ " + parseInt(res.data[0].eth_value_hkd*eth_balance));
-                        $("#account-total-value").html( "HKD$ " + (parseInt(res.data[0].btc_value_hkd*btc_balance) + parseInt(res.data[0].eth_value_hkd*eth_balance)));
-                        
-                    } else if (realtimeIndex == 3) {
-                        $('#account-btc-price').html( "USD$ " + parseInt(res.data[0].btc_value_usd*btc_balance));
-                        $('#account-eth-price').html( "USD$ " + parseInt(res.data[0].eth_value_usd*eth_balance));
-                        $("#account-total-value").html( "USD$ " + (parseInt(res.data[0].btc_value_usd*btc_balance) + parseInt(res.data[0].eth_value_usd*eth_balance)));
-                    }else{
-                    	$('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
-                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
-                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
-                    }
-                }
-            });
+            return false;
 		}
-		
-		//点击刷新页面
-        $('.clickTWD').click(function(){
-            window.location.reload();
-        });
-
-        $('.clickHKD').click(function(){
-           window.location.reload();
-        });
-
-        $('.clickUSD').click(function(){
-            window.location.reload();
-        });
 
 		//提现按钮弹出框
 		$('#withdraw-deposit-btn').click(function(){
@@ -241,8 +224,7 @@
 				});
 			});
 		});
-
-		
+	
 		//响应式侧边栏颜色
 		$('#minwidth1-act').css({'background':'#3388BB'});
 		$('#minwidth2-act').css({'background':'#697785'});

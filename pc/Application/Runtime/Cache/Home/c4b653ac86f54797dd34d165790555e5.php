@@ -7,20 +7,20 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/base.css" />
 
-	<script type="text/javascript" src="http://blnance66.com/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/base64.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/function.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/jquery.bday-picker.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/base64.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.bday-picker.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
 
 
     <!--[if lt IE 9]>
@@ -99,7 +99,7 @@
     	<script type="text/javascript" src="/Public/home/js/bulletin.js"></script>
         <script type="text/javascript">
             //如果开启浮动就显示（公告）
-            var url = 'http://blnance66.com/home/PopupWindow/isBuClose';
+            var url = 'http://localhost:8081/home/PopupWindow/isBuClose';
             $.get(url, function (res) {
                 if (res) {
                     $('#announcement').css("display","block");
@@ -130,7 +130,7 @@
                 $('.call-callCenter').animate({'right':'-200px'});
             }
 
-            var url = 'http://blnance66.com/home/PopupWindow/isSvClose';
+            var url = 'http://localhost:8081/home/PopupWindow/isSvClose';
             $.get(url, function (res) {
                 if (res) {
                     $('.call-callCenter').css("display","block");
@@ -157,17 +157,17 @@
 	            <ul class="nav sidebar-nav warpp">
 	                <li class="img-login">
 	                    <img src="/Public/images/customerService.png" class="get_imglogo">
-						<a id="login-href" href="http://blnance66.com/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
-                        <a id="logout-href" href="http://blnance66.com/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
+						<a id="login-href" href="http://localhost:8081/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
+                        <a id="logout-href" href="http://localhost:8081/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
                         <li @click='jumpMessage()' id="login-bell" style="display: none;">
                             <span class="glyphicon glyphicon-bell"></span>
                             <span id="xy-top-messageminwidth"></span>
                         </li>
 	                </li>
-	                <li><a href="http://blnance66.com/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
 	                <li class="top-language-radio">
 	                    <span>语言</span>
 	                    <div class="radio-language">
@@ -200,8 +200,8 @@
 	            <div class="header-list">
 	                <!--导航栏左侧-->
 	                <ul class="header-list-left col-xs-6">
-	                    <li><a href="http://blnance66.com/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                    <li><a href="http://blnance66.com/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                    <li><a href="http://localhost:8081/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                    <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
 	                    <li>
 	                        <div class="dropdown">
 	                            <div class="dropdown-toggle drop-more" id="dropdownMenu" data-toggle="dropdown">
@@ -240,19 +240,19 @@
 						<li>
 							<ul class="login-register">
 								<li>
-									<a href="http://blnance66.com">
+									<a href="http://localhost:8081">
 										<?php echo (L("_LOGIN_LOGIN_")); ?>
 									</a>
 								</li>
 								<li>
-									<a href="http://blnance66.com">
+									<a href="http://localhost:8081">
 										<?php echo (L("_LOGIN_SIGN_UP_")); ?>
 									</a>
 								</li>
 							</ul>
 							<ul class="user-Logout">
 								<li>
-									<a href="http://blnance66.com/Home/Login/logout">
+									<a href="http://localhost:8081/Home/Login/logout">
 										<?php echo (L("_ACCOUNT_LOGOUT_")); ?>
 									</a>
 								</li>
@@ -291,7 +291,7 @@
 							</div>
 						</li>
 
-						<li>ETH:{{ ETH }}</li>
+						<li>LTC:{{ ETH }}</li>
 						<li>BTC:{{ BTC }}&nbsp;&nbsp;</li>
 
 
@@ -302,7 +302,7 @@
 	            <div class="top-low-width">
 	                <div class="top-money-country">
 	                    <p>BTC:{{ BTC }}</p>
-	                    <p>ETH:{{ ETH }}</p>
+	                    <p>LTC:{{ ETH }}</p>
 	                </div>
 	
 	                <div class="dropdown dropTick3" id="TWD">
@@ -353,10 +353,11 @@
 			var _this = this;
 
 			this.getCurrencyType(index); //设置货币类型
+			// 实时获取
 			setInterval(function() {
 				_this.getFloat(_this.currencyType);
 
-			}, 1000 * 30); //1分钟刷新一次
+			}, 1000*3); //1分钟刷新一次
 
 			// 设置语言样式
 			var btcLang = $.cookie('btc_lang');
@@ -372,26 +373,31 @@
 			this.isLogin();
 
 		},
-
 		methods: {
 			getFloat:function(id){
+			    var type = '';
+			    var c = '';
 				var _this = this;
-				var u = 'http://blnance66.com/Home/Login/getFloat';
-				var	d = {
-						currency_type: id,
-						empty: 'yes'
-					};
-				$.post(u,d,function(res){
-					if (id == 1) {
-	                	_this.BTC = "NT$"+res.btc_twd;
-	                	_this.ETH = "NT$"+res.eth_twd;
-	                } else if (id == 2) {
-	                	_this.BTC = "HK$"+res.btc_hkd;
-	                	_this.ETH = "HK$"+res.eth_hkd;
-					} else if (id == 3) {
-	                	_this.BTC = "$"+res.btc_usd;
-	                	_this.ETH = "$"+res.eth_usd;
-					}
+
+			    if (id == 1) {
+			        type = 'twd'
+					c = 'NT$'
+			    } else if (id == 2) {
+			        type = 'hkd'
+					c = 'HK$'
+			    } else {
+			        type = 'usd'
+					c = '$'
+			    }
+				var u = 'http://localhost:8081/Float/Index/getdata';
+				var	d = { type: type };
+				$.get(u,d,function(res){
+					_this.BTC = c + res.btc
+					_this.ETH = c + res.ltc
+
+					// 设置cookie
+					$.cookie('btc_btc_value', res.btc);
+					$.cookie('btc_eth_value', res.ltc);
 				});
 			},
 
@@ -399,7 +405,7 @@
 			 * 是登入进去的页面
 			 */
 			isLogin: function() {
-				var u = 'http://blnance66.com/Home/Index/getTopInfo';
+				var u = 'http://localhost:8081/Home/Index/getTopInfo';
 				if (sg.isEmpty($.cookie('btc_identification'))) return false;
 				
 				$.get(u, function(res) {
@@ -440,7 +446,7 @@
 			 * 进入消息页
 			 */
 			jumpMessage: function() {
-				sg.jump('http://blnance66.com/Home/MessageTip/index');
+				sg.jump('http://localhost:8081/Home/MessageTip/index');
 			},
 			
 			getCurrencyType: function(index){
@@ -488,13 +494,13 @@
 		        }
 		    },
 			goCommonProblem : function(){//跳转到常见问题
-				window.location.href="http://blnance66.com/Home/Question/index";
+				window.location.href="http://localhost:8081/Home/Question/index";
 			},
 			goRelation : function(){//跳转到联系我们
-				window.location.href="http://blnance66.com/Home/ContactUs/index";
+				window.location.href="http://localhost:8081/Home/ContactUs/index";
 			},
 			changUrl:function(zt){
-				var url = "http://blnance66.com/Home/Lang/change";
+				var url = "http://localhost:8081/Home/Lang/change";
 				var data = {
 					lang : zt
 				};
@@ -609,8 +615,7 @@
 	 * 获取logo
 	 */
 	function getLogo () {
-
-		var logoUrl = "http://blnance66.com/Home/Login/getupdateLogo";
+		var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
 
 		$.ajax({
 			url: logoUrl,
@@ -712,61 +717,61 @@
 					<ul class="nav-ul" id="xy-nav-ul">
 						<li class="nav-li">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
+								<a href="http://localhost:8081/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
+								<a href="http://localhost:8081/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Send/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Send/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
+								<a href="http://localhost:8081/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/WalletAddr/receive">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/WalletAddr/receive?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
+								<a href="http://localhost:8081/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/DealDetails/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/DealDetails/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
+								<a href="http://localhost:8081/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Buy/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Buy/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
+								<a href="http://localhost:8081/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Sell/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Sell/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -784,12 +789,12 @@
 	                  		 <span class="text-content"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</span><span class="glyphicon glyphicon-triangle-bottom dropdown-List-span"></span>
 		                </a>
 		                <ul class="dropdown-menu dropdown-ul">
-		                    <li><a href="http://blnance66.com/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
 		                </ul>
 		            </div>
 					
@@ -810,7 +815,6 @@
 				});
 				clearTimeout(time);
 			})
-
 			function hint() {
 				if(true){
 					//显示提示
@@ -818,9 +822,6 @@
 						transition:"height 0.5s",
 						height:"40px"
 					});
-					//修改提示内容
-//					$(".hint").html("成功 登陆了").css("color","#fff");
-
 					//定时自动关闭提示
 					var time = setTimeout(function(){
 						$(".nav-hd").css({
@@ -835,8 +836,6 @@
 						height:"40px"
 					});
 					//修改提示内容
-//					$(".hint").html("Email 無效的電子信箱");
-
 					clearTimeout(time);
 					//定时自动关闭提示
 					time = setTimeout(function(){
@@ -847,34 +846,19 @@
 					}, 8000);
 				}
 			}
-
-			//控制一级菜单的点击事件
-//			$(".nav-a").click(function(){
-//				$(".nav-a").css("color","#3388BB");
-//				$(".nav-span").css("color","#3388BB");
-//				$(".nav-a").css("border-bottom","2px solid #fff");
-//				
-//				$(this).css("color","#000");
-//				$(this).next().css("color","#000");
-//				$(this).css("border-bottom","2px solid #EB5A4D");
-//			});
-			
 			//移入显示下拉菜单
 			$(".li-content").mouseover(function(){
 				$(".Spinner").css("display","none");
 				$(this).children().eq(2).css("display","block");
-				
 			});
 			//移出隐藏下拉菜单
 			$(".li-content").mouseout(function(){
 				$(".Spinner").css("display","none");
 			})
-
 			//删除a的下划线
 			$(".nav-a").click(function(){
 				$(".nav-a").css("text-decoration","none");
 			})
-			
 			//修改点击账户的默认样式
 			$(".dropdown-List-a").click(function(){
 				$(this).css({
@@ -882,12 +866,6 @@
 					color:"#1A1A1A"
 				});
 			})
-			
-//			$(".dropdown-a").click(function(){
-//				var textContent = $(this).html();
-//				$(".text-content").html(textContent);
-//			})
-			
 			setNav();
 		});
 
@@ -916,7 +894,7 @@
 
 	        // 点击logo跳回首页
 	        $(".logo").click(function () {
-	        	sg.jump('http://blnance66.com/Home/Index');
+	        	sg.jump('http://localhost:8081/Home/Index');
 	        });
 		}
 	</script>
@@ -927,21 +905,16 @@
 		 * 获取logo
 		 */
 		function getLogo () {
-
-			var logoUrl = "http://blnance66.com/Home/Login/getupdateLogo";
-
+			var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
 			$.ajax({
 				url: logoUrl,
 				type: 'get',
 				success: function (res) {
-
-
 					$('.logo-img').attr('src', res.data[0].logo_url);
 					$('.logo-text').text(res.data[0].name);
 				}
 			});
 		}
-
 	</script>
 </block>
 
@@ -961,10 +934,10 @@
     	<!--侧边栏内容-->
 	    <div class="sidebar-content">
     		<ul class="sidebar-content-ul">
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Index/index" class="sidebar-content-a sidebar-content-hd"><img src="/Public/images/home-click.png" /><?php echo (L("_ACCOUNT_HOME_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/WalletAddr/receive" class="sidebar-content-a"><img src="/Public/images/wallet-active.png" /><?php echo (L("_ACCOUNT_ADDRESSES_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Security/index" class="sidebar-content-a"><img src="/Public/images/safety-active.png" /><?php echo (L("_ACCOUNT_SECURITY_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Setting/index" class="sidebar-content-a"><img src="/Public/images/set-active.png" /><?php echo (L("_ACCOUNT_SETTINGS_")); ?></a> <span class="label label-success new-logo">new</span></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Index/index" class="sidebar-content-a sidebar-content-hd"><img src="/Public/images/home-click.png" /><?php echo (L("_ACCOUNT_HOME_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/WalletAddr/receive" class="sidebar-content-a"><img src="/Public/images/wallet-active.png" /><?php echo (L("_ACCOUNT_ADDRESSES_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Security/index" class="sidebar-content-a"><img src="/Public/images/safety-active.png" /><?php echo (L("_ACCOUNT_SECURITY_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Setting/index" class="sidebar-content-a"><img src="/Public/images/set-active.png" /><?php echo (L("_ACCOUNT_SETTINGS_")); ?></a> <span class="label label-success new-logo">new</span></li>
     		</ul>
    		</div>
    		
@@ -1136,11 +1109,10 @@
                         <input id="widget-coin-field" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
                         <span class="currency-pill-inner">BTC</span>
                     </div>
-
                     <img class="arrows-buy" src="/Public/images/left-right.png"/>
                     <div class="form-group-buy">
                         <label class="form-label"><?php echo (L("_ACCOUNT_BUY_BTC_TWD_")); ?></label>
-                        <input id="widget-coin-twd" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                        <input id="widget-coin-twd" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                         <span class="currency-pill-inner changeCoin">TWD</span>
                     </div>
 
@@ -1165,7 +1137,7 @@
                             </div>
                             <div class="radio-description radio-disabled">
                                 <label for="payment-type" style="font-weight: normal;">
-                                    <?php echo (L("_ACCOUNT_BUY_BTC_BANK_TIPS_")); ?><a href="http://blnance66.com/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_ID_VER_")); ?></a>)
+                                    <?php echo (L("_ACCOUNT_BUY_BTC_BANK_TIPS_")); ?><a href="http://localhost:8081/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_ID_VER_")); ?></a>)
                                 </label>
                             </div>
                         </div>
@@ -1193,7 +1165,7 @@
 
                         <div class="buy-button-info">
                             <?php echo (L("_ACCOUNT_BUY_BTC_BUY_INFO_TOP_")); ?>
-                            <a href="http://blnance66.com/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_BASIC_INFO_")); ?></a>
+                            <a href="http://localhost:8081/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_BASIC_INFO_")); ?></a>
                             <?php echo (L("_ACCOUNT_BUY_BTC_BUY_INFO_DOWN_")); ?>
                         </div>
                         <div class="order-notices">
@@ -1201,28 +1173,8 @@
                             <small><?php echo (L("_ACCOUNT_BUY_BTC_MAX_")); ?>NT$5,000,000</small>
                             <small><?php echo (L("_ACCOUNT_BUY_BTC_LAST_TIPS_")); ?></small>
                         </div>
-
-                        <!--<div class="dash"></div>
-
-                        <div class="faq-buy">
-                            <span class="title-buy"><?php echo (L("_ACCOUNT_BUY_COMMON_QUESTIONS_")); ?></span>
-                            <ul class="ques-buy">
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_ONE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_TWO_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_THREE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_FOUR_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_FIVE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_SIX_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_SEVEN_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_EIGHT_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_NINE_")); ?></a></li>
-                            </ul>
-                        </div>-->
-
                     </div>
                 </div>
-
-
             </div>
 		</div>
 		
@@ -1234,7 +1186,7 @@
                     <?php echo (L("_ACCOUNT_BUY_BTC_PRICE_")); ?>
                     <span class="buy-price"><span id="buy-eth-price"></span></span>
                     <br />
-                    <span class="sell-available"><?php echo (L("_ACCOUNT_BUY_BTC_BALANCE_")); ?><b><span id="buy-eth-balance"></span> ETH</b></span>
+                    <span class="sell-available"><?php echo (L("_ACCOUNT_BUY_BTC_BALANCE_")); ?><b><span id="buy-eth-balance"></span> LTC</b></span>
                     <br />
                     <span class="cashBalance"><?php echo (L("_HINT_EXTRACT_ENOUGH_")); ?>:<b>NT$ <span class="cashBalance1"></span></b></span>
                 </div>
@@ -1244,13 +1196,13 @@
                     <div class="form-group-buy">
                         <label class="form-label"><?php echo (L("_ACCOUNT_BUY_ETH_")); ?></label>
                         <input id="widget-coin-field-ETH" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="clearNoNum(this);">
-                        <span class="currency-pill-inner">ETH</span>
+                        <span class="currency-pill-inner">LTC</span>
                     </div>
 
                     <img class="arrows-buy" src="/Public/images/left-right.png"/>
                     <div class="form-group-buy">
                         <label class="form-label"><?php echo (L("_ACCOUNT_BUY_BTC_TWD_")); ?></label>
-                        <input id="widget-coin-twd-ETH" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                        <input id="widget-coin-twd-ETH" class="form-field widget-coin-field form-control" type="text" autocomplete="off" placeholder="0.00" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                         <span class="currency-pill-inner changeCoin">TWD</span>
                     </div>
 
@@ -1275,7 +1227,7 @@
                             </div>
                             <div class="radio-description radio-disabled">
                                 <label for="payment-type" style="font-weight: normal;">
-                                    <?php echo (L("_ACCOUNT_BUY_BTC_BANK_TIPS_")); ?><a href="http://blnance66.com/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_ID_VER_")); ?></a>)
+                                    <?php echo (L("_ACCOUNT_BUY_BTC_BANK_TIPS_")); ?><a href="http://localhost:8081/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_ID_VER_")); ?></a>)
                                 </label>
                             </div>
                         </div>
@@ -1303,7 +1255,7 @@
 
                         <div class="buy-button-info">
                             <?php echo (L("_ACCOUNT_BUY_BTC_BUY_INFO_TOP_")); ?>
-                            <a href="http://blnance66.com/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_BASIC_INFO_")); ?></a>
+                            <a href="http://localhost:8081/Home/Setting/index"><?php echo (L("_ACCOUNT_BUY_BTC_BASIC_INFO_")); ?></a>
                             <?php echo (L("_ACCOUNT_BUY_BTC_BUY_INFO_DOWN_")); ?>
                         </div>
                         <div class="order-notices">
@@ -1311,23 +1263,6 @@
                             <small><?php echo (L("_ACCOUNT_BUY_BTC_MAX_")); ?>NT$5,000,000</small>
                             <small><?php echo (L("_ACCOUNT_BUY_BTC_LAST_TIPS_")); ?></small>
                         </div>
-
-                        <!--<div class="dash"></div>
-
-                        <div class="faq-buy">
-                            <span class="title-buy"><?php echo (L("_ACCOUNT_BUY_COMMON_QUESTIONS_")); ?></span>
-                            <ul class="ques-buy">
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_ONE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_TWO_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_THREE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_FOUR_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_FIVE_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_SIX_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_SEVEN_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_EIGHT_")); ?></a></li>
-                                <li><a href="#"><?php echo (L("_ACCOUNT_BUY_QUESTIONS_NINE_")); ?></a></li>
-                            </ul>
-                        </div>-->
                     </div>
                 </div>
 
@@ -1339,7 +1274,6 @@
     
     <script type="text/javascript">
     	$(function(){
-    		
     		//点击比特币
     		$(".buy-BTC").click(function(){
     			$(this).css({
@@ -1367,7 +1301,6 @@
                           
     		});
     		
-    		
     		//点击以太币
     		$(".buy-ETC").click(function(){
 				$(this).css({
@@ -1392,14 +1325,11 @@
     			//点击切换比特币以太币
     			$('.buystate-1').css({'display':'none'});
                 $('.buystate-2').css({'display':'block'});
-                
     		});
-            
     	});
     	
     	$(function(){
     		if(GetRequest().type == 2){
-
 	            $(".buy-ETC").css({
 	                textDecoration:"none",
 	                color:"#000"
@@ -1425,7 +1355,6 @@
                 
                 authentication();
                 getBalance(2);
-
         	}
     	});
 
@@ -1447,21 +1376,18 @@
     <script>
     	var BtcUnitPrice; //比特币单价
     	var EthUnitPrice; //以太币单价
-    	
     	var BtcUnitbalance; //比特币余额
     	var EthUnitbalance; //以太币余额
-    	
     	var cashBalance1; //现金余额
     	
     	//获取单价和余额
     	getBalance(1);
     	function getBalance(id) {
     		
-            var url_Buy = 'http://blnance66.com/Home/Buy/getBalance';
+            var url_Buy = 'http://localhost:8081/Home/Buy/getBalance';
             var data_Buy = {
             	currency_type: id
 			};	
-			
 			
 			$.ajax({
 	            url: url_Buy,
@@ -1493,7 +1419,7 @@
         $("#widget-coin-field").keyup (function(){
 		    btc_number = $("#widget-coin-field").val();
 		    btc_price = btc_number*BtcUnitPrice;
-		    $("#widget-coin-twd").val(btc_price.toFixed(0));
+		    $("#widget-coin-twd").val(btc_price.toFixed(2));
 		    BtcNotNull();
 		    if($("#widget-coin-field").val() == ""){
 		    	
@@ -1545,25 +1471,20 @@
 				});
 			}
 		});
-		
-
-		
+			
         var eth_number; //数量
         var eth_price; //总价格
-        
         //以太币左输入框
         $("#widget-coin-field-ETH").keyup (function(){
 		    eth_number = $("#widget-coin-field-ETH").val();
 		    eth_price = eth_number*EthUnitPrice;
-		    $("#widget-coin-twd-ETH").val(eth_price.toFixed(0));
+		    $("#widget-coin-twd-ETH").val(eth_price.toFixed(2));
 
 			EthNotNull();
 			if($("#widget-coin-field-ETH").val() == ""){
 		    	
 		    	$("#widget-coin-twd-ETH").val("")
-		    	
 				$("#submit-buy-form-ETH").attr('disabled',true);
-				
 				$("#submit-buy-form-ETH").css({
 				    background: "#ddd",
 				    boxShadow: "inset 0 -3px 0 #AAA",
@@ -1609,11 +1530,10 @@
 			}
 		});
 		
-		
 		//检查身份是否验证
 		authentication();
 		function authentication() {
-            var url_authentication = 'http://blnance66.com/Home/Buy/check';
+            var url_authentication = 'http://localhost:8081/Home/Buy/check';
 			
 			$.ajax({
 	            url: url_authentication,
@@ -1630,8 +1550,6 @@
 	            }
 	        });
     	}
-		
-		
 		
 		var number;  //数量
 		var price;  //总价
@@ -1667,7 +1585,7 @@
 					
 					if(res.code == 0){
 						alert("<?php echo (L("_HINT_BTC_BUY_OK_")); ?>");
-						window.location.href = "http://blnance66.com/Home/DealDetails/index";
+						window.location.href = "http://localhost:8081/Home/DealDetails/index";
 					}else{
 						// 会失败
                         alert("<?php echo (L("_HINT_BTC_BALANCE_NOT_")); ?>");
@@ -1678,12 +1596,10 @@
 					sg.loading($("#submit-buy-form"));
 				
 					buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
-						
 						sg.hideLoading($('#submit-buy-form'), btnName);
-						
 						if(res.code == 0){
 							alert("<?php echo (L("_HINT_BTC_BUY_OK_")); ?>");
-							window.location.href = "http://blnance66.com/Home/DealDetails/index";
+							window.location.href = "http://localhost:8081/Home/DealDetails/index";
 						}else{
 							// 会失败
 	                        alert("<?php echo (L("_HINT_EXTRACT_NOT_ENOUGH_")); ?>");
@@ -1692,13 +1608,9 @@
 				}else{
 					alert("<?php echo (L("_HINT_EXTRACT_NOT_ENOUGH_")); ?>");
 					$("#widget-coin-field").val("");
-				
 					if($("#widget-coin-field").val() == ""){
-			    	
 				    	$("#widget-coin-twd").val("")
-				    	
 						$("#submit-buy-form").attr('disabled',true);
-						
 						$("#submit-buy-form").css({
 						    background: "#ddd",
 						    boxShadow: "inset 0 -3px 0 #AAA",
@@ -1716,15 +1628,10 @@
 				}
 			}else{
 				alert("<?php echo (L("_HINT_BTC_BALANCE_NOT_")); ?>");
-				
 				$("#widget-coin-field").val("");
-				
 				if($("#widget-coin-field").val() == ""){
-		    	
 			    	$("#widget-coin-twd").val("")
-			    	
 					$("#submit-buy-form").attr('disabled',true);
-					
 					$("#submit-buy-form").css({
 					    background: "#ddd",
 					    boxShadow: "inset 0 -3px 0 #AAA",
@@ -1743,36 +1650,29 @@
 			}
 		})
 		
-		
 		//购买以太币按钮
 		$("#submit-buy-form-ETH").click(function(){
 			number = $("#widget-coin-field-ETH").val();  //数量
 			price = number*ETHPrice;  //总价
 			money_currency_type = 1; //新台币
-			//payment_type; //单选按钮
 			unit_price = ETHPrice; //单价
 			currency_type = 2; //币种
 			nonce_str = nonceStr(32); //随机32个随机数
 			
 			var btnName = $(this).html();
-			
 			if($('input[name="payment-type-ETH"]:checked ').val() == "<?php echo (L("_ACCOUNT_BUY_BTC_BANK_")); ?>"){
 				payment_type = 1;
 			}else if($('input[name="payment-type-ETH"]:checked ').val() == "<?php echo (L("_ACCOUNT_BUY_BTC_STORE_")); ?>"){
 				payment_type = 2;
 			}
 			
-			
 			if(payment_type == 1 && number != 0 && price != 0  && number > 0 && price > 0){
-				
 				sg.loading($("#submit-buy-form-ETH"));
-				
 				buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
 					sg.hideLoading($('#submit-buy-form-ETH'), btnName);
-					
 					if(res.code == 0){
 						alert("<?php echo (L("_HINT_ETH_BUY_OK_")); ?>");
-						window.location.href = "http://blnance66.com/Home/DealDetails/index?type=2";
+						window.location.href = "http://localhost:8081/Home/DealDetails/index?type=2";
 					}else{
 						// 会失败
                         alert("<?php echo (L("_HINT_ETH_BALANCE_NOT_")); ?>");
@@ -1781,13 +1681,11 @@
 			}else if(payment_type == 2 && number != 0 && price != 0  && number > 0 && price > 0){
 				if(price < cashBalance1){
 					sg.loading($("#submit-buy-form-ETH"));
-				
 					buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,function(res){
 						sg.hideLoading($('#submit-buy-form-ETH'), btnName);
-						
 						if(res.code == 0){
 							alert("<?php echo (L("_HINT_ETH_BUY_OK_")); ?>");
-							window.location.href = "http://blnance66.com/Home/DealDetails/index?type=2";
+							window.location.href = "http://localhost:8081/Home/DealDetails/index?type=2";
 						}else{
 							// 会失败
 	                        alert("<?php echo (L("_HINT_EXTRACT_NOT_ENOUGH_")); ?>");
@@ -1795,15 +1693,10 @@
 					});
 				}else{
 					alert("<?php echo (L("_HINT_EXTRACT_NOT_ENOUGH_")); ?>");
-					
 					$("#widget-coin-field-ETH").val("");
-				
 					if($("#widget-coin-field-ETH").val() == ""){
-			    	
 				    	$("#widget-coin-twd-ETH").val("")
-				    	
 						$("#submit-buy-form-ETH").attr('disabled',true);
-						
 						$("#submit-buy-form-ETH").css({
 						    background: "#ddd",
 						    boxShadow: "inset 0 -3px 0 #AAA",
@@ -1821,15 +1714,10 @@
 				}
 			}else{
 				alert("<?php echo (L("_HINT_ETH_BALANCE_NOT_")); ?>");
-				
 				$("#widget-coin-field-ETH").val("");
-				
 				if($("#widget-coin-field-ETH").val() == ""){
-		    	
 			    	$("#widget-coin-twd-ETH").val("")
-			    	
 					$("#submit-buy-form-ETH").attr('disabled',true);
-					
 					$("#submit-buy-form-ETH").css({
 					    background: "#ddd",
 					    boxShadow: "inset 0 -3px 0 #AAA",
@@ -1851,7 +1739,7 @@
 		
 		//定义方法发送数据
 		function buyVirtualCurrency(number,price,money_currency_type,payment_type,unit_price,currency_type,nonce_str,callback) {
-            var url_buyVirtualCurrency = 'http://blnance66.com/Home/Buy/buyCoin';
+            var url_buyVirtualCurrency = 'http://localhost:8081/Home/Buy/buyCoin';
             var data_buyVirtualCurrency = {
             	number: number,
             	price: price,
@@ -1930,73 +1818,55 @@
 		$(".nav-a").css("color","#3388BB");
 		$(".nav-span").css("color","#3388BB");
 		$(".nav-a").css("border-bottom","2px solid #fff");
-		
 		$(".nav-a").eq(4).css("color","#000");
 		$(".nav-span").eq(3).css("color","#000");
 		$(".nav-span").eq(4).next().css("color","#000");
 		$(".nav-a").eq(4).css("border-bottom","2px solid #3388BB");
-        
         $(".text-content").html("<?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp");
 		
 		var BTCPrice;
         var ETHPrice;
-		
-		var url = 'http://blnance66.com/Home/Buy/getPrice';
-        var BuyIndex = $.cookie('btc_float_value');
-            $.ajax({
-                url: url,
-                type: 'get',
-                success: function (res) {
-                	console.log(res);
-					if (BuyIndex == 1) {
-                    	$('.changeCoin').text('TWD');
-                        BtcUnitPrice = parseInt(res.data.btc_twd);
-                        EthUnitPrice = parseInt(res.data.eth_twd);
-                        BTCPrice = parseInt(res.data.btc_twd);
-                        ETHPrice = parseInt(res.data.eth_twd);
-            			$('#buy-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
-						$('#buy-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
-                    } else if (BuyIndex == 2) {
-						$('.changeCoin').text('HKD');
-                        BtcUnitPrice = parseInt(res.data.btc_hkd);
-                        EthUnitPrice = parseInt(res.data.eth_hkd);
-                        BTCPrice = parseInt(res.data.btc_twd);
-                        ETHPrice = parseInt(res.data.eth_twd);
-                        $('#buy-btc-price').html("HKD$ " + parseInt(res.data.btc_hkd));
-						$('#buy-eth-price').html("HKD$ " + parseInt(res.data.eth_hkd));
-                        
-                    } else if (BuyIndex == 3) {
-                    	$('.changeCoin').text('USD');
-                        BtcUnitPrice = parseInt(res.data.btc_usd);
-                        EthUnitPrice = parseInt(res.data.eth_usd);
-                        BTCPrice = parseInt(res.data.btc_twd);
-                        ETHPrice = parseInt(res.data.eth_twd);
-                        $('#buy-btc-price').html("USD$ " + parseInt(res.data.btc_usd));
-						$('#buy-eth-price').html("USD$ " + parseInt(res.data.eth_usd));
-                    }else{
-                    	$('.changeCoin').text('TWD');
-                    	BtcUnitPrice = parseInt(res.data.btc_twd);
-                        EthUnitPrice = parseInt(res.data.eth_twd);
-                        BTCPrice = parseInt(res.data.btc_twd);
-                        ETHPrice = parseInt(res.data.eth_twd);
-                        $('#buy-btc-price').html("NT$ " + parseInt(res.data.btc_twd));
-						$('#buy-eth-price').html("NT$ " + parseInt(res.data.eth_twd));
-                    }
-                }
-            });
+        // 2s获取一次数据---------------------------------------------------------------
+        setInterval(function() { 
+            getValue() 
+        }, 2000);
+        // 获取实际价格
+        function getValue() {
+            // 2s
+            let btc_btc_value = $.cookie('btc_btc_value'),
+                btc_eth_value = $.cookie('btc_eth_value'),
+                realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
+            let type = 'TWD', currency = 'NT$ '
+            if (realtimeIndex == 2) { 
+                type = 'HKD'
+                currency = 'HKD$ '
+            }
+            if (realtimeIndex == 3) {
+                type = 'USD'
+                currency = 'USD$ '
+            }
+
+            $('.changeCoin').text(type);
+            BtcUnitPrice = parseFloat(btc_btc_value).toFixed(4)
+            EthUnitPrice = parseFloat(btc_eth_value).toFixed(4)
+            BTCPrice = BtcUnitPrice
+            ETHPrice = EthUnitPrice
             
-        //点击刷新页面
-        $('.clickTWD').click(function(){
-            window.location.reload();
-        });
+            $('#buy-btc-price').html(currency + BtcUnitPrice);
+            $('#buy-eth-price').html(currency + EthUnitPrice);
 
-        $('.clickHKD').click(function(){
-            window.location.reload();
-        });
+            let twd = parseFloat($('#widget-coin-field').val()) * BtcUnitPrice
+            let twdother = parseFloat($('#widget-coin-field-ETH').val()) * EthUnitPrice
+            // 比特币,输入框
+            sg.isEmpty($('#widget-coin-field').val())
+                ? ''
+                : $('#widget-coin-twd').val(parseFloat(twd).toFixed(2))
 
-        $('.clickUSD').click(function(){
-            window.location.reload();
-        });
+            // 莱特币,输入框
+            sg.isEmpty($('#widget-coin-field-ETH').val())
+                ? ''
+                : $('#widget-coin-twd-ETH').val(parseFloat(twdother).toFixed(2))
+        }
         
         function clearNoNum(obj){
         	obj.value = obj.value.replace(/^\./g,"");  //不能以点开头
@@ -2032,18 +1902,18 @@
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
     			<!-- <a href="#"><?php echo (L("_CAREERS_")); ?></a><span>|</span> -->
-    			<a href="http://blnance66.com/Home/PDF/index/type/termsOfUse">
+    			<a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
-    			<a href="http://blnance66.com/Home/PDF/index/type/privacy">
+    			<a href="http://localhost:8081/Home/PDF/index/type/privacy">
                     <?php echo (L("_LOGIN_PRIVACY_POLICY_")); ?>
                 </a><span>|</span>
-    			<a href="http://blnance66.com/Home/Question">
+    			<a href="http://localhost:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
     			<!-- <a href="#">
                     <?php echo (L("_LOGIN_TRANSPARENCY_REPORT_")); ?>
                 </a><span>|</span> -->
-    			<a href="http://blnance66.com/Home/ContactUs">
+    			<a href="http://localhost:8081/Home/ContactUs">
                     <?php echo (L("_CONTACT_US_")); ?>
                 </a>
     			<div class="footer-logo">

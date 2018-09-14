@@ -75,6 +75,7 @@
                 ,{field: 'user_name', title: '用户名', align: 'center', width: 100, sort: true}
                 ,{field: 'currency_type_name', title: '交易币种', align: 'center', width: 100, sort: true}
                 ,{field: 'number', title: '数量', align: 'center', width: 100, sort: true}
+                ,{field: 'price', title: '总价', align: 'center', width: 100}
                 ,{field: 'remark', title: '审核意见', align: 'center', width: 127, sort: true}
                 ,{field: 'create_time', title: '创建时间', align: 'center', width: 100, sort: true}
                 ,{title: '操作', width: 100, align: 'center', toolbar: '#operation'}

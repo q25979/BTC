@@ -23,6 +23,7 @@
                 </div>
             <button typr="button" class="btn btn-default" id="searchBtn">搜索</button>
             <button typr="button" class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon">&#xe608;</i> 添加</button>
+            <button typr="button" class="layui-btn" onclick="refresh()">刷新缓存</button>
         </nav>
         <table id="CoinList" lay-filter="CoinList"></table>
     </div>
@@ -181,6 +182,15 @@
             });
         }
     });
+
+// 刷新缓存
+function refresh() {
+    layer.load(2)
+    $.get('__HOST_PATH__', { name: 'problem' }, function() {
+        layer.closeAll()
+        layer.msg('刷新成功', {time: 1500, icon: 6})
+    })
+}
 
 </script>
 

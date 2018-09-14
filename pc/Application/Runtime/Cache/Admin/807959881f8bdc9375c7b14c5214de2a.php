@@ -7,19 +7,19 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/xy.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
 
-	<script type="text/javascript" src="http://blnance66.com/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/xadmin.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/function.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
     
 
 	<!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -124,37 +124,30 @@
                         layer.closeAll();
                         var remark = $("textarea[name ='textContent']").val();
                         //Ajax获取
-                        $.post('<?php echo U('sendAuditInfo');?>', 
-                            {send_id : data.send_id,
-                            status : "1",
-                            remark:remark,
-                            nonce_str : nonce_str,
-                            sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + nonce_str + data.send_id + "1")},
-                            function(str){
-                            if (str.code == 0) {
-                                layer.open({
-                                title: "通过状态",
-                                content: "审核成功！",
-                                btn: ["关闭"],
-                                yes: function (res){
-                                    layer.closeAll();
-                                    location.reload();
-                                }
-                             });
-                            }else{
-                                layer.open({
-                                title: "通过状态",
-                                content: "审核失败！",
-                                btn: ["关闭"],
-                                yes: function (res){
-                                    layer.closeAll();
-                                    location.reload();
-                                }
-                             });
-                            }   
-                          
-
-                        });
+                        layer.load(2)
+                        $.post('<?php echo U('sendSuccess');?>', 
+                            {
+                                send_id : data.send_id,
+                                status : "2",
+                                remark:remark,
+                                nonce_str : nonce_str,
+                                sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + nonce_str + data.send_id + "2")
+                            },
+                            // 第一次
+                            function(str) {
+                                layer.closeAll()
+                                if (str.code == 0) {
+                                    // 成功
+                                    layer.msg('审核通过', { time: 1200, icon: 6 }, function() {
+                                        location.reload()
+                                    })
+                                     
+                                } else{
+                                    // 成功
+                                    layer.msg('审核失败', { time: 1500, icon: 5 })
+                                }   
+                            }
+                        );
                     }
                 });
             }

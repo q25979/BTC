@@ -7,20 +7,20 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/base.css" />
 
-	<script type="text/javascript" src="http://blnance66.com/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/base64.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/function.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/jquery.bday-picker.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/base64.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.bday-picker.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
 
 
     <!--[if lt IE 9]>
@@ -99,7 +99,7 @@
     	<script type="text/javascript" src="/Public/home/js/bulletin.js"></script>
         <script type="text/javascript">
             //如果开启浮动就显示（公告）
-            var url = 'http://blnance66.com/home/PopupWindow/isBuClose';
+            var url = 'http://localhost:8081/home/PopupWindow/isBuClose';
             $.get(url, function (res) {
                 if (res) {
                     $('#announcement').css("display","block");
@@ -130,7 +130,7 @@
                 $('.call-callCenter').animate({'right':'-200px'});
             }
 
-            var url = 'http://blnance66.com/home/PopupWindow/isSvClose';
+            var url = 'http://localhost:8081/home/PopupWindow/isSvClose';
             $.get(url, function (res) {
                 if (res) {
                     $('.call-callCenter').css("display","block");
@@ -157,17 +157,17 @@
 	            <ul class="nav sidebar-nav warpp">
 	                <li class="img-login">
 	                    <img src="/Public/images/customerService.png" class="get_imglogo">
-						<a id="login-href" href="http://blnance66.com/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
-                        <a id="logout-href" href="http://blnance66.com/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
+						<a id="login-href" href="http://localhost:8081/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
+                        <a id="logout-href" href="http://localhost:8081/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
                         <li @click='jumpMessage()' id="login-bell" style="display: none;">
                             <span class="glyphicon glyphicon-bell"></span>
                             <span id="xy-top-messageminwidth"></span>
                         </li>
 	                </li>
-	                <li><a href="http://blnance66.com/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
-	                <li><a href="http://blnance66.com/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
+	                <li><a href="http://localhost:8081/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
 	                <li class="top-language-radio">
 	                    <span>语言</span>
 	                    <div class="radio-language">
@@ -200,8 +200,8 @@
 	            <div class="header-list">
 	                <!--导航栏左侧-->
 	                <ul class="header-list-left col-xs-6">
-	                    <li><a href="http://blnance66.com/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                    <li><a href="http://blnance66.com/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                    <li><a href="http://localhost:8081/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                    <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
 	                    <li>
 	                        <div class="dropdown">
 	                            <div class="dropdown-toggle drop-more" id="dropdownMenu" data-toggle="dropdown">
@@ -240,19 +240,19 @@
 						<li>
 							<ul class="login-register">
 								<li>
-									<a href="http://blnance66.com">
+									<a href="http://localhost:8081">
 										<?php echo (L("_LOGIN_LOGIN_")); ?>
 									</a>
 								</li>
 								<li>
-									<a href="http://blnance66.com">
+									<a href="http://localhost:8081">
 										<?php echo (L("_LOGIN_SIGN_UP_")); ?>
 									</a>
 								</li>
 							</ul>
 							<ul class="user-Logout">
 								<li>
-									<a href="http://blnance66.com/Home/Login/logout">
+									<a href="http://localhost:8081/Home/Login/logout">
 										<?php echo (L("_ACCOUNT_LOGOUT_")); ?>
 									</a>
 								</li>
@@ -291,7 +291,7 @@
 							</div>
 						</li>
 
-						<li>ETH:{{ ETH }}</li>
+						<li>LTC:{{ ETH }}</li>
 						<li>BTC:{{ BTC }}&nbsp;&nbsp;</li>
 
 
@@ -302,7 +302,7 @@
 	            <div class="top-low-width">
 	                <div class="top-money-country">
 	                    <p>BTC:{{ BTC }}</p>
-	                    <p>ETH:{{ ETH }}</p>
+	                    <p>LTC:{{ ETH }}</p>
 	                </div>
 	
 	                <div class="dropdown dropTick3" id="TWD">
@@ -353,10 +353,11 @@
 			var _this = this;
 
 			this.getCurrencyType(index); //设置货币类型
+			// 实时获取
 			setInterval(function() {
 				_this.getFloat(_this.currencyType);
 
-			}, 1000 * 30); //1分钟刷新一次
+			}, 1000*3); //1分钟刷新一次
 
 			// 设置语言样式
 			var btcLang = $.cookie('btc_lang');
@@ -372,26 +373,31 @@
 			this.isLogin();
 
 		},
-
 		methods: {
 			getFloat:function(id){
+			    var type = '';
+			    var c = '';
 				var _this = this;
-				var u = 'http://blnance66.com/Home/Login/getFloat';
-				var	d = {
-						currency_type: id,
-						empty: 'yes'
-					};
-				$.post(u,d,function(res){
-					if (id == 1) {
-	                	_this.BTC = "NT$"+res.btc_twd;
-	                	_this.ETH = "NT$"+res.eth_twd;
-	                } else if (id == 2) {
-	                	_this.BTC = "HK$"+res.btc_hkd;
-	                	_this.ETH = "HK$"+res.eth_hkd;
-					} else if (id == 3) {
-	                	_this.BTC = "$"+res.btc_usd;
-	                	_this.ETH = "$"+res.eth_usd;
-					}
+
+			    if (id == 1) {
+			        type = 'twd'
+					c = 'NT$'
+			    } else if (id == 2) {
+			        type = 'hkd'
+					c = 'HK$'
+			    } else {
+			        type = 'usd'
+					c = '$'
+			    }
+				var u = 'http://localhost:8081/Float/Index/getdata';
+				var	d = { type: type };
+				$.get(u,d,function(res){
+					_this.BTC = c + res.btc
+					_this.ETH = c + res.ltc
+
+					// 设置cookie
+					$.cookie('btc_btc_value', res.btc);
+					$.cookie('btc_eth_value', res.ltc);
 				});
 			},
 
@@ -399,7 +405,7 @@
 			 * 是登入进去的页面
 			 */
 			isLogin: function() {
-				var u = 'http://blnance66.com/Home/Index/getTopInfo';
+				var u = 'http://localhost:8081/Home/Index/getTopInfo';
 				if (sg.isEmpty($.cookie('btc_identification'))) return false;
 				
 				$.get(u, function(res) {
@@ -440,7 +446,7 @@
 			 * 进入消息页
 			 */
 			jumpMessage: function() {
-				sg.jump('http://blnance66.com/Home/MessageTip/index');
+				sg.jump('http://localhost:8081/Home/MessageTip/index');
 			},
 			
 			getCurrencyType: function(index){
@@ -488,13 +494,13 @@
 		        }
 		    },
 			goCommonProblem : function(){//跳转到常见问题
-				window.location.href="http://blnance66.com/Home/Question/index";
+				window.location.href="http://localhost:8081/Home/Question/index";
 			},
 			goRelation : function(){//跳转到联系我们
-				window.location.href="http://blnance66.com/Home/ContactUs/index";
+				window.location.href="http://localhost:8081/Home/ContactUs/index";
 			},
 			changUrl:function(zt){
-				var url = "http://blnance66.com/Home/Lang/change";
+				var url = "http://localhost:8081/Home/Lang/change";
 				var data = {
 					lang : zt
 				};
@@ -609,8 +615,7 @@
 	 * 获取logo
 	 */
 	function getLogo () {
-
-		var logoUrl = "http://blnance66.com/Home/Login/getupdateLogo";
+		var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
 
 		$.ajax({
 			url: logoUrl,
@@ -712,61 +717,61 @@
 					<ul class="nav-ul" id="xy-nav-ul">
 						<li class="nav-li">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
+								<a href="http://localhost:8081/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
+								<a href="http://localhost:8081/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Send/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Send/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">ETH</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
+								<a href="http://localhost:8081/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/WalletAddr/receive">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/WalletAddr/receive?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">ETH</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
+								<a href="http://localhost:8081/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/DealDetails/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/DealDetails/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">ETH</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
+								<a href="http://localhost:8081/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Buy/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Buy/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">ETH</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://blnance66.com/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
+								<a href="http://localhost:8081/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://blnance66.com/Home/Sell/index">BTC</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://blnance66.com/Home/Sell/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">ETH</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -784,12 +789,12 @@
 	                  		 <span class="text-content"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</span><span class="glyphicon glyphicon-triangle-bottom dropdown-List-span"></span>
 		                </a>
 		                <ul class="dropdown-menu dropdown-ul">
-		                    <li><a href="http://blnance66.com/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://blnance66.com/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
 		                </ul>
 		            </div>
 					
@@ -916,7 +921,7 @@
 
 	        // 点击logo跳回首页
 	        $(".logo").click(function () {
-	        	sg.jump('http://blnance66.com/Home/Index');
+	        	sg.jump('http://localhost:8081/Home/Index');
 	        });
 		}
 	</script>
@@ -928,7 +933,7 @@
 		 */
 		function getLogo () {
 
-			var logoUrl = "http://blnance66.com/Home/Login/getupdateLogo";
+			var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
 
 			$.ajax({
 				url: logoUrl,
@@ -961,10 +966,10 @@
     	<!--侧边栏内容-->
 	    <div class="sidebar-content">
     		<ul class="sidebar-content-ul">
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Index/index" class="sidebar-content-a sidebar-content-hd"><img src="/Public/images/home-click.png" /><?php echo (L("_ACCOUNT_HOME_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/WalletAddr/receive" class="sidebar-content-a"><img src="/Public/images/wallet-active.png" /><?php echo (L("_ACCOUNT_ADDRESSES_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Security/index" class="sidebar-content-a"><img src="/Public/images/safety-active.png" /><?php echo (L("_ACCOUNT_SECURITY_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://blnance66.com/Home/Setting/index" class="sidebar-content-a"><img src="/Public/images/set-active.png" /><?php echo (L("_ACCOUNT_SETTINGS_")); ?></a> <span class="label label-success new-logo">new</span></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Index/index" class="sidebar-content-a sidebar-content-hd"><img src="/Public/images/home-click.png" /><?php echo (L("_ACCOUNT_HOME_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/WalletAddr/receive" class="sidebar-content-a"><img src="/Public/images/wallet-active.png" /><?php echo (L("_ACCOUNT_ADDRESSES_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Security/index" class="sidebar-content-a"><img src="/Public/images/safety-active.png" /><?php echo (L("_ACCOUNT_SECURITY_")); ?></a></li>
+    			<li class="sidebar-content-li"><a href="http://localhost:8081/Home/Setting/index" class="sidebar-content-a"><img src="/Public/images/set-active.png" /><?php echo (L("_ACCOUNT_SETTINGS_")); ?></a> <span class="label label-success new-logo">new</span></li>
     		</ul>
    		</div>
    		
@@ -1148,7 +1153,7 @@
             <!--基本资讯-->
             <div class="setting-info">
                 <h3><?php echo (L("_ACCOUNT_SETTINGS_PHONE_")); ?>
-                    <a href="http://blnance66.com/Home/Setting/updateMobilePhone" class="setting-hint-a"><?php echo (L("_HINT_PHONE_NUMBER_")); ?></a>
+                    <a href="http://localhost:8081/Home/Setting/updateMobilePhone" class="setting-hint-a"><?php echo (L("_HINT_PHONE_NUMBER_")); ?></a>
                 </h3>
                 <!--标题里的内容-->
                 <div class="setting-info-content">
@@ -1167,7 +1172,7 @@
                 <!--标题里的内容-->
                 <div class="setting-info-content">
                     <p class="average-price"><span>?</span><?php echo (L("_ACCOUNT_SETTINGS_SELL_TIPS_")); ?></p>
-                     <a href="http://blnance66.com/Home/Setting/bindingBankCard" class="bank-hint-a">修改銀行賬號</a>
+                     <a href="http://localhost:8081/Home/Setting/bindingBankCard" class="bank-hint-a">修改銀行賬號</a>
                     <div id="bank-box">
 	                    <p class="bank-info"><span>您当前銀行账户名：</span><span id="bank_name"></span></p>
 	                    <p class="bank-info"><span>您当前銀行賬號是：</span><span id="bank_number"></span></p>
@@ -1185,7 +1190,7 @@
                 <!--标题里的内容-->
                 <div class="setting-info-content">
                     <p><?php echo (L("_ACCOUNT_SETTINGS_BUY_TIPS_TOP_")); ?>
-                        <a href="http://blnance66.com/Home/Buy/index"><?php echo (L("_ACCOUNT_SETTINGS_BUY_BTC_")); ?></a>
+                        <a href="http://localhost:8081/Home/Buy/index"><?php echo (L("_ACCOUNT_SETTINGS_BUY_BTC_")); ?></a>
                         <?php echo (L("_ACCOUNT_SETTINGS_BUY_TIPS_DOWN_")); ?></p>
                 </div>
             </div>
@@ -1230,7 +1235,7 @@
             <!--其他设置-->
             <div class="setting-info">
                 <h3><?php echo (L("_ACCOUNT_SETTINGS_OTHER_")); ?>
-                    <!--<a href="http://blnance66.com/Home/Setting/otherSetting" class="right-a"><?php echo (L("_ACCOUNT_SETTINGS_CHANGE_OTHER_")); ?></a>-->
+                    <!--<a href="http://localhost:8081/Home/Setting/otherSetting" class="right-a"><?php echo (L("_ACCOUNT_SETTINGS_CHANGE_OTHER_")); ?></a>-->
                 </h3>
                 <!--标题里的内容-->
                 <div class="setting-info-content">
@@ -1241,11 +1246,11 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
 
     <script type="text/javascript">
         //获取基本资讯状态和信息
-        var SetInfo_url = 'http://blnance66.com/Home/Setting/getInfo';
+        var SetInfo_url = 'http://localhost:8081/Home/Setting/getInfo';
         $.ajax({
             url: SetInfo_url,
             type: 'get',
@@ -1312,7 +1317,7 @@
                     var status2 = 0;
                     var status3 = 0;
 
-                    var url = 'http://blnance66.com/Home/Setting/getEmailStatus';
+                    var url = 'http://localhost:8081/Home/Setting/getEmailStatus';
 
                     $.get(url,function(res){//根据设置调整按钮
                         if(res.data.email_login == 1){
@@ -1355,7 +1360,7 @@
                             var status1 = 0;
                         }
 
-                        var u = 'http://blnance66.com/Home/Setting/emailSet';
+                        var u = 'http://localhost:8081/Home/Setting/emailSet';
                         var	d = {
                             email_login:status1,
                         };
@@ -1393,7 +1398,7 @@
                             });
                             status2 = 0;
                         }
-                        var u = 'http://blnance66.com/Home/Setting/emailSet';
+                        var u = 'http://localhost:8081/Home/Setting/emailSet';
                         var	d = {
                             email_get:status2
                         };
@@ -1430,7 +1435,7 @@
                             });
                             status3 = 0;
                         }
-                        var u = 'http://blnance66.com/Home/Setting/emailSet';
+                        var u = 'http://localhost:8081/Home/Setting/emailSet';
                         var	d = {
                             email_buy:status3
                         };
@@ -1457,20 +1462,20 @@
 
             //点击跳转
             $(".setting-btn").click(function(){
-                window.location.href="http://blnance66.com/Home/Setting/addBasicInformation";
+                window.location.href="http://localhost:8081/Home/Setting/addBasicInformation";
             })
 
             $(".identity-btn").click(function(){
-                window.location.href="http://blnance66.com/Home/Setting/uploadIdCard";
+                window.location.href="http://localhost:8081/Home/Setting/uploadIdCard";
             })
 
             $(".sell-account-btn").click(function(){
-                window.location.href="http://blnance66.com/Home/Setting/bindingBankCard";
+                window.location.href="http://localhost:8081/Home/Setting/bindingBankCard";
             })
 
             // 绑定手机跳转
             $(".bind-phone").click(function(){
-                window.location.href="http://blnance66.com/Home/Setting/updateMobilePhone/type/bind";
+                window.location.href="http://localhost:8081/Home/Setting/updateMobilePhone/type/bind";
             })
 
             //侧边栏
@@ -1484,7 +1489,7 @@
         //forbidUpload();
         //禁止重复上传正反面身份证
         function forbidUpload() {
-            var forbId_url = 'http://blnance66.com/Home/Setting/forbidUpload';
+            var forbId_url = 'http://localhost:8081/Home/Setting/forbidUpload';
             $.ajax({
                 url: forbId_url,
                 type: 'get',
@@ -1518,7 +1523,7 @@
             var layer = layui.layer;
             var $ = layui.jquery,
                     upload = layui.upload,
-                    qnurl = 'http://blnance66.com/Home/Setting/getUpload';
+                    qnurl = 'http://localhost:8081/Home/Setting/getUpload';
 
             //上传
             var uploadInst = upload.render({
@@ -1566,7 +1571,7 @@
              * 判断正反面身份证有没有上传
              */
             function judgeIDCard() {
-                var u = "http://blnance66.com/Home/Setting/checkOrder";
+                var u = "http://localhost:8081/Home/Setting/checkOrder";
                 $.ajax({
                     url: u,
                     type: 'get',
@@ -1597,7 +1602,7 @@
                     fixed: 'false',
                     yes: function (res){
                         layer.closeAll();
-                        var hand_url = 'http://blnance66.com/Home/Setting/getuploadIdCard'; // 请求上传手持身份证接口
+                        var hand_url = 'http://localhost:8081/Home/Setting/getuploadIdCard'; // 请求上传手持身份证接口
                         var hand_data = {
                             file_hand: hand_Idcard,      // 手持身份证的url
                         };
@@ -1630,7 +1635,7 @@
 
             });
 
-            var url_getphone = 'http://blnance66.com/Home/Setting/updatePhone';
+            var url_getphone = 'http://localhost:8081/Home/Setting/updatePhone';
             $.ajax({
                 url: url_getphone,
                 type:"get",
@@ -1662,7 +1667,7 @@
          */
         function uploadStatus() {
 
-            var url = 'http://blnance66.com/Home/Setting/getStatus';
+            var url = 'http://localhost:8081/Home/Setting/getStatus';
             $.ajax({
                 url: url,
                 type: 'get',
@@ -1694,7 +1699,7 @@
 
         // 禁止重複上傳手持身份證
         function judgeHandIDCard() {
-            var forbIdHand_url = 'http://blnance66.com/Home/Setting/forbidUploadHand';
+            var forbIdHand_url = 'http://localhost:8081/Home/Setting/forbidUploadHand';
             $.ajax({
                 url: forbIdHand_url,
                 type: 'get',
@@ -1726,7 +1731,7 @@
     <script>
     	
     	//银行账号显示
-       var bank_url = 'http://blnance66.com/Home/Setting/userBank';
+       var bank_url = 'http://localhost:8081/Home/Setting/userBank';
        
        $.ajax({
        	url:bank_url,
@@ -1770,18 +1775,18 @@
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
     			<!-- <a href="#"><?php echo (L("_CAREERS_")); ?></a><span>|</span> -->
-    			<a href="http://blnance66.com/Home/PDF/index/type/termsOfUse">
+    			<a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
-    			<a href="http://blnance66.com/Home/PDF/index/type/privacy">
+    			<a href="http://localhost:8081/Home/PDF/index/type/privacy">
                     <?php echo (L("_LOGIN_PRIVACY_POLICY_")); ?>
                 </a><span>|</span>
-    			<a href="http://blnance66.com/Home/Question">
+    			<a href="http://localhost:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
     			<!-- <a href="#">
                     <?php echo (L("_LOGIN_TRANSPARENCY_REPORT_")); ?>
                 </a><span>|</span> -->
-    			<a href="http://blnance66.com/Home/ContactUs">
+    			<a href="http://localhost:8081/Home/ContactUs">
                     <?php echo (L("_CONTACT_US_")); ?>
                 </a>
     			<div class="footer-logo">

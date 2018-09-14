@@ -7,19 +7,19 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/xy.css" />
-    <link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
 
-	<script type="text/javascript" src="http://blnance66.com/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/plug-in/layui/layui.js"></script>
-	<script type="text/javascript" src="http://blnance66.com/Public/js/xadmin.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://blnance66.com/Public/js/function.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
     
 
 	<!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="http://blnance66.com/Public/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -44,7 +44,7 @@
 </style>
 <body>
     <div class="x-body">
-        <blockquote class="layui-elem-quote">确认列表</blockquote>
+        <blockquote class="layui-elem-quote">发送列表</blockquote>
         <nav class="navbar navbar-default">
             <select class="layui-select" name="currency_type">
               <option value="">请选择货币类型</option>
@@ -141,7 +141,7 @@
     {{# } else if(d.status == 1) { }}
         <a style="color: red;">{{ d.status_name }}</a>
     {{# } else if(d.status == 2) { }}
-        <a style="color: yellow;">{{ d.status_name }}</a>
+        <a style="color: #888000;">{{ d.status_name }}</a>
     {{# } else { }}
         <a style="color: gray;">{{ d.status_name }}</a>
     {{# } }}

@@ -212,7 +212,7 @@
 			setInterval(function() {
 				_this.getFloat(_this.currencyType);
 
-			}, 1000); //1分钟刷新一次
+			}, 1000*3); //1分钟刷新一次
 
 			// 设置语言样式
 			var btcLang = $.cookie('btc_lang');
@@ -247,9 +247,12 @@
 				var u = '__HOST_PATH__/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
-				    console.log(res)
 					_this.BTC = c + res.btc
 					_this.ETH = c + res.ltc
+
+					// 设置cookie
+					$.cookie('btc_btc_value', res.btc);
+					$.cookie('btc_eth_value', res.ltc);
 				});
 			},
 

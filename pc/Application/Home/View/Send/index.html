@@ -51,7 +51,7 @@
 
                 <img class="icon-left-right-arrows" src="__PUBLIC__/images/left-right.png"/>
                 <div class="form-group-send">
-                    <input id="widget-coin-twd" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                    <input id="widget-coin-twd" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0.00" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                     <span class="currency-pill-inner change-send">TWD</span>
                 </div>
 
@@ -132,7 +132,7 @@
 
                 <img class="icon-left-right-arrows" src="__PUBLIC__/images/left-right.png"/>
                 <div class="form-group-send">
-                    <input id="widget-coin-twd-other" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                    <input id="widget-coin-twd-other" class="form-field widget-coin-field" type="text" autocomplete="off" placeholder="0.00" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
                     <span class="currency-pill-inner change-send">TWD</span>
                 </div>
 
@@ -170,33 +170,15 @@
                         </li>
                     </ul>
                 </div>
-
-                <!--<div class="dash"></div>-->
-                <!---->
-                <!--<div class="faq">-->
-                    <!--<span class="title"><{$Think.lang._ACCOUNT_SEND_QUESTIONS_}></span>-->
-                    <!--<ul class="ques">-->
-                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_ONE_}></a></li>-->
-                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_TWO_}></a></li>-->
-                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_THREE_}></a></li>-->
-                        <!--<li><a href="#"><{$Think.lang._ACCOUNT_SEND_QUESTION_FOUR_}></a></li>-->
-                    <!--</ul>-->
-                <!--</div>-->
             </div>
         </form>
     </div>
-    
     <!--<js href="__PUBLIC__/home/js/function.js" />-->
     <js href="__PLUG-IN__/layui/layui.js" />
     
     <script>
-    	 
-    	 
-    	
-    	
     	$(function(){
     		if(GetRequest().type == 2){
-
 	            $(".buy-ETC").css({
 	                textDecoration:"none",
 	                color:"#000"
@@ -336,7 +318,7 @@
         $("#widget-coin-field").keyup(function(){
 		    btc_Send_number = $("#widget-coin-field").val();
 		    btc_Send_price = btc_Send_number*BTC_unit_price;
-		    $("#widget-coin-twd").val(btc_Send_price.toFixed(0));
+		    $("#widget-coin-twd").val(btc_Send_price.toFixed(2));
     		if($("#widget-coin-field").val() == ""){
 	    		$("#widget-coin-twd").val("")
 	    	}else{
@@ -356,8 +338,6 @@
 	    	BtcSendNotNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
     		BtcSendNull("#email-field","#id-field","#widget-coin-field","#widget-coin-twd","#submit-send-form",IdStatus);
 		});
-        
-        
         
         //以太币地址
         $('#email-field-other').blur(function(){
@@ -387,12 +367,11 @@
 			BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
         });
         
-        
         //发送以太币左输入框 数量
         $("#widget-coin-field-other").keyup(function(){
 		    eth_Send_number = $("#widget-coin-field-other").val();
 		    eth_Send_price = eth_Send_number*ETH_unit_price;
-		    $("#widget-coin-twd-other").val(eth_Send_price.toFixed(0));
+		    $("#widget-coin-twd-other").val(eth_Send_price.toFixed(2));
     		if($("#widget-coin-field-other").val() == ""){
     			$('#eth_limit').show();
 	    		$("#widget-coin-twd-other").val("")
@@ -415,9 +394,7 @@
     		BtcSendNull("#email-field-other","#id-field-other","#widget-coin-field-other","#widget-coin-twd-other","#submit-send-other",ETHIdStatus);
 		});
 
-		
 		//交互
-		
 		var send_address;		//发送地址
 		var maincoin_id; 		//发送id
 		var number;  			//数量
@@ -593,12 +570,7 @@
 			var price = $("#widget-coin-twd").val();//总价
 			leave_words = $("#notes-field").val(); //留言
 			nonce_str = nonceStr(32);//随机32个随机数
-			
 			var btnName = $(this).html();
-			
-			
-			console.log(parseFloat(number));
-			console.log(parseFloat(BTC_unit_balance));
 			
 			if(parseFloat(BTC_unit_balance) >= parseFloat(number) && number != 0 && price != 0  && number > 0 && price > 0){
 				sg.loading($('#submit-send-form'));
@@ -613,7 +585,6 @@
                         alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
                     }
                 });
-
 			} else {
 				alert("<{$Think.lang._HINT_BTC_BALANCE_NOT_}>");
 				$("#widget-coin-field").val("");
@@ -716,19 +687,14 @@
 					}
 
 				});
-
-
 				//隐藏
 				$('.layui-upload-file').hide();
-
 			})
     	});
 
 
 		//返回 发送的数据
 		function getSend(id,send_address,maincoin_id,number,leave_words,nonce_str, callback){
-
-			
 			var Send_url = "__HOST_PATH__/Home/Send/getSendInfo";
 			var Send_data = {
 				currency_type: id,
@@ -750,35 +716,41 @@
 				}
 			});
 		}
-		
-		var url = '__HOST_PATH__/Home/RealtimeMarket/Price';
-        var SendIndex = $.cookie('btc_float_value');
-            $.ajax({
-                url: url,
-                type: 'get',
-                success: function (res) {
-					if (SendIndex == 1) {
-                    	$('.change-send').text('TWD');
-                        BTC_unit_price = res.data[0].btc_value_twd;
-                        ETH_unit_price = res.data[0].eth_value_twd;
-                    } else if (SendIndex == 2) {
-						$('.change-send').text('HKD');
-                        BTC_unit_price = res.data[0].btc_value_hkd;
-                        ETH_unit_price = res.data[0].eth_value_hkd;
-                        
-                    } else if (SendIndex == 3) {
-                    	$('.change-send').text('USD');
-                        BTC_unit_price = res.data[0].btc_value_usd;
-                        ETH_unit_price = res.data[0].eth_value_usd;
-                    }else{
-                    	$('.change-send').text('TWD');
-                    	BTC_unit_price = res.data[0].btc_value_twd;
-                        ETH_unit_price = res.data[0].eth_value_twd;
-                    }
-                }
-            });	
-		
 
+        // --------------------------------------------------------
+        // 2s获取一次数据
+        setInterval(function() { 
+            getValue() 
+        }, 2000);
+
+        // 获取实际价格
+        function getValue() {
+            // 2s
+            let btc_btc_value = $.cookie('btc_btc_value'),
+                btc_eth_value = $.cookie('btc_eth_value'),
+                realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
+            let type = 'TWD'
+            if (realtimeIndex == 2) type = 'HKD'
+            if (realtimeIndex == 3) type = 'USD'
+
+            $('.change-send').text(type);
+            BTC_unit_price = parseFloat(btc_btc_value).toFixed(4)
+            ETH_unit_price = parseFloat(btc_eth_value).toFixed(4)
+            
+            let twd = parseFloat($('#widget-coin-field').val()) * BTC_unit_price
+            let twdother = parseFloat($('#widget-coin-field-other').val()) * ETH_unit_price
+            
+            // 比特币
+            sg.isEmpty($('#widget-coin-field').val())
+                ? ''
+                : $('#widget-coin-twd').val(parseFloat(twd).toFixed(2))
+
+            // 莱特币
+            sg.isEmpty($('#widget-coin-field-other').val())
+                ? ''
+                : $('#widget-coin-twd-other').val(parseFloat(twdother).toFixed(2))
+        }	
+		
         //点击刷新页面
         $('.clickTWD').click(function(){
             window.location.reload();

@@ -357,7 +357,7 @@
 			setInterval(function() {
 				_this.getFloat(_this.currencyType);
 
-			}, 1000); //1分钟刷新一次
+			}, 1000*3); //1分钟刷新一次
 
 			// 设置语言样式
 			var btcLang = $.cookie('btc_lang');
@@ -392,9 +392,12 @@
 				var u = 'http://localhost:8081/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
-				    console.log(res)
 					_this.BTC = c + res.btc
 					_this.ETH = c + res.ltc
+
+					// 设置cookie
+					$.cookie('btc_btc_value', res.btc);
+					$.cookie('btc_eth_value', res.ltc);
 				});
 			},
 
@@ -724,7 +727,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Send/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -735,7 +738,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -746,7 +749,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/DealDetails/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -757,7 +760,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Buy/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -768,7 +771,7 @@
 				                <ul class="dropdown-menu Spinner">
 				                    <li><a href="http://localhost:8081/Home/Sell/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">ETH</a></li>
+				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
@@ -812,7 +815,6 @@
 				});
 				clearTimeout(time);
 			})
-
 			function hint() {
 				if(true){
 					//显示提示
@@ -820,9 +822,6 @@
 						transition:"height 0.5s",
 						height:"40px"
 					});
-					//修改提示内容
-//					$(".hint").html("成功 登陆了").css("color","#fff");
-
 					//定时自动关闭提示
 					var time = setTimeout(function(){
 						$(".nav-hd").css({
@@ -837,8 +836,6 @@
 						height:"40px"
 					});
 					//修改提示内容
-//					$(".hint").html("Email 無效的電子信箱");
-
 					clearTimeout(time);
 					//定时自动关闭提示
 					time = setTimeout(function(){
@@ -849,34 +846,19 @@
 					}, 8000);
 				}
 			}
-
-			//控制一级菜单的点击事件
-//			$(".nav-a").click(function(){
-//				$(".nav-a").css("color","#3388BB");
-//				$(".nav-span").css("color","#3388BB");
-//				$(".nav-a").css("border-bottom","2px solid #fff");
-//				
-//				$(this).css("color","#000");
-//				$(this).next().css("color","#000");
-//				$(this).css("border-bottom","2px solid #EB5A4D");
-//			});
-			
 			//移入显示下拉菜单
 			$(".li-content").mouseover(function(){
 				$(".Spinner").css("display","none");
 				$(this).children().eq(2).css("display","block");
-				
 			});
 			//移出隐藏下拉菜单
 			$(".li-content").mouseout(function(){
 				$(".Spinner").css("display","none");
 			})
-
 			//删除a的下划线
 			$(".nav-a").click(function(){
 				$(".nav-a").css("text-decoration","none");
 			})
-			
 			//修改点击账户的默认样式
 			$(".dropdown-List-a").click(function(){
 				$(this).css({
@@ -884,12 +866,6 @@
 					color:"#1A1A1A"
 				});
 			})
-			
-//			$(".dropdown-a").click(function(){
-//				var textContent = $(this).html();
-//				$(".text-content").html(textContent);
-//			})
-			
 			setNav();
 		});
 
@@ -929,21 +905,16 @@
 		 * 获取logo
 		 */
 		function getLogo () {
-
 			var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
-
 			$.ajax({
 				url: logoUrl,
 				type: 'get',
 				success: function (res) {
-
-
 					$('.logo-img').attr('src', res.data[0].logo_url);
 					$('.logo-text').text(res.data[0].name);
 				}
 			});
 		}
-
 	</script>
 </block>
 
@@ -1215,6 +1186,7 @@
 		var btc_balance;
 		var eth_balance;
 		
+        // 获取账户信息
 		getAccount();
 		function getAccount(){
 			var url_account = "http://localhost:8081/Home/Index/getAccount";
@@ -1222,59 +1194,41 @@
 				type:"get",
 				url: url_account,
 				success:function(res){
-					if(res.code == 0){
-						$("#account-btc-balance").html(res.btc_balance + " BTC");
-						btc_balance = res.btc_balance;
-						$("#account-eth-balance").html(res.eth_balance + " ETH");
-						eth_balance = res.eth_balance;
-						$("#account-freeze-money").html(" NT$ " + res.freeze_balance);
-						$("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
-
-						extract_balance_all = res.extract_balance;
-					}
+					$("#account-btc-balance").html(res.btc_balance + " BTC");
+                    btc_balance = res.btc_balance;
+                    $("#account-eth-balance").html(res.eth_balance + " LTC");
+                    eth_balance = res.eth_balance;
+                    $("#account-freeze-money").html(" NT$ " + res.freeze_balance);
+                    $("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
+                    extract_balance_all = res.extract_balance;
+                    
+                    // 2s读取一次
+                    getValue(res)
+                    var timer = setInterval(function() {
+                        getValue(res)
+                    }, 2000);
 				}
 			});
+
+            function getValue(data) {
+                // 2s
+                let btc_btc_value = $.cookie('btc_btc_value'),
+                    btc_eth_value = $.cookie('btc_eth_value'),
+                    realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
+                let type = 'NT$ '
+                if (realtimeIndex == 2) type = 'HKD$ '
+                if (realtimeIndex == 3) type = 'USD$ '
+
+                let btc_value = parseFloat(btc_btc_value * data.btc_balance).toFixed(4),
+                    eth_value = parseFloat(btc_eth_value * data.eth_balance).toFixed(4),
+                    total = parseFloat(parseFloat(btc_value) + parseFloat(eth_value)).toFixed(4)
+                $('#account-btc-price').html( type + btc_value);
+                $('#account-eth-price').html( type + eth_value);
+                $("#account-total-value").html( type + total);
+            }
 			
-			var url = 'http://localhost:8081/Home/RealtimeMarket/Price';
-            var realtimeIndex = $.cookie('btc_float_value');
-            $.ajax({
-                url: url,
-                type: 'get',
-                success: function (res) {
-                    if (realtimeIndex == 1) {
-                        $('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
-                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
-                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
-                    } else if (realtimeIndex == 2) {
-                        $('#account-btc-price').html( "HKD$ " + parseInt(res.data[0].btc_value_hkd*btc_balance));
-                        $('#account-eth-price').html( "HKD$ " + parseInt(res.data[0].eth_value_hkd*eth_balance));
-                        $("#account-total-value").html( "HKD$ " + (parseInt(res.data[0].btc_value_hkd*btc_balance) + parseInt(res.data[0].eth_value_hkd*eth_balance)));
-                        
-                    } else if (realtimeIndex == 3) {
-                        $('#account-btc-price').html( "USD$ " + parseInt(res.data[0].btc_value_usd*btc_balance));
-                        $('#account-eth-price').html( "USD$ " + parseInt(res.data[0].eth_value_usd*eth_balance));
-                        $("#account-total-value").html( "USD$ " + (parseInt(res.data[0].btc_value_usd*btc_balance) + parseInt(res.data[0].eth_value_usd*eth_balance)));
-                    }else{
-                    	$('#account-btc-price').html( "NT$ " + parseInt(res.data[0].btc_value_twd*btc_balance));
-                        $('#account-eth-price').html( "NT$ " + parseInt(res.data[0].eth_value_twd*eth_balance));
-                        $("#account-total-value").html( "NT$ " + (parseInt(res.data[0].btc_value_twd*btc_balance) + parseInt(res.data[0].eth_value_twd*eth_balance)));
-                    }
-                }
-            });
+            return false;
 		}
-		
-		//点击刷新页面
-        $('.clickTWD').click(function(){
-            window.location.reload();
-        });
-
-        $('.clickHKD').click(function(){
-           window.location.reload();
-        });
-
-        $('.clickUSD').click(function(){
-            window.location.reload();
-        });
 
 		//提现按钮弹出框
 		$('#withdraw-deposit-btn').click(function(){
@@ -1342,8 +1296,7 @@
 				});
 			});
 		});
-
-		
+	
 		//响应式侧边栏颜色
 		$('#minwidth1-act').css({'background':'#3388BB'});
 		$('#minwidth2-act').css({'background':'#697785'});

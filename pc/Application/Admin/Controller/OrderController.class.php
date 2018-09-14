@@ -406,7 +406,7 @@ class OrderController extends VerifyController {
 
             } else if($v['currency_type'] == CURRENCY_TYPE_ETN) {
 
-                $data[$k]['currency_type_name'] = '以太币';
+                $data[$k]['currency_type_name'] = '莱特币';
 
             }
 

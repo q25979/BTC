@@ -38,19 +38,9 @@ class IndexController extends VerifyController {
         $map['is_deleted'] = IS_NOT_DELETED;
         $map['status'] = USER_STATUS_ENABLE;
         
-        $data = $account->where($map)->field('btc_balance,eth_balance,freeze_balance,extract_balance')->select(); 
-        foreach ($data as $row) {
-            $btc_balance = (double)$row['btc_balance'];
-            $eth_balance = (double)$row['eth_balance'];
-            $freeze_balance = (int)$row['freeze_balance'];
-            $extract_balance = (int)$row['extract_balance'];
-        }
-        $result = \StatusCode::code(0);
-        $result['freeze_balance'] = $freeze_balance;
-        $result['extract_balance'] = $extract_balance;
-        $result['btc_balance'] = $btc_balance;
-        $result['eth_balance'] = $eth_balance;
-        $this->ajaxReturn($result);
+        $data = $account->where($map)->field('btc_balance,eth_balance,freeze_balance,extract_balance')->find(); 
+
+        $this->ajaxReturn($data);
     }
     
     /**
