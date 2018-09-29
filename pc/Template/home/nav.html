@@ -2,7 +2,6 @@
     <nav>nav</nav>
 </block>-->
 <include file ="__TEMPLATE__/home/header.html"/>
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <block name = "nav">
@@ -76,7 +75,11 @@
 				</div>
 				
 				<!--导航条-->
-				<div class="nav-container col-md-9 col-sm-9 col-xs-12">
+				<style>
+					.gambling { color: red !important; font-weight: bold; }
+					.gambling:hover { color: red; }
+				</style>
+				<div class="nav-container col-md-9 col-sm-9 col-xs-12" id="navCo">
 					<ul class="nav-ul" id="xy-nav-ul">
 						<li class="nav-li">
 							<div class="li-content">
@@ -138,6 +141,11 @@
 				                </ul>
 							</div>
 						</li>
+						<li class="nav-li">
+							<div class="li-content">
+								<a href="__HOST_PATH__/Home/Bocai/index" class="nav-a gambling">博彩</a>
+							</div>
+						</li>
 					</ul>
 					
 					<div class="logo-phone col-md-3 col-sm-3  col-xs-3">
@@ -158,13 +166,13 @@
 		                    <li><a href="__HOST_PATH__/Home/Send/index" class="dropdown-a"><{$Think.lang._ACCOUNT_SEND_}>&nbsp;</a></li>
 		                    <li><a href="__HOST_PATH__/Home/WalletAddr/receive" class="dropdown-a"><{$Think.lang._ACCOUNT_RECEIVE_}>&nbsp;</a></li>
 		                    <li><a href="__HOST_PATH__/Home/DealDetails/index" class="dropdown-a"><{$Think.lang._ACCOUNT_TRANSACTIONS_}>&nbsp;</a></li>
+		                    <li><a href="__HOST_PATH__/Home/Bocai/index" class="dropdown-a gambling">博彩&nbsp;</a></li>
 		                </ul>
 		            </div>
 					
 				</div>
 			</div>
 		</div>
-			<!--<button class="btn btn-success ceshi btn-close">测试</button>-->
 	</div>
 
 	<script type="text/javascript">
@@ -230,6 +238,7 @@
 				});
 			})
 			setNav();
+			getLogo();
 		});
 
 		var setNav = function() {
@@ -248,7 +257,6 @@
 	        		// 登出（如登录界面）
 	        		$('#xy-nav-ul').css({ 'display': 'none' });
 	        		break;
-
 	        	} else {
 	        		// 登录成功（如首页）
 	        		$('#xy-nav-ul').css({ 'display': 'block' });
@@ -260,10 +268,7 @@
 	        	sg.jump('__HOST_PATH__/Home/Index');
 	        });
 		}
-	</script>
-
-	<script>
-		getLogo();
+	
 		/**
 		 * 获取logo
 		 */

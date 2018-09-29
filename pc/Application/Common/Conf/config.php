@@ -9,6 +9,9 @@ return array(
 	'DB_PORT'   => 3306,            // 端口
 	'DB_PREFIX' => 'btc_',          // 数据库表前缀
 
+	// 顯示Trace
+	'SHOW_PAGE_TRACE' => true,
+
 	'TMPL_L_DELIM'  => '<{',            // 模板引擎普通标签开始标记
 	'TMPL_R_DELIM'  => '}>',            // 模板引擎普通标签结束标记
 

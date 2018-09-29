@@ -1,0 +1,121 @@
+[ 2018-09-29T11:00:27+08:00 ] 127.0.0.1 /Home/PopupWindow/getBulletin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006001s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0020s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_bulletin` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `btc_i18n` [ RunTime:0.0030s ]
+SQL: SELECT b.bulletin_id,b.create_time,b.bulletin_title_i18n FROM btc_bulletin as b WHERE b.is_deleted = 0 AND b.status = 1 ORDER BY create_time desc  [ RunTime:0.0000s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'H2018062513490815299057485152429' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'b2018062222284415296777242420191' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'z2018052020191515268187554345747' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\PopupWindowController.class.php 第 36 行.
+
+[ 2018-09-29T11:00:29+08:00 ] 127.0.0.1 /Home/PopupWindow/getCallCenter
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0030s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_service` [ RunTime:0.0040s ]
+SQL: SELECT `name` FROM `btc_service`  [ RunTime:0.0000s ]
+
+[ 2018-09-29T11:00:30+08:00 ] 127.0.0.1 /home/PopupWindow/isSvClose
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0030s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0040s ]
+SQL: SELECT `service_status` FROM `btc_home_info`  [ RunTime:0.0010s ]
+
+[ 2018-09-29T11:00:32+08:00 ] 127.0.0.1 /Home/Index/getTopInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0050s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `user_name`,`maincoin_id` FROM `btc_user` WHERE `user_id` = 'q2018090611234315362042232669474' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\IndexController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `btc_information` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_information` WHERE `maincoin_id` = 'TKXXRJRr' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-29T11:00:33+08:00 ] 127.0.0.1 /Home/Login/getupdateLogo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0030s ]
+SQL: SELECT `background_url`,`logo_url`,`name` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 129 行.
+
+[ 2018-09-29T11:00:34+08:00 ] 127.0.0.1 /Home/Send/getBalance
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0040s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\SendController.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `btc_show_currency_value` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `btc_show_currency_value`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+SQL: SELECT `btc_balance`,`eth_balance` FROM `btc_user_account` WHERE `is_deleted` = 0 AND `status` = 0 AND `user_id` = 'q2018090611234315362042232669474'  [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\SendController.class.php 第 54 行.
+
+[ 2018-09-29T11:00:35+08:00 ] 127.0.0.1 /Home/Login/getupdateLogo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 129 行.
+
+[ 2018-09-29T11:00:36+08:00 ] 127.0.0.1 /Home/PopupWindow/getCallCenter
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0040s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_service` [ RunTime:0.0020s ]
+SQL: SELECT `name` FROM `btc_service`  [ RunTime:0.0000s ]
+
+[ 2018-09-29T11:00:37+08:00 ] 127.0.0.1 /Home/PopupWindow/getBulletin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0030s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_bulletin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `btc_i18n` [ RunTime:0.0030s ]
+SQL: SELECT b.bulletin_id,b.create_time,b.bulletin_title_i18n FROM btc_bulletin as b WHERE b.is_deleted = 0 AND b.status = 1 ORDER BY create_time desc  [ RunTime:0.0000s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'H2018062513490815299057485152429' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'b2018062222284415296777242420191' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'z2018052020191515268187554345747' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Home\Controller\PopupWindowController.class.php 第 36 行.
+
