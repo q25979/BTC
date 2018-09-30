@@ -117,7 +117,18 @@ var sg = {
         });
 
         return html;
-	}
+	},
+
+	/**
+	 * 获取汇率
+	 *
+	 * @callback object 率会比回调
+	 */
+	exchange: function(callback) {
+		$.get(config.host_path+'/Float/Index/exchange', function(res) {
+			callback(res)
+		})
+	},
 };
 
 

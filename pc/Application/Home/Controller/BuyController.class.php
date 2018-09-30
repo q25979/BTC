@@ -101,7 +101,6 @@ class BuyController extends VerifyController {
 	 *@param sign			
 	 */
 	public function buyCoin() {
-		
 		$info = I('post.'); 
 		
 		//MD5
@@ -115,8 +114,7 @@ class BuyController extends VerifyController {
 		$User_account = M('User_account');
 
 		$map['user_id'] = $this->user_id;
-		$data = $User_account->where($map)->field('extract_balance')->select();
-		foreach ($data as $res) {}
+		$data = $User_account->where($map)->field('extract_balance')->find();
 
 		$row['order_id'] = \Common::generateId();
 		$row['user_id'] = $this->user_id;
@@ -130,13 +128,11 @@ class BuyController extends VerifyController {
 		$row['unit_price'] = $info['unit_price'];
 		$row['create_time'] = time();
 		$row['currency_type'] = $info['currency_type'];
-	
-		if($info['currency_type'] == CURRENCY_TYPE_BTC) {	
 
+		if($info['currency_type'] == CURRENCY_TYPE_BTC) {	
 			//订单成功后扣除现金余额
 			if ($info['payment_type'] == PAYMENT_TYPE_BALANCE) {
-				$rule['extract_balance'] = $res['extract_balance'] - $info['price'];
-
+				$rule['extract_balance'] = $data['extract_balance'] - $info['price'];
 				if ($rule['extract_balance'] < 0) {
 					$this->ajaxReturn(\StatusCode::code(-1));
 				}
@@ -146,7 +142,6 @@ class BuyController extends VerifyController {
 
 			$result = $order->add($row);
 			if($result) {
-			
 				//如果有设置购买提醒的用户要发送邮件
 		        $userSet = M('UserSet');
 		        $user = M('User');
@@ -157,7 +152,6 @@ class BuyController extends VerifyController {
 			        ->field('email_buy')
 			        ->select();
 		        if ($setParam[0]['email_buy'] == USER_SET_EMAIL_BUY_YES) {
-
 		            //查询发送邮箱
 		            $email = $user->getFieldByUserId($this->user_id,'email');
 
@@ -168,20 +162,18 @@ class BuyController extends VerifyController {
 
 		            $mail = new \SendEmail($email, '購買提示', $this->hintHtml($userInfo[0]));
             		$mail->send();
-
 		        }
 
 				$this->ajaxReturn(\StatusCode::code(0));	
 			} else {
-				$this->ajaxReturn(\StatusCode::code('失败！'));
+				$this->ajaxReturn(\StatusCode::code(-1));
 			}			
 		}
 
 		if($info['currency_type'] == CURRENCY_TYPE_ETN) {
-
 			if ($info['payment_type'] == PAYMENT_TYPE_BALANCE) {
 				//订单成功后扣除现金余额
-				$rule['extract_balance'] = $res['extract_balance'] - $info['price'];
+				$rule['extract_balance'] = $data['extract_balance'] - $info['price'];
 				
 				if ($rule['extract_balance'] < 0) {
 					$this->ajaxReturn(\StatusCode::code(-1));
@@ -191,7 +183,6 @@ class BuyController extends VerifyController {
 
 			$result = $order->add($row);
 			if($result) {
-				
 				//如果有设置购买提醒的用户要发送邮件
 		        $userSet = M('UserSet');
 		        $user = M('User');
@@ -203,19 +194,16 @@ class BuyController extends VerifyController {
 		        if ($setParam[0]['email_buy'] == USER_SET_EMAIL_BUY_YES) {
 		            //查询发送邮箱
 		            $email = $user->getFieldByUserId($this->user_id,'email');
-
 		            $userInfo = $user->where($param)->select();
 		            //发送邮件
 		            $userInfo[0]['time'] = time();
 		            $userInfo[0]['time'] = date('Y-m-d', $userInfo[0]['time']);
-
 		            $mail = new \SendEmail($email, '購買提示', $this->hintHtml($userInfo[0]));
             		$mail->send();
 		        }
-		        
 				$this->ajaxReturn(\StatusCode::code(0));	
 			} else {
-				$this->ajaxReturn(\StatusCode::code('失败！'));
+				$this->ajaxReturn(\StatusCode::code(-1));
 			}
 		} 
 

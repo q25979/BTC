@@ -1,0 +1,775 @@
+[ 2018-09-30T12:39:47+08:00 ] 127.0.0.1 /Admin/Login/getAccount.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 49 行.
+
+[ 2018-09-30T12:39:54+08:00 ] 127.0.0.1 /Admin/Index/identity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.5040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `identity` FROM `btc_admin` WHERE `admin_id` = '10000000000000000000000000000000'  [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 111 行.
+
+[ 2018-09-30T12:39:57+08:00 ] 127.0.0.1 /Admin/Index/init
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_up_order` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_up_order` WHERE `is_deleted` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 95 行.
+
+[ 2018-09-30T12:40:19+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0090s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T12:40:26+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T12:41:21+08:00 ] 127.0.0.1 /Admin/Order/orderAuditInfo.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 138 行.
+SQL: UPDATE `btc_order_info` SET `order_id`='z2018093012355115382821515954166',`status`='1',`remark`='',`update_time`='1538282481' WHERE `order_id` = 'z2018093012355115382821515954166' AND `is_deleted` = 0 [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 158 行.
+
+[ 2018-09-30T12:41:22+08:00 ] 127.0.0.1 /Admin/Order/orderSuccess.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 291 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='z2018093012355115382821515954166',`status`='2',`update_time`='1538282482' WHERE oi.order_id = 'z2018093012355115382821515954166' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0090s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'z2018093012355115382821515954166' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `btc_balance`='9.81',`update_time`='1538282482' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 377 行.
+
+[ 2018-09-30T12:41:28+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T12:44:04+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T12:44:10+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T12:44:35+08:00 ] 127.0.0.1 /Admin/Order/orderAuditInfo.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 138 行.
+SQL: UPDATE `btc_order_info` SET `order_id`='b2018093012425815382825781078134',`status`='1',`remark`='',`update_time`='1538282675' WHERE `order_id` = 'b2018093012425815382825781078134' AND `is_deleted` = 0 [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 158 行.
+
+[ 2018-09-30T12:44:36+08:00 ] 127.0.0.1 /Admin/Order/orderSuccess.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 291 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='b2018093012425815382825781078134',`status`='2',`update_time`='1538282676' WHERE oi.order_id = 'b2018093012425815382825781078134' AND oi.is_deleted = 0 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0020s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'b2018093012425815382825781078134' AND oi.is_deleted = 0  [ RunTime:0.0010s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='54541',`update_time`='1538282676' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 344 行.
+
+[ 2018-09-30T12:44:42+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T12:44:46+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T14:16:31+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T14:20:59+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.011001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0840s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T14:26:19+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T14:27:33+08:00 ] 127.0.0.1 /Admin/Order/orderLose.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 183 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='c2018093014132715382880074973510',`status`='-1',`remark`='',`update_time`='1538288853' WHERE oi.order_id = 'c2018093014132715382880074973510' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.user_id,oi.payment_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'c2018093014132715382880074973510' AND oi.is_deleted = 0  [ RunTime:0.0010s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='7096',`update_time`='1538288853' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 237 行.
+
+[ 2018-09-30T14:27:38+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.016001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T14:27:55+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0250s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T14:48:53+08:00 ] 127.0.0.1 /Admin/System/getExchange
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `btc_exchange` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-30T14:48:59+08:00 ] 127.0.0.1 /Admin/System/refresh?name=exchange
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-09-30T15:42:08+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T15:42:30+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0130s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T15:42:37+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T15:43:13+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T15:44:11+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T15:44:19+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T15:44:23+08:00 ] 127.0.0.1 /Admin/Order/orderLose.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 183 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='D2018093014254115382887417513594',`status`='-1',`remark`='',`update_time`='1538293463' WHERE oi.order_id = 'D2018093014254115382887417513594' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.user_id,oi.payment_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'D2018093014254115382887417513594' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='54540',`update_time`='1538293463' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 237 行.
+
+[ 2018-09-30T15:44:27+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T15:44:31+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T15:48:00+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T15:48:15+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T17:01:10+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:01:46+08:00 ] 127.0.0.1 /Admin/Index/identity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `identity` FROM `btc_admin` WHERE `admin_id` = '10000000000000000000000000000000'  [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 111 行.
+
+[ 2018-09-30T17:01:57+08:00 ] 127.0.0.1 /Admin/Index/init
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_up_order` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_up_order` WHERE `is_deleted` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 95 行.
+
+[ 2018-09-30T17:04:22+08:00 ] 127.0.0.1 /Admin/System/getExchange
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `btc_exchange` LIMIT 1   [ RunTime:0.0280s ]
+
+[ 2018-09-30T17:04:46+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:10:18+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:20:35+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0090s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:26:00+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:50:49+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T17:50:50+08:00 ] 127.0.0.1 /Admin/Index/informationHint
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `btc_send` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_order_info` WHERE `status` = 0 AND `is_deleted` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_send` WHERE `status` = 0 AND `is_deleted` = 0 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 75 行.
+
+[ 2018-09-30T17:50:58+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T17:51:06+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T17:51:29+08:00 ] 127.0.0.1 /Admin/Order/orderLose.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 183 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='A2018093017470515383008258805294',`status`='-1',`remark`='',`update_time`='1538301089' WHERE oi.order_id = 'A2018093017470515383008258805294' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.user_id,oi.payment_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'A2018093017470515383008258805294' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='54539',`update_time`='1538301089' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 237 行.
+
+[ 2018-09-30T17:51:34+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T17:51:45+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T18:01:43+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T18:02:28+08:00 ] 127.0.0.1 /Admin/Order/orderLose.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 183 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='A2018093017593815383015781935568',`status`='-1',`remark`='',`update_time`='1538301748' WHERE oi.order_id = 'A2018093017593815383015781935568' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.user_id,oi.payment_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'A2018093017593815383015781935568' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='54538',`update_time`='1538301748' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 237 行.
+
+[ 2018-09-30T18:02:37+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0020s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2018-09-30T18:06:09+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T18:07:55+08:00 ] 127.0.0.1 /Admin/Order/orderLose.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0040s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 183 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='G2018093018044215383018826739705',`status`='-1',`remark`='',`update_time`='1538302075' WHERE oi.order_id = 'G2018093018044215383018826739705' AND oi.is_deleted = 0 [ RunTime:0.0000s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.user_id,oi.payment_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'G2018093018044215383018826739705' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `extract_balance`='54537',`update_time`='1538302075' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0000s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 237 行.
+
+[ 2018-09-30T18:07:59+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T18:09:27+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T18:09:35+08:00 ] 127.0.0.1 /Admin/Order/orderAuditInfo.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 138 行.
+SQL: UPDATE `btc_order_info` SET `order_id`='B2018093018090215383021429778603',`status`='1',`remark`='',`update_time`='1538302175' WHERE `order_id` = 'B2018093018090215383021429778603' AND `is_deleted` = 0 [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 158 行.
+
+[ 2018-09-30T18:09:36+08:00 ] 127.0.0.1 /Admin/Order/orderSuccess.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+NOTIC: [8192] Non-static method Common::verifyMd5() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 291 行.
+SQL: UPDATE btc_order_info as oi SET `order_id`='B2018093018090215383021429778603',`status`='2',`update_time`='1538302176' WHERE oi.order_id = 'B2018093018090215383021429778603' AND oi.is_deleted = 0 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0030s ]
+SQL: SELECT bua.btc_balance,bua.eth_balance,bua.extract_balance,oi.currency_type,oi.number,oi.order_type,oi.price,oi.user_id FROM btc_order_info as oi INNER JOIN btc_user_account as bua on bua.user_id = oi.user_id  WHERE oi.order_id = 'B2018093018090215383021429778603' AND oi.is_deleted = 0  [ RunTime:0.0000s ]
+SQL: UPDATE `btc_user_account` SET `eth_balance`='12',`update_time`='1538302176' WHERE `user_id` = 'q2018090611234315362042232669474' [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 377 行.
+
+[ 2018-09-30T18:09:41+08:00 ] 127.0.0.1 /Admin/Order/getOrderList.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 AND oi.status = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 79 行.
+
+[ 2018-09-30T18:09:45+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'zyan001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'zyan001' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0010s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+

@@ -66,4 +66,26 @@ class IndexController extends Controller {
         ];
         $this->ajaxReturn($result);
     }
+
+    /**
+     * 获取货币汇率
+     */
+    public function exchange() {
+        $exchange = M('Exchange');
+        $edata = $exchange->where('id=1')->cache('exchange')->find();
+
+        $this->ajaxReturn($edata);
+    }
+
+    /**
+     * 獲取比特幣價格
+     */
+    public function getbtc() {
+        $req = new \Request();
+
+        $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
+        $info = json_decode($req->httpGet($burl));
+
+        $this->ajaxReturn($info);
+    }
 }
