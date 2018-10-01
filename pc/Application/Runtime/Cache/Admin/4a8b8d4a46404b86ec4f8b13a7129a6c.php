@@ -90,7 +90,7 @@
                 ,{field: 'price', title: '总价', align: 'center', width: 100, sort: true}
                 ,{field: 'remark', title: '审核意见', align: 'center', width: 100, sort: true}
                 ,{field: 'create_time', title: '创建时间', align: 'center', width: 120, sort: true}
-                ,{title: '操作', width: 180, align: 'center', toolbar: '#operation'}
+                ,{title: '操作', width: 180, align: 'center', toolbar: '#operation', fixed: 'right'}
             ]],
             done: function(res) {
                 data = res;

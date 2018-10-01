@@ -1,0 +1,117 @@
+[ 2018-10-01T11:15:49+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 無法載入模組:Favicon
+
+[ 2018-10-01T11:16:23+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 無法載入模組:Favicon
+
+[ 2018-10-01T11:28:54+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:29:13+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:30:43+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:33:46+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:39:00+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:39:31+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:40:01+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:40:47+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:41:35+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:43:38+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:43:58+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:44:25+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:44:59+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:45:29+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:46:06+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:46:38+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:48:14+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:48:44+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:49:26+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:50:19+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:50:43+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-01T11:51:14+08:00 ] 127.0.0.1 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+

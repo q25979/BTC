@@ -766,7 +766,7 @@
 						</li>
 						<li class="nav-li">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Bocai/index" class="nav-a gambling">博彩</a>
+								<a href="http://localhost:8081/Home/Bocai/index" class="nav-a gambling">微平台</a>
 							</div>
 						</li>
 					</ul>
@@ -789,7 +789,7 @@
 		                    <li><a href="http://localhost:8081/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
 		                    <li><a href="http://localhost:8081/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
 		                    <li><a href="http://localhost:8081/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/Bocai/index" class="dropdown-a gambling">博彩&nbsp;</a></li>
+		                    <li><a href="http://localhost:8081/Home/Bocai/index" class="dropdown-a gambling">微平台&nbsp;</a></li>
 		                </ul>
 		            </div>
 					
@@ -1441,7 +1441,7 @@
 			
 			var btnName = $(this).html();
 			
-			if(parseFloat(number)  <= parseFloat(BtcSellBalance)  && number != 0 && price != 0  && number > 0 && price > 0){
+			if(parseFloat(number)  <= parseFloat(BtcSellBalance) && number > 0 && price > 0){
 				
 				sg.loading($('#sell-submit1'));
 				
@@ -1474,7 +1474,7 @@
 			
 			var btnName = $(this).html();
 			
-			if(parseFloat(number)  <= parseFloat(EthSellBalance) && number != 0 && price != 0  && number > 0 && price > 0){
+			if(parseFloat(number)  <= parseFloat(EthSellBalance) && number > 0 && price > 0){
 				
 				sg.loading($('#sell-submit2'));
 				
@@ -1501,24 +1501,35 @@
 		//定义方法发送数据
 		function SellVirtualCurrency(number,price,money_currency_type,unit_price,currency_type,nonce_str,callback) {
             var url_sellVirtualCurrency = 'http://localhost:8081/Home/Sell/sellCoin';
-            var data_sellVirtualCurrency = {
+            var data = {
             	number: number,
             	price: price,
             	money_currency_type: money_currency_type,
             	unit_price: unit_price,
             	currency_type: currency_type,
-            	nonce_str: nonce_str,
-				sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + currency_type + money_currency_type + nonce_str + number + price + unit_price)
+            	nonce_str: nonce_str
             }
-			
-			$.ajax({
-	            url: url_sellVirtualCurrency,
-	            data: data_sellVirtualCurrency,
-				type: 'post',
-	            success: function(res){
-	            	callback(res);
-	            }
-	        });
+            var btype = parseInt($.cookie('btc_float_value')) // 币种类型 1-台币 2-港币 3-美金
+
+			sg.exchange(function(res) {
+				// 转为新台币
+				let hkd = parseFloat(res.hkd),
+					twd = parseFloat(res.twd),
+					usd = parseFloat(res.usd),
+					ftmp = 0 	// 临时
+
+				if (btype == 1) ftmp = twd 
+				if (btype == 2) ftmp = hkd
+				if (btype == 3) ftmp = usd
+				data.unit_price = parseFloat(data.unit_price)*twd/ftmp
+				data.price = (parseFloat(data.price)*twd/ftmp).toFixed(4)
+
+				data.sign = hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + data.currency_type + data.money_currency_type + data.nonce_str + data.number + data.price + data.unit_price)
+				$.post(url_sellVirtualCurrency, data, function(res) {
+					console.log(res)
+					callback(res)
+				})
+			})
     	}
 		
 		var BTCPrice;
