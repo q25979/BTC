@@ -1,33 +1,25 @@
 <include file="Template/home/header.html" />
-
-<css href="__PUBLIC__/home/css/login.css" />
-
+<css href="__PUBLIC__/home/css/login.min.css" />
 
 <body>
     <!-- top start -->
     <include file="Template/home/top.html" />
     <!-- top end-->
-
     <div id="index-box">
         <!-- nav start-->
         <include file="Template/home/nav.html" />
         <!-- nav end-->
-        
         <!-- login start -->
         <div class="container-login" id="container-login">
         	<div id="QR-code-PC">
-            		
     				<img src="__PUBLIC__/images/b.jpg" width="300px" height="300px" style="border: 5px solid #3388BB;"/>
-            		
             		<div id="QR-code-PCBOX">
 						<img src="__PUBLIC__/images/QR-code.png" width="150px" height="150px" style="border: 5px solid #3388BB;"/>
 						<p style="color: yellow;font-size: 26px;margin-top: 10px;"><{$Think.lang._MONEY_MICRO_PLATFORM_}></p>
 						<p style="color: yellow;font-size: 26px;margin-top: 10px;margin-bottom: 0;"><{$Think.lang._DOWNLOAD_CLIENT_SIDE_}></p>
             		</div>
-
 				</div>
             <div class="banner max-width">
-            	
                 <div class="login">
                     <div id="sh_tab">
                         <ul class="tab_menu">
@@ -205,7 +197,6 @@
             </div>
         </div>
         
-        
     	<div id="QRCode-login-phone">
     		<div id="QRCode-login-phone-BOX">
     			<img src="__PUBLIC__/images/QR-code.png" class="QRCode-login-phone-img" style="margin-right: 5px;"/>
@@ -215,7 +206,6 @@
 		</div>
 
         <!-- login end -->
-
         <!-- 服务开始 -->
         <div class="container-service">
             <div class="container-service-group max-width">
@@ -303,22 +293,6 @@
         <!-- 底部问题联系开始 -->
         <div class="problem">
             <div class="problem-group">
-                <!-- 热门新闻 -->
-                <!-- <div class="hot-news col-md-4 col-xs-4">
-                    <h4>
-                        <a 
-                            href  = "#"
-                            style = "color: #fff"
-                        >
-                            <{$Think.lang._LOGIN_NEWS_}>
-                        </a>
-                    </h4>
-                    <p><a href="https://www.ithome.com.tw/news/105580" target="_blank"><{$Think.lang._LOGIN_NEWS_ONE_}></a></p>
-                    <p><a href="https://www.ithome.com.tw/news/105377" target="_blank"><{$Think.lang._LOGIN_NEWS_TWO_}></a></p>
-                    <p><a href="https://www.ettoday.net/news/20121219/141974.htm" target="_blank"><{$Think.lang._LOGIN_NEWS_THREE_}></a></p>
-                    <p><a href="http://www.chinatimes.com/newspapers/20160408000037-260202" target="_blank"><{$Think.lang._LOGIN_NEWS_FOUR_}></a></p>
-                </div> -->
-                <!-- 常见问题 -->
                 <div class="issue col-md-6 col-xs-6" >
                     <h4> 
                         <a 
@@ -358,9 +332,5 @@
         <!-- footer end-->
     </div>
 </body>
-
 <js href="__JS__/md5.js" />
-<js href="__PUBLIC__/home/js/login.js" />
-
-
-
+<js href="__PUBLIC__/home/js/login.min.js" />

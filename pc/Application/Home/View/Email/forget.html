@@ -71,16 +71,13 @@
 </div>
 
 <script>
-
     var forgetvm = new Vue({
         el: '#sh_forget',
         data: {
             passworldVer: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/,        // 正则判断
-
             classStatus: true,      // 新密码样式状态 true->提示样式  false->警告样式
             disStatus: 0,           // 新密码提示是否显示  1->提示
             passStatus: 0,          // 确认密码提示  1->输入时提示 2->不相等提示
-
             newImg: '',             // 新密码图片
             confirmImg: '',         // 确认密码图片
             imgStatus: 1,           // 图片显示状态
@@ -151,60 +148,53 @@
         }
     });
 
+    /* 新密码焦点事件 */
+    $('#sh_forgetNew').blur(function () {
+        
+        if ( !forgetvm.passworldVer.test($(this).val()) ){
+            forgetvm.disStatus = 1;
+            forgetvm.classStatus = false;
 
-</script>
+            return;
+        } else {
+            forgetvm.disStatus = 0;
+        }
+    });
 
-<script>
-        /* 新密码焦点事件 */
-        $('#sh_forgetNew').blur(function () {
-            
-            if ( !forgetvm.passworldVer.test($(this).val()) ){
+    /* 确认密码 */
+    $('#sh_confirmPass').blur(function (){
+        forgetvm.passStatus = 2;
+
+        if($('#sh_forgetNew').val() == $('#sh_confirmPass').val() ) {
+            forgetvm.passStatus = 0;
+        }
+    });
+
+    /* 监听input的值变化 */
+    function functionPass(id) {
+
+        id ? confirmPass() : newPass();
+        /* 输入新密码 */
+        function newPass() {
+            if ( !forgetvm.passworldVer.test($('#sh_forgetNew').val()) ) {
                 forgetvm.disStatus = 1;
-                forgetvm.classStatus = false;
+                forgetvm.classStatus = true;
 
                 return;
             } else {
                 forgetvm.disStatus = 0;
             }
-        });
+        };
 
         /* 确认密码 */
-        $('#sh_confirmPass').blur(function (){
-
-            forgetvm.passStatus = 2;
-
-            if($('#sh_forgetNew').val() == $('#sh_confirmPass').val() ) {
+        function confirmPass () {
+            if ( $('#sh_forgetNew').val() != $('#sh_confirmPass').val() ) {
+                forgetvm.passStatus = 1;
+            } else {
                 forgetvm.passStatus = 0;
             }
-        });
-
-        /* 监听input的值变化 */
-        function functionPass(id) {
-
-            id ? confirmPass() : newPass();
-
-            /* 输入新密码 */
-            function newPass() {
-                if ( !forgetvm.passworldVer.test($('#sh_forgetNew').val()) ) {
-                    forgetvm.disStatus = 1;
-                    forgetvm.classStatus = true;
-
-                    return;
-                } else {
-                    forgetvm.disStatus = 0;
-                }
-            };
-
-            /* 确认密码 */
-            function confirmPass () {
-                if ( $('#sh_forgetNew').val() != $('#sh_confirmPass').val() ) {
-                    forgetvm.passStatus = 1;
-                } else {
-                    forgetvm.passStatus = 0;
-                }
-            };
-        }
-
+        };
+    }
 </script>
 
 

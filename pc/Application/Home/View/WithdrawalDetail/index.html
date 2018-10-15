@@ -57,13 +57,9 @@
 
 	<!--头部标签切换js-->
 	<script type="text/javascript">
-		
-		
 		//交互
-		
 		var page = 1;//当前页数
 		var pageCount; //总页数
-				
 		getWithdrawalDetail(page);
 		
 		//获取提现记录
@@ -79,7 +75,6 @@
 				success:function(res){
 					pageCount = Math.ceil(res.count / 10);
 
-					
 					if(res.code == 0){
 						//如果有数据就隐藏字段，并插入到列表
 						if(res.data.length > 0){

@@ -1,0 +1,258 @@
+[ 2018-10-13T12:09:05+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Favicon
+
+[ 2018-10-13T12:10:12+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T12:16:15+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T12:16:29+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T12:26:01+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T12:26:26+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T12:26:40+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:07:28+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:07:44+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:18:01+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:18:22+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:19:22+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:20:19+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:20:32+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:22:36+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:24:46+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:27:15+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:27:52+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:31:57+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:32:16+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:33:06+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:33:54+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T13:59:47+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:00:29+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:04:28+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:04:39+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:05:18+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:05:36+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:07:15+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:07:35+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:10:02+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:10:20+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:10:36+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:12:59+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:15:28+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T14:15:45+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:18:42+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:19:58+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:36:38+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:38:20+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:42:40+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:42:49+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-13T15:43:23+08:00 ] 127.0.0.1 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+

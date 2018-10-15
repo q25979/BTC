@@ -85,7 +85,7 @@
                 ,{field: 'create_time', title: '申请时间', align: 'center', width: 140}
                 ,{field: 'update_time_name', title: '审核时间', align: 'center', width: 140, sort: true}
                 ,{title: '提现状态', align: 'center', width: 120, sort: true, templet: '#status'}
-                ,{title: '操作', width: 220, align: 'center', toolbar: '#operation'}
+                ,{title: '操作', width: 180, align: 'center', toolbar: '#operation', fixed: 'right'}
             ]],
             done: function(res) {
                 layer.closeAll();

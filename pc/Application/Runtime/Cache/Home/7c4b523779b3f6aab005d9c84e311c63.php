@@ -134,8 +134,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
-    <!--<header><?php echo (L("_MODULE_NOT_EXIST_")); ?></header>-->
-
     <div id="top">
     	<div id="wrapper">
 	        <!-- 侧边栏 -->
@@ -181,7 +179,6 @@
 	
 	    <div class="top-red navbar-fixed-top">
 	        <div class="header container-fixed">
-	
 	            <!--顶部导航栏-->
 	            <div class="header-list">
 	                <!--导航栏左侧-->
@@ -276,11 +273,8 @@
 								</ul>
 							</div>
 						</li>
-
 						<li>LTC:{{ ETH }}</li>
 						<li>BTC:{{ BTC }}&nbsp;&nbsp;</li>
-
-
 					</ul>
 	            </div>
 	
@@ -290,7 +284,6 @@
 	                    <p>BTC:{{ BTC }}</p>
 	                    <p>LTC:{{ ETH }}</p>
 	                </div>
-	
 	                <div class="dropdown dropTick3" id="TWD">
 	                    <div class="dropdown-toggle drop-more" id="dropdownMenu3" data-toggle="dropdown">
 	                        {{currencyTypeName}}
@@ -393,17 +386,14 @@
 			isLogin: function() {
 				var u = 'http://localhost:8081/Home/Index/getTopInfo';
 				if (sg.isEmpty($.cookie('btc_identification'))) return false;
-				
 				$.get(u, function(res) {
 					var username = res.data.username;
-
 					if (res.code == 0) {
 						$('.user-Logout').css({ 'display': 'inline' });
 						$('.login-register').css({ 'display': 'none' });
                         $('#logout-href').css({ 'display': 'inline' });
                         $('#login-bell').css({ 'display': 'inline' });
                         $('#login-href').css({ 'display': 'none' });
-
                     } else {
 						$('.user-Logout').css({ 'display': 'none' });
 						$('.login-register').css({ 'display': 'inline' });
@@ -414,7 +404,6 @@
 
 					if (username.length > 5)
 						username = username.substring(0, 5) + '...';
-
 					$('.user-Logout>li:nth-child(3)').text(username);
 					$('#xy-top-message').text(res.data.message);
                     $('#xy-top-messageminwidth').text(res.data.message);
@@ -440,7 +429,6 @@
 
 				// 设置cookie
 				this.switchFloat(index);
-
 				if (index == 1) {
 		            $('.glyphicon-ok-1').css({'top':'0px'});
 		            $('.TWD').css({'display':'none'});
@@ -595,7 +583,6 @@
         $(this).attr("checked",true);
     });
 
-
 	getLogo();
 	/**
 	 * 获取logo
@@ -607,7 +594,6 @@
 			url: logoUrl,
 			type: 'get',
 			success: function (res) {
-
 				$('.get_imglogo').attr('src', res.data[0].logo_url);
 			}
 		});
@@ -681,12 +667,10 @@
 			<span class="hint" v-if=" status == 'Invalid' ">
 				<?php echo (L("_HINT_INVALID_")); ?>
 			</span>
-
 			<span class="glyphicon glyphicon-remove close"></span>
 		</div>
 		
 		<div class="content-container">
-			
 			<!--导航条内容-->
 			<div class="nav-bd">
 				<!--logo-->

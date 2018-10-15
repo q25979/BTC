@@ -88,4 +88,16 @@ class IndexController extends Controller {
 
         $this->ajaxReturn($info);
     }
+
+    /**
+     * 获取K线图数据
+     */
+    public function getkdata()
+    {
+        $type = I('get.type');
+        $url = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=500";
+
+        $data = \Request::httpGet($url);
+        $this->ajaxReturn($data);
+    }
 }

@@ -3,28 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>幣淘微平台</title>
+	<link rel="stylesheet" href="__PUBLIC__/home/bocai/iconfont.css" />
+	<link rel="stylesheet" href="__PUBLIC__/home/bocai/common.css" />
+	<link rel="stylesheet" id="device" />
+	<script src="__JS__/config.js"></script>
 	<script src="__JS__/jquery-3.2.1.min.js"></script>
+	<script>
+		// 判断该使用什么样式 768 900 1080 手机
+		var iWh = $(window).height();
+		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
+		if (iWh < 900 && !m) {
+			$("#device").attr("href", "__PUBLIC__/home/bocai/midding.css")
+		}
 
-	<style>
-		h3, body, p { margin: 0; padding: 0; }
-		body { background: #010101; color: #fff; }
-		.yi-container { max-width: 1200px; background: #333; margin: 0 auto; }
-		.yi-container header h3 { text-align: center; padding: 15px 0; letter-spacing: 3px; }
-		.yi-price { background: #252C34; }
-	</style>
+		// 手机设备
+		if (m) {
+			$("#device").attr("href", "__PUBLIC__/home/bocai/m.css")
+		}
+	</script>
+	<script src="__PUBLIC__/home/bocai/echarts.js"></script>
+	<script src="__PUBLIC__/home/bocai/kdata.js"></script>
 </head>
 <body>
 	<div class="yi-container">
 		<header>
 			<h3>比特幣</h3>
 		</header>
-		<div class="yi-price"></div>
+		<div class="yi-price">
+			<ul>
+				<li class="yi-number">6546.1254</li>
+				<li>
+					<p class="t">開盤</p>
+					<p class="yi-number">6394.45</p>
+				</li>
+				<li>
+					<p class="t">最低</p>
+					<p class="yi-number">6394.22</p>
+				</li>
+				<li>
+					<p class="t">最高</p>
+					<p class="yi-number">6539.29</p>
+				</li>
+			</ul>
+		</div>
+		<div class="yi-time">
+			<div>11:42:33</div>
+			<ul>
+				<li class="active">1M</li>
+				<li>5M</li>
+				<li>15M</li>
+				<li>30M</li>
+				<li>1H</li>
+				<li>1D</li>
+			</ul>
+		</div>
+		<div class="yi-k" id="k"></div>
+		<footer>
+			<ul>
+				<li>
+					<p><i class="iconfont icon-coins"></i></p>
+					<p>餘額</p>
+				</li>
+				<li>
+					<p><i class="iconfont icon-value-"></i></p>
+					<p>買漲</p>
+				</li>
+				<li>
+					<p><i class="iconfont icon-devaluation"></i></p>
+					<p>買跌</p>
+				</li>
+				<li>
+					<p><i class="iconfont icon-jilu"></i></p>
+					<p>交易記錄</p>
+				</li>
+			</ul>
+		</footer>
+		<i class="ret-home iconfont icon-shouye" title="回到首頁"></i>
 	</div>
-
-	<script>
-		$.get("__HOST_PATH__/Float/Index/getbtc", {type: 'usd'}, function(res) {
-			console.log(res)
-		})
-	</script>
 </body>
 </html>

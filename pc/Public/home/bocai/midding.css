@@ -1,0 +1,8 @@
+/* 中屏设备 */
+.yi-price { padding: 18px 0; }
+.yi-price .yi-number { font-size: 20px; }
+.yi-price .yi-number:nth-child(1) { font-size: 32px; }
+.yi-price .t { left: -22px; }
+.yi-k { height: 420px; }
+.yi-container footer li { padding: 13px 0; }
+.yi-container footer .iconfont { font-size: 20px; }

@@ -1,0 +1,383 @@
+[ 2018-10-08T16:24:29+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] localhost:8082/ [运行时间：0.208012s][吞吐率：4.81req/s] [内存消耗：2,125.02kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046003s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.004001s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html
+[ log ] localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html [运行时间：0.076004s][吞吐率：13.16req/s] [内存消耗：2,239.11kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => '85bbbbc79e4e66482f39f55868217f29',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\index\index.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.proorder asc [ RunTime:0.008000s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/getchart.html
+[ log ] localhost:8082/index/index/getchart.html [运行时间：0.049506s][吞吐率：20.20req/s] [内存消耗：2,118.05kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getchart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->getchart[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/ajax_order
+[ log ] localhost:8082/index/index/ajax_order [运行时间：0.060507s][吞吐率：16.53req/s] [内存消耗：2,114.48kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajax_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'content-type' => 'application/json;charset=utf-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->ajax_order[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001500s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.007500s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000500s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/ajaxindexpro
+[ log ] localhost:8082/index/index/ajaxindexpro [运行时间：0.071008s][吞吐率：14.08req/s] [内存消耗：2,185.19kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxindexpro',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->ajaxindexpro[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001501s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.005500s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001500s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.004501s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.pid desc [ RunTime:0.001500s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/index/token/img/favicon.ico
+[ log ] localhost:8082/index/index/index/token/img/favicon.ico [运行时间：0.062506s][吞吐率：16.00req/s] [内存消耗：2,238.85kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\index\index.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000500s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.proorder asc [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/index/token/img/logo.png
+[ log ] localhost:8082/index/index/index/token/img/logo.png [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,238.85kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn; pid12=6553.241',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\index\index.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.proorder asc [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/ajaxindexpro
+[ log ] localhost:8082/index/index/ajaxindexpro [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：2,185.16kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxindexpro',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn; pid12=6553.241',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->ajaxindexpro[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.pid desc [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-10-08T16:24:31+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/ajaxindexpro
+[ log ] localhost:8082/index/index/ajaxindexpro [运行时间：0.045003s][吞吐率：22.22req/s] [内存消耗：2,185.16kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxindexpro',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=165a4943ab4254-0dbe220a614ffe-4446062d-100200-165a4943ab5531; CNZZDATA1273088620=473184444-1536061282-%7C1536061282; Hm_lvt_3e9bce7b8e7cf9ed264dfd145f80b377=1537330845,1537331935; CNZZDATA1274658527=1603155490-1536120789-%7C1538190516; CNZZDATA1273530975=1816218093-1538374954-%7C1538532958; btc_float_value=3; PHPSESSID=0dbht5pagl41qvoeh10grsp821; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NzNkMWRlY2U0NjRjMzA5MjZjMzAyYWFkY2Q1NWM3NzM%253D%22%7D; HFS_SID_=0.303953647147864; btc_btc_value=6580.81; btc_eth_value=57.66; think_var=zh-cn; pid12=6553.241',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/index/index/token/85bbbbc79e4e66482f39f55868217f29.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->ajaxindexpro[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=lenggang;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `pi`.`pid`,`pi`.`ptitle`,`pd`.`Price`,`pd`.`UpdateTime`,`pd`.`Low`,`pd`.`High` FROM `wp_productinfo` `pi` INNER JOIN `wp_productdata` `pd` ON `pd`.`pid`=`pi`.`pid` WHERE  `pi`.`isdelete` = 0 ORDER BY pi.pid desc [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
