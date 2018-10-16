@@ -22,18 +22,17 @@
     <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
 
-
     <!--[if lt IE 9]>
         alert("你的浏览器版本，请更换浏览器，推荐谷歌");
     <![endif]-->
 </head>
 
-<link rel="stylesheet" type="text/css" href="/Public/home/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/Public/home/css/index.min.css" />
 
-<link rel="stylesheet" type="text/css" href="/Public/home/css/send/send.css" />
-<link rel="stylesheet" type="text/css" href="/Public/home/css/send/receive.css" />
+<link rel="stylesheet" type="text/css" href="/Public/home/css/send/send.min.css" />
+<link rel="stylesheet" type="text/css" href="/Public/home/css/send/receive.min.css" />
 
-<link rel="stylesheet" type="text/css" href="/Public/home/css/setting.css" />
+<link rel="stylesheet" type="text/css" href="/Public/home/css/setting.min.css" />
 <style>
 	/*公告*/
     #announcement {width: 128px;  background: #F5F5F5; position: fixed; top: 25%; box-shadow: 1px 3px 10px #ccc; z-index: 2; border-bottom-right-radius: 7px;}
@@ -47,7 +46,7 @@
     #announcement-info-box ul{list-style: none;}
     #announcement-info-box li{margin-bottom: 5px;}
     @media all and (max-width: 770px) {
-        #announcement, .call-callCenter  {display: none !important;}
+        #announcement, .call-callCenter {display: none !important;}
     }
     
 	/*客服*/
@@ -1049,10 +1048,7 @@
     });
 </script>
 		        
-    <link rel="stylesheet" type="text/css" href="/Public/home/css/index.css" />
-	<style>
-		.sh-money { text-align: center; }
-	</style>
+	<style> .sh-money { text-align: center; } </style>
 
 	<!-- 内容容器 -->
     <div class="content-vessel col-lg-8 col-md-8 col-sm-8 col-xs-12">

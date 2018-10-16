@@ -1,7 +1,9 @@
 h3, body, p, ul, li { margin: 0; padding: 0; }
 ul { list-style: none; }
-body { background: #21202D; color: #fff; }
-.yi-container { position: relative; max-width: 1200px; background: #454545; margin: 0 auto; margin-bottom: 80px; }
+body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
+.yi-container { display: none; position: relative; max-width: 1200px; background: #454545; margin: 0 auto; }
+.yi-container header { position: relative; }
+.yi-container header .k-back { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; }
 .yi-container header h3 { text-align: center; padding: 15px 0; letter-spacing: 3px; }
 .yi-price { background: #333; color: red; padding: 25px 0; }
 .yi-price ul { overflow: hidden; }
@@ -11,7 +13,6 @@ body { background: #21202D; color: #fff; }
 .yi-price .t { color: #ccc; position: relative; left: -35px; }
 .yi-time { background: #454545; color: #ccc; height: 20px; padding: 10px; }
 .yi-time>ul { float: right; cursor: pointer; }
-.yi-time>div { color: #FFF; }
 .yi-time>div, .yi-time li { float: left; }
 .yi-time li { margin-left: 25px; }
 .yi-time li.active { color: #FDBE19; border-bottom: 1px solid #FDBE19; }
@@ -25,3 +26,7 @@ body { background: #21202D; color: #fff; }
 .yi-container footer .iconfont { font-size: 25px; }
 .ret-home { position: absolute; bottom: 0; font-size: 40px; right: 0; cursor: pointer; opacity: 0.1; transition: opacity 0.2s; }
 .ret-home:hover { opacity: 1; }
+.layui-layer-content { color: #333; }
+#k-load { z-index: 1; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; font-size: 40px; color: #D83F4E; animation: loading linear 1s infinite; }
+
+@keyframes loading { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

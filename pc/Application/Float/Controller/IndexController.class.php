@@ -85,6 +85,7 @@ class IndexController extends Controller {
 
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
         $info = json_decode($req->httpGet($burl));
+        $info->time = date("H:i:s");
 
         $this->ajaxReturn($info);
     }

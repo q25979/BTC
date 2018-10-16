@@ -1,11 +1,9 @@
 <extend name="Template/home/base.html" />
-
 <include file="Template/home/header.html" />
 <css href="__PLUG-IN__/layui/css/layui.css" />
 
 <!-- 内容 -->
 <block name="content">
-
     <!-- 设定-->
     <div class="content-setting">
         <!--容器-->
@@ -47,7 +45,6 @@
                 </div>
             </div>
             <div class="dash"></div>
-  
 
             <!--基本资讯-->
             <div class="setting-info">
@@ -628,10 +625,8 @@
     </script>
     
     <script>
-    	
     	//银行账号显示
        var bank_url = '__HOST_PATH__/Home/Setting/userBank';
-       
        $.ajax({
        	url:bank_url,
        	type:"get",
@@ -651,5 +646,4 @@
        	}
        })
     </script>
-
 </block>

@@ -14,4 +14,11 @@ class BocaiController extends VerifyController
 	{
 		$this->display();
 	}
+
+	// 獲取餘額
+	public function getbalance()
+	{
+		$result = M('UserAccount')->getFieldByUserId($this->user_id, 'extract_balance');
+		$this->ajaxReturn($result);
+	}
 }

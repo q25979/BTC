@@ -190,3 +190,177 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 ERR: 無法載入模組:Public
 
+[ 2018-10-15T17:36:57+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:39:49+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:45:13+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:46:14+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:46:27+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:47:00+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:47:10+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T17:50:27+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:11:14+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:11:27+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:16:20+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:16:45+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:18:14+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:18:45+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:20:23+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:22:02+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:24:18+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:28:42+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:29:02+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:29:21+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T18:31:36+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:15:09+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:15:19+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:16:07+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:16:23+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:24:26+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:24:43+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:25:53+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-15T19:26:13+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+

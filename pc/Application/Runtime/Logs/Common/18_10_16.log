@@ -1,0 +1,48 @@
+[ 2018-10-16T14:59:38+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T14:59:52+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T15:00:33+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T15:03:31+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T15:03:43+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T15:07:23+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T15:07:48+08:00 ] 192.168.0.128 /Public/home/bocai/echarts.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-16T17:28:07+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 無法載入模組:Public
+

@@ -8,11 +8,12 @@
 	<link rel="stylesheet" id="device" />
 	<script src="__JS__/config.js"></script>
 	<script src="__JS__/jquery-3.2.1.min.js"></script>
+	<script src="__PLUG-IN__/layui-v2.3.0/layui/layui.js"></script>
 	<script>
 		// 判断该使用什么样式 768 900 1080 手机
 		var iWh = $(window).height();
 		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
-		if (iWh < 900 && !m) {
+		if (iWh < 1000 && !m) {
 			$("#device").attr("href", "__PUBLIC__/home/bocai/midding.css")
 		}
 
@@ -21,12 +22,14 @@
 			$("#device").attr("href", "__PUBLIC__/home/bocai/m.css")
 		}
 	</script>
-	<script src="__PUBLIC__/home/bocai/echarts.js"></script>
+	<script src="__PUBLIC__/home/bocai/echarts.min.js"></script>
 	<script src="__PUBLIC__/home/bocai/kdata.js"></script>
 </head>
 <body>
+	<i class="iconfont icon-load" id="k-load"></i>
 	<div class="yi-container">
 		<header>
+			<i class="iconfont icon-back k-back" title="回到首頁" onclick="gohome()"></i>
 			<h3>比特幣</h3>
 		</header>
 		<div class="yi-price">
@@ -47,7 +50,7 @@
 			</ul>
 		</div>
 		<div class="yi-time">
-			<div>11:42:33</div>
+			<div id="yi-server-time">11:42:33</div>
 			<ul>
 				<li class="active">1M</li>
 				<li>5M</li>
@@ -60,25 +63,24 @@
 		<div class="yi-k" id="k"></div>
 		<footer>
 			<ul>
-				<li>
+				<li onclick="balance()">
 					<p><i class="iconfont icon-coins"></i></p>
 					<p>餘額</p>
 				</li>
-				<li>
+				<li onclick="">
 					<p><i class="iconfont icon-value-"></i></p>
 					<p>買漲</p>
 				</li>
-				<li>
+				<li onclick="">
 					<p><i class="iconfont icon-devaluation"></i></p>
 					<p>買跌</p>
 				</li>
-				<li>
+				<li onclick="">
 					<p><i class="iconfont icon-jilu"></i></p>
 					<p>交易記錄</p>
 				</li>
 			</ul>
 		</footer>
-		<i class="ret-home iconfont icon-shouye" title="回到首頁"></i>
 	</div>
 </body>
 </html>

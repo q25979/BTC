@@ -1,33 +1,60 @@
 $(function() {
-	// 获取实时数据1s获取一次
-	setInterval(gettdata, 1000);
-
 	// 5分钟K线  可以根据开盘和收盘价的波动范围 0.5 0.5-2 2-4 4
-	var k = echarts.init(document.getElementById('k'))
+	var k = echarts.init(document.getElementById('k'));
 	// 1min,3min,5min,30min,1hour,1day, 设置K线图
 	var req = {type: '1min'};
+	var option = {};
 	getkdata(req, function(data) {
-		var option = koption(data, req.type);
+		$('#k-load').remove();
+		$('.yi-container').css('display', 'block');
+		option = koption(data, req.type);
+		
+		var setkdata = function() {
+			gettdata();	// 获取实时数据
+			option.dataZoom[0].start = zoom.start;
+			option.dataZoom[0].end = zoom.end;
+			option.series[0].markLine.data[0].yAxis = tdata.open;
+			k.setOption(option, true);
+			k.resize();	// 重置大小
+		}
+		setInterval(setkdata, 1000);
+	});
 
-		setInterval(function() {
-			option.dataZoom[0].start = zoom.start
-			option.dataZoom[0].end = zoom.end
-			option.series[0].markLine.data[0].yAxis = tdata.open
-			k.setOption(option)
-		}, 1000)
+	// K线图切换
+	$('.yi-time li').each(function(idx) {
+		$(this).click(function() {
+			var atype = ['1min', '5min', '15min', '30min', '1hour', '1day'];
+			var req = {type: atype[idx]};
+
+			$('.yi-time li').removeClass('active');
+			$($('.yi-time li')[idx]).addClass('active');
+			layer.load(2);
+			getkdata(req, function(data) {
+				layer.closeAll();
+				zoom.start = 80;
+				zoom.end = 100;
+				option = koption(data, req.type);
+			})
+		})
 	})
 
 	// chart事件
 	k.on('dataZoom', function(data) {
 		// 拖动
 		if (data.batch == undefined) {
-			zoom.start = data.start
-			zoom.end = data.end
+			zoom.start = data.start;
+			zoom.end = data.end;
 		} else {
-			zoom.start = data.batch[0].start
-			zoom.end = data.batch[0].end
+			// 滚动
+			zoom.start = data.batch[0].start;
+			zoom.end = data.batch[0].end;
 		}
-	})
+	});
+
+	// 加载layui
+	layui.define('layer', function(exports) {
+		var layer = layui.layer
+	});
 })
 
 // 设置全局变量
@@ -69,6 +96,7 @@ function gettdata() {
 		$($(".yi-number")[1]).css('color', ccollect);
 		$($(".yi-number")[2]).css('color', clow);
 		$($(".yi-number")[3]).css('color', chigh);
+		$("#yi-server-time").text(res.time)
 	});
 }
 
@@ -259,4 +287,22 @@ function koption(res, type) {
 	];
 
 	return option;
+}
+
+/**
+ * 事件函数处理
+ */
+function balance() {
+	layer.load(2);
+	$.get(config.host_path+'/Home/Bocai/getbalance', function(res) {
+		layer.closeAll();
+		layer.alert("您的餘額為：NT$ " + res);
+	})
+}
+
+/**
+ * 返回首页
+ */
+function gohome() {
+	window.location.href = config.host_path
 }

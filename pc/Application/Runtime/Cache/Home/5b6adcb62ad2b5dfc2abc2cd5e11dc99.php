@@ -22,7 +22,6 @@
     <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
 
-
     <!--[if lt IE 9]>
         alert("你的浏览器版本，请更换浏览器，推荐谷歌");
     <![endif]-->
