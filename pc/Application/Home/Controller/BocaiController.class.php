@@ -21,4 +21,16 @@ class BocaiController extends VerifyController
 		$result = M('UserAccount')->getFieldByUserId($this->user_id, 'extract_balance');
 		$this->ajaxReturn($result);
 	}
+
+	// 买
+	public function deal()
+	{
+		$type = I('get.type');
+		$title = $type == 1 ? "買漲" : "買跌";
+
+		$this->assign([
+			'title'	=> $title
+		]);
+		$this->display();
+	}
 }

@@ -2,8 +2,9 @@ $(function() {
 	// 5分钟K线  可以根据开盘和收盘价的波动范围 0.5 0.5-2 2-4 4
 	var k = echarts.init(document.getElementById('k'));
 	// 1min,3min,5min,30min,1hour,1day, 设置K线图
-	var req = {type: '1min'};
+	var req = {type: '5min'};
 	var option = {};
+	loader();
 	getkdata(req, function(data) {
 		$('#k-load').remove();
 		$('.yi-container').css('display', 'block');
@@ -306,3 +307,56 @@ function balance() {
 function gohome() {
 	window.location.href = config.host_path
 }
+
+/**
+ * 加载
+ */
+function loader() {
+	var circle = new Sonic({
+		width: 100,
+		height: 50,
+		padding: 10,
+		stepsPerFrame: 2,
+		trailLength: 1,
+		pointDistance: .03,
+		strokeColor: '#6B9EFE',
+		step: 'fader',
+		fps: 40,
+		multiplier: 2,
+		setup: function() {
+			this._.lineWidth = 5;
+		},
+		path: [
+			['arc', 10, 10, 10, -270, -90],
+			['bezier', 10, 0, 40, 20, 20, 0, 30, 20],
+			['arc', 40, 10, 10, 90, -90],
+			['bezier', 40, 0, 10, 20, 30, 0, 20, 20]
+		]
+	});
+
+	$('#k-load').append(circle.canvas);
+	circle.play();
+}
+
+/**
+ * 買
+ * @param int type 類型1-買漲 2-買跌
+ */
+function deal(type) {
+	var u = config.host_path + "/Home/Bocai/deal/type/"+type
+	layer.open({
+		type: 2,
+		content: u,
+		area: dealArea,
+		title: "確認訂單",
+		skin: "deal-class",
+		resize: false,
+		move: false,
+		scrollbar: false
+	})
+}
+
+/**
+ * 交易記錄
+ */
+function record() {}

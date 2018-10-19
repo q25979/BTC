@@ -27,6 +27,9 @@ body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
 .ret-home { position: absolute; bottom: 0; font-size: 40px; right: 0; cursor: pointer; opacity: 0.1; transition: opacity 0.2s; }
 .ret-home:hover { opacity: 1; }
 .layui-layer-content { color: #333; }
-#k-load { z-index: 1; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; font-size: 40px; color: #D83F4E; animation: loading linear 1s infinite; }
+#k-load {z-index: 1; position: absolute; top: 50%; left: 50%; margin: -40px 0 0 -40px;}
 
-@keyframes loading { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+body .deal-class .layui-layer-title{background:#228B22; color:#fff; border: none;}
+body .deal-class .layui-layer-btn{border-top:1px solid #E9E7E7}
+body .deal-class .layui-layer-btn a{background:#fff;}
+body .deal-class .layui-layer-btn .layui-layer-btn1{background:#ccc;}

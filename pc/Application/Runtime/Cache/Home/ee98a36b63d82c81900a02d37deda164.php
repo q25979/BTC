@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
     <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/base.css" />
 
 	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
