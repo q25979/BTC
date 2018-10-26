@@ -1,6 +1,38 @@
-<include file="Template/admin/header.html" />
+<?php if (!defined('THINK_PATH')) exit();?><head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<css href="__CSS__/bootstrap.min.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
+
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
+    
+
+	<!--[if lt IE 9]>
+        alert("你的浏览器版本，请更换浏览器，推荐谷歌");
+    <![endif]-->
+</head>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -31,7 +63,7 @@
    
         var tableReload = table.render({
             elem: "#UserList",
-            url: "<{:U('User/getUserInfo')}>",
+            url: "<?php echo U('User/getUserInfo');?>",
             page: true,
             cols: [[
                 {field: 'user_name', title: '用户名', align: 'center', width: 140, templet: '#showLogo',fixed: 'left'}
@@ -72,12 +104,12 @@
                     btn: ['是','否'],
                     yes: function (res) {
 
-                        var url = "<{:U('recoverUser')}>";
+                        var url = "<?php echo U('recoverUser');?>";
                         var _data = {
                             user_id: data.user_id,
                             status: data.status,
                             nonce_str: nonce_str,
-                            sign: hex_md5("__VERIFY_STR__" + nonce_str + data.status + data.user_id)
+                            sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + nonce_str + data.status + data.user_id)
                     };
 
                         $.ajax({
@@ -110,12 +142,12 @@
                     btn: ['是','否'],
                     yes: function (res) {
 
-                        var url = "<{:U('disableUser')}>";
+                        var url = "<?php echo U('disableUser');?>";
                         var _data = {
                             user_id: data.user_id,
                             nonce_str: nonce_str,
                             status: data.status,
-                            sign: hex_md5("__VERIFY_STR__" + nonce_str + data.status + data.user_id)
+                            sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + nonce_str + data.status + data.user_id)
                         };
                         $.ajax({
                             url: url,
@@ -135,7 +167,7 @@
             }
             if (layEvent == 'modification') {
 
-                var url ="__HOST_PATH__/Admin/User/Userupdate.html?id=" + data.user_id;
+                var url ="http://192.168.0.128:8081/Admin/User/Userupdate.html?id=" + data.user_id;
                 console.log(url);
 
                 layer.open({
@@ -151,7 +183,7 @@
         // 搜索
         function searchUser() {
 
-            var url = "<{:U(getUser)}>";
+            var url = "<?php echo U(getUser);?>";
             var data = {
                 user_name: $('#user_name').val()
             };

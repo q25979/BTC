@@ -23,25 +23,15 @@ class UserController extends VerifyController {
      * @param limit 条数
      */
     public function getUserInfo(){
-
         $getData=I('get.');
-
         $User=M('user');
-
         $map['is_deleted'] = IS_NOT_DELETED;
-
         $info = $User->where($map)->page($getData['page'],$getData['limit'])->order('create_time desc')->select();
-
         $result = \StatusCode::code(0);
-
         $result['count'] = $User->count();
-
         $info = $this->setStatus($info);
-
         $result['data'] = $info;
-          
         $this->ajaxReturn($result);
-
     }
 
     /**
@@ -52,19 +42,12 @@ class UserController extends VerifyController {
      * @param user_id
      */
     public function UserInfo(){
-
         $getData=I('post.');
-
         $User=M('User');
-
         $map['user_id'] = $getData['user_id'];
-
         $info = $User->where($map)->field('user_name,password,email,tel,certificate_type,certificate_num')->select();
-
         $result = \StatusCode::code(0);
-
         $result['data'] = $info;
-          
         $this->ajaxReturn($result);
 
     }
@@ -80,11 +63,7 @@ class UserController extends VerifyController {
         $User=M('User');
 
         $getData=I('post.');
-
         $map['user_id'] = $getData['user_id'];
-
-        $getData['password'] = MD5(VERIFY_STR.$getData['password']);
-        
         $data =$User->where($map)->save($getData);
 
         if($data < 1){

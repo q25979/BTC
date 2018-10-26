@@ -1,0 +1,221 @@
+<?php if (!defined('THINK_PATH')) exit();?><head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
+
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
+    
+
+	<!--[if lt IE 9]>
+        alert("你的浏览器版本，请更换浏览器，推荐谷歌");
+    <![endif]-->
+</head>
+
+
+
+
+
+<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery.qrcode.min.js"></script>
+<style>
+    .layui-elem-quote{font-size: 15px;}
+    .num, .name, .wx_access{font-size: 18px; color: #666; font-family: '微软雅黑';}
+    .right {margin: 0 15px 0 30px;}
+    .layui-btn {background-color: #62b900;}
+    .item {height: 40px; line-height: 40px;}
+    .show-cotent {width: 100%; height: 100%; padding-top: 20px; box-sizing: border-box; text-align: center;}
+    .show-code {width: 180px; height: 180px; margin: 0 auto;}
+    .layui-icon, .iconfont {color: #505050;}
+    .oldpass,.newpass,.surepass{font-size:16px; margin-left:15%; display:inline-block;}
+    .layui-input {display: inline; width: 65%; position: relative; left: 20%; border:1px solid #ddd; font-size:13px; }
+    .layui-btn-normal{position: relative; left: 60%; margin: 20px 0 0 0; width: 100px;}
+    .changepass {padding: 20px; }
+</style>
+<body>
+    <div class="x-body">
+        <blockquote class="layui-elem-quote">邮箱管理</blockquote>
+        
+        <div>
+            <div class="item">
+                <i class="iconfont" >&#xe6b8;</i>
+                <span style="font-size: 17px; color: #666;">邮箱类型：</span>
+                <span class="email_type right"></span>
+            </div>
+
+            <hr class="hr15"/>
+
+            <div class="item">
+                <i class="layui-icon">&#xe63b;</i>
+                <span style="font-size: 17px; color: #666;">邮箱号码：</span>
+                <span class="email right"></span>
+            </div>
+
+            <hr class="hr15"/>
+
+            <div class="item">
+                <i class="layui-icon">&#xe630;</i>
+                <span style="font-size: 17px; color: #666;">邮箱密码：</span>
+                <span class="email_password right"></span>
+            </div>
+
+
+        </div>
+
+        <hr class="hr1"/>
+        <span class="site-demo-button" >
+            <button data-method="offset" id="layerDemo" data-type="auto" class="layui-btn" style="background-color: #009688 !important;">账户修改</button>
+            <span class="right"></span>     <!--添加空格防止拥挤-->
+
+            <button data-method="setPass" id="setPass" data-type="auto" class="layui-btn" style="background-color: #009688 !important;">密码修改</button>
+            <span class="right"></span>     <!--添加空格防止拥挤-->
+        </span>
+    </div>
+</body>
+
+<script>
+
+    var code;
+
+    var html = '<div class="changepass">';
+        html += '<div class="oldpass">';
+        html += '原密码：　'
+        html += '<input type="password" class="layui-input" id="oldpass" placeholder="请输入原密码">';
+        html += '</div>';
+        html += '<hr class="hr15">';
+        html += '<div class="newpass">';
+        html += '新的密码：';
+        html += '<input type="password" class="layui-input" id="newpass" placeholder="请输入新的密码">';
+        html += '</div>';
+        html += '<hr class="hr15" />';
+        html += '<div class="surepass">';
+        html += '确认密码：';
+        html += '<input type="password" class="layui-input" id="surepass" placeholder="请确认密码">';
+        html += '</div>';
+        html += '<div><button class="layui-btn layui-btn-normal savepass">确认</button></div>';
+        html += '</div>';
+   
+    $.ajax({
+        url : '<?php echo U(Email);?>',
+        type: 'get',
+        success: function (res) {
+
+            if ( res.data.length == 0 ) {
+                layer.msg('信息请求成功！', {icon: 5});
+                return false;
+            }
+
+            $(".email_type").html(res.data[0]['email_name']);
+            $('.email').html(res.data[0]['email_account']);
+            $('.email_password').html(res.data[0]['email_password']);
+
+            layer.closeAll();
+
+        }
+    });
+
+    // 32位随机数
+    var nonce_str = nonceStr(32);
+
+
+    // 修改邮箱信息
+    layui.use('layer',function(){
+
+        var $ = layui.jquery, layer = layui.layer;
+
+        var update = "<?php echo U(EmailUpdate);?>";
+
+        $('#layerDemo').on('click', function () {
+
+            layer.open({
+                type: 2,
+                title: '邮箱信息',
+                area: ['50%', '60%'],
+                content: update,
+                btnAlign: 'c',
+                yes: function () {
+                    layer.closeAll();
+                }
+            });
+            $('#code').attr('src', code);
+        });
+
+        $('#setPass').on('click', function () {
+            layer.open({
+                type: 1,
+                title: '邮箱信息',
+                area: ['50%', '70%'],
+                content: html,
+                btnAlign: 'c',
+                btn: '关闭',
+                yes: function () {
+                    layer.closeAll();
+                }
+            });
+
+        // 修改密码保存按钮
+        $('.savepass').on('click', function (){
+            changepass();
+        });
+
+    //修改新密码
+    function changepass () {
+
+        // 获取原密码，新密码，确认密码
+        var oldpass = $('#oldpass').val();
+        var newpass = $('#newpass').val();
+        var surepass = $('#surepass').val();
+
+        if(oldpass == '' || newpass =='' || surepass == '') {
+            layer.msg('输入的密码不能为空！', {icon: 2});
+            return ;
+        }
+
+        // 请求链接 请求数据
+        var data = {
+            oldpass : $('#oldpass').val(),
+            newpass : $('#newpass').val(),
+            nonce_str : nonce_str,
+            sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + $('#newpass').val() + nonce_str + $('#oldpass').val())
+        }
+        layer.load(2);
+        // 数据请求
+        $.ajax({
+            url : '<?php echo U(passupdate);?>',
+            data : data,
+            type : 'post',
+            success : function(res){
+                console.log(res);
+                layer.closeAll();
+
+                if(parseInt(res.code) == 0) {
+                    layer.msg('修改成功！', {icon: 1}, function(){
+                        // 刷新
+                        location.reload();
+                    })
+                }else{
+                    layer.msg('原密码错误！修改失败', {icon : 2});
+                }
+            }
+        });
+    }
+
+    });
+});
+
+    
+</script>

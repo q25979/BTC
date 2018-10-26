@@ -16,7 +16,7 @@
 		<div class="l fl clearfix">
 			<div class="time fl">
 				<div class="mb-3">倒計時</div>
-				<div>02:20</div>
+				<div>00:00</div>
 			</div>
 			<div class="money fr">
 				<div class="mb-6">金額</div>
@@ -26,6 +26,7 @@
 					<span class="span">1000</span>
 					<span class="span">5000</span>
 					<span class="span">其它</span>
+					<input type="number" name="other" />
 				</div>
 				<div class="mb-6 mt-15">交易類型</div>
 				<div class="type">
@@ -34,7 +35,10 @@
 				</div>
 				<div class="mb-3 mt-15">餘額</div>
 				<div class="balance">
-					<span>NT$: 58482.15</span>
+					<span id="balance">NT$: 00.00</span>
+					<button class="update" title="刷新餘額" onclick="refresh()">
+						<i class="layui-icon layui-icon-refresh-1"></i>
+					</button>
 				</div>
 			</div>
 			<div class="order fl">
@@ -42,7 +46,7 @@
 					<thead>
 						<tr>
 							<th>訂單ID</th>
-							<th>方向</th>
+							<th>購買方向</th>
 							<th>最終方向</th>
 							<th>金額</th>
 							<th>期數</th>
@@ -152,7 +156,7 @@
 				<div class="mb-3 mt-15">期數</div>
 				<div class="label-bg">58</div>
 				<div class="confirm mt-15">确认下单</div>
-				<div class="flag mt-15">BTC</div>
+				<div class="flag" style="background-image:url('/Public/home/bocai/btc.png')"></div>
 			</div>
 		</div>
 	</div>

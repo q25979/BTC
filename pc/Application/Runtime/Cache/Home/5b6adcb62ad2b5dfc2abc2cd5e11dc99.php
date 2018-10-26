@@ -800,14 +800,6 @@
         <!-- nav end-->
         <!-- login start -->
         <div class="container-login" id="container-login">
-        	<div id="QR-code-PC">
-    				<img src="/Public/images/b.jpg" width="300px" height="300px" style="border: 5px solid #3388BB;"/>
-            		<div id="QR-code-PCBOX">
-						<img src="/Public/images/QR-code.png" width="150px" height="150px" style="border: 5px solid #3388BB;"/>
-						<p style="color: yellow;font-size: 26px;margin-top: 10px;"><?php echo (L("_MONEY_MICRO_PLATFORM_")); ?></p>
-						<p style="color: yellow;font-size: 26px;margin-top: 10px;margin-bottom: 0;"><?php echo (L("_DOWNLOAD_CLIENT_SIDE_")); ?></p>
-            		</div>
-				</div>
             <div class="banner max-width">
                 <div class="login">
                     <div id="sh_tab">
@@ -985,14 +977,6 @@
                 </div>
             </div>
         </div>
-        
-    	<div id="QRCode-login-phone">
-    		<div id="QRCode-login-phone-BOX">
-    			<img src="/Public/images/QR-code.png" class="QRCode-login-phone-img" style="margin-right: 5px;"/>
-				<img src="/Public/images/b.jpg" class="QRCode-login-phone-img"/>
-    		</div>
-			<p style="font-size: 20px;color: #3388bb;"><?php echo (L("_PERSONAL_NOTICE_")); ?></p>
-		</div>
 
         <!-- login end -->
         <!-- 服务开始 -->

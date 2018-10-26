@@ -1,6 +1,38 @@
-<include file="Template/admin/header.html" />
+<?php if (!defined('THINK_PATH')) exit();?><head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<css href="__CSS__/bootstrap.min.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
+
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
+    
+
+	<!--[if lt IE 9]>
+        alert("你的浏览器版本，请更换浏览器，推荐谷歌");
+    <![endif]-->
+</head>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -70,7 +102,7 @@
     }
 
     var user_id = GetRequest().id;
-    var SetInfo_url = '__HOST_PATH__/Admin/User/UserInfo';
+    var SetInfo_url = 'http://192.168.0.128:8081/Admin/User/UserInfo';
 
     $.ajax({
         url: SetInfo_url,
@@ -99,7 +131,7 @@
 
     // 提交
     $('.saveData').click(function(){
-        var url_saveuser = "<{:U(saveUser)}>"; // 请求接口
+        var url_saveuser = "<?php echo U(saveUser);?>"; // 请求接口
         var data_saveuser = {
             user_id: user_id,
             user_name: $('#user_name').val(),
@@ -131,7 +163,7 @@
     switchSite();
     //获取权限，identity为1是显示钱包地址，其他隐藏
     function switchSite(){
-        var url_switchSite = "__HOST_PATH__/Admin/Index/identity";
+        var url_switchSite = "http://192.168.0.128:8081/Admin/Index/identity";
         $.ajax({
             type:"post",
             url:url_switchSite,

@@ -1,6 +1,38 @@
-<include file="Template/admin/header.html" />
+<?php if (!defined('THINK_PATH')) exit();?><head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<css href="__CSS__/bootstrap.min.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
+
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
+    
+
+	<!--[if lt IE 9]>
+        alert("你的浏览器版本，请更换浏览器，推荐谷歌");
+    <![endif]-->
+</head>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -35,7 +67,7 @@
         var nonce_str = nonceStr(32);//随机32个随机数
         var tableReload = table.render({
             elem: "#Accountlist",
-            url: "<{:U('Account/getAccountList')}>",
+            url: "<?php echo U('Account/getAccountList');?>",
             page: true,
             cols: [[
                  {field: 'user_name', title: '用户名', align: 'center', width: 150,templet: '#showimg', fixed: 'left'}
@@ -79,10 +111,10 @@
                         var money = $("input[name ='textContent']").val();
                         layer.closeAll();
                         //Ajax获取
-                        $.post('<{:U('Account/updataFreeze')}>', 
+                        $.post('<?php echo U('Account/updataFreeze');?>', 
                         {account_id : data.account_id,type : 1, money:money,
                         nonce_str : nonce_str,
-                        sign: hex_md5("__VERIFY_STR__" + data.account_id + nonce_str)}, // 发送签名
+                        sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + data.account_id + nonce_str)}, // 发送签名
                          function(str){
                             if (str.code == 0) {
                                 layer.open({
@@ -131,10 +163,10 @@
                         var money = $("input[name ='textContent']").val();
                         layer.closeAll();
                         //Ajax获取
-                        $.post('<{:U('Account/updataFreeze')}>', 
+                        $.post('<?php echo U('Account/updataFreeze');?>', 
                         {account_id : data.account_id,type : 2, money:money,
                         nonce_str : nonce_str,
-                        sign: hex_md5("__VERIFY_STR__" + data.account_id + nonce_str)}, // 发送签名
+                        sign: hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + data.account_id + nonce_str)}, // 发送签名
                          function(str){
                             console.log(str);
                             if (str.code == 0) {
@@ -166,7 +198,7 @@
             }
 
             if (layEvent == 'modification') {
-                var url ="__HOST_PATH__/Admin/Account/AccountUpdata.html?id=" + data.account_id;
+                var url ="http://192.168.0.128:8081/Admin/Account/AccountUpdata.html?id=" + data.account_id;
 
                 layer.open({
                     type: 2,
@@ -179,7 +211,7 @@
 
         // 搜索
         function searchUser() {
-            var url = "<{:U(getAccount)}>";
+            var url = "<?php echo U(getAccount);?>";
             var data = {
                 user_name: $('#user_name').val()
             };

@@ -16,16 +16,34 @@ body,p {margin:0;font-family:"微软雅黑";font-size:14px;}
 .deal-container>.l>.time>div:nth-child(2){padding:10px;color:forestgreen;width:90%;height:130px;line-height:130px;text-align:center;font-size:102px;background:#f2f2f2;border:1px solid #E6E6E6;}
 .deal-container>.l>.money{width:65%;}
 .money .balance{color:orangered;font-size:16px;font-weight:bold;}
+.money input{border:1px solid #ccc;height:20px;width:70px;border-radius:2px;padding:0 8px;display:none;}
 .deal-container>.l>.order{width:100%; height:65%;margin-top:-5px;overflow: hidden;}
 .deal-container>.l>div{height: 35%;}
 .deal-container>.r{width:20%;}
 .deal-container>.r>div{padding: 0 10px;}
 .r .now-price{}
 .r .confirm{width:100%;height:45px;line-height:45px;cursor:pointer;background:#228B22;color:white;text-align:center;font-size:14px;}
+.balance>.update{cursor:pointer;width:20px;height:20px;font-size:10px;border:0px solid #ccc; background:white;border-radius:2px;}
+.balance>.update .layui-icon{color:#888;}
+.r .flag{height:200px;background-size:100%;background-repeat:no-repeat;margin-top:35px;}
+._360{animation:_360 1s infinite linear;}
 
 .order>.layui-table, .layui-table-view {margin:0;}
 .order>.layui-table tbody tr:hover{background:white;}
 
 @media screen and (min-width: 700px) and (max-width: 1000px) {
+	body{font-size:12px !important;}
+	.deal-container{padding:5px;}
 	.l,.r{height:418px;}
+	.deal-container>.l>.time>div:nth-child(2){height:90px;line-height:90px;font-size:80px;}
+	.label-bg{font-size:30px;height:60px;line-height:60px;}
+	.mt-15{margin-top:7px;}
+	.mb-6{margin-bottom:2px;}
+	.mb-3{margin-bottom:0;}
+	.r .flag{margin-top:16px;}
+}
+
+@keyframes _360 {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
 }

@@ -15,7 +15,7 @@
 		var iWh = $(window).height();
 		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
 		var dealArea = ['1100px', '600px'];
-		if (iWh < 1000 && !m) {
+		if (iWh < 900 && !m) {
 			$("#device").attr("href", "/Public/home/bocai/midding.css");
 			var dealArea = ['980px', '480px'];
 		}

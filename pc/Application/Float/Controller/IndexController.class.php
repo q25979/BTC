@@ -96,7 +96,7 @@ class IndexController extends Controller {
     public function getkdata()
     {
         $type = I('get.type');
-        $url = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=500";
+        $url = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=200";
 
         $data = \Request::httpGet($url);
         $this->ajaxReturn($data);

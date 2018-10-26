@@ -1,0 +1,54 @@
+[ 2018-10-23T17:48:53+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000764s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T17:49:15+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T17:50:23+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T17:50:40+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T17:51:36+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T18:08:47+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T18:08:53+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T18:09:36+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+ERR: 無法載入模組:Public
+
+[ 2018-10-23T18:09:48+08:00 ] 192.168.0.128 /Public/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+ERR: 無法載入模組:Public
+

@@ -7,19 +7,19 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
 
-	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
-	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
     
 
 	<!--[if lt IE 9]>
@@ -34,7 +34,7 @@
 <!--logo 样式-->
 <link rel="stylesheet" type="text/css" href="/Public/css/topLogo.css" />
 
-<script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
 
 <style>
 	.oldpass,.newpass,.surepass{font-size:16px; margin-left:15%; display:inline-block;}
@@ -82,7 +82,7 @@
 	});
 
 	var init = function() {
-		var u = 'http://localhost:8081/Admin/Index/init';
+		var u = 'http://192.168.0.128:8081/Admin/Index/init';
 
 		$.get(u, function(res) {
 			if (parseInt(res.count) == 0) return ;
@@ -149,7 +149,7 @@
 
 	// 消息提示
 	function informationHint(){
-		var url = "http://localhost:8081/Admin/Index/informationHint";
+		var url = "http://192.168.0.128:8081/Admin/Index/informationHint";
 	 	$.get(url,function(res){
 	 	//配置一个透明的询问框
 		    layer.msg("您还有"+res.countOrder+"个待提交订单和"+res.countSend+"个待提交发送单未处理！", {
@@ -173,7 +173,7 @@
 			content: "确定要"+ msg +"当前账号吗？",
 			btn: ["确定", "取消"],
 			yes: function (res) {
-				var url = "http://localhost:8081" + "/Admin/Index/logout";
+				var url = "http://192.168.0.128:8081" + "/Admin/Index/logout";
 
 				layer.load(2);
 				$.ajax({
@@ -222,7 +222,7 @@
 		}
 
 		// 请求链接 请求数据
-		var url = "http://localhost:8081" + "/Admin/Index/changepass";
+		var url = "http://192.168.0.128:8081" + "/Admin/Index/changepass";
 		var data = {
 			pass_word : hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + $('#oldpass').val()),
 			newpass : hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + $('#newpass').val())
@@ -518,6 +518,28 @@
                 </li>
             </ul>
         </li>
+
+        <li>
+            <a href="javascript:;">
+                <i class="layui-icon">&#xe624;</i>
+                <cite>微平台管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a _href="<?php echo U('Bocai/index');?>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>信息统计</cite>
+                    </a> 
+                </li>
+                <li>
+                    <a _href="<?php echo U('Bocai/set');?>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>开盘设置</cite>
+                    </a> 
+                </li>
+            </ul>
+        </li>
     </ul>
   </div>
 </div>
@@ -526,7 +548,7 @@
 	switchSite();
 	//获取权限，identity为1是显示钱包地址，其他隐藏
 	function switchSite(){
-		var url_switchSite = "http://localhost:8081/Admin/Index/identity";
+		var url_switchSite = "http://192.168.0.128:8081/Admin/Index/identity";
 		
 		$.ajax({
 			type:"post",
@@ -558,7 +580,7 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='http://localhost:8081/Template/admin/welcome.php' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe src='http://192.168.0.128:8081/Template/admin/welcome.php' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
           </div>
         </div>

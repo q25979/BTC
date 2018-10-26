@@ -32,7 +32,7 @@ $(function() {
 			layer.load(2);
 			getkdata(req, function(data) {
 				layer.closeAll();
-				zoom.start = 80;
+				zoom.start = 60;
 				zoom.end = 100;
 				option = koption(data, req.type);
 			})
@@ -61,7 +61,7 @@ $(function() {
 // 设置全局变量
 var tdata = { open: 0, collect: 0, high: 0, low: 0 },
 	tcolor = ['#D83F4E', '#1FC65B'],	// 颜色 0-red
-	zoom  = { start: 80, end: 100 }		// 初始化dataZoom
+	zoom  = { start: 60, end: 100 }		// 初始化dataZoom
 
 /**
  * 获取实时数据
@@ -292,6 +292,7 @@ function koption(res, type) {
 
 /**
  * 事件函数处理
+ * 获取余额
  */
 function balance() {
 	layer.load(2);

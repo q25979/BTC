@@ -7,19 +7,19 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/plug-in/layui/css/layui.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
 
-	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
-	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.128:8081/Public/js/function.js"></script>
     
 
 	<!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="http://192.168.0.128:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .layui-elem-quote {font-size: 15px;color: #666}
@@ -87,7 +87,7 @@
 </body>
 
 <script>
-    $.get('http://localhost:8081/Admin/System/getExchange', function(res) {
+    $.get('http://192.168.0.128:8081/Admin/System/getExchange', function(res) {
         $('[name=usd]').val(1.0000)
         $('[name=hkd]').val(res.data.hkd)
         $('[name=twd]').val(res.data.twd)
@@ -95,7 +95,7 @@
 
     // 修改
     function update() {
-        var u = 'http://localhost:8081/Admin/System/updateExchange',
+        var u = 'http://192.168.0.128:8081/Admin/System/updateExchange',
             d = {
                 id: 1,
                 usd: 1,
@@ -119,7 +119,7 @@
 
     // 刷新缓存
     function refresh() {
-        var u = 'http://localhost:8081/Admin/System/refresh',
+        var u = 'http://192.168.0.128:8081/Admin/System/refresh',
             d = {
                 name: 'exchange'
             }
