@@ -8,6 +8,7 @@
 	<link rel="stylesheet" id="device" />
 	<script src="http://192.168.0.128:8081/Public/js/config.js"></script>
 	<script src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://192.168.0.128:8081/Public/js/jquery.cookie.js"></script>
 	<script src="http://192.168.0.128:8081/Public/js/sonic.js"></script>
 	<script src="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 	<script>

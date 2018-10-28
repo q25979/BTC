@@ -17,12 +17,13 @@ class BocaiController extends VerifyController {
 	    	
 	    	foreach ($list as $key => $value) {
 	    		// 1-00:00
-	    		$temp = ($value['number']-1)*5;
+	    		$temp = ($value['number']-1)*5+5;
 	    		$hour = $temp/60;	// 取整就是小时
 	    		$temp = $temp%60;
 	    		$minue = $temp < 10 ? '0'.$temp : $temp;
 	    		$hour = $hour < 10 ? '0'.(int)$hour : (int)$hour;
 	    		$list[$key]['time'] = $hour.':'.$minue;
+                if ($list[$key]['time'] == '24:00') $list[$key]['time'] = '00:00';
 	    	}
 
 			$this->ajaxReturn([

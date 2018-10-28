@@ -8,7 +8,8 @@
 	<link rel="stylesheet" href="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
 	<script src="http://192.168.0.128:8081/Public/js/config.js"></script>
 	<script src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+	<script src="http://192.168.0.128:8081/Public/js/jquery.cookie.js"></script>
+	<script src="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layer/layer.js"></script>
 	<script src="/Public/home/bocai/deal.js"></script>
 </head>
 <body>
@@ -26,7 +27,7 @@
 					<span class="span">1000</span>
 					<span class="span">5000</span>
 					<span class="span">其它</span>
-					<input type="number" name="other" />
+					<input type="number" name="other" value="0" />
 				</div>
 				<div class="mb-6 mt-15">交易類型</div>
 				<div class="type">
@@ -40,6 +41,7 @@
 						<i class="layui-icon layui-icon-refresh-1"></i>
 					</button>
 				</div>
+				<div id="prev">上一期: 無</div>
 			</div>
 			<div class="order fl">
 				<table class="layui-table" lay-size="sm" lay-skin="line">
@@ -152,10 +154,10 @@
 		<div class="r fr">
 			<div>
 				<div class="mb-3">現價</div>
-				<div class="label-bg now-price">6592.24</div>
+				<div class="label-bg now-price">00.00</div>
 				<div class="mb-3 mt-15">期數</div>
-				<div class="label-bg">58</div>
-				<div class="confirm mt-15">确认下单</div>
+				<div class="label-bg" id="openNumber">00</div>
+				<div class="confirm mt-15" onclick="okorder()">確認下單</div>
 				<div class="flag" style="background-image:url('/Public/home/bocai/btc.png')"></div>
 			</div>
 		</div>

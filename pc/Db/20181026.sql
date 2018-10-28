@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-26 14:34:09
+Date: 2018-10-28 11:22:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1854,12 +1854,18 @@ DROP TABLE IF EXISTS `btc_w_closeset`;
 CREATE TABLE `btc_w_closeset` (
   `id` int(4) unsigned NOT NULL,
   `set` tinyint(1) DEFAULT '0' COMMENT '0-表示开盘  1-表示休盘',
+  `last` float(16,4) DEFAULT '0.0000' COMMENT '最终价格',
+  `open` float(16,4) DEFAULT '0.0000' COMMENT '开盘',
+  `low` float(16,4) DEFAULT '0.0000' COMMENT '最低',
+  `high` float(16,4) DEFAULT '0.0000' COMMENT '最高',
+  `update_time` int(16) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='休市设置';
 
 -- ----------------------------
 -- Records of btc_w_closeset
 -- ----------------------------
+INSERT INTO `btc_w_closeset` VALUES ('1', '0', '6504.8501', '6504.6001', '6479.8398', null, null);
 
 -- ----------------------------
 -- Table structure for btc_w_minlog
@@ -1888,12 +1894,299 @@ CREATE TABLE `btc_w_minlog` (
 -- ----------------------------
 DROP TABLE IF EXISTS `btc_w_openset`;
 CREATE TABLE `btc_w_openset` (
-  `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `number` int(4) unsigned NOT NULL COMMENT '期数：一天288期',
-  `set` tinyint(1) NOT NULL COMMENT '设置开盘涨/跌 0-涨 1-跌',
-  PRIMARY KEY (`id`,`number`)
+  `set` tinyint(1) NOT NULL DEFAULT '0' COMMENT '设置开盘涨/跌 0-涨 1-跌',
+  PRIMARY KEY (`number`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='开盘设置';
 
 -- ----------------------------
 -- Records of btc_w_openset
 -- ----------------------------
+INSERT INTO `btc_w_openset` VALUES ('1', '1');
+INSERT INTO `btc_w_openset` VALUES ('2', '0');
+INSERT INTO `btc_w_openset` VALUES ('3', '0');
+INSERT INTO `btc_w_openset` VALUES ('4', '0');
+INSERT INTO `btc_w_openset` VALUES ('5', '0');
+INSERT INTO `btc_w_openset` VALUES ('6', '0');
+INSERT INTO `btc_w_openset` VALUES ('7', '1');
+INSERT INTO `btc_w_openset` VALUES ('8', '0');
+INSERT INTO `btc_w_openset` VALUES ('9', '0');
+INSERT INTO `btc_w_openset` VALUES ('10', '1');
+INSERT INTO `btc_w_openset` VALUES ('11', '0');
+INSERT INTO `btc_w_openset` VALUES ('12', '0');
+INSERT INTO `btc_w_openset` VALUES ('13', '0');
+INSERT INTO `btc_w_openset` VALUES ('14', '0');
+INSERT INTO `btc_w_openset` VALUES ('15', '0');
+INSERT INTO `btc_w_openset` VALUES ('16', '0');
+INSERT INTO `btc_w_openset` VALUES ('17', '0');
+INSERT INTO `btc_w_openset` VALUES ('18', '0');
+INSERT INTO `btc_w_openset` VALUES ('19', '0');
+INSERT INTO `btc_w_openset` VALUES ('20', '0');
+INSERT INTO `btc_w_openset` VALUES ('21', '0');
+INSERT INTO `btc_w_openset` VALUES ('22', '0');
+INSERT INTO `btc_w_openset` VALUES ('23', '0');
+INSERT INTO `btc_w_openset` VALUES ('24', '0');
+INSERT INTO `btc_w_openset` VALUES ('25', '0');
+INSERT INTO `btc_w_openset` VALUES ('26', '0');
+INSERT INTO `btc_w_openset` VALUES ('27', '0');
+INSERT INTO `btc_w_openset` VALUES ('28', '1');
+INSERT INTO `btc_w_openset` VALUES ('29', '0');
+INSERT INTO `btc_w_openset` VALUES ('30', '0');
+INSERT INTO `btc_w_openset` VALUES ('31', '1');
+INSERT INTO `btc_w_openset` VALUES ('32', '0');
+INSERT INTO `btc_w_openset` VALUES ('33', '0');
+INSERT INTO `btc_w_openset` VALUES ('34', '0');
+INSERT INTO `btc_w_openset` VALUES ('35', '0');
+INSERT INTO `btc_w_openset` VALUES ('36', '0');
+INSERT INTO `btc_w_openset` VALUES ('37', '0');
+INSERT INTO `btc_w_openset` VALUES ('38', '0');
+INSERT INTO `btc_w_openset` VALUES ('39', '0');
+INSERT INTO `btc_w_openset` VALUES ('40', '0');
+INSERT INTO `btc_w_openset` VALUES ('41', '0');
+INSERT INTO `btc_w_openset` VALUES ('42', '0');
+INSERT INTO `btc_w_openset` VALUES ('43', '0');
+INSERT INTO `btc_w_openset` VALUES ('44', '0');
+INSERT INTO `btc_w_openset` VALUES ('45', '0');
+INSERT INTO `btc_w_openset` VALUES ('46', '0');
+INSERT INTO `btc_w_openset` VALUES ('47', '0');
+INSERT INTO `btc_w_openset` VALUES ('48', '0');
+INSERT INTO `btc_w_openset` VALUES ('49', '0');
+INSERT INTO `btc_w_openset` VALUES ('50', '0');
+INSERT INTO `btc_w_openset` VALUES ('51', '0');
+INSERT INTO `btc_w_openset` VALUES ('52', '0');
+INSERT INTO `btc_w_openset` VALUES ('53', '0');
+INSERT INTO `btc_w_openset` VALUES ('54', '0');
+INSERT INTO `btc_w_openset` VALUES ('55', '0');
+INSERT INTO `btc_w_openset` VALUES ('56', '0');
+INSERT INTO `btc_w_openset` VALUES ('57', '0');
+INSERT INTO `btc_w_openset` VALUES ('58', '0');
+INSERT INTO `btc_w_openset` VALUES ('59', '0');
+INSERT INTO `btc_w_openset` VALUES ('60', '0');
+INSERT INTO `btc_w_openset` VALUES ('61', '0');
+INSERT INTO `btc_w_openset` VALUES ('62', '0');
+INSERT INTO `btc_w_openset` VALUES ('63', '0');
+INSERT INTO `btc_w_openset` VALUES ('64', '0');
+INSERT INTO `btc_w_openset` VALUES ('65', '0');
+INSERT INTO `btc_w_openset` VALUES ('66', '0');
+INSERT INTO `btc_w_openset` VALUES ('67', '0');
+INSERT INTO `btc_w_openset` VALUES ('68', '0');
+INSERT INTO `btc_w_openset` VALUES ('69', '0');
+INSERT INTO `btc_w_openset` VALUES ('70', '0');
+INSERT INTO `btc_w_openset` VALUES ('71', '0');
+INSERT INTO `btc_w_openset` VALUES ('72', '0');
+INSERT INTO `btc_w_openset` VALUES ('73', '0');
+INSERT INTO `btc_w_openset` VALUES ('74', '0');
+INSERT INTO `btc_w_openset` VALUES ('75', '0');
+INSERT INTO `btc_w_openset` VALUES ('76', '0');
+INSERT INTO `btc_w_openset` VALUES ('77', '0');
+INSERT INTO `btc_w_openset` VALUES ('78', '0');
+INSERT INTO `btc_w_openset` VALUES ('79', '0');
+INSERT INTO `btc_w_openset` VALUES ('80', '0');
+INSERT INTO `btc_w_openset` VALUES ('81', '0');
+INSERT INTO `btc_w_openset` VALUES ('82', '0');
+INSERT INTO `btc_w_openset` VALUES ('83', '0');
+INSERT INTO `btc_w_openset` VALUES ('84', '0');
+INSERT INTO `btc_w_openset` VALUES ('85', '0');
+INSERT INTO `btc_w_openset` VALUES ('86', '0');
+INSERT INTO `btc_w_openset` VALUES ('87', '0');
+INSERT INTO `btc_w_openset` VALUES ('88', '0');
+INSERT INTO `btc_w_openset` VALUES ('89', '0');
+INSERT INTO `btc_w_openset` VALUES ('90', '0');
+INSERT INTO `btc_w_openset` VALUES ('91', '0');
+INSERT INTO `btc_w_openset` VALUES ('92', '0');
+INSERT INTO `btc_w_openset` VALUES ('93', '0');
+INSERT INTO `btc_w_openset` VALUES ('94', '0');
+INSERT INTO `btc_w_openset` VALUES ('95', '0');
+INSERT INTO `btc_w_openset` VALUES ('96', '0');
+INSERT INTO `btc_w_openset` VALUES ('97', '0');
+INSERT INTO `btc_w_openset` VALUES ('98', '0');
+INSERT INTO `btc_w_openset` VALUES ('99', '0');
+INSERT INTO `btc_w_openset` VALUES ('100', '0');
+INSERT INTO `btc_w_openset` VALUES ('101', '0');
+INSERT INTO `btc_w_openset` VALUES ('102', '0');
+INSERT INTO `btc_w_openset` VALUES ('103', '0');
+INSERT INTO `btc_w_openset` VALUES ('104', '0');
+INSERT INTO `btc_w_openset` VALUES ('105', '0');
+INSERT INTO `btc_w_openset` VALUES ('106', '0');
+INSERT INTO `btc_w_openset` VALUES ('107', '0');
+INSERT INTO `btc_w_openset` VALUES ('108', '0');
+INSERT INTO `btc_w_openset` VALUES ('109', '0');
+INSERT INTO `btc_w_openset` VALUES ('110', '0');
+INSERT INTO `btc_w_openset` VALUES ('111', '0');
+INSERT INTO `btc_w_openset` VALUES ('112', '0');
+INSERT INTO `btc_w_openset` VALUES ('113', '0');
+INSERT INTO `btc_w_openset` VALUES ('114', '0');
+INSERT INTO `btc_w_openset` VALUES ('115', '0');
+INSERT INTO `btc_w_openset` VALUES ('116', '0');
+INSERT INTO `btc_w_openset` VALUES ('117', '0');
+INSERT INTO `btc_w_openset` VALUES ('118', '0');
+INSERT INTO `btc_w_openset` VALUES ('119', '0');
+INSERT INTO `btc_w_openset` VALUES ('120', '0');
+INSERT INTO `btc_w_openset` VALUES ('121', '0');
+INSERT INTO `btc_w_openset` VALUES ('122', '0');
+INSERT INTO `btc_w_openset` VALUES ('123', '0');
+INSERT INTO `btc_w_openset` VALUES ('124', '0');
+INSERT INTO `btc_w_openset` VALUES ('125', '0');
+INSERT INTO `btc_w_openset` VALUES ('126', '0');
+INSERT INTO `btc_w_openset` VALUES ('127', '0');
+INSERT INTO `btc_w_openset` VALUES ('128', '0');
+INSERT INTO `btc_w_openset` VALUES ('129', '0');
+INSERT INTO `btc_w_openset` VALUES ('130', '0');
+INSERT INTO `btc_w_openset` VALUES ('131', '0');
+INSERT INTO `btc_w_openset` VALUES ('132', '0');
+INSERT INTO `btc_w_openset` VALUES ('133', '0');
+INSERT INTO `btc_w_openset` VALUES ('134', '0');
+INSERT INTO `btc_w_openset` VALUES ('135', '0');
+INSERT INTO `btc_w_openset` VALUES ('136', '0');
+INSERT INTO `btc_w_openset` VALUES ('137', '0');
+INSERT INTO `btc_w_openset` VALUES ('138', '0');
+INSERT INTO `btc_w_openset` VALUES ('139', '0');
+INSERT INTO `btc_w_openset` VALUES ('140', '0');
+INSERT INTO `btc_w_openset` VALUES ('141', '0');
+INSERT INTO `btc_w_openset` VALUES ('142', '0');
+INSERT INTO `btc_w_openset` VALUES ('143', '0');
+INSERT INTO `btc_w_openset` VALUES ('144', '0');
+INSERT INTO `btc_w_openset` VALUES ('145', '0');
+INSERT INTO `btc_w_openset` VALUES ('146', '0');
+INSERT INTO `btc_w_openset` VALUES ('147', '0');
+INSERT INTO `btc_w_openset` VALUES ('148', '0');
+INSERT INTO `btc_w_openset` VALUES ('149', '0');
+INSERT INTO `btc_w_openset` VALUES ('150', '0');
+INSERT INTO `btc_w_openset` VALUES ('151', '0');
+INSERT INTO `btc_w_openset` VALUES ('152', '0');
+INSERT INTO `btc_w_openset` VALUES ('153', '0');
+INSERT INTO `btc_w_openset` VALUES ('154', '0');
+INSERT INTO `btc_w_openset` VALUES ('155', '0');
+INSERT INTO `btc_w_openset` VALUES ('156', '0');
+INSERT INTO `btc_w_openset` VALUES ('157', '0');
+INSERT INTO `btc_w_openset` VALUES ('158', '0');
+INSERT INTO `btc_w_openset` VALUES ('159', '0');
+INSERT INTO `btc_w_openset` VALUES ('160', '0');
+INSERT INTO `btc_w_openset` VALUES ('161', '0');
+INSERT INTO `btc_w_openset` VALUES ('162', '0');
+INSERT INTO `btc_w_openset` VALUES ('163', '0');
+INSERT INTO `btc_w_openset` VALUES ('164', '0');
+INSERT INTO `btc_w_openset` VALUES ('165', '0');
+INSERT INTO `btc_w_openset` VALUES ('166', '0');
+INSERT INTO `btc_w_openset` VALUES ('167', '0');
+INSERT INTO `btc_w_openset` VALUES ('168', '0');
+INSERT INTO `btc_w_openset` VALUES ('169', '0');
+INSERT INTO `btc_w_openset` VALUES ('170', '0');
+INSERT INTO `btc_w_openset` VALUES ('171', '0');
+INSERT INTO `btc_w_openset` VALUES ('172', '0');
+INSERT INTO `btc_w_openset` VALUES ('173', '0');
+INSERT INTO `btc_w_openset` VALUES ('174', '0');
+INSERT INTO `btc_w_openset` VALUES ('175', '0');
+INSERT INTO `btc_w_openset` VALUES ('176', '0');
+INSERT INTO `btc_w_openset` VALUES ('177', '0');
+INSERT INTO `btc_w_openset` VALUES ('178', '0');
+INSERT INTO `btc_w_openset` VALUES ('179', '0');
+INSERT INTO `btc_w_openset` VALUES ('180', '0');
+INSERT INTO `btc_w_openset` VALUES ('181', '0');
+INSERT INTO `btc_w_openset` VALUES ('182', '0');
+INSERT INTO `btc_w_openset` VALUES ('183', '0');
+INSERT INTO `btc_w_openset` VALUES ('184', '0');
+INSERT INTO `btc_w_openset` VALUES ('185', '0');
+INSERT INTO `btc_w_openset` VALUES ('186', '0');
+INSERT INTO `btc_w_openset` VALUES ('187', '0');
+INSERT INTO `btc_w_openset` VALUES ('188', '0');
+INSERT INTO `btc_w_openset` VALUES ('189', '0');
+INSERT INTO `btc_w_openset` VALUES ('190', '0');
+INSERT INTO `btc_w_openset` VALUES ('191', '0');
+INSERT INTO `btc_w_openset` VALUES ('192', '0');
+INSERT INTO `btc_w_openset` VALUES ('193', '0');
+INSERT INTO `btc_w_openset` VALUES ('194', '0');
+INSERT INTO `btc_w_openset` VALUES ('195', '0');
+INSERT INTO `btc_w_openset` VALUES ('196', '0');
+INSERT INTO `btc_w_openset` VALUES ('197', '0');
+INSERT INTO `btc_w_openset` VALUES ('198', '0');
+INSERT INTO `btc_w_openset` VALUES ('199', '0');
+INSERT INTO `btc_w_openset` VALUES ('200', '0');
+INSERT INTO `btc_w_openset` VALUES ('201', '0');
+INSERT INTO `btc_w_openset` VALUES ('202', '0');
+INSERT INTO `btc_w_openset` VALUES ('203', '0');
+INSERT INTO `btc_w_openset` VALUES ('204', '0');
+INSERT INTO `btc_w_openset` VALUES ('205', '0');
+INSERT INTO `btc_w_openset` VALUES ('206', '0');
+INSERT INTO `btc_w_openset` VALUES ('207', '0');
+INSERT INTO `btc_w_openset` VALUES ('208', '0');
+INSERT INTO `btc_w_openset` VALUES ('209', '0');
+INSERT INTO `btc_w_openset` VALUES ('210', '0');
+INSERT INTO `btc_w_openset` VALUES ('211', '0');
+INSERT INTO `btc_w_openset` VALUES ('212', '0');
+INSERT INTO `btc_w_openset` VALUES ('213', '0');
+INSERT INTO `btc_w_openset` VALUES ('214', '0');
+INSERT INTO `btc_w_openset` VALUES ('215', '0');
+INSERT INTO `btc_w_openset` VALUES ('216', '0');
+INSERT INTO `btc_w_openset` VALUES ('217', '0');
+INSERT INTO `btc_w_openset` VALUES ('218', '0');
+INSERT INTO `btc_w_openset` VALUES ('219', '0');
+INSERT INTO `btc_w_openset` VALUES ('220', '0');
+INSERT INTO `btc_w_openset` VALUES ('221', '0');
+INSERT INTO `btc_w_openset` VALUES ('222', '0');
+INSERT INTO `btc_w_openset` VALUES ('223', '0');
+INSERT INTO `btc_w_openset` VALUES ('224', '0');
+INSERT INTO `btc_w_openset` VALUES ('225', '0');
+INSERT INTO `btc_w_openset` VALUES ('226', '0');
+INSERT INTO `btc_w_openset` VALUES ('227', '0');
+INSERT INTO `btc_w_openset` VALUES ('228', '0');
+INSERT INTO `btc_w_openset` VALUES ('229', '0');
+INSERT INTO `btc_w_openset` VALUES ('230', '0');
+INSERT INTO `btc_w_openset` VALUES ('231', '0');
+INSERT INTO `btc_w_openset` VALUES ('232', '0');
+INSERT INTO `btc_w_openset` VALUES ('233', '0');
+INSERT INTO `btc_w_openset` VALUES ('234', '0');
+INSERT INTO `btc_w_openset` VALUES ('235', '0');
+INSERT INTO `btc_w_openset` VALUES ('236', '0');
+INSERT INTO `btc_w_openset` VALUES ('237', '0');
+INSERT INTO `btc_w_openset` VALUES ('238', '0');
+INSERT INTO `btc_w_openset` VALUES ('239', '0');
+INSERT INTO `btc_w_openset` VALUES ('240', '0');
+INSERT INTO `btc_w_openset` VALUES ('241', '0');
+INSERT INTO `btc_w_openset` VALUES ('242', '0');
+INSERT INTO `btc_w_openset` VALUES ('243', '0');
+INSERT INTO `btc_w_openset` VALUES ('244', '0');
+INSERT INTO `btc_w_openset` VALUES ('245', '0');
+INSERT INTO `btc_w_openset` VALUES ('246', '0');
+INSERT INTO `btc_w_openset` VALUES ('247', '0');
+INSERT INTO `btc_w_openset` VALUES ('248', '0');
+INSERT INTO `btc_w_openset` VALUES ('249', '0');
+INSERT INTO `btc_w_openset` VALUES ('250', '0');
+INSERT INTO `btc_w_openset` VALUES ('251', '0');
+INSERT INTO `btc_w_openset` VALUES ('252', '0');
+INSERT INTO `btc_w_openset` VALUES ('253', '0');
+INSERT INTO `btc_w_openset` VALUES ('254', '0');
+INSERT INTO `btc_w_openset` VALUES ('255', '0');
+INSERT INTO `btc_w_openset` VALUES ('256', '0');
+INSERT INTO `btc_w_openset` VALUES ('257', '0');
+INSERT INTO `btc_w_openset` VALUES ('258', '0');
+INSERT INTO `btc_w_openset` VALUES ('259', '0');
+INSERT INTO `btc_w_openset` VALUES ('260', '0');
+INSERT INTO `btc_w_openset` VALUES ('261', '0');
+INSERT INTO `btc_w_openset` VALUES ('262', '0');
+INSERT INTO `btc_w_openset` VALUES ('263', '0');
+INSERT INTO `btc_w_openset` VALUES ('264', '0');
+INSERT INTO `btc_w_openset` VALUES ('265', '0');
+INSERT INTO `btc_w_openset` VALUES ('266', '0');
+INSERT INTO `btc_w_openset` VALUES ('267', '0');
+INSERT INTO `btc_w_openset` VALUES ('268', '0');
+INSERT INTO `btc_w_openset` VALUES ('269', '0');
+INSERT INTO `btc_w_openset` VALUES ('270', '0');
+INSERT INTO `btc_w_openset` VALUES ('271', '0');
+INSERT INTO `btc_w_openset` VALUES ('272', '0');
+INSERT INTO `btc_w_openset` VALUES ('273', '0');
+INSERT INTO `btc_w_openset` VALUES ('274', '0');
+INSERT INTO `btc_w_openset` VALUES ('275', '0');
+INSERT INTO `btc_w_openset` VALUES ('276', '0');
+INSERT INTO `btc_w_openset` VALUES ('277', '0');
+INSERT INTO `btc_w_openset` VALUES ('278', '0');
+INSERT INTO `btc_w_openset` VALUES ('279', '0');
+INSERT INTO `btc_w_openset` VALUES ('280', '0');
+INSERT INTO `btc_w_openset` VALUES ('281', '0');
+INSERT INTO `btc_w_openset` VALUES ('282', '0');
+INSERT INTO `btc_w_openset` VALUES ('283', '0');
+INSERT INTO `btc_w_openset` VALUES ('284', '0');
+INSERT INTO `btc_w_openset` VALUES ('285', '0');
+INSERT INTO `btc_w_openset` VALUES ('286', '0');
+INSERT INTO `btc_w_openset` VALUES ('287', '0');
+INSERT INTO `btc_w_openset` VALUES ('288', '0');

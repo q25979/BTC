@@ -1,0 +1,12 @@
+[ 2018-10-27T21:08:18+08:00 ] 192.168.0.128 /btc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+ERR: 無法載入模組:Btc
+
+[ 2018-10-27T21:08:24+08:00 ] 192.168.0.128 /BTC
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+ERR: 無法載入模組:BTC
+

@@ -56,6 +56,11 @@ $(function() {
 	layui.define('layer', function(exports) {
 		var layer = layui.layer
 	});
+
+	// 5分钟更新一次
+	setInterval(function() {
+		$.get(config.host_path + "/float/index/updatebtc");
+	}, 1000*60*5);
 })
 
 // 设置全局变量
@@ -70,23 +75,23 @@ function gettdata() {
 	var u = config.host_path + "/Float/Index/getbtc";
 	$.get(u, function(res) {
 		// 设置颜色
-		var copen = tdata.open > res.ticker.buy
+		var copen = tdata.open > res.last
 			? tcolor[0] : tcolor[1];
-		var ccollect = tdata.collect > res.ticker.sell
+		var ccollect = tdata.collect > res.open
 			? tcolor[0] : tcolor[1];
-		var clow = tdata.low > res.ticker.low
+		var clow = tdata.low > res.low
 			? tcolor[0] : tcolor[1];
-		var chigh = tdata.hign > res.ticker.high
+		var chigh = tdata.hign > res.high
 			? tcolor[0] : tcolor[1];
-		if (tdata.open == res.ticker.buy) copen = $($(".yi-number")[0]).css('color');
-		if (tdata.collect == res.ticker.sell) ccollect = $($(".yi-number")[1]).css('color');
-		if (tdata.low == res.ticker.low) clow = $($(".yi-number")[2]).css('color');
-		if (tdata.high == res.ticker.high) chigh = $($(".yi-number")[3]).css('color');
+		if (tdata.open == res.last) copen = $($(".yi-number")[0]).css('color');
+		if (tdata.collect == res.open) ccollect = $($(".yi-number")[1]).css('color');
+		if (tdata.low == res.low) clow = $($(".yi-number")[2]).css('color');
+		if (tdata.high == res.high) chigh = $($(".yi-number")[3]).css('color');
 
-		tdata.open = res.ticker.buy;
-		tdata.collect = res.ticker.sell;
-		tdata.low  = res.ticker.low;
-		tdata.high = res.ticker.high;
+		tdata.open = res.last;
+		tdata.collect = res.open;
+		tdata.low  = res.low;
+		tdata.high = res.high;
 
 		// 设置显示
 		$($(".yi-number")[0]).text(tdata.open);
@@ -97,7 +102,9 @@ function gettdata() {
 		$($(".yi-number")[1]).css('color', ccollect);
 		$($(".yi-number")[2]).css('color', clow);
 		$($(".yi-number")[3]).css('color', chigh);
-		$("#yi-server-time").text(res.time)
+		$("#yi-server-time").text(res.time);
+		$.cookie('btc_wbtcopen', tdata.open, {path: '/'});
+		$.cookie('btc_wbtctime', res.time, {path: '/'});
 	});
 }
 
@@ -116,7 +123,6 @@ function getkdata(d, callback) {
 					
 				return item;
 			});
-
 		callback(data)
 	});
 }

@@ -7,14 +7,16 @@ use Think\Controller;
  * 时间：2018年4月16日20:43:42
  * 功能：账户管理
  */
-class IndexController extends Controller {
+class IndexController extends Controller 
+{
     /**
      * 浮动设置
      *
      * method: get
      * url: /Float/Index/index
      */
-    public function index() {
+    public function index() 
+    {
         set_time_limit(5);
         Vendor('phpRPC.phprpc_client');
         $client = new \PHPRPC_Client(HOST_PATH. '/Float/FloatSet');
@@ -22,7 +24,6 @@ class IndexController extends Controller {
         $result = $client->index();
 
         $this->ajaxReturn($result);
-        // header('Location:'. HOST_PATH. '/Float/FloatSet');
     }
 
     /**
@@ -30,9 +31,10 @@ class IndexController extends Controller {
      * 比特币
      * 莱特币
      */
-    public function getdata() {
+    public function getdata() 
+    {
         $type = I('get.type');
-        $req = new \Request();
+        $req  = new \Request();
         $exchange = M('Exchange');
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';  // 比特币
         $lurl = "http://api.bitkk.com/data/v1/ticker?market=ltc_usdt";  // 以太币
@@ -70,7 +72,8 @@ class IndexController extends Controller {
     /**
      * 获取货币汇率
      */
-    public function exchange() {
+    public function exchange() 
+    {
         $exchange = M('Exchange');
         $edata = $exchange->where('id=1')->cache('exchange')->find();
 
@@ -78,14 +81,36 @@ class IndexController extends Controller {
     }
 
     /**
-     * 獲取比特幣價格
+     * 更新比特币价格
      */
-    public function getbtc() {
-        $req = new \Request();
-
+    public function updatebtc() 
+    {
+        $req  = new \Request();
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
         $info = json_decode($req->httpGet($burl));
-        $info->time = date("H:i:s");
+
+        M('WCloseset')->where('id=1')->save([
+            'last' => $info->ticker->last,
+            'open' => $info->ticker->sell,
+            'low'  => $info->ticker->low,
+            'high' => $info->ticker->high,
+            'update_time' => time()
+        ]);
+    }
+
+    /**
+     * 獲取比特幣價格
+     */
+    public function getbtc()
+    {
+        $info = M('WCloseset')->field('id,set', true)->where('id=1')->find();
+        $info = [
+            'time' => date("H:i:s"),
+            'last' => $info['last']+$this->frand(),
+            'open' => $info['open']+$this->frand(),
+            'low'  => $info['low']+$this->frand(),
+            'high' => $info['high']+$this->frand()
+        ];
 
         $this->ajaxReturn($info);
     }
@@ -96,9 +121,15 @@ class IndexController extends Controller {
     public function getkdata()
     {
         $type = I('get.type');
-        $url = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=200";
-
+        $url  = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=200";
         $data = \Request::httpGet($url);
+
         $this->ajaxReturn($data);
+    }
+
+    // 随机数
+    private function frand() 
+    {
+        return mt_rand(0, 9999)/10000;
     }
 }
