@@ -22,16 +22,39 @@ $(function() {
 		});
 	});
 
-	// 1s钟获取实时数据
-	setInterval(gettdata, 1000);
+	setInterval(gettdata, 1000); // 1s钟获取实时数据
 	getbalance();	// 获取余额
-	getorder();		// 獲取訂單
+	getorder();
+	setInterval(getorder, 1000*60*1);	// 獲取訂單
 });
 
 /**
  * 獲取訂單
  */
-function getorder() {}
+function getorder() {
+	var u = config.host_path + '/Home/Bocai/getrecord';
+	var d = { limit: 10 };
+	$.get(u, d, function(res) {
+		$('.flag').removeClass('_y360');
+		$('#log').empty();	// 重构子节点
+		for (var i in res.data) {
+			var h  = '<tr>';
+				h += '<td>'+ res.data[i].order_id +'</td>';
+				h += '<td>'+ res.data[i].buy_direction_name +'</td>';
+				h += '<td>'+ res.data[i].last_direction_name +'</td>';
+				h += '<td>'+ res.data[i].money +'</td>';
+				h += '<td>'+ res.data[i].buy_number +'</td>';
+				h += '<td>'+ res.data[i].buy_price +'</td>';
+				h += '<td>'+ res.data[i].last_price +'</td>';
+				h += '<td>'+ res.data[i].buy_time +'</td>';
+				h += '<td>'+ res.data[i].last_time +'</td>';
+				h += '</tr>';
+			$('#log').append(h);
+		}
+		// 上一期
+		$('#prev').text('上一期: '+res.prev);
+	});
+}
 
 /**
  * 获取实时数据
@@ -113,6 +136,12 @@ function okorder() {
 	d.buy_direction = typeidx;
 	d.buy_number = parseInt($('#openNumber').text());
 	d.buy_price  = parseFloat($($('.now-price')[0]).text()).toFixed(4);
+	d.time = $('.time>div:nth-last-child(1)').text();
+	d.time = parseInt(d.time.split(':')[0]);
+	if (d.time == 0) {
+		layer.msg('最後一分鐘禁止購買');
+		return false;
+	}
 
 	if (d.money < 1 || isNaN(d.money)) {
 		layer.msg('請輸入正確的金額', {time:1500})
@@ -130,7 +159,19 @@ function okorder() {
 				layer.msg(res.msg, {time: 1500, icon: icon});
 				if (icon == 5) return false;
 				getorder();
+			}).fail(function() {
+				layer.closeAll()
+				layer.msg('請求超時')
 			})
 		}
 	});
+}
+
+/**
+ * 更新数据
+ */
+function allrefresh() {
+	getbalance();
+	$('.flag').addClass('_y360');
+	getorder();
 }

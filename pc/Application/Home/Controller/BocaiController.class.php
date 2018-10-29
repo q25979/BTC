@@ -43,7 +43,7 @@ class BocaiController extends VerifyController
 		// 判斷金額是否正確
 		if ($post['money'] < 1 || is_nan($post['money']) || empty($post['money'])) 
 			$this->ajaxReturn($result);
-		if (((int)date('i')+1)%5 == 0)
+		if ($post['time'] == 0)
 			$this->ajaxReturn(['code' => 1, 'msg' => '最後一分鐘禁止購買']);
 
 		// 扣除餘額
@@ -71,5 +71,48 @@ class BocaiController extends VerifyController
 		$account->commit();
 		M('WMinlog')->commit();
 		$this->ajaxReturn(['code' => 0, 'msg' => '下單成功']);
+	}
+
+	// 获取记录
+	public function getrecord()
+	{
+		$WMinlog = M('WMinlog');
+		$limit = I('get.limit');
+
+		// 获取两天前时间戳
+		$day  = date('d');
+		$time = strtotime(date('Y-m').'-'.($day-2));
+		$map['create_time'] = array('gt', $time);
+		$list = $WMinlog
+			->page('1,'.$limit)
+			->where($map)
+			->field('uid,create_time', true)
+			->order('create_time desc')
+			->select();
+		$number = (((int)date('H')*60)+(int)date('i'))/5;
+		$prev = M('WOpenset')->getFieldByNumber((int)$number, 'set');
+		$prev = $prev == 0 ? '漲' : '跌';
+
+		// 转换可视数据
+		foreach ($list as $k => $v) {
+			if ($v['buy_direction'] == 0) $list[$k]['buy_direction_name'] = '漲';
+			if ($v['buy_direction'] == 1) $list[$k]['buy_direction_name'] = '跌';
+			if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
+			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
+			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
+			$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
+			$hour  = (int)(((int)$v['buy_number']*5)/60);
+			$minue = (int)(((int)$v['buy_number']*5)%60);
+			$hour  = $hour < 10 ? '0'.$hour : $hour;
+			$minue = $minue < 10 ? '0'.$minue : $minue;
+			$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;
+		}
+		$this->ajaxReturn([
+			'code' => 0,
+			'msg'  => '',
+			'prev' => $prev,
+			'count' => $WMinlog->where($map)->page('1,'.$limit)->count(),
+			'data' => $list
+		]);
 	}
 }

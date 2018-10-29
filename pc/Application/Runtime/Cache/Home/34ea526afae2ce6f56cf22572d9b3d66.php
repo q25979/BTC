@@ -50,103 +50,15 @@
 							<th>訂單ID</th>
 							<th>購買方向</th>
 							<th>最終方向</th>
-							<th>金額</th>
+							<th>金額(NT$)</th>
 							<th>期數</th>
+							<th>購買價格($)</th>
+							<th>最終價格($)</th>
 							<th>購買時間</th>
-							<th>最終時間</th>
+							<th>開盤時間</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
-						<tr>
-							<td>X1000001</td>
-							<td>買漲</td>
-							<td>跌</td>
-							<td>NT$150.25</td>
-							<td>100</td>
-							<td>16:14</td>
-							<td>16:15</td>
-						</tr>
+					<tbody id="log">
 					</tbody>
 				</table>
 			</div>
@@ -158,7 +70,7 @@
 				<div class="mb-3 mt-15">期數</div>
 				<div class="label-bg" id="openNumber">00</div>
 				<div class="confirm mt-15" onclick="okorder()">確認下單</div>
-				<div class="flag" style="background-image:url('/Public/home/bocai/btc.png')"></div>
+				<div class="flag _y360" onclick="allrefresh()" style="background-image:url('/Public/home/bocai/btc.png')"></div>
 			</div>
 		</div>
 	</div>

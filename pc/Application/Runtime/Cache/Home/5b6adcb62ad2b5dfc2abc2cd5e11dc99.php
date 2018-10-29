@@ -27,108 +27,11 @@
     <![endif]-->
 </head>
 
-<link rel="stylesheet" type="text/css" href="/Public/home/css/index.min.css" />
-
-<link rel="stylesheet" type="text/css" href="/Public/home/css/send/send.min.css" />
-<link rel="stylesheet" type="text/css" href="/Public/home/css/send/receive.min.css" />
-
-<link rel="stylesheet" type="text/css" href="/Public/home/css/setting.min.css" />
-<style>
-	/*公告*/
-    #announcement {width: 128px;  background: #F5F5F5; position: fixed; top: 25%; box-shadow: 1px 3px 10px #ccc; z-index: 2; border-bottom-right-radius: 7px;}
-    #announcement-hd{width: 100%;height: 36px;background-image: url(/Public/images/Popupblock.png);display: flex;justify-content: center;align-items: center; border-top-right-radius: 7px;}
-    .bull-title {font-size: 14px; color: #E6E6E6; padding: 0 6px 0 6px;}
-    .bull-close-left {position: absolute; right: 10px; top: 7px; font-weight: bold;font-size: 18px;}
-    .bull-close-left:hover {color: #fff; cursor: pointer;}
-    #announcement-bd {  overflow: hidden; }
-    .announcement-bd { width: 90%; padding: 5px 5px 5px 15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size: 12px;}
-    #announcement-info-box{width: 100%; margin-top: 0;}
-    #announcement-info-box ul{list-style: none;}
-    #announcement-info-box li{margin-bottom: 5px;}
-    @media all and (max-width: 770px) {
-        #announcement, .call-callCenter {display: none !important;}
-    }
-    
-	/*客服*/
-    .call-callCenter {width: 180px; background: #F5F5F5; position: fixed; top:60%; right: 0; z-index: 1; border-bottom-left-radius: 7px; box-shadow: -1px 3px 10px #ccc;}
-    .call-fix {position: relative; display: flex;justify-content: center;align-items: center;}
-    .call-callCenter img{ position: absolute; top: 0; left: 0;}
-    .call-title {position: absolute; font-size: 14px; color: #E6E6E6; top: 3px; left: 70px;}
-    .call-close-right {position: absolute; left: 10px; top: 7px; outline:none; cursor: pointer; }
-    .call-close-right:hover {color: #fff; }
-    .call-qq-info { display: block; }
-    .call-qq-info span { font-size: 14px;}
-    #call_content { font-weight: bold; display: block; margin-top: 5px;  width: 160px;}
-
-</style>
+<link rel="stylesheet" type="text/css" href="/Public/home/css/login.min.css" />
 
 <body>
-<!-- 公告 -->
-	<div id="announcement" @mouseover="rollStop()" @mouseout="rollOpen()">
-	    <div id="announcement-hd">
-            <span class="bull-title"><?php echo (L("_HINT_BULLETIN_BOARD_")); ?></span>
-            <div type="button" class="bull-close-left" @click="close()">&times;</div>
-        </div>
-       
-        <div id="announcement-bd">
-            <div id="announcement-info-box">
-                <ul>
-                    <li v-for="item in bulletinLit">
-                        <div class="announcement-bd"><a href="javascript:void(0)" @click = "getBulletinContent(item.bulletin_id)">{{ item.title }}</a></div>
-                        <div style="border-top: 1px dashed #ccc; width: 90%; margin-top: 5px;" ></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    	
-    	<script type="text/javascript" src="/Public/home/js/bulletin.js"></script>
-        <script type="text/javascript">
-            //如果开启浮动就显示（公告）
-            var url = 'http://192.168.0.128:8081/home/PopupWindow/isBuClose';
-            $.get(url, function (res) {
-                if (res) {
-                    $('#announcement').css("display","block");
-                }
-            });
-        </script>
-	</div>
-    <!-- 客服 -->
-	<div class="call-callCenter" style="display: none">
-        <div class="call-fix" id="call-callCenter">
-            <div>
-                <img src="/Public/images/Popupblock.png" style="border-top-left-radius: 7px; width: 180px;">
-                <span class="call-title"><?php echo (L("_CALL_CENTER_")); ?></span>
-                <div type="button" class="call-close-right" id="call-close-right" onclick="callClose()">&times;</div>
-            </div>
-            <ul>
-                <div style="height: 38px;"></div>
-                <li class="call-qq-info" v-for="item in callCenterList">
-                    <span id="call_content" v-bind:title="item" > {{ item }} </span>
-                    <div style="border-top: 1px solid #ccc; width: 140px; margin-top: 10px;" ></div>
-                </li>
-            </ul>
-        </div>
-        <script type="text/javascript" src="/Public/home/js/callCenter.js"></script>
-        <script type="text/javascript">
-            //如果开启浮动就显示（客服）
-            function callClose(){
-                $('.call-callCenter').animate({'right':'-200px'});
-            }
-
-            var url = 'http://192.168.0.128:8081/home/PopupWindow/isSvClose';
-            $.get(url, function (res) {
-                if (res) {
-                    $('.call-callCenter').css("display","block");
-                }
-            });
-
-        </script>
-    </div>
-
-
-    <div id="topFloat">
-    	<!-- 顶部 -->
-	    
+    <!-- top start -->
+    
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -604,9 +507,10 @@
 
 
 
-	
-	    <!-- 选项卡 -->
-	    <!--
+    <!-- top end-->
+    <div id="index-box">
+        <!-- nav start-->
+        <!--
     <nav>nav</nav>
 -->
 
@@ -893,377 +797,327 @@
 </block>
 
 
+        <!-- nav end-->
+        <!-- login start -->
+        <div class="container-login" id="container-login">
+            <div class="banner max-width">
+                <div class="login">
+                    <div id="sh_tab">
+                        <ul class="tab_menu">
+                            <li><?php echo (L("_LOGIN_SIGN_UP_")); ?></li>
+                            <li class="selected"><?php echo (L("_LOGIN_LOGIN_")); ?></li>
+                        </ul>
+                        <div class="tab_box">
+                            <!-- 注册 -->
+                            <div class="sh_hide">
+                                <div class="stu_login_error"  style="position: relative">
 
+                                    <div class="input-group">
+                                        <span>
+                                            <?php echo (L("_LOGIN_SIGN_UP_TIPS_TOP_")); ?>
+                                            <span class="company-name">{{ companyName }}</span>
+                                            <?php echo (L("_LOGIN_SIGN_UP_TIPS_DOWN_")); ?>
+                                        </span>
+                                    </div>
 
-		<!--左右侧浮动窗-->
-			<div style="width: 100%;display: flex;justify-content: center;align-items: center;">
-		    <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-container" style="max-width: 1200px;padding: 0; margin: 0 auto; margin-top: 26px;position: relative;overflow: -hidden;" >
-	
-				
-			    <!-- 侧边栏 -->
-				<!--侧边栏-->
+                                    <div class="input-group" style="position: relative">
+                                        <div class="sh-hint"><?php echo (L("_HINT_RES_EMAIL_EMPTY_")); ?></div>
+                                        <input type="text" id="rename" name="rename" placeholder="<?php echo (L("_LOGIN_SIGN_UP_EMAIL_")); ?>" />
 
-	<!--侧边栏容器-->
-    <div class="sidebar-container col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    	<!--侧边栏内容-->
-	    <div class="sidebar-content">
-    		<ul class="sidebar-content-ul">
-    			<li class="sidebar-content-li"><a href="http://192.168.0.128:8081/Home/Index/index" class="sidebar-content-a sidebar-content-hd"><img src="/Public/images/home-click.png" /><?php echo (L("_ACCOUNT_HOME_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://192.168.0.128:8081/Home/WalletAddr/receive" class="sidebar-content-a"><img src="/Public/images/wallet-active.png" /><?php echo (L("_ACCOUNT_ADDRESSES_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://192.168.0.128:8081/Home/Security/index" class="sidebar-content-a"><img src="/Public/images/safety-active.png" /><?php echo (L("_ACCOUNT_SECURITY_")); ?></a></li>
-    			<li class="sidebar-content-li"><a href="http://192.168.0.128:8081/Home/Setting/index" class="sidebar-content-a"><img src="/Public/images/set-active.png" /><?php echo (L("_ACCOUNT_SETTINGS_")); ?></a> <span class="label label-success new-logo">new</span></li>
-    		</ul>
-   		</div>
-    </div>
+                                    </div>
 
-	<!--宽度过低时左侧内容-->
-	<div id="small-bulContent" style="display: none;">
-        <div class="small-bultitle">
-            <ul>
-                <li v-for="item in bulletinLit" class="small-hiddeny" style="height: 25px;">
-                    <div class="small-announcement-bd"><a href="javascript:void(0)" @click = "getBulletinContent(item.bulletin_id)">{{ item.title }}</a></div>
-                </li>
-            </ul>
-        </div>
-	</div>
-	<!--宽度过低时右侧内容-->
-	<div id="small-centerContent" style="display: none;">
-        <div class="small-caltitle">
-            <div class="callCenter-center">
-                <span v-for="item in callCenterList" class="small-centerContent-bd">
-                    <span id="small-call_name">{{ item }}</span>
-                </span>
+                                    <div>
+                                        <button 
+                                            type="button" 
+                                            class="btn xy-login-register" 
+                                            @click="register()"
+                                        >
+                                            <?php echo (L("_LOGIN_SIGN_UP_")); ?>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 登录 -->
+                            <div>
+                                <div class="tea_login_error">
+                                    <div class="input-group">
+                                        <input type="text" id="emailName" name="emailName" placeholder="<?php echo (L("_LOGIN_SIGN_UP_EMAIL_")); ?>" />
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="password" id="password" name="password" placeholder="<?php echo (L("_LOGIN_PASSWORD_")); ?>" />
+                                    </div>
+
+                                    <div>
+                                        <button type="button"
+                                                class="btn xy-login-login"
+                                                v-on:click="BTCLogin()"
+                                        ><?php echo (L("_LOGIN_LOGIN_")); ?>
+                                        </button>
+                                    </div>
+                                    <div class="input-group" style="position: relative; width: 100%;">
+                                        <a href="javascript:;" class="forget"><?php echo (L("_LOGIN_FORGOT_PASSWORD_")); ?></a>
+                                        <a href="http://192.168.0.128:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
+                                    </div>
+                                </div>
+
+                                <!-- 忘记密码 -->
+                                <div class="forget-pwd">
+                                    <div class="stu_login_error">
+
+                                        <div class="input-group">
+                                            <span><?php echo (L("_LOGIN_FORGOT_PSW_TIPS_")); ?></span>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <input 
+                                                type="text"  
+                                                name="pc-forget-email" 
+                                                value="" 
+                                                placeholder="<?php echo (L("_LOGIN_SIGN_UP_EMAIL_")); ?>" 
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <button 
+                                                class="reset-btn btn forgetBtn" 
+                                                @click="resetPass('pc')"
+                                            >
+                                                <?php echo (L("_LOGIN_RESET_PSW_")); ?>
+                                            </button>
+                                        </div>
+
+                                        <div>
+                                            <a class="gologin" href="JavaScript:;"><?php echo (L("_LOGIN_BACK_LOGIN_")); ?></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手机端登录 -->
+                <div class="login-small">
+                    <div class="login-small-input">
+                        <div class="input-group" style="width: 100%;">
+                            <input type="text" class="input form-control" name="emailPhone" placeholder="<?php echo (L("_LOGIN_SIGN_UP_EMAIL_")); ?>" />
+                        </div>
+                        <div class="input-group" style="width: 100%;">
+                            <input type="password" class="input" name="passPhome" placeholder="<?php echo (L("_LOGIN_PASSWORD_")); ?>" />
+                        </div>
+
+                        <div class="login-btn">
+                            <button type="button" class="btn xy-login-login" @click="PhoneLogin()" ><?php echo (L("_LOGIN_LOGIN_")); ?></button>
+                        </div>
+
+                        <div class="input-group" style="position: relative; width: 100%;">
+                            <a href="javascript:;" class="forget forget-small"><?php echo (L("_LOGIN_FORGOT_PASSWORD_")); ?></a>
+                            <a href="http://192.168.0.128:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
+                        </div>
+
+                        <div id="login-re" class="login-btn-re">
+                            <?php echo (L("_LOGIN_SIGN_UP_")); ?>
+                        </div>
+                    </div>
+
+                    <!-- 手机端注册 -->
+                    <div class="re-small">
+                        <div class="input-group">
+                            <span>
+                                <?php echo (L("_LOGIN_SIGN_UP_TIPS_TOP_")); ?>
+                                <span class="company-name">{{ companyName }}</span>
+                                <?php echo (L("_LOGIN_SIGN_UP_TIPS_DOWN_")); ?>
+                            </span>
+                        </div>
+
+                        <div class="input-group" style="width: 100%; margin-top: 5px;">
+                            <input type="text" name="username" class="input"/>
+                        </div>
+                        
+                        <div class="sh-small-hint"><?php echo (L("_HINT_RES_EMAIL_EMPTY_")); ?></div>
+
+                        <div class="re-small-btn">
+                            <button type="button" class="btn register xy-login-register" @click="PhoneRegister()"><?php echo (L("_LOGIN_SIGN_UP_")); ?></button>
+                        </div>
+
+                        <div id="login-btn" class="login-btn-re">
+                            <?php echo (L("_LOGIN_LOGIN_")); ?>
+                        </div>
+                    </div>
+
+                    <!-- 手机端忘记密码 -->
+                    <div class="forget-pwd-small">
+                        <div class="input-group">
+                            <span><?php echo (L("_LOGIN_FORGOT_PSW_TIPS_")); ?></span>
+                        </div>
+
+                        <div class="input-group" style="width: 100%; margin-top: 5px;">
+                            <input
+                                type ="text" 
+                                name ="mobile-forget-email" 
+                                class="input" 
+                                placeholder="<?php echo (L("_LOGIN_SIGN_UP_EMAIL_")); ?>"
+                            />
+                        </div>
+
+                        <div class="re-small-btn">
+                            <button 
+                                class ="btn forgetBtn" 
+                                @click="resetPass('mobile')"
+                            >
+                                <?php echo (L("_LOGIN_RESET_PSW_")); ?>
+                            </button>
+                        </div>
+
+                        <div style="text-align: center">
+                            <a class="gologinsmall" href="JavaScript:;"><?php echo (L("_LOGIN_BACK_LOGIN_")); ?></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-	</div>
 
+        <!-- login end -->
+        <!-- 服务开始 -->
+        <div class="container-service">
+            <div class="container-service-group max-width">
+                <!-- 超商代收 -->
+                <div class="service payment col-md-4 col-xs-4 ">
+                    <img src="/Public/images/collection.png" alt="超商代收" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><?php echo (L("_LOGIN_CASH_PAYMENT_")); ?></h4>
+                        <p class="btc-txc96"><?php echo (L("_LOGIN_CASH_CONTENT_")); ?></p>
+                    </div>
+                </div>
+                <!-- 银行汇款 -->
+                <div class="service integration col-md-4 col-xs-4 ">
+                    <img src="/Public/images/returnedMone.png" alt="银行汇款" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><?php echo (L("_LOGIN_BANK_INTEGRATION_")); ?></h4>
+                        <p class="btc-txc96"><?php echo (L("_LOGIN_BANK_CONTENT_")); ?></p>
+                    </div>
 
-<script type="text/javascript">
-	$(function(){
-        new Vue({
-            el: '#small-centerContent',
-            data:{
-                callCenterList: []
-            },
-            created:function(){
-                this.getData();
-            },
-            methods: {
-                getData: function () {
-                    var _this = this;
-                    var url_buletin = config.host_path + '/Home/PopupWindow/getCallCenter';
+                </div>
+                <!-- 全天候服务 -->
+                <div class="service aroundmd col-md-4 col-xs-4 ">
+                    <img src="/Public/images/service.png" alt="全天候服务" class="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><?php echo (L("_LOGIN_AROUND_THE_CLOCK_")); ?></h4>
+                        <p class="btc-txc96"><?php echo (L("_LOGIN_AROUND_CONTENT_")); ?></p>
+                    </div>
 
-                    $.get(url_buletin,function(res){
-                        for(var i in res) {
-                            _this.callCenterList.push(res[i]);
-                            _this.count += 1;
-                        }
+                </div>
+            </div>
+        </div>
+        <!-- 服务结束 -->
 
-                    });
-                }
-            }
+        <!-- 客服开始 -->
+        <div class="customer-service">
+            <div class="customer-service-group max-width row">
+                <!-- 安全保障 -->
+                <div class="service security col-md-6 col-xs-6">
+                    <img src="/Public/images/protect.png" alt="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><?php echo (L("_LOGIN_SECURITY_")); ?></h4>
+                        <p class="btc-txc96" style="width: 99%"><?php echo (L("_LOGIN_SECURITY_CONTENT_")); ?></p>
+                    </div>
+                </div>
+                <!-- 客服服务 -->
+                <div class="service customer col-md-6 col-xs-6">
+                    <img src="/Public/images/customerService.png" alt="">
+                    <div class="caption">
+                        <h4 class="btc-txc64"><?php echo (L("_LOGIN_CUSTOMER_SERVICE_")); ?></h4>
+                        <p class="btc-txc96"><?php echo (L("_LOGIN_CUSTOMER_CONTENT_")); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 客服结束 -->
 
-        });
+        <!-- btc优点开始 -->
+        <div class="advantage">
+            <div class="advantage-group">
+                <!-- 简单上手 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><?php echo (L("_LOGIN_SIMPLICITY_")); ?></h4>
+                        <p class=""><?php echo (L("_LOGIN_SIMPLICITY_CONTENT_")); ?></p>
+                    </div>
+                </div>
+                <!-- 高效率 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><?php echo (L("_LOGIN_EFFICIENCY_")); ?></h4>
+                        <p class=""><?php echo (L("_LOGIN_EFFICIENCY_CONTENT_")); ?></p>
+                    </div>
+                </div>
+                <!-- 全天候 -->
+                <div class="character col-md-4 col-xs-4">
+                    <div class="caption">
+                        <h4 class=""><?php echo (L("_LOGIN_ANYTIME_")); ?></h4>
+                        <p class=""><?php echo (L("_LOGIN_ANYTIME_CONTENT_")); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- btc优点结束 -->
 
-        var popupVm = new Vue({
-            el: '#small-bulContent',
-            data:{
-                bulletinLit:[],
-                count: 0
-            },
-            created: function(){
-                this.getData();
-            },
-            methods: {
-                /*
-                 * 获取公告栏数据
-                 * */
-                getData: function () {
-                    var _this = this;
-                    var url = config.host_path + '/Home/PopupWindow/getBulletin';
+        <!-- 底部问题联系开始 -->
+        <div class="problem">
+            <div class="problem-group">
+                <div class="issue col-md-6 col-xs-6" >
+                    <h4> 
+                        <a 
+                            href  = "http://192.168.0.128:8081/Home/Question"
+                            style = "color: #fff"
+                        >
+                            <?php echo (L("_LOGIN_COMMON_QUESTIONS_")); ?>
+                        </a>
+                    </h4>
+                    <div v-for="(item, index) in questionList">
+                        <p><a href="javascript:;" @click="goQuestionContent(item.type)">{{ item.title }}</a></p>
+                    </div>
+                    <p><a href="javascript:;" @click="goQuestionMore()"><?php echo (L("_LOGIN_MORE_")); ?></a></p>
+                </div>
+                <!-- 联系我们 -->
+                <div class="relation col-md-6 col-xs-6">
+                    <h4><?php echo (L("_LOGIN_CONTACT_US_")); ?></h4>
+                    <p>
+                        <?php echo (L("_LOGIN_BUSINESS_HOURS_")); ?>
+                        <span>{{ serviceTime }}</span>
+                    </p>
+                    <p>
+                        <a href="javascript:;"><?php echo (L("_LOGIN_PHONE_")); ?></a>
+                        <span>{{ companyPhone }}</span>
+                    </p>
+                    <p>
+                        <a href="javascript:;"><?php echo (L("_LOGIN_EMAIL_")); ?></a>
+                        <span>{{ companyEmail }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 底部问题联系结束-->
 
-                    $.get(url, function (res) {
-
-                        for(var i in res.data) {
-                            _this.bulletinLit.push(res.data[i]);
-                            _this.count += 1;
-                        }
-
-                        _this.small_noticeRoll(res.data.length);
-                    });
-                },
-                /**
-                 * 点击公告详情
-                 * @param bulletinId 公告Id
-                 */
-                getBulletinContent: function (bulletinId){
-                    window.location.href=config.host_path + "/Home/PopupWindow/bulletinContent.html?bulletin_id=" + bulletinId;
-                },
-                /**
-                 * 公告滚动
-                 */
-                small_noticeRoll: function (length) {
-                    if (length <= 1 ) { return ; }
-                    var _this = this;
-                    small_margintop = $(".small-bultitle ul").css("marginTop");//偏移量
-                    var reg = new RegExp("px","g");
-                    var small_margin = small_margintop.replace(reg, "");
-                    small_margin = parseInt(small_margin);
-
-                    var small_height = $(".small-bultitle").css("height");//获取容器高度
-                    var small_height_1 = small_height.replace(reg, "");
-                    small_height_1 = parseInt(small_height_1) + length * 25;
-
-                    setInterval(function(){
-                       small_margin -= 25;
-                        if (small_margin <= -small_height_1) {
-                            small_margin = 0;
-                        }
-                        $(".small-bultitle").css("marginTop",small_margin+"px");
-                    }, 5000);
-                }
-            }
-        });
-    });
-</script>
-		        
-	<style> .sh-money { text-align: center; } </style>
-
-	<!-- 内容容器 -->
-    <div class="content-vessel col-lg-8 col-md-8 col-sm-8 col-xs-12">
-    	<!-- 简讯验证 -->
-    	<div class="content-bd">
-    		<p class="content-bd-p1"><?php echo (L("_ACCOUNT_WELCOME_")); ?> <span><?php echo ($email); ?></span>！</p>
-    		<p class="content-bd-p2"><?php echo (L("_ACCOUNT_BIND_TIPS")); ?></p>
-    		<button class="btn btn-lg btn-active" onclick="javascrtpt:window.location.href='http://192.168.0.128:8081/Home/Setting/updateMobilePhone/type/bind'"><span class="glyphicon glyphicon-plus" style="margin-right: 10px;"></span> <?php echo (L("_ACCOUNT_PHONE_VER_")); ?></button>
-    	</div>
-    	<h3><?php echo (L("_ACCOUNT_SUMMARY_")); ?></h3>
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody cellspacing="0">
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_BTC_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-balance"></span></td>
-    			</tr>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_BTC_BALANCE_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-price"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody cellspacing="0">
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_ETH_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-balance"></span></td>
-    			</tr>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_ETH_BALANCE_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-price"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-		
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_TOTAL_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-total-value"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<!--冻结金额-->
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><?php echo (L("_HINT_FREEZE_MONEY_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit"><span id="account-freeze-money"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><?php echo (L("_ACCOUNT_CASH_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit">
-    					<span id="account-withdraw-deposit"></span>
-    					<button class="btn btn-active" id="withdraw-deposit-btn"><?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?></button>
-    					<button class="btn btn-active" id="withdrawal-detail-btn" onclick="javascrtpt:window.location.href='http://192.168.0.128:8081/Home/WithdrawalDetail/index'"><?php echo (L("_WITHDRAW_CASH_RECORD_")); ?></button>
-    				</td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 average-price"><span>•</span><?php echo (L("_ACCOUNT_SUMMARY_BOTTOM_")); ?></p>
-    	
-    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-box">
-    		<button class="btn btn-lg btn-active buy-btn" onclick="javascrtpt:window.location.href='http://192.168.0.128:8081/Home/Buy/index'"></span><?php echo (L("_ACCOUNT_BUY_")); ?></button>
-    		<button class="btn btn-lg btn-active sell-btn" onclick="javascrtpt:window.location.href='http://192.168.0.128:8081/Home/Sell/index'"></span><?php echo (L("_ACCOUNT_SELL_")); ?></button>
-    	</div>
-    </div>
-    
-    
-    
-    <script type="text/javascript">
-        var extract_balance_all = '';
-        var nonce_str = nonceStr(32);//随机32个随机数
-    	//更改按钮样式
-		$(function(){
-			$(".content-btn").click(function(){
-				$(this).css("color","#fff");
-			});
-			
-			$(".btn-active").mouseout(function(){
-				$(this).css("color","#fff")
-			});
-			
-            init();
-		});
-
-        /**
-         * 页面初始化
-         */
-        var init = function() {
-            var maincoinId = '<?php echo ($maincoin_id); ?>';
-
-            if (!sg.isEmpty(maincoinId)) {
-                $('.content-bd').css({ 'display': 'none' });
-            }
-        };
-		
-		var btc_balance;
-		var eth_balance;
-		
-        // 获取账户信息
-		getAccount();
-		function getAccount(){
-			var url_account = "http://192.168.0.128:8081/Home/Index/getAccount";
-			$.ajax({
-				type:"get",
-				url: url_account,
-				success:function(res){
-					$("#account-btc-balance").html(res.btc_balance + " BTC");
-                    btc_balance = res.btc_balance;
-                    $("#account-eth-balance").html(res.eth_balance + " LTC");
-                    eth_balance = res.eth_balance;
-                    $("#account-freeze-money").html(" NT$ " + res.freeze_balance);
-                    $("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
-                    extract_balance_all = res.extract_balance;
-                    
-                    // 2s读取一次
-                    getValue(res)
-                    var timer = setInterval(function() {
-                        getValue(res)
-                    }, 2000);
-				}
-			});
-
-            function getValue(data) {
-                // 2s
-                let btc_btc_value = $.cookie('btc_btc_value'),
-                    btc_eth_value = $.cookie('btc_eth_value'),
-                    realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
-                let type = 'NT$ '
-                if (realtimeIndex == 2) type = 'HKD$ '
-                if (realtimeIndex == 3) type = 'USD$ '
-
-                let btc_value = parseFloat(btc_btc_value * data.btc_balance).toFixed(4),
-                    eth_value = parseFloat(btc_eth_value * data.eth_balance).toFixed(4),
-                    total = parseFloat(parseFloat(btc_value) + parseFloat(eth_value)).toFixed(4)
-                $('#account-btc-price').html( type + btc_value);
-                $('#account-eth-price').html( type + eth_value);
-                $("#account-total-value").html( type + total);
-            }
-			
-            return false;
-		}
-
-		//提现按钮弹出框
-		$('#withdraw-deposit-btn').click(function(){
-			layui.use('layer', function(){
-				var layer = layui.layer;
-				layer.open({
-					type: 1,
-					title: '<?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?>',
-					id: 'layerDemo',
-					area: '350px',
-					offset: '40%',
-					anim: '1',
-					content: '<div class="sh-money"><?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?>：<input type="text" id="get_cash_open" /></div>',
-					btn: 'yes',
-					btnAlign: 'c',
-					yes:function(){
-                        layer.closeAll();
-						var cashContent = $('#get_cash_open').val();
-						
-						layer.open({
-							type: 1,
-							title: '提示',
-							area : '250px',
-							offset: '40%',
-							content: '<div class="sh-money">本茨提點金額為NT$ '+cashContent+'是否领取？</div>',
-							btn: ['是', '否'],
-							yes: function() {
-								layer.closeAll();
-								
-								var url = "http://192.168.0.128:8081/Home/Index/createUpOrder";
-								if (cashContent == ''
-									|| cashContent == null 
-									|| isNaN(Number(cashContent))
-									|| cashContent <= 0
-									|| cashContent == undefined
-									) {
-
-									layer.msg('<?php echo (L("_HINT_INPUT_AMOUNT_INVALID_")); ?>');
-									return;
-								}
-								if (Number(cashContent) > Number(extract_balance_all)) {
-									layer.msg('<?php echo (L("_HINT_INPUT_AMOUNT_NOT_TIPS_")); ?>');
-									return;
-								}
-
-								layer.load(2)
-								$.post(url,{
-									up_price : cashContent,
-								},function(res){
-									layer.closeAll();
-
-									if (res.code == 0) {
-										layer.msg('<?php echo (L("_HINT_WITHDRAW_CASH_SUCCESS_")); ?>', function() {
-											parent.location.reload();
-										});
-									}else{
-										layer.msg('<?php echo (L("_HINT_WITHDRAW_CASH_FAILURE_")); ?>', function() {
-											parent.location.reload();
-										});
-									}
-								});
-							}
-						});
-					}
-				});
-			});
-		});
-	
-		//响应式侧边栏颜色
-		$('#minwidth1-act').css({'background':'#3388BB'});
-		$('#minwidth2-act').css({'background':'#697785'});
-		$('#minwidth3-act').css({'background':'#697785'});
-		$('#minwidth4-act').css({'background':'#697785'});
-	</script>
-
-		    </section>
-		</div>
-	    
-	    <footer>
-	        <!-- 底部开始 -->
+        <!-- footer start-->
+        <!-- 底部开始 -->
 	
     <footer>
+    	<!--二维码-->
+		<div id="QR-code-phone">
+			<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_1__")); ?></p>
+			<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_2__")); ?></p>
+			<!--<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_3__")); ?></p>-->
+			<div id="QR-code" style="width: 200px;height: 200px;border: 5px solid #3388bb;">
+				<img src="/Public/images/QR-code.png" width="100%" height="100%"/>
+			</div>
+		</div>
+    	
     	<div class="footer-main">
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
+    			<!-- <a href="#"><?php echo (L("_CAREERS_")); ?></a><span>|</span> -->
     			<a href="http://192.168.0.128:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
@@ -1272,6 +1126,9 @@
                 </a><span>|</span>
     			<a href="http://192.168.0.128:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
+    			<!-- <a href="#">
+                    <?php echo (L("_LOGIN_TRANSPARENCY_REPORT_")); ?>
+                </a><span>|</span> -->
     			<a href="http://192.168.0.128:8081/Home/ContactUs">
                     <?php echo (L("_CONTACT_US_")); ?>
                 </a>
@@ -1282,7 +1139,10 @@
     	</div>
     </footer>
 
+
 <!-- 底部结束
-	    </footer>
+        <!-- footer end-->
     </div>
 </body>
+<script type="text/javascript" src="http://192.168.0.128:8081/Public/js/md5.js"></script>
+<script type="text/javascript" src="/Public/home/js/login.min.js"></script>

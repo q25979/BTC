@@ -11,20 +11,7 @@
     			<li class="sidebar-content-li"><a href="__HOST_PATH__/Home/Setting/index" class="sidebar-content-a"><img src="__PUBLIC__/images/set-active.png" /><{$Think.lang._ACCOUNT_SETTINGS_}></a> <span class="label label-success new-logo">new</span></li>
     		</ul>
    		</div>
-   		
-		<!--二维码-->
-		<div id="QR-code-box" style="width: 100%;">
-			<div style="border: 5px solid #3388bb;">
-				<p style="font-size: 16px;margin-left: 5px;margin-top: 10px;"><{$Think.lang.__QRCODE_TIPS_1__}></p>
-				<p style="font-size: 16px;margin-left: 5px;"><{$Think.lang.__QRCODE_TIPS_2__}></p>
-				<!--<p style="font-size: 16px;margin-left: 5px;"><{$Think.lang.__QRCODE_TIPS_3__}></p>-->
-				<div id="QR-code" style="width: 100%;height: 250px;border-top: 5px solid #3388bb;">
-					<img src="__PUBLIC__/images/b.jpg" width="100%" height="100%"/>
-				</div>
-			</div>
-		</div>
     </div>
-
 
 	<!--宽度过低时左侧内容-->
 	<div id="small-bulContent" style="display: none;">
@@ -32,7 +19,6 @@
             <ul>
                 <li v-for="item in bulletinLit" class="small-hiddeny" style="height: 25px;">
                     <div class="small-announcement-bd"><a href="javascript:void(0)" @click = "getBulletinContent(item.bulletin_id)">{{ item.title }}</a></div>
-                    <!--<div style="border-top: 1px dashed #ccc; width: 80%; margin-top: 5px; margin-left: 10%;" ></div>-->
                 </li>
             </ul>
         </div>
@@ -76,7 +62,6 @@
 
         });
 
-
         var popupVm = new Vue({
             el: '#small-bulContent',
             data:{
@@ -84,9 +69,7 @@
                 count: 0
             },
             created: function(){
-
                 this.getData();
-
             },
             methods: {
                 /*
@@ -117,9 +100,7 @@
                  * 公告滚动
                  */
                 small_noticeRoll: function (length) {
-
                     if (length <= 1 ) { return ; }
-
                     var _this = this;
                     small_margintop = $(".small-bultitle ul").css("marginTop");//偏移量
                     var reg = new RegExp("px","g");
@@ -139,8 +120,6 @@
                     }, 5000);
                 }
             }
-
-
         });
     });
 </script>

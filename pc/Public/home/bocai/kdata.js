@@ -58,6 +58,7 @@ $(function() {
 	});
 
 	// 5分钟更新一次
+	$.get(config.host_path + "/float/index/updatebtc");
 	setInterval(function() {
 		$.get(config.host_path + "/float/index/updatebtc");
 	}, 1000*60*5);
@@ -124,6 +125,8 @@ function getkdata(d, callback) {
 				return item;
 			});
 		callback(data)
+	}).fail(function() {
+		closeAll();
 	});
 }
 
