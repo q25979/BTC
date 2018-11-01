@@ -182,54 +182,10 @@ function koption(res, type) {
 	        	}]
 			}
 		}, 
-		{
-			name: 'MA5',
-	        type: 'line',
-	        data: calculateMA(5, data),
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-		}, 
-		{
-			name: 'MA10',
-	        type: 'line',
-	        data: calculateMA(10, data),
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-		}, 
-		{
-			name: 'MA20',
-	        type: 'line',
-	        data: calculateMA(20, data),
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-		}, 
-		{
-			name: 'MA30',
-	        type: 'line',
-	        data: calculateMA(30, data),
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-	    }
+		kline(5, data), 
+		kline(10, data),
+		kline(20, data), 
+		kline(30, data),
 	];
 	option.legend = {
 		data: [type, 'MA5', 'MA10', 'MA20', 'MA30'],
@@ -272,6 +228,7 @@ function koption(res, type) {
 	            color: '#8392A5'
 	        },
 	        handleSize: '80%',
+	        filterMode: 'empty',
 	        dataBackground: {
 	            areaStyle: {
 	                color: '#8392A5'
@@ -292,11 +249,28 @@ function koption(res, type) {
 	        end: zoom.end
 	    },
 	    {
-	    	type: 'inside'
+	    	type: 'inside',
 	    }
 	];
 
 	return option;
+}
+
+/**
+ * K线图line
+ */
+function kline(ma, data) {
+	var line = {};
+
+	line.name = 'MA'+ma;
+	line.type = 'line';
+	line.data = calculateMA(ma, data);
+	line.smooth = true;
+	line.showSymbol = false;
+	line.lineStyle = {
+		normal: { width: 1 }
+	}
+	return line;
 }
 
 /**
@@ -369,4 +343,6 @@ function deal(type) {
 /**
  * 交易記錄
  */
-function record() {}
+function record() {
+	window.open(config.host_path + '/Home/Bocai/getlog')
+}

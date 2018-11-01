@@ -107,9 +107,9 @@ class IndexController extends Controller
         $info = [
             'time' => date("H:i:s"),
             'last' => $info['last']+$this->frand(),
-            'open' => $info['open']+$this->frand(),
-            'low'  => $info['low']+$this->frand(),
-            'high' => $info['high']+$this->frand()
+            'open' => $info['open'],
+            'low'  => $info['low'],
+            'high' => $info['high']
         ];
 
         $this->ajaxReturn($info);
@@ -130,6 +130,6 @@ class IndexController extends Controller
     // 随机数
     private function frand() 
     {
-        return mt_rand(0, 9999)/10000;
+        return mt_rand(0, 1000)/10000;
     }
 }

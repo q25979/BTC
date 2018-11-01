@@ -1104,20 +1104,9 @@
         <!-- 底部开始 -->
 	
     <footer>
-    	<!--二维码-->
-		<div id="QR-code-phone">
-			<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_1__")); ?></p>
-			<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_2__")); ?></p>
-			<!--<p style="font-size: 16px;color: #EE5544;"><?php echo (L("__QRCODE_TIPS_3__")); ?></p>-->
-			<div id="QR-code" style="width: 200px;height: 200px;border: 5px solid #3388bb;">
-				<img src="/Public/images/QR-code.png" width="100%" height="100%"/>
-			</div>
-		</div>
-    	
     	<div class="footer-main">
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
-    			<!-- <a href="#"><?php echo (L("_CAREERS_")); ?></a><span>|</span> -->
     			<a href="http://192.168.0.128:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
@@ -1126,9 +1115,6 @@
                 </a><span>|</span>
     			<a href="http://192.168.0.128:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
-    			<!-- <a href="#">
-                    <?php echo (L("_LOGIN_TRANSPARENCY_REPORT_")); ?>
-                </a><span>|</span> -->
     			<a href="http://192.168.0.128:8081/Home/ContactUs">
                     <?php echo (L("_CONTACT_US_")); ?>
                 </a>
@@ -1138,7 +1124,6 @@
     		</div>
     	</div>
     </footer>
-
 
 <!-- 底部结束
         <!-- footer end-->

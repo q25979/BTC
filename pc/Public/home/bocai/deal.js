@@ -23,10 +23,20 @@ $(function() {
 	});
 
 	setInterval(gettdata, 1000); // 1s钟获取实时数据
-	getbalance();	// 获取余额
-	getorder();
-	setInterval(getorder, 1000*60*1);	// 獲取訂單
+	openfn();
+	setInterval(openfn, 1000*60*3);	// 獲取訂單
 });
+
+/**
+ * 开盘
+ */
+function openfn() {
+	$('.flag').addClass('_y360');
+	getbalance();	// 获取余额
+	$.get(config.host_path + '/home/bocai/open', function(res) {
+		getorder();
+	});
+}
 
 /**
  * 獲取訂單
@@ -90,6 +100,10 @@ function gettdata() {
 	$($(".now-price")[0]).css('color', copen);
 	$(".time>div:nth-last-child(1)").text(minue+':'+second);
 	$('#openNumber').text(parseInt((((parseInt(atime[0])*60+parseInt(atime[1]))/5)+1)));
+
+	if (parseInt(minue) == 5 && parseInt(second) == 0) {
+		openfn()
+	}
 }
 
 /**
@@ -158,6 +172,7 @@ function okorder() {
 				layer.closeAll('loading')
 				layer.msg(res.msg, {time: 1500, icon: icon});
 				if (icon == 5) return false;
+				getbalance();
 				getorder();
 			}).fail(function() {
 				layer.closeAll()
@@ -171,7 +186,5 @@ function okorder() {
  * 更新数据
  */
 function allrefresh() {
-	getbalance();
-	$('.flag').addClass('_y360');
-	getorder();
+	openfn();
 }

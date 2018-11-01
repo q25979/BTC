@@ -1,0 +1,18 @@
+[ 2018-10-31T17:40:41+08:00 ] 127.0.0.1 /tuiguang/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001339s ]
+ERR: 無法載入模組:Tuiguang
+
+[ 2018-10-31T17:40:44+08:00 ] 127.0.0.1 /tuiguan/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+ERR: 無法載入模組:Tuiguan
+
+[ 2018-10-31T17:40:54+08:00 ] 127.0.0.1 /tuiguang/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+ERR: 無法載入模組:Tuiguang
+

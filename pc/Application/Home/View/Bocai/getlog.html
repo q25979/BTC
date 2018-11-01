@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>購買記錄</title>
+	<link rel="stylesheet" href="__PUBLIC__/home/bocai/iconfont.css" />
+	<link rel="stylesheet" href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
+	<script src="__JS__/config.js"></script>
+	<script src="__JS__/jquery-3.2.1.min.js"></script>
+	<script src="__PLUG-IN__/layui-v2.3.0/layer/layer.js"></script>
+	<style>
+		body{max-width:1200px;margin:0 auto;padding:0;}
+	</style>
+</head>
+<body>
+	<div class="deal-container">
+		<table class="layui-table" lay-size="sm" lay-skin="line">
+			<thead>
+				<tr>
+					<th>訂單ID</th>
+					<th>購買方向</th>
+					<th>最終方向</th>
+					<th>金額(NT$)</th>
+					<th>期數</th>
+					<th>購買價格($)</th>
+					<th>最終價格($)</th>
+					<th>購買時間</th>
+					<th>開盤時間</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="list" id="vo">
+					<tr>
+						<td><{$vo.order_id}></td>
+						<td><{$vo.buy_direction_name}></td>
+						<td><{$vo.last_direction_name}></td>
+						<td><{$vo.money}></td>
+						<td><{$vo.buy_number}></td>
+						<td><{$vo.buy_price}></td>
+						<td><{$vo.last_price}></td>
+						<td><{$vo.buy_time}></td>
+						<td><{$vo.last_time}></td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

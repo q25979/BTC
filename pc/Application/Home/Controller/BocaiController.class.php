@@ -37,6 +37,8 @@ class BocaiController extends VerifyController
 	// 确认下单
 	public function okorder()
 	{
+		if ($this->closeverify() == '1')
+			$this->ajaxReturn(['code' => -1, 'msg' => '休市中，不能購買']);
 		$result = ['code' => -1, 'msg' => '購買失敗'];
 		$post = I('post.');
 		$account = M('UserAccount');
@@ -80,8 +82,7 @@ class BocaiController extends VerifyController
 		$limit = I('get.limit');
 
 		// 获取两天前时间戳
-		$day  = date('d');
-		$time = strtotime(date('Y-m').'-'.($day-2));
+		$time = time()-(3*24*60*60);
 		$map['create_time'] = array('gt', $time);
 		$list = $WMinlog
 			->page('1,'.$limit)
@@ -114,5 +115,87 @@ class BocaiController extends VerifyController
 			'count' => $WMinlog->where($map)->page('1,'.$limit)->count(),
 			'data' => $list
 		]);
+	}
+
+	// 开盘
+	public function open()
+	{
+		$WMinlog  = M('WMinlog');
+		$WOpenset = M('WOpenset');
+		$UserAccount = M('UserAccount');
+
+		// 获取未开盘期数
+		$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-(int)date('i')[1]));
+		$map['last_direction'] = -1;
+		$map['buy_time'] = array('lt', $time);
+		$noopenli = $WMinlog
+			->where($map)
+			->field('id,buy_number')
+			->group('buy_number')
+			->select();
+		foreach ($noopenli as $k => $v) {
+			$set = $WOpenset->getFieldByNumber($v['buy_number'], 'set');
+			$numbermap['buy_number'] = $v['buy_number'];	// 期数条件
+			$save['last_direction']  = $set;	// 需要更改状态的数据
+			if ($set == 0) {
+				// 涨，获取最高购买价格
+				$max = $WMinlog->where($numbermap)->max('buy_price');
+				$save['last_price'] = $max+(rand(1,1000)/10000);
+			} 
+			if ($set == 1) {
+				// 跌，获取最低购买价格
+				$min = $WMinlog->where($numbermap)->min('buy_price');
+				$save['last_price'] = $min-(rand(1,1000)/10000);
+			}
+			$save['number'] = $v['buy_number'];
+
+			// 更改数据状态
+			$WMinlog->where($numbermap)->save($save);
+			// 查询本期买对方向的人
+			$buymap['buy_direction'] = $set;
+			$buymap['buy_number'] = $v['buy_number'];
+			$lastlist = $WMinlog->where($buymap)->field('id,uid,money')->select();
+			foreach ($lastlist as $key => $value) {
+				// 给本期买对的人账户加钱
+				$account = $UserAccount
+					->where(['user_id' => $value['uid']])
+					->setInc('extract_balance', $value['money']*2);
+			}
+		}
+		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成']);
+	}
+
+	// 休市验证0-开盘 1-休市
+	private function closeverify()
+	{
+		$set = M('WCloseset')->getFieldById(1, 'set');
+		return $set;
+	}
+
+	// 获取记录
+	public function getlog()
+	{
+		// 只获取最近3天数据
+		$time = time()-(3*24*60*60);
+		$map['create_time'] = array('gt', $time);
+		$map['uid'] = $this->user_id;
+		$list = M('WMinlog')->where($map)->select();
+
+		// 转换可视数据
+		foreach ($list as $k => $v) {
+			if ($v['buy_direction'] == 0) $list[$k]['buy_direction_name'] = '漲';
+			if ($v['buy_direction'] == 1) $list[$k]['buy_direction_name'] = '跌';
+			if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
+			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
+			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
+			$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
+			$hour  = (int)(((int)$v['buy_number']*5)/60);
+			$minue = (int)(((int)$v['buy_number']*5)%60);
+			$hour  = $hour < 10 ? '0'.$hour : $hour;
+			$minue = $minue < 10 ? '0'.$minue : $minue;
+			$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;
+		}
+		$this->assign('list', $list);
+		$this->display();
 	}
 }
