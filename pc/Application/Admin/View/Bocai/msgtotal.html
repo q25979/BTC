@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit();?><link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
-<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+<css href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
+<js href="__JS__/jquery-3.2.1.min.js" />
+<js href="__PLUG-IN__/layui-v2.3.0/layui/layui.js" />
 <style>
 	.x-body {padding: 20px;}
 	.layui-form-mid {padding: 0 !important;}
@@ -31,7 +31,7 @@
 
 		// 监听switch
 		form.on('switch(switch-set)', function(data) {
-			var u = '<?php echo U("control");?>';
+			var u = '<{:U("control")}>';
 			var d = { number: this.value };
 			d.set = data.elem.checked ? 0 : 1;
 
@@ -47,10 +47,9 @@
 		// 表格数据
 		table.render({
 			elem: '#opentable',
-			url: '<?php echo U("set");?>',
+			url: '<{:U("set")}>',
 			page: true,
-			limit: 48,
-			limits: [12,24,48,96,192,218],
+			limit: 12,
 			cols: [[
 				{field: 'number', title: '期数', width: 80, align: 'center'},
 				{field: 'time', title: '开盘时间', width: 140, align: 'center'},
@@ -61,7 +60,7 @@
 
 	// 点击切换盘市状态
 	var switchState = function() {
-		var u = '<?php echo U("closeset");?>';
+		var u = '<{:U("closeset")}>';
 		var d = {};
 		d.set = $('#switch-btn').hasClass('stop') ? 1 : 0;
 		layer.load(2)
@@ -79,7 +78,7 @@
 
 	// 开盘数据还原
 	var restore = function() {
-		var u = '<?php echo U("restore");?>';
+		var u = '<{:U("restore")}>';
 		layer.confirm('还原会将所有开盘数据重置为涨，您确认这么做？', {title: '警告', icon: 7}, function() {
 			layer.closeAll();
 			layer.load(2);
@@ -97,7 +96,7 @@
 
 	// 统计数据
 	var init = function() {
-		var u = '<?php echo U("init");?>';
+		var u = '<{:U("init")}>';
 		$.get(u, function(res) {
 			$('#rise').text(res.rise);
 			$('#fall').text(res.fall);

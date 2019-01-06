@@ -29891,3 +29891,47 @@ INFO: [ app_begin ] --END-- [ RunTime:0.004614s ]
 SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0064s ]
 SQL: SELECT `last`,`open`,`low`,`high`,`update_time` FROM `btc_w_closeset` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
 
+[ 2018-11-01T15:13:53+08:00 ] 192.168.0.128 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002598s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0057s ]
+SQL: SELECT `last`,`open`,`low`,`high`,`update_time` FROM `btc_w_closeset` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-11-01T15:14:05+08:00 ] 192.168.0.128 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005492s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0062s ]
+SQL: SELECT `last`,`open`,`low`,`high`,`update_time` FROM `btc_w_closeset` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-11-01T15:14:08+08:00 ] 192.168.0.128 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004697s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0055s ]
+SQL: SELECT `last`,`open`,`low`,`high`,`update_time` FROM `btc_w_closeset` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-11-01T15:14:09+08:00 ] 192.168.0.128 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002186s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0054s ]
+SQL: SELECT `last`,`open`,`low`,`high`,`update_time` FROM `btc_w_closeset` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+

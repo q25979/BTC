@@ -83,4 +83,22 @@ class BocaiController extends VerifyController {
     		? $this->ajaxReturn(['code' => 0, 'msg' => '切换成功'])
     		: $this->ajaxReturn(['code' => -1, 'msg' => '切换失败']);
     }
+
+    // 信息统计
+    public function msgtotal()
+    {
+        $this->display();
+    }
+
+    // 交易数据
+    public function sealdata()
+    {
+        $result = [];
+        $map['number'] = (int)(((int)date('H')*60+(int)date('i'))/5)+1; // 设置要开的期数
+        $map['create_time'] = array('lt', date('Y-m-d'));
+        $result['number'] = $map['number'];
+        $result['count'] = M('WCloseset')->where($map)->count();
+
+        $this->ajaxReturn($result);
+    }
 }

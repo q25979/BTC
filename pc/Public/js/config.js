@@ -6,5 +6,5 @@
 
 const config = {
 	verify_str: "oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1",	// md5加密串
-	host_path: "http://192.168.0.128:8081",			// 请输入您的域名
+	host_path: "http://localhost:8081",			// 请输入您的域名
 };

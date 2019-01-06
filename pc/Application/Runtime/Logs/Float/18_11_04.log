@@ -1,0 +1,252 @@
+[ 2018-11-04T11:41:32+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004480s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0105s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:42:04+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004404s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:42:28+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003689s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:42:52+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004350s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:43:16+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003530s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:43:41+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002080s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006108s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:44:05+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004082s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0081s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:44:29+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001140s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004562s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:44:53+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004483s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:45:18+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002177s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006239s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0072s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:45:42+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003442s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0079s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:46:08+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001172s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004988s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:46:39+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004790s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0075s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:47:03+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004223s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0081s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:47:27+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003276s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0086s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:47:51+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003769s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0072s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:48:15+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004321s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0072s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+
+[ 2018-11-04T11:48:40+08:00 ] 192.168.0.128 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003190s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0069s ]
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 66 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 67 行.
+

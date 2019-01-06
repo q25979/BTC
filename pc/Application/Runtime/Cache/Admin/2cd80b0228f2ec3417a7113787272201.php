@@ -49,8 +49,7 @@
 			elem: '#opentable',
 			url: '<?php echo U("set");?>',
 			page: true,
-			limit: 48,
-			limits: [12,24,48,96,192,218],
+			limit: 12,
 			cols: [[
 				{field: 'number', title: '期数', width: 80, align: 'center'},
 				{field: 'time', title: '开盘时间', width: 140, align: 'center'},

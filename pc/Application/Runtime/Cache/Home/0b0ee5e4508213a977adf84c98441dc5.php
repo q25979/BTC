@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<title>購買記錄</title>
 	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
-	<link rel="stylesheet" href="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
-	<script src="http://192.168.0.128:8081/Public/js/config.js"></script>
-	<script src="http://192.168.0.128:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.128:8081/Public/plug-in/layui-v2.3.0/layer/layer.js"></script>
+	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
+	<script src="http://localhost:8081/Public/js/config.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layer/layer.js"></script>
 	<style>
 		body{max-width:1200px;margin:0 auto;padding:0;}
 	</style>

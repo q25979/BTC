@@ -1,0 +1,893 @@
+[ 2019-01-05T14:24:31+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001120s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000232s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000527s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023594s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001337s ]
+
+[ 2019-01-05T14:24:36+08:00 ] 127.0.0.1 /Admin/Login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002165s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002868s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002804s ]
+
+[ 2019-01-05T14:26:01+08:00 ] 127.0.0.1 /Admin/Login?key=ajKTowXwmOoapxtD
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005982s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\32ec6c906c117a7c2bf504769276d87a.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001439s ]
+
+[ 2019-01-05T14:26:01+08:00 ] 127.0.0.1 /Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001789s ]
+
+[ 2019-01-05T14:26:02+08:00 ] 127.0.0.1 /Admin/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+
+[ 2019-01-05T14:26:24+08:00 ] 127.0.0.1 /Admin/Login/getAccount.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 37 行.
+
+[ 2019-01-05T14:26:24+08:00 ] 127.0.0.1 /Admin/Login/verify?0.2468262388056901
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001207s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001272s ]
+
+[ 2019-01-05T14:26:53+08:00 ] 127.0.0.1 /Admin/Login/getAccount.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002906s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 42 行.
+
+[ 2019-01-05T14:26:53+08:00 ] 127.0.0.1 /Admin/Login/verify?0.2468262388056901?0.1099562498369191
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002860s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2019-01-05T14:27:07+08:00 ] 127.0.0.1 /Admin/Login/getAccount.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003741s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 46 行.
+
+[ 2019-01-05T14:27:08+08:00 ] 127.0.0.1 /Admin/Login/verify?0.2468262388056901?0.1099562498369191?0.3749715704470411
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001232s ]
+
+[ 2019-01-05T14:27:15+08:00 ] 127.0.0.1 /Admin/Login/getAccount.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001186s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004931s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\LoginController.class.php 第 55 行.
+
+[ 2019-01-05T14:27:15+08:00 ] 127.0.0.1 /Admin/Login/verify?0.2468262388056901?0.1099562498369191?0.3749715704470411?0.6825795579816276
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000970s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005581s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002166s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002241s ]
+
+[ 2019-01-05T14:27:20+08:00 ] 127.0.0.1 /Admin/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005933s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000949s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2019-01-05T14:27:22+08:00 ] 127.0.0.1 /Admin/Index/identity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009780s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `identity` FROM `btc_admin` WHERE `admin_id` = 'admin001'  [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 111 行.
+
+[ 2019-01-05T14:27:23+08:00 ] 127.0.0.1 /Admin/Index/init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003779s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011088s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_up_order` [ RunTime:0.0098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_up_order` WHERE `is_deleted` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 95 行.
+
+[ 2019-01-05T14:38:15+08:00 ] 127.0.0.1 /Admin/Trade/TradeList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003161s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004095s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [8] Use of undefined constant Trade - assumed 'Trade' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\e05faeea1411cb6288395d96ebea5c46.php 第 65 行.
+NOTIC: [8] Use of undefined constant SellUpdate - assumed 'SellUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\e05faeea1411cb6288395d96ebea5c46.php 第 91 行.
+NOTIC: [8] Use of undefined constant BuyUpdate - assumed 'BuyUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\e05faeea1411cb6288395d96ebea5c46.php 第 106 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009193s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2019-01-05T14:38:16+08:00 ] 127.0.0.1 /Admin/Trade/Trade.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003760s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: create_time D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\TradeController.class.php 第 89 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\TradeController.class.php 第 91 行.
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\TradeController.class.php 第 30 行.
+
+[ 2019-01-05T14:38:24+08:00 ] 127.0.0.1 /Admin/Order/OrderListAll.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003379s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 67 行.
+NOTIC: [8] Use of undefined constant getOrderListAll - assumed 'getOrderListAll' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\3bed188a6b80e8225450c63e0563e8d7.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017343s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000644s ]
+
+[ 2019-01-05T14:38:25+08:00 ] 127.0.0.1 /Admin/Order/getOrderListAll.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003944s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_order_info` [ RunTime:0.0087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT oi.*,bu.user_name FROM btc_order_info as oi INNER JOIN btc_user as bu on bu.user_id = oi.user_id and bu.is_deleted =0  WHERE oi.is_deleted = 0 ORDER BY oi.create_time desc LIMIT 0,30   [ RunTime:0.0015s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\OrderController.class.php 第 45 行.
+
+[ 2019-01-05T14:38:30+08:00 ] 127.0.0.1 /Admin/Account/AccountList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002064s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Use of undefined constant getAccount - assumed 'getAccount' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\07439442505f04a6e8bd3102d06ef6de.php 第 214 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015094s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000648s ]
+
+[ 2019-01-05T14:38:31+08:00 ] 127.0.0.1 /Admin/Account/getAccountList.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002084s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_user_account` [ RunTime:0.0089s ]
+SQL: SELECT a.*,b.user_name,bb1.bank_name as bank_name,bb2.bank_name as bank_branch FROM btc_user_account as a left join btc_user as b on b.user_id=a.user_id
+                 left join btc_bank as bb1 on bb1.bank_id = a.bank_name
+                 left join btc_bank as bb2 on bb2.bank_id = a.bank_branch  WHERE a.is_deleted = 0 ORDER BY create_time desc LIMIT 0,30   [ RunTime:0.0049s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\AccountController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM btc_user_account as a WHERE a.is_deleted = 0 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:38:34+08:00 ] 127.0.0.1 /Admin/Bank/BankList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003950s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [8] Use of undefined constant delete - assumed 'delete' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\6b1a546a5a94bf533d23beff990786cb.php 第 103 行.
+NOTIC: [8] Use of undefined constant getBank - assumed 'getBank' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\6b1a546a5a94bf533d23beff990786cb.php 第 133 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008954s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2019-01-05T14:38:35+08:00 ] 127.0.0.1 /Admin/Bank/getBank.html?page=1&limit=30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005271s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_bank` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM btc_bank as bb1 WHERE bb1.is_deleted = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT bb1.bank_id,bb1.bank_name,bb1.bank_type,bb1.create_time,bb2.bank_name as bank_parent_name FROM btc_bank as bb1 left join btc_bank as bb2 on bb1.bank_parent = bb2.bank_id and
+        bb2.is_deleted =0  WHERE bb1.is_deleted = 0 ORDER BY bb1.create_time desc LIMIT 0,30   [ RunTime:0.0016s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\BankController.class.php 第 44 行.
+
+[ 2019-01-05T14:38:41+08:00 ] 127.0.0.1 /Admin/System/EmailList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002814s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Use of undefined constant Email - assumed 'Email' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\5a84ddf31f1ff71cccc2323a7577e65b.php 第 113 行.
+NOTIC: [8] Use of undefined constant EmailUpdate - assumed 'EmailUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\5a84ddf31f1ff71cccc2323a7577e65b.php 第 140 行.
+NOTIC: [8] Use of undefined constant passupdate - assumed 'passupdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\5a84ddf31f1ff71cccc2323a7577e65b.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2019-01-05T14:38:42+08:00 ] 127.0.0.1 /Admin/System/Email.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003952s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0065s ]
+SQL: SELECT `email_type`,`email_account`,`email_password` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 281 行.
+
+[ 2019-01-05T14:38:46+08:00 ] 127.0.0.1 /Admin/System/CoinList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002099s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Use of undefined constant Coin - assumed 'Coin' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\fc1f4935bdf6d6bd0713618afaf32114.php 第 193 行.
+NOTIC: [8] Use of undefined constant infoCoin - assumed 'infoCoin' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\fc1f4935bdf6d6bd0713618afaf32114.php 第 253 行.
+NOTIC: [8] Use of undefined constant showCoin - assumed 'showCoin' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\fc1f4935bdf6d6bd0713618afaf32114.php 第 268 行.
+NOTIC: [8] Use of undefined constant floatCoin - assumed 'floatCoin' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\fc1f4935bdf6d6bd0713618afaf32114.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000720s ]
+
+[ 2019-01-05T14:38:48+08:00 ] 127.0.0.1 /Admin/System/Coin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002532s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_currency_value` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `btc_show_currency_value` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `btc_currency_value`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `btc_show_currency_value`  [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 373 行.
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0057s ]
+SQL: SELECT `float_status` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:38:49+08:00 ] 127.0.0.1 /Admin/System/Company.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002348s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0053s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+NOTIC: [8] Use of undefined constant companylist - assumed 'companylist' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\2bed70aaeea5b52a6ec56e92d374b903.php 第 115 行.
+NOTIC: [8] Use of undefined constant CompanyUpdate - assumed 'CompanyUpdate' D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Admin\2bed70aaeea5b52a6ec56e92d374b903.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007252s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2019-01-05T14:38:51+08:00 ] 127.0.0.1 /Admin/System/companylist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002284s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0060s ]
+SQL: SELECT bhi.company_tel,`company_email`,bi.en_content,`tw_content` FROM btc_home_info as bhi INNER JOIN btc_i18n as bi ON bhi.i18n_id = bi.i18n_id  WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0003s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\SystemController.class.php 第 1043 行.
+
+[ 2019-01-05T14:38:59+08:00 ] 127.0.0.1 /Admin/Bocai/msgtotal.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003699s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+ERR: 模板不存在:./Application/Admin/View/Bocai/msgtotal.html
+
+[ 2019-01-05T14:39:03+08:00 ] 127.0.0.1 /Admin/Bocai/set.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002080s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0054s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001118s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001188s ]
+
+[ 2019-01-05T14:39:04+08:00 ] 127.0.0.1 /Admin/Bocai/init.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005824s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0053s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` WHERE `set` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0071s ]
+SQL: SELECT `set` FROM `btc_w_closeset` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:39:05+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002312s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:39:20+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=2&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004181s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 12,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:39:23+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003635s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,12   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:40:48+08:00 ] 127.0.0.1 /Admin/Bocai/msgtotal.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002417s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2019-01-05T14:40:50+08:00 ] 127.0.0.1 /Admin/Bocai/init.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006495s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` WHERE `set` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0067s ]
+SQL: SELECT `set` FROM `btc_w_closeset` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-01-05T14:40:51+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002852s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:45:01+08:00 ] 127.0.0.1 /Admin/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002146s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000341s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011906s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2019-01-05T14:45:05+08:00 ] 127.0.0.1 /Admin/Index/identity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0064s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `identity` FROM `btc_admin` WHERE `admin_id` = 'admin001'  [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 111 行.
+
+[ 2019-01-05T14:45:07+08:00 ] 127.0.0.1 /Admin/Index/init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005943s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_up_order` [ RunTime:0.0093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_up_order` WHERE `is_deleted` = 0 AND `status` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Admin\Controller\IndexController.class.php 第 95 行.
+
+[ 2019-01-05T14:46:32+08:00 ] 127.0.0.1 /Admin/Bocai/set.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002829s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0061s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010844s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2019-01-05T14:46:34+08:00 ] 127.0.0.1 /Admin/Bocai/init.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004699s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` WHERE `set` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0069s ]
+SQL: SELECT `set` FROM `btc_w_closeset` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:46:35+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=48
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003905s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,48   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:47:10+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003054s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:47:15+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=218
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002524s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,218   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:47:39+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=1&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002202s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 0,12   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:48:02+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=24&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002365s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 276,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T14:48:15+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=14&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003148s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003615s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 156,12   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-01-05T14:48:27+08:00 ] 127.0.0.1 /Admin/Bocai/set.html?page=15&limit=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003675s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `btc_w_openset` LIMIT 168,12   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-01-05T16:45:14+08:00 ] 127.0.0.1 /Admin/Bocai/closeset.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002485s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0064s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '62fa7bbe115476d6b10ecb376839e996' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_closeset` [ RunTime:0.0060s ]
+SQL: UPDATE `btc_w_closeset` SET `set`='1' WHERE `id` = 1 [ RunTime:0.0002s ]
+

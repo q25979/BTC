@@ -125,7 +125,11 @@ class BocaiController extends VerifyController
 		$UserAccount = M('UserAccount');
 
 		// 获取未开盘期数
-		$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-(int)date('i')[1]));
+		if ((int)date('i')[1] < 5) {
+			$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-(int)date('i')[1]));
+		} else {
+			$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-((int)date('i')[1])+5));
+		}
 		$map['last_direction'] = -1;
 		$map['buy_time'] = array('lt', $time);
 		$noopenli = $WMinlog
