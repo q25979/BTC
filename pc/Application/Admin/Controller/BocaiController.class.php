@@ -58,7 +58,7 @@ class BocaiController extends VerifyController {
     	$this->ajaxReturn([
     		'rise'	=> $rise,
     		'fall'	=> 288-$rise,
-    		'state'	=> M('WCloseset')->getFieldById('1', 'set')
+    		'state'	=> M('WSet')->getFieldById('1', 'set')
     	]);
     }
 
@@ -76,7 +76,7 @@ class BocaiController extends VerifyController {
     // 设置开/关
     public function closeset()
     {
-    	$wcloseset = M('WCloseset');
+    	$wcloseset = M('WSet');
     	$post = I('post.');
     	$info = $wcloseset->where(['id' => 1])->save($post);
     	$info > 0
@@ -97,8 +97,14 @@ class BocaiController extends VerifyController {
         $map['number'] = (int)(((int)date('H')*60+(int)date('i'))/5)+1; // 设置要开的期数
         $map['create_time'] = array('lt', date('Y-m-d'));
         $result['number'] = $map['number'];
-        $result['count'] = M('WCloseset')->where($map)->count();
+        $result['count'] = M('WSet')->where($map)->count();
 
         $this->ajaxReturn($result);
+    }
+
+    // 下注记录
+    public function betslog()
+    {
+        $this->display();
     }
 }

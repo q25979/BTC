@@ -172,7 +172,7 @@ class BocaiController extends VerifyController
 	// 休市验证0-开盘 1-休市
 	private function closeverify()
 	{
-		$set = M('WCloseset')->getFieldById(1, 'set');
+		$set = M('WSet')->getFieldById(1, 'set');
 		return $set;
 	}
 

@@ -526,10 +526,16 @@
                 <i class="iconfont nav_right">&#xe697;</i>
             </a>
             <ul class="sub-menu">
-                <li>
+                <!-- <li>
                     <a _href="<?php echo U('Bocai/msgtotal');?>">
                         <i class="iconfont">&#xe6a7;</i>
-                        <cite>信息统计</cite>
+                        <cite>数据报表</cite>
+                    </a> 
+                </li> -->
+                <li>
+                    <a _href="<?php echo U('Bocai/betslog');?>">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>下注记录</cite>
                     </a> 
                 </li>
                 <li>

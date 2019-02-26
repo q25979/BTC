@@ -1,0 +1,148 @@
+[ 2019-01-07T21:22:18+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] localhost:8082/ [运行时间：0.088001s][吞吐率：11.36req/s] [内存消耗：1,445.85kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_0d6faa6ec47dd29b2bf1877ad4bf456a=1544018742; PHPSESSID=8hl4ipvg79524ip6dlaut4mhv0; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NDE5MmQyMWQyZTA5YThmMmI5N2M1NDY3ZThlNWQzY2U%253D%22%7D; btc_admin_account=think%3A%7B%22user_name%22%3A%22admin001%22%2C%22pass_word%22%3A%2262fa7bbe115476d6b10ecb376839e996%22%7D; btc_float_value=3; btc_eth_value=32.57; btc_btc_value=3806.32; btc_wbtcopen=3793.8296; btc_wbtctime=17%3A01%3A42',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-07T21:22:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/login/login/token/568c7fa8cc2c1f3fddc38fbc5c6117a8.html
+[ log ] localhost:8082/index/login/login/token/568c7fa8cc2c1f3fddc38fbc5c6117a8.html [运行时间：0.066616s][吞吐率：15.01req/s] [内存消耗：2,093.43kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_0d6faa6ec47dd29b2bf1877ad4bf456a=1544018742; PHPSESSID=8hl4ipvg79524ip6dlaut4mhv0; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NDE5MmQyMWQyZTA5YThmMmI5N2M1NDY3ZThlNWQzY2U%253D%22%7D; btc_admin_account=think%3A%7B%22user_name%22%3A%22admin001%22%2C%22pass_word%22%3A%2262fa7bbe115476d6b10ecb376839e996%22%7D; btc_float_value=3; btc_eth_value=32.57; btc_btc_value=3806.32; btc_wbtcopen=3793.8296; btc_wbtctime=17%3A01%3A42; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => '568c7fa8cc2c1f3fddc38fbc5c6117a8',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-07T21:22:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index/login/login/token/img/favicon.ico
+[ log ] localhost:8082/index/login/login/token/img/favicon.ico [运行时间：0.056221s][吞吐率：17.79req/s] [内存消耗：2,093.17kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_0d6faa6ec47dd29b2bf1877ad4bf456a=1544018742; PHPSESSID=8hl4ipvg79524ip6dlaut4mhv0; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NDE5MmQyMWQyZTA5YThmMmI5N2M1NDY3ZThlNWQzY2U%253D%22%7D; btc_admin_account=think%3A%7B%22user_name%22%3A%22admin001%22%2C%22pass_word%22%3A%2262fa7bbe115476d6b10ecb376839e996%22%7D; btc_float_value=3; btc_eth_value=32.57; btc_btc_value=3806.32; btc_wbtcopen=3793.8296; btc_wbtctime=17%3A01%3A42; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/login/login/token/568c7fa8cc2c1f3fddc38fbc5c6117a8.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2019-01-07T21:22:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index/login/login/token/img/logo.png
+[ log ] localhost:8082/index/login/login/token/img/logo.png [运行时间：0.044881s][吞吐率：22.28req/s] [内存消耗：2,093.17kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile\thinkphp\lang\zh-cn.php
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_0d6faa6ec47dd29b2bf1877ad4bf456a=1544018742; PHPSESSID=8hl4ipvg79524ip6dlaut4mhv0; btc_identification=think%3A%7B%22email%22%3A%22MzE1MTkwNDQwMEBxcS5jb20%253D%22%2C%22password%22%3A%22NDE5MmQyMWQyZTA5YThmMmI5N2M1NDY3ZThlNWQzY2U%253D%22%7D; btc_admin_account=think%3A%7B%22user_name%22%3A%22admin001%22%2C%22pass_word%22%3A%2262fa7bbe115476d6b10ecb376839e996%22%7D; btc_float_value=3; btc_eth_value=32.57; btc_btc_value=3806.32; btc_wbtcopen=3793.8296; btc_wbtctime=17%3A01%3A42; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost:8082/index/login/login/token/568c7fa8cc2c1f3fddc38fbc5c6117a8.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'localhost:8082',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'img',
+)
+[ info ] [ LANG ] D:\phpStudy\WWW\btc\mobile/application/index\lang\zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ D:\phpStudy\WWW\btc\mobile\application\index\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpStudy\WWW\btc\mobile/application/index\view\login\login.html [ array (
+  0 => 'conf',
+  1 => 'token',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

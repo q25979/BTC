@@ -6,6 +6,9 @@
 	.layui-form-mid {padding: 0 !important;}
 	.start {background-color:#1aa414;}
 	.stop {background-color:#ff2e2e;}
+	.layui-table-view .layui-form-checkbox, .layui-table-view .layui-form-radio, .layui-table-view .layui-form-switch {height: 18px;}
+	.layui-form-switch i {height:12px;}
+	.layui-form-switch em {top:-1; margin-left:20px;}
 </style>
 
 <body>
@@ -14,6 +17,7 @@
         <nav class="navbar navbar-default">
         	<button class="layui-btn" id="switch-btn" onclick="switchState()">获取中...</button>
     		<button class="layui-btn layui-btn-normal" onclick="restore()">还原</button>
+    		<button class="layui-btn layui-btn-normal" onclick="odds()">赔率设置</button>
         </nav>
         <table id="opentable" lay-filter="opentable"></table>
     </div>
@@ -49,7 +53,8 @@
 			elem: '#opentable',
 			url: '<{:U("set")}>',
 			page: true,
-			limit: 48,
+			size: 'sm',
+			limit: 288,
 			limits: [12,24,48,96,192,288],
 			cols: [[
 				{field: 'number', title: '期数', width: 80, align: 'center'},
@@ -104,6 +109,21 @@
 			res.state == 1
 				? $('#switch-btn').removeClass('stop').addClass('start').text('点击开盘')
 				: $('#switch-btn').removeClass('start').addClass('stop').text('点击休市');
+		})
+	}
+
+	// 赔率设置
+	var odds = function() {
+		layer.open({
+			type: 1,
+			content: 'huancii',
+			offset: '100px',
+			title: '陪率设置',
+			btn: ['确定'],
+			yes: function() {
+				layer.closeAll();
+				console.log('1')
+			}
 		})
 	}
 
