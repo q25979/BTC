@@ -69,8 +69,8 @@
 		var u = '<{:U("closeset")}>';
 		var d = {};
 		d.set = $('#switch-btn').hasClass('stop') ? 1 : 0;
-		layer.load(2)
-		$.post(u, d, function(res) {console.log(res)
+		layer.open({type: 3, offset: '150px', icon: 2})
+		$.post(u, d, function(res) {
 			layer.closeAll();
 			var icon = res.code == 0 ? 6 : 5;
 			layer.msg(res.msg, {icon: icon, time: 1200});
@@ -85,9 +85,9 @@
 	// 开盘数据还原
 	var restore = function() {
 		var u = '<{:U("restore")}>';
-		layer.confirm('还原会将所有开盘数据重置为涨，您确认这么做？', {title: '警告', icon: 7}, function() {
+		layer.confirm('还原会将所有开盘数据重置为涨，您确认这么做？', {title: '警告', icon: 7, offset: '100px'}, function() {
 			layer.closeAll();
-			layer.load(2);
+			layer.open({type: 3, offset: '150px', icon: 2})
 			$.get(u, function(res) {
 				layer.closeAll();
 				if (res == 288) {
@@ -114,15 +114,32 @@
 
 	// 赔率设置
 	var odds = function() {
+		var h  = '<div style="padding:10px">'
+			h += '<input type="text" name="odds_set" placeholder="请输入赔率" class="layui-input"></div>'
+			oddsurl = '<{:U("odds")}>'
+		
+		$.get(oddsurl, function(res) {
+			$('[name=odds_set]').val(res.odds_set)
+		})
+
 		layer.open({
 			type: 1,
-			content: 'huancii',
+			content: h,
 			offset: '100px',
 			title: '陪率设置',
 			btn: ['确定'],
 			yes: function() {
-				layer.closeAll();
-				console.log('1')
+				layer.closeAll()
+				var data = {odds_set: $('[name=odds_set]').val()}
+				layer.open({type: 3, offset: '150px', icon: 2})
+				$.post(oddsurl, data, function(res) {
+					layer.closeAll()
+					if (res.code == 0) {
+						layer.open({type:0,content:'更新成功',icon:6,offset: '150px'});
+					} else {
+						layer.open({type:0,content:'更新失败',icon:5,offset: '150px'});
+					}
+				})
 			}
 		})
 	}

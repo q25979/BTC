@@ -13,7 +13,7 @@
 	.layui-form-select {float:right;}
 	.refresh {margin-right:5px;}
 	.total {width:100%;}
-	.total>div {text-align:center; margin:5px 0 15px 0; border:1px solid #d5d5d5; padding:12px 0; border-right:0;}
+	.total>div {text-align:center; margin:5px 0 15px 0; border:1px solid #d5d5d5; padding:12px 0; border-right:0; height:80px;}
 	.total>div:nth-last-child(1) {border-right:1px solid #d5d5d5;}
 	.total>div>div:nth-child(1) {margin-bottom: 5px; font-size: 24px; color: #4aa9db;}
 </style>
@@ -24,15 +24,15 @@
 
         <div class="navbar layui-row total">
   			<div class="layui-col-md4">
-    			<div>2012312.55</div>
+    			<div><?php echo ($data["balance"]); ?></div>
     			<div>客户余额</div>
   			</div>
   			<div class="layui-col-md4">
-    			<div>202515.00</div>
+    			<div><?php echo ($data["profit"]); ?></div>
     			<div>平台盈利</div>
   			</div>
   			<div class="layui-col-md4">
-    			<div>20</div>
+    			<div><?php echo ($data["bets"]); ?>人</div>
     			<div>下注人数</div>
   			</div>
 		</div>
@@ -41,17 +41,14 @@
         	<div class="layui-input-inline">
         		<input type="text" name="user_name" placeholder="请输入用户名称" autocomplete="off" class="layui-input">
         	</div>
-    		<button class="layui-btn layui-btn-normal" onclick="search()">搜索</button>
-
-    		<div class="layui-input-inline">
-        		<input type="text" name="order_id" placeholder="请输入订单号" autocomplete="off" class="layui-input">
-        	</div>
-    		<button class="layui-btn layui-btn-normal" onclick="searchorder()">搜索</button>
+    		<button class="layui-btn layui-btn-normal" id="search">搜索</button>
 
     		<div class="right">
-    			<select name="last_direction" class="layui-input-inline">
+    			<select name="last_direction" class="layui-input-inline" lay-filter="direction">
   					<option value="">开奖状态</option>
-  					<option value="1|0">已开奖</option>
+  					<option value="1">已开奖</option>
+  					<option value="2">已中奖</option>
+  					<option value="3">未中奖</option>
 				  	<option value="-1">未开奖</option>
 				</select> 
     			<button class="layui-btn layui-btn-normal refresh" onclick="refresh()">刷新</button>
@@ -67,30 +64,61 @@
 		var form = layui.form;
 		var table = layui.table;
 
+		// 分类搜索
+		form.on('select(direction)', function(data) {
+			var data = {
+				type: 1,
+				last_direction: data.value
+			}	
+
+			search(data)		
+		})
+
 		// 表格数据
-		table.render({
+		var tableIns = table.render({
 			elem: '#opentable',
-			url: '<?php echo U("set");?>',
+			url: '<?php echo U("betslog");?>',
 			page: true,
 			size: 'sm',
-			totalRow: true,
 			limit: 30,
+			totalRow: true,
 			limits: [30,60,90,120],
 			cols: [[
-				{field: 'number', title: '订单号', width: 160, align: 'center'},
-				{field: 'number', title: '用户', width: 120, align: 'center'},
-				{field: 'number', title: '下注金额', width: 80, align: 'center'},
-				{field: 'number', title: '期数', width: 80, align: 'center'},
-				{field: 'number', title: '购买方向', width: 80, align: 'center'},
-				{field: 'number', title: '最终方向', width: 80, align: 'center'},
-				{field: 'number', title: '中奖金额', width: 80, align: 'center'},
-				{field: 'number', title: '执行值', width: 80, align: 'center'},
-				{field: 'number', title: '最终值', width: 80, align: 'center'},
-				{field: 'set', title: '购买时间', width: 120, align: 'center', templet: '#switch-set'},
-				{field: 'time', title: '开奖时间', width: 120, align: 'center'},
+				{field: 'order_id', title: '订单号', width: 120, align: 'center'},
+				{field: 'user_name', title: '用户', width: 100, align: 'center'},
+				{field: 'money', title: '下注金额', width: 100, align: 'center', totalRow: true},
+				{field: 'buy_number', title: '期数', width: 60, align: 'center'},
+				{field: 'buy_direction_name', title: '购买方向', width: 80, align: 'center'},
+				{field: 'last_direction_name', title: '最终方向', width: 80, align: 'center'},
+				{field: 'last_money', title: '中奖金额', width: 100, align: 'center', totalRow: true},
+				{field: 'execute_price', title: '执行值', width: 100, align: 'center'},
+				{field: 'last_price', title: '最终值', width: 100, align: 'center'},
+				{field: 'buy_time', title: '购买时间', width: 150, align: 'center'},
+				{field: 'last_time', title: '开奖时间', width: 140, align: 'center'},
 			]]
 		});
+
+		// 搜索按钮
+		$('#search').click(function() {
+			var data = {
+				type: 0,
+				user_name: $('[name=user_name]').val()
+			};
+
+			search(data)
+		})
+
+		var search = function(data) {
+			tableIns.reload({
+				url: '<?php echo U("betslogsearch");?>',
+				where: data
+			})
+		}
 	})
+
+	var refresh = function() {
+		window.location.reload();
+	}
 </script>
 
 <script type="text/html" id="switch-set">
