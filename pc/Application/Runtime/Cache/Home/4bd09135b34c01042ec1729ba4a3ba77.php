@@ -54,7 +54,7 @@
 			</ul>
 		</div>
 		<div class="yi-time">
-			<div id="yi-server-time">11:42:33</div>
+			<div id="yi-server-time">00:00:00</div>
 			<ul>
 				<li>1M</li>
 				<li class="active">5M</li>

@@ -89,7 +89,7 @@ class IndexController extends Controller
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
         $info = json_decode($req->httpGet($burl));
 
-        M('WCloseset')->where('id=1')->save([
+        M('WSet')->where('id=1')->save([
             'last' => $info->ticker->last,
             'open' => $info->ticker->sell,
             'low'  => $info->ticker->low,
@@ -103,7 +103,7 @@ class IndexController extends Controller
      */
     public function getbtc()
     {
-        $info = M('WCloseset')->field('id,set', true)->where('id=1')->find();
+        $info = M('WSet')->field('id,set', true)->where('id=1')->find();
         $info = [
             'time' => date("H:i:s"),
             'last' => $info['last']+$this->frand(),
@@ -122,7 +122,8 @@ class IndexController extends Controller
     {
         $type = I('get.type');
         $url  = "http://api.bitkk.com/data/v1/kline?market=btc_usdt&type=".$type."&size=200";
-        $data = \Request::httpGet($url);
+        $data['k'] = \Request::httpGet($url);
+        $data['timestamp'] = time();
 
         $this->ajaxReturn($data);
     }

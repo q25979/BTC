@@ -4,12 +4,47 @@ $(function() {
 	// 1min,3min,5min,30min,1hour,1day, 设置K线图
 	var req = {type: '5min'};
 	var option = {};
+
 	loader();
-	getkdata(req, function(data) {
+	getkdata(req, function(data, timestamp) {
 		$('#k-load').remove();
 		$('.yi-container').css('display', 'block');
 		option = koption(data, req.type);
+
+		// 设置时间
+		var time = new Date(timestamp * 1000),
+			h = time.getHours(),
+			m = time.getMinutes(),
+			s = time.getSeconds()
+		// 计数
+		var timeset = function() {
+			s++
+			if (s > 59) {
+				s=0
+				m++
+				if (m > 59) {
+					m=0
+					h++
+					if (h > 23) {
+						h=0
+					}
+				}
+			}
+
+			seconds=s, minue=m, hour=h
+			if (s == 60) seconds = "00";
+			if (m == 60) minue = "00";
+			if (h == 24) hour = "00";
+
+			if (s < 10) seconds="0"+s
+			if (m < 10) minue="0"+m
+			if (h < 10) hour ="0"+h
+			$("#yi-server-time").text(hour+":"+minue+":"+seconds)
+			setTimeout(timeset, 1000)	// 时间
+		}
+		timeset()
 		
+		// 设置k线图
 		var setkdata = function() {
 			gettdata();	// 获取实时数据
 			option.dataZoom[0].start = zoom.start;
@@ -103,7 +138,6 @@ function gettdata() {
 		$($(".yi-number")[1]).css('color', ccollect);
 		$($(".yi-number")[2]).css('color', clow);
 		$($(".yi-number")[3]).css('color', chigh);
-		$("#yi-server-time").text(res.time);
 		$.cookie('btc_wbtcopen', tdata.open, {path: '/'});
 		$.cookie('btc_wbtctime', res.time, {path: '/'});
 	});
@@ -115,7 +149,7 @@ function gettdata() {
 function getkdata(d, callback) {
 	var u = config.host_path + "/Float/Index/getkdata";
 	$.get(u, d, function(res) {
-		var odata = JSON.parse(res).data,
+		var odata = JSON.parse(res.k).data,
 			data  = odata.map(function (item) {
 				item[0] = new Date(item[0]);
 				item[0] = d.type == "1day"
@@ -124,7 +158,7 @@ function getkdata(d, callback) {
 					
 				return item;
 			});
-		callback(data)
+		callback(data, res.timestamp)
 	}).fail(function() {
 		closeAll();
 	});
