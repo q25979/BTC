@@ -15,10 +15,11 @@
 		// 判断该使用什么样式 768 900 1080 手机
 		var iWh = $(window).height();
 		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
-		var dealArea = ['1100px', '600px'];
+		//var dealArea = ['1100px', '600px'];
+		var dealArea = ['1000px', '500px'];
 		if (iWh < 900 && !m) {
 			$("#device").attr("href", "/Public/home/bocai/midding.css");
-			var dealArea = ['980px', '480px'];
+			//var dealArea = ['980px', '480px'];
 		}
 
 		// 手机设备

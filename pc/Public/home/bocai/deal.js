@@ -9,7 +9,7 @@ $(function() {
 		$(this).click(function() {
 			$('.number>.span').removeClass('span-active');
 			$($('.number>.span')[idx]).addClass('span-active');
-			otherInput = idx == 4 ? 'inline-block' : 'none';
+			otherInput = idx == 3 ? 'inline-block' : 'none';
 			$('[name=other]').css('display', otherInput);
 		});
 	});
@@ -31,11 +31,18 @@ $(function() {
  * 开盘
  */
 function openfn() {
-	$('.flag').addClass('_y360');
+	$('.refresh').text("數據獲取中...")
 	getbalance();	// 获取余额
 	$.get(config.host_path + '/home/bocai/open', function(res) {
 		getorder();
 	});
+}
+
+/**
+ * 交易記錄
+ */
+function getlog() {
+	console.log("交易記錄")
 }
 
 /**
@@ -45,7 +52,7 @@ function getorder() {
 	var u = config.host_path + '/Home/Bocai/getrecord';
 	var d = { limit: 10 };
 	$.get(u, d, function(res) {
-		$('.flag').removeClass('_y360');
+		$('.refresh').text('刷新數據')
 		$('#log').empty();	// 重构子节点
 		for (var i in res.data) {
 			var h  = '<tr>';
@@ -61,8 +68,6 @@ function getorder() {
 				h += '</tr>';
 			$('#log').append(h);
 		}
-		// 上一期
-		$('#prev').text('上一期: '+res.prev);
 	});
 }
 

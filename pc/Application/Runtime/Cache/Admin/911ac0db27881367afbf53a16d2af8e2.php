@@ -120,7 +120,3 @@
 		window.location.reload();
 	}
 </script>
-
-<script type="text/html" id="switch-set">
-	<input lay-filter="switch-set" type="checkbox" lay-skin="switch" lay-text="涨|跌" value="{{d.number}}" {{d.set == 0 ? 'checked' : ''}}>
-</script>

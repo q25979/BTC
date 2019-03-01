@@ -11,38 +11,7 @@ $(function() {
 		$('.yi-container').css('display', 'block');
 		option = koption(data, req.type);
 
-		// 设置时间
-		var time = new Date(timestamp * 1000),
-			h = time.getHours(),
-			m = time.getMinutes(),
-			s = time.getSeconds()
-		// 计数
-		var timeset = function() {
-			s++
-			if (s > 59) {
-				s=0
-				m++
-				if (m > 59) {
-					m=0
-					h++
-					if (h > 23) {
-						h=0
-					}
-				}
-			}
-
-			seconds=s, minue=m, hour=h
-			if (s == 60) seconds = "00";
-			if (m == 60) minue = "00";
-			if (h == 24) hour = "00";
-
-			if (s < 10) seconds="0"+s
-			if (m < 10) minue="0"+m
-			if (h < 10) hour ="0"+h
-			$("#yi-server-time").text(hour+":"+minue+":"+seconds)
-			setTimeout(timeset, 1000)	// 时间
-		}
-		timeset()
+		settime(timestamp)
 		
 		// 设置k线图
 		var setkdata = function() {
@@ -53,7 +22,7 @@ $(function() {
 			k.setOption(option, true);
 			k.resize();	// 重置大小
 		}
-		setInterval(setkdata, 1000);
+		setInterval(setkdata, 5000);
 	});
 
 	// K线图切换
@@ -148,6 +117,7 @@ function gettdata() {
  */
 function getkdata(d, callback) {
 	var u = config.host_path + "/Float/Index/getkdata";
+
 	$.get(u, d, function(res) {
 		var odata = JSON.parse(res.k).data,
 			data  = odata.map(function (item) {
@@ -155,13 +125,53 @@ function getkdata(d, callback) {
 				item[0] = d.type == "1day"
 					? item[0] = item[0].getFullYear() + "/" + (item[0].getMonth()+1) + "/" + item[0].getDate()
 					: item[0] = item[0].getHours() + ":" + item[0].getMinutes();
-					
 				return item;
 			});
+
+		// 回调
 		callback(data, res.timestamp)
 	}).fail(function() {
 		closeAll();
 	});
+}
+
+/**
+ * 设置时间
+ */
+function settime(timestamp) {
+	// 设置时间
+	var time = new Date(timestamp * 1000),
+		h = time.getHours(),
+		m = time.getMinutes(),
+		s = time.getSeconds()
+
+	// 计数
+	var timeset = function() {
+		s++
+		if (s > 59) {
+			s=0
+			m++
+			if (m > 59) {
+				m=0
+				h++
+				if (h > 23) {
+					h=0
+				}
+			}
+		}
+
+		seconds=s, minue=m, hour=h
+		if (s == 60) seconds = "00";
+		if (m == 60) minue = "00";
+		if (h == 24) hour = "00";
+
+		if (s < 10) seconds="0"+s
+		if (m < 10) minue="0"+m
+		if (h < 10) hour ="0"+h
+		$("#yi-server-time").html(hour+":"+minue+":"+seconds)
+		setTimeout(timeset, 1000)	// 时间
+	}
+	timeset()
 }
 
 /**
@@ -369,7 +379,6 @@ function deal(type) {
 		title: "確認訂單",
 		skin: "deal-class",
 		resize: false,
-		move: false,
 		scrollbar: false
 	})
 }

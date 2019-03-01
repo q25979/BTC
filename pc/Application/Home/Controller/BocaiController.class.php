@@ -91,8 +91,6 @@ class BocaiController extends VerifyController
 			->order('create_time desc')
 			->select();
 		$number = (((int)date('H')*60)+(int)date('i'))/5;
-		$prev = M('WOpenset')->getFieldByNumber((int)$number, 'set');
-		$prev = $prev == 0 ? '漲' : '跌';
 
 		// 转换可视数据
 		foreach ($list as $k => $v) {
@@ -111,7 +109,6 @@ class BocaiController extends VerifyController
 		$this->ajaxReturn([
 			'code' => 0,
 			'msg'  => '',
-			'prev' => $prev,
 			'count' => $WMinlog->where($map)->page('1,'.$limit)->count(),
 			'data' => $list
 		]);
