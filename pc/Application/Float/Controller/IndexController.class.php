@@ -83,7 +83,7 @@ class IndexController extends Controller
     /**
      * 更新比特币价格
      */
-    public function updatebtc() 
+    public function updatebtc()
     {
         $req  = new \Request();
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
@@ -105,7 +105,6 @@ class IndexController extends Controller
     {
         $info = M('WSet')->field('id,set', true)->where('id=1')->find();
         $info = [
-            'time' => date("H:i:s"),
             'last' => $info['last']+$this->frand(),
             'open' => $info['open'],
             'low'  => $info['low'],
@@ -133,4 +132,8 @@ class IndexController extends Controller
     {
         return mt_rand(0, 1000)/10000;
     }
+
+    // 微平台,记录保存
+    public function wrun()
+    {}
 }

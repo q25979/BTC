@@ -24,7 +24,6 @@ $(function() {
 
 	setInterval(gettdata, 1000); // 1s钟获取实时数据
 	openfn();
-	setInterval(openfn, 1000*60*3);	// 獲取訂單
 });
 
 /**
@@ -34,8 +33,34 @@ function openfn() {
 	$('.refresh').text("數據獲取中...")
 	getbalance();	// 获取余额
 	$.get(config.host_path + '/home/bocai/open', function(res) {
-		getorder();
+		CountDown(res.timestamp)	// 倒计时时间戳
+		getorder()	// 刷新记录
 	});
+}
+
+/**
+ * 设置倒计时
+ */
+function CountDown(timestamp) {
+	var worker = new Worker("/Public/home/bocai/countdown.js")
+	worker.postMessage(timestamp)
+	worker.onmessage = function(data) {
+		var obj = data.data;
+		if (obj.open) {
+			console.log("开盘啦！")
+		}
+
+		// 页面渲染
+		obj.minue == 0
+			? $(".time>div:nth-last-child(1)").css('color', tcolor[1])
+			: $(".time>div:nth-last-child(1)").css('color', tcolor[0])
+		if (obj.minue < 10) obj.minue = "0" + obj.minue
+		if (obj.second < 10) obj.second = "0" + obj.second
+
+		time = obj.minue + ":" + obj.second
+		$(".time>div:nth-last-child(1)").text(time);
+		$("#openNumber").text(obj.number)
+	}
 }
 
 /**
@@ -50,21 +75,17 @@ function getlog() {
  */
 function getorder() {
 	var u = config.host_path + '/Home/Bocai/getrecord';
-	var d = { limit: 10 };
+	var d = { limit: 20 };
 	$.get(u, d, function(res) {
 		$('.refresh').text('刷新數據')
 		$('#log').empty();	// 重构子节点
 		for (var i in res.data) {
 			var h  = '<tr>';
-				h += '<td>'+ res.data[i].order_id +'</td>';
-				h += '<td>'+ res.data[i].buy_direction_name +'</td>';
-				h += '<td>'+ res.data[i].last_direction_name +'</td>';
-				h += '<td>'+ res.data[i].money +'</td>';
-				h += '<td>'+ res.data[i].buy_number +'</td>';
-				h += '<td>'+ res.data[i].buy_price +'</td>';
+				h += '<td>'+ res.data[i].number +'</td>';
+				h += '<td>'+ res.data[i].execute_price +'</td>';
 				h += '<td>'+ res.data[i].last_price +'</td>';
-				h += '<td>'+ res.data[i].buy_time +'</td>';
-				h += '<td>'+ res.data[i].last_time +'</td>';
+				h += '<td>'+ res.data[i].last_direction_name +'</td>';
+				h += '<td>'+ res.data[i].create_time +'</td>';
 				h += '</tr>';
 			$('#log').append(h);
 		}
@@ -76,39 +97,16 @@ function getorder() {
  */
 function gettdata() {
 	var last = $.cookie('btc_wbtcopen')
-	var time = $.cookie('btc_wbtctime')
 	
 	// 设置颜色
 	var copen = open > last
 		? tcolor[1] : tcolor[0];
 	if (open == last) copen = $($(".now-price")[0]).css('color');
 	open = last;
-	var atime = time.split(':'); // 0-小时 1-分钟 2-秒
-
-	// 把获取的时间,设为独立时间
-	var minue  = openTime-parseInt(atime[1]%5)-1;
-	var second = 0;
-	if (60-parseInt(atime[2]) == 60) {
-		second = 0;
-		minue = minue+1;
-	} else {
-		second = 60-parseInt(atime[2]);
-	}
-	minue  = minue<10 ? '0'+minue : minue;
-	second = second<10 ? '0'+second : second;
-	minue == 0 
-		? $(".time>div:nth-last-child(1)").css('color', tcolor[1])
-		: $(".time>div:nth-last-child(1)").css('color', tcolor[0])
 
 	// 设置显示
 	$($(".now-price")[0]).text(open);
 	$($(".now-price")[0]).css('color', copen);
-	$(".time>div:nth-last-child(1)").text(minue+':'+second);
-	$('#openNumber').text(parseInt((((parseInt(atime[0])*60+parseInt(atime[1]))/5)+1)));
-
-	if (parseInt(minue) == 5 && parseInt(second) == 0) {
-		openfn()
-	}
 }
 
 /**

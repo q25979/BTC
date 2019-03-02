@@ -39,18 +39,18 @@
 		</header>
 		<div class="yi-price">
 			<ul>
-				<li class="yi-number">6546.1254</li>
+				<li class="yi-number">0.0000</li>
 				<li>
 					<p class="t">開盤</p>
-					<p class="yi-number">6394.45</p>
+					<p class="yi-number">0.0000</p>
 				</li>
 				<li>
 					<p class="t">最低</p>
-					<p class="yi-number">6394.22</p>
+					<p class="yi-number">0.0000</p>
 				</li>
 				<li>
 					<p class="t">最高</p>
-					<p class="yi-number">6539.29</p>
+					<p class="yi-number">0.0000</p>
 				</li>
 			</ul>
 		</div>

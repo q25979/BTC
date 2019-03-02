@@ -20,11 +20,10 @@ body,p {margin:0;font-family:"微软雅黑";font-size:14px;}
 .execute>.t>div,.execute>.b>div{width:164px;float:left;}
 .execute>.t>div:nth-child(2){margin: 0 3px;}
 
-.deal-container>.l>.order{width:100%;height:65%;margin-top:-3px;overflow:hidden;}
-.order>.layui-table, .layui-table-view {margin:0;}
+.deal-container>.l>.order{width:100%;margin-top:-3px;height:285px;overflow-x:hidden;border:1px solid #e6e6e6;}
+.order>.layui-table, .layui-table-view{margin:0;}
 .order>.layui-table tbody tr:hover{background:white;}
 
-.deal-container>.r {}
 .money {width:220px;}
 .money .balance{color:orangered;font-size:16px;font-weight:bold;}
 .money input{border:1px solid #ccc;height:20px;width:70px;border-radius:2px;padding:0 8px;display:none;}

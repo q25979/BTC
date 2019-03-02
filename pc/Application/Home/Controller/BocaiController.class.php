@@ -78,38 +78,27 @@ class BocaiController extends VerifyController
 	// 获取记录
 	public function getrecord()
 	{
-		$WMinlog = M('WMinlog');
+		$WOpenlog = M('WOpenlog');
 		$limit = I('get.limit');
 
 		// 获取两天前时间戳
-		$time = time()-(3*24*60*60);
-		$map['create_time'] = array('gt', $time);
-		$list = $WMinlog
+		$list = $WOpenlog
 			->page('1,'.$limit)
-			->where($map)
-			->field('uid,create_time', true)
 			->order('create_time desc')
 			->select();
-		$number = (((int)date('H')*60)+(int)date('i'))/5;
 
 		// 转换可视数据
 		foreach ($list as $k => $v) {
-			if ($v['buy_direction'] == 0) $list[$k]['buy_direction_name'] = '漲';
-			if ($v['buy_direction'] == 1) $list[$k]['buy_direction_name'] = '跌';
 			if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
 			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
 			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
-			$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
-			$hour  = (int)(((int)$v['buy_number']*5)/60);
-			$minue = (int)(((int)$v['buy_number']*5)%60);
-			$hour  = $hour < 10 ? '0'.$hour : $hour;
-			$minue = $minue < 10 ? '0'.$minue : $minue;
-			$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;
+
+			$list[$k]['create_time'] = date('Y/m/d H:i:s');
 		}
 		$this->ajaxReturn([
 			'code' => 0,
 			'msg'  => '',
-			'count' => $WMinlog->where($map)->page('1,'.$limit)->count(),
+			'count' => $WOpenlog->page('1,'.$limit)->count(),
 			'data' => $list
 		]);
 	}
@@ -163,7 +152,7 @@ class BocaiController extends VerifyController
 					->setInc('extract_balance', $value['money']*2);
 			}
 		}
-		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成']);
+		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成', 'timestamp' => time()]);
 	}
 
 	// 休市验证0-开盘 1-休市

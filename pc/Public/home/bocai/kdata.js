@@ -109,7 +109,6 @@ function gettdata() {
 		$($(".yi-number")[2]).css('color', clow);
 		$($(".yi-number")[3]).css('color', chigh);
 		$.cookie('btc_wbtcopen', tdata.open, {path: '/'});
-		$.cookie('btc_wbtctime', res.time, {path: '/'});
 	});
 }
 
@@ -132,7 +131,7 @@ function getkdata(d, callback) {
 		// 回调
 		callback(data, res.timestamp)
 	}).fail(function() {
-		closeAll();
+		closeAll()
 	});
 }
 

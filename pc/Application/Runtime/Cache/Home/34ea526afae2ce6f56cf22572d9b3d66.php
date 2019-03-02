@@ -37,7 +37,7 @@
 				</div>
 				<div class="b">
 					<div>
-						<div class=>期數</div>
+						<div class=>當前期數</div>
 						<div class="label-bg" id="openNumber">00</div>
 					</div>
 				</div>
@@ -48,9 +48,9 @@
 					<thead>
 						<tr>
 							<th>期數</th>
-							<th>執行價格</th>
-							<th>成交價格</th>
-							<th>最終方向</th>
+							<th>執行價</th>
+							<th>成交價</th>
+							<th>方向</th>
 							<th>開盤時間</th>
 						</tr>
 					</thead>
@@ -61,7 +61,7 @@
 		</div>
 		<div class="r fr">
 			<div class="money">
-				<div class="mb-6">金額</div>
+				<div class="mb-6">下注金額</div>
 				<div class="number">
 					<span class="span span-active">200</span>
 					<span class="span">500</span>
@@ -81,7 +81,7 @@
 						<i class="layui-icon layui-icon-refresh-1"></i>
 					</button>
 				</div>
-				<div class="confirm mt-15" onclick="okorder()">確認下單</div>
+				<div class="confirm mt-15" onclick="okorder()">確認下注</div>
 				<div class="confirm mt-15 refresh" onclick="allrefresh()">刷新數據</div>
 				<div class="confirm mt-15" onclick="getlog()">交易記錄</div>
 			</div>
