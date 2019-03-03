@@ -110,48 +110,6 @@ class BocaiController extends VerifyController
 		$WOpenset = M('WOpenset');
 		$UserAccount = M('UserAccount');
 
-		// 获取未开盘期数
-		if ((int)date('i')[1] < 5) {
-			$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-(int)date('i')[1]));
-		} else {
-			$time = strtotime(date('Y-m-d H').':'.(string)((int)date('i')-((int)date('i')[1])+5));
-		}
-		$map['last_direction'] = -1;
-		$map['buy_time'] = array('lt', $time);
-		$noopenli = $WMinlog
-			->where($map)
-			->field('id,buy_number')
-			->group('buy_number')
-			->select();
-		foreach ($noopenli as $k => $v) {
-			$set = $WOpenset->getFieldByNumber($v['buy_number'], 'set');
-			$numbermap['buy_number'] = $v['buy_number'];	// 期数条件
-			$save['last_direction']  = $set;	// 需要更改状态的数据
-			if ($set == 0) {
-				// 涨，获取最高购买价格
-				$max = $WMinlog->where($numbermap)->max('buy_price');
-				$save['last_price'] = $max+(rand(1,1000)/10000);
-			} 
-			if ($set == 1) {
-				// 跌，获取最低购买价格
-				$min = $WMinlog->where($numbermap)->min('buy_price');
-				$save['last_price'] = $min-(rand(1,1000)/10000);
-			}
-			$save['number'] = $v['buy_number'];
-
-			// 更改数据状态
-			$WMinlog->where($numbermap)->save($save);
-			// 查询本期买对方向的人
-			$buymap['buy_direction'] = $set;
-			$buymap['buy_number'] = $v['buy_number'];
-			$lastlist = $WMinlog->where($buymap)->field('id,uid,money')->select();
-			foreach ($lastlist as $key => $value) {
-				// 给本期买对的人账户加钱
-				$account = $UserAccount
-					->where(['user_id' => $value['uid']])
-					->setInc('extract_balance', $value['money']*2);
-			}
-		}
 		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成', 'timestamp' => time()]);
 	}
 

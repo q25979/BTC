@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>微平台脚本</title>
 
-	<js href="__JS__/jquery-3.2.1.min.js" />
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
 	<script>
 		var worker = new Worker("/Public/home/bocai/worker/msgscript.js")
 		worker.postMessage(1)
 		worker.onmessage = function(data) {
-			$.get('<{:U("wrun")}>', function(res) {
+			$.get('<?php echo U("wrun");?>', function(res) {
 				if (res.step == 0) {
 					$('#setp0').text('第'+res.number+'期，正在采集数据中...')
 				} else if (res.step == 1) {
@@ -23,7 +23,7 @@
 	</script>
 </head>
 <body>
-	<h3>微平台脚本运行，请不要关闭!!!</h3>
+	<h3 style="color:red">微平台脚本运行，请不要关闭!!!</h3>
 	<h3 id="setp0"></h3>
 	<h3 id="setp1"></h3>
 	<h3 id="setp2"></h3>

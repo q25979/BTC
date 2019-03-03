@@ -140,6 +140,9 @@ class IndexController extends Controller
     // 微平台运行,开奖,统计
     public function wrun()
     {
+        // 渲染
+        if (!IS_AJAX) return $this->display();
+
         $data = $this->updatebtc(); // 设置数据
         $h = (int)date('H');
         $m = (int)date('i');
@@ -230,7 +233,8 @@ class IndexController extends Controller
             'code' => 0,
             'msg'  => 'Success',
             'step' => $step,
-            'data' => $stepdata
+            'data' => $stepdata,
+            'number' => $number
         ]);
     }
 }
