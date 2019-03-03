@@ -81,7 +81,7 @@ class IndexController extends Controller
     }
 
     /**
-     * 更新比特币价格
+     * 更新设置
      */
     public function updatebtc()
     {
@@ -147,28 +147,30 @@ class IndexController extends Controller
         $number = (int)(($h*60+$m)/5+1);    // 当前期数
         $starttime = strtotime(date('Y-m-d').' '.'00:00:00');   // 今日开始时间
         $endtime   = strtotime(date('Y-m-d').' '.'23:59:59');   // 今日结束时间
+        $step = 0;      // 进行的步骤
+        $stepdata = []; // 进行的步骤数据
 
-        if ($m%5 == 4 && $s >= 30 && $s < 50) {
+        if ($m%5 == 4 && $s >= 30 && $s < 55) {
             // 设置当前期数执行价和成交价  0-涨   1-跌
             $execute = $data['execute'] + $this->frand();    // 执行价
             $set = M("WOpenset")->getFieldByNumber($number, 'set'); // 当前期数涨或跌
             $last = $set == 0   // 成交价
                 ? $execute + $this->frand()
                 : $execute - $this->frand();
-            $lastinfo = M("WSet")->where('id=1')->save([
+            M("WSet")->where('id=1')->save([
                 'execute_price' => $execute,
                 'last_price' => $last,
                 'update_time' => time()
             ]);
 
             // 保存session
-            session('price.execute', $execute);
-            session('price.last', $last);
-            session('price.info', $lastinfo);
-            session('price.set', $set);
-            echo "执行价：".$execute."---成交价：".$last."<br>";
+            session('price.execute', $execute); // 执行价
+            session('price.last', $last);       // 成交价
+            session('price.set', $set);         // 开奖方向
+            $step = 1;
+            $stepdata = ['execute_price' => $execute, 'last_price' => $last];
 
-        } elseif ($m%5 == 4 && $s >= 50 && $s < 60) {
+        } elseif ($m%5 == 4 && $s >= 55 && $s < 60) {
             // 保存开奖记录
             $map['number'] = $number;
             $map['create_time'] = array('EGT', $starttime);
@@ -177,26 +179,58 @@ class IndexController extends Controller
             if ($openlogcount <= 0) {
                 // 说明没有保存过数据
                 if (session('?price.execute')) {
+                    $priceset = session('price.set');
+                    $priceexecute = session('price.execute');
+                    $pricelast = session('price.last');
                     $openlogdata = [
                         'number' => $number,
-                        'last_direction' => session('price.set'),
-                        'execute_price'  => session('price.execute'),
-                        'last_price'     => session('price.last'),
+                        'last_direction' => $priceset,
+                        'execute_price'  => $priceexecute,
+                        'last_price'     => $pricelast,
                         'create_time'    => time()
                     ];
                     // 保存
                     $info = M('WOpenlog')->add($openlogdata);
                     if ($info > 0) {
+                        $oddsset = M('WSet')->getFieldById('1', 'odds_set'); // 获取赔率
                         // 保存成功，开奖
+                        $openmap['buy_number'] = $number;
+                        $openmap['buy_time'] = array('EGT', $starttime);
+                        $openmap['buy_time'] = array('ELT', $endtime);
+                        $openmap['last_direction'] = array('LT', 0);
                         
+                        // 查询购买本期的人
+                        $openlist = M('WMinlog')
+                            ->where($openmap)
+                            ->field('id,uid,money,buy_direction')
+                            ->select();
+                        $opendata['last_direction'] = $priceset;
+                        $opendata['execute_price']  = $priceexecute;
+                        $opendata['last_price']     = $pricelast;
+                        foreach ($openlist as $k => $v) {
+                            // 更新数据
+                            $openmap['id'] = $v['id'];
+                            if ($v['buy_direction'] == $priceset) {
+                                $opendata['last_money'] = $v['money']*$oddsset;
+                            } else {
+                                $opendata['last_money'] = 0;
+                            }
+                            
+                            M('WMinlog')->where($openmap)->save($opendata); // 更新记录
+                            M('UserAccount')->where(['user_id'=>$v['uid']])->setInc('extract_balance', $opendata['last_money']); // 账户余额加钱
+                        }
+                        $step = 2;
+                        $stepdata = ['execute_price' => $priceexecute, 'last_price' => $pricelast];
                     }
                 }
             }
         }
 
-        // echo $number;
-        if (session('?price.execute')) {
-            echo session('price.execute');
-        }
+        $this->ajaxReturn([
+            'code' => 0,
+            'msg'  => 'Success',
+            'step' => $step,
+            'data' => $stepdata
+        ]);
     }
 }
