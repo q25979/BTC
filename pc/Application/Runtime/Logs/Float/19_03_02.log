@@ -37740,3 +37740,490 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002944s ]
 SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0077s ]
 SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
 
+[ 2019-03-02T20:46:59+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002798s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0076s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:04+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002692s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0070s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:47:09+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003467s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0070s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:14+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003768s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0067s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:19+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003686s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0092s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-03-02T20:47:24+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004456s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0067s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:29+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003907s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0062s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:47:34+08:00 ] 127.0.0.1 /float/index/updatebtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002214s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0068s ]
+SQL: UPDATE `btc_w_set` SET `last`='3821.93',`open`='3822.07',`low`='3775.11',`high`='3858.63',`update_time`='1551530854' WHERE ( id=1 ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2019-03-02T20:47:35+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003744s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0077s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:39+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002416s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0092s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:47:44+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003625s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0062s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:49+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002501s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0065s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:54+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002540s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0062s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:47:59+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003775s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0074s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:04+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004357s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:09+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003394s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0067s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:14+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003358s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0078s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:48:19+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004176s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0091s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:48:24+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003997s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0094s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:48:29+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004853s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0111s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-03-02T20:48:34+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003834s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0091s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:39+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004691s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0094s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-03-02T20:48:44+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004418s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0094s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:49+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002760s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0063s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:54+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003828s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0064s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:48:59+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004655s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0074s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:49:04+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002714s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0069s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:09+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003024s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:49:14+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004326s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:49:19+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002469s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0081s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:24+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002295s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0089s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:49:29+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004194s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0082s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:34+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004384s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0112s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:39+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003844s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0089s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:44+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004724s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0086s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-03-02T20:49:49+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004207s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0077s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:49:54+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003952s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0062s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:49:59+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003582s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0065s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:50:04+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002592s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0082s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:50:09+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003631s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0063s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:50:14+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002192s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0072s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:50:19+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003970s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0079s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-02T20:50:24+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003587s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-02T20:50:29+08:00 ] 127.0.0.1 /Float/Index/getbtc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002433s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0066s ]
+SQL: SELECT `odds_set`,`last`,`open`,`low`,`high`,`update_time` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+

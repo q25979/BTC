@@ -89,13 +89,17 @@ class IndexController extends Controller
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
         $info = json_decode($req->httpGet($burl));
 
-        M('WSet')->where('id=1')->save([
-            'last' => $info->ticker->last,
+        $data = [
+            'last' => $info->ticker->last + $this->frand(),
             'open' => $info->ticker->sell,
             'low'  => $info->ticker->low,
             'high' => $info->ticker->high,
+            'execute' => $info->ticker->last,
             'update_time' => time()
-        ]);
+        ];
+        M('WSet')->where('id=1')->save($data);
+
+        return $data;
     }
 
     /**
@@ -133,7 +137,66 @@ class IndexController extends Controller
         return mt_rand(0, 1000)/10000;
     }
 
-    // 微平台,记录保存
+    // 微平台运行,开奖,统计
     public function wrun()
-    {}
+    {
+        $data = $this->updatebtc(); // 设置数据
+        $h = (int)date('H');
+        $m = (int)date('i');
+        $s = (int)date('s');
+        $number = (int)(($h*60+$m)/5+1);    // 当前期数
+        $starttime = strtotime(date('Y-m-d').' '.'00:00:00');   // 今日开始时间
+        $endtime   = strtotime(date('Y-m-d').' '.'23:59:59');   // 今日结束时间
+
+        if ($m%5 == 4 && $s >= 30 && $s < 50) {
+            // 设置当前期数执行价和成交价  0-涨   1-跌
+            $execute = $data['execute'] + $this->frand();    // 执行价
+            $set = M("WOpenset")->getFieldByNumber($number, 'set'); // 当前期数涨或跌
+            $last = $set == 0   // 成交价
+                ? $execute + $this->frand()
+                : $execute - $this->frand();
+            $lastinfo = M("WSet")->where('id=1')->save([
+                'execute_price' => $execute,
+                'last_price' => $last,
+                'update_time' => time()
+            ]);
+
+            // 保存session
+            session('price.execute', $execute);
+            session('price.last', $last);
+            session('price.info', $lastinfo);
+            session('price.set', $set);
+            echo "执行价：".$execute."---成交价：".$last."<br>";
+
+        } elseif ($m%5 == 4 && $s >= 50 && $s < 60) {
+            // 保存开奖记录
+            $map['number'] = $number;
+            $map['create_time'] = array('EGT', $starttime);
+            $map['create_time'] = array('ELT', $endtime);
+            $openlogcount = M('WOpenlog')->where($map)->count();
+            if ($openlogcount <= 0) {
+                // 说明没有保存过数据
+                if (session('?price.execute')) {
+                    $openlogdata = [
+                        'number' => $number,
+                        'last_direction' => session('price.set'),
+                        'execute_price'  => session('price.execute'),
+                        'last_price'     => session('price.last'),
+                        'create_time'    => time()
+                    ];
+                    // 保存
+                    $info = M('WOpenlog')->add($openlogdata);
+                    if ($info > 0) {
+                        // 保存成功，开奖
+                        
+                    }
+                }
+            }
+        }
+
+        // echo $number;
+        if (session('?price.execute')) {
+            echo session('price.execute');
+        }
+    }
 }

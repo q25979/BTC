@@ -13,7 +13,7 @@
 
 <body>
     <div class="x-body layui-form">
-        <blockquote class="layui-elem-quote">开盘设置(涨: <span id="rise"></span>, 跌: <span id="fall"></span>)</blockquote>
+        <blockquote class="layui-elem-quote">开盘设置(涨: <span id="rise"></span>, 跌: <span id="fall"></span>) -- 注意：最后30s不要修改，因为需要时间计算</blockquote>
         <nav class="navbar navbar-default">
         	<button class="layui-btn" id="switch-btn" onclick="switchState()">获取中...</button>
     		<button class="layui-btn layui-btn-normal" onclick="restore()">还原</button>
