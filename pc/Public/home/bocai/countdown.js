@@ -8,7 +8,8 @@ self.onmessage = function(ev) {
 	var time = new Date(timestamp * 1000),
 		m = parseInt(time.getMinutes()),
 		s = parseInt(time.getSeconds()),
-		open = 5	// 设置开盘时间
+		open = 5,	// 设置开盘时间
+		timer = null
 
 	var minue = open - (m%5) - 1	// 分钟设置为开盘所需时间
 	var second = 60 - s
@@ -25,9 +26,9 @@ self.onmessage = function(ev) {
 
 		data.minue = minue
 		data.second = second
-		self.postMessage(data)	// 数据返回
 		data.number = self.setnum(++timestamp)
-		setTimeout(timeset, 1000)	// 时间
+		self.postMessage(data)	// 数据返回
+		timer = setTimeout(timeset, 1000)	// 时间
 	}
 	timeset()
 }

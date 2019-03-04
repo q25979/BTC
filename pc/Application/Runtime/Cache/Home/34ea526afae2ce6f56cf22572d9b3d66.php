@@ -9,7 +9,7 @@
 	<script src="http://localhost:8081/Public/js/config.js"></script>
 	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
 	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layer/layer.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 	<script src="/Public/home/bocai/deal.js"></script>
 </head>
 <body>
@@ -26,13 +26,13 @@
 						<div class="mb-3">現價</div>
 						<div class="label-bg now-price">00.00</div>
 					</div>
-					<div>
+					<div id="executePrice">
 						<div class="mb-3">執行價</div>
-						<div class="label-bg" id="executePrice">00.00</div>
+						<div class="label-bg">00.00</div>
 					</div>
-					<div>
+					<div id="lastPrice">
 						<div class="mb-3">成交價</div>
-						<div class="label-bg" id="lastPrice">00.00</div>
+						<div class="label-bg">00.00</div>
 					</div>
 				</div>
 				<div class="b">
@@ -44,19 +44,7 @@
 			</div>
 
 			<div class="order fl">
-				<table class="layui-table" lay-size="sm" lay-skin="line">
-					<thead>
-						<tr>
-							<th>期數</th>
-							<th>執行價</th>
-							<th>成交價</th>
-							<th>方向</th>
-							<th>開盤時間</th>
-						</tr>
-					</thead>
-					<tbody id="log">
-					</tbody>
-				</table>
+				<table class="layui-table" id="log"></table>
 			</div>
 		</div>
 		<div class="r fr">
@@ -83,7 +71,9 @@
 				</div>
 				<div class="confirm mt-15" onclick="okorder()">確認下注</div>
 				<div class="confirm mt-15 refresh" onclick="allrefresh()">刷新數據</div>
-				<div class="confirm mt-15" onclick="getlog()">交易記錄</div>
+				<div class="confirm mt-15 getlog" onclick="getlog()">
+					<table id="getlog"></table>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -22,9 +22,47 @@ $(function() {
 		});
 	});
 
+	init();
 	setInterval(gettdata, 1000); // 1s钟获取实时数据
-	openfn();
 });
+
+/**
+ * 初始化
+ */
+function init() {
+	$.get(config.host_path + '/home/bocai/timestamp', function(timestamp) {
+		CountDown(timestamp)
+	})
+
+	openfn()		// 开盘
+	getdeallog()	// 获取交易记录
+	getorder()		// 获取往期记录
+	getprice()		// 获取价格
+}
+
+/**
+ * 获取交易记录
+ */
+function getdeallog() {
+	var u = config.host_path + '/home/bocai/getdeallog'
+
+	layui.use('table', function() {
+		var table = layui.table
+
+		table.render({
+			elem: '#getlog',
+			url: u,
+			width: 220,
+			size: 'sm',
+			loading: false,
+			cols: [[
+				{field:'buy_number',title:'期號',width:60,align:'center',unresize:true},
+				{field:'money',title:'投注金額',width:81,align:'center',unresize:true},
+				{field:'last_money',title:'獎金',width:75,align:'center',unresize:true}
+			]]
+		})
+	})
+}
 
 /**
  * 开盘
@@ -32,10 +70,45 @@ $(function() {
 function openfn() {
 	$('.refresh').text("數據獲取中...")
 	getbalance();	// 获取余额
-	$.get(config.host_path + '/home/bocai/open', function(res) {
-		CountDown(res.timestamp)	// 倒计时时间戳
-		getorder()	// 刷新记录
-	});
+	$.get(config.host_path + '/home/bocai/open');
+}
+
+/**
+ * 获取价格
+ */
+function getprice() {
+	var worker = new Worker("/Public/home/bocai/worker/msgscript.js")
+	worker.postMessage(1)
+	worker.onmessage = function(data) {
+		var obj = data.data
+		var atime = ($('.time>div:nth-last-child(1)').text()).split(':')
+		var m = parseInt(atime[0])
+		var s = parseInt(atime[1])
+		if (m==0 && s==0) return ;
+		var url   = config.host_path+'/home/bocai/getprice'
+		var ashow = ['', '']	// 0-执行价  1-成交价
+		var execute = $('#executePrice>div:nth-last-child(1)')
+		var last = $('#lastPrice>div:nth-last-child(1)')
+		var executename = $('#lastPrice>div:nth-child(1)')
+		var lastname = $('#lastPrice>div:nth-child(1)')
+
+		// 请求数据
+		if (m==0 && s<=32 && s>5) {
+			$.get(url, function(res) {
+				var number = $('#openNumber').text()
+				executename.text('第'+number+'期-執行價')
+				execute.text(res.execute_price)
+				lastname.text('第'+number+'期-成交價')
+				last.text(res.last_price)
+			})
+		}
+
+		// 规定时间显示
+		ashow[0] = m==4||m==0&&s<=30 ? 'visible' : 'hidden'
+		ashow[1] = m==4 ? 'visible' : 'hidden'
+		$('#executePrice').css('visibility', ashow[0])
+		$('#lastPrice').css('visibility', ashow[1])
+	}
 }
 
 /**
@@ -75,21 +148,29 @@ function getlog() {
  */
 function getorder() {
 	var u = config.host_path + '/Home/Bocai/getrecord';
-	var d = { limit: 20 };
-	$.get(u, d, function(res) {
-		$('.refresh').text('刷新數據')
-		$('#log').empty();	// 重构子节点
-		for (var i in res.data) {
-			var h  = '<tr>';
-				h += '<td>'+ res.data[i].number +'</td>';
-				h += '<td>'+ res.data[i].execute_price +'</td>';
-				h += '<td>'+ res.data[i].last_price +'</td>';
-				h += '<td>'+ res.data[i].last_direction_name +'</td>';
-				h += '<td>'+ res.data[i].create_time +'</td>';
-				h += '</tr>';
-			$('#log').append(h);
-		}
-	});
+	layui.use('table', function() {
+		var table = layui.table
+		table.render({
+			elem: '#log',
+			url: u,
+			size: 'sm',
+			skin: 'row',
+			height: 285,
+			width: 740,
+			page: true,
+			loading: false,
+			done: function(res) {
+				$('.refresh').text('刷新數據')
+			},
+			cols: [[
+				{field:'number',title:'期號',align:'center',unresize:true,width:100},
+				{field:'execute_price',title:'執行價',align:'center',unresize:true,width:172},
+				{field:'last_price',title:'成交價',align:'center',unresize:true,width:172},
+				{field:'last_direction_name',title:'方向',align:'center',unresize:true,width:100},
+				{field:'create_time',title:'開盤時間',align:'center',unresize:true,width:173}
+			]]
+		})
+	})
 }
 
 /**

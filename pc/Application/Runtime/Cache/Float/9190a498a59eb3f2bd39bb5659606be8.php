@@ -23,7 +23,7 @@
 	</script>
 </head>
 <body>
-	<h3 style="color:red">微平台脚本运行，请不要关闭!!!</h3>
+	<h3>微平台脚本运行，请不要关闭!!!</h3>
 	<h3 id="setp0"></h3>
 	<h3 id="setp1"></h3>
 	<h3 id="setp2"></h3>

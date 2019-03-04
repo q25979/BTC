@@ -18,7 +18,8 @@ class BocaiController extends VerifyController
 	// 獲取餘額
 	public function getbalance()
 	{
-		$result = M('UserAccount')->getFieldByUserId($this->user_id, 'extract_balance');
+		$result = M('UserAccount')
+			->getFieldByUserId($this->user_id, 'extract_balance');
 		$this->ajaxReturn($result);
 	}
 
@@ -28,9 +29,7 @@ class BocaiController extends VerifyController
 		$type = I('get.type');
 		$title = $type == 1 ? "買漲" : "買跌";
 
-		$this->assign([
-			'title'	=> $title
-		]);
+		$this->assign(['title' => $title]);
 		$this->display();
 	}
 
@@ -79,11 +78,9 @@ class BocaiController extends VerifyController
 	public function getrecord()
 	{
 		$WOpenlog = M('WOpenlog');
-		$limit = I('get.limit');
-
-		// 获取两天前时间戳
+		$get = I('get.');
 		$list = $WOpenlog
-			->page('1,'.$limit)
+			->page($get['page'], $get['limit'])
 			->order('create_time desc')
 			->select();
 
@@ -93,14 +90,41 @@ class BocaiController extends VerifyController
 			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
 			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
 
-			$list[$k]['create_time'] = date('Y/m/d H:i:s');
+			$list[$k]['create_time'] = date('Y/m/d H:i:s', $v['create_time']);
 		}
 		$this->ajaxReturn([
 			'code' => 0,
 			'msg'  => '',
-			'count' => $WOpenlog->page('1,'.$limit)->count(),
+			'count' => $WOpenlog->count(),
 			'data' => $list
 		]);
+	}
+
+	// 获取交易记录
+	public function getdeallog()
+	{
+		$list = M('WMinlog')
+			->page(1, 3)
+			->field('buy_number,money,last_money')
+			->order('buy_time desc')
+			->select();
+		foreach ($list as $k => $v) {
+			if ($v['last_money']==0) $list[$k]['last_money']='未中獎';
+			if ($v['last_money']<0) $list[$k]['last_money']='未開獎';
+		}
+		$this->ajaxReturn([
+			'code' => 0,
+			'msg'  => '',
+			'data' => $list,
+			'count' => 3
+		]);
+	}
+
+	// 获取成交价和执行价
+	public function getprice()
+	{
+		$data = M('WSet')->where('id=1')->field('execute_price,last_price')->find();
+		$this->ajaxReturn($data);
 	}
 
 	// 开盘
@@ -110,7 +134,7 @@ class BocaiController extends VerifyController
 		$WOpenset = M('WOpenset');
 		$UserAccount = M('UserAccount');
 
-		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成', 'timestamp' => time()]);
+		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成']);
 	}
 
 	// 休市验证0-开盘 1-休市
@@ -123,9 +147,6 @@ class BocaiController extends VerifyController
 	// 获取记录
 	public function getlog()
 	{
-		// 只获取最近3天数据
-		$time = time()-(3*24*60*60);
-		$map['create_time'] = array('gt', $time);
 		$map['uid'] = $this->user_id;
 		$list = M('WMinlog')->where($map)->select();
 
@@ -146,4 +167,10 @@ class BocaiController extends VerifyController
 		$this->assign('list', $list);
 		$this->display();
 	}
+
+	// 获取服务器时间戳
+	public function timestamp()
+    {
+        $this->ajaxReturn(time());
+    }
 }

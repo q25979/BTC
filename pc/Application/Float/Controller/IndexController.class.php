@@ -176,8 +176,7 @@ class IndexController extends Controller
         } elseif ($m%5 == 4 && $s >= 55 && $s < 60) {
             // 保存开奖记录
             $map['number'] = $number;
-            $map['create_time'] = array('EGT', $starttime);
-            $map['create_time'] = array('ELT', $endtime);
+            $map['create_time'] = array(array('EGT', $starttime), array('ELT', $endtime));
             $openlogcount = M('WOpenlog')->where($map)->count();
             if ($openlogcount <= 0) {
                 // 说明没有保存过数据
@@ -198,8 +197,7 @@ class IndexController extends Controller
                         $oddsset = M('WSet')->getFieldById('1', 'odds_set'); // 获取赔率
                         // 保存成功，开奖
                         $openmap['buy_number'] = $number;
-                        $openmap['buy_time'] = array('EGT', $starttime);
-                        $openmap['buy_time'] = array('ELT', $endtime);
+                        $openmap['buy_time'] = array(array('EGT', $starttime), array('ELT', $endtime));
                         $openmap['last_direction'] = array('LT', 0);
                         
                         // 查询购买本期的人
