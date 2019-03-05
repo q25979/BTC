@@ -23,7 +23,7 @@
 		}
 
 		// 手机设备
-		if (m) {
+		if (iWh < 750) {
 			$("#device").attr("href", "/Public/home/bocai/m.css")
 		}
 	</script>

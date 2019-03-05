@@ -23,7 +23,6 @@ $(function() {
 	});
 
 	init();
-	setInterval(gettdata, 1000); // 1s钟获取实时数据
 });
 
 /**
@@ -35,8 +34,6 @@ function init() {
 	})
 
 	openfn()		// 开盘
-	getdeallog()	// 获取交易记录
-	getorder()		// 获取往期记录
 	getprice()		// 获取价格
 }
 
@@ -45,10 +42,8 @@ function init() {
  */
 function getdeallog() {
 	var u = config.host_path + '/home/bocai/getdeallog'
-
 	layui.use('table', function() {
 		var table = layui.table
-
 		table.render({
 			elem: '#getlog',
 			url: u,
@@ -70,7 +65,8 @@ function getdeallog() {
 function openfn() {
 	$('.refresh').text("數據獲取中...")
 	getbalance();	// 获取余额
-	$.get(config.host_path + '/home/bocai/open');
+	getdeallog()	// 获取交易记录
+	getorder()		// 获取往期记录
 }
 
 /**
@@ -89,25 +85,28 @@ function getprice() {
 		var ashow = ['', '']	// 0-执行价  1-成交价
 		var execute = $('#executePrice>div:nth-last-child(1)')
 		var last = $('#lastPrice>div:nth-last-child(1)')
-		var executename = $('#lastPrice>div:nth-child(1)')
+		var executename = $('#executePrice>div:nth-child(1)')
 		var lastname = $('#lastPrice>div:nth-child(1)')
+
+		// 规定时间显示
+		ashow[0] = m==4||m==0&&s<=30 ? 'visible' : 'hidden'
+		ashow[1] = m==4 ? 'visible' : 'hidden'
 
 		// 请求数据
 		if (m==0 && s<=32 && s>5) {
+			var number = $('#openNumber').text()
 			$.get(url, function(res) {
-				var number = $('#openNumber').text()
 				executename.text('第'+number+'期-執行價')
 				execute.text(res.execute_price)
 				lastname.text('第'+number+'期-成交價')
 				last.text(res.last_price)
 			})
 		}
-
-		// 规定时间显示
-		ashow[0] = m==4||m==0&&s<=30 ? 'visible' : 'hidden'
-		ashow[1] = m==4 ? 'visible' : 'hidden'
+		if (parseInt(execute.text())==0) ashow[0] = 'hidden'
+		if (parseInt(last.text())==0) ashow[1] = 'hidden'
 		$('#executePrice').css('visibility', ashow[0])
 		$('#lastPrice').css('visibility', ashow[1])
+		gettdata()	// 1s获取现价一次
 	}
 }
 
@@ -120,7 +119,7 @@ function CountDown(timestamp) {
 	worker.onmessage = function(data) {
 		var obj = data.data;
 		if (obj.open) {
-			console.log("开盘啦！")
+			openfn()
 		}
 
 		// 页面渲染
@@ -256,8 +255,8 @@ function okorder() {
 				layer.closeAll('loading')
 				layer.msg(res.msg, {time: 1500, icon: icon});
 				if (icon == 5) return false;
-				getbalance();
-				getorder();
+				getbalance();	// 获取余额
+				getdeallog();	// 获取交易记录
 			}).fail(function() {
 				layer.closeAll()
 				layer.msg('請求超時')

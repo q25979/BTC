@@ -15,6 +15,12 @@ class BocaiController extends VerifyController
 		$this->display();
 	}
 
+	// 博彩手机端
+	public function m()
+	{
+		$this->display();
+	}
+
 	// 獲取餘額
 	public function getbalance()
 	{
@@ -125,16 +131,6 @@ class BocaiController extends VerifyController
 	{
 		$data = M('WSet')->where('id=1')->field('execute_price,last_price')->find();
 		$this->ajaxReturn($data);
-	}
-
-	// 开盘
-	public function open()
-	{
-		$WMinlog  = M('WMinlog');
-		$WOpenset = M('WOpenset');
-		$UserAccount = M('UserAccount');
-
-		$this->ajaxReturn(['code' => 0, 'msg' => '操作完成']);
 	}
 
 	// 休市验证0-开盘 1-休市

@@ -7,20 +7,20 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.100:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.100:8081/Public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.0.100:8081/Public/css/base.css" />
 
-	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/base64.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.bday-picker.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://192.168.0.100:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.100:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/base64.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/function.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/jquery.bday-picker.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://192.168.0.100:8081/Public/plug-in/layui/layui.js"></script>
 
     <!--[if lt IE 9]>
         alert("你的浏览器版本，请更换浏览器，推荐谷歌");
@@ -43,17 +43,17 @@
 	            <ul class="nav sidebar-nav warpp">
 	                <li class="img-login">
 	                    <img src="/Public/images/customerService.png" class="get_imglogo">
-						<a id="login-href" href="http://localhost:8081/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
-                        <a id="logout-href" href="http://localhost:8081/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
+						<a id="login-href" href="http://192.168.0.100:8081/Home/Login/index"><?php echo (L("_LOGIN_LOGIN_")); ?></a>
+                        <a id="logout-href" href="http://192.168.0.100:8081/Home/Login/logout" style="display: none;"><?php echo (L("_ACCOUNT_LOGOUT_")); ?></a>
                         <li @click='jumpMessage()' id="login-bell" style="display: none;">
                             <span class="glyphicon glyphicon-bell"></span>
                             <span id="xy-top-messageminwidth"></span>
                         </li>
 	                </li>
-	                <li><a href="http://localhost:8081/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
-	                <li><a href="http://localhost:8081/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
-	                <li><a href="http://localhost:8081/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
+	                <li><a href="http://192.168.0.100:8081/Home/index/index" id="minwidth1-act"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                <li><a href="http://192.168.0.100:8081/Home/RealtimeMarket/index" id="minwidth2-act"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                <li><a href="http://192.168.0.100:8081/Home/ContactUs/index" id="minwidth3-act"><?php echo (L("_LOGIN_CONTACT_US_")); ?></a></li>
+	                <li><a href="http://192.168.0.100:8081/Home/Question/index" id="minwidth4-act"><?php echo (L("_LOGIN_FAQ_")); ?></a></li>
 	                <li class="top-language-radio">
 	                    <span>语言</span>
 	                    <div class="radio-language">
@@ -85,8 +85,8 @@
 	            <div class="header-list">
 	                <!--导航栏左侧-->
 	                <ul class="header-list-left col-xs-6">
-	                    <li><a href="http://localhost:8081/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
-	                    <li><a href="http://localhost:8081/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
+	                    <li><a href="http://192.168.0.100:8081/Home/Index/index" id="indexAct" class="active"><?php echo (L("_LOGIN_WALLET_")); ?></a></li>
+	                    <li><a href="http://192.168.0.100:8081/Home/RealtimeMarket/index" id="realtimeAct"><?php echo (L("_LOGIN_CHART_")); ?></a></li>
 	                    <li>
 	                        <div class="dropdown">
 	                            <div class="dropdown-toggle drop-more" id="dropdownMenu" data-toggle="dropdown">
@@ -125,19 +125,19 @@
 						<li>
 							<ul class="login-register">
 								<li>
-									<a href="http://localhost:8081">
+									<a href="http://192.168.0.100:8081">
 										<?php echo (L("_LOGIN_LOGIN_")); ?>
 									</a>
 								</li>
 								<li>
-									<a href="http://localhost:8081">
+									<a href="http://192.168.0.100:8081">
 										<?php echo (L("_LOGIN_SIGN_UP_")); ?>
 									</a>
 								</li>
 							</ul>
 							<ul class="user-Logout">
 								<li>
-									<a href="http://localhost:8081/Home/Login/logout">
+									<a href="http://192.168.0.100:8081/Home/Login/logout">
 										<?php echo (L("_ACCOUNT_LOGOUT_")); ?>
 									</a>
 								</li>
@@ -270,7 +270,7 @@
 			        type = 'usd'
 					c = '$'
 			    }
-				var u = 'http://localhost:8081/Float/Index/getdata';
+				var u = 'http://192.168.0.100:8081/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
 					_this.BTC = c + res.btc
@@ -286,7 +286,7 @@
 			 * 是登入进去的页面
 			 */
 			isLogin: function() {
-				var u = 'http://localhost:8081/Home/Index/getTopInfo';
+				var u = 'http://192.168.0.100:8081/Home/Index/getTopInfo';
 				if (sg.isEmpty($.cookie('btc_identification'))) return false;
 				$.get(u, function(res) {
 					var username = res.data.username;
@@ -323,7 +323,7 @@
 			 * 进入消息页
 			 */
 			jumpMessage: function() {
-				sg.jump('http://localhost:8081/Home/MessageTip/index');
+				sg.jump('http://192.168.0.100:8081/Home/MessageTip/index');
 			},
 			
 			getCurrencyType: function(index){
@@ -370,13 +370,13 @@
 		        }
 		    },
 			goCommonProblem : function(){//跳转到常见问题
-				window.location.href="http://localhost:8081/Home/Question/index";
+				window.location.href="http://192.168.0.100:8081/Home/Question/index";
 			},
 			goRelation : function(){//跳转到联系我们
-				window.location.href="http://localhost:8081/Home/ContactUs/index";
+				window.location.href="http://192.168.0.100:8081/Home/ContactUs/index";
 			},
 			changUrl:function(zt){
-				var url = "http://localhost:8081/Home/Lang/change";
+				var url = "http://192.168.0.100:8081/Home/Lang/change";
 				var data = {
 					lang : zt
 				};
@@ -490,7 +490,7 @@
 	 * 获取logo
 	 */
 	function getLogo () {
-		var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
+		var logoUrl = "http://192.168.0.100:8081/Home/Login/getupdateLogo";
 
 		$.ajax({
 			url: logoUrl,
@@ -593,67 +593,67 @@
 					<ul class="nav-ul" id="xy-nav-ul">
 						<li class="nav-li">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/Index/index" class="nav-a nav-a-first"><?php echo (L("_ACCOUNT_MY_WALLET_")); ?></a>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/Send/index" class="nav-a"><?php echo (L("_ACCOUNT_SEND_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://localhost:8081/Home/Send/index">BTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Send/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Send/index?type=2">LTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Send/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/WalletAddr/receive" class="nav-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive">BTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/WalletAddr/receive">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/WalletAddr/receive?type=2">LTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/WalletAddr/receive?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/DealDetails/index" class="nav-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://localhost:8081/Home/DealDetails/index">BTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/DealDetails/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/DealDetails/index?type=2">LTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/DealDetails/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/Buy/index" class="nav-a"><?php echo (L("_ACCOUNT_BUY_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://localhost:8081/Home/Buy/index">BTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Buy/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Buy/index?type=2">LTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Buy/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li dropdown">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
+								<a href="http://192.168.0.100:8081/Home/Sell/index" class="nav-a"><?php echo (L("_ACCOUNT_SELL_")); ?></a>
 								<span class="glyphicon glyphicon-triangle-bottom nav-span" class="dropdown-toggle nav-span" data-toggle="dropdown"></span>
 				                <ul class="dropdown-menu Spinner">
-				                    <li><a href="http://localhost:8081/Home/Sell/index">BTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Sell/index">BTC</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="http://localhost:8081/Home/Sell/index?type=2">LTC</a></li>
+				                    <li><a href="http://192.168.0.100:8081/Home/Sell/index?type=2">LTC</a></li>
 				                </ul>
 							</div>
 						</li>
 						<li class="nav-li">
 							<div class="li-content">
-								<a href="http://localhost:8081/Home/Bocai/index" class="nav-a gambling">微平台</a>
+								<a href="http://192.168.0.100:8081/Home/Bocai/index" class="nav-a gambling">微平台</a>
 							</div>
 						</li>
 					</ul>
@@ -670,13 +670,13 @@
 	                  		 <span class="text-content"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</span><span class="glyphicon glyphicon-triangle-bottom dropdown-List-span"></span>
 		                </a>
 		                <ul class="dropdown-menu dropdown-ul">
-		                    <li><a href="http://localhost:8081/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
-		                    <li><a href="http://localhost:8081/Home/Bocai/index" class="dropdown-a gambling">微平台&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/Index/index" class="dropdown-a"><?php echo (L("_LOGIN_WALLET_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/Buy/index" class="dropdown-a"><?php echo (L("_ACCOUNT_BUY_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/Sell/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SELL_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/Send/index" class="dropdown-a"><?php echo (L("_ACCOUNT_SEND_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/WalletAddr/receive" class="dropdown-a"><?php echo (L("_ACCOUNT_RECEIVE_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/DealDetails/index" class="dropdown-a"><?php echo (L("_ACCOUNT_TRANSACTIONS_")); ?>&nbsp;</a></li>
+		                    <li><a href="http://192.168.0.100:8081/Home/Bocai/index" class="dropdown-a gambling">微平台&nbsp;</a></li>
 		                </ul>
 		            </div>
 					
@@ -775,7 +775,7 @@
 
 	        // 点击logo跳回首页
 	        $(".logo").click(function () {
-	        	sg.jump('http://localhost:8081/Home/Index');
+	        	sg.jump('http://192.168.0.100:8081/Home/Index');
 	        });
 		}
 	
@@ -783,7 +783,7 @@
 		 * 获取logo
 		 */
 		function getLogo () {
-			var logoUrl = "http://localhost:8081/Home/Login/getupdateLogo";
+			var logoUrl = "http://192.168.0.100:8081/Home/Login/getupdateLogo";
 			$.ajax({
 				url: logoUrl,
 				type: 'get',
@@ -857,7 +857,7 @@
                                     </div>
                                     <div class="input-group" style="position: relative; width: 100%;">
                                         <a href="javascript:;" class="forget"><?php echo (L("_LOGIN_FORGOT_PASSWORD_")); ?></a>
-                                        <a href="http://localhost:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
+                                        <a href="http://192.168.0.100:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
                                     </div>
                                 </div>
 
@@ -913,7 +913,7 @@
 
                         <div class="input-group" style="position: relative; width: 100%;">
                             <a href="javascript:;" class="forget forget-small"><?php echo (L("_LOGIN_FORGOT_PASSWORD_")); ?></a>
-                            <a href="http://localhost:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
+                            <a href="http://192.168.0.100:8081/Home/Email/lockout" class="lock"><?php echo (L("_LOGIN_ACCOUNT_LOCKED_")); ?></a>
                         </div>
 
                         <div id="login-re" class="login-btn-re">
@@ -1069,7 +1069,7 @@
                 <div class="issue col-md-6 col-xs-6" >
                     <h4> 
                         <a 
-                            href  = "http://localhost:8081/Home/Question"
+                            href  = "http://192.168.0.100:8081/Home/Question"
                             style = "color: #fff"
                         >
                             <?php echo (L("_LOGIN_COMMON_QUESTIONS_")); ?>
@@ -1107,15 +1107,15 @@
     	<div class="footer-main">
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
-    			<a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
+    			<a href="http://192.168.0.100:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
-    			<a href="http://localhost:8081/Home/PDF/index/type/privacy">
+    			<a href="http://192.168.0.100:8081/Home/PDF/index/type/privacy">
                     <?php echo (L("_LOGIN_PRIVACY_POLICY_")); ?>
                 </a><span>|</span>
-    			<a href="http://localhost:8081/Home/Question">
+    			<a href="http://192.168.0.100:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
-    			<a href="http://localhost:8081/Home/ContactUs">
+    			<a href="http://192.168.0.100:8081/Home/ContactUs">
                     <?php echo (L("_CONTACT_US_")); ?>
                 </a>
     			<div class="footer-logo">
@@ -1129,5 +1129,5 @@
         <!-- footer end-->
     </div>
 </body>
-<script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+<script type="text/javascript" src="http://192.168.0.100:8081/Public/js/md5.js"></script>
 <script type="text/javascript" src="/Public/home/js/login.min.js"></script>

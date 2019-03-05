@@ -19625,3 +19625,183 @@ SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `p
 SQL: SHOW COLUMNS FROM `btc_w_minlog` [ RunTime:0.0079s ]
 SQL: SELECT `buy_number`,`money`,`last_money` FROM `btc_w_minlog` ORDER BY buy_time desc LIMIT 0,3   [ RunTime:0.0003s ]
 
+[ 2019-03-04T21:19:28+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002249s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004318s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0070s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0059s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:29+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001637s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003384s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0065s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:30+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001832s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003621s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0066s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0061s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:31+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001655s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003475s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0061s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0077s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:33+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001658s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003409s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0068s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0068s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:34+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001829s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004817s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0095s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0072s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:35+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001706s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003520s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0100s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0108s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-04T21:19:38+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002007s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003975s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0229s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0068s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-04T21:19:39+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003164s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005434s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0097s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0069s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-04T21:19:40+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001994s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003906s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0068s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0088s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-04T21:19:41+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001945s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004518s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0064s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0087s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-04T21:19:42+08:00 ] 127.0.0.1 /home/bocai/getprice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001787s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004880s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0126s ]
+SQL: SELECT `user_id` FROM `btc_user` WHERE `email` = '3151904400@qq.com' AND `password` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0096s ]
+SQL: SELECT `execute_price`,`last_price` FROM `btc_w_set` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+
