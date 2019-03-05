@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -10,16 +10,16 @@
 	<!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式--> 
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
 
-	<link rel="stylesheet" href="__PUBLIC__/home/bocai/iconfont.css" />
-	<link rel="stylesheet" href="__PUBLIC__/home/bocai/m.css" />
-	<link rel="stylesheet" href="__PLUG-IN__/layer_mobile/need/layer.css" />
-	<script src="__JS__/config.js"></script>
-	<script src="__JS__/jquery-3.2.1.min.js"></script>
-	<script src="__JS__/jquery.cookie.js"></script>
-	<script src="__JS__/sonic.js"></script>
-	<script src="__PLUG-IN__/layer_mobile/layer.js"></script>
-	<script src="__PUBLIC__/home/bocai/echarts.min.js"></script>
-	<script src="__PUBLIC__/home/bocai/mkdata.js"></script>
+	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
+	<link rel="stylesheet" href="/Public/home/bocai/m.css" />
+	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layer_mobile/need/layer.css" />
+	<script src="http://localhost:8081/Public/js/config.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
+	<script src="http://localhost:8081/Public/js/sonic.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layer_mobile/layer.js"></script>
+	<script src="/Public/home/bocai/echarts.min.js"></script>
+	<script src="/Public/home/bocai/mkdata.js"></script>
 </head>
 <body>
 	<header>

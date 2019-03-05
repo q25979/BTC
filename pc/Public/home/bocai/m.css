@@ -1,1 +1,9 @@
 /* 手机设备 */
+body,ul,li,p,button,div,h3{padding:0;margin:0;}
+body{background:#1b262d;color:#c4c7c9;font-family:"微软雅黑";font-size:14px;}
+ul,li{list-style:none}
+
+.clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
+header{background:#2c3940;padding:15px 10px;}
+header>ul>li{float:left;margin-right:10px;}
+.container{}

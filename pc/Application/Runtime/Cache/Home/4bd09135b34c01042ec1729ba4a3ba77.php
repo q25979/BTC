@@ -23,8 +23,9 @@
 		}
 
 		// 手机设备
-		if (iWh < 750) {
-			$("#device").attr("href", "/Public/home/bocai/m.css")
+		if ($(window).width() < 750) {
+			// $("#device").attr("href", "/Public/home/bocai/m.css")
+			window.location.href = '<?php echo U("m");?>'
 		}
 	</script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
