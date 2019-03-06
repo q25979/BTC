@@ -4,7 +4,6 @@
  * 时间：2019年3月5日
  */
 
-
 var w = WMProgram = {
 
 	// 请求接口域名
@@ -19,6 +18,38 @@ var w = WMProgram = {
 	// 交易
 	uDealLog: '/Home/Bocai/getlog',
 
+	/**
+	 * 运行微平台
+	 */
+	run: function() {
+		var atype = ['1min', '5min', '15min', '30min', '1hour', '1day']
+		var idx = 2
+		var req = {type: atype[idx]}
+
+		this.getKData(req)
+	},
+
+	/**
+	 * 获取K线图数据
+	 * @return {[type]} [description]
+	 */
+	getKData: function(d) {
+		var self = this
+
+		$.get(this.h+this.uK, d, function(res) {
+			var odata = JSON.parse(res.k).data
+			data  = odata.map(function (item) {
+				item[0] = new Date(item[0]);
+				item[0] = d.type == "1day"
+					? item[0] = item[0].getFullYear() + "/" + (item[0].getMonth()+1) + "/" + item[0].getDate()
+					: item[0] = item[0].getHours() + ":" + item[0].getMinutes();
+				return item;
+			});
+
+			var k = echarts.init(document.getElementById('k'))
+			k.setOption(self.koption(data))
+		})
+	},
 
 	/**
 	 * 自定义延时
@@ -63,19 +94,28 @@ var w = WMProgram = {
 	 */
 	koption: function(res) {
 		var dates = res.map(function (item) {
-		    return item[0];
-		});
+		    return item[0]
+		})
 
 		var data = res.map(function (item) {
-		    return [+item[1], +item[4], +item[3], +item[2]];
-		});
+		    return [+item[1], +item[4], +item[3], +item[2]]
+		})
+
+		var volumes = res.map(function (item) {
+			return item[5]
+		})
+
+		var labelFont = 'bold 12px Sans-serif'
+		var colorList = ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3']
 
 		var option = {}
 		option.animation = false
-		option.color = []
+		option.color = colorList
 		
-		option.legend.top = 30
-		option.legend.data = ['MA5', 'MA10', 'MA20']
+		option.legend = {
+			top: 30,
+			data: ['MA5', 'MA10', 'MA20']
+		}
 
 		option.tooltip = {
 			triggerOn: 'none',
@@ -103,20 +143,17 @@ var w = WMProgram = {
 		}
 
 		option.dataZoom = [{
+			show: false,
 			type: 'slider',
 			xAxisIndex: [0, 1],
 			realtime: false,
-			start: 20,
-			end: 70,
-			top: 65,
-			height: 20
+			start: 90,
+			end: 100
 		}, {
 			type: 'inside',
 			xAxisIndex: [0, 1],
-			start: 40,
-			end: 70,
-			top: 30,
-			height: 20
+			start: 90,
+			end: 100
 		}]
 
 		option.xAxis = [{
@@ -143,45 +180,37 @@ var w = WMProgram = {
 			axisPointer: {
 				type: 'shadow',
 				label: {show: false},
-				triggerToolip: true,
-				handle: {
-					show: true,
-					margin: 30,
-					color: '#b80c00'
-				}
+				triggerToolip: true
 			}
 		}]
 
 		option.yAxis = [{
 			scale: true,
-			splitNumber: 2,
+			position: 'right',
 			axisLine: { lineStyle: { color: '#777' } },
 			splitLine: { show: true },
-			axisTick: { show: true },
-			axisLabel: {
-				inside: true,
-				formatter: '{value}\n'
-			}
+			axisLabel: { margin: 5 }
 		}, {
 			scale: true,
+			splitNumber: 1,
 			gridIndex: 1,
-			splitNumber: 2,
 			axisLabel: { show: false },
 			axisLine: { show: false },
 			axisTick: { show: false },
 			splitLine: { show: false }
 		}]
 
+		// 方向大小定位
 		option.grid = [{
-			left: 20,
-			right: 20,
+			left: 10,
+			right: 45,
 			top: 110,
-			height: 120
+			height: 240
 		}, {
-			left: 20,
-			right: 20,
+			left: 10,
+			right: 45,
 			height: 40,
-			top: 260
+			top: 310
 		}]
 
 		option.graphic = [{
@@ -189,23 +218,7 @@ var w = WMProgram = {
 			left: 'center',
 			top: 70,
 			width: 300,
-			bounding: 'raw',
-			children: [{
-				id: 'MA5',
-				type: 'text',
-				style: {fill: colorList[1], font: labelFont},
-				left: 0
-			}, {
-				id: 'MA10',
-				type: 'text',
-				style: {fill: colorList[2], font: labelFont},
-				left: 'center'
-			}, {
-				id: 'MA20',
-				type: 'text',
-				style: {fill: colorList[3], font: labelFont},
-				right: 0
-			}]
+			bounding: 'raw'
 		}]
 
 		option.series = [{
@@ -236,40 +249,7 @@ var w = WMProgram = {
 	                borderColor0: '#444'
 	            }
 			}
-		}, {
-	        name: 'MA5',
-	        type: 'line',
-	        data: dataMA5,
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-	    }, {
-	        name: 'MA10',
-	        type: 'line',
-	        data: dataMA10,
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-	    }, {
-	        name: 'MA20',
-	        type: 'line',
-	        data: dataMA20,
-	        smooth: true,
-	        showSymbol: false,
-	        lineStyle: {
-	            normal: {
-	                width: 1
-	            }
-	        }
-	    }]
+		}]
 
 	    return option
 	}

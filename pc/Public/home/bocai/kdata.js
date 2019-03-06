@@ -238,36 +238,33 @@ function koption(res, type) {
         left: 30,
         right: 60
 	};
-	option.dataZoom = [
-		{
-			textStyle: {
-	            color: '#8392A5'
-	        },
-	        handleSize: '80%',
-	        filterMode: 'empty',
-	        dataBackground: {
-	            areaStyle: {
-	                color: '#8392A5'
-	            },
-	            lineStyle: {
-	                opacity: 0.8,
-	                color: '#8392A5'
-	            }
-	        },
-	        handleStyle: {
-	            color: '#fff',
-	            shadowBlur: 3,
-	            shadowColor: 'rgba(0, 0, 0, 0.6)',
-	            shadowOffsetX: 2,
-	            shadowOffsetY: 2
-	        },
-	        start: zoom.start,
-	        end: zoom.end
-	    },
-	    {
-	    	type: 'inside',
-	    }
-	];
+	option.dataZoom = [{
+		textStyle: {
+            color: '#8392A5'
+        },
+        handleSize: '80%',
+        filterMode: 'empty',
+        dataBackground: {
+            areaStyle: {
+                color: '#8392A5'
+            },
+            lineStyle: {
+                opacity: 0.8,
+                color: '#8392A5'
+            }
+        },
+        handleStyle: {
+            color: '#fff',
+            shadowBlur: 3,
+            shadowColor: 'rgba(0, 0, 0, 0.6)',
+            shadowOffsetX: 2,
+            shadowOffsetY: 2
+        },
+        start: zoom.start,
+        end: zoom.end
+    }, {
+    	type: 'inside',
+    }];
 
 	return option;
 }

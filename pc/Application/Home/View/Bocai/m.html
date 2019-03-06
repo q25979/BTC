@@ -29,10 +29,10 @@
 			<li>交易記錄</li>
 		</ul>
 	</header>	
-	<div class="container"></div>
+	<div class="container" id="k" style="height:500px; background: white"></div>
 
 	<script>
-		
+		w.run()
 	</script>
 </body>
 </html>
