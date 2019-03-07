@@ -64,7 +64,7 @@
 
 	<div class="dets">
 		<div class="execute">
-			<div class="balance">餘額：<span>0.00</span></div>
+			<div class="balance">账户餘額：<span>0.00</span></div>
 			<div class="mt-10">
 				<div>執行價</div>
 				<div class="number">0.0000</div>
@@ -74,7 +74,12 @@
 				<div class="number">0.0000</div>
 			</div>
 		</div>
-		<div class="deal mt-10">2</div>
+		<div class="deal">
+			<div class="direction border clearfix">
+				<div><span>漲</span></div>
+				<div><span>跌</span></div>
+			</div>
+		</div>
 	</div>
 
 	<script>

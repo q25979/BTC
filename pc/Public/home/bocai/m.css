@@ -10,7 +10,7 @@ ul,li{list-style:none}
 .clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
 header{z-index:1;color:#c4c7c9;background:#2c3940;padding:15px 10px;position:fixed;width:100%;top:0;}
 header>ul>li{float:left;margin-right:10px;}
-.container{height:300px;}
+.container{height:320px;}
 
 .price{padding:10px 15px;margin:50px 0 10px 0;font-size:16px;}
 .price li{float:left;width:33.33%;}
@@ -24,6 +24,11 @@ header>ul>li{float:left;margin-right:10px;}
 .timek .active{color:#080;border-bottom:1px solid #080;}
 
 .dets{margin-top:10px;padding:10px 15px;}
-.dets .number{margin-top:3px;height:25px;line-height:25px;padding:5px 10px;border:1px solid #e2e5e7;}
+.dets .number{margin-top:7px;height:25px;line-height:25px;padding:5px 10px;border:1px solid #e2e5e7;}
+.dets>.execute{margin-top:10px;}
 
-.deal{margin-bottom:50px;}
+.deal{margin:30px 0 50px 0;}
+.deal>.direction{}
+.deal>.direction>div{float:left;width:50%;text-align:center;height:40px;line-height:40px;}
+.deal>.direction>div>span{border:1px solid #e2e5e7;display:inline-block;width:100%;height:100%;}
+.deal>.direction>div:nth-child(1)>span{border-right:0;}

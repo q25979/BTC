@@ -145,12 +145,12 @@ var w = WMProgram = {
 			type: 'slider',
 			xAxisIndex: [0, 1],
 			realtime: false,
-			start: 80,
+			start: 90,
 			end: 100
 		}, {
 			type: 'inside',
 			xAxisIndex: [0, 1],
-			start: 80,
+			start: 90,
 			end: 100
 		}]
 
@@ -158,7 +158,9 @@ var w = WMProgram = {
 			type: 'category',
 			data: dates,
 			boundaryGap: false,
-			axisLine: { lineStyle: { color: '#777' } },
+			axisTick: {show: false},
+			axisLabel: {show: false},
+			axisLine: { lineStyle: { color: '#ccc' } },
 			min: 'dataMin',
 			max: 'dataMax',
 			axisPointer: { show: true }
@@ -168,9 +170,9 @@ var w = WMProgram = {
 			data: dates,
 			scale: true,
 			boundaryGap: false,
-			splitLine: {show: false},
-			axisLabel: {show: false},
-			axisTick: {show: false},
+			// splitLine: {show: false},
+			// axisLabel: {show: false},
+			// axisTick: {show: false},
 			axisLine: { lineStyle: { color: '#777' } },
 			splitNumber: 20,
 			min: 'dataMin',
@@ -190,12 +192,17 @@ var w = WMProgram = {
 			axisLabel: { margin: 5 }
 		}, {
 			scale: true,
-			splitNumber: 10,
+			position: 'right',
+			max: '300',
 			gridIndex: 1,
-			axisLabel: { show: false },
-			axisLine: { show: false },
-			axisTick: { show: false },
-			splitLine: { show: false }
+			splitNumber: 2,
+			axisLine: { lineStyle: { color: '#777' } },
+			splitLine: { show: false },
+			axisLabel: { margin: 5, showMaxLabel: false }
+			// axisLabel: { show: false },
+			// axisLine: { show: false },
+			// axisTick: { show: false },
+			// splitLine: { show: false }
 		}]
 
 		// 方向大小定位
@@ -203,11 +210,11 @@ var w = WMProgram = {
 			left: 10,
 			right: 45,
 			top: 30,
-			height: 240
+			height: 200
 		}, {
 			left: 10,
 			right: 45,
-			height: 40,
+			height: 60,
 			top: 230
 		}]
 
