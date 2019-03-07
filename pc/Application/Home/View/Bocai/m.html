@@ -25,11 +25,57 @@
 	<header>
 		<ul class="clearfix">
 			<li>首頁</li>
-			<li>買賣</li>
+			<li>走勢</li>
 			<li>交易記錄</li>
 		</ul>
-	</header>	
-	<div class="container" id="k" style="height:500px; background: white"></div>
+	</header>
+	<div class="price">
+		<ul class="clearfix">
+			<li>
+				<span class="title">C</span>
+				<span class="number">3252.23</span>
+			</li>
+			<li>
+				<span class="title">O</span>
+				<span class="number">3252.23</span>
+			</li>
+			<li>
+				<span class="title">L</span>
+				<span class="number">3252.23</span>
+			</li>
+			<li>
+				<span class="title">H</span>
+				<span class="number">3252.23</span>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="timek">
+		<ul class="clearfix">
+			<li><span class="active">1M</span></li>
+			<li><span>5M</span></li>
+			<li><span>30M</span></li>
+			<li><span>1H</span></li>
+			<li><span>1D</span></li>
+		</ul>
+	</div>
+
+	<div class="container" id="k"></div>
+
+	<div class="dets">
+		<div class="execute">
+			<div class="balance">餘額：<span>0.00</span></div>
+			<div class="mt-10">
+				<div>執行價</div>
+				<div class="number">0.0000</div>
+			</div>
+			<div class="mt-10">
+				<div>成交價</div>
+				<div class="number">0.0000</div>
+			</div>
+		</div>
+		<div class="deal mt-10">2</div>
+	</div>
 
 	<script>
 		w.run()

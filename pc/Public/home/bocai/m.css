@@ -1,9 +1,29 @@
 /* 手机设备 */
 body,ul,li,p,button,div,h3{padding:0;margin:0;}
-body{background:#1b262d;color:#c4c7c9;font-family:"微软雅黑";font-size:14px;}
+body{background:#f5f5f5;color:#555;font-family:"微软雅黑";font-size:14px;}
 ul,li{list-style:none}
+.mt-10{margin-top:10px;}
+.rise{color:#080;}
+.fall{color:#FD1050;}
+.container,.price,.timek,.dets{background:white;}
 
 .clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
-header{background:#2c3940;padding:15px 10px;}
+header{z-index:1;color:#c4c7c9;background:#2c3940;padding:15px 10px;position:fixed;width:100%;top:0;}
 header>ul>li{float:left;margin-right:10px;}
-.container{}
+.container{height:300px;}
+
+.price{padding:10px 15px;margin:50px 0 10px 0;font-size:16px;}
+.price li{float:left;width:33.33%;}
+.price li:nth-child(1){width:100%;margin-bottom:8px;}
+.price li>.title{width:12px;display:inline-block;}
+.price li>.number{color:#080;}
+
+.timek{border-bottom:1px solid #e2e5e7;font-size:14px;padding:0 10px;}
+.timek li{width:20%;text-align:center;height:40px;line-height:40px;float:left;}
+.timek li>span{width:80%;height:100%;display:inline-block;}
+.timek .active{color:#080;border-bottom:1px solid #080;}
+
+.dets{margin-top:10px;padding:10px 15px;}
+.dets .number{margin-top:3px;height:25px;line-height:25px;padding:5px 10px;border:1px solid #e2e5e7;}
+
+.deal{margin-bottom:50px;}

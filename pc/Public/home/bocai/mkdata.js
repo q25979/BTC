@@ -105,12 +105,10 @@ var w = WMProgram = {
 			return item[5]
 		})
 
-		var labelFont = 'bold 12px Sans-serif'
-		var colorList = ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3']
+		var labelFont = 'bold 10px Sans-serif'
 
 		var option = {}
 		option.animation = false
-		option.color = colorList
 		
 		option.legend = {
 			top: 30,
@@ -126,7 +124,7 @@ var w = WMProgram = {
 			borderColor: '#333',
 			backgroundColor: 'rgba(255,255,255,0.9)',
 			textStyle: {
-				fontSize: 12,
+				fontSize: 10,
 				color: '#333'
 			},
 			position: function(pos, params, el, elRect, size) {
@@ -147,12 +145,12 @@ var w = WMProgram = {
 			type: 'slider',
 			xAxisIndex: [0, 1],
 			realtime: false,
-			start: 90,
+			start: 80,
 			end: 100
 		}, {
 			type: 'inside',
 			xAxisIndex: [0, 1],
-			start: 90,
+			start: 80,
 			end: 100
 		}]
 
@@ -188,11 +186,11 @@ var w = WMProgram = {
 			scale: true,
 			position: 'right',
 			axisLine: { lineStyle: { color: '#777' } },
-			splitLine: { show: true },
+			splitLine: { show: true, lineStyle: { color: '#f5f5f5' } },
 			axisLabel: { margin: 5 }
 		}, {
 			scale: true,
-			splitNumber: 1,
+			splitNumber: 10,
 			gridIndex: 1,
 			axisLabel: { show: false },
 			axisLine: { show: false },
@@ -204,13 +202,13 @@ var w = WMProgram = {
 		option.grid = [{
 			left: 10,
 			right: 45,
-			top: 110,
+			top: 30,
 			height: 240
 		}, {
 			left: 10,
 			right: 45,
 			height: 40,
-			top: 310
+			top: 230
 		}]
 
 		option.graphic = [{
@@ -233,14 +231,13 @@ var w = WMProgram = {
 			data: volumes
 		}, {
 			type: 'candlestick',
-			name: '日K',
 			data: data,
 			itemStyle: {
 				normal: {
 	                color: '#ef232a',
 	                color0: '#14b143',
 	                borderColor: '#ef232a',
-	                borderColor0: '#14b143'
+	                borderColor0: '#14b143',
 	            },
 	            emphasis: {
 	                color: 'black',
@@ -248,7 +245,11 @@ var w = WMProgram = {
 	                borderColor: 'black',
 	                borderColor0: '#444'
 	            }
-			}
+			},
+			markLine: {
+				symbol: ['none', 'none'],
+				data: [{ yAxis: parseInt(data[data.length-1][1]) }]	// 收盘
+			},
 		}]
 
 	    return option

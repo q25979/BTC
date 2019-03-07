@@ -189,7 +189,8 @@ function koption(res, type) {
 				color: '#FD1050',
 				color0: '#0CF49B',
 				borderColor: '#FD1050',
-				borderColor0: '#0CF49B'
+				borderColor0: '#0CF49B',
+				opacity: 0.8
 			},
 			markLine: {
 				symbol: ['none', 'none'],
