@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>微平台脚本</title>
 
-	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
 	<script>
 		var worker = new Worker("/Public/home/bocai/worker/msgscript.js")
 		worker.postMessage(1)

@@ -6,11 +6,11 @@
 	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/common.css" />
 	<link rel="stylesheet" id="device" />
-	<script src="http://localhost:8081/Public/js/config.js"></script>
-	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://localhost:8081/Public/js/sonic.js"></script>
-	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/jquery.cookie.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/sonic.js"></script>
+	<script src="http://192.168.0.137:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 	<script>
 		// 判断该使用什么样式 768 900 1080 手机
 		var iWh = $(window).height();

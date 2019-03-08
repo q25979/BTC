@@ -12,12 +12,11 @@
 
 	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/m.css" />
-	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layer_mobile/need/layer.css" />
-	<script src="http://localhost:8081/Public/js/config.js"></script>
-	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://localhost:8081/Public/js/sonic.js"></script>
-	<script src="http://localhost:8081/Public/plug-in/layer_mobile/layer.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/jquery.cookie.js"></script>
+	<script src="http://192.168.0.137:8081/Public/js/sonic.js"></script>
+	<script src="http://192.168.0.137:8081/Public/plug-in/layer_mobile/layer.js"></script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
 	<script src="/Public/home/bocai/mkdata.js"></script>
 </head>
@@ -64,7 +63,6 @@
 
 	<div class="dets">
 		<div class="execute">
-			<div class="balance">账户餘額：<span>0.00</span></div>
 			<div class="mt-10">
 				<div>執行價</div>
 				<div class="number">0.0000</div>
@@ -75,10 +73,15 @@
 			</div>
 		</div>
 		<div class="deal">
-			<div class="direction border clearfix">
-				<div><span>漲</span></div>
-				<div><span>跌</span></div>
+			<div class="balance">账户餘額：<span>0.00</span></div>
+			<div class="direction border">
+				<div class="dealactive">漲</div>
+				<div>跌</div>
 			</div>
+			<div class="input mt-10">
+				<input type="number" name="money" placeholder="請輸入下注金額">
+			</div>
+			<div class="confirm mt-10">下注</div>
 		</div>
 	</div>
 

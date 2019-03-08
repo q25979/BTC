@@ -143,24 +143,34 @@ class BocaiController extends VerifyController
 	// 获取记录
 	public function getlog()
 	{
-		$map['uid'] = $this->user_id;
-		$list = M('WMinlog')->where($map)->select();
+		if (IS_AJAX) {
+			$get = I('get.');
+			$map['uid'] = $this->user_id;
+			$list = M('WMinlog')->page($get['page'], $get['limit'])->where($map)->select();
 
-		// 转换可视数据
-		foreach ($list as $k => $v) {
-			if ($v['buy_direction'] == 0) $list[$k]['buy_direction_name'] = '漲';
-			if ($v['buy_direction'] == 1) $list[$k]['buy_direction_name'] = '跌';
-			if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
-			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
-			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
-			$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
-			$hour  = (int)(((int)$v['buy_number']*5)/60);
-			$minue = (int)(((int)$v['buy_number']*5)%60);
-			$hour  = $hour < 10 ? '0'.$hour : $hour;
-			$minue = $minue < 10 ? '0'.$minue : $minue;
-			$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;
+			// 转换可视数据
+			foreach ($list as $k => $v) {
+				if ($v['buy_direction'] == 0) $list[$k]['buy_direction_name'] = '漲';
+				if ($v['buy_direction'] == 1) $list[$k]['buy_direction_name'] = '跌';
+				if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
+				if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
+				if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開獎';
+				$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
+				$hour  = (int)(((int)$v['buy_number']*5)/60);
+				$minue = (int)(((int)$v['buy_number']*5)%60);
+				$hour  = $hour < 10 ? '0'.$hour : $hour;
+				$minue = $minue < 10 ? '0'.$minue : $minue;
+				$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;
+				if ($v['last_money'] < 0) $list[$k]['last_money'] = '未開獎';
+				if ($v['last_money'] == 0) $list[$k]['last_money'] = '未中獎';
+			}
+			$this->ajaxReturn([
+				'code' => 0,
+				'msg'  => '',
+				'data' => $list,
+				'count' => M('WMinlog')->where($map)->count()
+			]);
 		}
-		$this->assign('list', $list);
 		$this->display();
 	}
 

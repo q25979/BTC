@@ -7,44 +7,43 @@
 	<link rel="stylesheet" href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
 	<script src="__JS__/config.js"></script>
 	<script src="__JS__/jquery-3.2.1.min.js"></script>
-	<script src="__PLUG-IN__/layui-v2.3.0/layer/layer.js"></script>
+	<script src="__PLUG-IN__/layui-v2.3.0/layui/layui.js"></script>
 	<style>
 		body{max-width:1200px;margin:0 auto;padding:0;}
 	</style>
+
+	<script>
+		$(function() {
+			layui.use('table', function() {
+				var table = layui.table
+
+				table.render({
+					elem: '#log',
+					url: '<{:U("getlog")}>',
+					page: true,
+					skin: 'row',
+					limit: 20,
+					size: 'sm',
+					cols: [[
+						{field:'order_id',title:'訂單ID',width:110,align:'center'},
+						{field:'buy_direction_name',title:'購買方向',width:80,align:'center'},
+						{field:'last_direction_name',title:'最終方向',width:80,align:'center'},
+						{field:'money',title:'購買金額(NT$)',width:110,align:'center'},
+						{field:'buy_number',title:'期號',width:60,align:'center'},
+						{field:'last_money',title:'中將金額(NT$)',width:110,align:'center'},
+						{field:'execute_price',title:'執行價($)',width:90,align:'center'},
+						{field:'last_price',title:'成交價($)',width:90,align:'center'},
+						{field:'buy_time',title:'購買時間',width:130,align:'center'},
+						{field:'last_time',title:'開盤時間',width:130,align:'center'}
+					]]
+				})
+			})
+		})
+	</script>
 </head>
 <body>
 	<div class="deal-container">
-		<table class="layui-table" lay-size="sm" lay-skin="line">
-			<thead>
-				<tr>
-					<th>訂單ID</th>
-					<th>購買方向</th>
-					<th>最終方向</th>
-					<th>购买金額(NT$)</th>
-					<th>期數</th>
-					<th>中獎金額(NT$)</th>
-					<th>執行價格($)</th>
-					<th>最終價格($)</th>
-					<th>購買時間</th>
-					<th>開盤時間</th>
-				</tr>
-			</thead>
-			<tbody>
-				<volist name="list" id="vo">
-					<tr>
-						<td><{$vo.order_id}></td>
-						<td><{$vo.buy_direction_name}></td>
-						<td><{$vo.last_direction_name}></td>
-						<td><{$vo.money}></td>
-						<td><{$vo.buy_number}></td>
-						<td><{$vo.buy_price}></td>
-						<td><{$vo.last_price}></td>
-						<td><{$vo.buy_time}></td>
-						<td><{$vo.last_time}></td>
-					</tr>
-				</volist>
-			</tbody>
-		</table>
+		<table class="layui-table" id="log"></table>
 	</div>
 </body>
 </html>

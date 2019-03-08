@@ -1,34 +1,34 @@
 /* 手机设备 */
 body,ul,li,p,button,div,h3{padding:0;margin:0;}
-body{background:#f5f5f5;color:#555;font-family:"微软雅黑";font-size:14px;}
+body{background:#f5f5f5;color:#555;font-family:"微软雅黑";font-size:0.875em;}
 ul,li{list-style:none}
-.mt-10{margin-top:10px;}
-.rise{color:#080;}
-.fall{color:#FD1050;}
+.mt-10{margin-top:0.625em;}
+.rise{color:#14B143;}
+.fall{color:#EF232A;}
 .container,.price,.timek,.dets{background:white;}
 
 .clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
-header{z-index:1;color:#c4c7c9;background:#2c3940;padding:15px 10px;position:fixed;width:100%;top:0;}
-header>ul>li{float:left;margin-right:10px;}
-.container{height:320px;}
+header{z-index:1;color:#c4c7c9;background:#2c3940;padding:0.9375em 0.625em;position:fixed;width:100%;top:0;}
+header>ul>li{float:left;margin-right:0.625em;}
+.container{height:23em;}
 
-.price{padding:10px 15px;margin:50px 0 10px 0;font-size:16px;}
+.price{padding:1em 0.9375em;margin:3.125em 0 0.625em 0;font-size:1em;}
 .price li{float:left;width:33.33%;}
-.price li:nth-child(1){width:100%;margin-bottom:8px;}
-.price li>.title{width:12px;display:inline-block;}
-.price li>.number{color:#080;}
+.price li:nth-child(1){width:100%;margin-bottom:0.5em;}
+.price li>.title{width:0.75em;display:inline-block;}
+.price li>.number{color:#14B143;}
 
-.timek{border-bottom:1px solid #e2e5e7;font-size:14px;padding:0 10px;}
-.timek li{width:20%;text-align:center;height:40px;line-height:40px;float:left;}
+.timek{border-bottom:0.0625em solid #e2e5e7;padding:0 0.625em;}
+.timek li{width:20%;text-align:center;height:2.5em;line-height:2.5em;float:left;}
 .timek li>span{width:80%;height:100%;display:inline-block;}
-.timek .active{color:#080;border-bottom:1px solid #080;}
+.timek .active{color:#14B143;border-bottom:0.0625em solid #14B143;}
 
-.dets{margin-top:10px;padding:10px 15px;}
-.dets .number{margin-top:7px;height:25px;line-height:25px;padding:5px 10px;border:1px solid #e2e5e7;}
-.dets>.execute{margin-top:10px;}
+.dets{margin-top:0.625em;padding:0.625em 0.9375em;}
+.dets .number{margin-top:0.4375em;height:1.5625em;line-height:1.5625em;padding:0.3125em 0.625em;border:0.0625em solid #e2e5e7;}
 
-.deal{margin:30px 0 50px 0;}
-.deal>.direction{}
-.deal>.direction>div{float:left;width:50%;text-align:center;height:40px;line-height:40px;}
-.deal>.direction>div>span{border:1px solid #e2e5e7;display:inline-block;width:100%;height:100%;}
-.deal>.direction>div:nth-child(1)>span{border-right:0;}
+.deal{margin:1.5625em 0 3.125em 0;}
+.deal>.direction{display:flex;display:-webkit-flex;border:0.0625em solid #14B143;color:#14B143;margin-top:0.625em;}
+.deal>.direction>div{width:50%;text-align:center;height:2.5em;line-height:2.5em;}
+.deal>.direction>.dealactive{background:#14B143;color:#fff;}
+.deal>.input>input{width:calc(100% - 1.375em);border:0.0625em solid #e2e5e7;height:2em;border-radius:0;line-height:2em;padding:0.4em 0.625em;color:#555;-webkit-appearance:none;}
+.deal>.confirm{height:2.5em;line-height:2.5em;background:#14B143;color:white;text-align:center;margin-bottom:15em;}

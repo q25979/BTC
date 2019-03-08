@@ -6,17 +6,16 @@
 
 var w = WMProgram = {
 
-	// 请求接口域名
-	h: config.host_path,
+	/**
+	 * 请求接口设置
+	 * h是域名
+	 */
+	h: config.host_path,				// 域名
+	uK: '/Float/Index/getkdata',		// k线图数据
+	uBalance: '/Home/Bocai/getbalance',	// 获取余额
+	uDealLog: '/Home/Bocai/getlog',		// 交易
 
-	// k线图数据
-	uK: '/Float/Index/getkdata',
-
-	// 获取余额
-	uBalance: '/Home/Bocai/getbalance',
-
-	// 交易
-	uDealLog: '/Home/Bocai/getlog',
+	color: ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 
 	/**
 	 * 运行微平台
@@ -170,9 +169,6 @@ var w = WMProgram = {
 			data: dates,
 			scale: true,
 			boundaryGap: false,
-			// splitLine: {show: false},
-			// axisLabel: {show: false},
-			// axisTick: {show: false},
 			axisLine: { lineStyle: { color: '#777' } },
 			splitNumber: 20,
 			min: 'dataMin',
@@ -199,10 +195,6 @@ var w = WMProgram = {
 			axisLine: { lineStyle: { color: '#777' } },
 			splitLine: { show: false },
 			axisLabel: { margin: 5, showMaxLabel: false }
-			// axisLabel: { show: false },
-			// axisLine: { show: false },
-			// axisTick: { show: false },
-			// splitLine: { show: false }
 		}]
 
 		// 方向大小定位
