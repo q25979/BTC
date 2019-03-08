@@ -14,6 +14,7 @@ var w = WMProgram = {
 	uK: '/Float/Index/getkdata',		// k线图数据
 	uBalance: '/Home/Bocai/getbalance',	// 获取余额
 	uDealLog: '/Home/Bocai/getlog',		// 交易
+	uTimestamp: '/home/bocai/timestamp',	// 获取时间戳
 
 	color: ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 
@@ -25,7 +26,25 @@ var w = WMProgram = {
 		var idx = 2
 		var req = {type: atype[idx]}
 
-		this.getKData(req)
+		this.getKData(req)	// 获取K线图
+		this.getTimestamp()
+	},
+
+	/**
+	 * 获取时间戳
+	 */
+	getTimestamp: function() {
+		var self = this
+		$.get(this.h+this.uTimestamp, function(res) {
+			self.countDown(res)
+		})
+	},
+
+	/**
+	 * 跳转
+	 */
+	jump: function(url) {
+		window.location.href = url
 	},
 
 	/**
@@ -61,6 +80,33 @@ var w = WMProgram = {
 		worker.postMessage(time)
 		worker.onmessage = function(data) {
 			callback(data)
+		}
+	},
+
+	/**
+	 * 设置倒计时
+	 * @param  {[int]} timestamp
+	 */
+	countDown: function(timestamp) {
+		var worker = new Worker("/Public/home/bocai/countdown.js")
+		var self = this
+		worker.postMessage(timestamp)
+		worker.onmessage = function(data) {
+			var obj = data.data;
+			if (obj.open) {
+				console.log('开盘!')
+			}
+
+			// 页面渲染
+			obj.minue == 0
+				? $(".time>.number").css('color', self.color[1])
+				: $(".time>.number").css('color', self.color[0])
+			if (obj.minue < 10) obj.minue = "0" + obj.minue
+			if (obj.second < 10) obj.second = "0" + obj.second
+
+			time = obj.minue + ":" + obj.second
+			$(".time>.number").text(time);
+			$(".issue>.number").text(obj.number)
 		}
 	},
 

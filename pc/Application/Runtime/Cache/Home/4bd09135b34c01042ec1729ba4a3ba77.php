@@ -23,7 +23,7 @@
 		}
 
 		// 手机设备
-		if ($(window).width() < 750) {
+		if (m) {
 			// $("#device").attr("href", "/Public/home/bocai/m.css")
 			window.location.href = '<?php echo U("m");?>'
 		}

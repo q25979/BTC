@@ -10,7 +10,6 @@
 	<!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式--> 
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
 
-	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/m.css" />
 	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
 	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
@@ -23,9 +22,9 @@
 <body>
 	<header>
 		<ul class="clearfix">
-			<li>首頁</li>
-			<li>走勢</li>
-			<li>交易記錄</li>
+			<li onclick="w.jump('/')">首頁</li>
+			<li onclick="w.jump('<?php echo U(trend);?>')">走勢</li>
+			<li onclick="w.jump('<?php echo U(mlog);?>')">交易記錄</li>
 		</ul>
 	</header>
 	<div class="price">
@@ -63,11 +62,19 @@
 
 	<div class="dets">
 		<div class="execute">
-			<div class="mt-10">
+			<div class="mt-10 issue">
+				<div>期號</div>
+				<div class="number">0</div>
+			</div>
+			<div class="mt-10 time">
+				<div>倒計時</div>
+				<div class="number">00:00</div>
+			</div>
+			<div class="mt-10 execute-price">
 				<div>執行價</div>
 				<div class="number">0.0000</div>
 			</div>
-			<div class="mt-10">
+			<div class="mt-10 last-price">
 				<div>成交價</div>
 				<div class="number">0.0000</div>
 			</div>

@@ -9,7 +9,7 @@ ul,li{list-style:none}
 
 .clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
 header{z-index:1;color:#c4c7c9;background:#2c3940;padding:0.9375em 0.625em;position:fixed;width:100%;top:0;}
-header>ul>li{float:left;margin-right:0.625em;}
+header>ul>li{float:left;margin-right:0.9375em}
 .container{height:23em;}
 
 .price{padding:1em 0.9375em;margin:3.125em 0 0.625em 0;font-size:1em;}
@@ -30,5 +30,5 @@ header>ul>li{float:left;margin-right:0.625em;}
 .deal>.direction{display:flex;display:-webkit-flex;border:0.0625em solid #14B143;color:#14B143;margin-top:0.625em;}
 .deal>.direction>div{width:50%;text-align:center;height:2.5em;line-height:2.5em;}
 .deal>.direction>.dealactive{background:#14B143;color:#fff;}
-.deal>.input>input{width:calc(100% - 1.375em);border:0.0625em solid #e2e5e7;height:2em;border-radius:0;line-height:2em;padding:0.4em 0.625em;color:#555;-webkit-appearance:none;}
-.deal>.confirm{height:2.5em;line-height:2.5em;background:#14B143;color:white;text-align:center;margin-bottom:15em;}
+.deal>.input>input{width:calc(100% - 1.375em);border:0.0625em solid #e2e5e7;height:2em;border-radius:0;padding:0.4em 0.625em;color:#555;-webkit-appearance:none;}
+.deal>.confirm{height:2.75em;line-height:2.75em;background:#14B143;color:white;text-align:center;margin-bottom:15em;}
