@@ -27,6 +27,7 @@
 			<li onclick="w.jump('<?php echo U(mlog);?>')">交易記錄</li>
 		</ul>
 	</header>
+	
 	<div class="price">
 		<ul class="clearfix">
 			<li>

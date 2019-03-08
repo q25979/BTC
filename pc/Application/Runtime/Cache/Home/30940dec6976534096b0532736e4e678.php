@@ -10,10 +10,8 @@
 	<!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式--> 
 	<meta content="black" name="apple-mobile-web-app-status-bar-style">
 	<link rel="stylesheet" href="http://192.168.0.137:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
-	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
 	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.137:8081/Public/plug-in/layui/layui.js"></script>
-
+	
 	<style>
 		body,ul,li,p,button,div,h3{padding:0;margin:0;}
 		body{color:#555;font-family:"微软雅黑";font-size:0.875em;}
@@ -27,7 +25,6 @@
 		tr>td:nth-child(2){width:30%;}
 		tr>td:nth-child(3){width:30%;}
 		tr>td:nth-child(4){width:20%;}
-		thead{position:fixed;width:100%;}
 		thead tr,tfoot tr{background:#F2F2F2;}
 		thead td{padding:0.625em 0;}
 		tfoot td{padding:1em 0;}
