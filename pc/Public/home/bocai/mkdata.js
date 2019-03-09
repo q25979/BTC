@@ -14,6 +14,9 @@ var w = WMProgram = {
 	uK: '/Float/Index/getkdata',		// k线图数据
 	uInitial: '/Home/Bocai/initial',	// 初始化
 	uOrder: '/Home/Bocai/okorder',		// 下单
+	uBtc: '/Float/Index/ticker',		// 获取BTC数据
+
+	K: '',	// 初始化K线图
 
 	color: ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 	aTimeK: ['1min', '5min', '30min', '1hour', '1day'],	// 时间K
@@ -25,10 +28,7 @@ var w = WMProgram = {
 	 * 运行微平台
 	 */
 	run: function() {
-		var req = {type: this.aTimeK[0]}
-
-		this.getKData(req)	// 获取K线图
-		this.init()
+		this.initial()			// 初始化
 		this.switchK()		// 切换时间K选项卡
 		this.switchDeal()	// 切换涨跌选项卡
 	},
@@ -36,11 +36,23 @@ var w = WMProgram = {
 	/**
 	 * 初始化
 	 */
-	init: function() {
+	initial: function() {
 		var self = this
 		$.get(this.h+this.uInitial, function(res) {
 			self.countDown(res.timestamp)	// 设置倒计时
 			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
+		})
+
+		this.getKData({type: this.aTimeK[0]})	// 获取K线图
+		this.getBtc()	// 获取BTC数据
+	},
+
+	/**
+	 * 获取BTC数据
+	 */
+	getBtc: function() {
+		$.get(this.h + this.uBtc, function(res) {
+			console.log(res)
 		})
 	},
 
@@ -103,10 +115,12 @@ var w = WMProgram = {
 				k.children('span').removeClass('active')
 				var span = $(k[idx]).children('span')
 				span.addClass('active')
-
-				var d = {type: self.aTimeK[idx]};
 				self.aFlag = [false, false, false, false, false]
 				self.aFlag[idx] = true
+
+				// 获取数据
+				var d = {type: self.aTimeK[idx]};
+				self.getKData(d)
 			})
 		})
 	},
@@ -155,8 +169,8 @@ var w = WMProgram = {
 	getKData: function(d) {
 		var self = this
 
-		var k = echarts.init(document.getElementById('k'))
-		k.showLoading()
+		this.K = echarts.init(document.getElementById('k'))
+		this.K.showLoading()
 		$.get(this.h+this.uK, d, function(res) {
 			var odata = JSON.parse(res.k).data
 			data  = odata.map(function (item) {
@@ -167,8 +181,8 @@ var w = WMProgram = {
 				return item;
 			});
 
-			k.hideLoading()
-			k.setOption(self.koption(data))
+			self.K.hideLoading()
+			self.K.setOption(self.koption(data))
 		})
 	},
 
@@ -250,6 +264,7 @@ var w = WMProgram = {
 		})
 
 		var volumes = res.map(function (item) {
+			if (item[5] > 300) item[5] = 300
 			return item[5]
 		})
 

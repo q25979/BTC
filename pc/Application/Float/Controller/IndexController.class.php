@@ -131,6 +131,19 @@ class IndexController extends Controller
         $this->ajaxReturn($data);
     }
 
+    /**
+     * 获取K最后一期数据 
+     * 时间： 2019年3月9日
+     */
+    public function ticker()
+    {
+        $req  = new \Request();
+        $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';
+        $info = json_decode($req->httpGet($burl));
+
+        $this->ajaxReturn($info);
+    }
+
     // 随机数
     private function frand() 
     {
