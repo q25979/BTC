@@ -21,6 +21,16 @@ class BocaiController extends VerifyController
 		$this->display();
 	}
 
+	// 初始化
+	public function initial()
+	{
+		$this->ajaxReturn([
+			'extract_balance' => M('UserAccount')
+				->getFieldByUserId($this->user_id, 'extract_balance'),
+			'timestamp' => time()
+		]);
+	}
+
 	// 獲取餘額
 	public function getbalance()
 	{
@@ -28,6 +38,12 @@ class BocaiController extends VerifyController
 			->getFieldByUserId($this->user_id, 'extract_balance');
 		$this->ajaxReturn($result);
 	}
+
+	// 获取服务器时间戳
+	public function timestamp()
+    {
+        $this->ajaxReturn(time());
+    }
 
 	// 买
 	public function deal()
@@ -50,7 +66,11 @@ class BocaiController extends VerifyController
 		// 判斷金額是否正確
 		if ($post['money'] < 1 || is_nan($post['money']) || empty($post['money'])) 
 			$this->ajaxReturn($result);
-		if ($post['time'] == 0)
+
+		// 时间
+		$time = time();
+		$m = 5-((int)date('i', $time)%5)-1; 
+		if ($m == 0)
 			$this->ajaxReturn(['code' => 1, 'msg' => '最後一分鐘禁止購買']);
 
 		// 扣除餘額
@@ -65,11 +85,14 @@ class BocaiController extends VerifyController
 
 		// 生成订单号
 		$letter = ['X', 'K', 'V', 'B', 'N', 'M', 'Z', 'D', 'O'];
-		$stime  = time();
-		$order  = $letter[rand(0,count($letter)-1)].time();
+		$stime  = $time;
+		$order  = $letter[rand(0,count($letter)-1)].$time;
 		$post['uid'] = $this->user_id;
 		$post['create_time'] = $post['buy_time'] = $stime;
 		$post['order_id'] = $order;
+
+		$h = (int)date('H', $time); $mm = (int)date('i', $time); $s = (int)date('s', $time);
+		$post['buy_number'] = (int)(($h*60+$mm)/5+1);	// 购买期数
 		$info = M('WMinlog')->add($post);
 		if ($info == 0) {
 			$account->rollback();
@@ -173,10 +196,4 @@ class BocaiController extends VerifyController
 		}
 		$this->display();
 	}
-
-	// 获取服务器时间戳
-	public function timestamp()
-    {
-        $this->ajaxReturn(time());
-    }
 }

@@ -138,3 +138,503 @@ INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002588s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.003052s ]
 NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
 
+[ 2019-03-09T11:28:06+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003154s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:28:10+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004638s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:28:26+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003273s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:28:34+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002638s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:29:31+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002144s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007488s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:29:33+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001267s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004971s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:54:47+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003289s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:59:16+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004044s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T11:59:39+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=15min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001823s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004692s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:45:08+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005485s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:45:31+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004571s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:45:53+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004082s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:46:07+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006027s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:46:16+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002313s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:52:58+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005348s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:53:33+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006137s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:53:51+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003310s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.008199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011637s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:55:01+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002310s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T12:55:38+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005875s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T13:36:40+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005351s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T13:39:37+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003582s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T13:54:35+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002103s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T13:54:42+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004212s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:03:19+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003851s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:03:27+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003317s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:07:38+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002255s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:07:57+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002512s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:08:23+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005699s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:10:24+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004997s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:10:44+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004706s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:12:22+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003584s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:13:06+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002909s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:14:10+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003778s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:14:42+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.009454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010321s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:42:36+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002204s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:43:54+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002451s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:54:10+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003388s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T14:54:32+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001242s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005671s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T15:06:51+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002110s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T15:25:38+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002288s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T16:43:07+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002980s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T16:50:57+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002433s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T16:52:00+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004863s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T16:58:36+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003847s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T16:59:02+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002165s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T17:10:44+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004788s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T17:14:22+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005962s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T17:16:19+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001370s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005223s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T17:16:39+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002134s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+
+[ 2019-03-09T17:17:16+08:00 ] 192.168.0.137 /Float/Index/getkdata?type=1min
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002909s ]
+NOTIC: [8192] Non-static method Request::httpGet() should not be called statically D:\phpStudy\WWW\btc\pc\Application\Float\Controller\IndexController.class.php 第 128 行.
+

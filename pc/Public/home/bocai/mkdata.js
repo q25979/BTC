@@ -12,31 +12,131 @@ var w = WMProgram = {
 	 */
 	h: config.host_path,				// 域名
 	uK: '/Float/Index/getkdata',		// k线图数据
-	uBalance: '/Home/Bocai/getbalance',	// 获取余额
-	uDealLog: '/Home/Bocai/getlog',		// 交易
-	uTimestamp: '/home/bocai/timestamp',	// 获取时间戳
+	uInitial: '/Home/Bocai/initial',	// 初始化
+	uOrder: '/Home/Bocai/okorder',		// 下单
 
 	color: ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
+	aTimeK: ['1min', '5min', '30min', '1hour', '1day'],	// 时间K
+	aFlag: [true, false, false, false, false],
+
+	iDirection: 0,	// 购买方向
 
 	/**
 	 * 运行微平台
 	 */
 	run: function() {
-		var atype = ['1min', '5min', '15min', '30min', '1hour', '1day']
-		var idx = 2
-		var req = {type: atype[idx]}
+		var req = {type: this.aTimeK[0]}
 
 		this.getKData(req)	// 获取K线图
-		this.getTimestamp()
+		this.init()
+		this.switchK()		// 切换时间K选项卡
+		this.switchDeal()	// 切换涨跌选项卡
 	},
 
 	/**
-	 * 获取时间戳
+	 * 初始化
 	 */
-	getTimestamp: function() {
+	init: function() {
 		var self = this
-		$.get(this.h+this.uTimestamp, function(res) {
-			self.countDown(res)
+		$.get(this.h+this.uInitial, function(res) {
+			self.countDown(res.timestamp)	// 设置倒计时
+			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
+		})
+	},
+
+	/**
+	 * 下单
+	 */
+	order: function() {
+		var u = this.h + this.uOrder
+		var d = new Object()
+
+		d.buy_direction = this.iDirection	// 购买方向
+		d.money = $('[name=money]').val()
+
+		if (d.money <= 0) {
+			layer.open({
+				content: '下注金額輸入錯誤',
+				btn: '確認'
+			})
+			return ;
+		}
+		if (parseInt($('.dets .time .number').text().split(':')[0]) == 0) {
+			layer.open({
+				content: '最後一分鐘禁止購買',
+				btn: '確認'
+			})
+			return ;
+		}
+
+		layer.open({
+			content: '確認下注？',
+			btn: ['確認', '取消'],
+			yes: function(index) {
+				layer.close(index)
+				$.post(u, d, function(res) {
+					layer.open({
+						content: res.msg,
+						btn: '確認'
+					})
+
+					if (res.code == 0) {
+						var balance = parseFloat($('.deal .balance>span').text())-d.money
+						$('.deal .balance>span').text(balance.toFixed(2))
+						$('[name=money]').val(' ')
+					}
+				})
+			}
+		})
+	},
+
+	/**
+	 * 切换时间K选项卡
+	 */
+	switchK: function() {
+		var k = $('.timek>ul>li')
+		var self = this
+
+		k.each(function(idx) {
+			$(this).click(function() {
+				if (self.aFlag[idx]) return ;
+				k.children('span').removeClass('active')
+				var span = $(k[idx]).children('span')
+				span.addClass('active')
+
+				var d = {type: self.aTimeK[idx]};
+				self.aFlag = [false, false, false, false, false]
+				self.aFlag[idx] = true
+			})
+		})
+	},
+
+	/**
+	 * 切换涨跌选项卡
+	 */
+	switchDeal: function() {
+		var deal = $('.deal>.direction>div')
+		var self = this
+		var obj = {}
+
+		deal.each(function(idx) {
+			$(this).click(function() {
+				// 样式设置
+				obj.background = self.color[idx]
+				obj.color = 'white'
+				var borderColor = self.color[idx]
+				if (idx == 0) {
+					$(deal[0]).css(obj)
+					$(deal[1]).css({'background': 'transparent', 'color': borderColor})
+					$('.deal>.direction').css('border-color', borderColor)
+				} else {
+					$(deal[0]).css({'background': 'transparent', 'color': borderColor})
+					$(deal[1]).css(obj)
+					$('.deal>.direction').css('border-color', borderColor)
+				}
+				$('.deal>.confirm').css('background', self.color[idx])
+				self.iDirection = idx
+			})
 		})
 	},
 
@@ -44,6 +144,7 @@ var w = WMProgram = {
 	 * 跳转
 	 */
 	jump: function(url) {
+
 		window.location.href = url
 	},
 
@@ -54,6 +155,8 @@ var w = WMProgram = {
 	getKData: function(d) {
 		var self = this
 
+		var k = echarts.init(document.getElementById('k'))
+		k.showLoading()
 		$.get(this.h+this.uK, d, function(res) {
 			var odata = JSON.parse(res.k).data
 			data  = odata.map(function (item) {
@@ -64,7 +167,7 @@ var w = WMProgram = {
 				return item;
 			});
 
-			var k = echarts.init(document.getElementById('k'))
+			k.hideLoading()
 			k.setOption(self.koption(data))
 		})
 	},

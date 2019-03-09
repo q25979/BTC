@@ -89,7 +89,7 @@
 			<div class="input mt-10">
 				<input type="number" name="money" placeholder="請輸入下注金額">
 			</div>
-			<div class="confirm mt-10">下注</div>
+			<div class="confirm mt-10" onclick="w.order()">下注</div>
 		</div>
 	</div>
 
