@@ -57,10 +57,11 @@
 			jump: function(url) {
 				window.location.href = url
 			},
-			init: function() {
+			init: function(callback) {
 				$.get('<{:U("getlog")}>', this.data, function(res) {
 					var html = ''
 					var d = res.data
+					if (callback) callback(res)
 					
 					$('#minirefresh').css('display', 'block')
 					$('#loader').css('display', 'none')
@@ -86,15 +87,28 @@
 		var miniRefresh = new MiniRefresh({
 			container: '#minirefresh',
 			down: {
+				isAutoResetUpLoading: false,
 				callback: function() {
 					// 下拉
-					miniRefresh.endDownLoading();
+					w.data.page=1
+					w.init(function() {
+						$('.container>div>ul').html("")
+						miniRefresh.endDownLoading()
+						miniRefresh.resetUpLoading()
+					})
 				},
 			},
 			up: {
+				isAuto: false,
 				callback: function() {
 					// 上拉
-					miniRefresh.endUpLoading(true);
+					w.data.page++
+					w.init(function(res) {
+						var bFlag = false
+						var l = $('.container>div>ul').children('li').length
+						if (parseInt(res.count)==l) bFlag = true
+						miniRefresh.endUpLoading(bFlag)
+					})
 				}
 			}
 		})

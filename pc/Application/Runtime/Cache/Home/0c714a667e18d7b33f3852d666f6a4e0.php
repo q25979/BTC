@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>幣淘微平台</title>
+	<title>幣淘微平臺</title>
 	<!--强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；--> 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!--iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览--> 
@@ -27,7 +27,7 @@
 			<li onclick="w.jump('<?php echo U(mlog);?>')">交易記錄</li>
 		</ul>
 	</header>
-	
+
 	<div class="price">
 		<ul class="clearfix">
 			<li>
