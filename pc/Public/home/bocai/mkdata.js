@@ -11,16 +11,25 @@ var w = WMProgram = {
 	 * h是域名
 	 */
 	h: config.host_path,				// 域名
-	uK: '/Float/Index/getkdata',		// k线图数据
+	uK: 	  '/Float/Index/getkdata',	// k线图数据
 	uInitial: '/Home/Bocai/initial',	// 初始化
-	uOrder: '/Home/Bocai/okorder',		// 下单
-	uBtc: '/Float/Index/ticker',		// 获取BTC数据
+	uOrder:   '/Home/Bocai/okorder',	// 下单
+	uBtc:     '/Float/Index/ticker',	// 获取BTC数据
 
-	K: '',	// 初始化K线图
+	K:  null,	// 初始化K线图
+	ws: null,	// webSocket
+	wsUrl: 'wss://api.huobi.pro/ws',	// kline数据
+	klineTime: '',	// kline时间
+	wsLock: false,	// WebSocket锁防止重复请求
+	oKOption: {
+		// K线图配置
+		start: 90,
+		end: 100
+	},
 
-	color: ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
+	color:  ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 	aTimeK: ['1min', '5min', '30min', '1hour', '1day'],	// 时间K
-	aFlag: [true, false, false, false, false],
+	aFlag:  [true, false, false, false, false],
 
 	iDirection: 0,	// 购买方向
 
@@ -43,16 +52,100 @@ var w = WMProgram = {
 			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
 		})
 
-		this.getKData({type: this.aTimeK[0]})	// 获取K线图
-		this.getBtc()	// 获取BTC数据
+		// 初始化定义
+		this.klineTime = this.aTimeK[0]
+		this.createWebSocket()	// 创建webSocket
+
+		this.K = echarts.init(document.getElementById('k'))	// ECharts初始化
+		this.kEvent()	// K线图事件
+
+		// 窗口关闭事件
+		window.onbeforeunload = function() {
+			self.ws.close()	// 关闭webSocket
+		}
 	},
 
 	/**
-	 * 获取BTC数据
+	 * 创建并且判断WebSocket是否支持
+	 * @return {[type]} [description]
 	 */
-	getBtc: function() {
-		$.get(this.h + this.uBtc, function(res) {
-			console.log(res)
+	createWebSocket: function() {
+		try {
+			if ('WebSocket' in window) {
+				this.ws = new WebSocket(this.wsUrl)
+			} else if ('MozWebSocket' in window) {
+				this.ws = new MozWebSocket(this.wsUrl)
+			} else {
+				layer.open({
+					content: '您的瀏覽器不支持K綫圖交易，建議使用新版谷歌瀏覽器，請勿使用IE10以下瀏覽器!',
+					btn: '確認'
+				})
+			}
+			this.runWebSocket()
+		} catch(e) {
+			console.log('WebSocket error in option!')
+			// reconnect(url)
+		}
+	},
+
+	/**
+	 * 启动WebSocket
+	 * @return {[type]} [description]
+	 */
+	runWebSocket: function() {
+		var self = this
+		this.ws.onclose = function() {
+			self.wsLock = false
+			console.log('连接关闭!')
+			self.createWebSocket()
+		}
+		this.ws.onerror = function() {
+			self.wsLock = false
+			self.createWebSocket()
+		}
+		this.ws.onopen = function() {
+			self.wsLock = true
+			let obj = new Object()
+			obj.req = 'market.btcusdt.kline.'+self.klineTime
+			obj.id  = 'id1'
+
+			obj = JSON.stringify(obj)
+			self.ws.send(obj)
+		}
+		this.ws.onmessage = function(ev) {
+			var reader = new FileReader()
+			reader.readAsArrayBuffer(ev.data)
+			reader.onload = function(e) {
+				if (e.target.readyState == FileReader.DONE) {
+					let data = pako.inflate(reader.result)
+					let strData = String.fromCharCode.apply(null, new Uint16Array(data))
+					let objData = JSON.parse(strData)
+					var eData = objData.data
+
+					// 配置数据
+					if (eData) {
+						self.K.setOption(self.koption(eData))
+						self.K.resize()
+
+						$('.price li:nth-child(1) .number').text(eData[eData.length-1].close)
+						$('.price li:nth-child(2) .number').text(eData[eData.length-1].open)
+						$('.price li:nth-child(3) .number').text(eData[eData.length-1].low)
+						$('.price li:nth-child(4) .number').text(eData[eData.length-1].high)
+					}
+				}
+			}
+		}
+	},
+
+	/**
+	 * K线图事件
+	 * @return {[type]} [description]
+	 */
+	kEvent: function() {
+		var self = this
+		this.K.on('dataZoom', function(ev) {
+			self.oKOption.start = ev.batch[0].start
+			self.oKOption.end = ev.batch[0].end
 		})
 	},
 
@@ -119,8 +212,9 @@ var w = WMProgram = {
 				self.aFlag[idx] = true
 
 				// 获取数据
-				var d = {type: self.aTimeK[idx]};
-				self.getKData(d)
+				self.klineTime = self.aTimeK[idx]
+				if (self.wsLock) self.ws.close()
+				self.runWebSocket()
 			})
 		})
 	},
@@ -166,24 +260,18 @@ var w = WMProgram = {
 	 * 获取K线图数据
 	 * @return {[type]} [description]
 	 */
-	getKData: function(d) {
+	setKLine: function(d) {
 		var self = this
 
-		this.K = echarts.init(document.getElementById('k'))
-		this.K.showLoading()
-		$.get(this.h+this.uK, d, function(res) {
-			var odata = JSON.parse(res.k).data
-			data  = odata.map(function (item) {
-				item[0] = new Date(item[0]);
-				item[0] = d.type == "1day"
-					? item[0] = item[0].getFullYear() + "/" + (item[0].getMonth()+1) + "/" + item[0].getDate()
-					: item[0] = item[0].getHours() + ":" + item[0].getMinutes();
-				return item;
-			});
-
-			self.K.hideLoading()
-			self.K.setOption(self.koption(data))
-		})
+		// 点击事件
+		var c = $('.parse .number:nth-child(1)')
+		var o = $('.parse .number:nth-child(2)')
+		var l = $('.parse .number:nth-child(3)')
+		var h = $('.parse .number:nth-child(4)')
+		this.K.onclick= function(params) {
+			var d= params.data
+			c.text(d[4])
+		}
 	},
 
 	/**
@@ -255,17 +343,30 @@ var w = WMProgram = {
 	 * @return {[object]}
 	 */
 	koption: function(res) {
-		var dates = res.map(function (item) {
-		    return item[0]
-		})
+		var self = this
+		var dates = []
+		for (var i in res) {
+			let date = new Date(res[i].id * 1000)
+			let y = date.getFullYear(),
+				m = date.getMonth()+1,
+				d = date.getDate(),
+				h = date.getHours(),
+				mm = date.getMinutes()
+			if (parseInt(h) < 10) h = '0' + h
+			if (parseInt(mm) < 10) mm = '0' + mm
+			if (parseInt(m) < 10) m = '0' + m 
+			if (parseInt(d) < 10) d = '0' + d
+			
+			let time = self.klineTime == '1day' ? y+'/'+m+'/'+d : h+':'+mm
+			dates.push(time)
+		}
 
 		var data = res.map(function (item) {
-		    return [+item[1], +item[4], +item[3], +item[2]]
+		    return [+item.open, +item.close, +item.low, +item.high]
 		})
 
 		var volumes = res.map(function (item) {
-			if (item[5] > 300) item[5] = 300
-			return item[5]
+			return item.vol
 		})
 
 		var labelFont = 'bold 10px Sans-serif'
@@ -308,18 +409,17 @@ var w = WMProgram = {
 			type: 'slider',
 			xAxisIndex: [0, 1],
 			realtime: false,
-			start: 90,
-			end: 100
+			start: self.oKOption.start,
+			end: self.oKOption.end
 		}, {
 			type: 'inside',
 			xAxisIndex: [0, 1],
-			start: 90,
-			end: 100
+			start: self.oKOption.start,
+			end: self.oKOption.end
 		}]
 
 		option.xAxis = [{
 			type: 'category',
-			data: dates,
 			boundaryGap: false,
 			axisTick: {show: false},
 			axisLabel: {show: false},
@@ -353,7 +453,6 @@ var w = WMProgram = {
 		}, {
 			scale: true,
 			position: 'right',
-			max: '300',
 			gridIndex: 1,
 			splitNumber: 2,
 			axisLine: { lineStyle: { color: '#777' } },
@@ -364,12 +463,12 @@ var w = WMProgram = {
 		// 方向大小定位
 		option.grid = [{
 			left: 10,
-			right: 45,
+			right: 55,
 			top: 30,
 			height: 200
 		}, {
 			left: 10,
-			right: 45,
+			right: 55,
 			height: 60,
 			top: 230
 		}]

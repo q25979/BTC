@@ -37,7 +37,7 @@ class IndexController extends Controller
         $req  = new \Request();
         $exchange = M('Exchange');
         $burl = 'http://api.bitkk.com/data/v1/ticker?market=btc_usdt';  // 比特币
-        $lurl = "http://api.bitkk.com/data/v1/ticker?market=ltc_usdt";  // 以太币
+        $lurl = "http://api.bitkk.com/data/v1/ticker?market=ltc_usdt";  // 莱特币
 
         // last实时价格
         $info['btc'] = json_decode($req->httpGet($burl));

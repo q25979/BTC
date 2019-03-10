@@ -18,6 +18,7 @@
 	<script src="http://192.168.0.137:8081/Public/plug-in/layer_mobile/layer.js"></script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
 	<script src="/Public/home/bocai/mkdata.js"></script>
+	<script src="https://cdn.bootcss.com/pako/1.0.6/pako.min.js"></script>
 </head>
 <body>
 	<header>
@@ -32,19 +33,19 @@
 		<ul class="clearfix">
 			<li>
 				<span class="title">C</span>
-				<span class="number">3252.23</span>
+				<span class="number">0.0000</span>
 			</li>
 			<li>
 				<span class="title">O</span>
-				<span class="number">3252.23</span>
+				<span class="number">0.0000</span>
 			</li>
 			<li>
 				<span class="title">L</span>
-				<span class="number">3252.23</span>
+				<span class="number">0.0000</span>
 			</li>
 			<li>
 				<span class="title">H</span>
-				<span class="number">3252.23</span>
+				<span class="number">0.0000</span>
 			</li>
 		</ul>
 	</div>
