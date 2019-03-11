@@ -13,8 +13,6 @@
 	<link rel="stylesheet" href="/Public/home/bocai/m.css" />
 	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
 	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/sonic.js"></script>
 	<script src="http://192.168.0.137:8081/Public/plug-in/layer_mobile/layer.js"></script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
 	<script src="/Public/home/bocai/mkdata.js"></script>
@@ -33,19 +31,19 @@
 		<ul class="clearfix">
 			<li>
 				<span class="title">C</span>
-				<span class="number">0.0000</span>
+				<span class="number rise">0.0000</span>
 			</li>
 			<li>
 				<span class="title">O</span>
-				<span class="number">0.0000</span>
+				<span class="number rise">0.0000</span>
 			</li>
 			<li>
 				<span class="title">L</span>
-				<span class="number">0.0000</span>
+				<span class="number rise">0.0000</span>
 			</li>
 			<li>
 				<span class="title">H</span>
-				<span class="number">0.0000</span>
+				<span class="number rise">0.0000</span>
 			</li>
 		</ul>
 	</div>
@@ -61,7 +59,7 @@
 	</div>
 
 	<div class="container" id="k"></div>
-
+	<button onclick="w.basics()">asdas</button>
 	<div class="dets">
 		<div class="execute">
 			<div class="mt-10 issue">

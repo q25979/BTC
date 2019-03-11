@@ -72,7 +72,7 @@ class IndexController extends Controller
     /**
      * 获取货币汇率
      */
-    public function exchange() 
+    public function exchange()
     {
         $exchange = M('Exchange');
         $edata = $exchange->where('id=1')->cache('exchange')->find();
@@ -173,11 +173,6 @@ class IndexController extends Controller
             $last = $set == 0   // 成交价
                 ? $execute + $this->frand()
                 : $execute - $this->frand();
-            M("WSet")->where('id=1')->save([
-                'execute_price' => $execute,
-                'last_price' => $last,
-                'update_time' => time()
-            ]);
 
             // 保存session
             session('price.execute', $execute); // 执行价
@@ -205,6 +200,7 @@ class IndexController extends Controller
                         'create_time'    => time()
                     ];
                     // 保存
+                    M('WSet')->where('id=1')->save($openlogdata);
                     $info = M('WOpenlog')->add($openlogdata);
                     if ($info > 0) {
                         $oddsset = M('WSet')->getFieldById('1', 'odds_set'); // 获取赔率

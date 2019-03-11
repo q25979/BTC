@@ -14,7 +14,7 @@ var w = WMProgram = {
 	uK: 	  '/Float/Index/getkdata',	// k线图数据
 	uInitial: '/Home/Bocai/initial',	// 初始化
 	uOrder:   '/Home/Bocai/okorder',	// 下单
-	uBtc:     '/Float/Index/ticker',	// 获取BTC数据
+	uSetPrice: '/home/bocai/getprice',	// 获取BTC数据
 
 	K:  null,	// 初始化K线图
 	ws: null,	// webSocket
@@ -27,6 +27,8 @@ var w = WMProgram = {
 		end: 100
 	},
 
+	worker: null,	// 定时器
+
 	color:  ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 	aTimeK: ['1min', '5min', '30min', '1hour', '1day'],	// 时间K
 	aFlag:  [true, false, false, false, false],
@@ -38,8 +40,6 @@ var w = WMProgram = {
 	 */
 	run: function() {
 		this.initial()			// 初始化
-		this.switchK()		// 切换时间K选项卡
-		this.switchDeal()	// 切换涨跌选项卡
 	},
 
 	/**
@@ -47,10 +47,7 @@ var w = WMProgram = {
 	 */
 	initial: function() {
 		var self = this
-		$.get(this.h+this.uInitial, function(res) {
-			self.countDown(res.timestamp)	// 设置倒计时
-			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
-		})
+		this.basics()	// 设置倒计时和设置账户余额
 
 		// 初始化定义
 		this.klineTime = this.aTimeK[0]
@@ -59,10 +56,27 @@ var w = WMProgram = {
 		this.K = echarts.init(document.getElementById('k'))	// ECharts初始化
 		this.kEvent()	// K线图事件
 
+		this.switchK()		// 切换时间K选项卡
+		this.switchDeal()	// 切换涨跌选项卡
+		this.setPrice()		// 设置执行价和成交价
+
 		// 窗口关闭事件
 		window.onbeforeunload = function() {
 			self.ws.close()	// 关闭webSocket
 		}
+	},
+
+	/**
+	 * 设置基础数据
+	 */
+	basics: function() {
+		var self = this
+		if (this.worker != null) this.worker.terminate()
+		$.get(this.h+this.uInitial, function(res) {
+			console.log(res)
+			self.countDown(res.timestamp)	// 设置倒计时
+			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
+		})
 	},
 
 	/**
@@ -96,7 +110,6 @@ var w = WMProgram = {
 		var self = this
 		this.ws.onclose = function() {
 			self.wsLock = false
-			console.log('连接关闭!')
 			self.createWebSocket()
 		}
 		this.ws.onerror = function() {
@@ -127,10 +140,25 @@ var w = WMProgram = {
 						self.K.setOption(self.koption(eData))
 						self.K.resize()
 
-						$('.price li:nth-child(1) .number').text(eData[eData.length-1].close)
-						$('.price li:nth-child(2) .number').text(eData[eData.length-1].open)
-						$('.price li:nth-child(3) .number').text(eData[eData.length-1].low)
-						$('.price li:nth-child(4) .number').text(eData[eData.length-1].high)
+						var c = $('.price li:nth-child(1) .number'),
+							o = $('.price li:nth-child(2) .number'),
+							l = $('.price li:nth-child(3) .number'),
+							h = $('.price li:nth-child(4) .number')
+						if (eData[eData.length-1].vol < eData[eData.length-2].vol) {
+							c.addClass('fall').removeClass('rise')
+							o.addClass('fall').removeClass('rise')
+							l.addClass('fall').removeClass('rise')
+							h.addClass('fall').removeClass('rise')
+						} else {
+							c.addClass('rise').removeClass('fall')
+							o.addClass('rise').removeClass('fall')
+							l.addClass('rise').removeClass('fall')
+							h.addClass('rise').removeClass('fall')
+						}
+						c.text(eData[eData.length-1].close)
+						o.text(eData[eData.length-1].open)
+						l.text(eData[eData.length-1].low)
+						h.text(eData[eData.length-1].high)
 					}
 				}
 			}
@@ -143,10 +171,77 @@ var w = WMProgram = {
 	 */
 	kEvent: function() {
 		var self = this
+
 		this.K.on('dataZoom', function(ev) {
 			self.oKOption.start = ev.batch[0].start
 			self.oKOption.end = ev.batch[0].end
 		})
+
+		this.K.on('click', function(ev) {
+			var c = $('.price li:nth-child(1) .number'),
+				o = $('.price li:nth-child(2) .number'),
+				l = $('.price li:nth-child(3) .number'),
+				h = $('.price li:nth-child(4) .number')
+			if (ev.componentSubType == 'candlestick') {
+				c.text(ev.data[2])
+				o.text(ev.data[1])
+				l.text(ev.data[3])
+				h.text(ev.data[4])
+				if (ev.color.toUpperCase() == self.color[0]) {
+					c.addClass('rise').removeClass('fall')
+					o.addClass('rise').removeClass('fall')
+					l.addClass('rise').removeClass('fall')
+					h.addClass('rise').removeClass('fall')
+				} else {
+					c.addClass('fall').removeClass('rise')
+					o.addClass('fall').removeClass('rise')
+					l.addClass('fall').removeClass('rise')
+					h.addClass('fall').removeClass('rise')
+				}
+			}
+		})
+	},
+
+	/**
+	 * 设置执行价和成交价
+	 */
+	setPrice: function() {
+		var self = this
+		this.delay(1000, function() {
+			var atime = ($('.time>div.number').text()).split(':')
+			var m = parseInt(atime[0])
+			var s = parseInt(atime[1])
+			var url   = self.h+self.uSetPrice
+			var lock = true	// 第一次刷新的时候执行价不执行返回
+			if (m==0 && s==0 && lock) {
+				lock = false
+				return ;
+			}
+			var execute = $('.execute-price>div:nth-last-child(1)')
+			var last = $('.last-price>div:nth-last-child(1)')
+			var executename = $('.execute-price>div:nth-child(1)')
+			var lastname = $('.last-price>div:nth-child(1)')
+
+			// 请求数据
+			if (m==0 && s<=30 && s>5) {
+				var number = $('.issue>.number').text()
+				$.get(url, function(res) {
+					sessionStorage.number = number
+					sessionStorage.executePrice = res.execute_price
+					sessionStorage.lastPrice = res.last_price
+				})
+				if (sessionStorage.number && sessionStorage.executePrice) {
+					executename.text('第'+sessionStorage.number+'期-執行價')
+					execute.text(sessionStorage.executePrice)
+				}
+			}
+			if (m==0 && s<2 && sessionStorage.lastPrice) {
+				lastname.text('第'+sessionStorage.number+'期-成交價')
+				last.text(sessionStorage.lastPrice)
+			}
+		})
+		// 判断是否支持Storage
+		if (typeof(Storage) === 'undefined') console.log('不支持Storage')
 	},
 
 	/**
@@ -257,24 +352,6 @@ var w = WMProgram = {
 	},
 
 	/**
-	 * 获取K线图数据
-	 * @return {[type]} [description]
-	 */
-	setKLine: function(d) {
-		var self = this
-
-		// 点击事件
-		var c = $('.parse .number:nth-child(1)')
-		var o = $('.parse .number:nth-child(2)')
-		var l = $('.parse .number:nth-child(3)')
-		var h = $('.parse .number:nth-child(4)')
-		this.K.onclick= function(params) {
-			var d= params.data
-			c.text(d[4])
-		}
-	},
-
-	/**
 	 * 自定义延时
 	 * @param  {[type]}   time     
 	 * @param  {Function} callback 
@@ -293,13 +370,14 @@ var w = WMProgram = {
 	 * @param  {[int]} timestamp
 	 */
 	countDown: function(timestamp) {
-		var worker = new Worker("/Public/home/bocai/countdown.js")
 		var self = this
-		worker.postMessage(timestamp)
-		worker.onmessage = function(data) {
+		this.worker = new Worker("/Public/home/bocai/countdown.js")
+		this.worker.postMessage(timestamp)
+		this.worker.onmessage = function(data) {
 			var obj = data.data;
 			if (obj.open) {
 				console.log('开盘!')
+				self.basics()	// 重新获取余额
 			}
 
 			// 页面渲染
@@ -310,8 +388,8 @@ var w = WMProgram = {
 			if (obj.second < 10) obj.second = "0" + obj.second
 
 			time = obj.minue + ":" + obj.second
-			$(".time>.number").text(time);
-			$(".issue>.number").text(obj.number)
+			$(".time>.number").text(time)
+			if (obj.minue != 0 && obj.second != 0) $(".issue>.number").text(obj.number);
 		}
 	},
 
@@ -362,7 +440,11 @@ var w = WMProgram = {
 		}
 
 		var data = res.map(function (item) {
-		    return [+item.open, +item.close, +item.low, +item.high]
+		    return [item.open, item.close, item.low, item.high]
+		})
+
+		data = data.map(function (item) {
+			return [item[0].toFixed(2), item[1].toFixed(2), item[2].toFixed(2), item[3].toFixed(2)]
 		})
 
 		var volumes = res.map(function (item) {
@@ -376,7 +458,7 @@ var w = WMProgram = {
 		
 		option.legend = {
 			top: 30,
-			data: ['MA5', 'MA10', 'MA20']
+			data: ['']
 		}
 
 		option.tooltip = {

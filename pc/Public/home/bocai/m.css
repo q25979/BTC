@@ -16,7 +16,6 @@ header>ul>li{float:left;margin-right:0.9375em}
 .price li{float:left;width:33.33%;}
 .price li:nth-child(1){width:100%;margin-bottom:0.5em;}
 .price li>.title{width:0.75em;display:inline-block;}
-.price li>.number{color:#14B143;}
 
 .timek{border-bottom:0.0625em solid #e2e5e7;padding:0 0.625em;}
 .timek li{width:20%;text-align:center;height:2.5em;line-height:2.5em;float:left;}
