@@ -170,7 +170,11 @@ class BocaiController extends VerifyController
 		if (IS_AJAX) {
 			$get = I('get.');
 			$map['uid'] = $this->user_id;
-			$list = M('WMinlog')->page($get['page'], $get['limit'])->where($map)->select();
+			$list = M('WMinlog')
+				->page($get['page'], $get['limit'])
+				->order('buy_time desc')
+				->where($map)
+				->select();
 
 			// 转换可视数据
 			foreach ($list as $k => $v) {

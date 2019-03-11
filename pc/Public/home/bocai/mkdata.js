@@ -73,7 +73,6 @@ var w = WMProgram = {
 		var self = this
 		if (this.worker != null) this.worker.terminate()
 		$.get(this.h+this.uInitial, function(res) {
-			console.log(res)
 			self.countDown(res.timestamp)	// 设置倒计时
 			$('.deal>.balance>span').html(res.extract_balance)	// 设置账户余额
 		})
@@ -227,15 +226,22 @@ var w = WMProgram = {
 				var number = $('.issue>.number').text()
 				$.get(url, function(res) {
 					sessionStorage.number = number
-					sessionStorage.executePrice = res.execute_price
-					sessionStorage.lastPrice = res.last_price
+					sessionStorage.executePrice = parseFloat(res.execute_price).toFixed(4)
+					sessionStorage.lastPrice = parseFloat(res.last_price).toFixed(4)
 				})
-				if (sessionStorage.number && sessionStorage.executePrice) {
+				if ( sessionStorage.number
+					&& sessionStorage.number != null
+					&& sessionStorage.number != undefined
+					&& sessionStorage.executePrice
+					&& sessionStorage.executePrice != null 
+					&& sessionStorage.executePrice != undefined ) {
 					executename.text('第'+sessionStorage.number+'期-執行價')
 					execute.text(sessionStorage.executePrice)
 				}
 			}
-			if (m==0 && s<2 && sessionStorage.lastPrice) {
+			if ( m==0 && s<2 && sessionStorage.lastPrice 
+				&& sessionStorage.lastPrice != null
+				&& sessionStorage.lastPrice != undefined ) {
 				lastname.text('第'+sessionStorage.number+'期-成交價')
 				last.text(sessionStorage.lastPrice)
 			}
@@ -274,6 +280,7 @@ var w = WMProgram = {
 			btn: ['確認', '取消'],
 			yes: function(index) {
 				layer.close(index)
+				layer.open({type: 2, content: '確認訂單中，請勿重複操作。'})
 				$.post(u, d, function(res) {
 					layer.open({
 						content: res.msg,
@@ -283,7 +290,7 @@ var w = WMProgram = {
 					if (res.code == 0) {
 						var balance = parseFloat($('.deal .balance>span').text())-d.money
 						$('.deal .balance>span').text(balance.toFixed(2))
-						$('[name=money]').val(' ')
+						$('[name=money]').val(0)
 					}
 				})
 			}
@@ -376,7 +383,13 @@ var w = WMProgram = {
 		this.worker.onmessage = function(data) {
 			var obj = data.data;
 			if (obj.open) {
-				console.log('开盘!')
+				if (sessionStorage.number) {
+					layer.closeAll()
+					layer.open({
+						content: '第'+sessionStorage.number+'期開獎啦，請注意查收。',
+						btn: '確認'
+					})
+				}
 				self.basics()	// 重新获取余额
 			}
 
@@ -389,7 +402,7 @@ var w = WMProgram = {
 
 			time = obj.minue + ":" + obj.second
 			$(".time>.number").text(time)
-			if (obj.minue != 0 && obj.second != 0) $(".issue>.number").text(obj.number);
+			$(".issue>.number").text(obj.number)
 		}
 	},
 

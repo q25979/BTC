@@ -59,7 +59,6 @@
 	</div>
 
 	<div class="container" id="k"></div>
-	<button onclick="w.basics()">asdas</button>
 	<div class="dets">
 		<div class="execute">
 			<div class="mt-10 issue">
