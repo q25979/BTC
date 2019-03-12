@@ -3,12 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title><{$title}></title>
-	<link rel="stylesheet" href="__PUBLIC__/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="__PUBLIC__/home/bocai/deal.css" />
 	<link rel="stylesheet" href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
 	<script src="__JS__/config.js"></script>
 	<script src="__JS__/jquery-3.2.1.min.js"></script>
-	<script src="__JS__/jquery.cookie.js"></script>
 	<script src="__PLUG-IN__/layui-v2.3.0/layui/layui.js"></script>
 	<script src="__PUBLIC__/home/bocai/deal.js"></script>
 </head>
@@ -45,6 +43,7 @@
 
 			<div class="order fl">
 				<table class="layui-table" id="log"></table>
+				<div class="tip" onclick="reloadDealLog()">已顯示最近20條走勢</div>
 			</div>
 		</div>
 		<div class="r fr">
@@ -65,9 +64,6 @@
 				<div class="mb-3 mt-15">餘額</div>
 				<div class="balance">
 					<span id="balance">NT$: 00.00</span>
-					<button class="update" title="刷新餘額" onclick="refresh()">
-						<i class="layui-icon layui-icon-refresh-1"></i>
-					</button>
 				</div>
 				<div class="confirm mt-15" onclick="onOrder()">確認下注</div>
 				<div class="confirm mt-15 refresh" onclick="onAllrefresh()">刷新數據</div>

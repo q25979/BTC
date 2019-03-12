@@ -21,7 +21,7 @@
 	<div class="yi-container">
 		<header>
 			<ul class="clearfix">
-				<li onclick="gohome()">首頁</li>
+				<li onclick="onHome()">首頁</li>
 				<li onclick="onDeal(1)">下注</li>
 				<li onclick="onRecord()">交易記錄</li>
 			</ul>
@@ -55,26 +55,6 @@
 			</ul>
 		</div>
 		<div class="yi-k" id="k"></div>
-		<!-- <footer>
-			<ul>
-				<li onclick="balance()">
-					<p><i class="iconfont icon-coins"></i></p>
-					<p>餘額</p>
-				</li>
-				<li onclick="deal(1)">
-					<p><i class="iconfont icon-value-"></i></p>
-					<p>買漲</p>
-				</li>
-				<li onclick="deal(2)">
-					<p><i class="iconfont icon-devaluation"></i></p>
-					<p>買跌</p>
-				</li>
-				<li onclick="record()">
-					<p><i class="iconfont icon-jilu"></i></p>
-					<p>交易記錄</p>
-				</li>
-			</ul>
-		</footer> -->
 	</div>
 </body>
 </html>

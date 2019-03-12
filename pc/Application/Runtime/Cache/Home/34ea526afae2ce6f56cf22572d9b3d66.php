@@ -3,12 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo ($title); ?></title>
-	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/deal.css" />
 	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
 	<script src="http://localhost:8081/Public/js/config.js"></script>
 	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
 	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 	<script src="/Public/home/bocai/deal.js"></script>
 </head>
@@ -45,6 +43,7 @@
 
 			<div class="order fl">
 				<table class="layui-table" id="log"></table>
+				<div class="tip" onclick="reloadDealLog()">已顯示最近20條走勢</div>
 			</div>
 		</div>
 		<div class="r fr">
@@ -65,13 +64,10 @@
 				<div class="mb-3 mt-15">餘額</div>
 				<div class="balance">
 					<span id="balance">NT$: 00.00</span>
-					<button class="update" title="刷新餘額" onclick="refresh()">
-						<i class="layui-icon layui-icon-refresh-1"></i>
-					</button>
 				</div>
-				<div class="confirm mt-15" onclick="okorder()">確認下注</div>
-				<div class="confirm mt-15 refresh" onclick="allrefresh()">刷新數據</div>
-				<div class="confirm mt-15 getlog" onclick="getlog()">
+				<div class="confirm mt-15" onclick="onOrder()">確認下注</div>
+				<div class="confirm mt-15 refresh" onclick="onAllrefresh()">刷新數據</div>
+				<div class="confirm mt-15 getlog">
 					<table id="getlog"></table>
 				</div>
 			</div>

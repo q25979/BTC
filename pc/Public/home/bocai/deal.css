@@ -39,14 +39,7 @@ body,p {margin:0;font-family:"微软雅黑";font-size:14px;}
 #prev{position:absolute;bottom:10px;right:0;font-size:40px;color:red;}
 #getlog{cursor:pointer;}
 #executePrice,#lastPrice{visibility:hidden;}
+.tip{text-align:center;color:#666666;position:relative;top:-32px;}
 
 .layui-table, .layui-table-view{margin:0 !important;}
-
-@keyframes _360 {
-	from {transform:rotateY(0deg);}
-	to {transform:rotate(360deg);}
-}
-@keyframes _y360 {
-	from {transform:rotateY(0deg);}
-	to {transform:rotateY(360deg);}
-}
+.layui-table-page .layui-laypage{display:none;}

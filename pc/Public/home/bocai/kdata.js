@@ -131,6 +131,8 @@ function runWebSocket() {
 					o.text(parseFloat(eData[eData.length-1].open).toFixed(4))
 					l.text(parseFloat(eData[eData.length-1].low).toFixed(4))
 					h.text(parseFloat(eData[eData.length-1].high).toFixed(4))
+					localStorage.close = parseFloat(eData[eData.length-1].close).toFixed(4)
+					localStorage.cClose = c.css('color')
 				}
 			}
 		}

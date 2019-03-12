@@ -1,7 +1,7 @@
 var otherInput = 'none';	// 金额的输入框是否显示并且判断是否使用输入框
-var open = 0;	// 开盘数据
 var tcolor = ['#228B22', '#F00'];	// 开盘数据
-var openTime = 5;	// 设置开盘时间5分钟一次
+var openTime = 5;			// 设置开盘时间5分钟一次
+var tableDealLog = null;	// 表格
 
 $(function() {
 	// 金额切换
@@ -42,7 +42,7 @@ function init() {
  */
 function getdeallog() {
 	var u = config.host_path + '/home/bocai/getdeallog'
-	layui.use('table', function() {
+	tableDealLog = layui.use('table', function() {
 		var table = layui.table
 		table.render({
 			elem: '#getlog',
@@ -51,11 +51,27 @@ function getdeallog() {
 			size: 'sm',
 			loading: false,
 			cols: [[
-				{field:'buy_number',title:'期號',width:60,align:'center',unresize:true},
+				{field:'buy_number',title:'期號',width:55,align:'center',unresize:true},
 				{field:'money',title:'投注金額',width:81,align:'center',unresize:true},
-				{field:'last_money',title:'獎金',width:75,align:'center',unresize:true}
+				{field:'last_money',title:'獎金',width:80,align:'center',unresize:true}
 			]]
 		})
+	})
+}
+
+function reloadDealLog() {
+	var d = [{
+		'buy_number': 10,
+		'money': 125.25,
+		'last_money': '涨'
+	}]
+	
+	layui.use('table', function() {
+		var table = layui.table
+		
+		/*tableDealLog.reload({
+			data: d
+		})*/
 	})
 }
 
@@ -93,7 +109,7 @@ function getprice() {
 		ashow[1] = m==4 ? 'visible' : 'hidden'
 
 		// 请求数据
-		if (m==0 && s<=30 && s>5) {
+		if (m==0 && s<=32 && s>5) {
 			var number = $('#openNumber').text()
 			$.get(url, function(res) {
 				executename.text('第'+number+'期-執行價')
@@ -106,7 +122,7 @@ function getprice() {
 		if (parseInt(last.text())==0) ashow[1] = 'hidden'
 		$('#executePrice').css('visibility', ashow[0])
 		$('#lastPrice').css('visibility', ashow[1])
-		gettdata()	// 1s获取现价一次
+		getClose()	// 获取收盘价
 	}
 }
 
@@ -150,7 +166,7 @@ function getorder() {
 			height: 285,
 			width: 740,
 			limit: 20,
-			page: false,
+			page: true,
 			loading: false,
 			done: function(res) {
 				$('.refresh').text('刷新數據')
@@ -169,18 +185,13 @@ function getorder() {
 /**
  * 获取实时数据
  */
-function gettdata() {
-	var last = $.cookie('btc_wbtcopen')
-	
-	// 设置颜色
-	var copen = open > last
-		? tcolor[1] : tcolor[0];
-	if (open == last) copen = $($(".now-price")[0]).css('color');
-	open = last;
-
+function getClose() {
 	// 设置显示
-	$($(".now-price")[0]).text(open);
-	$($(".now-price")[0]).css('color', copen);
+	var n = $($('.now-price')[0])
+	if (localStorage.close) {
+		$($(".now-price")[0]).text(localStorage.close);
+		$($(".now-price")[0]).css('color', localStorage.cClose)
+	}
 }
 
 /**
@@ -190,16 +201,6 @@ function getbalance(callback) {
 	$.get(config.host_path+'/Home/Bocai/getbalance', function(res) {
 		$('#balance').text('NT$: '+res);
 		callback ? callback() : '';
-	});
-}
-
-/**
- * 刷新余额
- */
-function refresh() {
-	$('.update').addClass('_360');
-	getbalance(function() {
-		$('.update').removeClass('_360');
 	});
 }
 
