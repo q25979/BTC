@@ -1,11 +1,12 @@
 h3, body, p, ul, li { margin: 0; padding: 0; }
 ul { list-style: none; }
 body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
-.yi-container { display: none; position: relative; max-width: 1200px; background: #454545; margin: 0 auto; }
-.yi-container header { position: relative; }
-.yi-container header .k-back { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; }
-.yi-container header h3 { text-align: center; padding: 15px 0; letter-spacing: 3px; }
-.yi-price { background: #333; color: red; padding: 25px 0; }
+.clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
+
+.yi-container { position: relative; max-width: 1200px; background: #454545; margin: 0 auto; }
+.yi-container header { position: relative; color: #ccc; padding: 15px 10px; }
+.yi-container header li { float: left; margin-right: 20px; cursor: pointer; }
+.yi-price { background: #333; color: #D83F4E; padding: 25px 0; }
 .yi-price ul { overflow: hidden; }
 .yi-price .yi-number { font-weight: bold; font-size: 28px; }
 .yi-price .yi-number:nth-child(1) { font-size: 40px; }
@@ -16,20 +17,8 @@ body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
 .yi-time>div, .yi-time li { float: left; }
 .yi-time li { margin-left: 25px; }
 .yi-time li.active { color: #FDBE19; border-bottom: 1px solid #FDBE19; }
-.yi-k { height: 600px; width: 100%; }
-.yi-container footer { width: 100%; max-width: 1200px; position: fixed; bottom: 0; }
-.yi-container footer li { float: left; width: 25%; text-align: center; cursor: pointer; user-select: none; padding: 15px 0; }
-.yi-container footer li:nth-child(1) { background: #353539; }
-.yi-container footer li:nth-child(2) { background: #1FC65B; }
-.yi-container footer li:nth-child(3) { background: #D83F4E; }
-.yi-container footer li:nth-child(4) { background: #2D84FF; }
-.yi-container footer .iconfont { font-size: 25px; }
-.ret-home { position: absolute; bottom: 0; font-size: 40px; right: 0; cursor: pointer; opacity: 0.1; transition: opacity 0.2s; }
-.ret-home:hover { opacity: 1; }
+.yi-k { height: 500px; width: 100%; }
 .layui-layer-content { color: #333; }
-#k-load {z-index: 1; position: absolute; top: 50%; left: 50%; margin: -40px 0 0 -40px;}
 
-body .deal-class .layui-layer-title{background:#228B22; color:#fff; border: none;}
-body .deal-class .layui-layer-btn{border-top:1px solid #E9E7E7}
-body .deal-class .layui-layer-btn a{background:#fff;}
-body .deal-class .layui-layer-btn .layui-layer-btn1{background:#ccc;}
+.fall{color:#D83F4E;}
+.rise{color:#1FC65B;}

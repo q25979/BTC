@@ -3,40 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>幣淘微平台</title>
-	<link rel="stylesheet" href="__PUBLIC__/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="__PUBLIC__/home/bocai/common.css" />
-	<link rel="stylesheet" id="device" />
 	<script src="__JS__/config.js"></script>
 	<script src="__JS__/jquery-3.2.1.min.js"></script>
-	<script src="__JS__/jquery.cookie.js"></script>
-	<script src="__JS__/sonic.js"></script>
-	<script src="__PLUG-IN__/layui-v2.3.0/layui/layui.js"></script>
+	<script src="__PLUG-IN__/layui-v2.3.0/layer/layer.js"></script>
 	<script>
 		// 判断该使用什么样式 768 900 1080 手机
-		var iWh = $(window).height();
-		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
-		//var dealArea = ['1100px', '600px'];
-		var dealArea = ['1000px', '500px'];
-		if (iWh < 900 && !m) {
-			$("#device").attr("href", "__PUBLIC__/home/bocai/midding.css");
-			//var dealArea = ['980px', '480px'];
-		}
-
+		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i)
 		// 手机设备
-		if (m) {
-			// $("#device").attr("href", "__PUBLIC__/home/bocai/m.css")
-			window.location.href = '<{:U("m")}>'
-		}
+		if (m) window.location.href = '<{:U("m")}>'
 	</script>
 	<script src="__PUBLIC__/home/bocai/echarts.min.js"></script>
+	<script src="https://cdn.bootcss.com/pako/1.0.6/pako.min.js"></script>
 	<script src="__PUBLIC__/home/bocai/kdata.js"></script>
 </head>
 <body>
-	<div id="k-load"></div>
 	<div class="yi-container">
 		<header>
-			<i class="iconfont icon-back k-back" title="回到首頁" onclick="gohome()"></i>
-			<h3>比特幣</h3>
+			<ul class="clearfix">
+				<li onclick="onHome()">首頁</li>
+				<li onclick="onDeal(1)">下注</li>
+				<li onclick="onRecord()">交易記錄</li>
+			</ul>
 		</header>
 		<div class="yi-price">
 			<ul>
@@ -67,26 +55,6 @@
 			</ul>
 		</div>
 		<div class="yi-k" id="k"></div>
-		<footer>
-			<ul>
-				<li onclick="balance()">
-					<p><i class="iconfont icon-coins"></i></p>
-					<p>餘額</p>
-				</li>
-				<li onclick="deal(1)">
-					<p><i class="iconfont icon-value-"></i></p>
-					<p>買漲</p>
-				</li>
-				<li onclick="deal(2)">
-					<p><i class="iconfont icon-devaluation"></i></p>
-					<p>買跌</p>
-				</li>
-				<li onclick="record()">
-					<p><i class="iconfont icon-jilu"></i></p>
-					<p>交易記錄</p>
-				</li>
-			</ul>
-		</footer>
 	</div>
 </body>
 </html>

@@ -1,149 +1,153 @@
+
+// 设置全局变量
+// 5分钟K线  可以根据开盘和收盘价的波动范围 0.5 0.5-2 2-4 4
+var k = null
+var aKtimeLine = ['1min', '5min', '15min', '30min', '60min', '1day']
+var ktimeLine = aKtimeLine[1]	// 设置k线图时间线初始化
+var option = {}
+var tdata  = { open: 0, collect: 0, high: 0, low: 0 }
+var	zoom   = { start: 80, end: 100 }	// 初始化dataZoom
+var	wsUrl  = 'wss://api.huobi.pro/ws'	// WebSocket k线图地址
+var	ws = null		// WebSocket
+var	wsLock = false 	// Socket锁防止重复
+var dealArea = ['1000px', '500px']	// 弹出层大小
+
+
 $(function() {
-	// 5分钟K线  可以根据开盘和收盘价的波动范围 0.5 0.5-2 2-4 4
-	var k = echarts.init(document.getElementById('k'));
-	// 1min,3min,5min,30min,1hour,1day, 设置K线图
-	var req = {type: '5min'};
-	var option = {};
+	k = echarts.init(document.getElementById('k'))
+	k.showLoading()
+	createWebSocket()	// 创建webSocket
+	kEvent()	// K线图事件
+	worker()	// 时间设置
 
-	loader();
-	getkdata(req, function(data, timestamp) {
-		$('#k-load').remove();
-		$('.yi-container').css('display', 'block');
-		option = koption(data, req.type);
+	// 窗口关闭事件
+	window.onbeforeunload = function() {
+		ws.close()	// 关闭webSocket
+	}
+})
 
-		// 时间处理
-		worker(timestamp)
-		
-		// 设置k线图
-		var setkdata = function() {
-			gettdata();	// 获取实时数据
-			option.dataZoom[0].start = zoom.start;
-			option.dataZoom[0].end = zoom.end;
-			option.series[0].markLine.data[0].yAxis = tdata.open;
-			k.setOption(option, true);
-			k.resize();	// 重置大小
-		}
-		setInterval(setkdata, 5000);
-	});
 
+/**
+ * K线图事件
+ * @return {[type]} [description]
+ */
+function kEvent() {
 	// K线图切换
 	$('.yi-time li').each(function(idx) {
 		$(this).click(function() {
-			var atype = ['1min', '5min', '15min', '30min', '1hour', '1day'];
-			var req = {type: atype[idx]};
-
 			$('.yi-time li').removeClass('active');
 			$($('.yi-time li')[idx]).addClass('active');
-			layer.load(2);
-			getkdata(req, function(data) {
-				layer.closeAll();
-				zoom.start = 60;
-				zoom.end = 100;
-				option = koption(data, req.type);
-			})
+			k.showLoading()
+			ktimeLine = aKtimeLine[idx]
+			if (wsLock) ws.close()
+			runWebSocket()
 		})
 	})
 
-	// chart事件
-	k.on('dataZoom', function(data) {
-		// 拖动
-		if (data.batch == undefined) {
-			zoom.start = data.start;
-			zoom.end = data.end;
-		} else {
-			// 滚动
-			zoom.start = data.batch[0].start;
-			zoom.end = data.batch[0].end;
-		}
-	});
-
-	// 加载layui
-	layui.define('layer', function(exports) {
-		var layer = layui.layer
-	});
-
-	// 5分钟更新一次
-	$.get(config.host_path + "/float/index/updatebtc");
-	setInterval(function() {
-		$.get(config.host_path + "/float/index/updatebtc");
-	}, 1000*60*5);
-})
-
-// 设置全局变量
-var tdata = { open: 0, collect: 0, high: 0, low: 0 },
-	tcolor = ['#D83F4E', '#1FC65B'],	// 颜色 0-red
-	zoom  = { start: 60, end: 100 }		// 初始化dataZoom
-
-/**
- * 获取实时数据
- */
-function gettdata() {
-	var u = config.host_path + "/Float/Index/getbtc";
-	$.get(u, function(res) {
-		// 设置颜色
-		var copen = tdata.open > res.last
-			? tcolor[0] : tcolor[1];
-		var ccollect = tdata.collect > res.open
-			? tcolor[0] : tcolor[1];
-		var clow = tdata.low > res.low
-			? tcolor[0] : tcolor[1];
-		var chigh = tdata.hign > res.high
-			? tcolor[0] : tcolor[1];
-		if (tdata.open == res.last) copen = $($(".yi-number")[0]).css('color');
-		if (tdata.collect == res.open) ccollect = $($(".yi-number")[1]).css('color');
-		if (tdata.low == res.low) clow = $($(".yi-number")[2]).css('color');
-		if (tdata.high == res.high) chigh = $($(".yi-number")[3]).css('color');
-
-		tdata.open = res.last;
-		tdata.collect = res.open;
-		tdata.low  = res.low;
-		tdata.high = res.high;
-
-		// 设置显示
-		$($(".yi-number")[0]).text(tdata.open);
-		$($(".yi-number")[1]).text(tdata.collect);
-		$($(".yi-number")[2]).text(tdata.low);
-		$($(".yi-number")[3]).text(tdata.high);
-		$($(".yi-number")[0]).css('color', copen);
-		$($(".yi-number")[1]).css('color', ccollect);
-		$($(".yi-number")[2]).css('color', clow);
-		$($(".yi-number")[3]).css('color', chigh);
-		$.cookie('btc_wbtcopen', tdata.open, {path: '/'});
-	});
+	// dataZoom时间
+	k.on('dataZoom', function(ev) {
+		zoom.start = ev.batch[0].start
+		zoom.end   = ev.batch[0].end
+	})
 }
 
 /**
- * 获取K线图数据
+ * 创建websocket
+ * @return {[type]} [description]
  */
-function getkdata(d, callback) {
-	var u = config.host_path + "/Float/Index/getkdata";
+function createWebSocket() {
+	try {
+		if ('WebSocket' in window) {
+			ws = new WebSocket(wsUrl)
+		} else if ('MozWebSocket' in window) {
+			ws = new MozWebSocket(wsUrl)
+		} else {
+			layer.open({
+				content: '您的瀏覽器不支持K綫圖交易，建議使用新版谷歌瀏覽器，請勿使用IE10以下瀏覽器!',
+				btn: '確認'
+			})
+		}
+		runWebSocket()
+	} catch(e) {
+		console.log('WebSocket error in option!')
+		// reconnect(url)
+	}
+}
 
-	$.get(u, d, function(res) {
-		var odata = JSON.parse(res.k).data,
-			data  = odata.map(function (item) {
-				item[0] = new Date(item[0]);
-				item[0] = d.type == "1day"
-					? item[0] = item[0].getFullYear() + "/" + (item[0].getMonth()+1) + "/" + item[0].getDate()
-					: item[0] = item[0].getHours() + ":" + item[0].getMinutes();
-				return item;
-			});
+/**
+ * 运行websocket
+ * @return {[type]} [description]
+ */
+function runWebSocket() {
+	ws.onclose = function() {
+		wsLock = false
+		createWebSocket()
+	}
+	ws.onerror = function() {
+		wsLock = false
+		createWebSocket()
+	}
+	ws.onopen = function() {
+		wsLock = true
+		let obj = new Object()
+		obj.req = 'market.btcusdt.kline.'+ktimeLine
+		obj.id  = 'id2'
 
-		// 回调
-		callback(data, res.timestamp)
-	}).fail(function() {
-		closeAll()
-	});
+		obj = JSON.stringify(obj)
+		ws.send(obj)
+	}
+	ws.onmessage = function(ev) {
+		var reader = new FileReader()
+		reader.readAsArrayBuffer(ev.data)
+		reader.onload = function(e) {
+			if (e.target.readyState == FileReader.DONE) {
+				let data = pako.inflate(reader.result)
+				let strData = String.fromCharCode.apply(null, new Uint16Array(data))
+				let objData = JSON.parse(strData)
+				var eData = objData.data
+				
+				// 配置数据
+				if (eData) {
+					k.hideLoading()
+					k.setOption(koption(eData))
+					k.resize()
+
+					var c = $('.yi-price li:nth-child(1)'),
+						o = $('.yi-price li:nth-child(2)>.yi-number'),
+						l = $('.yi-price li:nth-child(3)>.yi-number'),
+						h = $('.yi-price li:nth-child(4)>.yi-number')
+					if (eData[eData.length-1].vol < eData[eData.length-2].vol) {
+						c.addClass('fall').removeClass('rise')
+						o.addClass('fall').removeClass('rise')
+						l.addClass('fall').removeClass('rise')
+						h.addClass('fall').removeClass('rise')
+					} else {
+						c.addClass('rise').removeClass('fall')
+						o.addClass('rise').removeClass('fall')
+						l.addClass('rise').removeClass('fall')
+						h.addClass('rise').removeClass('fall')
+					}
+					c.text(parseFloat(eData[eData.length-1].close).toFixed(4))
+					o.text(parseFloat(eData[eData.length-1].open).toFixed(4))
+					l.text(parseFloat(eData[eData.length-1].low).toFixed(4))
+					h.text(parseFloat(eData[eData.length-1].high).toFixed(4))
+				}
+			}
+		}
+	}
 }
 
 /**
  * 使用worker多线程设置时间
  */
-function worker(timestamp) {
-	var worker = new Worker("/Public/home/bocai/time.js")
-	worker.postMessage(timestamp)
-	worker.onmessage = function(data) {
-		$("#yi-server-time").html(data.data)
-	}
+function worker() {
+	$.get(config.host_path+'/home/bocai/timestamp', function(timestamp) {
+		var worker = new Worker("/Public/home/bocai/time.js")
+		worker.postMessage(timestamp)
+		worker.onmessage = function(data) {
+			$("#yi-server-time").html(data.data)
+		}
+	})
 }
 
 /**
@@ -168,47 +172,69 @@ function calculateMA(dayCount, data) {
 /**
  * 配置K线图数据
  */
-function koption(res, type) {
-	var dates = res.map(function (item) {
-	    return item[0];
-	});
+function koption(res) {
+	var dates = []
+	for (var i in res) {
+		let date = new Date(res[i].id * 1000)
+		let y = date.getFullYear(),
+			m = date.getMonth()+1,
+			d = date.getDate(),
+			h = date.getHours(),
+			mm = date.getMinutes()
+		if (parseInt(h) < 10) h = '0' + h
+		if (parseInt(mm) < 10) mm = '0' + mm
+		if (parseInt(m) < 10) m = '0' + m 
+		if (parseInt(d) < 10) d = '0' + d
+		
+		let time = self.klineTime == '1day' ? y+'/'+m+'/'+d : h+':'+mm
+		dates.push(time)
+	}
 
 	var data = res.map(function (item) {
-	    return [+item[1], +item[4], +item[3], +item[2]];
-	});
+	    return [item.open, item.close, item.low, item.high]
+	})
+
+	data = data.map(function (item) {
+		return [item[0].toFixed(2), item[1].toFixed(2), item[2].toFixed(2), item[3].toFixed(2)]
+	})
+
+	var volumes = res.map(function (item) {
+		return item.amount
+	})
 
 	var option = {};
 	option.backgroundColor = '#21202D';
-	option.series = [
-		{
-			// 设置图表类型
-			type: 'candlestick',
-			name: type,
-			data: data,
-			itemStyle: {
-				color: '#FD1050',
-				color0: '#0CF49B',
-				borderColor: '#FD1050',
-				borderColor0: '#0CF49B',
-				opacity: 0.8
-			},
-			markLine: {
-				symbol: ['none', 'none'],
-	        	data: [{
-	        		yAxis: tdata.open	// 全局的开盘数据
-	        	}]
-			}
-		}, 
-		kline(5, data), 
-		kline(10, data),
-		kline(20, data), 
-		kline(30, data),
-	];
-	option.legend = {
-		data: [type, 'MA5', 'MA10', 'MA20', 'MA30'],
-		inactiveColor: '#777',
-		textStyle: { color: '#fff' }
-	};
+	option.series = [{
+		// 设置图表类型
+		type: 'candlestick',
+		data: data,
+		itemStyle: {
+			color: '#FD1050',
+			color0: '#0CF49B',
+			borderColor: '#FD1050',
+			borderColor0: '#0CF49B',
+			opacity: 0.5
+		},
+		markLine: {
+			animation: false,
+			symbol: ['none', 'none'],
+			lineStyle: {type:'dashed'},
+			label: {backgroundColor:'#AB1643',color:'white'},
+        	data: [{
+        		yAxis: data[data.length-1][1]	// 全局的开盘数据
+        	}]
+		}
+	}, {
+		name: 'Volume',
+		type: 'bar',
+		xAxisIndex: 1,
+		yAxisIndex: 1,
+		itemStyle: {
+			color: '#19B47D',
+			opacity: 0.8
+		},
+		data: volumes
+	}]
 	option.tooltip = {
 		trigger: 'axis',
 		axisPointer: {
@@ -220,127 +246,92 @@ function koption(res, type) {
 				opacity: 1
 			}
 		}
-	};
-	option.xAxis = {
+	}
+	option.xAxis = [{
 		type: 'category',
 		data: dates,
-		axisLine: { lineStyle: { color: '#8392A5' } },
+		axisLine: { lineStyle: { color: '#585264' } },
         axisTick: { show: false },
-	};
-	option.yAxis = {
+        axisPointer: { show: true },
+		axisLabel: {show: false}
+	}, {
+		gridIndex: 1,
+		type: 'category',
+		data: dates,
+		axisLine: { lineStyle: { color: '#A2AFBC' } },
+        axisTick: { show: false },
+	}];
+	option.yAxis = [{
 		scale: true,
         position: 'right',
         axisLine: { lineStyle: { color: '#8392A5' } },
         splitLine: { show: true, lineStyle: { color: '#343140'} },
         axisTick: { show: false },
-	};
-	option.grid = {
-        bottom: 80,
+	}, {
+		gridIndex: 1,
+		scale: true,
+		position: 'right',
+		splitNumber: 2,
+		min: 0,
+		max: 'dataMax',
+		axisLine: { lineStyle: { color: '#8392A5' } },
+		splitLine: { show: true, lineStyle: { color: '#343140' } },
+		axisLabel: { margin: 5, showMaxLabel: false }
+	}];
+	option.grid = [{
+		top: 30,
+        height: 350,
         left: 30,
         right: 60
-	};
+	}, {
+		top: 380,
+        height: 100,
+        left: 30,
+        right: 60
+	}];
 	option.dataZoom = [{
-		textStyle: {
-            color: '#8392A5'
-        },
-        handleSize: '80%',
-        filterMode: 'empty',
-        dataBackground: {
-            areaStyle: {
-                color: '#8392A5'
-            },
-            lineStyle: {
-                opacity: 0.8,
-                color: '#8392A5'
-            }
-        },
-        handleStyle: {
-            color: '#fff',
-            shadowBlur: 3,
-            shadowColor: 'rgba(0, 0, 0, 0.6)',
-            shadowOffsetX: 2,
-            shadowOffsetY: 2
-        },
-        start: zoom.start,
-        end: zoom.end
-    }, {
-    	type: 'inside',
-    }];
+		show: false,
+		type: 'slider',
+		xAxisIndex: [0, 1],
+		realtime: false,
+		start: zoom.start,
+		end: zoom.end
+	}, {
+		type: 'inside',
+		xAxisIndex: [0, 1],
+		start: zoom.start,
+		end: zoom.end
+	}]
 
 	return option;
 }
 
 /**
- * K线图line
- */
-function kline(ma, data) {
-	var line = {};
-
-	line.name = 'MA'+ma;
-	line.type = 'line';
-	line.data = calculateMA(ma, data);
-	line.smooth = true;
-	line.showSymbol = false;
-	line.lineStyle = {
-		normal: { width: 1 }
-	}
-	return line;
-}
-
-/**
- * 事件函数处理
- * 获取余额
- */
-function balance() {
-	layer.load(2);
-	$.get(config.host_path+'/Home/Bocai/getbalance', function(res) {
-		layer.closeAll();
-		layer.alert("您的餘額為：NT$ " + res);
-	})
-}
-
-/**
  * 返回首页
  */
-function gohome() {
+function onHome() {
 	window.location.href = config.host_path
 }
 
 /**
- * 加载
+ * 交易记录
+ * @return {[type]} [description]
  */
-function loader() {
-	var circle = new Sonic({
-		width: 100,
-		height: 50,
-		padding: 10,
-		stepsPerFrame: 2,
-		trailLength: 1,
-		pointDistance: .03,
-		strokeColor: '#6B9EFE',
-		step: 'fader',
-		fps: 40,
-		multiplier: 2,
-		setup: function() {
-			this._.lineWidth = 5;
-		},
-		path: [
-			['arc', 10, 10, 10, -270, -90],
-			['bezier', 10, 0, 40, 20, 20, 0, 30, 20],
-			['arc', 40, 10, 10, 90, -90],
-			['bezier', 40, 0, 10, 20, 30, 0, 20, 20]
-		]
-	});
-
-	$('#k-load').append(circle.canvas);
-	circle.play();
+function onRecord() {
+	var u = config.host_path + '/Home/Bocai/getlog'
+	layer.open({
+		type: 2,
+		content: u,
+		area: dealArea,
+		title: '交易記錄'
+	})
 }
 
 /**
  * 買
  * @param int type 類型1-買漲 2-買跌
  */
-function deal(type) {
+function onDeal(type) {
 	var u = config.host_path + "/Home/Bocai/deal/type/"+type
 	layer.open({
 		type: 2,
@@ -351,11 +342,4 @@ function deal(type) {
 		resize: false,
 		scrollbar: false
 	})
-}
-
-/**
- * 交易記錄
- */
-function record() {
-	window.open(config.host_path + '/Home/Bocai/getlog')
 }

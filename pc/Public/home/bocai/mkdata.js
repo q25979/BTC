@@ -30,7 +30,7 @@ var w = WMProgram = {
 	worker: null,	// 定时器
 
 	color:  ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
-	aTimeK: ['1min', '5min', '30min', '1hour', '1day'],	// 时间K
+	aTimeK: ['1min', '5min', '30min', '60min', '1day'],	// 时间K
 	aFlag:  [true, false, false, false, false],
 
 	iDirection: 0,	// 购买方向
@@ -54,7 +54,8 @@ var w = WMProgram = {
 		this.createWebSocket()	// 创建webSocket
 
 		this.K = echarts.init(document.getElementById('k'))	// ECharts初始化
-		this.kEvent()	// K线图事件
+		this.K.showLoading()	// K线图加载	
+		this.kEvent()			// K线图事件
 
 		this.switchK()		// 切换时间K选项卡
 		this.switchDeal()	// 切换涨跌选项卡
@@ -97,7 +98,6 @@ var w = WMProgram = {
 			this.runWebSocket()
 		} catch(e) {
 			console.log('WebSocket error in option!')
-			// reconnect(url)
 		}
 	},
 
@@ -136,6 +136,7 @@ var w = WMProgram = {
 
 					// 配置数据
 					if (eData) {
+						self.K.hideLoading()
 						self.K.setOption(self.koption(eData))
 						self.K.resize()
 
@@ -154,10 +155,10 @@ var w = WMProgram = {
 							l.addClass('rise').removeClass('fall')
 							h.addClass('rise').removeClass('fall')
 						}
-						c.text(eData[eData.length-1].close)
-						o.text(eData[eData.length-1].open)
-						l.text(eData[eData.length-1].low)
-						h.text(eData[eData.length-1].high)
+						c.text(parseFloat(eData[eData.length-1].close).toFixed(2))
+						o.text(parseFloat(eData[eData.length-1].open).toFixed(2))
+						l.text(parseFloat(eData[eData.length-1].low).toFixed(2))
+						h.text(parseFloat(eData[eData.length-1].high).toFixed(2))
 					}
 				}
 			}
@@ -313,6 +314,7 @@ var w = WMProgram = {
 				self.aFlag = [false, false, false, false, false]
 				self.aFlag[idx] = true
 
+				self.K.showLoading()
 				// 获取数据
 				self.klineTime = self.aTimeK[idx]
 				if (self.wsLock) self.ws.close()
@@ -461,7 +463,7 @@ var w = WMProgram = {
 		})
 
 		var volumes = res.map(function (item) {
-			return item.vol
+			return item.amount
 		})
 
 		var labelFont = 'bold 10px Sans-serif'
@@ -469,11 +471,6 @@ var w = WMProgram = {
 		var option = {}
 		option.animation = false
 		
-		option.legend = {
-			top: 30,
-			data: ['']
-		}
-
 		option.tooltip = {
 			triggerOn: 'none',
 			transitionDuration: 0,
@@ -605,7 +602,9 @@ var w = WMProgram = {
 			},
 			markLine: {
 				symbol: ['none', 'none'],
-				data: [{ yAxis: parseInt(data[data.length-1][1]) }]	// 收盘
+				label: {backgroundColor:'#AB1643',color:'white'},
+				lineStyle: {type:'dashed'},
+				data: [{ yAxis: parseFloat(data[data.length-1][1]).toFixed(2) }]	// 收盘
 			},
 		}]
 

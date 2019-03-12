@@ -3,40 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>幣淘微平台</title>
-	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/common.css" />
-	<link rel="stylesheet" id="device" />
-	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/sonic.js"></script>
-	<script src="http://192.168.0.137:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+	<script src="http://localhost:8081/Public/js/config.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layer/layer.js"></script>
 	<script>
 		// 判断该使用什么样式 768 900 1080 手机
-		var iWh = $(window).height();
-		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i);
-		//var dealArea = ['1100px', '600px'];
-		var dealArea = ['1000px', '500px'];
-		if (iWh < 900 && !m) {
-			$("#device").attr("href", "/Public/home/bocai/midding.css");
-			//var dealArea = ['980px', '480px'];
-		}
-
+		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i)
 		// 手机设备
-		if (m) {
-			// $("#device").attr("href", "/Public/home/bocai/m.css")
-			window.location.href = '<?php echo U("m");?>'
-		}
+		if (m) window.location.href = '<?php echo U("m");?>'
 	</script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
+	<script src="https://cdn.bootcss.com/pako/1.0.6/pako.min.js"></script>
 	<script src="/Public/home/bocai/kdata.js"></script>
 </head>
 <body>
-	<div id="k-load"></div>
 	<div class="yi-container">
 		<header>
-			<i class="iconfont icon-back k-back" title="回到首頁" onclick="gohome()"></i>
-			<h3>比特幣</h3>
+			<ul class="clearfix">
+				<li onclick="gohome()">首頁</li>
+				<li onclick="onDeal(1)">下注</li>
+				<li onclick="onRecord()">交易記錄</li>
+			</ul>
 		</header>
 		<div class="yi-price">
 			<ul>
@@ -67,7 +55,7 @@
 			</ul>
 		</div>
 		<div class="yi-k" id="k"></div>
-		<footer>
+		<!-- <footer>
 			<ul>
 				<li onclick="balance()">
 					<p><i class="iconfont icon-coins"></i></p>
@@ -86,7 +74,7 @@
 					<p>交易記錄</p>
 				</li>
 			</ul>
-		</footer>
+		</footer> -->
 	</div>
 </body>
 </html>

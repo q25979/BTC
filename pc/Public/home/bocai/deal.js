@@ -93,7 +93,7 @@ function getprice() {
 		ashow[1] = m==4 ? 'visible' : 'hidden'
 
 		// 请求数据
-		if (m==0 && s<=32 && s>5) {
+		if (m==0 && s<=30 && s>5) {
 			var number = $('#openNumber').text()
 			$.get(url, function(res) {
 				executename.text('第'+number+'期-執行價')
@@ -136,13 +136,6 @@ function CountDown(timestamp) {
 }
 
 /**
- * 交易記錄
- */
-function getlog() {
-	console.log("交易記錄")
-}
-
-/**
  * 獲取訂單
  */
 function getorder() {
@@ -156,7 +149,8 @@ function getorder() {
 			skin: 'row',
 			height: 285,
 			width: 740,
-			page: true,
+			limit: 20,
+			page: false,
 			loading: false,
 			done: function(res) {
 				$('.refresh').text('刷新數據')
@@ -212,7 +206,7 @@ function refresh() {
 /**
  * 确认下单
  */
-function okorder() {
+function onOrder() {
 	// 交易金额
 	var moneyidx = 0;	// 金额选择下标
 	var typeidx  = 0;	// 类型下标
@@ -268,6 +262,6 @@ function okorder() {
 /**
  * 更新数据
  */
-function allrefresh() {
+function onAllrefresh() {
 	openfn();
 }

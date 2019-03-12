@@ -21,7 +21,7 @@ define('APP_DEBUG', true);
 define('APP_PATH','./Application/');
 
 // 定义域名目录
-define('HOST_PATH', 'http://192.168.0.137:8081');	// 请填写您的域名
+define('HOST_PATH', 'http://localhost:8081');	// 请填写您的域名
 
 // 定义后台路径
 define('ADMIN_PATH', HOST_PATH . '/Admin/Login');

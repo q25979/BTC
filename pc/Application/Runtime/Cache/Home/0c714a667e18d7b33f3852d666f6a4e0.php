@@ -11,9 +11,9 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
 
 	<link rel="stylesheet" href="/Public/home/bocai/m.css" />
-	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.137:8081/Public/plug-in/layer_mobile/layer.js"></script>
+	<script src="http://localhost:8081/Public/js/config.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layer_mobile/layer.js"></script>
 	<script src="/Public/home/bocai/echarts.min.js"></script>
 	<script src="/Public/home/bocai/mkdata.js"></script>
 	<script src="https://cdn.bootcss.com/pako/1.0.6/pako.min.js"></script>

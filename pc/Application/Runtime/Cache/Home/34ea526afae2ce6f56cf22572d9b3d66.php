@@ -5,11 +5,11 @@
 	<title><?php echo ($title); ?></title>
 	<link rel="stylesheet" href="/Public/home/bocai/iconfont.css" />
 	<link rel="stylesheet" href="/Public/home/bocai/deal.css" />
-	<link rel="stylesheet" href="http://192.168.0.137:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
-	<script src="http://192.168.0.137:8081/Public/js/config.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery-3.2.1.min.js"></script>
-	<script src="http://192.168.0.137:8081/Public/js/jquery.cookie.js"></script>
-	<script src="http://192.168.0.137:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
+	<script src="http://localhost:8081/Public/js/config.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery.cookie.js"></script>
+	<script src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 	<script src="/Public/home/bocai/deal.js"></script>
 </head>
 <body>
