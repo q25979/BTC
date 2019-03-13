@@ -1431,10 +1431,6 @@
             })
         }
 
-
-
-
-
         // 上传手持身份证
         var hand_Idcard;
 
@@ -1454,13 +1450,13 @@
                 field: 'imgaddr',
                 before: function(obj){
                     //预读本地文件示例，不支持ie8
-                    layer.load(2);
+                    layer.load(2, {top: '20px'});
                     obj.preview(function(index, file, result) {
                         $('#upload-img').attr('src', result); //图片链接（base64）
                     });
                 },
                 choose: function() {
-                    layer.load(2);
+                    layer.load(2, {top: '20px'});
                 },
                 done: function(res){
                     layer.closeAll();
@@ -1527,7 +1523,7 @@
                         };
 
                         // 上传手持身份证
-                        layer.load(2);
+                        layer.load(2, {top: '20px'});
                         $.ajax({
                             url: hand_url,
                             data: hand_data,

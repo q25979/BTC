@@ -43,7 +43,7 @@
 
 			<div class="order fl">
 				<table class="layui-table" id="log"></table>
-				<div class="tip" onclick="reloadDealLog()">已顯示最近20條走勢</div>
+				<div class="tip">已顯示最近20條走勢</div>
 			</div>
 		</div>
 		<div class="r fr">
@@ -68,7 +68,35 @@
 				<div class="confirm mt-15" onclick="onOrder()">確認下注</div>
 				<div class="confirm mt-15 refresh" onclick="onAllrefresh()">刷新數據</div>
 				<div class="confirm mt-15 getlog">
-					<table id="getlog"></table>
+					<table id="getlog">
+						<thead>
+							<tr>
+								<td width="55">期號</td>
+								<td width="81">投注金額</td>
+								<td width="80">獎金</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><div></div></td>
+								<td><div></div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div></div></td>
+								<td><div></div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div></div></td>
+								<td><div></div></td>
+								<td><div></div></td>
+							</tr>
+							<tr class="more">
+								<td colspan='3'><span onclick="onRecord()">更多 >></span></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

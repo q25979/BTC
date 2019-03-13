@@ -12,7 +12,6 @@ var	ws = null		// WebSocket
 var	wsLock = false 	// Socket锁防止重复
 var dealArea = ['1000px', '500px']	// 弹出层大小
 
-
 $(function() {
 	k = echarts.init(document.getElementById('k'))
 	k.showLoading()

@@ -1,7 +1,8 @@
 var otherInput = 'none';	// 金额的输入框是否显示并且判断是否使用输入框
-var tcolor = ['#228B22', '#F00'];	// 开盘数据
+var tcolor = ['#228B22', '#D83F4E'];	// 开盘数据
 var openTime = 5;			// 设置开盘时间5分钟一次
 var tableDealLog = null;	// 表格
+var worker = null;			// 倒计时Worker
 
 $(function() {
 	// 金额切换
@@ -29,12 +30,19 @@ $(function() {
  * 初始化
  */
 function init() {
+	setCountDown()	// 设置倒计时
+	openfn()		// 开盘
+	getprice()		// 获取价格
+}
+
+/**
+ * 设置倒计时
+ */
+function setCountDown() {
+	if (worker != null) worker.terminate()
 	$.get(config.host_path + '/home/bocai/timestamp', function(timestamp) {
 		CountDown(timestamp)
 	})
-
-	openfn()		// 开盘
-	getprice()		// 获取价格
 }
 
 /**
@@ -42,36 +50,17 @@ function init() {
  */
 function getdeallog() {
 	var u = config.host_path + '/home/bocai/getdeallog'
-	tableDealLog = layui.use('table', function() {
-		var table = layui.table
-		table.render({
-			elem: '#getlog',
-			url: u,
-			width: 220,
-			size: 'sm',
-			loading: false,
-			cols: [[
-				{field:'buy_number',title:'期號',width:55,align:'center',unresize:true},
-				{field:'money',title:'投注金額',width:81,align:'center',unresize:true},
-				{field:'last_money',title:'獎金',width:80,align:'center',unresize:true}
-			]]
-		})
-	})
-}
 
-function reloadDealLog() {
-	var d = [{
-		'buy_number': 10,
-		'money': 125.25,
-		'last_money': '涨'
-	}]
-	
-	layui.use('table', function() {
-		var table = layui.table
-		
-		/*tableDealLog.reload({
-			data: d
-		})*/
+	$.get(u, function(d) {
+		var res = d.data
+		for (i in res) {
+			var h  = '<td>'+res[i].buy_number+'</td>'
+				h += '<td>'+res[i].money+'</td>'
+			h += parseFloat(res[i].last_money) > 0
+				? '<td style="color:#E4393C">'+res[i].last_money+'</td>'
+				: '<td>'+res[i].last_money+'</td>'
+			$($('#getlog tbody tr')[i]).html(h)
+		}
 	})
 }
 
@@ -130,7 +119,7 @@ function getprice() {
  * 设置倒计时
  */
 function CountDown(timestamp) {
-	var worker = new Worker("/Public/home/bocai/countdown.js")
+	worker = new Worker("/Public/home/bocai/countdown.js")
 	worker.postMessage(timestamp)
 	worker.onmessage = function(data) {
 		var obj = data.data;
@@ -265,4 +254,20 @@ function onOrder() {
  */
 function onAllrefresh() {
 	openfn();
+}
+
+/**
+ * 交易记录
+ * @return {[type]} [description]
+ */
+function onRecord() {
+	var u = config.host_path + '/Home/Bocai/getlog'
+	var iframeName = window.parent;
+
+	iframeName.layer.open({
+		type: 2,
+		content: u,
+		area: ['1000px', '500px'],
+		title: '交易記錄'
+	})
 }
