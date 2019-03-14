@@ -9,8 +9,6 @@ class IndexController extends Controller {
 		
         $e = '277161542@163.com';
         echo base64_encode($e);
-
-        echo base64_decode(base64_encode($e));
 	}
 
 	public function t() {

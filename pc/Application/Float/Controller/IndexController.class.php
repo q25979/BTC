@@ -15,7 +15,7 @@ class IndexController extends Controller
      * method: get
      * url: /Float/Index/index
      */
-    public function index() 
+    public function index()
     {
         set_time_limit(5);
         Vendor('phpRPC.phprpc_client');
@@ -173,6 +173,10 @@ class IndexController extends Controller
             $last = $set == 0   // 成交价
                 ? $execute + $this->frand()
                 : $execute - $this->frand();
+
+            $datafile = fopen('./datafile.txt', 'w+');
+            fwrite($datafile, 'this a File');
+            fclose();
 
             // 保存session
             session('price.execute', $execute); // 执行价

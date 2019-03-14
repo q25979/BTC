@@ -19,7 +19,7 @@
 		body{color:#555;font-family:"微软雅黑";font-size:0.875em;}
 		ul,li{list-style:none}
 		.clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
-		header{z-index:99999;color:#c4c7c9;background:#2c3940;padding:0.9375em 0.625em;position:fixed;width:100%;top:0;}
+		header{z-index:99999;color:#c4c7c9;background:#2c3940;padding:0 0.625em;position:fixed;width:100%;top:0;height:3em;line-height:3em;}
 		header>ul>li{float:left;margin-right:0.9375em}
 		.container{margin-top:3.5em;font-size:0.75em;display:none;}
 		.container ul>li{border-bottom:0.0625em solid #e2e5e7;padding:1em 1em 1em 0;margin-left:1em;}

@@ -9,9 +9,6 @@ return array(
 	'DB_PORT'   => 3306,            // 端口
 	'DB_PREFIX' => 'btc_',          // 数据库表前缀
 
-	// 顯示Trace
-	'SHOW_PAGE_TRACE' => false,
-
 	'TMPL_L_DELIM'  => '<{',            // 模板引擎普通标签开始标记
 	'TMPL_R_DELIM'  => '}>',            // 模板引擎普通标签结束标记
 
@@ -34,7 +31,7 @@ return array(
 	// 0 (普通模式); 1 (PATHINFO 模式); 2 (REWRITE  模式); 3 (兼容模式)  默认为PATHINFO 模式
 
     'COOKIE_PREFIX'         => 'btc_',  // Cookie前缀 避免冲突
-    'URL_CASE_INSENSITIVE'  => true,    // 表示不区分大小写
+    'URL_CASE_INSENSITIVE'  => false,    // 表示不区分大小写
     'LANG_SWITCH_ON'        => true,    // 开启语言包功能
     'LANG_AUTO_DETECT'      => true,    // 自动侦测语言 开启多语言功能后有效
     'DEFAULT_LANG'          => 'zh-tw', // 默认语言

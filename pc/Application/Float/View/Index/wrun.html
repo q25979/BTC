@@ -6,9 +6,7 @@
 
 	<js href="__JS__/jquery-3.2.1.min.js" />
 	<script>
-		var worker = new Worker("/Public/home/bocai/worker/msgscript.js")
-		worker.postMessage(1)
-		worker.onmessage = function(data) {
+		var setp = function() {
 			$.get('<{:U("wrun")}>', function(res) {
 				if (res.step == 0) {
 					$('#setp0').text('第'+res.number+'期，正在采集数据中...')
@@ -20,6 +18,8 @@
 				}
 			})
 		}
+
+		setInterval('setp()', 1000);
 	</script>
 </head>
 <body>

@@ -18,7 +18,7 @@
 		ul,li{list-style:none}
 
 		.clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
-		header{z-index:1;color:#c4c7c9;background:#2c3940;padding:0.9375em 0.625em;position:fixed;width:100%;top:0;}
+		header{z-index:1;color:#c4c7c9;background:#2c3940;padding:0 0.625em;position:fixed;width:100%;top:0;height:3em;line-height:3em;}
 		header>ul>li{float:left;margin-right:0.9375em}
 		#trend{margin-top:3.5em;width:100%;font-size:0.75em;visibility:hidden;}
 		tr>td:nth-child(1){width:20%;}

@@ -123,7 +123,7 @@ class LoginController extends Controller {
         $logo = M('Home_info');
         $map['id'] = HOME_INFO_ID;
 
-        $info = $logo->where($map)->cache('logo')->field('background_url,logo_url,name')->select();
+        $info = $logo->where($map)->field('background_url,logo_url,name')->select();
 
         if($info){
             $result = \StatusCode::code(0);

@@ -152,8 +152,8 @@ class BocaiController extends VerifyController
 	// 获取成交价和执行价
 	public function getprice()
 	{
-		$data['execute_price'] = session('price.execute');
-		$data['last_price'] = session('price.last');
+		//$data['execute_price'] = session('price.execute');
+		//$data['last_price'] = session('price.last');
 		$this->ajaxReturn($data);
 	}
 
