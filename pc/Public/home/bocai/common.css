@@ -17,7 +17,7 @@ body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
 .yi-time>div, .yi-time li { float: left; }
 .yi-time li { margin-left: 25px; }
 .yi-time li.active { color: #FDBE19; border-bottom: 1px solid #FDBE19; }
-.yi-k { height: 500px; width: 100%; }
+.yi-k { height: 520px; width: 100%; }
 .layui-layer-content { color: #333; }
 
 .fall{color:#D83F4E;}

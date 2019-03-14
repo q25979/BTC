@@ -825,18 +825,19 @@
                 url: url,
                 type: 'get',
                 success: function (res) {
+
                     if (realtimeIndex == 1) {
-                        $('#BTC_money').text( "NT$ " + res.data[0].btc_value_twd);
-                        $('#ETH_money').text( "NT$ " + res.data[0].eth_value_twd);
+                        $('#BTC_money').text( "NT$ " + $.cookie('btc_btc_value'));
+                        $('#ETH_money').text( "NT$ " + $.cookie('btc_eth_value'));
                     } else if (realtimeIndex == 2) {
-                        $('#BTC_money').text( "HKD$ " + res.data[0].btc_value_hkd);
-                        $('#ETH_money').text( "HKD$ " + res.data[0].eth_value_hkd);
+                        $('#BTC_money').text( "HKD$ " + $.cookie('btc_btc_value'));
+                        $('#ETH_money').text( "HKD$ " + $.cookie('btc_btc_value'));
                     } else if (realtimeIndex == 3) {
-                        $('#BTC_money').text( "USD$ " + res.data[0].btc_value_usd);
-                        $('#ETH_money').text( "USD$ " + res.data[0].eth_value_usd);
+                        $('#BTC_money').text( "USD$ " + $.cookie('btc_btc_value'));
+                        $('#ETH_money').text( "USD$ " + $.cookie('btc_btc_value'));
                     }else {
-                        $('#BTC_money').text( "NT$ " + res.data[0].btc_value_twd);
-                        $('#ETH_money').text( "NT$ " + res.data[0].eth_value_twd);
+                        $('#BTC_money').text( "NT$ " + $.cookie('btc_btc_value'));
+                        $('#ETH_money').text( "NT$ " + $.cookie('btc_btc_value'));
                     }
 
                 }

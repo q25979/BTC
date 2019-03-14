@@ -5849,3 +5849,1781 @@ INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002137s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.002725s ]
 SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0085s ]
 
+[ 2019-03-14T15:55:37+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002215s ]
+
+[ 2019-03-14T15:55:44+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001951s ]
+
+[ 2019-03-14T15:55:44+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002302s ]
+
+[ 2019-03-14T15:55:46+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001970s ]
+
+[ 2019-03-14T15:55:49+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003009s ]
+
+[ 2019-03-14T15:55:52+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003436s ]
+
+[ 2019-03-14T15:55:55+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002614s ]
+
+[ 2019-03-14T15:55:58+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002897s ]
+
+[ 2019-03-14T15:56:01+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003338s ]
+
+[ 2019-03-14T15:56:04+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002896s ]
+
+[ 2019-03-14T15:56:07+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003799s ]
+
+[ 2019-03-14T15:56:10+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002061s ]
+
+[ 2019-03-14T15:56:13+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003241s ]
+
+[ 2019-03-14T15:56:16+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003328s ]
+
+[ 2019-03-14T15:56:19+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002986s ]
+
+[ 2019-03-14T15:56:22+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002040s ]
+
+[ 2019-03-14T15:56:25+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002104s ]
+
+[ 2019-03-14T15:56:28+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+
+[ 2019-03-14T16:07:49+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003737s ]
+
+[ 2019-03-14T16:07:55+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002621s ]
+
+[ 2019-03-14T16:07:55+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002957s ]
+
+[ 2019-03-14T16:07:58+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000897s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001074s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002736s ]
+
+[ 2019-03-14T16:08:01+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002321s ]
+
+[ 2019-03-14T16:08:04+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003126s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006717s ]
+
+[ 2019-03-14T16:08:07+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002308s ]
+
+[ 2019-03-14T16:08:10+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003696s ]
+
+[ 2019-03-14T16:08:13+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002090s ]
+
+[ 2019-03-14T16:08:16+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002191s ]
+
+[ 2019-03-14T16:08:19+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001952s ]
+
+[ 2019-03-14T16:08:22+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003082s ]
+
+[ 2019-03-14T16:08:25+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003369s ]
+
+[ 2019-03-14T16:08:25+08:00 ] 127.0.0.1 /Float/Index/getdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004682s ]
+
+[ 2019-03-14T16:08:34+08:00 ] 127.0.0.1 /Float/Index/getdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002393s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0071s ]
+
+[ 2019-03-14T16:08:36+08:00 ] 127.0.0.1 /Float/Index/getdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002304s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0092s ]
+
+[ 2019-03-14T16:11:12+08:00 ] 127.0.0.1 /Float/Index/getdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001946s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:11:17+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.009102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010050s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0068s ]
+
+[ 2019-03-14T16:11:25+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002644s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:11:26+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001807s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005882s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0075s ]
+
+[ 2019-03-14T16:11:27+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003152s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:11:29+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.028675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029911s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:11:34+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002241s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:11:38+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002095s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:11:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002348s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:11:40+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003657s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0061s ]
+
+[ 2019-03-14T16:11:42+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001924s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0094s ]
+
+[ 2019-03-14T16:11:45+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002235s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:11:48+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003846s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0116s ]
+
+[ 2019-03-14T16:11:51+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002747s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0117s ]
+
+[ 2019-03-14T16:11:54+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003178s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010096s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0069s ]
+
+[ 2019-03-14T16:11:57+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002751s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0091s ]
+
+[ 2019-03-14T16:12:00+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002096s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0090s ]
+
+[ 2019-03-14T16:12:03+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003475s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0083s ]
+
+[ 2019-03-14T16:12:06+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002452s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0082s ]
+
+[ 2019-03-14T16:12:09+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003308s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:12:12+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002398s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:12:15+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003289s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:12:18+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002870s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+
+[ 2019-03-14T16:12:21+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003387s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0097s ]
+
+[ 2019-03-14T16:12:24+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003950s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0104s ]
+
+[ 2019-03-14T16:12:27+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000914s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003597s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:12:30+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002239s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0081s ]
+
+[ 2019-03-14T16:12:33+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004485s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0111s ]
+
+[ 2019-03-14T16:12:36+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003534s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+
+[ 2019-03-14T16:12:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001505s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003480s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0083s ]
+
+[ 2019-03-14T16:12:42+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003374s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0063s ]
+
+[ 2019-03-14T16:12:45+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003331s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0069s ]
+
+[ 2019-03-14T16:12:48+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003950s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0094s ]
+
+[ 2019-03-14T16:12:51+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003697s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0103s ]
+
+[ 2019-03-14T16:12:54+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001362s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003517s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:12:57+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003377s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:13:00+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003202s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0089s ]
+
+[ 2019-03-14T16:13:03+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002167s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0105s ]
+
+[ 2019-03-14T16:13:04+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002795s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005914s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:13:10+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004288s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:13:13+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002633s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0083s ]
+
+[ 2019-03-14T16:13:16+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003514s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:13:19+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003027s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0091s ]
+
+[ 2019-03-14T16:13:22+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002259s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0116s ]
+
+[ 2019-03-14T16:13:25+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003589s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0094s ]
+
+[ 2019-03-14T16:13:28+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003373s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0098s ]
+
+[ 2019-03-14T16:13:31+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003580s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0091s ]
+
+[ 2019-03-14T16:13:34+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002562s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0071s ]
+
+[ 2019-03-14T16:13:37+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003224s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0121s ]
+
+[ 2019-03-14T16:13:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004664s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:13:46+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003042s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0076s ]
+
+[ 2019-03-14T16:13:47+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002565s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0061s ]
+
+[ 2019-03-14T16:13:49+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003166s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:13:52+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002406s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:13:54+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001869s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004407s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:13:58+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002907s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+
+[ 2019-03-14T16:14:05+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0065s ]
+
+[ 2019-03-14T16:14:09+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006517s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0085s ]
+
+[ 2019-03-14T16:14:10+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006448s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0089s ]
+
+[ 2019-03-14T16:14:11+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005333s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0086s ]
+
+[ 2019-03-14T16:14:19+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002052s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:14:38+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002502s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0086s ]
+
+[ 2019-03-14T16:14:46+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002212s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0082s ]
+
+[ 2019-03-14T16:16:47+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0099s ]
+
+[ 2019-03-14T16:16:58+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002182s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0068s ]
+
+[ 2019-03-14T16:17:04+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003971s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0065s ]
+
+[ 2019-03-14T16:17:07+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003559s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0079s ]
+
+[ 2019-03-14T16:17:08+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003465s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+
+[ 2019-03-14T16:17:09+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003582s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:17:14+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002008s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0083s ]
+
+[ 2019-03-14T16:17:16+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002249s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0072s ]
+
+[ 2019-03-14T16:17:17+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002150s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:17:18+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002155s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0121s ]
+
+[ 2019-03-14T16:17:21+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002051s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0069s ]
+
+[ 2019-03-14T16:17:24+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002047s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:17:27+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002040s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:17:31+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002752s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:17:33+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002073s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:17:36+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003085s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:17:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002849s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0108s ]
+
+[ 2019-03-14T16:17:42+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003146s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0060s ]
+
+[ 2019-03-14T16:17:45+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001979s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:17:48+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003089s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0076s ]
+
+[ 2019-03-14T16:17:51+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002087s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:17:54+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002356s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0070s ]
+
+[ 2019-03-14T16:17:57+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002004s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:18:00+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002274s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0084s ]
+
+[ 2019-03-14T16:18:03+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003918s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0108s ]
+
+[ 2019-03-14T16:18:06+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003467s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0079s ]
+
+[ 2019-03-14T16:18:09+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001599s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004654s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0084s ]
+
+[ 2019-03-14T16:18:12+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003370s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0068s ]
+
+[ 2019-03-14T16:18:15+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002442s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+
+[ 2019-03-14T16:18:18+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004151s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0079s ]
+
+[ 2019-03-14T16:18:21+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002872s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0061s ]
+
+[ 2019-03-14T16:18:24+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002684s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:18:27+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002188s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0086s ]
+
+[ 2019-03-14T16:18:30+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003364s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+
+[ 2019-03-14T16:18:33+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002898s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:18:36+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002153s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0060s ]
+
+[ 2019-03-14T16:18:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002224s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0060s ]
+
+[ 2019-03-14T16:18:42+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002265s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
+[ 2019-03-14T16:18:45+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004315s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:18:48+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003156s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0071s ]
+
+[ 2019-03-14T16:18:51+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002239s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:18:54+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003175s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0084s ]
+
+[ 2019-03-14T16:18:57+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003341s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0060s ]
+
+[ 2019-03-14T16:19:00+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003459s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0091s ]
+
+[ 2019-03-14T16:19:03+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002670s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0075s ]
+
+[ 2019-03-14T16:19:06+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003286s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0072s ]
+
+[ 2019-03-14T16:19:09+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002684s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0106s ]
+
+[ 2019-03-14T16:19:12+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004041s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0069s ]
+
+[ 2019-03-14T16:19:15+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002277s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0063s ]
+
+[ 2019-03-14T16:19:18+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002590s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0086s ]
+
+[ 2019-03-14T16:19:21+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002350s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:19:24+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002307s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0065s ]
+
+[ 2019-03-14T16:19:27+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001228s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003774s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0068s ]
+
+[ 2019-03-14T16:19:30+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003716s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0071s ]
+
+[ 2019-03-14T16:19:33+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003655s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0092s ]
+
+[ 2019-03-14T16:19:36+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002504s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0083s ]
+
+[ 2019-03-14T16:19:39+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003157s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0068s ]
+
+[ 2019-03-14T16:19:40+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004019s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0073s ]
+
+[ 2019-03-14T16:19:45+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002170s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:19:47+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002263s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0063s ]
+
+[ 2019-03-14T16:19:49+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002538s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0094s ]
+
+[ 2019-03-14T16:19:52+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002547s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0063s ]
+
+[ 2019-03-14T16:19:55+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002174s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:19:58+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003084s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0064s ]
+
+[ 2019-03-14T16:20:01+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002199s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0070s ]
+
+[ 2019-03-14T16:20:04+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002706s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:20:07+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003261s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0104s ]
+
+[ 2019-03-14T16:20:10+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005863s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0110s ]
+
+[ 2019-03-14T16:20:11+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002517s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0061s ]
+
+[ 2019-03-14T16:20:12+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002365s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0065s ]
+
+[ 2019-03-14T16:20:17+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002325s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0059s ]
+
+[ 2019-03-14T16:20:19+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002717s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0066s ]
+
+[ 2019-03-14T16:20:20+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002552s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0070s ]
+
+[ 2019-03-14T16:20:23+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004796s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0092s ]
+
+[ 2019-03-14T16:20:26+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003306s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0088s ]
+
+[ 2019-03-14T16:20:29+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002192s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:20:32+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003351s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0074s ]
+
+[ 2019-03-14T16:20:35+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006110s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0082s ]
+
+[ 2019-03-14T16:20:40+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002160s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0065s ]
+
+[ 2019-03-14T16:20:46+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003701s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0092s ]
+
+[ 2019-03-14T16:20:49+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003731s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0077s ]
+
+[ 2019-03-14T16:20:50+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002573s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0080s ]
+
+[ 2019-03-14T16:20:51+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003348s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0078s ]
+
+[ 2019-03-14T16:20:52+08:00 ] 127.0.0.1 /Float/Index/getdata?type=hkd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003034s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0067s ]
+
