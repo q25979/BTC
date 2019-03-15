@@ -10,7 +10,7 @@ $(function() {
 		$(this).click(function() {
 			$('.number>.span').removeClass('span-active');
 			$($('.number>.span')[idx]).addClass('span-active');
-			otherInput = idx == 3 ? 'inline-block' : 'none';
+			otherInput = idx == 6 ? 'inline-block' : 'none';
 			$('[name=other]').css('display', otherInput);
 		});
 	});
@@ -22,6 +22,10 @@ $(function() {
 			$($('.type>.span')[idx]).addClass('span-active');
 		});
 	});
+
+	$('input').blur(function() {
+		if ($(this).val() < 0) $(this).val(0)
+	})
 
 	init();
 });
@@ -93,10 +97,6 @@ function getprice() {
 		var executename = $('#executePrice>div:nth-child(1)')
 		var lastname = $('#lastPrice>div:nth-child(1)')
 
-		// 规定时间显示
-		ashow[0] = m==4||m==0&&s<=30 ? 'visible' : 'hidden'
-		ashow[1] = m==4 ? 'visible' : 'hidden'
-
 		// 请求数据
 		if (m==0 && s<=32 && s>5) {
 			var number = $('#openNumber').text()
@@ -107,10 +107,6 @@ function getprice() {
 				last.text(res.last_price)
 			})
 		}
-		if (parseInt(execute.text())==0) ashow[0] = 'hidden'
-		if (parseInt(last.text())==0) ashow[1] = 'hidden'
-		$('#executePrice').css('visibility', ashow[0])
-		$('#lastPrice').css('visibility', ashow[1])
 		getClose()	// 获取收盘价
 	}
 }
@@ -178,8 +174,10 @@ function getClose() {
 	// 设置显示
 	var n = $($('.now-price')[0])
 	if (localStorage.close) {
-		$($(".now-price")[0]).text(localStorage.close);
-		$($(".now-price")[0]).css('color', localStorage.cClose)
+		$($(".now-price")[0]).text(localStorage.close)
+		localStorage.cClose == 'rgb(216, 63, 78)'
+			? $($(".now-price")[0]).css('color', tcolor[1])
+			: $($(".now-price")[0]).css('color', tcolor[0])
 	}
 }
 
@@ -188,7 +186,7 @@ function getClose() {
  */
 function getbalance(callback) {
 	$.get(config.host_path+'/Home/Bocai/getbalance', function(res) {
-		$('#balance').text('NT$: '+res);
+		$('#balance').text(res);
 		callback ? callback() : '';
 	});
 }
@@ -211,7 +209,7 @@ function onOrder() {
 	$('.type>.span').each(function(idx) {
 		if ($($('.type>.span')[idx]).hasClass('span-active')) typeidx = idx;
 	});
-	d.money = moneyidx == 4	// 金额
+	d.money = moneyidx == 6	// 金额
 		? parseFloat($('[name=other]').val())
 		: parseFloat($($('.number>.span')[moneyidx]).text());
 	d.buy_direction = typeidx;

@@ -35,8 +35,12 @@
 				</div>
 				<div class="b">
 					<div>
-						<div class=>當前期數</div>
+						<div>當前期數</div>
 						<div class="label-bg" id="openNumber">00</div>
+					</div>
+					<div>
+						<div>餘額</div>
+						<div class="label-bg" id="balance">00.00</div>
 					</div>
 				</div>
 			</div>
@@ -50,20 +54,20 @@
 			<div class="money">
 				<div class="mb-6">下注金額</div>
 				<div class="number">
-					<span class="span span-active">200</span>
-					<span class="span">500</span>
+					<span class="span span-active">100</span>
+					<span class="span">200</span>
+					<span class="span">300</span>
+					<br>
+					<span class="span mt-15">500</span>
 					<span class="span">1000</span>
+					<span class="span">2000</span>
 					<span class="span other">其它</span>
-					<input type="number" name="other" value="0" />
+					<input type="number" name="other" value="0" min="0" />
 				</div>
 				<div class="mb-6 mt-15">購買方向</div>
 				<div class="type">
 					<span class="span span-active">買漲</span>
 					<span class="span">買跌</span>
-				</div>
-				<div class="mb-3 mt-15">餘額</div>
-				<div class="balance">
-					<span id="balance">NT$: 00.00</span>
 				</div>
 				<div class="confirm mt-15" onclick="onOrder()">確認下注</div>
 				<div class="confirm mt-15 refresh" onclick="onAllrefresh()">刷新數據</div>

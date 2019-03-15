@@ -18,7 +18,7 @@ body,p,table,tr,td {margin:0;font-family:"微软雅黑";font-size:14px;}
 .execute{width:500px;}
 .execute>div{display:inline-block;}
 .execute>.t>div,.execute>.b>div{width:164px;float:left;}
-.execute>.t>div:nth-child(2){margin: 0 3px;}
+.execute>.t>div:nth-child(2),.execute>.b>div:nth-child(2){margin: 0 3px;}
 
 .deal-container>.l>.order{margin-top:-3px;height:285px;}
 .order>.layui-table, .layui-table-view{margin:0;}
@@ -26,6 +26,7 @@ body,p,table,tr,td {margin:0;font-family:"微软雅黑";font-size:14px;}
 
 .money {width:220px;}
 .money .balance{color:orangered;font-size:16px;font-weight:bold;}
+.money span{display:inline-block;}
 .money input{border:1px solid #ccc;height:20px;width:70px;border-radius:2px;padding:0 8px;display:none;}
 .money .number .other {display:inline-block;margin-top:8px;}
 
@@ -34,10 +35,6 @@ body,p,table,tr,td {margin:0;font-family:"微软雅黑";font-size:14px;}
 .balance>.update{width:20px;height:20px;font-size:10px;border:0px solid #ccc; background:white;border-radius:2px;}
 .balance>.update .layui-icon{color:#888;}
 .r .flag{height:150px;width:150px;background-size:100%;background-repeat:no-repeat;margin-top:12px;}
-._360{animation:_360 1s infinite linear;}
-._y360{animation:_y360 1s infinite linear;}
-#prev{position:absolute;bottom:10px;right:0;font-size:40px;color:red;}
-#executePrice,#lastPrice{visibility:hidden;}
 .tip{text-align:center;color:#666666;position:relative;top:-32px;}
 
 #getlog{color:#666;width:220px;cursor:default;}
@@ -48,3 +45,10 @@ body,p,table,tr,td {margin:0;font-family:"微软雅黑";font-size:14px;}
 
 .layui-table, .layui-table-view{margin:0 !important;}
 .layui-table-page .layui-laypage{display:none;}
+
+/*去除input加减号*/
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none;appearance: none;margin: 0;}
+/* 火狐 */
+input{-moz-appearance:textfield;}

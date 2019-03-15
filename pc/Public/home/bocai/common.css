@@ -4,7 +4,7 @@ body { background: #21202D; color: #fff; font-family: "微软雅黑"; }
 .clearfix:after{height:0;visibility:hidden;display:block;line-height:0;clear:both;content:'.';}
 
 .yi-container { position: relative; max-width: 1200px; background: #454545; margin: 0 auto; }
-.yi-container header { position: relative; color: #ccc; padding: 15px 10px; }
+.yi-container header { position: relative; color: #ccc; padding: 15px 10px; font-size: 16px; }
 .yi-container header li { float: left; margin-right: 20px; cursor: pointer; }
 .yi-price { background: #333; color: #D83F4E; padding: 25px 0; }
 .yi-price ul { overflow: hidden; }

@@ -55,6 +55,53 @@ class BocaiController extends VerifyController
 		$this->display();
 	}
 
+	// 获取历史交易记录
+	public function historylog()
+	{
+		$get = I('get.');
+		$date = date('Y-m-d');
+
+		// 今天
+		if ($get['day'] == 0) {
+			$map['create_time'] = array(
+				array('EGT', strtotime($date)+30),
+				array('LT', strtotime($date.' 23:59:59')+31)
+			);
+		} elseif ($get['day'] == 1) {
+			$map['create_time'] = array(
+				array('EGT', strtotime($date)-86400+30),
+				array('LT', strtotime($date)+30)
+			);
+		} elseif ($get['day'] == 2) {
+			$map['create_time'] = array(
+				array('EGT', strtotime($date)-86400*2+30),
+				array('LT', strtotime($date)-86400+30)
+			);
+		}
+
+		$list = M('WOpenlog')
+			->where($map)
+			->page($get['page'], $get['limit'])
+			->order('create_time desc')
+			->select();
+
+		// 转换可视数据
+		foreach ($list as $k => $v) {
+			if ($v['last_direction'] == 0) $list[$k]['last_direction_name'] = '漲';
+			if ($v['last_direction'] == 1) $list[$k]['last_direction_name'] = '跌';
+			if ($v['last_direction'] == -1) $list[$k]['last_direction_name'] = '未開盤';
+
+			$list[$k]['create_time'] = date('Y/m/d H:i:s', $v['create_time']);
+		}
+
+		$this->ajaxReturn([
+			'code' => 0,
+			'msg'  => '',
+			'count' => M('WOpenlog')->where($map)->count(),
+			'data' => $list
+		]);
+	}
+
 	// 确认下单
 	public function okorder()
 	{

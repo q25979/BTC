@@ -338,9 +338,20 @@ function onDeal(type) {
 		type: 2,
 		content: u,
 		area: dealArea,
-		title: "確認訂單",
+		title: "投資比特幣",
 		skin: "deal-class",
 		resize: false,
 		scrollbar: false
+	})
+}
+
+function onOldLog() {
+	var u = config.host_path + "/Home/Bocai/oldlog"
+	layer.open({
+		type: 2,
+		content: u,
+		area: ['750px', '400px'],
+		title: "開獎記錄",
+		skin: "deal-class"
 	})
 }

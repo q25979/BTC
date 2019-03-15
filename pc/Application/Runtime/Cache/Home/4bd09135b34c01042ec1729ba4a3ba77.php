@@ -22,8 +22,9 @@
 		<header>
 			<ul class="clearfix">
 				<li onclick="onHome()">首頁</li>
-				<li onclick="onDeal(1)">下注</li>
-				<li onclick="onRecord()">交易記錄</li>
+				<li onclick="onDeal(1)">投資比特幣</li>
+				<li onclick="onRecord()">下注記錄</li>
+				<li onclick="onOldLog()">開獎記錄</li>
 			</ul>
 		</header>
 		<div class="yi-price">
