@@ -36,7 +36,8 @@ $(function() {
 function init() {
 	setCountDown()	// 设置倒计时
 	openfn()		// 开盘
-	getprice()		// 获取价格
+	// getprice()		// 获取价格
+	getRealtimePrice()
 }
 
 /**
@@ -76,6 +77,31 @@ function openfn() {
 	getbalance();	// 获取余额
 	getdeallog()	// 获取交易记录
 	getorder()		// 获取往期记录
+}
+
+/**
+ * 获取执行价和成交价
+ * @return {[type]} [description]
+ */
+function getRealtimePrice() {
+	var ws = new WebSocket("ws://localhost:12585")
+
+	ws.open = function() {
+		console.log('Connection open ...')
+		ws.send('Hello')
+	}
+
+	ws.onmessage = function(evt) {
+		console.log(evt)
+	}
+
+	ws.onclose = function() {
+		console.log('Connection closeed.')
+	}
+
+	ws.onerror = function(err) {
+		console.log(err)
+	}
 }
 
 /**

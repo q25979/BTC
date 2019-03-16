@@ -1,0 +1,18 @@
+[ 2019-03-15T15:47:31+08:00 ] 127.0.0.1 /Uploads/action/IDcard/2019-03-13/5c88c81abe302.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 無法載入模組:Uploads
+
+[ 2019-03-15T15:47:31+08:00 ] 127.0.0.1 /Uploads/action/IDcard/2019-03-13/5c88c80b628b7.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+ERR: 無法載入模組:Uploads
+
+[ 2019-03-15T15:47:31+08:00 ] 127.0.0.1 /Uploads/action/IDcard/2019-03-13/5c88c8116af60.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+ERR: 無法載入模組:Uploads
+
