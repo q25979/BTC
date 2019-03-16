@@ -24,12 +24,6 @@ class Db:
 		self.db = MySQLdb.connect(self.__host, self.__user, self.__pass, self.__dbname)
 		self.cursor = self.db.cursor()
 
-		# 获取日期和时间
-		self.hour  = int(time.strftime('%H', time.localtime()))
-		self.minue = int(time.strftime('%M', time.localtime()))
-		self.sec   = int(time.strftime('%S', time.localtime()))
-		self.date  = time.strftime('%Y-%m-%d', time.localtime())
-
 
 	# 析构函数
 	def __del__(self):
@@ -43,7 +37,9 @@ class Db:
 
 	# 设置当前开奖期号
 	def open_number(self):
-		return (self.hour*60+self.minue)/5+1
+		hour  = int(time.strftime('%H', time.localtime()))
+		minue = int(time.strftime('%M', time.localtime()))
+		return (hour*60+minue)/5
 
 
 	# 设置当前开盘方向

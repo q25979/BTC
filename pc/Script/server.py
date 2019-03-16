@@ -42,25 +42,25 @@ def build_price():
 		# 实时获取本地服务器时间
 		minue = int(time.strftime('%M', time.localtime()))
 		sec   = int(time.strftime('%S', time.localtime()))
-		
+		random_price = set_random()
 		# 倒计时剩余 00:30 开始到 00:00 生成执行价
 		if minue%5 == 4 and sec >= 30 and sec < 60:
-			random_price = set_random()
+			close = get_close()		# 获取收盘价
 			if random.randint(0, 1) == 1:
-				g_execute_price = get_close() + random_price
+				g_execute_price = close + random_price
 			else:
-				g_execute_price = get_close() - random_price
+				g_execute_price = close - random_price
 
 		# 生成成交价，并且保存数据库
 		if minue%5 == 0 and sec == 0:
-			if not db.open_direction():
+			dirction = db.open_direction()	# 开奖方向 0-涨  1-跌
+			if not dirction:
 				g_last_price = g_execute_price + random_price
 			else:
 				g_last_price = g_execute_price - random_price
 			pass
-			print 'minue:' + str(minue)
-			pass
-			print('dirction: %s, execute: %s, last: %s' % (db.open_direction(), g_execute_price, g_last_price))		
+			print 'number:' + str(db.open_number()) + ' minue:' + str(minue)
+			print(' dirction: %s, execute: %s, last: %s' % (dirction, g_execute_price, g_last_price))		
 		# 延时0.7s
 		time.sleep(0.7)
 
