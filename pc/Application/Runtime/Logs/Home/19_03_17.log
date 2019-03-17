@@ -1,0 +1,151 @@
+[ 2019-03-17T14:11:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002591s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005297s ]
+SQL: SHOW COLUMNS FROM `btc_user` [ RunTime:0.0065s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(__TEMPLATE__/home/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(__TEMPLATE__/home/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000849s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000912s ]
+NOTIC: [8] Undefined variable: email D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1036 行.
+NOTIC: [8] Undefined variable: maincoin_id D:\phpStudy\WWW\btc\pc\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1129 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028029s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028071s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2019-03-17T14:11:24+08:00 ] 127.0.0.1 /Home/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001911s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005777s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(__TEMPLATE__/home/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(__TEMPLATE__/home/header.html): failed to open stream: No such file or directory D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000508s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000549s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000662s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2019-03-17T14:11:27+08:00 ] 127.0.0.1 /Home/Login/getupdateLogo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002048s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004447s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0066s ]
+SQL: SELECT `background_url`,`logo_url`,`name` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0004s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically, assuming $this from incompatible context D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 129 行.
+
+[ 2019-03-17T14:11:28+08:00 ] 127.0.0.1 /Home/Question/getCommonProblemFive
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001923s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003979s ]
+SQL: SHOW COLUMNS FROM `btc_common_problem` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `btc_i18n` [ RunTime:0.0060s ]
+SQL: SELECT `title_i18n_id`,`type` FROM `btc_common_problem` WHERE `is_deleted` = 0 ORDER BY common_problem_id desc LIMIT 6   [ RunTime:0.0004s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'D2018051000411715258840778715581' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'c2018051000312115258834819759238' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'G2018051000281615258832966404707' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'A2018051000210715258828675346581' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'B2018051000233015258830104844442' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `tw_content` FROM `btc_i18n` WHERE `i18n_id` = 'D2018051000384515258839253990379' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically, assuming $this from incompatible context D:\phpStudy\WWW\btc\pc\Application\Home\Controller\QuestionController.class.php 第 132 行.
+
+[ 2019-03-17T14:11:29+08:00 ] 127.0.0.1 /Home/Login/getBasics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001955s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004044s ]
+NOTIC: [2048] Declaration of Home\Controller\EmailController::register() should be compatible with Home\Controller\LoginController::register() D:\phpStudy\WWW\btc\pc\Application\Home\Controller\EmailController.class.php 第 255 行.
+NOTIC: [8192] Non-static method Home\Controller\EmailController::receive() should not be called statically, assuming $this from incompatible context D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 115 行.
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0076s ]
+SQL: SELECT `name`,`company_email`,`company_tel`,`logo_url` FROM `btc_home_info` WHERE ( id=10000000000000000000000000000000 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-03-17T14:11:30+08:00 ] 127.0.0.1 /Home/Login/getContactUs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002023s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005086s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `btc_i18n` [ RunTime:0.0062s ]
+SQL: SELECT `i18n_id`,`company_tel`,`company_email` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `TW_content` FROM `btc_i18n` WHERE `i18n_id` = 'z2018051614152915264513298476213' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-17T14:11:30+08:00 ] 127.0.0.1 /Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+
+[ 2019-03-17T14:11:31+08:00 ] 127.0.0.1 /Home/Login/getupdateLogo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002018s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004167s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0066s ]
+SQL: SELECT `background_url`,`logo_url`,`name` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0003s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically, assuming $this from incompatible context D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 129 行.
+
+[ 2019-03-17T14:11:32+08:00 ] 127.0.0.1 /Home/Login/getupdateLogo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001916s ]
+NOTIC: [8] Constant LANG_SET already defined D:\phpStudy\WWW\btc\pc\ThinkPHP\Library\Behavior\CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003980s ]
+SQL: SHOW COLUMNS FROM `btc_home_info` [ RunTime:0.0064s ]
+SQL: SELECT `background_url`,`logo_url`,`name` FROM `btc_home_info` WHERE `id` = '10000000000000000000000000000000'  [ RunTime:0.0006s ]
+NOTIC: [8192] Non-static method StatusCode::code() should not be called statically, assuming $this from incompatible context D:\phpStudy\WWW\btc\pc\Application\Home\Controller\LoginController.class.php 第 129 行.
+

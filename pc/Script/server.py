@@ -58,9 +58,40 @@ def build_price():
 				g_last_price = g_execute_price + random_price
 			else:
 				g_last_price = g_execute_price - random_price
-			pass
-			print 'number:' + str(db.open_number()) + ' minue:' + str(minue)
-			print(' dirction: %s, execute: %s, last: %s' % (dirction, g_execute_price, g_last_price))		
+			
+			'''@1
+			- 数据全部设置成功之后,首先先判断数据库是否存在该期号的开奖记录
+			- 如果没有则保存开奖记录
+			- 否则退出
+			+ 所需保存到数据表字段的数据:
+			  +------+-------------+-------------+----------+-----------+
+			  |number|last_dirction|execute_price|last_price|create_time|
+			  +------+-------------+-------------+----------+-----------+ 
+			'''
+			if not db.be_open_log():
+				# 开奖还未保存，先保存
+				dict_data = {
+					'number': db.open_number(),
+					'last_dirction': dirction,
+					'execute_price': g_execute_price,
+					'last_price' : g_last_price,
+					'create_time': time.time()
+				}
+				if db.add_open_log(dict_data):
+					'''@2
+					- 第一步添加开奖记录成功
+					- 进行第二步
+					- 更新交易的记录
+					+ 所需更新的数据表：btc_w_minlog
+					  - 字段：last_direction, last_money, execute_price, last_price
+					'''
+					print 'number:' + str(db.open_number()) + ' minue:' + str(minue)
+					print(' dirction: %s, execute: %s, last: %s' % (dirction, g_execute_price, g_last_price))
+				else:
+					# 添加开奖记录失败了
+					pass
+
+					
 		# 延时0.7s
 		time.sleep(0.7)
 

@@ -50,10 +50,36 @@ class Db:
 		return info[0]
 
 
-	# test
-	def test(self):
-		print self.open_direction()
+	# 判断是否存在开奖记录
+	def be_open_log(self):
+		cur_date  = time.strftime('%Y-%m-%d', time.localtime())
+		today_time = int(time.mktime(time.strptime(cur_date, '%Y-%m-%d')))	# 当日00:00:00 时间戳
+		start_time = today_time + 30
+		end_time   = today_time + 30 + 24 * 60 * 60
+
+		sql = "SELECT * FROM btc_w_openlog WHERE \
+				number = %d and create_time > %d and create_time < %d" \
+				% (self.open_number(), start_time, end_time)
+		
+		self._execute(sql)
+		result = self.cursor.fetchone()
+		if not result:
+			return 0
+		else:
+			return 1
 
 
-# db = Db()
-# db.test()
+	# 添加开奖记录
+	def add_open_log(self, dict_data):
+		sql = "INSERT INTO btc_w_openlog( \
+				last_direction, number, execute_price, last_price, create_time) \
+				VALUES (%s, %s, %s, %s, %s)" % \
+				(dict_data['last_direction'], dict_data['number'], dict_data['execute_price'], \
+					dict_data['last_price'], dict_data['create_time'])
+		try:
+			self._execute(sql)
+			self.db.commit()
+			return 1
+		except:
+			self.db.rollback()
+			return 0
