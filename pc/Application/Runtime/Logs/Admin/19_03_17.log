@@ -171,3 +171,63 @@ SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0058s ]
 SQL: SELECT * FROM `btc_w_openset` LIMIT 0,288   [ RunTime:0.0005s ]
 SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` LIMIT 1   [ RunTime:0.0002s ]
 
+[ 2019-03-17T16:14:45+08:00 ] 127.0.0.1 /Admin/Bocai/control.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002762s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0063s ]
+SQL: UPDATE `btc_w_openset` SET `number`='195',`set`='1' WHERE `number` = 195 [ RunTime:0.0004s ]
+
+[ 2019-03-17T16:14:46+08:00 ] 127.0.0.1 /Admin/Bocai/init.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004386s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` WHERE `set` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0066s ]
+SQL: SELECT `set` FROM `btc_w_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-03-17T16:14:49+08:00 ] 127.0.0.1 /Admin/Bocai/control.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003255s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0073s ]
+SQL: UPDATE `btc_w_openset` SET `number`='198',`set`='1' WHERE `number` = 198 [ RunTime:0.0003s ]
+
+[ 2019-03-17T16:14:50+08:00 ] 127.0.0.1 /Admin/Bocai/init.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002295s ]
+SQL: SHOW COLUMNS FROM `btc_admin` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_admin` WHERE `user_name` = 'admin001' AND `pass_word` = '4192d21d2e09a8f2b97c5467e8e5d3ce' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `admin_id` FROM `btc_admin` WHERE `user_name` = 'admin001' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_openset` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `btc_w_openset` WHERE `set` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `btc_w_set` [ RunTime:0.0066s ]
+SQL: SELECT `set` FROM `btc_w_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+

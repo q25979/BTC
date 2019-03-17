@@ -50,10 +50,13 @@ def build_price():
 				g_execute_price = close + random_price
 			else:
 				g_execute_price = close - random_price
+			# 生成执行价，把执行价已WebSocket方式返回前端
+			pass
 
 		# 生成成交价，并且保存数据库
-		if minue%5 == 0 and sec == 0:
-			dirction = db.open_direction()	# 开奖方向 0-涨  1-跌
+		if minue%5 == 0 and sec >= 0 and sec < 30:
+			dirction    = db.open_direction()	# 开奖方向 0-涨  1-跌
+			open_number = db.open_number()		# 开奖期号
 			if not dirction:
 				g_last_price = g_execute_price + random_price
 			else:
@@ -64,34 +67,45 @@ def build_price():
 			- 如果没有则保存开奖记录
 			- 否则退出
 			+ 所需保存到数据表字段的数据:
-			  +------+-------------+-------------+----------+-----------+
-			  |number|last_dirction|execute_price|last_price|create_time|
-			  +------+-------------+-------------+----------+-----------+ 
+			  +------+--------------+-------------+----------+-----------+
+			  |number|last_direction|execute_price|last_price|create_time|
+			  +------+--------------+-------------+----------+-----------+ 
 			'''
 			if not db.be_open_log():
 				# 开奖还未保存，先保存
 				dict_data = {
-					'number': db.open_number(),
-					'last_dirction': dirction,
-					'execute_price': g_execute_price,
-					'last_price' : g_last_price,
-					'create_time': time.time()
+					'number': int(open_number),
+					'last_direction': int(dirction),
+					'execute_price': float(g_execute_price),
+					'last_price' : float(g_last_price),
+					'create_time': int(time.time())
 				}
 				if db.add_open_log(dict_data):
 					'''@2
 					- 第一步添加开奖记录成功
 					- 进行第二步
-					- 更新交易的记录
+					- 更新交易的记录并且添加余额
 					+ 所需更新的数据表：btc_w_minlog
 					  - 字段：last_direction, last_money, execute_price, last_price
 					'''
-					print 'number:' + str(db.open_number()) + ' minue:' + str(minue)
+					dict_save_data = {
+						'buy_number': open_number, 
+						'last_direction': dirction, 
+						'execute_price': g_execute_price, 
+						'last_price': g_last_price
+					}
+					db.update_buy_status(dict_save_data)
+					# 状态全部更新成功，执行价和开奖信息用WebSocket返回
+					# pass
+					print 'number:' + str(open_number) + ' minue:' + str(minue)
 					print(' dirction: %s, execute: %s, last: %s' % (dirction, g_execute_price, g_last_price))
 				else:
 					# 添加开奖记录失败了
-					pass
+					print('%d Number lottery failed!' % (open_number))
+			else:
+				# 已经保存数据库不执行
+				pass
 
-					
 		# 延时0.7s
 		time.sleep(0.7)
 
