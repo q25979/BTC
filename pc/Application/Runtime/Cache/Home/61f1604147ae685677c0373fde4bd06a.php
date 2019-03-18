@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,10 +9,10 @@
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式--> 
 	<meta content="black" name="apple-mobile-web-app-status-bar-style">
-	<link rel="stylesheet" href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
-	<link rel="stylesheet" href="__PLUG-IN__/minirefresh/minirefresh.min.css" />
-	<script src="__PLUG-IN__/minirefresh/minirefresh.min.js"></script>
-	<script src="__JS__/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
+	<link rel="stylesheet" href="http://localhost:8081/Public/plug-in/minirefresh/minirefresh.min.css" />
+	<script src="http://localhost:8081/Public/plug-in/minirefresh/minirefresh.min.js"></script>
+	<script src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
 
 	<style>
 		body,ul,li,p,button,div,h3{padding:0;margin:0;}
@@ -33,8 +33,8 @@
 	<header>
 		<ul class="clearfix">
 			<li onclick="w.jump('/')">首頁</li>
-			<li onclick="w.jump('<{:U(m)}>')">微平臺</li>
-			<li onclick="w.jump('<{:U(trend)}>')">走勢</li>
+			<li onclick="w.jump('<?php echo U(m);?>')">微平臺</li>
+			<li onclick="w.jump('<?php echo U(trend);?>')">走勢</li>
 		</ul>
 	</header>
 	
@@ -58,10 +58,11 @@
 				window.location.href = url
 			},
 			init: function(callback) {
-				$.get('<{:U("getlog")}>', this.data, function(res) {
+				$.get('<?php echo U("getlog");?>', this.data, function(res) {
 					var html = ''
 					var d = res.data
 					if (callback) callback(res)
+					console.log(res)
 					
 					$('#minirefresh').css('display', 'block')
 					$('#loader').css('display', 'none')

@@ -207,48 +207,34 @@ var w = WMProgram = {
 	 */
 	setPrice: function() {
 		var self = this
-		this.delay(1000, function() {
-			var atime = ($('.time>div.number').text()).split(':')
-			var m = parseInt(atime[0])
-			var s = parseInt(atime[1])
-			var url   = self.h+self.uSetPrice
-			var lock = true	// 第一次刷新的时候执行价不执行返回
-			if (m==0 && s==0 && lock) {
-				lock = false
-				return ;
-			}
-			var execute = $('.execute-price>div:nth-last-child(1)')
-			var last = $('.last-price>div:nth-last-child(1)')
-			var executename = $('.execute-price>div:nth-child(1)')
-			var lastname = $('.last-price>div:nth-child(1)')
+		var execute = $('.execute-price>div:nth-last-child(1)')
+		var last = $('.last-price>div:nth-last-child(1)')
+		var executename = $('.execute-price>div:nth-child(1)')
+		var lastname = $('.last-price>div:nth-child(1)')
+		var ws = new WebSocket("ws://localhost:12585")
 
-			// 请求数据
-			if (m==0 && s<=30 && s>5) {
-				var number = $('.issue>.number').text()
-				$.get(url, function(res) {
-					sessionStorage.number = number
-					sessionStorage.executePrice = parseFloat(res.execute_price).toFixed(4)
-					sessionStorage.lastPrice = parseFloat(res.last_price).toFixed(4)
-				})
-				if ( sessionStorage.number
-					&& sessionStorage.number != null
-					&& sessionStorage.number != undefined
-					&& sessionStorage.executePrice
-					&& sessionStorage.executePrice != null 
-					&& sessionStorage.executePrice != undefined ) {
-					executename.text('第'+sessionStorage.number+'期-執行價')
-					execute.text(sessionStorage.executePrice)
-				}
-			}
-			if ( m==0 && s<2 && sessionStorage.lastPrice 
-				&& sessionStorage.lastPrice != null
-				&& sessionStorage.lastPrice != undefined ) {
-				lastname.text('第'+sessionStorage.number+'期-成交價')
-				last.text(sessionStorage.lastPrice)
-			}
-		})
-		// 判断是否支持Storage
-		if (typeof(Storage) === 'undefined') console.log('不支持Storage')
+		ws.open = function() {
+			console.log('Connection open ...')
+			ws.send('Hello')
+		}
+
+		ws.onmessage = function(evt) {
+			var json = JSON.parse(evt.data)
+			execute.text(json.execute_price.toFixed(4))
+			last.text(json.last_price.toFixed(4))
+			executename.text('第'+json.number+'期-執行價')
+			lastname.text('第'+json.number+'期-成交價')
+		}
+
+		ws.onclose = function() {
+			console.log('Connection closeed.')
+			self.setPrice()
+		}
+
+		ws.onerror = function(err) {
+			console.log(err)
+			self.setPrice()
+		}
 	},
 
 	/**
@@ -283,6 +269,7 @@ var w = WMProgram = {
 				layer.close(index)
 				layer.open({type: 2, content: '確認訂單中，請勿重複操作。'})
 				$.post(u, d, function(res) {
+					layer.closeAll()
 					layer.open({
 						content: res.msg,
 						btn: '確認'
@@ -395,7 +382,7 @@ var w = WMProgram = {
 				self.basics()	// 重新获取余额
 			}
 
-			// 页面渲染
+			// 倒计时页面渲染
 			obj.minue == 0
 				? $(".time>.number").css('color', self.color[1])
 				: $(".time>.number").css('color', self.color[0])

@@ -127,9 +127,6 @@ function getprice() {
 		var m = parseInt(atime[0])
 		var s = parseInt(atime[1])
 		
-		// 请求数据
-		if (m==0 && s<=32 && s>5) {
-		}
 		getClose()	// 获取收盘价
 	}
 }
@@ -144,6 +141,8 @@ function CountDown(timestamp) {
 		var obj = data.data;
 		if (obj.open) {
 			openfn()
+			layer.closeAll('dialog')
+			layer.alert('第'+obj.number+'期正在開獎，請注意查收!')
 		}
 
 		// 页面渲染
