@@ -31,3 +31,10 @@ header>ul>li{float:left;margin-right:0.9375em}
 .deal>.direction>.dealactive{background:#14B143;color:#fff;}
 .deal>.input>input{width:calc(100% - 1.375em);border:0.0625em solid #e2e5e7;height:2em;border-radius:0;padding:0.4em 0.625em;color:#555;-webkit-appearance:none;}
 .deal>.confirm{height:2.75em;line-height:2.75em;background:#14B143;color:white;text-align:center;margin-bottom:15em;}
+
+/*去除input加减号*/
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none;appearance: none;margin: 0;}
+/* 火狐 */
+input{-moz-appearance:textfield;}

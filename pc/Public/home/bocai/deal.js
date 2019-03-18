@@ -36,7 +36,7 @@ $(function() {
 function init() {
 	setCountDown()	// 设置倒计时
 	openfn()		// 开盘
-	// getprice()		// 获取价格
+	getprice()		// 获取价格
 	getRealtimePrice()
 }
 
@@ -74,7 +74,7 @@ function getdeallog() {
  */
 function openfn() {
 	$('.refresh').text("數據獲取中...")
-	getbalance();	// 获取余额
+	getbalance()	// 获取余额
 	getdeallog()	// 获取交易记录
 	getorder()		// 获取往期记录
 }
@@ -92,15 +92,26 @@ function getRealtimePrice() {
 	}
 
 	ws.onmessage = function(evt) {
-		console.log(evt)
+		var json = JSON.parse(evt.data)
+		var execute = $('#executePrice>div:nth-last-child(1)')
+		var last = $('#lastPrice>div:nth-last-child(1)')
+		var executename = $('#executePrice>div:nth-child(1)')
+		var lastname = $('#lastPrice>div:nth-child(1)')
+
+		execute.text(json.execute_price.toFixed(4))
+		last.text(json.last_price.toFixed(4))
+		executename.text('第'+json.number+'期-執行價')
+		lastname.text('第'+json.number+'期-成交價')
 	}
 
 	ws.onclose = function() {
 		console.log('Connection closeed.')
+		getRealtimePrice()
 	}
 
 	ws.onerror = function(err) {
 		console.log(err)
+		getRealtimePrice()
 	}
 }
 
@@ -115,23 +126,9 @@ function getprice() {
 		var atime = ($('.time>div:nth-last-child(1)').text()).split(':')
 		var m = parseInt(atime[0])
 		var s = parseInt(atime[1])
-		if (m==0 && s==0) return ;
-		var url   = config.host_path+'/home/bocai/getprice'
-		var ashow = ['', '']	// 0-执行价  1-成交价
-		var execute = $('#executePrice>div:nth-last-child(1)')
-		var last = $('#lastPrice>div:nth-last-child(1)')
-		var executename = $('#executePrice>div:nth-child(1)')
-		var lastname = $('#lastPrice>div:nth-child(1)')
-
+		
 		// 请求数据
 		if (m==0 && s<=32 && s>5) {
-			var number = $('#openNumber').text()
-			$.get(url, function(res) {
-				executename.text('第'+number+'期-執行價')
-				execute.text(res.execute_price)
-				lastname.text('第'+number+'期-成交價')
-				last.text(res.last_price)
-			})
 		}
 		getClose()	// 获取收盘价
 	}

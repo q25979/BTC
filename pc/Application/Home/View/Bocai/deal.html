@@ -35,11 +35,11 @@
 				</div>
 				<div class="b">
 					<div>
-						<div>當前期數</div>
+						<div>當前期號</div>
 						<div class="label-bg" id="openNumber">00</div>
 					</div>
 					<div>
-						<div>餘額</div>
+						<div>當前餘額</div>
 						<div class="label-bg" id="balance">00.00</div>
 					</div>
 				</div>
