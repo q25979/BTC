@@ -84,7 +84,7 @@ function openfn() {
  * @return {[type]} [description]
  */
 function getRealtimePrice() {
-	var ws = new WebSocket("ws://localhost:12585")
+	var ws = new WebSocket(config.ws_price)
 
 	ws.open = function() {
 		console.log('Connection open ...')

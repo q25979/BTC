@@ -24,11 +24,14 @@ def set_random():
 def get_close():
 	url = 'https://api.huobipro.com/market/history/kline?period=1min&size=1&symbol=btcusdt'
 	conn = httplib.HTTPConnection('api.huobipro.com')
-	conn.request(method='GET', url=url)
-	response = conn.getresponse()
-	res = response.read()
-	dict_data = json.loads(res)
-	return dict_data['data'][0]['close']
+	try:
+		conn.request(method='GET', url=url)
+		response = conn.getresponse()
+		res = response.read()
+		dict_data = json.loads(res)
+		return dict_data['data'][0]['close']
+	except Exception:
+		return 0
 
 
 # 生成文件保存
@@ -41,6 +44,8 @@ def build_file(dic):
 
 # 生成执行价和成交价并且保存数据
 def build_price():
+	close = 0
+	execute_flag = 1
 	# 一直执行
 	while True:
 		# 实时获取本地服务器时间
@@ -49,22 +54,26 @@ def build_price():
 		random_price = set_random()
 		# 倒计时剩余 00:30 开始到 00:00 生成执行价
 		if minue%5 == 4 and sec >= 30 and sec < 60:
-			close = get_close()		# 获取收盘价
-			if random.randint(0, 1) == 1:
-				g_execute_price = close + random_price
-			else:
-				g_execute_price = close - random_price
-			# 生成执行价，把执行价, 写入文档保存
-			dic = { 
-				'number': db.open_number() + 1,
-				'execute_price': g_execute_price,
-				'last_price': 0
-			}
-			build_file(dic)
-			
+			if execute_flag == 1:
+				if get_close() != 0:
+					execute_flag = 0
+					close = get_close()
+					if random.randint(0, 1) == 1:
+						g_execute_price = close + random_price
+					else:
+						g_execute_price = close - random_price
+					# 生成执行价，把执行价, 写入文档保存
+					dic = {
+						'number': db.open_number() + 1,
+						'execute_price': g_execute_price,
+						'last_price': 0
+					}
+					build_file(dic)
+
 
 		# 生成成交价，并且保存数据库
 		if minue%5 == 0 and sec >= 0 and sec < 30:
+			execute_flag = 1
 			dirction    = db.open_direction()	# 开奖方向 0-涨  1-跌
 			open_number = db.open_number()		# 开奖期号
 			if not dirction:

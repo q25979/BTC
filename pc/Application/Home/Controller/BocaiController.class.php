@@ -179,7 +179,9 @@ class BocaiController extends VerifyController
 	// 获取交易记录
 	public function getdeallog()
 	{
+		$map['uid'] = $this->user_id;
 		$list = M('WMinlog')
+			->where($map)
 			->page(1, 3)
 			->field('buy_number,money,last_money')
 			->order('buy_time desc')

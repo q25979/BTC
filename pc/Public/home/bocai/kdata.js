@@ -126,11 +126,14 @@ function runWebSocket() {
 						l.addClass('rise').removeClass('fall')
 						h.addClass('rise').removeClass('fall')
 					}
-					c.text(parseFloat(eData[eData.length-1].close).toFixed(4))
-					o.text(parseFloat(eData[eData.length-1].open).toFixed(4))
-					l.text(parseFloat(eData[eData.length-1].low).toFixed(4))
-					h.text(parseFloat(eData[eData.length-1].high).toFixed(4))
-					localStorage.close = parseFloat(eData[eData.length-1].close).toFixed(4)
+					c.text(parseFloat(eData[eData.length-1].close).toFixed(2))
+					o.text(parseFloat(eData[eData.length-1].open).toFixed(2))
+					l.text(parseFloat(eData[eData.length-1].low).toFixed(2))
+					h.text(parseFloat(eData[eData.length-1].high).toFixed(2))
+					let round = Math.round(Math.random()*100)/10000
+					let close = parseFloat(eData[eData.length-1].close).toFixed(4)
+					if (parseFloat(close) > 0)
+						localStorage.close = parseFloat(parseFloat(close) + parseFloat(round)).toFixed(4)
 					localStorage.cClose = c.css('color')
 				}
 			}

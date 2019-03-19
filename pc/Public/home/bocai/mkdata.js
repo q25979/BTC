@@ -211,7 +211,7 @@ var w = WMProgram = {
 		var last = $('.last-price>div:nth-last-child(1)')
 		var executename = $('.execute-price>div:nth-child(1)')
 		var lastname = $('.last-price>div:nth-child(1)')
-		var ws = new WebSocket("ws://localhost:12585")
+		var ws = new WebSocket(config.ws_price)
 
 		ws.open = function() {
 			console.log('Connection open ...')
