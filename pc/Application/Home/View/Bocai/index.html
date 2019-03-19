@@ -10,12 +10,11 @@
 	<script>
 		// 判断该使用什么样式 768 900 1080 手机
 		var m = navigator.userAgent.match(/IEMobile|BlackBerry|Android|iPod|iPhone|iPad/i)
-		console.log(m)
 		// 手机设备
 		if (m) window.location.href = '<{:U("m")}>'
 	</script>
 	<script src="__PUBLIC__/home/bocai/echarts.min.js"></script>
-	<script src="https://cdn.bootcss.com/pako/1.0.6/pako.min.js"></script>
+	<script src="__PUBLIC__/home/bocai/pako.min.js"></script>
 	<script src="__PUBLIC__/home/bocai/kdata.js"></script>
 </head>
 <body>
