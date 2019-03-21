@@ -10,8 +10,6 @@ import random
 
 # 定义全局变量
 db = Db()
-g_execute_price = 0.0		# 执行价
-g_last_price    = 0.0		# 成交价
 
 
 # 获取随机数，设置 0.0000 ~ 0.9999 之间的随机数
@@ -46,6 +44,8 @@ def build_file(dic):
 def build_price():
 	close = 0
 	execute_flag = 1
+	g_execute_price = 0		# 执行价
+	g_last_price    = 0		# 成交价
 	# 一直执行
 	while True:
 		# 实时获取本地服务器时间

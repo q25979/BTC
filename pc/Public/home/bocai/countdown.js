@@ -27,6 +27,7 @@ self.onmessage = function(ev) {
 		data.minue = minue
 		data.second = second
 		data.number = self.setnum(++timestamp)
+		data.number = data.number == 0 ? 288 : data.number
 		self.postMessage(data)	// 数据返回
 		timer = setTimeout(timeset, 1000)	// 时间
 	}

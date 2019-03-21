@@ -372,13 +372,11 @@ var w = WMProgram = {
 		this.worker.onmessage = function(data) {
 			var obj = data.data;
 			if (obj.open) {
-				if (sessionStorage.number) {
-					layer.closeAll()
-					layer.open({
-						content: '第'+sessionStorage.number+'期開獎啦，請注意查收。',
-						btn: '確認'
-					})
-				}
+				layer.closeAll()
+				layer.open({
+					content: '第'+(obj.number-1)+'期開獎啦，請注意查收。',
+					btn: '確認'
+				})
 				self.basics()	// 重新获取余额
 			}
 

@@ -142,7 +142,7 @@ function CountDown(timestamp) {
 		if (obj.open) {
 			openfn()
 			layer.closeAll('dialog')
-			layer.alert('第'+obj.number+'期正在開獎，請注意查收!')
+			layer.alert('第'+(obj.number-1)+'期正在開獎，請注意查收!')
 		}
 
 		// 页面渲染

@@ -139,7 +139,9 @@ class BocaiController extends VerifyController
 		$post['order_id'] = $order;
 
 		$h = (int)date('H', $time); $mm = (int)date('i', $time); $s = (int)date('s', $time);
-		$post['buy_number'] = (int)(($h*60+$mm)/5+1);	// 购买期数
+		$buynumber = (int)(($h*60+$mm)/5+1);
+		$buynumber = $buynumber == 0 ? 288 : $buynumber;
+		$post['buy_number'] = $buynumber;	// 购买期数
 		$info = M('WMinlog')->add($post);
 		if ($info == 0) {
 			$account->rollback();
@@ -235,6 +237,7 @@ class BocaiController extends VerifyController
 				$list[$k]['buy_time'] = date('Y/m/d H:i', $v['buy_time']);
 				$hour  = (int)(((int)$v['buy_number']*5)/60);
 				$minue = (int)(((int)$v['buy_number']*5)%60);
+				$hour  = $hour == 24 ? 0 : $hour; 
 				$hour  = $hour < 10 ? '0'.$hour : $hour;
 				$minue = $minue < 10 ? '0'.$minue : $minue;
 				$list[$k]['last_time'] = date('Y/m/d', $v['buy_time']).' '.$hour.':'.$minue;

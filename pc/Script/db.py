@@ -39,7 +39,10 @@ class Db:
 	def open_number(self):
 		hour  = int(time.strftime('%H', time.localtime()))
 		minue = int(time.strftime('%M', time.localtime()))
-		return (hour*60+minue)/5
+		number = (int)((hour*60+minue)/5)
+		if number == 0:
+			number = 288
+		return number
 
 
 	# 设置当前开盘方向
