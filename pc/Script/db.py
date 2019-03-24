@@ -14,8 +14,8 @@ import time
 class Db:
 	__host = '127.0.0.1'	# 主机地址
 	__user = 'root'			# 数据库账号
-	__pass = 'root'			# 数据库密码
-	__dbname = 'btn'		# 数据名称
+	__pass = 'Aa123123'		# 数据库密码
+	__dbname = 'btc'		# 数据名称
 	
 
 	# 构造函数
@@ -60,15 +60,22 @@ class Db:
 		start_time = today_time + 30
 		end_time   = today_time + 30 + 24 * 60 * 60
 
+		if (self.open_number() == 288):
+			start_time = today_time - 30
+			end_time   = today_time + 30
+
 		sql = "SELECT * FROM btc_w_openlog WHERE \
 				number = %d and create_time > %d and create_time < %d" \
 				% (self.open_number(), start_time, end_time)
 		
-		self._execute(sql)
-		result = self.cursor.fetchone()
-		if not result:
-			return 0
-		else:
+		try:
+			self._execute(sql)
+			result = self.cursor.fetchone()
+			if not result:
+				return 0
+			else:
+				return 1
+		except:
 			return 1
 
 

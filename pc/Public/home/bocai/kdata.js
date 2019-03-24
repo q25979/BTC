@@ -11,13 +11,14 @@ var	wsUrl  = 'wss://api.huobi.pro/ws'	// WebSocket k线图地址
 var	ws = null		// WebSocket
 var	wsLock = false 	// Socket锁防止重复
 var dealArea = ['1000px', '500px']	// 弹出层大小
+var worker = null
 
 $(function() {
 	k = echarts.init(document.getElementById('k'))
 	k.showLoading()
 	createWebSocket()	// 创建webSocket
 	kEvent()	// K线图事件
-	worker()	// 时间设置
+	workertime()	// 时间设置
 
 	// 窗口关闭事件
 	window.onbeforeunload = function() {
@@ -47,6 +48,20 @@ function kEvent() {
 	k.on('dataZoom', function(ev) {
 		zoom.start = ev.batch[0].start
 		zoom.end   = ev.batch[0].end
+	})
+}
+
+/**
+ * 使用worker多线程设置时间
+ */
+function workertime() {
+	if (worker != null) worker.terminate()
+	$.get(config.host_path+'/home/bocai/timestamp', function(timestamp) {
+		worker = new Worker("/Public/home/bocai/time.js")
+		worker.postMessage(timestamp)
+		worker.onmessage = function(data) {
+			$("#yi-server-time").html(data.data)
+		}
 	})
 }
 
@@ -110,6 +125,7 @@ function runWebSocket() {
 					k.hideLoading()
 					k.setOption(koption(eData))
 					k.resize()
+					workertime()
 
 					var c = $('.yi-price li:nth-child(1)'),
 						o = $('.yi-price li:nth-child(2)>.yi-number'),
@@ -139,19 +155,6 @@ function runWebSocket() {
 			}
 		}
 	}
-}
-
-/**
- * 使用worker多线程设置时间
- */
-function worker() {
-	$.get(config.host_path+'/home/bocai/timestamp', function(timestamp) {
-		var worker = new Worker("/Public/home/bocai/time.js")
-		worker.postMessage(timestamp)
-		worker.onmessage = function(data) {
-			$("#yi-server-time").html(data.data)
-		}
-	})
 }
 
 /**

@@ -2,7 +2,7 @@ var otherInput = 'none';	// 金额的输入框是否显示并且判断是否使�
 var tcolor = ['#228B22', '#D83F4E'];	// 开盘数据
 var openTime = 5;			// 设置开盘时间5分钟一次
 var tableDealLog = null;	// 表格
-var worker = null;			// 倒计时Worker
+var workertime = null;			// 倒计时Worker
 
 $(function() {
 	// 金额切换
@@ -44,7 +44,6 @@ function init() {
  * 设置倒计时
  */
 function setCountDown() {
-	if (worker != null) worker.terminate()
 	$.get(config.host_path + '/home/bocai/timestamp', function(timestamp) {
 		CountDown(timestamp)
 	})
@@ -74,6 +73,7 @@ function getdeallog() {
  */
 function openfn() {
 	$('.refresh').text("數據獲取中...")
+	setCountDown()
 	getbalance()	// 获取余额
 	getdeallog()	// 获取交易记录
 	getorder()		// 获取往期记录
@@ -135,9 +135,10 @@ function getprice() {
  * 设置倒计时
  */
 function CountDown(timestamp) {
-	worker = new Worker("/Public/home/bocai/countdown.js")
-	worker.postMessage(timestamp)
-	worker.onmessage = function(data) {
+	if (workertime != null) workertime.terminate()
+	workertime = new Worker("/Public/home/bocai/countdown.js")
+	workertime.postMessage(timestamp)
+	workertime.onmessage = function(data) {
 		var obj = data.data;
 		if (obj.open) {
 			openfn()

@@ -55,21 +55,25 @@ def build_price():
 		# 倒计时剩余 00:30 开始到 00:00 生成执行价
 		if minue%5 == 4 and sec >= 30 and sec < 60:
 			if execute_flag == 1:
-				if get_close() != 0:
+				close = get_close()
+				if close != 0:
 					execute_flag = 0
-					close = get_close()
 					if random.randint(0, 1) == 1:
 						g_execute_price = close + random_price
 					else:
 						g_execute_price = close - random_price
+					g_execute_price = round(g_execute_price, 4)
 					# 生成执行价，把执行价, 写入文档保存
-					dic = {
-						'number': db.open_number() + 1,
-						'execute_price': g_execute_price,
-						'last_price': 0
-					}
-					build_file(dic)
-
+					if int(g_execute_price) > 1:
+						dic = {
+							'number': db.open_number() + 1,
+							'execute_price': g_execute_price,
+							'last_price': 0
+						}
+						build_file(dic)
+					else:
+						# 获取数据失败，重新获取
+						execute_flag = 1
 
 		# 生成成交价，并且保存数据库
 		if minue%5 == 0 and sec >= 0 and sec < 30:
@@ -90,42 +94,48 @@ def build_price():
 			  |number|last_direction|execute_price|last_price|create_time|
 			  +------+--------------+-------------+----------+-----------+ 
 			'''
-			if not db.be_open_log():
+			l_execute_price = g_execute_price
+			l_last_price = round(g_last_price, 4)
+			if db.be_open_log() == 0:
 				# 开奖还未保存，先保存
 				dict_data = {
 					'number': int(open_number),
 					'last_direction': int(dirction),
-					'execute_price': float(g_execute_price),
-					'last_price' : float(g_last_price),
+					'execute_price': l_execute_price,
+					'last_price' : l_last_price,
 					'create_time': int(time.time())
 				}
-				if db.add_open_log(dict_data):
-					'''@2
-					- 第一步添加开奖记录成功
-					- 进行第二步
-					- 更新交易的记录并且添加余额
-					+ 所需更新的数据表：btc_w_minlog
-					  - 字段：last_direction, last_money, execute_price, last_price
-					'''
-					dict_save_data = {
-						'buy_number': open_number, 
-						'last_direction': dirction, 
-						'execute_price': g_execute_price, 
-						'last_price': g_last_price
-					}
-					db.update_buy_status(dict_save_data)
-					# 状态全部更新成功，执行价和开奖信息用WebSocket返回
-					dic = {
-						'number': open_number,
-						'execute_price': g_execute_price,
-						'last_price': g_last_price
-					}
-					build_file(dic)
-					print 'number:' + str(open_number) + ' minue:' + str(minue)
-					print(' direction: %s, execute: %s, last: %s' % (dirction, g_execute_price, g_last_price))
+
+				if int(l_execute_price) > 1 and int(l_last_price) > 1:
+					if db.add_open_log(dict_data):
+						'''@2
+						- 第一步添加开奖记录成功
+						- 进行第二步
+						- 更新交易的记录并且添加余额
+						+ 所需更新的数据表：btc_w_minlog
+						  - 字段：last_direction, last_money, execute_price, last_price
+						'''
+						dict_save_data = {
+							'buy_number': open_number,
+							'last_direction': dirction,
+							'execute_price': l_execute_price,
+							'last_price': l_last_price
+						}
+						db.update_buy_status(dict_save_data)
+						# 状态全部更新成功，执行价和开奖信息用WebSocket返回
+						dic = {
+							'number': open_number,
+							'execute_price': l_execute_price,
+							'last_price': l_last_price
+						}
+						build_file(dic)
+						print 'number:' + str(open_number) + ' minue:' + str(minue)
+						print(' direction: %s, execute: %s, last: %s' % (dirction, l_execute_price, l_last_price))
+					else:
+						# 添加开奖记录失败了
+						print('%d Number lottery failed!' % (open_number))
 				else:
-					# 添加开奖记录失败了
-					print('%d Number lottery failed!' % (open_number))
+					pass
 			else:
 				# 已经保存数据库不执行
 				pass

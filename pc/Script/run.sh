@@ -1,4 +1,4 @@
 #!/bin/bash
 
-nohup python build.py & nohup python server.py
+python build.py & python server.py
 echo 'Script runing...'
