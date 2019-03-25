@@ -11,7 +11,7 @@ var	wsUrl  = 'wss://api.huobi.pro/ws'	// WebSocket k线图地址
 var	ws = null		// WebSocket
 var	wsLock = false 	// Socket锁防止重复
 var dealArea = ['1000px', '500px']	// 弹出层大小
-var worker = null
+var worker_time = null
 
 $(function() {
 	k = echarts.init(document.getElementById('k'))
@@ -55,11 +55,11 @@ function kEvent() {
  * 使用worker多线程设置时间
  */
 function workertime() {
-	if (worker != null) worker.terminate()
 	$.get(config.host_path+'/home/bocai/timestamp', function(timestamp) {
-		worker = new Worker("/Public/home/bocai/time.js")
-		worker.postMessage(timestamp)
-		worker.onmessage = function(data) {
+		if (worker_time != null) worker_time.terminate()
+		worker_time = new Worker("/Public/home/bocai/time.js")
+		worker_time.postMessage(timestamp)
+		worker_time.onmessage = function(data) {
 			$("#yi-server-time").html(data.data)
 		}
 	})

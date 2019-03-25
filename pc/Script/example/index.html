@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><style type="text/css">.responses {
+  height: 500px;
+  width: 100%;
+  border: 1px solid #808080;
+  overflow-y: auto;
+  vertical-align: bottom;
+}
+.responses .response {
+  margin: 10px;
+  border: 1px solid #f00;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 10px;
+}
+</style><h1>test</h1><div class="responses"></div><input type="text" id="msg"><button class="toto">Send</button><script type="text/javascript">
+(function() {
+  var q, ws,
+    _this = this;
+
+  ws = new WebSocket('wss://bitao999.com:9999/');
+
+  ws.onopen = function() {};
+
+  ws.onmessage = function(e) {
+    var msg;
+    msg = e.data;
+    return console.log(document.querySelector('.responses').innerHTML += "<div class='response'>" + msg + "</div>");
+  };
+
+  ws.onclose = function() {
+    return ws.send("disconnected");
+  };
+
+  q = document.querySelector('button.toto');
+
+  q.onclick = function() {
+    var msg;
+    msg = document.querySelector('input').value;
+    ws.send(msg);
+    return document.querySelector('input').value = "";
+  };
+
+}).call(this);
+</script></body></html>

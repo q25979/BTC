@@ -88,10 +88,17 @@ function getRealtimePrice() {
 
 	ws.open = function() {
 		console.log('Connection open ...')
-		ws.send('Hello')
+		ws.send('get')
+		var delay = new Worker("/Public/home/bocai/countdown.js")
+		worker.postMessage(900)
+		worker.onmessage = function(data) {
+			console.log(data)
+			ws.send('get')
+		}
 	}
 
 	ws.onmessage = function(evt) {
+		console.log(evt.data)
 		var json = JSON.parse(evt.data)
 		var execute = $('#executePrice>div:nth-last-child(1)')
 		var last = $('#lastPrice>div:nth-last-child(1)')

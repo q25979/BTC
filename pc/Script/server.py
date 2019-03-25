@@ -35,7 +35,7 @@ def message_received(client, server, message):
 
 # 主函数执行
 print 'Service runing...'
-server = WebsocketServer(PORT, '64.202.184.158')
+server = WebsocketServer(PORT, 'bitao999.com')
 server.set_fn_new_client(new_client)
 server.set_fn_client_left(client_left)
 server.set_fn_message_received(message_received)
