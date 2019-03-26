@@ -3,6 +3,7 @@ var tcolor = ['#228B22', '#D83F4E'];	// 开盘数据
 var openTime = 5;			// 设置开盘时间5分钟一次
 var tableDealLog = null;	// 表格
 var workertime = null;			// 倒计时Worker
+var workerdelay = null;
 
 $(function() {
 	// 金额切换
@@ -85,20 +86,13 @@ function openfn() {
  */
 function getRealtimePrice() {
 	var ws = new WebSocket(config.ws_price)
-
 	ws.open = function() {
 		console.log('Connection open ...')
 		ws.send('get')
-		var delay = new Worker("/Public/home/bocai/countdown.js")
-		worker.postMessage(900)
-		worker.onmessage = function(data) {
-			console.log(data)
-			ws.send('get')
-		}
 	}
 
 	ws.onmessage = function(evt) {
-		console.log(evt.data)
+		if (evt.data == "connection successful") return ;
 		var json = JSON.parse(evt.data)
 		var execute = $('#executePrice>div:nth-last-child(1)')
 		var last = $('#lastPrice>div:nth-last-child(1)')
@@ -113,12 +107,21 @@ function getRealtimePrice() {
 
 	ws.onclose = function() {
 		console.log('Connection closeed.')
+		if (workerdelay != null) workerdelay.terminate()
 		getRealtimePrice()
 	}
 
 	ws.onerror = function(err) {
 		console.log(err)
+		if (workerdelay != null) workerdelay.terminate()
 		getRealtimePrice()
+	}
+
+	if (workerdelay != null) workerdelay.terminate()
+	workerdelay = new Worker("/Public/home/bocai/countdown.js")
+	workerdelay.postMessage(900)
+	workerdelay.onmessage = function(data) {
+		if (ws.readyState == 1) ws.send('get')
 	}
 }
 

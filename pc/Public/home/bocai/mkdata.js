@@ -28,6 +28,7 @@ var w = WMProgram = {
 	},
 
 	worker: null,	// 定时器
+	workerdelay: null,
 
 	color:  ['#14B143', '#EF232A'],		// 颜色代码 0-涨  1-跌
 	aTimeK: ['1min', '5min', '30min', '60min', '1day'],	// 时间K
@@ -219,6 +220,7 @@ var w = WMProgram = {
 		}
 
 		ws.onmessage = function(evt) {
+			if (evt.data == "connection successful") return ;
 			var json = JSON.parse(evt.data)
 			execute.text(json.execute_price.toFixed(4))
 			last.text(json.last_price.toFixed(4))
@@ -228,12 +230,21 @@ var w = WMProgram = {
 
 		ws.onclose = function() {
 			console.log('Connection closeed.')
+			if (self.workerdelay != null) self.workerdelay.terminate()
 			self.setPrice()
 		}
 
 		ws.onerror = function(err) {
 			console.log(err)
+			if (self.workerdelay != null) self.workerdelay.terminate()
 			self.setPrice()
+		}
+
+		if (this.workerdelay != null) this.workerdelay.terminate()
+		this.workerdelay = new Worker("/Public/home/bocai/countdown.js")
+		this.workerdelay.postMessage(900)
+		this.workerdelay.onmessage = function(data) {
+			if (ws.readyState == 1) ws.send('get')
 		}
 	},
 
