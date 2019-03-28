@@ -137,6 +137,7 @@ class BocaiController extends VerifyController {
             $get = I('get.');
             $list = $wminlog
                 ->page($get['page'], $page['limit'])
+                ->order('create_time desc')
                 ->join('btc_user ON btc_w_minlog.uid = btc_user.user_id')
                 ->field('btc_user.user_name, btc_w_minlog.*')
                 ->select();
@@ -190,6 +191,7 @@ class BocaiController extends VerifyController {
         $list = $wminlog
             ->where($map)
             ->page($get['page'], $get['limit'])
+            ->order('create_time desc')
             ->join('btc_user ON btc_w_minlog.uid = btc_user.user_id')
             ->field('btc_user.user_name, btc_w_minlog.*')
             ->select();
