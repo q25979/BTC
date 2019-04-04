@@ -12,12 +12,6 @@ use Think\Controller;
 
 class LoginController extends Controller {
     public function index(){
-        $key = I('get.key');
-        if ($key != 'BTW') {
-            echo "nginx 2.10.2/404";
-            return false;
-        }
-
         $this->display();
     }
 

@@ -1,0 +1,20 @@
+[ 2019-04-02T17:34:18+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001564s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004604s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0091s ]
+
+[ 2019-04-02T17:34:26+08:00 ] 127.0.0.1 /Float/Index/getdata?type=twd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004025s ]
+SQL: SHOW COLUMNS FROM `btc_exchange` [ RunTime:0.0057s ]
+

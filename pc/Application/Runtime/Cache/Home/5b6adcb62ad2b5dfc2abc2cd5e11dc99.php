@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><head>
 	<meta charset="UTF-8">
-	<title>Blnance幣淘 港臺數位資產交易平臺</title>
+	<title>BITAO幣淘</title>
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -1107,12 +1107,12 @@
     	<div class="footer-main">
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
-    			<a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
+    			<!-- <a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
     			<a href="http://localhost:8081/Home/PDF/index/type/privacy">
                     <?php echo (L("_LOGIN_PRIVACY_POLICY_")); ?>
-                </a><span>|</span>
+                </a><span>|</span> -->
     			<a href="http://localhost:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
     			<a href="http://localhost:8081/Home/ContactUs">

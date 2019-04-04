@@ -24,7 +24,7 @@ class BuyController extends VerifyController {
 		$map['is_deleted'] = IS_NOT_DELETED;
 		$data = $user->where($map)->count();
 		
-		if($data == 3) {
+		if($data >= 3) {
 			$this->ajaxReturn(\StatusCode::code('拥有购买权限！'));
 		} else {
 			$this->ajaxReturn(\StatusCode::code('没有购买权限！'));
