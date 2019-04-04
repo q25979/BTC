@@ -23,7 +23,7 @@ class SellController extends VerifyController {
 		$res = $bank->where($map)->field('bank_num')->select();
 		$data = $user->where($map)->count();
 		
-		if($data == 3 && !empty($res)) {
+		if($data >= 3 && !empty($res)) {
 			$this->ajaxReturn(\StatusCode::code('拥有出售权限！'));
 		} else {
 			$this->ajaxReturn(\StatusCode::code('没有出售权限！'));
