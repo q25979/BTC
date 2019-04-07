@@ -110,6 +110,10 @@ class Db:
 		start_time = today_time + 30
 		end_time   = today_time + 30 + 24 * 60 * 60
 
+		if dict_data['buy_number'] == 288:
+			start_time = today_time - (24 * 60 * 60) + 30
+			end_time  = today_time + 30
+
 		# 查询购买本期的人的ID
 		sql = "SELECT `id`, `uid`, `money`, `buy_direction` FROM btc_w_minlog WHERE \
 				buy_number = %d and buy_time > %d and buy_time < %d and last_direction = -1" \
