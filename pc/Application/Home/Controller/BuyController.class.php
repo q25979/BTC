@@ -18,7 +18,6 @@ class BuyController extends VerifyController {
 	 * Url: /Home/Buy/check
 	 */
 	public function check() {
-
 		$user = M('User_attach');
 		$map['user_id'] = $this->user_id;
 		$map['is_deleted'] = IS_NOT_DELETED;

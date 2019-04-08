@@ -70,6 +70,17 @@ class IndexController extends VerifyController {
             $this->ajaxReturn(\StatusCode::code(-1));
         }
     }
+
+    /**
+     * 获取浮动数据
+     * @return [type] [description]
+     */
+    public function  getFloatData() {
+        $info = M('HomeInfo')->where('id='.HOME_INFO_ID)
+            ->field('buy_float, sell_float')
+            ->find();
+        $this->ajaxReturn($info);
+    }
     
     /**
      * 生成提現訂單

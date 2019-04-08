@@ -296,6 +296,8 @@
 
 			let twd = parseFloat($('#widget-coin-field').val()) * BtcUnitPrice
 			let twdother = parseFloat($('#widget-coin-field-ETH').val()) * EthUnitPrice
+			twd += parseFloat(localStorage.buyfloat)*100
+			twdother += parseFloat(localStorage.buyfloat)*100
 			// 比特币,输入框
 			sg.isEmpty($('#widget-coin-field').val())
 				? ''
@@ -345,11 +347,13 @@
 				data.unit_price = parseFloat(data.unit_price)*twd/ftmp
 				data.price = (parseFloat(data.price)*twd/ftmp).toFixed(4)
 
-				// 判断余额不足
-				if (data.price > parseFloat(cashBalance1)) {
-					alert('<{$Think.lang._ACCOUNT_SELL_BALANCE_}> NT$:'+data.price)
-					callback({code: -1000})
-					return false
+				if (data.payment_type != 1) {
+					// 判断余额不足
+					if (data.price > parseFloat(cashBalance1)) {
+						alert('<{$Think.lang._ACCOUNT_SELL_BALANCE_}> NT$:'+data.price)
+						callback({code: -1000})
+						return false
+					}
 				}
 
 				data.sign = hex_md5("__VERIFY_STR__" + data.currency_type + data.money_currency_type + data.nonce_str + data.number + data.payment_type + data.price + data.unit_price)
@@ -490,7 +494,8 @@
 		//比特币左输入框
 		$("#widget-coin-field").keyup (function(){
 			btc_number = $("#widget-coin-field").val();
-			btc_price = btc_number*BtcUnitPrice;
+			btc_price  = btc_number*BtcUnitPrice;
+			btc_price += parseFloat(localStorage.buyfloat)*100
 			$("#widget-coin-twd").val(btc_price.toFixed(2));
 			BtcNotNull();
 			if($("#widget-coin-field").val() == ""){
@@ -501,6 +506,7 @@
 		//比特币右输入框
 		$("#widget-coin-twd").keyup (function(){
 			btc_price = $("#widget-coin-twd").val();
+			btc_price += parseFloat(localStorage.buyfloat)*100
 			btc_number = btc_price/BtcUnitPrice;
 			$("#widget-coin-field").val(btc_number.toFixed(4));
 			
@@ -514,7 +520,8 @@
 		//以太币左输入框
 		$("#widget-coin-field-ETH").keyup (function(){
 			eth_number = $("#widget-coin-field-ETH").val();
-			eth_price = eth_number*EthUnitPrice;
+			eth_price  = eth_number*EthUnitPrice;
+			eth_price += parseFloat(localStorage.buyfloat)*100
 			$("#widget-coin-twd-ETH").val(eth_price.toFixed(2));
 
 			EthNotNull();
@@ -526,6 +533,7 @@
 		//以太币右输入框
 		$("#widget-coin-twd-ETH").keyup (function(){
 			eth_price = $("#widget-coin-twd-ETH").val();
+			eth_price += parseFloat(localStorage.buyfloat)*100
 			eth_number = eth_price/EthUnitPrice;
 			$("#widget-coin-field-ETH").val(eth_number.toFixed(4));
 

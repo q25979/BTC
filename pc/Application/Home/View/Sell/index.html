@@ -342,6 +342,7 @@
         $("#sell-two-btc").keyup (function(){
 		    eth_sell_number = $("#sell-two-btc").val();
 		    eth_sell_price = eth_sell_number*EthSellPrice;
+		    eth_sell_price += parseFloat(localStorage.sellfloat)*100
 		    $("#sell-two-twd").val(parseFloat(eth_sell_price).toFixed(2));
 		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
 		    BtcSellNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
@@ -350,6 +351,7 @@
 		//出售以太币右输入框 价格
         $("#sell-two-twd").keyup (function(){
 		    eth_sell_price = $("#sell-two-twd").val();
+		    eth_sell_price += parseFloat(localStorage.sellfloat)*100
 		    eth_sell_number = eth_sell_price/EthSellPrice;
 		    $("#sell-two-btc").val(parseFloat(eth_sell_number).toFixed(4));
 		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
@@ -501,6 +503,8 @@
 
             let twd = parseFloat($('#sell-one-btc').val()) * BtcSellPrice
             let twdother = parseFloat($('#sell-two-btc').val()) * EthSellPrice
+            twd += parseFloat(localStorage.sellfloat)*100
+			twdother += parseFloat(localStorage.sellfloat)*100
             // 比特币,输入框
             sg.isEmpty($('#sell-one-btc').val())
                 ? ''

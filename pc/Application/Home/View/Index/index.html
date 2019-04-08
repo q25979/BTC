@@ -110,6 +110,16 @@
 		
 		var btc_balance;
 		var eth_balance;
+
+        // 获取购买出售浮动
+        getFloatData()
+        function getFloatData() {
+            var u = "__HOST_PATH__/Home/Index/getFloatData"
+            $.get(u, function(res) {
+                localStorage.buyfloat  = res.buy_float
+                localStorage.sellfloat = res.sell_float
+            })
+        }
 		
         // 获取账户信息
 		getAccount();
