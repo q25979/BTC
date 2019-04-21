@@ -22,8 +22,7 @@
 			<!--价格信息开始-->
 			<div class="sell-cost-box">
 				<p>
-					<span class="ico-point">•</span> <{$Think.lang._ACCOUNT_SELL_BTC_PRICE_}>
-					<span class="sell-cost"><span id="sell-btc-price"></span> <br></span>
+					<span class="ico-point">•</span>
 					<span class="sell-balance"> <{$Think.lang._ACCOUNT_SEND_BALANCE_}><b> <span id="sell-btc-balance"></span> BTC</b></span>
 					<span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b>NT$ <span class="cashBalance1"></span></b></span>
 				</p>
@@ -72,8 +71,7 @@
 			<!--价格信息开始-->
 			<div class="sell-cost-box">
 				<p>
-					<span class="ico-point">•</span> <{$Think.lang._ACCOUNT_SELL_BTC_PRICE_}>
-					<span class="sell-cost"><span id="sell-eth-price"></span></span>
+					<span class="ico-point">•</span>
 					<span class="sell-balance"><{$Think.lang._ACCOUNT_SEND_BALANCE_}><b><span id="sell-eth-balance"></span> LTC</b></span>
 					<span class="cashBalance"><{$Think.lang._HINT_EXTRACT_ENOUGH_}>:<b>NT$ <span class="cashBalance1"></span></b></span>
 				</p>
@@ -342,7 +340,6 @@
         $("#sell-two-btc").keyup (function(){
 		    eth_sell_number = $("#sell-two-btc").val();
 		    eth_sell_price = eth_sell_number*EthSellPrice;
-		    eth_sell_price += parseFloat(localStorage.sellfloat)*100
 		    $("#sell-two-twd").val(parseFloat(eth_sell_price).toFixed(2));
 		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
 		    BtcSellNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
@@ -351,7 +348,6 @@
 		//出售以太币右输入框 价格
         $("#sell-two-twd").keyup (function(){
 		    eth_sell_price = $("#sell-two-twd").val();
-		    eth_sell_price += parseFloat(localStorage.sellfloat)*100
 		    eth_sell_number = eth_sell_price/EthSellPrice;
 		    $("#sell-two-btc").val(parseFloat(eth_sell_number).toFixed(4));
 		    BtcSellNotNull("#sell-two-btc","#sell-two-twd","#sell-submit2",sellStatus);
@@ -495,6 +491,8 @@
             $('.changeCoin').text(type);
             BtcSellPrice = parseFloat(btc_btc_value).toFixed(4)
             EthSellPrice = parseFloat(btc_eth_value).toFixed(4)
+            BtcSellPrice = parseFloat(localStorage.sellfloat)*BtcSellPrice + parseFloat(BtcSellPrice)
+			EthSellPrice = parseFloat(localStorage.sellfloat)*EthSellPrice + parseFloat(EthSellPrice)
             BTCPrice = BtcSellPrice
             ETHPrice = EthSellPrice
             

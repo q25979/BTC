@@ -1027,241 +1027,116 @@
     });
 </script>
 		        
-	<style> .sh-money { text-align: center; } </style>
-
-	<!-- 内容容器 -->
-    <div class="content-vessel col-lg-8 col-md-8 col-sm-8 col-xs-12">
-    	<!-- 简讯验证 -->
-    	<div class="content-bd">
-    		<p class="content-bd-p1"><?php echo (L("_ACCOUNT_WELCOME_")); ?> <span><?php echo ($email); ?></span>！</p>
-    		<p class="content-bd-p2"><?php echo (L("_ACCOUNT_BIND_TIPS")); ?></p>
-    		<button class="btn btn-lg btn-active" onclick="javascrtpt:window.location.href='http://localhost:8081/Home/Setting/updateMobilePhone/type/bind'"><span class="glyphicon glyphicon-plus" style="margin-right: 10px;"></span> <?php echo (L("_ACCOUNT_PHONE_VER_")); ?></button>
-    	</div>
-    	<h3><?php echo (L("_ACCOUNT_SUMMARY_")); ?></h3>
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody cellspacing="0">
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_BTC_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-balance"></span></td>
-    			</tr>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_BTC_BALANCE_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-btc-price"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody cellspacing="0">
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_ETH_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-balance"></span></td>
-    			</tr>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_ETH_BALANCE_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-eth-price"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-		
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><?php echo (L("_ACCOUNT_TOTAL_VALUE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7"><span id="account-total-value"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<!--冻结金额-->
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><?php echo (L("_HINT_FREEZE_MONEY_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit"><span id="account-freeze-money"></span></td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<table class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-    		<tbody>
-    			<tr>
-    				<td class="col-lg-5 col-md-5 col-sm-5 col-xs-5 withdraw-deposit"><?php echo (L("_ACCOUNT_CASH_BALANCE_")); ?></td>
-    				<td class="td-right col-lg-7 col-md-7 col-sm-7 col-xs-7 withdraw-deposit">
-    					<span id="account-withdraw-deposit"></span>
-    					<button class="btn btn-active" id="withdraw-deposit-btn"><?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?></button>
-    					<button class="btn btn-active" id="withdrawal-detail-btn" onclick="javascrtpt:window.location.href='http://localhost:8081/Home/WithdrawalDetail/index'"><?php echo (L("_WITHDRAW_CASH_RECORD_")); ?></button>
-    				</td>
-    			</tr>
-    		</tbody>
-    	</table>
-    	
-    	<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 average-price"><span>•</span><?php echo (L("_ACCOUNT_SUMMARY_BOTTOM_")); ?></p>
-    	
-    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-box">
-    		<button class="btn btn-lg btn-active buy-btn" onclick="javascrtpt:window.location.href='http://localhost:8081/Home/Buy/index'"></span><?php echo (L("_ACCOUNT_BUY_")); ?></button>
-    		<button class="btn btn-lg btn-active sell-btn" onclick="javascrtpt:window.location.href='http://localhost:8081/Home/Sell/index'"></span><?php echo (L("_ACCOUNT_SELL_")); ?></button>
-    	</div>
-    </div>
-    
-    
-    
-    <script type="text/javascript">
-        var extract_balance_all = '';
-        var nonce_str = nonceStr(32);//随机32个随机数
-    	//更改按钮样式
-		$(function(){
-			$(".content-btn").click(function(){
-				$(this).css("color","#fff");
-			});
-			
-			$(".btn-active").mouseout(function(){
-				$(this).css("color","#fff")
-			});
-			
-            init();
-		});
-
-        /**
-         * 页面初始化
-         */
-        var init = function() {
-            var maincoinId = '<?php echo ($maincoin_id); ?>';
-
-            if (!sg.isEmpty(maincoinId)) {
-                $('.content-bd').css({ 'display': 'none' });
-            }
-        };
-		
-		var btc_balance;
-		var eth_balance;
-
-        // 获取购买出售浮动
-        getFloatData()
-        function getFloatData() {
-            var u = "http://localhost:8081/Home/Index/getFloatData"
-            $.get(u, function(res) {
-                localStorage.buyfloat  = res.buy_float
-                localStorage.sellfloat = res.sell_float
-            })
-        }
-		
-        // 获取账户信息
-		getAccount();
-		function getAccount(){
-			var url_account = "http://localhost:8081/Home/Index/getAccount";
-			$.ajax({
-				type:"get",
-				url: url_account,
-				success:function(res){
-					$("#account-btc-balance").html(res.btc_balance + " BTC");
-                    btc_balance = res.btc_balance;
-                    $("#account-eth-balance").html(res.eth_balance + " LTC");
-                    eth_balance = res.eth_balance;
-                    $("#account-freeze-money").html(" NT$ " + res.freeze_balance);
-                    $("#account-withdraw-deposit").html(" NT$ " + res.extract_balance);
-                    extract_balance_all = res.extract_balance;
-                    
-                    // 2s读取一次
-                    getValue(res)
-                    var timer = setInterval(function() {
-                        getValue(res)
-                    }, 2000);
-				}
-			});
-
-            function getValue(data) {
-                // 2s
-                let btc_btc_value = $.cookie('btc_btc_value'),
-                    btc_eth_value = $.cookie('btc_eth_value'),
-                    realtimeIndex = $.cookie('btc_float_value') // 缓存的币种
-                let type = 'NT$ '
-                if (realtimeIndex == 2) type = 'HKD$ '
-                if (realtimeIndex == 3) type = 'USD$ '
-
-                let btc_value = parseFloat(btc_btc_value * data.btc_balance).toFixed(4),
-                    eth_value = parseFloat(btc_eth_value * data.eth_balance).toFixed(4),
-                    total = parseFloat(parseFloat(btc_value) + parseFloat(eth_value)).toFixed(4)
-                $('#account-btc-price').html( type + btc_value);
-                $('#account-eth-price').html( type + eth_value);
-                $("#account-total-value").html( type + total);
-            }
-			
-            return false;
-		}
-
-		//提现按钮弹出框
-		$('#withdraw-deposit-btn').click(function(){
-			layui.use('layer', function(){
-				var layer = layui.layer;
-				layer.open({
-					type: 1,
-					title: '<?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?>',
-					id: 'layerDemo',
-					area: '350px',
-					offset: '40%',
-					anim: '1',
-					content: '<div class="sh-money" style="padding:10px"><?php echo (L("_HINT_WITHDRAW_DEPOSIT_")); ?>：<input type="text" id="get_cash_open" /></div>',
-					btn: '確認',
-					btnAlign: 'c',
-					yes:function(){
-                        layer.closeAll();
-						var cashContent = $('#get_cash_open').val();
-						
-						layer.open({
-							type: 1,
-							title: '提示',
-							area : '250px',
-							offset: '40%',
-							content: '<div class="sh-money">本茨提點金額為NT$ '+cashContent+'是否领取？</div>',
-							btn: ['是', '否'],
-							yes: function() {
-								layer.closeAll();
-								
-								var url = "http://localhost:8081/Home/Index/createUpOrder";
-								if (cashContent == ''
-									|| cashContent == null 
-									|| isNaN(Number(cashContent))
-									|| cashContent <= 0
-									|| cashContent == undefined
-									) {
-
-									layer.msg('<?php echo (L("_HINT_INPUT_AMOUNT_INVALID_")); ?>');
-									return;
-								}
-								if (Number(cashContent) > Number(extract_balance_all)) {
-									layer.msg('<?php echo (L("_HINT_INPUT_AMOUNT_NOT_TIPS_")); ?>');
-									return;
-								}
-
-								layer.load(2)
-								$.post(url,{
-									up_price : cashContent,
-								},function(res){
-									layer.closeAll();
-
-									if (res.code == 0) {
-										layer.msg('<?php echo (L("_HINT_WITHDRAW_CASH_SUCCESS_")); ?>', function() {
-											parent.location.reload();
-										});
-									}else{
-										layer.msg('<?php echo (L("_HINT_WITHDRAW_CASH_FAILURE_")); ?>', function() {
-											parent.location.reload();
-										});
-									}
-								});
-							}
-						});
-					}
-				});
-			});
-		});
+	<link rel="stylesheet" type="text/css" href="/Public/home/css/dealDetails.min.css" />
 	
-		//响应式侧边栏颜色
-		$('#minwidth1-act').css({'background':'#3388BB'});
-		$('#minwidth2-act').css({'background':'#697785'});
-		$('#minwidth3-act').css({'background':'#697785'});
-		$('#minwidth4-act').css({'background':'#697785'});
+	<div id="details" class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<a href="<?php echo U(index);?>"><<< <?php echo (L("_HINT_PREVIOUS_PAGE_")); ?></a>
+		<div class="details-container">
+			<h2><?php echo (L("_ORDER_DETAILS_")); ?></h2>
+			<div v-for="v in list">
+				<span>{{ v.name }}：</span>
+				<span>{{ v.value }}</span>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '#details',
+			data: { 
+				list: [],	// 订单详情
+			},
+			created: function() {
+				this.init();
+			},
+			methods: {
+				/**
+				 * 初始化页面
+				 */
+				init: function() {
+					// nav选项卡样式更改
+					$('.nav-a').each(function() {
+						$(this).removeClass('nav-a-first');
+					});
+					$($('.nav-a')[3]).addClass('nav-a-first');
+
+					this.get();
+				},
+
+				/**
+				 * 获取数据
+				 */
+				get: function() {
+					var _this = this;
+					var p = (window.location.href).split('?order_id=')[1];
+						u = 'http://localhost:8081/Home/DealDetails/dealDetails',
+						d = { order_id: p };
+
+					$.get(u, d, function(res) {
+						
+						_this.set(res.data[0]);
+					});
+				},
+
+				/**
+				 * 设置数据
+				 *
+				 * @param object obj 获取的数据
+				 */
+				set: function(obj) {
+					obj = this.change(obj);
+
+					this.list = [{
+						name : '<?php echo (L("_ORDER_NUM_")); ?>',
+						value: obj.system_order
+					}, {
+						name : '<?php echo (L("_ORDER_TYPE_")); ?>',
+						value: obj.order_type
+					}, {
+						name : '<?php echo (L("_ORDER_CURRENCY_TYPE_")); ?>',
+						value: obj.currency_type
+					}, {
+						name : '<?php echo (L("_ORDER_DEAL_TIME_")); ?>',
+						value: obj.create_time
+					}, {
+						name : '<?php echo (L("_ORDER_UNIT_PRICE_")); ?>',
+						value: obj.unit_price
+					}, {
+						name : '<?php echo (L("_ORDER_NUMBER_")); ?>',
+						value: obj.number
+					}, {
+						name : '<?php echo (L("_ORDER_TOTAL_PRICE_")); ?>',
+						value: obj.price
+					}, {
+						name : '<?php echo (L("_ORDER_STATUS_")); ?>',
+						value: obj.status
+					}];
+				},
+
+				/**
+				 * 数据转换
+				 *
+				 * @param  object obj 数据
+				 * @return object obj 新的数据
+				 */
+				change: function(obj) {
+					if (obj.currency_type == 1) obj.currency_type = 'BTC';
+					if (obj.currency_type == 2) obj.currency_type = 'ETH';
+
+					if (obj.order_type == 0) 
+						obj.order_type = '<?php echo (L("_ACCOUNT_BUY_")); ?>';
+					if (obj.order_type == 1) 
+						obj.order_type = '<?php echo (L("_ACCOUNT_SELL_")); ?>';
+
+					if (obj.status == 0) obj.status == '<?php echo (L("_ORDER_STATUS_SUBMIT_")); ?>';
+					if (obj.status == 1) obj.status == '<?php echo (L("_ORDER_STATUS_ING_")); ?>';
+					if (obj.status == 2) obj.status == '<?php echo (L("_ORDER_STATUS_SUCCESS_")); ?>';
+					if (obj.status == 3) obj.status == '<?php echo (L("_ORDER_STATUS_CANCEL_")); ?>';
+
+					return obj;
+				}
+			}
+		});
 	</script>
 
 		    </section>

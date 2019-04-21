@@ -25,8 +25,6 @@
 			<div>
 				<div class="detail">
 					<span class="point">•</span>
-					<{$Think.lang._ACCOUNT_BUY_BTC_PRICE_}>
-					<span class="buy-price"><span id="buy-btc-price"></span></span>
 					<br />
 					<span class="sell-available"><{$Think.lang._ACCOUNT_BUY_BTC_BALANCE_}><b><span id="buy-btc-balance"></span> BTC</b></span>
 					<br />
@@ -114,8 +112,6 @@
 			<div>
 				<div class="detail">
 					<span class="point">•</span>
-					<{$Think.lang._ACCOUNT_BUY_BTC_PRICE_}>
-					<span class="buy-price"><span id="buy-eth-price"></span></span>
 					<br />
 					<span class="sell-available"><{$Think.lang._ACCOUNT_BUY_BTC_BALANCE_}><b><span id="buy-eth-balance"></span> LTC</b></span>
 					<br />
@@ -288,9 +284,11 @@
 			$('.changeCoin').text(type);
 			BtcUnitPrice = parseFloat(btc_btc_value).toFixed(4)
 			EthUnitPrice = parseFloat(btc_eth_value).toFixed(4)
+			BtcUnitPrice = parseFloat(localStorage.buyfloat)*BtcUnitPrice + parseFloat(BtcUnitPrice)
+			EthUnitPrice = parseFloat(localStorage.buyfloat)*EthUnitPrice + parseFloat(EthUnitPrice)
 			BTCPrice = BtcUnitPrice
 			ETHPrice = EthUnitPrice
-			
+
 			$('#buy-btc-price').html(currency + BtcUnitPrice);
 			$('#buy-eth-price').html(currency + EthUnitPrice);
 
@@ -446,6 +444,7 @@
 		getBalance(1);      // 获取单价和余额
 		authentication();   // 检查身份是否验证
 		// 2s获取一次数据---------------------------------------------------------------
+		getValue()
 		setInterval(function() { getValue() }, 2000);
 
 		// 控制一级菜单的点击事件
@@ -495,7 +494,6 @@
 		$("#widget-coin-field").keyup (function(){
 			btc_number = $("#widget-coin-field").val();
 			btc_price  = btc_number*BtcUnitPrice;
-			btc_price += parseFloat(localStorage.buyfloat)*100
 			$("#widget-coin-twd").val(btc_price.toFixed(2));
 			BtcNotNull();
 			if($("#widget-coin-field").val() == ""){
@@ -506,7 +504,6 @@
 		//比特币右输入框
 		$("#widget-coin-twd").keyup (function(){
 			btc_price = $("#widget-coin-twd").val();
-			btc_price += parseFloat(localStorage.buyfloat)*100
 			btc_number = btc_price/BtcUnitPrice;
 			$("#widget-coin-field").val(btc_number.toFixed(4));
 			
@@ -521,7 +518,6 @@
 		$("#widget-coin-field-ETH").keyup (function(){
 			eth_number = $("#widget-coin-field-ETH").val();
 			eth_price  = eth_number*EthUnitPrice;
-			eth_price += parseFloat(localStorage.buyfloat)*100
 			$("#widget-coin-twd-ETH").val(eth_price.toFixed(2));
 
 			EthNotNull();
@@ -533,7 +529,6 @@
 		//以太币右输入框
 		$("#widget-coin-twd-ETH").keyup (function(){
 			eth_price = $("#widget-coin-twd-ETH").val();
-			eth_price += parseFloat(localStorage.buyfloat)*100
 			eth_number = eth_price/EthUnitPrice;
 			$("#widget-coin-field-ETH").val(eth_number.toFixed(4));
 

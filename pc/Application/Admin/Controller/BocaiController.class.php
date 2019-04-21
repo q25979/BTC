@@ -37,6 +37,68 @@ class BocaiController extends VerifyController {
     	$this->display();
     }
 
+    // 手动开奖
+    public function manualLottery()
+    {
+        $result = [ 'code' => -1, 'msg' => '开奖失败' ];
+        $wminlog = M('WMinlog');
+        $wopenlog = M('WOpenlog');
+
+        $post = I('post.');
+        $info = $wminlog->getByOrderId($post['order_id']);
+        if ((int)$info['last_direction'] != -1) {
+            $result['msg'] = '该订单已经开过奖，不需要复充提交';
+            $this->ajaxReturn($result);
+        }
+
+        // 获取开奖数据
+        $logmap['number'] = $info['buy_number'];
+        $date = date("Y-m-d", $info['buy_time']);
+        $starttime = strtotime($date)+30;
+        $endtime = strtotime($date)+24*60*60+30;
+        $logmap['create_time'] = array(
+            array('EGT', $starttime),
+            array('ELT', $endtime)
+        );
+        $openlog = $wopenlog->where($logmap)->find();
+        if (empty($openlog)) {
+            $result['msg'] = '该期尚未开将，不能操作';
+            $this->ajaxReturn($result);
+        }
+
+        // $info['buy_dirction']  $openlog['last_dirction']
+        // 需要更新的数据
+        $update = [
+            'last_direction' => $openlog['last_direction'],
+            'last_money' => 0,
+            'execute_price' => $openlog['execute_price'],
+            'last_price' => $openlog['last_price']
+        ];
+        if ((int)$info['buy_direction'] == (int)$openlog['last_direction']) {
+            // 购买对了
+            // 获取赔率
+            $odds = M('WSet')->getFieldById('1', 'odds_set');
+            $update['last_money'] = (float)$odds * (float)$info['money'];
+
+            // 给用户加钱
+            $UMap['user_id'] = $info['uid'];
+            M('UserAccount')->where($UMap)
+                ->setInc('extract_balance', (float)$update['last_money']);
+        }
+        $wminmap['order_id'] = $post['order_id'];
+        $saveinfo = $wminlog->where($wminmap)->save($update);
+
+        if ($saveinfo > 0) {
+            $result['code'] = 0;
+            $result['msg']  = '开奖成功';
+            $this->ajaxReturn($result);
+        }
+        else {
+            $result['msg'] = '更新失败';
+            $this->ajaxReturn($result);
+        }
+    }
+
     // 开盘设置-赔率设置
     public function odds()
     {

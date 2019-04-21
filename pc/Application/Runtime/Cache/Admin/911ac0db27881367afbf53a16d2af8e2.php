@@ -1,6 +1,6 @@
-<css href="__PLUG-IN__/layui-v2.3.0/layui/css/layui.css" />
-<js href="__JS__/jquery-3.2.1.min.js" />
-<js href="__PLUG-IN__/layui-v2.3.0/layui/layui.js" />
+<?php if (!defined('THINK_PATH')) exit();?><link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
+<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
 <style>
 	.x-body {padding: 20px;}
 	.layui-form-mid {padding: 0 !important;}
@@ -24,15 +24,15 @@
 
         <div class="navbar layui-row total">
   			<div class="layui-col-md4">
-    			<div><{$data["balance"]}></div>
+    			<div><?php echo ($data["balance"]); ?></div>
     			<div>客户余额</div>
   			</div>
   			<div class="layui-col-md4">
-    			<div><{$data["profit"]}></div>
+    			<div><?php echo ($data["profit"]); ?></div>
     			<div>平台盈利</div>
   			</div>
   			<div class="layui-col-md4">
-    			<div><{$data["bets"]}>人</div>
+    			<div><?php echo ($data["bets"]); ?>人</div>
     			<div>下注人数</div>
   			</div>
 		</div>
@@ -77,7 +77,7 @@
 		// 表格数据
 		var tableIns = table.render({
 			elem: '#opentable',
-			url: '<{:U("betslog")}>',
+			url: '<?php echo U("betslog");?>',
 			page: true,
 			size: 'sm',
 			limit: 30,
@@ -111,7 +111,7 @@
 
 		var search = function(data) {
 			tableIns.reload({
-				url: '<{:U("betslogsearch")}>',
+				url: '<?php echo U("betslogsearch");?>',
 				where: data
 			})
 		}
@@ -122,7 +122,7 @@
 			if (obj.event == 'open') {
 				layer.confirm('确认开奖？', {offset: '100px'}, function() {
 					layer.closeAll()
-					var u = '<{:U("manualLottery")}>'
+					var u = '<?php echo U("manualLottery");?>'
 					var d = {'order_id': data.order_id}
 
 					layer.load(2, {offset: '100px'})

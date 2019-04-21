@@ -275,6 +275,23 @@ class UserController extends VerifyController {
     }
 
     /**
+     * 修改密码
+     * @date    2019年4月11日
+     * @author  671
+     */
+    public function updatepass() {
+        $data = I('post.');
+        $user = M('User');
+        $map['user_id'] = $data['user_id'];
+        $update['password'] = md5(VERIFY_STR . $data['password']);
+        $info = $user->where($map)->save($update);
+        $result = $info > 0
+            ? ['msg' => '更新成功', 'code' => 0]
+            : ['msg' => '更新失败', 'code' => -1];
+        $this->ajaxReturn($result);
+    }
+
+    /**
      * 添加发送信息
      * 方式：POST
      * URL：/Admin/SendInformation

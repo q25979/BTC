@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><head>
 	<meta charset="UTF-8">
-	<title>Blnance幣淘 港臺數位資產交易平臺</title>
+	<title>BITAO幣淘</title>
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -370,8 +370,8 @@
 				var u = 'http://localhost:8081/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
-					_this.BTC = c + res.btc
-					_this.ETH = c + res.ltc
+					_this.BTC = c + parseFloat(res.btc).toFixed(4)
+					_this.ETH = c + parseFloat(res.ltc).toFixed(4)
 
 					// 设置cookie
 					$.cookie('btc_btc_value', res.btc);
@@ -1051,8 +1051,6 @@
 			<div>
 				<div class="detail">
 					<span class="point">•</span>
-					<?php echo (L("_ACCOUNT_BUY_BTC_PRICE_")); ?>
-					<span class="buy-price"><span id="buy-btc-price"></span></span>
 					<br />
 					<span class="sell-available"><?php echo (L("_ACCOUNT_BUY_BTC_BALANCE_")); ?><b><span id="buy-btc-balance"></span> BTC</b></span>
 					<br />
@@ -1140,8 +1138,6 @@
 			<div>
 				<div class="detail">
 					<span class="point">•</span>
-					<?php echo (L("_ACCOUNT_BUY_BTC_PRICE_")); ?>
-					<span class="buy-price"><span id="buy-eth-price"></span></span>
 					<br />
 					<span class="sell-available"><?php echo (L("_ACCOUNT_BUY_BTC_BALANCE_")); ?><b><span id="buy-eth-balance"></span> LTC</b></span>
 					<br />
@@ -1314,14 +1310,18 @@
 			$('.changeCoin').text(type);
 			BtcUnitPrice = parseFloat(btc_btc_value).toFixed(4)
 			EthUnitPrice = parseFloat(btc_eth_value).toFixed(4)
+			BtcUnitPrice = parseFloat(localStorage.buyfloat)*BtcUnitPrice + parseFloat(BtcUnitPrice)
+			EthUnitPrice = parseFloat(localStorage.buyfloat)*EthUnitPrice + parseFloat(EthUnitPrice)
 			BTCPrice = BtcUnitPrice
 			ETHPrice = EthUnitPrice
-			
+
 			$('#buy-btc-price').html(currency + BtcUnitPrice);
 			$('#buy-eth-price').html(currency + EthUnitPrice);
 
 			let twd = parseFloat($('#widget-coin-field').val()) * BtcUnitPrice
 			let twdother = parseFloat($('#widget-coin-field-ETH').val()) * EthUnitPrice
+			twd += parseFloat(localStorage.buyfloat)*100
+			twdother += parseFloat(localStorage.buyfloat)*100
 			// 比特币,输入框
 			sg.isEmpty($('#widget-coin-field').val())
 				? ''
@@ -1371,11 +1371,13 @@
 				data.unit_price = parseFloat(data.unit_price)*twd/ftmp
 				data.price = (parseFloat(data.price)*twd/ftmp).toFixed(4)
 
-				// 判断余额不足
-				if (data.price > parseFloat(cashBalance1)) {
-					alert('<?php echo (L("_ACCOUNT_SELL_BALANCE_")); ?> NT$:'+data.price)
-					callback({code: -1000})
-					return false
+				if (data.payment_type != 1) {
+					// 判断余额不足
+					if (data.price > parseFloat(cashBalance1)) {
+						alert('<?php echo (L("_ACCOUNT_SELL_BALANCE_")); ?> NT$:'+data.price)
+						callback({code: -1000})
+						return false
+					}
 				}
 
 				data.sign = hex_md5("oDY3UMuTPUmP4Yq5HWNKztJgjOzv69C1" + data.currency_type + data.money_currency_type + data.nonce_str + data.number + data.payment_type + data.price + data.unit_price)
@@ -1468,6 +1470,7 @@
 		getBalance(1);      // 获取单价和余额
 		authentication();   // 检查身份是否验证
 		// 2s获取一次数据---------------------------------------------------------------
+		getValue()
 		setInterval(function() { getValue() }, 2000);
 
 		// 控制一级菜单的点击事件
@@ -1516,7 +1519,7 @@
 		//比特币左输入框
 		$("#widget-coin-field").keyup (function(){
 			btc_number = $("#widget-coin-field").val();
-			btc_price = btc_number*BtcUnitPrice;
+			btc_price  = btc_number*BtcUnitPrice;
 			$("#widget-coin-twd").val(btc_price.toFixed(2));
 			BtcNotNull();
 			if($("#widget-coin-field").val() == ""){
@@ -1540,7 +1543,7 @@
 		//以太币左输入框
 		$("#widget-coin-field-ETH").keyup (function(){
 			eth_number = $("#widget-coin-field-ETH").val();
-			eth_price = eth_number*EthUnitPrice;
+			eth_price  = eth_number*EthUnitPrice;
 			$("#widget-coin-twd-ETH").val(eth_price.toFixed(2));
 
 			EthNotNull();
@@ -1596,7 +1599,9 @@
 			}
 
 			sg.loading($("#submit-buy-form"));
+			console.log(data)
 			buyVirtualCurrency(data, function(res){
+				console.log(res)
 				sg.hideLoading($('#submit-buy-form'), btnName);
 				if(res.code == 0){
 					alert("<?php echo (L("_HINT_BTC_BUY_OK_")); ?>");
@@ -1665,12 +1670,12 @@
     	<div class="footer-main">
     		<div class="col-lg-2 col-sm-2">	</div>
     		<div class="ft col-lg-8 col-sm-8 ">
-    			<a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
+    			<!-- <a href="http://localhost:8081/Home/PDF/index/type/termsOfUse">
                     <?php echo (L("_LOGIN_TERMS_FOR_USAGE_")); ?>
                 </a><span>|</span>
     			<a href="http://localhost:8081/Home/PDF/index/type/privacy">
                     <?php echo (L("_LOGIN_PRIVACY_POLICY_")); ?>
-                </a><span>|</span>
+                </a><span>|</span> -->
     			<a href="http://localhost:8081/Home/Question">
                     <?php echo (L("_FAQ_")); ?></a><span>|</span>
     			<a href="http://localhost:8081/Home/ContactUs">

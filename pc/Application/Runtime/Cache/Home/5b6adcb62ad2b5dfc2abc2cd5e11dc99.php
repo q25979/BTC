@@ -273,8 +273,8 @@
 				var u = 'http://localhost:8081/Float/Index/getdata';
 				var	d = { type: type };
 				$.get(u,d,function(res){
-					_this.BTC = c + res.btc
-					_this.ETH = c + res.ltc
+					_this.BTC = c + parseFloat(res.btc).toFixed(4)
+					_this.ETH = c + parseFloat(res.ltc).toFixed(4)
 
 					// 设置cookie
 					$.cookie('btc_btc_value', res.btc);

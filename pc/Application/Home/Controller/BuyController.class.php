@@ -96,8 +96,8 @@ class BuyController extends VerifyController {
 	 *@param payment_type	支付方式 1-银行转账2-萊爾富便利商店
 	 *@param unit_price 	购买单价
 	 *@param currency_type 	币种 1-BTC 2-ETC
-	 *@param nonce_str	 	
-	 *@param sign			
+	 *@param nonce_str
+	 *@param sign
 	 */
 	public function buyCoin() {
 		$info = I('post.'); 
