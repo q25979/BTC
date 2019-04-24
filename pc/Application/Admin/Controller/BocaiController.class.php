@@ -292,4 +292,21 @@ class BocaiController extends VerifyController {
 
         return $data;
     }
+
+    // 手动开奖
+    public function manualLottery()
+    {
+        $post = I('post.');
+        $WOpenlog = M('WOpenlog');
+
+        if ((float)$post['execute_price'] > (float)$post['last_price'])
+            $post['last_direction'] = 1;
+        else
+            $post['last_direction'] = 0;
+
+        // 判断该期数是否已经存在
+        $date = date("Y-m-d", $post['create_time']);
+        $starttime = strtotime($date)+30;
+        $endtime = strtotime($date)+24*60*60+30;
+    }
 }

@@ -42,6 +42,7 @@
         		<input type="text" name="user_name" placeholder="请输入用户名称" autocomplete="off" class="layui-input">
         	</div>
     		<button class="layui-btn layui-btn-normal" id="search">搜索</button>
+    		<button class="layui-btn" onclick="manualLottery()">手动开奖</button>
 
     		<div class="right">
     			<select name="last_direction" class="layui-input-inline" lay-filter="direction">
@@ -142,6 +143,15 @@
 
 	var refresh = function() {
 		window.location.reload();
+	}
+
+	var manualLottery = function() {
+		layer.open({
+			type: 2,
+			content: '<?php echo U("manual-lottery");?>',
+			area: ['500px', '400px'],
+			offset: '100px'
+		})
 	}
 </script>
 

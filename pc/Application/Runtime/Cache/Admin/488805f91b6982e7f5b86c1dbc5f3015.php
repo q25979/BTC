@@ -1,0 +1,71 @@
+<?php if (!defined('THINK_PATH')) exit();?><link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/css/layui.css" />
+<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui-v2.3.0/layui/layui.js"></script>
+
+<body>
+	<div class="layui-form" style="padding: 10px;padding-right:20px">
+		<div class="layui-form-item">
+			<label class="layui-form-label">时间</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" lay-verify="required" id="date">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">期数</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" lay-verify="required" name="number">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">执行价</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" lay-verify="required" name="execute_price">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">最终价</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" lay-verify="required" name="last_price">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-filter="submit" lay-submit>提交</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+	layui.use(['form', 'laydate', 'layer'], function() {
+		var layer = layui.layer;
+		var form  = layui.form;
+		var laydate = layui.laydate;
+
+		laydate.render({
+			elem: '#date',
+			type: 'datetime'
+		})
+
+		form.on('submit(submit)', function() {
+			var u = '<?php echo U("manualLotter");?>'
+			var d = {
+				'number': $('[name=number]').val(),
+				'create_time': new Date($('#date').val()).getTime()/1000,
+				'execute_price': $('[name=execute_price]').val(),
+				'last_price': $('[name=last_price]').val()
+			}
+
+			console.log(d)
+			return ;
+			layer.load(2)
+			$.post(u, d, function(res) {
+				console.log(res)
+				var icon = 5;
+				if (res.code == 0) icon = 6;
+
+				layer.msg(res.msg, {icon: icon, time: 1800})
+			})
+		})
+	})
+</script>
