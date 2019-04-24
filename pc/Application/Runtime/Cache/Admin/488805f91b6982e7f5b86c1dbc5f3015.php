@@ -48,7 +48,7 @@
 		})
 
 		form.on('submit(submit)', function() {
-			var u = '<?php echo U("manualLotter");?>'
+			var u = '<?php echo U("manualLotteryAll");?>'
 			var d = {
 				'number': $('[name=number]').val(),
 				'create_time': new Date($('#date').val()).getTime()/1000,
@@ -56,15 +56,13 @@
 				'last_price': $('[name=last_price]').val()
 			}
 
-			console.log(d)
-			return ;
 			layer.load(2)
 			$.post(u, d, function(res) {
-				console.log(res)
+				layer.closeAll();
 				var icon = 5;
 				if (res.code == 0) icon = 6;
 
-				layer.msg(res.msg, {icon: icon, time: 1800})
+				layer.msg(res.msg, {icon: icon})
 			})
 		})
 	})

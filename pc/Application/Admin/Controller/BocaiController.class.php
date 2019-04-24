@@ -266,6 +266,84 @@ class BocaiController extends VerifyController {
         ]);
     }
 
+    // 全部手动开奖
+    public function manualLotteryAll()
+    {
+        $post = I('post.');
+        $WOpenlog = M('WOpenlog');
+
+        // 判断不能开超过当前时间
+        if ($post['create_time'] > time()) {
+            $this->ajaxReturn([
+                'code' => -1,
+                'msg'  => '不能开比当前时间高的'
+            ]);
+        }
+
+        if ((float)$post['execute_price'] > (float)$post['last_price'])
+            $post['last_direction'] = 1;
+        else
+            $post['last_direction'] = 0;
+
+        // 判断该期数是否已经存在
+        $date = date("Y-m-d", $post['create_time']);
+        $starttime = strtotime($date)+1;
+        $endtime = strtotime($date)+24*60*60+1;
+        $map['number'] = $post['number'];
+        $map['create_time'] = array(
+            array('EGT', $starttime),
+            array('ELT', $endtime)
+        );
+        $count = $WOpenlog->where($map)->count();
+        if ($count > 0) {
+            $this->ajaxReturn([
+                'code' => -1,
+                'msg'  => '该期已经开过奖，如个人未开奖请直接点击个人'
+            ]);
+        }
+
+        // 添加记录
+        if ($WOpenlog->add($post) <= 0) {
+            $this->ajaxReturn([
+                'code' => -1,
+                'msg'  => '手动开奖失败'
+            ]);
+        }
+
+        // 查询购买本期的人
+        $buymap['number'] = $post['number'];
+        $buymap['buy_time'] = array(
+            array('EGT', $starttime),
+            array('ELT', $endtime)
+        );
+        $buylist = M('WMinlog')->where($buymap)->select();
+        foreach ($buylist as $k => $v) {
+            // 状态更改
+            $wmindata['last_direction'] = $post['last_direction'];
+            $wmindata['last_money'] = 0;
+            $wmindata['execute_price'] = $post['execute_price'];
+            $wmindata['last_price'] = $post['last_price'];
+
+            if ((int)$post['last_direction'] == (int)$v['buy_direction']) {
+                // 获取倍率
+                $odds = M('WSet')->getFieldById('1', 'odds_set');
+                $wmindata['last_money'] = $v['money'] * $odds;
+
+                // 给用户余额价钱
+                $usermap['user_id'] = $v['uid'];
+                M('UserAccount')->where($usermap)
+                    ->setInc('extract_balance', (float)$wmindata['last_money']);
+            }
+            $wminmap['order_id'] = $v['order_id'];
+            M('WMinlog')->where($wminmap)->save($wmindata);
+        }
+
+        $this->ajaxReturn([
+            'code' => 0,
+            'msg' => '开奖成功,请手动开刷新'
+        ]);
+    }
+
     // 下注记录状态更改
     private function betslogstatus($data)
     {
@@ -291,22 +369,5 @@ class BocaiController extends VerifyController {
         }
 
         return $data;
-    }
-
-    // 手动开奖
-    public function manualLottery()
-    {
-        $post = I('post.');
-        $WOpenlog = M('WOpenlog');
-
-        if ((float)$post['execute_price'] > (float)$post['last_price'])
-            $post['last_direction'] = 1;
-        else
-            $post['last_direction'] = 0;
-
-        // 判断该期数是否已经存在
-        $date = date("Y-m-d", $post['create_time']);
-        $starttime = strtotime($date)+30;
-        $endtime = strtotime($date)+24*60*60+30;
     }
 }
