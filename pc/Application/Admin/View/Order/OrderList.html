@@ -81,12 +81,15 @@
                 }else if (data.money_currency_type == 3){
                     unit = "USD"
                 }
-                    layer.open({
+
+                var payment = parseInt(data.payment_type) == 1 ? '银行转账' : '余额支付'
+                layer.open({
                     title: "订单详细",
                     content: "交易币种：" + data.currency_type_name + "</br>"
                     + "数量：" + data.number + "</br>"
                     + "单价：" + data.unit_price + "</br>"
-                    + "订单价值：" + data.price + unit,
+                    + "订单价值：" + data.price + unit + "</br>"
+                    + "支付类型：" + payment,
                     btn: ["关闭"],
                     yes: function (res){
                         layer.closeAll();
