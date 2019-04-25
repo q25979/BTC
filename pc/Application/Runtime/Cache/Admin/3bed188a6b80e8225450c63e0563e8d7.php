@@ -1,6 +1,38 @@
-<include file="Template/admin/header.html" />
+<?php if (!defined('THINK_PATH')) exit();?><head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<css href="__CSS__/bootstrap.min.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/xy.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/plug-in/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/xadmin.css" />
+
+	<script type="text/javascript" src="http://localhost:8081/Public/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/plug-in/layui/layui.js"></script>
+	<script type="text/javascript" src="http://localhost:8081/Public/js/xadmin.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/md5.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/config.js"></script>
+    <script type="text/javascript" src="http://localhost:8081/Public/js/function.js"></script>
+    
+
+	<!--[if lt IE 9]>
+        alert("你的浏览器版本，请更换浏览器，推荐谷歌");
+    <![endif]-->
+</head>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/Public/css/bootstrap.min.css" />
 
 <style>
     .navbar {margin-bottom: 0; line-height: 50px; padding: 0 10px;}
@@ -32,7 +64,7 @@
         var table = layui.table;
         var tableReload = table.render({
             elem: "#OrderListAll",
-            url: "<{:U(getOrderListAll)}>",
+            url: "<?php echo U(getOrderListAll);?>",
             page: true,
             id: 'orderListTable',
             cols: [[
@@ -77,7 +109,7 @@
                     + "数量：" + data.number + "</br>"
                     + "单价：" + data.unit_price + "</br>"
                     + "订单价值：" + data.price + unit + "</br>"
-                    + "支付类型：" + payment,
+                    + "支付类型" + payment,
                     btn: ["关闭"],
                     yes: function (res){
                         layer.closeAll();
@@ -94,7 +126,7 @@
         // 搜索
         function search() {
 
-            var url = "<{:U(getOrderListAll)}>";
+            var url = "<?php echo U(getOrderListAll);?>";
             var data = {
                 order_type: $('[name=orderType]').val(),
             };
